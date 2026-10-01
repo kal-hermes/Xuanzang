@@ -93,9 +93,21 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 #map .country.dimmed { opacity: 0.35; }
 #map .country.highlighted { fill: var(--accent); }
 
+#info-panel .emblems {
+  display: flex;
+  gap: 14px;
+}
+#info-panel .emblems figure {
+  margin: 0;
+  text-align: center;
+}
+#info-panel .emblems figcaption {
+  font-size: 0.8em;
+  opacity: 0.75;
+  margin-top: 3px;
+}
 #info-panel .emblems img {
   vertical-align: middle;
-  margin-right: 10px;
   border: 1px solid var(--border, #43596f);
   background: #fff;
 }

@@ -258,24 +258,46 @@
       dl.appendChild(dt);
       dl.appendChild(dd);
     }
-    // flag + coat of arms images (Wikimedia Commons thumbnails)
+    // flag + coat of arms images, each with its own visible caption
     if (f && (f.flag || f.arms)) {
-      const dt = document.createElement("dt");
-      dt.textContent = i18n.t("emblems");
       const dd = document.createElement("dd");
       dd.className = "emblems";
-      if (f.flag) dd.appendChild(commonsImg(f.flag, "flag", 63));
-      if (f.arms) dd.appendChild(commonsImg(f.arms, "arms", 80));
+      if (f.flag) {
+        const g = document.createElement("figure");
+        g.appendChild(commonsImg(f.flag, "flag", 63));
+        const cap = document.createElement("figcaption");
+        cap.textContent = i18n.t("flag");
+        g.appendChild(cap);
+        dd.appendChild(g);
+      }
+      if (f.arms) {
+        const g = document.createElement("figure");
+        g.appendChild(commonsImg(f.arms, "arms", 80));
+        const cap = document.createElement("figcaption");
+        cap.textContent = i18n.t("arms");
+        g.appendChild(cap);
+        dd.appendChild(g);
+      }
+      const dt = document.createElement("dt");
+      dt.textContent = i18n.t("emblems");
       dl.appendChild(dt);
       dl.appendChild(dd);
     }
-    // leaders: head of state + head of government, one line each
-    const leaderRows = [].concat(f && f.leaders || [], f && f.hog || []);
-    if (leaderRows.length) {
+    // leaders: grouped and labelled — head of state and head of
+    // government each get their own label, so the role is always
+    // identifiable even when Wikidata lacks the specific P39 title
+    const groups = [];
+    if (f && f.leaders && f.leaders.length) {
+      groups.push({ label: "head_of_state", rows: f.leaders });
+    }
+    if (f && f.hog && f.hog.length) {
+      groups.push({ label: "head_of_government", rows: f.hog });
+    }
+    for (const grp of groups) {
       const dt = document.createElement("dt");
-      dt.textContent = i18n.t("leaders");
+      dt.textContent = i18n.t(grp.label);
       const dd = document.createElement("dd");
-      for (const row of leaderRows) {
+      for (const row of grp.rows) {
         const line = document.createElement("div");
         const key = row.title && row.since ? "leader_full"
           : row.title ? "leader_title"
