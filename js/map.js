@@ -301,19 +301,31 @@
       }, { passive: false });
 
       let dragging = false, lastX = 0, lastY = 0;
-      svg.addEventListener("mousedown", (ev) => { dragging = true; lastX = ev.clientX; lastY = ev.clientY; });
+      let dragVersor = null;      // versor under cursor at drag start (globe)
+      let dragRotate = null;      // projection rotate() at drag start (globe)
+      svg.addEventListener("mousedown", (ev) => {
+        dragging = true; lastX = ev.clientX; lastY = ev.clientY;
+        if (isGlobe()) {
+          dragRotate = projection.rotate();
+          dragVersor = versor.cartesian(
+            projection.invert(this._svgPoint(ev))
+          );
+        }
+      });
       window.addEventListener("mouseup", () => { dragging = false; });
       svg.addEventListener("mousemove", (ev) => {
         if (!dragging) return;
         const rect = svg.getBoundingClientRect();
         const vb = svg.viewBox.baseVal;
         if (isGlobe()) {
-          // rotate: degrees per px, scaled to current zoom
-          const k = 0.25 * (vb.width / rect.width);
-          const r = projection.rotate();
-          const lambda = r[0] + (ev.clientX - lastX) * k;
-          const phi = Math.max(-90, Math.min(90, r[1] - (ev.clientY - lastY) * k));
-          projection.rotate([lambda, phi, r[2]]);
+          // trackball: the sphere point you grabbed follows the cursor
+          // 1:1 at any zoom — speed is always correct, no coefficient
+          const p = projection.invert(this._svgPoint(ev));
+          if (!p || isNaN(p[0])) return;
+          const v2 = versor.cartesian(p);
+          const q = versor.delta(v2, dragVersor);
+          const r = versor.rotation(versor.multiply(q, versor(dragRotate)));
+          projection.rotate(r);
           this._reproject();
         } else {
           const scale = vb.width / rect.width;
@@ -323,6 +335,16 @@
         svg.style.cursor = "grabbing";
       });
       svg.addEventListener("mouseleave", () => { svg.style.cursor = ""; });
+    },
+
+    _svgPoint(ev) {
+      // client coords -> svg user-space coords (accounts for viewBox + zoom)
+      const rect = svg.getBoundingClientRect();
+      const vb = svg.viewBox.baseVal;
+      return [
+        vb.x + (ev.clientX - rect.left) / rect.width * vb.width,
+        vb.y + (ev.clientY - rect.top) / rect.height * vb.height,
+      ];
     },
   };
 
