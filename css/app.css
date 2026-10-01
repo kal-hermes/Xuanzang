@@ -75,6 +75,15 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
   cursor: pointer;
 }
 
+/* context countries: same map, outside the lesson — visible for
+ * orientation but not clickable and dimmed */
+#map .country.context {
+  fill: #24303d;
+  stroke: #43596f;
+  cursor: default;
+  pointer-events: none;
+}
+
 #map .country:hover { fill: #3a5270; }
 
 #map .country.revealed { fill: #35618a; }

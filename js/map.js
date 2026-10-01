@@ -97,13 +97,13 @@
       const inView = new Set((lesson.countries || []).map((c) => c.iso3));
       const margin = 5; // svg-unit slack for the bounds test
       for (const f of world) {
-        if (inView.size && !inView.has(f.properties.iso3)) continue;
         const [[fx0, fy0], [fx1, fy1]] = geoPath.bounds(f);
         // skip features entirely outside the view box
         if (fx1 < x0 - margin || fx0 > x1 + margin || fy1 < y0 - margin || fy0 > y1 + margin) continue;
+        const inLesson = inView.has(f.properties.iso3);
         const el = document.createElementNS(svg.namespaceURI, "path");
         el.setAttribute("d", geoPath(f) || "");
-        el.setAttribute("class", "country");
+        el.setAttribute("class", inLesson ? "country" : "country context");
         el.dataset.iso3 = f.properties.iso3;
         el.addEventListener("click", (ev) => {
           ev.stopPropagation();
