@@ -87,8 +87,14 @@
 
     async loadWorld() {
       if (world) return world;
-      const res = await fetch("geo/countries-10m-simple.json");
-      const topo = await res.json();
+      // script-tag data (file://-safe); fetched only as a fallback for
+      // legacy embedding
+      if (window.ATLAS_WORLD_DATA) {
+        var topo = window.ATLAS_WORLD_DATA;
+      } else {
+        const res = await fetch("geo/countries-10m-simple.json");
+        topo = await res.json();
+      }
       const feats = topojson.feature(topo, topo.objects.countries).features;
       // The enriched TopoJSON maps split entities to the same iso3
       // (N. Cyprus -> CYP, Somaliland -> SOM). Merge duplicates into a

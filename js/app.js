@@ -36,9 +36,14 @@
   ];
 
   async function loadLesson(file) {
-    const res = await fetch(file);
-    if (!res.ok) throw new Error(`failed to load ${file}: ${res.status}`);
-    state.lesson = await res.json();
+    // script-tag data first (file://-safe); fetch fallback otherwise
+    let data = window.ATLAS_LESSONS && window.ATLAS_LESSONS[file];
+    if (!data) {
+      const res = await fetch(file);
+      if (!res.ok) throw new Error(`failed to load ${file}: ${res.status}`);
+      data = await res.json();
+    }
+    state.lesson = data;
     state.mode = $("#mode-select").value;
     startMode();
   }
@@ -60,11 +65,12 @@
     // fetch every lesson's title up front so ALL options show proper
     // localized names immediately, not just the selected one
     for (const l of LESSONS) {
-      fetch(l.file)
-        .then((r) => r.json())
-        .then((j) => {
-          lessonTitles[l.file] = j.title;
-          refreshLessonTitles();
+      Promise.resolve(
+        (window.ATLAS_LESSONS && window.ATLAS_LESSONS[l.file]) ||
+        fetch(l.file).then((r) => r.json())
+      ).then((j) => {
+        lessonTitles[l.file] = j.title;
+        refreshLessonTitles();
         })
         .catch(() => {});
     }
@@ -529,12 +535,17 @@
     fillLessonSelect();
     // Wikidata maps for the live facts popup
     try {
-      const [qidMap, capCoords] = await Promise.all([
-        fetch("data/iso3-to-qid.json").then((r) => r.json()),
-        fetch("data/capital-coords.json").then((r) => r.json()),
-      ]);
-      AtlasFacts.ISO3_TO_QID = qidMap;
-      AtlasFacts.CAPITAL_COORDS = capCoords;
+      if (window.ATLAS_QID_MAP) {
+        AtlasFacts.ISO3_TO_QID = window.ATLAS_QID_MAP;
+        AtlasFacts.CAPITAL_COORDS = window.ATLAS_CAPITAL_COORDS || {};
+      } else {
+        const [qidMap, capCoords] = await Promise.all([
+          fetch("data/iso3-to-qid.json").then((r) => r.json()),
+          fetch("data/capital-coords.json").then((r) => r.json()),
+        ]);
+        AtlasFacts.ISO3_TO_QID = qidMap;
+        AtlasFacts.CAPITAL_COORDS = capCoords;
+      }
     } catch (e) {
       // facts popup falls back to lesson facts only
     }

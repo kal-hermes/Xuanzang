@@ -178,10 +178,18 @@
 
     const caps = current(statements(entity, "P36"));
     if (caps.length) {
-      f.capital = caps.map((st) => L(qidOf(st))).join(", ");
+      // several concurrent seat statements can point at the same city
+      // (e.g. DEU has 3 Berlin seats) — dedupe by entity id
+      const seen = new Set();
+      const labels = [];
+      for (const st of caps) {
+        const id = qidOf(st);
+        if (!id || seen.has(id)) continue;
+        seen.add(id);
+        labels.push(L(id));
+      }
+      f.capital = labels.join(", ");
       const capCoord = caps[0].qualifiers && caps[0].qualifiers.P625;
-      // capital coordinates come from the capital item itself; resolved
-      // below via coordOf if the capital entity was label-fetched
     }
 
     const langs = current(statements(entity, "P37"));
