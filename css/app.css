@@ -93,6 +93,16 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 #map .country.dimmed { opacity: 0.35; }
 #map .country.highlighted { fill: var(--accent); }
 
+#info-panel .emblems img {
+  vertical-align: middle;
+  margin-right: 10px;
+  border: 1px solid var(--border, #43596f);
+  background: #fff;
+}
+#info-panel .emblem-flag { width: 63px; }
+#info-panel .emblem-arms { width: 80px; }
+#info-panel dd div { margin-bottom: 2px; }
+
 #reset-view-button {
   position: absolute;
   right: 12px;

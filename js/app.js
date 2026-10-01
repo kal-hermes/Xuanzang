@@ -170,24 +170,102 @@
     showInfo(c, iso3);
   }
 
-  function showInfo(c, iso3) {
+  async function showInfo(c, iso3) {
     $("#info-panel").hidden = false;
     $("#info-name").textContent = loc(c.names) || iso3;
     const dl = $("#info-facts");
     dl.innerHTML = "";
     const factDefs = [
-      ["population", c.facts && c.facts.population],
       ["capital", c.facts && c.facts.capital],
+      ["languages", null],
       ["demonym", c.facts && c.facts.demonym],
+      ["government", null],
+      ["established", null],
+      ["area", null],
+      ["population", c.facts && c.facts.population],
+      ["gdp_nominal", null],
+      ["gdp_ppp", null],
+      ["currency", null],
+      ["timezone", null],
       ["founded", c.facts && c.facts.founded],
       ["collapsed", c.facts && c.facts.collapsed],
     ];
+    // lesson facts render instantly; Wikidata facts replace/augment them
+    // once the entity arrives (cached in localStorage after first click)
+    renderFacts(dl, factDefs, {});
+    let f = null;
+    try {
+      f = await AtlasFacts.get(iso3);
+    } catch (err) {
+      f = null; // offline / Wikidata down: lesson facts stay visible
+    }
+    if (!f) return;
+    // bail if another country was clicked while fetching
+    if ($("#info-name").textContent !== (loc(c.names) || iso3)) return;
+    const fmtInt = (n) => new Intl.NumberFormat().format(n);
+    const values = {
+      capital: f.capital,
+      languages: f.languages,
+      government: f.government,
+      established: f.established,
+      area: f.areaKm2 ? fmtInt(f.areaKm2) + " km²" : null,
+      population: f.population ? fmtInt(f.population) : null,
+      gdp_nominal: f.gdpNominalTotalUsd
+        ? "US$" + fmtInt(f.gdpNominalTotalUsd)
+          + (f.gdpNominalPerCapitaUsd ? " · " + fmtInt(f.gdpNominalPerCapitaUsd) + " / capita" : "")
+          + (f.gdpYear ? " (" + f.gdpYear + ")" : "")
+        : null,
+      gdp_ppp: f.gdpPppTotalUsd
+        ? "US$" + fmtInt(f.gdpPppTotalUsd)
+          + (f.gdpPppPerCapitaUsd ? " · " + fmtInt(f.gdpPppPerCapitaUsd) + " / capita" : "")
+        : null,
+      currency: f.currencies,
+      timezone: f.timezones,
+    };
+    // capital coordinates: small vendored dataset, no live fetch needed
+    if (window.AtlasFacts && AtlasFacts.CAPITAL_COORDS && AtlasFacts.CAPITAL_COORDS[iso3]) {
+      const [lon, lat] = AtlasFacts.CAPITAL_COORDS[iso3];
+      values.capital_coord = Math.abs(lat).toFixed(2) + "°" + (lat >= 0 ? "N" : "S") +
+        " " + Math.abs(lon).toFixed(2) + "°" + (lon >= 0 ? "E" : "W");
+    }
+    renderFacts(dl, factDefs, values, f);
+  }
+
+  function renderFacts(dl, factDefs, values, f) {
+    dl.innerHTML = "";
     for (const [key, val] of factDefs) {
-      if (val == null || val === "") continue;
+      const v = values && key in values ? values[key] : val;
+      if (v == null || v === "") continue;
       const dt = document.createElement("dt");
       dt.textContent = i18n.t(key);
       const dd = document.createElement("dd");
-      dd.textContent = String(val);
+      dd.textContent = String(v);
+      dl.appendChild(dt);
+      dl.appendChild(dd);
+    }
+    // flag + coat of arms images (Wikimedia Commons thumbnails)
+    if (f && (f.flag || f.arms)) {
+      const dt = document.createElement("dt");
+      dt.textContent = i18n.t("emblems");
+      const dd = document.createElement("dd");
+      dd.className = "emblems";
+      if (f.flag) dd.appendChild(commonsImg(f.flag, "flag", 63));
+      if (f.arms) dd.appendChild(commonsImg(f.arms, "arms", 80));
+      dl.appendChild(dt);
+      dl.appendChild(dd);
+    }
+    // leaders: head of state + head of government, one line each
+    const leaderRows = [].concat(f && f.leaders || [], f && f.hog || []);
+    if (leaderRows.length) {
+      const dt = document.createElement("dt");
+      dt.textContent = i18n.t("leaders");
+      const dd = document.createElement("dd");
+      for (const row of leaderRows) {
+        const line = document.createElement("div");
+        line.textContent = (row.title ? row.title + ": " : "") + row.name +
+          (row.since ? " (" + row.since + ")" : "");
+        dd.appendChild(line);
+      }
       dl.appendChild(dt);
       dl.appendChild(dd);
     }
@@ -196,6 +274,18 @@
       dd.textContent = "—";
       dl.appendChild(dd);
     }
+  }
+
+  // Commons image via the stable FilePath redirect (renders SVG as PNG)
+  function commonsImg(filename, kind, widthPx) {
+    const name = filename.replace(/^File:/, "").replace(/ /g, "_");
+    const img = document.createElement("img");
+    img.src = "https://commons.wikimedia.org/wiki/Special:FilePath/" +
+      encodeURIComponent(name) + "?width=" + widthPx;
+    img.alt = kind;
+    img.className = "emblem-" + kind;
+    img.loading = "lazy";
+    return img;
   }
 
   function nextLocate() {
@@ -390,12 +480,23 @@
 
   // ---------- wiring ----------
 
-  function init() {
+  async function init() {
     i18n.setLocale(i18n.locale);
     $("#projection-select").value = state.projection;
     map.init($("#map"));
     map.attachNavigation();
     fillLessonSelect();
+    // Wikidata maps for the live facts popup
+    try {
+      const [qidMap, capCoords] = await Promise.all([
+        fetch("data/iso3-to-qid.json").then((r) => r.json()),
+        fetch("data/capital-coords.json").then((r) => r.json()),
+      ]);
+      AtlasFacts.ISO3_TO_QID = qidMap;
+      AtlasFacts.CAPITAL_COORDS = capCoords;
+    } catch (e) {
+      // facts popup falls back to lesson facts only
+    }
 
     $("#mode-select").addEventListener("change", (ev) => {
       state.mode = ev.target.value;
