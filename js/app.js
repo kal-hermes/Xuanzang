@@ -45,7 +45,7 @@
     for (const l of LESSONS) {
       const opt = document.createElement("option");
       opt.value = l.file;
-      // placeholder text; replaced after load when title is known
+      // placeholder text; replaced once titles are fetched below
       opt.textContent = l.file.split("/").pop().replace(/\.json$/, "");
       sel.appendChild(opt);
     }
@@ -53,14 +53,24 @@
       await loadLesson(sel.value);
       refreshLessonTitles();
     });
+    // fetch every lesson's title up front so ALL options show proper
+    // localized names immediately, not just the selected one
+    for (const l of LESSONS) {
+      fetch(l.file)
+        .then((r) => r.json())
+        .then((j) => {
+          lessonTitles[l.file] = j.title;
+          refreshLessonTitles();
+        })
+        .catch(() => {});
+    }
   }
 
   function refreshLessonTitles() {
     const sel = $("#lesson-select");
     [...sel.options].forEach((opt) => {
-      if (state.lesson && opt.value === sel.value) {
-        opt.textContent = loc(state.lesson.title) || opt.textContent;
-      }
+      const title = lessonTitles[opt.value];
+      if (title) opt.textContent = loc(title) || opt.textContent;
     });
   }
 
@@ -68,6 +78,9 @@
     if (!dict) return "";
     return dict[i18n.locale] ?? dict["en-GB"] ?? Object.values(dict)[0] ?? "";
   }
+
+  // lesson file -> title dict (all locales), fetched once at startup
+  const lessonTitles = {};
 
   // ---------- helpers ----------
 
