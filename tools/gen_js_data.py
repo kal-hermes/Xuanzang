@@ -37,11 +37,12 @@ def main():
     coords = json.loads((ROOT / "data/capital-coords.json").read_text())
     dump_js(ROOT / "data/capital-coords.js", "ATLAS_CAPITAL_COORDS", coords)
 
-    # lessons
+    # lessons — keyed by the exact value LESSONS uses in app.js
     n = 0
     for p in sorted((ROOT / "lessons/examples").glob("*-countries.json")):
         d = json.loads(p.read_text(encoding="utf-8"))
-        dump_js(p.with_suffix(".js"), f'ATLAS_LESSONS["{p.name}"]', d,
+        dump_js(p.with_suffix(".js"),
+                f'ATLAS_LESSONS["lessons/examples/{p.name}"]', d,
                 extra_prefix="window.ATLAS_LESSONS = window.ATLAS_LESSONS || {};")
         n += 1
     print(f"wrote world-data.js, qid-map.js, capital-coords.js, {n} lesson .js files")
