@@ -12,6 +12,8 @@
 
 * { box-sizing: border-box; }
 
+[hidden] { display: none !important; }
+
 html, body {
   margin: 0;
   height: 100%;
@@ -68,8 +70,8 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 
 #map .country {
   fill: #2c3d4f;
-  stroke: var(--border);
-  stroke-width: 0.5;
+  stroke: #6f8ca8;
+  stroke-width: 0.4;
   cursor: pointer;
 }
 

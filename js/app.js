@@ -48,7 +48,10 @@
       opt.textContent = l.file.split("/").pop().replace(/\.json$/, "");
       sel.appendChild(opt);
     }
-    sel.addEventListener("change", () => loadLesson(sel.value));
+    sel.addEventListener("change", async () => {
+      await loadLesson(sel.value);
+      refreshLessonTitles();
+    });
   }
 
   function refreshLessonTitles() {
