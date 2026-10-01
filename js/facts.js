@@ -87,10 +87,13 @@
     for (let i = 0; i < ids.length; i += 50) {
       const chunk = ids.slice(i, i + 50);
       try {
-        const langs = labelLangs().join("|");
+        // NOTE: no &languages= param — the server-side filter can zero
+        // out items whose labels exist only outside the requested
+        // chain (e.g. Q4916 euro has no 'en' label at all); language
+        // selection happens client-side in pickLabel()
         const res = await fetch(
           "https://www.wikidata.org/w/api.php?action=wbgetentities" +
-          `&ids=${chunk.join("|")}&props=labels&languages=${encodeURIComponent(langs)}&format=json&origin=*`,
+          `&ids=${chunk.join("|")}&props=labels&format=json&origin=*`,
           { headers: UA });
         if (!res.ok) continue;
         const data = await res.json();

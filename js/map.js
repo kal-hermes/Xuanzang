@@ -50,6 +50,37 @@
 
   function isGlobe() { return projectionName === "globe"; }
 
+  // Largest polygon of a (multi)polygon feature, by outer-ring
+  // spherical area — the "main" landmass. Whole-feature centroids of
+  // countries with far-flung territories (France incl. overseas
+  // departments) land in the ocean; the largest polygon's doesn't.
+  function mainPolygon(f) {
+    const g = f.geometry;
+    if (!g || g.type === "Polygon") return f;
+    if (g.type !== "MultiPolygon" || !g.coordinates.length) return f;
+    let best = null, bestArea = -1;
+    for (const poly of g.coordinates) {
+      const ring = poly[0];
+      if (!ring || ring.length < 3) continue;
+      let s = 0;
+      const n = ring.length;
+      for (let i = 0; i < n; i++) {
+        const [x1, y1] = ring[i], [x2, y2] = ring[(i + 1) % n];
+        s += (x2 - x1) * Math.PI / 180 *
+          (2 + Math.sin(y1 * Math.PI / 180) + Math.sin(y2 * Math.PI / 180));
+      }
+      const area = Math.abs(s);
+      if (area > bestArea) { bestArea = area; best = poly; }
+    }
+    return best
+      ? { type: "Feature", properties: f.properties, geometry: { type: "Polygon", coordinates: best } }
+      : f;
+  }
+
+  function mainCentroid(f) {
+    return d3.geoCentroid(mainPolygon(f));
+  }
+
   // centroid + max angular radius (radians) of a feature — used to cull
   // backside features cheaply during globe drag re-projection
   function featureOrbit(feature) {
@@ -343,7 +374,7 @@
       if (!isGlobe()) return;
       const f = this.feature(iso3);
       if (!f) return;
-      const c = d3.geoCentroid(f);
+      const c = mainCentroid(f);
       const centre = projection.invert(
         [projection.translate()[0], projection.translate()[1]]);
       const deg = Math.PI / 180;
@@ -375,13 +406,17 @@
       if (!pointedIso3) return;
       const f = this.feature(pointedIso3);
       if (!f) return;
-      const target = projection(d3.geoCentroid(f));
+      // use the largest polygon's centroid: whole-feature centroids of
+      // countries with far-flung territories (France: 21 polygons incl.
+      // overseas departments) land in the ocean
+      const main = mainPolygon(f);
+      const target = projection(d3.geoCentroid(main));
       if (!target || target[0] == null || isNaN(target[0])) return;
 
-      // arrow start: a point outside the country's projected bbox so
-      // tiny countries aren't covered by the arrowhead itself
+      // arrow start: a point outside the main polygon's projected bbox
+      // so tiny countries aren't covered by the arrowhead itself
       let bbox;
-      try { bbox = geoPath.bounds(f); } catch (e) { bbox = null; }
+      try { bbox = geoPath.bounds(main); } catch (e) { bbox = null; }
       let start = [target[0], target[1] - 90];
       if (bbox) {
         const [[x0, y0], [x1, y1]] = bbox;
