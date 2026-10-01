@@ -1,0 +1,558 @@
+{
+ "id": "asia-countries",
+ "title": {
+  "en-GB": "Countries of Asia",
+  "fr-CA": "Les pays d'Asie",
+  "zh-Hans": "亚洲国家",
+  "zh-HK": "亞洲國家"
+ },
+ "type": "countries",
+ "view": {
+  "lon0": 25,
+  "lat0": -12,
+  "lon1": 150,
+  "lat1": 60
+ },
+ "countries": [
+  {
+   "iso3": "AFG",
+   "names": {
+    "en-GB": "Afghanistan",
+    "fr-CA": "Afghanistan",
+    "zh-Hans": "阿富汗",
+    "zh-HK": "阿富汗"
+   },
+   "facts": {
+    "capital": "Kabul"
+   }
+  },
+  {
+   "iso3": "ARM",
+   "names": {
+    "en-GB": "Armenia",
+    "fr-CA": "Arménie",
+    "zh-Hans": "亚美尼亚",
+    "zh-HK": "亞美尼亞"
+   },
+   "facts": {
+    "capital": "Yerevan"
+   }
+  },
+  {
+   "iso3": "AZE",
+   "names": {
+    "en-GB": "Azerbaijan",
+    "fr-CA": "Azerbaïdjan",
+    "zh-Hans": "阿塞拜疆",
+    "zh-HK": "亞塞拜疆"
+   },
+   "facts": {
+    "capital": "Baku"
+   }
+  },
+  {
+   "iso3": "BGD",
+   "names": {
+    "en-GB": "Bangladesh",
+    "fr-CA": "Bangladesh",
+    "zh-Hans": "孟加拉国",
+    "zh-HK": "孟加拉"
+   },
+   "facts": {
+    "capital": "Dhaka"
+   }
+  },
+  {
+   "iso3": "BTN",
+   "names": {
+    "en-GB": "Bhutan",
+    "fr-CA": "Bhoutan",
+    "zh-Hans": "不丹",
+    "zh-HK": "不丹"
+   },
+   "facts": {
+    "capital": "Thimphu"
+   }
+  },
+  {
+   "iso3": "BRN",
+   "names": {
+    "en-GB": "Brunei",
+    "fr-CA": "Brunéi",
+    "zh-Hans": "文莱",
+    "zh-HK": "汶萊"
+   },
+   "facts": {
+    "capital": "Bandar Seri Begawan"
+   }
+  },
+  {
+   "iso3": "KHM",
+   "names": {
+    "en-GB": "Cambodia",
+    "fr-CA": "Cambodge",
+    "zh-Hans": "柬埔寨",
+    "zh-HK": "柬埔寨"
+   },
+   "facts": {
+    "capital": "Phnom Penh"
+   }
+  },
+  {
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "China",
+    "fr-CA": "Chine",
+    "zh-Hans": "中国",
+    "zh-HK": "中國"
+   },
+   "facts": {
+    "capital": "Beijing"
+   }
+  },
+  {
+   "iso3": "GEO",
+   "names": {
+    "en-GB": "Georgia",
+    "fr-CA": "Géorgie",
+    "zh-Hans": "格鲁吉亚",
+    "zh-HK": "格魯吉亞"
+   },
+   "facts": {
+    "capital": "Tbilisi"
+   }
+  },
+  {
+   "iso3": "IND",
+   "names": {
+    "en-GB": "India",
+    "fr-CA": "Inde",
+    "zh-Hans": "印度",
+    "zh-HK": "印度"
+   },
+   "facts": {
+    "capital": "New Delhi"
+   }
+  },
+  {
+   "iso3": "IDN",
+   "names": {
+    "en-GB": "Indonesia",
+    "fr-CA": "Indonésie",
+    "zh-Hans": "印度尼西亚",
+    "zh-HK": "印尼"
+   },
+   "facts": {
+    "capital": "Jakarta"
+   }
+  },
+  {
+   "iso3": "IRN",
+   "names": {
+    "en-GB": "Iran",
+    "fr-CA": "Iran",
+    "zh-Hans": "伊朗",
+    "zh-HK": "伊朗"
+   },
+   "facts": {
+    "capital": "Tehran"
+   }
+  },
+  {
+   "iso3": "IRQ",
+   "names": {
+    "en-GB": "Iraq",
+    "fr-CA": "Irak",
+    "zh-Hans": "伊拉克",
+    "zh-HK": "伊拉克"
+   },
+   "facts": {
+    "capital": "Baghdad"
+   }
+  },
+  {
+   "iso3": "ISR",
+   "names": {
+    "en-GB": "Israel",
+    "fr-CA": "Israël",
+    "zh-Hans": "以色列",
+    "zh-HK": "以色列"
+   },
+   "facts": {
+    "capital": "Jerusalem"
+   }
+  },
+  {
+   "iso3": "JPN",
+   "names": {
+    "en-GB": "Japan",
+    "fr-CA": "Japon",
+    "zh-Hans": "日本",
+    "zh-HK": "日本"
+   },
+   "facts": {
+    "capital": "Tokyo"
+   }
+  },
+  {
+   "iso3": "JOR",
+   "names": {
+    "en-GB": "Jordan",
+    "fr-CA": "Jordanie",
+    "zh-Hans": "约旦",
+    "zh-HK": "約旦"
+   },
+   "facts": {
+    "capital": "Amman"
+   }
+  },
+  {
+   "iso3": "KAZ",
+   "names": {
+    "en-GB": "Kazakhstan",
+    "fr-CA": "Kazakhstan",
+    "zh-Hans": "哈萨克斯坦",
+    "zh-HK": "哈薩克"
+   },
+   "facts": {
+    "capital": "Astana"
+   }
+  },
+  {
+   "iso3": "KWT",
+   "names": {
+    "en-GB": "Kuwait",
+    "fr-CA": "Koweït",
+    "zh-Hans": "科威特",
+    "zh-HK": "科威特"
+   },
+   "facts": {
+    "capital": "Kuwait City"
+   }
+  },
+  {
+   "iso3": "KGZ",
+   "names": {
+    "en-GB": "Kyrgyzstan",
+    "fr-CA": "Kirghizistan",
+    "zh-Hans": "吉尔吉斯斯坦",
+    "zh-HK": "吉爾吉斯"
+   },
+   "facts": {
+    "capital": "Bishkek"
+   }
+  },
+  {
+   "iso3": "LAO",
+   "names": {
+    "en-GB": "Laos",
+    "fr-CA": "Laos",
+    "zh-Hans": "老挝",
+    "zh-HK": "老撾"
+   },
+   "facts": {
+    "capital": "Vientiane"
+   }
+  },
+  {
+   "iso3": "LBN",
+   "names": {
+    "en-GB": "Lebanon",
+    "fr-CA": "Liban",
+    "zh-Hans": "黎巴嫩",
+    "zh-HK": "黎巴嫩"
+   },
+   "facts": {
+    "capital": "Beirut"
+   }
+  },
+  {
+   "iso3": "MYS",
+   "names": {
+    "en-GB": "Malaysia",
+    "fr-CA": "Malaisie",
+    "zh-Hans": "马来西亚",
+    "zh-HK": "馬來西亞"
+   },
+   "facts": {
+    "capital": "Kuala Lumpur"
+   }
+  },
+  {
+   "iso3": "MNG",
+   "names": {
+    "en-GB": "Mongolia",
+    "fr-CA": "Mongolie",
+    "zh-Hans": "蒙古",
+    "zh-HK": "蒙古"
+   },
+   "facts": {
+    "capital": "Ulan Bator"
+   }
+  },
+  {
+   "iso3": "MMR",
+   "names": {
+    "en-GB": "Myanmar (Burma)",
+    "fr-CA": "Myanmar",
+    "zh-Hans": "缅甸",
+    "zh-HK": "緬甸"
+   },
+   "facts": {
+    "capital": "Naypyidaw"
+   }
+  },
+  {
+   "iso3": "NPL",
+   "names": {
+    "en-GB": "Nepal",
+    "fr-CA": "Népal",
+    "zh-Hans": "尼泊尔",
+    "zh-HK": "尼泊爾"
+   },
+   "facts": {
+    "capital": "Kathmandu"
+   }
+  },
+  {
+   "iso3": "PRK",
+   "names": {
+    "en-GB": "North Korea",
+    "fr-CA": "Corée du Nord",
+    "zh-Hans": "朝鲜",
+    "zh-HK": "北韓"
+   },
+   "facts": {
+    "capital": "Pyongyang"
+   }
+  },
+  {
+   "iso3": "OMN",
+   "names": {
+    "en-GB": "Oman",
+    "fr-CA": "Oman",
+    "zh-Hans": "阿曼",
+    "zh-HK": "阿曼"
+   },
+   "facts": {
+    "capital": "Muscat"
+   }
+  },
+  {
+   "iso3": "PAK",
+   "names": {
+    "en-GB": "Pakistan",
+    "fr-CA": "Pakistan",
+    "zh-Hans": "巴基斯坦",
+    "zh-HK": "巴基斯坦"
+   },
+   "facts": {
+    "capital": "Islamabad"
+   }
+  },
+  {
+   "iso3": "PSE",
+   "names": {
+    "en-GB": "Palestinian Territories",
+    "fr-CA": "Territoires palestiniens",
+    "zh-Hans": "巴勒斯坦领土",
+    "zh-HK": "巴勒斯坦領土"
+   },
+   "facts": {
+    "capital": "Ramallah"
+   }
+  },
+  {
+   "iso3": "PHL",
+   "names": {
+    "en-GB": "Philippines",
+    "fr-CA": "Philippines",
+    "zh-Hans": "菲律宾",
+    "zh-HK": "菲律賓"
+   },
+   "facts": {
+    "capital": "Manila"
+   }
+  },
+  {
+   "iso3": "QAT",
+   "names": {
+    "en-GB": "Qatar",
+    "fr-CA": "Qatar",
+    "zh-Hans": "卡塔尔",
+    "zh-HK": "卡塔爾"
+   },
+   "facts": {
+    "capital": "Doha"
+   }
+  },
+  {
+   "iso3": "SAU",
+   "names": {
+    "en-GB": "Saudi Arabia",
+    "fr-CA": "Arabie saoudite",
+    "zh-Hans": "沙特阿拉伯",
+    "zh-HK": "沙地阿拉伯"
+   },
+   "facts": {
+    "capital": "Riyadh"
+   }
+  },
+  {
+   "iso3": "KOR",
+   "names": {
+    "en-GB": "South Korea",
+    "fr-CA": "Corée du Sud",
+    "zh-Hans": "韩国",
+    "zh-HK": "南韓"
+   },
+   "facts": {
+    "capital": "Seoul"
+   }
+  },
+  {
+   "iso3": "LKA",
+   "names": {
+    "en-GB": "Sri Lanka",
+    "fr-CA": "Sri Lanka",
+    "zh-Hans": "斯里兰卡",
+    "zh-HK": "斯里蘭卡"
+   },
+   "facts": {
+    "capital": "Colombo"
+   }
+  },
+  {
+   "iso3": "SYR",
+   "names": {
+    "en-GB": "Syria",
+    "fr-CA": "Syrie",
+    "zh-Hans": "叙利亚",
+    "zh-HK": "敘利亞"
+   },
+   "facts": {
+    "capital": "Damascus"
+   }
+  },
+  {
+   "iso3": "TWN",
+   "names": {
+    "en-GB": "Taiwan",
+    "fr-CA": "Taïwan",
+    "zh-Hans": "台湾",
+    "zh-HK": "台灣"
+   },
+   "facts": {
+    "capital": "Taipei"
+   }
+  },
+  {
+   "iso3": "TJK",
+   "names": {
+    "en-GB": "Tajikistan",
+    "fr-CA": "Tadjikistan",
+    "zh-Hans": "塔吉克斯坦",
+    "zh-HK": "塔吉克"
+   },
+   "facts": {
+    "capital": "Dushanbe"
+   }
+  },
+  {
+   "iso3": "THA",
+   "names": {
+    "en-GB": "Thailand",
+    "fr-CA": "Thaïlande",
+    "zh-Hans": "泰国",
+    "zh-HK": "泰國"
+   },
+   "facts": {
+    "capital": "Bangkok"
+   }
+  },
+  {
+   "iso3": "TLS",
+   "names": {
+    "en-GB": "Timor-Leste",
+    "fr-CA": "Timor-Leste",
+    "zh-Hans": "东帝汶",
+    "zh-HK": "東帝汶"
+   },
+   "facts": {
+    "capital": "Dili"
+   }
+  },
+  {
+   "iso3": "TKM",
+   "names": {
+    "en-GB": "Turkmenistan",
+    "fr-CA": "Turkménistan",
+    "zh-Hans": "土库曼斯坦",
+    "zh-HK": "土庫曼"
+   },
+   "facts": {
+    "capital": "Ashgabat"
+   }
+  },
+  {
+   "iso3": "TUR",
+   "names": {
+    "en-GB": "Türkiye",
+    "fr-CA": "Turquie",
+    "zh-Hans": "土耳其",
+    "zh-HK": "土耳其"
+   },
+   "facts": {
+    "capital": "Ankara"
+   }
+  },
+  {
+   "iso3": "ARE",
+   "names": {
+    "en-GB": "United Arab Emirates",
+    "fr-CA": "Émirats arabes unis",
+    "zh-Hans": "阿拉伯联合酋长国",
+    "zh-HK": "阿拉伯聯合酋長國"
+   },
+   "facts": {
+    "capital": "Abu Dhabi"
+   }
+  },
+  {
+   "iso3": "UZB",
+   "names": {
+    "en-GB": "Uzbekistan",
+    "fr-CA": "Ouzbékistan",
+    "zh-Hans": "乌兹别克斯坦",
+    "zh-HK": "烏茲別克"
+   },
+   "facts": {
+    "capital": "Tashkent"
+   }
+  },
+  {
+   "iso3": "VNM",
+   "names": {
+    "en-GB": "Vietnam",
+    "fr-CA": "Vietnam",
+    "zh-Hans": "越南",
+    "zh-HK": "越南"
+   },
+   "facts": {
+    "capital": "Hanoi"
+   }
+  },
+  {
+   "iso3": "YEM",
+   "names": {
+    "en-GB": "Yemen",
+    "fr-CA": "Yémen",
+    "zh-Hans": "也门",
+    "zh-HK": "也門"
+   },
+   "facts": {
+    "capital": "Sana'a"
+   }
+  }
+ ]
+}

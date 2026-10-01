@@ -1,0 +1,486 @@
+{
+ "id": "europe-countries",
+ "title": {
+  "en-GB": "Countries of Europe",
+  "fr-CA": "Les pays d'Europe",
+  "zh-Hans": "欧洲国家",
+  "zh-HK": "歐洲國家"
+ },
+ "type": "countries",
+ "view": {
+  "lon0": -26,
+  "lat0": 34,
+  "lon1": 46,
+  "lat1": 72
+ },
+ "countries": [
+  {
+   "iso3": "ALB",
+   "names": {
+    "en-GB": "Albania",
+    "fr-CA": "Albanie",
+    "zh-Hans": "阿尔巴尼亚",
+    "zh-HK": "阿爾巴尼亞"
+   },
+   "facts": {
+    "capital": "Tirana"
+   }
+  },
+  {
+   "iso3": "AUT",
+   "names": {
+    "en-GB": "Austria",
+    "fr-CA": "Autriche",
+    "zh-Hans": "奥地利",
+    "zh-HK": "奧地利"
+   },
+   "facts": {
+    "capital": "Vienna"
+   }
+  },
+  {
+   "iso3": "BLR",
+   "names": {
+    "en-GB": "Belarus",
+    "fr-CA": "Bélarus",
+    "zh-Hans": "白俄罗斯",
+    "zh-HK": "白俄羅斯"
+   },
+   "facts": {
+    "capital": "Minsk"
+   }
+  },
+  {
+   "iso3": "BEL",
+   "names": {
+    "en-GB": "Belgium",
+    "fr-CA": "Belgique",
+    "zh-Hans": "比利时",
+    "zh-HK": "比利時"
+   },
+   "facts": {
+    "capital": "Brussels"
+   }
+  },
+  {
+   "iso3": "BIH",
+   "names": {
+    "en-GB": "Bosnia & Herzegovina",
+    "fr-CA": "Bosnie-Herzégovine",
+    "zh-Hans": "波斯尼亚和黑塞哥维那",
+    "zh-HK": "波斯尼亞和黑塞哥維那"
+   },
+   "facts": {
+    "capital": "Sarajevo"
+   }
+  },
+  {
+   "iso3": "BGR",
+   "names": {
+    "en-GB": "Bulgaria",
+    "fr-CA": "Bulgarie",
+    "zh-Hans": "保加利亚",
+    "zh-HK": "保加利亞"
+   },
+   "facts": {
+    "capital": "Sofia"
+   }
+  },
+  {
+   "iso3": "HRV",
+   "names": {
+    "en-GB": "Croatia",
+    "fr-CA": "Croatie",
+    "zh-Hans": "克罗地亚",
+    "zh-HK": "克羅地亞"
+   },
+   "facts": {
+    "capital": "Zagreb"
+   }
+  },
+  {
+   "iso3": "CYP",
+   "names": {
+    "en-GB": "Cyprus",
+    "fr-CA": "Chypre",
+    "zh-Hans": "塞浦路斯",
+    "zh-HK": "塞浦路斯"
+   },
+   "facts": {
+    "capital": "Nicosia"
+   }
+  },
+  {
+   "iso3": "CZE",
+   "names": {
+    "en-GB": "Czechia",
+    "fr-CA": "Tchéquie",
+    "zh-Hans": "捷克",
+    "zh-HK": "捷克"
+   },
+   "facts": {
+    "capital": "Prague"
+   }
+  },
+  {
+   "iso3": "DNK",
+   "names": {
+    "en-GB": "Denmark",
+    "fr-CA": "Danemark",
+    "zh-Hans": "丹麦",
+    "zh-HK": "丹麥"
+   },
+   "facts": {
+    "capital": "Copenhagen"
+   }
+  },
+  {
+   "iso3": "EST",
+   "names": {
+    "en-GB": "Estonia",
+    "fr-CA": "Estonie",
+    "zh-Hans": "爱沙尼亚",
+    "zh-HK": "愛沙尼亞"
+   },
+   "facts": {
+    "capital": "Tallinn"
+   }
+  },
+  {
+   "iso3": "FIN",
+   "names": {
+    "en-GB": "Finland",
+    "fr-CA": "Finlande",
+    "zh-Hans": "芬兰",
+    "zh-HK": "芬蘭"
+   },
+   "facts": {
+    "capital": "Helsinki"
+   }
+  },
+  {
+   "iso3": "FRA",
+   "names": {
+    "en-GB": "France",
+    "fr-CA": "France",
+    "zh-Hans": "法国",
+    "zh-HK": "法國"
+   },
+   "facts": {
+    "capital": "Paris"
+   }
+  },
+  {
+   "iso3": "DEU",
+   "names": {
+    "en-GB": "Germany",
+    "fr-CA": "Allemagne",
+    "zh-Hans": "德国",
+    "zh-HK": "德國"
+   },
+   "facts": {
+    "capital": "Berlin"
+   }
+  },
+  {
+   "iso3": "GRC",
+   "names": {
+    "en-GB": "Greece",
+    "fr-CA": "Grèce",
+    "zh-Hans": "希腊",
+    "zh-HK": "希臘"
+   },
+   "facts": {
+    "capital": "Athens"
+   }
+  },
+  {
+   "iso3": "HUN",
+   "names": {
+    "en-GB": "Hungary",
+    "fr-CA": "Hongrie",
+    "zh-Hans": "匈牙利",
+    "zh-HK": "匈牙利"
+   },
+   "facts": {
+    "capital": "Budapest"
+   }
+  },
+  {
+   "iso3": "ISL",
+   "names": {
+    "en-GB": "Iceland",
+    "fr-CA": "Islande",
+    "zh-Hans": "冰岛",
+    "zh-HK": "冰島"
+   },
+   "facts": {
+    "capital": "Reykjavik"
+   }
+  },
+  {
+   "iso3": "IRL",
+   "names": {
+    "en-GB": "Ireland",
+    "fr-CA": "Irlande",
+    "zh-Hans": "爱尔兰",
+    "zh-HK": "愛爾蘭"
+   },
+   "facts": {
+    "capital": "Dublin"
+   }
+  },
+  {
+   "iso3": "ITA",
+   "names": {
+    "en-GB": "Italy",
+    "fr-CA": "Italie",
+    "zh-Hans": "意大利",
+    "zh-HK": "意大利"
+   },
+   "facts": {
+    "capital": "Rome"
+   }
+  },
+  {
+   "iso3": "LVA",
+   "names": {
+    "en-GB": "Latvia",
+    "fr-CA": "Lettonie",
+    "zh-Hans": "拉脱维亚",
+    "zh-HK": "拉脫維亞"
+   },
+   "facts": {
+    "capital": "Riga"
+   }
+  },
+  {
+   "iso3": "LTU",
+   "names": {
+    "en-GB": "Lithuania",
+    "fr-CA": "Lituanie",
+    "zh-Hans": "立陶宛",
+    "zh-HK": "立陶宛"
+   },
+   "facts": {
+    "capital": "Vilnius"
+   }
+  },
+  {
+   "iso3": "LUX",
+   "names": {
+    "en-GB": "Luxembourg",
+    "fr-CA": "Luxembourg",
+    "zh-Hans": "卢森堡",
+    "zh-HK": "盧森堡"
+   },
+   "facts": {
+    "capital": "Luxembourg"
+   }
+  },
+  {
+   "iso3": "MDA",
+   "names": {
+    "en-GB": "Moldova",
+    "fr-CA": "Moldavie",
+    "zh-Hans": "摩尔多瓦",
+    "zh-HK": "摩爾多瓦"
+   },
+   "facts": {
+    "capital": "Chișinău"
+   }
+  },
+  {
+   "iso3": "MNE",
+   "names": {
+    "en-GB": "Montenegro",
+    "fr-CA": "Monténégro",
+    "zh-Hans": "黑山",
+    "zh-HK": "黑山"
+   },
+   "facts": {
+    "capital": "Podgorica"
+   }
+  },
+  {
+   "iso3": "NLD",
+   "names": {
+    "en-GB": "Netherlands",
+    "fr-CA": "Pays-Bas",
+    "zh-Hans": "荷兰",
+    "zh-HK": "荷蘭"
+   },
+   "facts": {
+    "capital": "Amsterdam"
+   }
+  },
+  {
+   "iso3": "MKD",
+   "names": {
+    "en-GB": "North Macedonia",
+    "fr-CA": "Macédoine du Nord",
+    "zh-Hans": "北马其顿",
+    "zh-HK": "北馬其頓"
+   },
+   "facts": {
+    "capital": "Skopje"
+   }
+  },
+  {
+   "iso3": "NOR",
+   "names": {
+    "en-GB": "Norway",
+    "fr-CA": "Norvège",
+    "zh-Hans": "挪威",
+    "zh-HK": "挪威"
+   },
+   "facts": {
+    "capital": "Oslo"
+   }
+  },
+  {
+   "iso3": "POL",
+   "names": {
+    "en-GB": "Poland",
+    "fr-CA": "Pologne",
+    "zh-Hans": "波兰",
+    "zh-HK": "波蘭"
+   },
+   "facts": {
+    "capital": "Warsaw"
+   }
+  },
+  {
+   "iso3": "PRT",
+   "names": {
+    "en-GB": "Portugal",
+    "fr-CA": "Portugal",
+    "zh-Hans": "葡萄牙",
+    "zh-HK": "葡萄牙"
+   },
+   "facts": {
+    "capital": "Lisbon"
+   }
+  },
+  {
+   "iso3": "ROU",
+   "names": {
+    "en-GB": "Romania",
+    "fr-CA": "Roumanie",
+    "zh-Hans": "罗马尼亚",
+    "zh-HK": "羅馬尼亞"
+   },
+   "facts": {
+    "capital": "Bucharest"
+   }
+  },
+  {
+   "iso3": "RUS",
+   "names": {
+    "en-GB": "Russia",
+    "fr-CA": "Russie",
+    "zh-Hans": "俄罗斯",
+    "zh-HK": "俄羅斯"
+   },
+   "facts": {
+    "capital": "Moscow"
+   }
+  },
+  {
+   "iso3": "SRB",
+   "names": {
+    "en-GB": "Serbia",
+    "fr-CA": "Serbie",
+    "zh-Hans": "塞尔维亚",
+    "zh-HK": "塞爾維亞"
+   },
+   "facts": {
+    "capital": "Belgrade"
+   }
+  },
+  {
+   "iso3": "SVK",
+   "names": {
+    "en-GB": "Slovakia",
+    "fr-CA": "Slovaquie",
+    "zh-Hans": "斯洛伐克",
+    "zh-HK": "斯洛伐克"
+   },
+   "facts": {
+    "capital": "Bratislava"
+   }
+  },
+  {
+   "iso3": "SVN",
+   "names": {
+    "en-GB": "Slovenia",
+    "fr-CA": "Slovénie",
+    "zh-Hans": "斯洛文尼亚",
+    "zh-HK": "斯洛文尼亞"
+   },
+   "facts": {
+    "capital": "Ljubljana"
+   }
+  },
+  {
+   "iso3": "ESP",
+   "names": {
+    "en-GB": "Spain",
+    "fr-CA": "Espagne",
+    "zh-Hans": "西班牙",
+    "zh-HK": "西班牙"
+   },
+   "facts": {
+    "capital": "Madrid"
+   }
+  },
+  {
+   "iso3": "SWE",
+   "names": {
+    "en-GB": "Sweden",
+    "fr-CA": "Suède",
+    "zh-Hans": "瑞典",
+    "zh-HK": "瑞典"
+   },
+   "facts": {
+    "capital": "Stockholm"
+   }
+  },
+  {
+   "iso3": "CHE",
+   "names": {
+    "en-GB": "Switzerland",
+    "fr-CA": "Suisse",
+    "zh-Hans": "瑞士",
+    "zh-HK": "瑞士"
+   },
+   "facts": {
+    "capital": "Bern"
+   }
+  },
+  {
+   "iso3": "UKR",
+   "names": {
+    "en-GB": "Ukraine",
+    "fr-CA": "Ukraine",
+    "zh-Hans": "乌克兰",
+    "zh-HK": "烏克蘭"
+   },
+   "facts": {
+    "capital": "Kyiv"
+   }
+  },
+  {
+   "iso3": "GBR",
+   "names": {
+    "en-GB": "United Kingdom",
+    "fr-CA": "Royaume-Uni",
+    "zh-Hans": "英国",
+    "zh-HK": "英國"
+   },
+   "facts": {
+    "capital": "London"
+   }
+  }
+ ]
+}
