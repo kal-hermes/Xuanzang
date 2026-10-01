@@ -179,6 +179,7 @@
     const c = country(iso3);
     if (!c) return; // country not part of this lesson; ignore
     map.reveal(iso3);
+    map.setCurrent(iso3);
     if (state.visited) state.visited.add(iso3);
     const li = document.querySelector(`#country-list li[data-iso3="${iso3}"]`);
     if (li) li.classList.add("visited");

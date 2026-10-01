@@ -110,9 +110,14 @@
       svg = svgEl;
       const defs = document.createElementNS(svg.namespaceURI, "defs");
       defs.innerHTML =
-        '<marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" ' +
+        '<marker id="arrowhead" viewBox="0 0 10 10" refX="10" refY="5" ' +
         'markerWidth="6" markerHeight="6" orient="auto-start-reverse">' +
         '<path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/>' +
+        '</marker>' +
+        '<marker id="arrowhead-point" viewBox="0 0 10 10" refX="10" refY="5" ' +
+        'markerUnits="userSpaceOnUse" markerWidth="26" markerHeight="26" ' +
+        'orient="auto-start-reverse">' +
+        '<path d="M 0 0 L 10 5 L 0 10 z" fill="#ffd24a" stroke="#222" stroke-width="0.4"/>' +
         "</marker>";
       svg.appendChild(defs);
     },
@@ -326,6 +331,17 @@
       if (el) el.classList.add("revealed");
     },
 
+    setCurrent(iso3) {
+      if (!group) return;
+      group.querySelectorAll(".current").forEach((el) => el.classList.remove("current"));
+      const el = this.element(iso3);
+      if (el) el.classList.add("current");
+    },
+
+    clearCurrent() {
+      if (group) group.querySelectorAll(".current").forEach((el) => el.classList.remove("current"));
+    },
+
     clearRevealed() {
       if (group) group.querySelectorAll(".revealed").forEach((el) => el.classList.remove("revealed"));
     },
@@ -433,9 +449,24 @@
         }
       }
       const p = document.createElementNS(svg.namespaceURI, "path");
-      p.setAttribute("d", `M ${start[0].toFixed(1)} ${start[1].toFixed(1)} L ${target[0].toFixed(1)} ${target[1].toFixed(1)}`);
+      // refX=10 anchors the marker TIP at the line end; end the line at
+      // the main polygon's bbox edge (not the centroid) so the head
+      // points AT the country instead of covering it / overshooting
+      // micro-countries (Guernsey-class)
+      let end = target;
+      if (bbox) {
+        const [[x0, y0], [x1, y1]] = bbox;
+        const dx = target[0] - start[0], dy = target[1] - start[1];
+        const len = Math.hypot(dx, dy) || 1;
+        const ux = dx / len, uy = dy / len;
+        for (let s = 2; s < 400; s += 2) {
+          const px = target[0] - ux * s, py = target[1] - uy * s;
+          if (px < x0 || px > x1 || py < y0 || py > y1) { end = [px, py]; break; }
+        }
+      }
+      p.setAttribute("d", `M ${start[0].toFixed(1)} ${start[1].toFixed(1)} L ${end[0].toFixed(1)} ${end[1].toFixed(1)}`);
       p.setAttribute("class", "arrow point-arrow");
-      p.setAttribute("marker-end", "url(#arrowhead)");
+      p.setAttribute("marker-end", "url(#arrowhead-point)");
       overlay.appendChild(p);
       if (animate) {
         const len = p.getTotalLength();

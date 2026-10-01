@@ -87,6 +87,7 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 #map .country:hover { fill: #3a5270; }
 
 #map .country.revealed { fill: #35618a; }
+#map .country.current { fill: #4d86c4; }
 
 #map .country.correct { fill: var(--good); }
 #map .country.wrong { fill: var(--bad); }
