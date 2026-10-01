@@ -469,12 +469,13 @@
       p.setAttribute("marker-end", "url(#arrowhead-point)");
       overlay.appendChild(p);
       // The head's TIP is anchored at the line end (refX=10) and the
-      // triangle tapers backward from it; a shaft drawn the full
-      // length pokes out the head's sides near the point (visible at
-      // animation end). Stop the dash ~5px short of the tip, where the
-      // head is already wider than the 9px shaft.
+      // triangle tapers backward from it. Marker: 26px long, base
+      // half-width 13px => half-width at s px behind the tip is s/2;
+      // the shaft (9px wide, half 4.5) is only covered where s >= 9.
+      // So the drawn dash must end >= 9px before the tip; use 12px
+      // for anti-aliasing margin.
       const len = p.getTotalLength();
-      const GAP = 5;
+      const GAP = 12;
       p.style.strokeDasharray = len;
       if (animate) {
         p.style.strokeDashoffset = len;
