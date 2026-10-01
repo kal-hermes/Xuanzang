@@ -4,7 +4,8 @@
   "en-GB": "Countries of South America",
   "fr-CA": "Les pays d'Amérique du Sud",
   "zh-Hans": "南美洲国家",
-  "zh-HK": "南美洲國家"
+  "zh-HK": "南美洲國家",
+  "ja": "南アメリカの国々"
  },
  "type": "countries",
  "view": {
@@ -20,7 +21,8 @@
     "en-GB": "Argentina",
     "fr-CA": "Argentine",
     "zh-Hans": "阿根廷",
-    "zh-HK": "阿根廷"
+    "zh-HK": "阿根廷",
+    "ja": "アルゼンチン"
    },
    "facts": {
     "capital": "Buenos Aires"
@@ -32,7 +34,8 @@
     "en-GB": "Bolivia",
     "fr-CA": "Bolivie",
     "zh-Hans": "玻利维亚",
-    "zh-HK": "玻利維亞"
+    "zh-HK": "玻利維亞",
+    "ja": "ボリビア"
    },
    "facts": {
     "capital": "Sucre"
@@ -44,7 +47,8 @@
     "en-GB": "Brazil",
     "fr-CA": "Brésil",
     "zh-Hans": "巴西",
-    "zh-HK": "巴西"
+    "zh-HK": "巴西",
+    "ja": "ブラジル"
    },
    "facts": {
     "capital": "Brasília"
@@ -56,7 +60,8 @@
     "en-GB": "Chile",
     "fr-CA": "Chili",
     "zh-Hans": "智利",
-    "zh-HK": "智利"
+    "zh-HK": "智利",
+    "ja": "チリ"
    },
    "facts": {
     "capital": "Santiago"
@@ -68,7 +73,8 @@
     "en-GB": "Colombia",
     "fr-CA": "Colombie",
     "zh-Hans": "哥伦比亚",
-    "zh-HK": "哥倫比亞"
+    "zh-HK": "哥倫比亞",
+    "ja": "コロンビア"
    },
    "facts": {
     "capital": "Bogotá"
@@ -80,7 +86,8 @@
     "en-GB": "Ecuador",
     "fr-CA": "Équateur",
     "zh-Hans": "厄瓜多尔",
-    "zh-HK": "厄瓜多爾"
+    "zh-HK": "厄瓜多爾",
+    "ja": "エクアドル"
    },
    "facts": {
     "capital": "Quito"
@@ -92,7 +99,8 @@
     "en-GB": "Falkland Islands",
     "fr-CA": "îles Malouines",
     "zh-Hans": "福克兰群岛",
-    "zh-HK": "福克蘭群島"
+    "zh-HK": "福克蘭群島",
+    "ja": "フォークランド諸島"
    },
    "facts": {
     "capital": "Stanley"
@@ -104,7 +112,8 @@
     "en-GB": "Guyana",
     "fr-CA": "Guyana",
     "zh-Hans": "圭亚那",
-    "zh-HK": "圭亞那"
+    "zh-HK": "圭亞那",
+    "ja": "ガイアナ"
    },
    "facts": {
     "capital": "Georgetown"
@@ -116,7 +125,8 @@
     "en-GB": "Paraguay",
     "fr-CA": "Paraguay",
     "zh-Hans": "巴拉圭",
-    "zh-HK": "巴拉圭"
+    "zh-HK": "巴拉圭",
+    "ja": "パラグアイ"
    },
    "facts": {
     "capital": "Asunción"
@@ -128,7 +138,8 @@
     "en-GB": "Peru",
     "fr-CA": "Pérou",
     "zh-Hans": "秘鲁",
-    "zh-HK": "秘魯"
+    "zh-HK": "秘魯",
+    "ja": "ペルー"
    },
    "facts": {
     "capital": "Lima"
@@ -140,7 +151,8 @@
     "en-GB": "Suriname",
     "fr-CA": "Suriname",
     "zh-Hans": "苏里南",
-    "zh-HK": "蘇里南"
+    "zh-HK": "蘇里南",
+    "ja": "スリナム"
    },
    "facts": {
     "capital": "Paramaribo"
@@ -152,7 +164,8 @@
     "en-GB": "Uruguay",
     "fr-CA": "Uruguay",
     "zh-Hans": "乌拉圭",
-    "zh-HK": "烏拉圭"
+    "zh-HK": "烏拉圭",
+    "ja": "ウルグアイ"
    },
    "facts": {
     "capital": "Montevideo"
@@ -164,7 +177,8 @@
     "en-GB": "Venezuela",
     "fr-CA": "Vénézuéla",
     "zh-Hans": "委内瑞拉",
-    "zh-HK": "委內瑞拉"
+    "zh-HK": "委內瑞拉",
+    "ja": "ベネズエラ"
    },
    "facts": {
     "capital": "Caracas"

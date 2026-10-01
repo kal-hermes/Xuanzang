@@ -4,7 +4,8 @@
   "en-GB": "Countries of Asia",
   "fr-CA": "Les pays d'Asie",
   "zh-Hans": "亚洲国家",
-  "zh-HK": "亞洲國家"
+  "zh-HK": "亞洲國家",
+  "ja": "アジアの国々"
  },
  "type": "countries",
  "view": {
@@ -20,7 +21,8 @@
     "en-GB": "Afghanistan",
     "fr-CA": "Afghanistan",
     "zh-Hans": "阿富汗",
-    "zh-HK": "阿富汗"
+    "zh-HK": "阿富汗",
+    "ja": "アフガニスタン"
    },
    "facts": {
     "capital": "Kabul"
@@ -32,7 +34,8 @@
     "en-GB": "Armenia",
     "fr-CA": "Arménie",
     "zh-Hans": "亚美尼亚",
-    "zh-HK": "亞美尼亞"
+    "zh-HK": "亞美尼亞",
+    "ja": "アルメニア"
    },
    "facts": {
     "capital": "Yerevan"
@@ -44,7 +47,8 @@
     "en-GB": "Azerbaijan",
     "fr-CA": "Azerbaïdjan",
     "zh-Hans": "阿塞拜疆",
-    "zh-HK": "亞塞拜疆"
+    "zh-HK": "亞塞拜疆",
+    "ja": "アゼルバイジャン"
    },
    "facts": {
     "capital": "Baku"
@@ -56,7 +60,8 @@
     "en-GB": "Bahrain",
     "fr-CA": "Bahreïn",
     "zh-Hans": "巴林",
-    "zh-HK": "巴林"
+    "zh-HK": "巴林",
+    "ja": "バーレーン"
    },
    "facts": {
     "capital": "Manama"
@@ -68,7 +73,8 @@
     "en-GB": "Bangladesh",
     "fr-CA": "Bangladesh",
     "zh-Hans": "孟加拉国",
-    "zh-HK": "孟加拉"
+    "zh-HK": "孟加拉",
+    "ja": "バングラデシュ"
    },
    "facts": {
     "capital": "Dhaka"
@@ -80,7 +86,8 @@
     "en-GB": "Bhutan",
     "fr-CA": "Bhoutan",
     "zh-Hans": "不丹",
-    "zh-HK": "不丹"
+    "zh-HK": "不丹",
+    "ja": "ブータン"
    },
    "facts": {
     "capital": "Thimphu"
@@ -92,7 +99,8 @@
     "en-GB": "Brunei",
     "fr-CA": "Brunéi",
     "zh-Hans": "文莱",
-    "zh-HK": "汶萊"
+    "zh-HK": "汶萊",
+    "ja": "ブルネイ"
    },
    "facts": {
     "capital": "Bandar Seri Begawan"
@@ -104,7 +112,8 @@
     "en-GB": "Cambodia",
     "fr-CA": "Cambodge",
     "zh-Hans": "柬埔寨",
-    "zh-HK": "柬埔寨"
+    "zh-HK": "柬埔寨",
+    "ja": "カンボジア"
    },
    "facts": {
     "capital": "Phnom Penh"
@@ -116,7 +125,8 @@
     "en-GB": "China",
     "fr-CA": "Chine",
     "zh-Hans": "中国",
-    "zh-HK": "中國"
+    "zh-HK": "中國",
+    "ja": "中国"
    },
    "facts": {
     "capital": "Beijing"
@@ -128,7 +138,8 @@
     "en-GB": "Georgia",
     "fr-CA": "Géorgie",
     "zh-Hans": "格鲁吉亚",
-    "zh-HK": "格魯吉亞"
+    "zh-HK": "格魯吉亞",
+    "ja": "ジョージア"
    },
    "facts": {
     "capital": "Tbilisi"
@@ -140,7 +151,8 @@
     "en-GB": "Hong Kong SAR China",
     "fr-CA": "R.A.S. chinoise de Hong Kong",
     "zh-Hans": "中国香港特别行政区",
-    "zh-HK": "中國香港特別行政區"
+    "zh-HK": "中國香港特別行政區",
+    "ja": "中華人民共和国香港特別行政区"
    },
    "facts": {
     "capital": "City of Victoria"
@@ -152,7 +164,8 @@
     "en-GB": "India",
     "fr-CA": "Inde",
     "zh-Hans": "印度",
-    "zh-HK": "印度"
+    "zh-HK": "印度",
+    "ja": "インド"
    },
    "facts": {
     "capital": "New Delhi"
@@ -164,7 +177,8 @@
     "en-GB": "Indonesia",
     "fr-CA": "Indonésie",
     "zh-Hans": "印度尼西亚",
-    "zh-HK": "印尼"
+    "zh-HK": "印尼",
+    "ja": "インドネシア"
    },
    "facts": {
     "capital": "Jakarta"
@@ -176,7 +190,8 @@
     "en-GB": "Iran",
     "fr-CA": "Iran",
     "zh-Hans": "伊朗",
-    "zh-HK": "伊朗"
+    "zh-HK": "伊朗",
+    "ja": "イラン"
    },
    "facts": {
     "capital": "Tehran"
@@ -188,7 +203,8 @@
     "en-GB": "Iraq",
     "fr-CA": "Irak",
     "zh-Hans": "伊拉克",
-    "zh-HK": "伊拉克"
+    "zh-HK": "伊拉克",
+    "ja": "イラク"
    },
    "facts": {
     "capital": "Baghdad"
@@ -200,7 +216,8 @@
     "en-GB": "Israel",
     "fr-CA": "Israël",
     "zh-Hans": "以色列",
-    "zh-HK": "以色列"
+    "zh-HK": "以色列",
+    "ja": "イスラエル"
    },
    "facts": {
     "capital": "Jerusalem"
@@ -212,7 +229,8 @@
     "en-GB": "Japan",
     "fr-CA": "Japon",
     "zh-Hans": "日本",
-    "zh-HK": "日本"
+    "zh-HK": "日本",
+    "ja": "日本"
    },
    "facts": {
     "capital": "Tokyo"
@@ -224,7 +242,8 @@
     "en-GB": "Jordan",
     "fr-CA": "Jordanie",
     "zh-Hans": "约旦",
-    "zh-HK": "約旦"
+    "zh-HK": "約旦",
+    "ja": "ヨルダン"
    },
    "facts": {
     "capital": "Amman"
@@ -236,7 +255,8 @@
     "en-GB": "Kazakhstan",
     "fr-CA": "Kazakhstan",
     "zh-Hans": "哈萨克斯坦",
-    "zh-HK": "哈薩克"
+    "zh-HK": "哈薩克",
+    "ja": "カザフスタン"
    },
    "facts": {
     "capital": "Astana"
@@ -248,7 +268,8 @@
     "en-GB": "Kuwait",
     "fr-CA": "Koweït",
     "zh-Hans": "科威特",
-    "zh-HK": "科威特"
+    "zh-HK": "科威特",
+    "ja": "クウェート"
    },
    "facts": {
     "capital": "Kuwait City"
@@ -260,7 +281,8 @@
     "en-GB": "Kyrgyzstan",
     "fr-CA": "Kirghizistan",
     "zh-Hans": "吉尔吉斯斯坦",
-    "zh-HK": "吉爾吉斯"
+    "zh-HK": "吉爾吉斯",
+    "ja": "キルギス"
    },
    "facts": {
     "capital": "Bishkek"
@@ -272,7 +294,8 @@
     "en-GB": "Laos",
     "fr-CA": "Laos",
     "zh-Hans": "老挝",
-    "zh-HK": "老撾"
+    "zh-HK": "老撾",
+    "ja": "ラオス"
    },
    "facts": {
     "capital": "Vientiane"
@@ -284,7 +307,8 @@
     "en-GB": "Lebanon",
     "fr-CA": "Liban",
     "zh-Hans": "黎巴嫩",
-    "zh-HK": "黎巴嫩"
+    "zh-HK": "黎巴嫩",
+    "ja": "レバノン"
    },
    "facts": {
     "capital": "Beirut"
@@ -296,7 +320,8 @@
     "en-GB": "Macao SAR China",
     "fr-CA": "R.A.S. chinoise de Macao",
     "zh-Hans": "中国澳门特别行政区",
-    "zh-HK": "中國澳門特別行政區"
+    "zh-HK": "中國澳門特別行政區",
+    "ja": "中華人民共和国マカオ特別行政区"
    },
    "facts": {}
   },
@@ -306,7 +331,8 @@
     "en-GB": "Malaysia",
     "fr-CA": "Malaisie",
     "zh-Hans": "马来西亚",
-    "zh-HK": "馬來西亞"
+    "zh-HK": "馬來西亞",
+    "ja": "マレーシア"
    },
    "facts": {
     "capital": "Kuala Lumpur"
@@ -318,7 +344,8 @@
     "en-GB": "Maldives",
     "fr-CA": "Maldives",
     "zh-Hans": "马尔代夫",
-    "zh-HK": "馬爾代夫"
+    "zh-HK": "馬爾代夫",
+    "ja": "モルディブ"
    },
    "facts": {
     "capital": "Malé"
@@ -330,7 +357,8 @@
     "en-GB": "Mongolia",
     "fr-CA": "Mongolie",
     "zh-Hans": "蒙古",
-    "zh-HK": "蒙古"
+    "zh-HK": "蒙古",
+    "ja": "モンゴル"
    },
    "facts": {
     "capital": "Ulan Bator"
@@ -342,7 +370,8 @@
     "en-GB": "Myanmar (Burma)",
     "fr-CA": "Myanmar",
     "zh-Hans": "缅甸",
-    "zh-HK": "緬甸"
+    "zh-HK": "緬甸",
+    "ja": "ミャンマー (ビルマ)"
    },
    "facts": {
     "capital": "Naypyidaw"
@@ -354,7 +383,8 @@
     "en-GB": "Nepal",
     "fr-CA": "Népal",
     "zh-Hans": "尼泊尔",
-    "zh-HK": "尼泊爾"
+    "zh-HK": "尼泊爾",
+    "ja": "ネパール"
    },
    "facts": {
     "capital": "Kathmandu"
@@ -366,7 +396,8 @@
     "en-GB": "North Korea",
     "fr-CA": "Corée du Nord",
     "zh-Hans": "朝鲜",
-    "zh-HK": "北韓"
+    "zh-HK": "北韓",
+    "ja": "北朝鮮"
    },
    "facts": {
     "capital": "Pyongyang"
@@ -378,7 +409,8 @@
     "en-GB": "Oman",
     "fr-CA": "Oman",
     "zh-Hans": "阿曼",
-    "zh-HK": "阿曼"
+    "zh-HK": "阿曼",
+    "ja": "オマーン"
    },
    "facts": {
     "capital": "Muscat"
@@ -390,7 +422,8 @@
     "en-GB": "Pakistan",
     "fr-CA": "Pakistan",
     "zh-Hans": "巴基斯坦",
-    "zh-HK": "巴基斯坦"
+    "zh-HK": "巴基斯坦",
+    "ja": "パキスタン"
    },
    "facts": {
     "capital": "Islamabad"
@@ -402,7 +435,8 @@
     "en-GB": "Palestinian Territories",
     "fr-CA": "Territoires palestiniens",
     "zh-Hans": "巴勒斯坦领土",
-    "zh-HK": "巴勒斯坦領土"
+    "zh-HK": "巴勒斯坦領土",
+    "ja": "パレスチナ自治区"
    },
    "facts": {
     "capital": "Ramallah"
@@ -414,7 +448,8 @@
     "en-GB": "Philippines",
     "fr-CA": "Philippines",
     "zh-Hans": "菲律宾",
-    "zh-HK": "菲律賓"
+    "zh-HK": "菲律賓",
+    "ja": "フィリピン"
    },
    "facts": {
     "capital": "Manila"
@@ -426,7 +461,8 @@
     "en-GB": "Qatar",
     "fr-CA": "Qatar",
     "zh-Hans": "卡塔尔",
-    "zh-HK": "卡塔爾"
+    "zh-HK": "卡塔爾",
+    "ja": "カタール"
    },
    "facts": {
     "capital": "Doha"
@@ -438,7 +474,8 @@
     "en-GB": "Saudi Arabia",
     "fr-CA": "Arabie saoudite",
     "zh-Hans": "沙特阿拉伯",
-    "zh-HK": "沙地阿拉伯"
+    "zh-HK": "沙地阿拉伯",
+    "ja": "サウジアラビア"
    },
    "facts": {
     "capital": "Riyadh"
@@ -450,7 +487,8 @@
     "en-GB": "Singapore",
     "fr-CA": "Singapour",
     "zh-Hans": "新加坡",
-    "zh-HK": "新加坡"
+    "zh-HK": "新加坡",
+    "ja": "シンガポール"
    },
    "facts": {
     "capital": "Singapore"
@@ -462,7 +500,8 @@
     "en-GB": "South Korea",
     "fr-CA": "Corée du Sud",
     "zh-Hans": "韩国",
-    "zh-HK": "南韓"
+    "zh-HK": "南韓",
+    "ja": "韓国"
    },
    "facts": {
     "capital": "Seoul"
@@ -474,7 +513,8 @@
     "en-GB": "Sri Lanka",
     "fr-CA": "Sri Lanka",
     "zh-Hans": "斯里兰卡",
-    "zh-HK": "斯里蘭卡"
+    "zh-HK": "斯里蘭卡",
+    "ja": "スリランカ"
    },
    "facts": {
     "capital": "Colombo"
@@ -486,7 +526,8 @@
     "en-GB": "Syria",
     "fr-CA": "Syrie",
     "zh-Hans": "叙利亚",
-    "zh-HK": "敘利亞"
+    "zh-HK": "敘利亞",
+    "ja": "シリア"
    },
    "facts": {
     "capital": "Damascus"
@@ -498,7 +539,8 @@
     "en-GB": "Taiwan",
     "fr-CA": "Taïwan",
     "zh-Hans": "台湾",
-    "zh-HK": "台灣"
+    "zh-HK": "台灣",
+    "ja": "台湾"
    },
    "facts": {
     "capital": "Taipei"
@@ -510,7 +552,8 @@
     "en-GB": "Tajikistan",
     "fr-CA": "Tadjikistan",
     "zh-Hans": "塔吉克斯坦",
-    "zh-HK": "塔吉克"
+    "zh-HK": "塔吉克",
+    "ja": "タジキスタン"
    },
    "facts": {
     "capital": "Dushanbe"
@@ -522,7 +565,8 @@
     "en-GB": "Thailand",
     "fr-CA": "Thaïlande",
     "zh-Hans": "泰国",
-    "zh-HK": "泰國"
+    "zh-HK": "泰國",
+    "ja": "タイ"
    },
    "facts": {
     "capital": "Bangkok"
@@ -534,7 +578,8 @@
     "en-GB": "Timor-Leste",
     "fr-CA": "Timor-Leste",
     "zh-Hans": "东帝汶",
-    "zh-HK": "東帝汶"
+    "zh-HK": "東帝汶",
+    "ja": "東ティモール"
    },
    "facts": {
     "capital": "Dili"
@@ -546,7 +591,8 @@
     "en-GB": "Turkmenistan",
     "fr-CA": "Turkménistan",
     "zh-Hans": "土库曼斯坦",
-    "zh-HK": "土庫曼"
+    "zh-HK": "土庫曼",
+    "ja": "トルクメニスタン"
    },
    "facts": {
     "capital": "Ashgabat"
@@ -558,7 +604,8 @@
     "en-GB": "Türkiye",
     "fr-CA": "Turquie",
     "zh-Hans": "土耳其",
-    "zh-HK": "土耳其"
+    "zh-HK": "土耳其",
+    "ja": "トルコ"
    },
    "facts": {
     "capital": "Ankara"
@@ -570,7 +617,8 @@
     "en-GB": "United Arab Emirates",
     "fr-CA": "Émirats arabes unis",
     "zh-Hans": "阿拉伯联合酋长国",
-    "zh-HK": "阿拉伯聯合酋長國"
+    "zh-HK": "阿拉伯聯合酋長國",
+    "ja": "アラブ首長国連邦"
    },
    "facts": {
     "capital": "Abu Dhabi"
@@ -582,7 +630,8 @@
     "en-GB": "Uzbekistan",
     "fr-CA": "Ouzbékistan",
     "zh-Hans": "乌兹别克斯坦",
-    "zh-HK": "烏茲別克"
+    "zh-HK": "烏茲別克",
+    "ja": "ウズベキスタン"
    },
    "facts": {
     "capital": "Tashkent"
@@ -594,7 +643,8 @@
     "en-GB": "Vietnam",
     "fr-CA": "Vietnam",
     "zh-Hans": "越南",
-    "zh-HK": "越南"
+    "zh-HK": "越南",
+    "ja": "ベトナム"
    },
    "facts": {
     "capital": "Hanoi"
@@ -606,7 +656,8 @@
     "en-GB": "Yemen",
     "fr-CA": "Yémen",
     "zh-Hans": "也门",
-    "zh-HK": "也門"
+    "zh-HK": "也門",
+    "ja": "イエメン"
    },
    "facts": {
     "capital": "Sana'a"

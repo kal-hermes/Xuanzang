@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 topo = json.loads((ROOT / "geo/countries-10m.json").read_text())
 topo_iso3 = {g["properties"]["iso3"] for g in topo["objects"]["countries"]["geometries"]}
-LOCALES = ["en-GB", "fr-CA", "zh-Hans", "zh-HK"]
+LOCALES = ["en-GB", "fr-CA", "zh-Hans", "zh-HK", "ja"]
 
 fail = 0
 for f in sorted((ROOT / "lessons/examples").glob("*-countries.json")):

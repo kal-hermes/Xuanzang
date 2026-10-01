@@ -4,7 +4,8 @@
   "en-GB": "Countries of North America",
   "fr-CA": "Les pays d'Amérique du Nord",
   "zh-Hans": "北美洲国家",
-  "zh-HK": "北美洲國家"
+  "zh-HK": "北美洲國家",
+  "ja": "北アメリカの国々"
  },
  "type": "countries",
  "view": {
@@ -20,7 +21,8 @@
     "en-GB": "Anguilla",
     "fr-CA": "Anguilla",
     "zh-Hans": "安圭拉",
-    "zh-HK": "安奎拉"
+    "zh-HK": "安奎拉",
+    "ja": "アンギラ"
    },
    "facts": {
     "capital": "The Valley"
@@ -32,7 +34,8 @@
     "en-GB": "Antigua & Barbuda",
     "fr-CA": "Antigua-et-Barbuda",
     "zh-Hans": "安提瓜和巴布达",
-    "zh-HK": "安提瓜和巴布達"
+    "zh-HK": "安提瓜和巴布達",
+    "ja": "アンティグア・バーブーダ"
    },
    "facts": {
     "capital": "Saint John's"
@@ -44,7 +47,8 @@
     "en-GB": "Aruba",
     "fr-CA": "Aruba",
     "zh-Hans": "阿鲁巴",
-    "zh-HK": "阿魯巴"
+    "zh-HK": "阿魯巴",
+    "ja": "アルバ"
    },
    "facts": {
     "capital": "Oranjestad"
@@ -56,7 +60,8 @@
     "en-GB": "Bahamas",
     "fr-CA": "Bahamas",
     "zh-Hans": "巴哈马",
-    "zh-HK": "巴哈馬"
+    "zh-HK": "巴哈馬",
+    "ja": "バハマ"
    },
    "facts": {
     "capital": "Nassau"
@@ -68,7 +73,8 @@
     "en-GB": "Barbados",
     "fr-CA": "Barbade",
     "zh-Hans": "巴巴多斯",
-    "zh-HK": "巴巴多斯"
+    "zh-HK": "巴巴多斯",
+    "ja": "バルバドス"
    },
    "facts": {
     "capital": "Bridgetown"
@@ -80,7 +86,8 @@
     "en-GB": "Belize",
     "fr-CA": "Bélize",
     "zh-Hans": "伯利兹",
-    "zh-HK": "伯利茲"
+    "zh-HK": "伯利茲",
+    "ja": "ベリーズ"
    },
    "facts": {
     "capital": "Belmopan"
@@ -92,7 +99,8 @@
     "en-GB": "British Virgin Islands",
     "fr-CA": "îles Vierges britanniques",
     "zh-Hans": "英属维尔京群岛",
-    "zh-HK": "英屬維爾京群島"
+    "zh-HK": "英屬維爾京群島",
+    "ja": "英領ヴァージン諸島"
    },
    "facts": {
     "capital": "Road Town"
@@ -104,7 +112,8 @@
     "en-GB": "Cayman Islands",
     "fr-CA": "Îles Caïmans",
     "zh-Hans": "开曼群岛",
-    "zh-HK": "開曼群島"
+    "zh-HK": "開曼群島",
+    "ja": "ケイマン諸島"
    },
    "facts": {
     "capital": "George Town"
@@ -116,7 +125,8 @@
     "en-GB": "Costa Rica",
     "fr-CA": "Costa Rica",
     "zh-Hans": "哥斯达黎加",
-    "zh-HK": "哥斯達黎加"
+    "zh-HK": "哥斯達黎加",
+    "ja": "コスタリカ"
    },
    "facts": {
     "capital": "San José"
@@ -128,7 +138,8 @@
     "en-GB": "Cuba",
     "fr-CA": "Cuba",
     "zh-Hans": "古巴",
-    "zh-HK": "古巴"
+    "zh-HK": "古巴",
+    "ja": "キューバ"
    },
    "facts": {
     "capital": "Havana"
@@ -140,7 +151,8 @@
     "en-GB": "Curaçao",
     "fr-CA": "Curaçao",
     "zh-Hans": "库拉索",
-    "zh-HK": "庫拉索"
+    "zh-HK": "庫拉索",
+    "ja": "キュラソー"
    },
    "facts": {
     "capital": "Willemstad"
@@ -152,7 +164,8 @@
     "en-GB": "Dominica",
     "fr-CA": "Dominique",
     "zh-Hans": "多米尼克",
-    "zh-HK": "多米尼克"
+    "zh-HK": "多米尼克",
+    "ja": "ドミニカ国"
    },
    "facts": {
     "capital": "Roseau"
@@ -164,7 +177,8 @@
     "en-GB": "Dominican Republic",
     "fr-CA": "République dominicaine",
     "zh-Hans": "多米尼加共和国",
-    "zh-HK": "多米尼加共和國"
+    "zh-HK": "多米尼加共和國",
+    "ja": "ドミニカ共和国"
    },
    "facts": {
     "capital": "Santo Domingo"
@@ -176,7 +190,8 @@
     "en-GB": "El Salvador",
     "fr-CA": "Salvador",
     "zh-Hans": "萨尔瓦多",
-    "zh-HK": "薩爾瓦多"
+    "zh-HK": "薩爾瓦多",
+    "ja": "エルサルバドル"
    },
    "facts": {
     "capital": "San Salvador"
@@ -188,7 +203,8 @@
     "en-GB": "Grenada",
     "fr-CA": "Grenade",
     "zh-Hans": "格林纳达",
-    "zh-HK": "格林納達"
+    "zh-HK": "格林納達",
+    "ja": "グレナダ"
    },
    "facts": {
     "capital": "St. George's"
@@ -200,7 +216,8 @@
     "en-GB": "Guatemala",
     "fr-CA": "Guatemala",
     "zh-Hans": "危地马拉",
-    "zh-HK": "危地馬拉"
+    "zh-HK": "危地馬拉",
+    "ja": "グアテマラ"
    },
    "facts": {
     "capital": "Guatemala City"
@@ -212,7 +229,8 @@
     "en-GB": "Haiti",
     "fr-CA": "Haïti",
     "zh-Hans": "海地",
-    "zh-HK": "海地"
+    "zh-HK": "海地",
+    "ja": "ハイチ"
    },
    "facts": {
     "capital": "Port-au-Prince"
@@ -224,7 +242,8 @@
     "en-GB": "Honduras",
     "fr-CA": "Honduras",
     "zh-Hans": "洪都拉斯",
-    "zh-HK": "洪都拉斯"
+    "zh-HK": "洪都拉斯",
+    "ja": "ホンジュラス"
    },
    "facts": {
     "capital": "Tegucigalpa"
@@ -236,7 +255,8 @@
     "en-GB": "Jamaica",
     "fr-CA": "Jamaïque",
     "zh-Hans": "牙买加",
-    "zh-HK": "牙買加"
+    "zh-HK": "牙買加",
+    "ja": "ジャマイカ"
    },
    "facts": {
     "capital": "Kingston"
@@ -248,7 +268,8 @@
     "en-GB": "Montserrat",
     "fr-CA": "Montserrat",
     "zh-Hans": "蒙特塞拉特",
-    "zh-HK": "蒙特塞拉特"
+    "zh-HK": "蒙特塞拉特",
+    "ja": "モントセラト"
    },
    "facts": {
     "capital": "Plymouth"
@@ -260,7 +281,8 @@
     "en-GB": "Nicaragua",
     "fr-CA": "Nicaragua",
     "zh-Hans": "尼加拉瓜",
-    "zh-HK": "尼加拉瓜"
+    "zh-HK": "尼加拉瓜",
+    "ja": "ニカラグア"
    },
    "facts": {
     "capital": "Managua"
@@ -272,7 +294,8 @@
     "en-GB": "Panama",
     "fr-CA": "Panama",
     "zh-Hans": "巴拿马",
-    "zh-HK": "巴拿馬"
+    "zh-HK": "巴拿馬",
+    "ja": "パナマ"
    },
    "facts": {
     "capital": "Panama City"
@@ -284,7 +307,8 @@
     "en-GB": "Puerto Rico",
     "fr-CA": "Porto Rico",
     "zh-Hans": "波多黎各",
-    "zh-HK": "波多黎各"
+    "zh-HK": "波多黎各",
+    "ja": "プエルトリコ"
    },
    "facts": {
     "capital": "San Juan"
@@ -296,7 +320,8 @@
     "en-GB": "Sint Maarten",
     "fr-CA": "Saint-Martin (Pays-Bas)",
     "zh-Hans": "荷属圣马丁",
-    "zh-HK": "荷屬聖馬丁"
+    "zh-HK": "荷屬聖馬丁",
+    "ja": "シント・マールテン"
    },
    "facts": {
     "capital": "Philipsburg"
@@ -308,7 +333,8 @@
     "en-GB": "St. Barthélemy",
     "fr-CA": "Saint-Barthélemy",
     "zh-Hans": "圣巴泰勒米",
-    "zh-HK": "聖巴泰勒米"
+    "zh-HK": "聖巴泰勒米",
+    "ja": "サン・バルテルミー"
    },
    "facts": {
     "capital": "Gustavia"
@@ -320,7 +346,8 @@
     "en-GB": "St. Kitts & Nevis",
     "fr-CA": "Saint‑Kitts‑et‑Nevis",
     "zh-Hans": "圣基茨和尼维斯",
-    "zh-HK": "聖基茨和尼維斯"
+    "zh-HK": "聖基茨和尼維斯",
+    "ja": "セントクリストファー・ネーヴィス"
    },
    "facts": {
     "capital": "Basseterre"
@@ -332,7 +359,8 @@
     "en-GB": "St. Lucia",
     "fr-CA": "Sainte-Lucie",
     "zh-Hans": "圣卢西亚",
-    "zh-HK": "聖盧西亞"
+    "zh-HK": "聖盧西亞",
+    "ja": "セントルシア"
    },
    "facts": {
     "capital": "Castries"
@@ -344,7 +372,8 @@
     "en-GB": "St. Martin",
     "fr-CA": "Saint-Martin (France)",
     "zh-Hans": "法属圣马丁",
-    "zh-HK": "法屬聖馬丁"
+    "zh-HK": "法屬聖馬丁",
+    "ja": "サン・マルタン"
    },
    "facts": {
     "capital": "Marigot"
@@ -356,7 +385,8 @@
     "en-GB": "St. Vincent & Grenadines",
     "fr-CA": "Saint-Vincent-et-les Grenadines",
     "zh-Hans": "圣文森特和格林纳丁斯",
-    "zh-HK": "聖文森特和格林納丁斯"
+    "zh-HK": "聖文森特和格林納丁斯",
+    "ja": "セントビンセント及びグレナディーン諸島"
    },
    "facts": {
     "capital": "Kingstown"
@@ -368,7 +398,8 @@
     "en-GB": "Trinidad & Tobago",
     "fr-CA": "Trinité-et-Tobago",
     "zh-Hans": "特立尼达和多巴哥",
-    "zh-HK": "千里達和多巴哥"
+    "zh-HK": "千里達和多巴哥",
+    "ja": "トリニダード・トバゴ"
    },
    "facts": {
     "capital": "Port of Spain"
@@ -380,7 +411,8 @@
     "en-GB": "Turks & Caicos Islands",
     "fr-CA": "Îles Turques-et-Caïques",
     "zh-Hans": "特克斯和凯科斯群岛",
-    "zh-HK": "特克斯和凱科斯群島"
+    "zh-HK": "特克斯和凱科斯群島",
+    "ja": "タークス・カイコス諸島"
    },
    "facts": {
     "capital": "Cockburn Town"
@@ -392,7 +424,8 @@
     "en-GB": "U.S. Virgin Islands",
     "fr-CA": "îles Vierges américaines",
     "zh-Hans": "美属维尔京群岛",
-    "zh-HK": "美屬維爾京群島"
+    "zh-HK": "美屬維爾京群島",
+    "ja": "米領ヴァージン諸島"
    },
    "facts": {
     "capital": "Charlotte Amalie"

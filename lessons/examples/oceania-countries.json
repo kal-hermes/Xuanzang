@@ -4,7 +4,8 @@
   "en-GB": "Countries of Oceania",
   "fr-CA": "Les pays d'Océanie",
   "zh-Hans": "大洋洲国家",
-  "zh-HK": "大洋洲國家"
+  "zh-HK": "大洋洲國家",
+  "ja": "オセアニアの国々"
  },
  "type": "countries",
  "view": {
@@ -20,7 +21,8 @@
     "en-GB": "Australia",
     "fr-CA": "Australie",
     "zh-Hans": "澳大利亚",
-    "zh-HK": "澳洲"
+    "zh-HK": "澳洲",
+    "ja": "オーストラリア"
    },
    "facts": {
     "capital": "Canberra"
@@ -32,7 +34,8 @@
     "en-GB": "Fiji",
     "fr-CA": "Fidji",
     "zh-Hans": "斐济",
-    "zh-HK": "斐濟"
+    "zh-HK": "斐濟",
+    "ja": "フィジー"
    },
    "facts": {
     "capital": "Suva"
@@ -44,7 +47,8 @@
     "en-GB": "Guam",
     "fr-CA": "Guam",
     "zh-Hans": "关岛",
-    "zh-HK": "關島"
+    "zh-HK": "關島",
+    "ja": "グアム"
    },
    "facts": {
     "capital": "Hagåtña"
@@ -56,7 +60,8 @@
     "en-GB": "Kiribati",
     "fr-CA": "Kiribati",
     "zh-Hans": "基里巴斯",
-    "zh-HK": "吉里巴斯"
+    "zh-HK": "吉里巴斯",
+    "ja": "キリバス"
    },
    "facts": {
     "capital": "South Tarawa"
@@ -68,7 +73,8 @@
     "en-GB": "Marshall Islands",
     "fr-CA": "Îles Marshall",
     "zh-Hans": "马绍尔群岛",
-    "zh-HK": "馬紹爾群島"
+    "zh-HK": "馬紹爾群島",
+    "ja": "マーシャル諸島"
    },
    "facts": {
     "capital": "Majuro"
@@ -80,7 +86,8 @@
     "en-GB": "Micronesia",
     "fr-CA": "Micronésie",
     "zh-Hans": "密克罗尼西亚",
-    "zh-HK": "密克羅尼西亞"
+    "zh-HK": "密克羅尼西亞",
+    "ja": "ミクロネシア連邦"
    },
    "facts": {
     "capital": "Palikir"
@@ -92,7 +99,8 @@
     "en-GB": "Nauru",
     "fr-CA": "Nauru",
     "zh-Hans": "瑙鲁",
-    "zh-HK": "瑙魯"
+    "zh-HK": "瑙魯",
+    "ja": "ナウル"
    },
    "facts": {
     "capital": "Yaren"
@@ -104,7 +112,8 @@
     "en-GB": "New Caledonia",
     "fr-CA": "Nouvelle-Calédonie",
     "zh-Hans": "新喀里多尼亚",
-    "zh-HK": "新喀里多尼亞"
+    "zh-HK": "新喀里多尼亞",
+    "ja": "ニューカレドニア"
    },
    "facts": {
     "capital": "Nouméa"
@@ -116,7 +125,8 @@
     "en-GB": "New Zealand",
     "fr-CA": "Nouvelle-Zélande",
     "zh-Hans": "新西兰",
-    "zh-HK": "紐西蘭"
+    "zh-HK": "紐西蘭",
+    "ja": "ニュージーランド"
    },
    "facts": {
     "capital": "Wellington"
@@ -128,7 +138,8 @@
     "en-GB": "Norfolk Island",
     "fr-CA": "île Norfolk",
     "zh-Hans": "诺福克岛",
-    "zh-HK": "諾福克島"
+    "zh-HK": "諾福克島",
+    "ja": "ノーフォーク島"
    },
    "facts": {
     "capital": "Kingston"
@@ -140,7 +151,8 @@
     "en-GB": "Palau",
     "fr-CA": "Palaos",
     "zh-Hans": "帕劳",
-    "zh-HK": "帛琉"
+    "zh-HK": "帛琉",
+    "ja": "パラオ"
    },
    "facts": {
     "capital": "Ngerulmud"
@@ -152,7 +164,8 @@
     "en-GB": "Papua New Guinea",
     "fr-CA": "Papouasie-Nouvelle-Guinée",
     "zh-Hans": "巴布亚新几内亚",
-    "zh-HK": "巴布亞新畿內亞"
+    "zh-HK": "巴布亞新畿內亞",
+    "ja": "パプアニューギニア"
    },
    "facts": {
     "capital": "Port Moresby"
@@ -164,7 +177,8 @@
     "en-GB": "Solomon Islands",
     "fr-CA": "Îles Salomon",
     "zh-Hans": "所罗门群岛",
-    "zh-HK": "所羅門群島"
+    "zh-HK": "所羅門群島",
+    "ja": "ソロモン諸島"
    },
    "facts": {
     "capital": "Honiara"
@@ -176,7 +190,8 @@
     "en-GB": "Tuvalu",
     "fr-CA": "Tuvalu",
     "zh-Hans": "图瓦卢",
-    "zh-HK": "圖瓦盧"
+    "zh-HK": "圖瓦盧",
+    "ja": "ツバル"
    },
    "facts": {
     "capital": "Funafuti"
@@ -188,7 +203,8 @@
     "en-GB": "Vanuatu",
     "fr-CA": "Vanuatu",
     "zh-Hans": "瓦努阿图",
-    "zh-HK": "瓦努阿圖"
+    "zh-HK": "瓦努阿圖",
+    "ja": "バヌアツ"
    },
    "facts": {
     "capital": "Port Vila"

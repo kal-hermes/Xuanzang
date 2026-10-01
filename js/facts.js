@@ -62,6 +62,7 @@
       "fr-CA": ["fr", "en"],
       "zh-Hans": ["zh", "zh-hans", "en"],
       "zh-HK": ["zh-hant", "zh-hk", "zh", "en"],
+      "ja": ["ja", "en"],
     };
     return chains[loc] || ["en"];
   }

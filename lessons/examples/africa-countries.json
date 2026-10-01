@@ -4,7 +4,8 @@
   "en-GB": "Countries of Africa",
   "fr-CA": "Les pays d'Afrique",
   "zh-Hans": "非洲国家",
-  "zh-HK": "非洲國家"
+  "zh-HK": "非洲國家",
+  "ja": "アフリカの国々"
  },
  "type": "countries",
  "view": {
@@ -20,7 +21,8 @@
     "en-GB": "Algeria",
     "fr-CA": "Algérie",
     "zh-Hans": "阿尔及利亚",
-    "zh-HK": "阿爾及利亞"
+    "zh-HK": "阿爾及利亞",
+    "ja": "アルジェリア"
    },
    "facts": {
     "capital": "Algiers"
@@ -32,7 +34,8 @@
     "en-GB": "Angola",
     "fr-CA": "Angola",
     "zh-Hans": "安哥拉",
-    "zh-HK": "安哥拉"
+    "zh-HK": "安哥拉",
+    "ja": "アンゴラ"
    },
    "facts": {
     "capital": "Luanda"
@@ -44,7 +47,8 @@
     "en-GB": "Benin",
     "fr-CA": "Bénin",
     "zh-Hans": "贝宁",
-    "zh-HK": "貝寧"
+    "zh-HK": "貝寧",
+    "ja": "ベナン"
    },
    "facts": {
     "capital": "Porto-Novo"
@@ -56,7 +60,8 @@
     "en-GB": "Botswana",
     "fr-CA": "Botswana",
     "zh-Hans": "博茨瓦纳",
-    "zh-HK": "博茨瓦納"
+    "zh-HK": "博茨瓦納",
+    "ja": "ボツワナ"
    },
    "facts": {
     "capital": "Gaborone"
@@ -68,7 +73,8 @@
     "en-GB": "Burkina Faso",
     "fr-CA": "Burkina Faso",
     "zh-Hans": "布基纳法索",
-    "zh-HK": "布基納法索"
+    "zh-HK": "布基納法索",
+    "ja": "ブルキナファソ"
    },
    "facts": {
     "capital": "Ouagadougou"
@@ -80,7 +86,8 @@
     "en-GB": "Burundi",
     "fr-CA": "Burundi",
     "zh-Hans": "布隆迪",
-    "zh-HK": "布隆迪"
+    "zh-HK": "布隆迪",
+    "ja": "ブルンジ"
    },
    "facts": {
     "capital": "Gitega"
@@ -92,7 +99,8 @@
     "en-GB": "Cameroon",
     "fr-CA": "Cameroun",
     "zh-Hans": "喀麦隆",
-    "zh-HK": "喀麥隆"
+    "zh-HK": "喀麥隆",
+    "ja": "カメルーン"
    },
    "facts": {
     "capital": "Yaoundé"
@@ -104,7 +112,8 @@
     "en-GB": "Central African Republic",
     "fr-CA": "République centrafricaine",
     "zh-Hans": "中非共和国",
-    "zh-HK": "中非共和國"
+    "zh-HK": "中非共和國",
+    "ja": "中央アフリカ共和国"
    },
    "facts": {
     "capital": "Bangui"
@@ -116,7 +125,8 @@
     "en-GB": "Chad",
     "fr-CA": "Tchad",
     "zh-Hans": "乍得",
-    "zh-HK": "乍得"
+    "zh-HK": "乍得",
+    "ja": "チャド"
    },
    "facts": {
     "capital": "N'Djamena"
@@ -128,7 +138,8 @@
     "en-GB": "Comoros",
     "fr-CA": "Comores",
     "zh-Hans": "科摩罗",
-    "zh-HK": "科摩羅"
+    "zh-HK": "科摩羅",
+    "ja": "コモロ"
    },
    "facts": {
     "capital": "Moroni"
@@ -140,7 +151,8 @@
     "en-GB": "Congo - Brazzaville",
     "fr-CA": "Congo-Brazzaville",
     "zh-Hans": "刚果（布）",
-    "zh-HK": "剛果（布拉薩）"
+    "zh-HK": "剛果（布拉薩）",
+    "ja": "コンゴ共和国(ブラザビル)"
    },
    "facts": {
     "capital": "Brazzaville"
@@ -152,7 +164,8 @@
     "en-GB": "Congo - Kinshasa",
     "fr-CA": "Congo-Kinshasa",
     "zh-Hans": "刚果（金）",
-    "zh-HK": "剛果（金夏沙）"
+    "zh-HK": "剛果（金夏沙）",
+    "ja": "コンゴ民主共和国(キンシャサ)"
    },
    "facts": {
     "capital": "Kinshasa"
@@ -164,7 +177,8 @@
     "en-GB": "Côte d’Ivoire",
     "fr-CA": "Côte d’Ivoire",
     "zh-Hans": "科特迪瓦",
-    "zh-HK": "科特迪瓦"
+    "zh-HK": "科特迪瓦",
+    "ja": "コートジボワール"
    },
    "facts": {
     "capital": "Yamoussoukro"
@@ -176,7 +190,8 @@
     "en-GB": "Djibouti",
     "fr-CA": "Djibouti",
     "zh-Hans": "吉布提",
-    "zh-HK": "吉布提"
+    "zh-HK": "吉布提",
+    "ja": "ジブチ"
    },
    "facts": {
     "capital": "Djibouti"
@@ -188,7 +203,8 @@
     "en-GB": "Egypt",
     "fr-CA": "Égypte",
     "zh-Hans": "埃及",
-    "zh-HK": "埃及"
+    "zh-HK": "埃及",
+    "ja": "エジプト"
    },
    "facts": {
     "capital": "Cairo"
@@ -200,7 +216,8 @@
     "en-GB": "Equatorial Guinea",
     "fr-CA": "Guinée équatoriale",
     "zh-Hans": "赤道几内亚",
-    "zh-HK": "赤道幾內亞"
+    "zh-HK": "赤道幾內亞",
+    "ja": "赤道ギニア"
    },
    "facts": {
     "capital": "Malabo"
@@ -212,7 +229,8 @@
     "en-GB": "Eritrea",
     "fr-CA": "Érythrée",
     "zh-Hans": "厄立特里亚",
-    "zh-HK": "厄立特里亞"
+    "zh-HK": "厄立特里亞",
+    "ja": "エリトリア"
    },
    "facts": {
     "capital": "Asmara"
@@ -224,7 +242,8 @@
     "en-GB": "Eswatini",
     "fr-CA": "Eswatini",
     "zh-Hans": "斯威士兰",
-    "zh-HK": "斯威士蘭"
+    "zh-HK": "斯威士蘭",
+    "ja": "エスワティニ"
    },
    "facts": {
     "capital": "Lobamba"
@@ -236,7 +255,8 @@
     "en-GB": "Ethiopia",
     "fr-CA": "Éthiopie",
     "zh-Hans": "埃塞俄比亚",
-    "zh-HK": "埃塞俄比亞"
+    "zh-HK": "埃塞俄比亞",
+    "ja": "エチオピア"
    },
    "facts": {
     "capital": "Addis Ababa"
@@ -248,7 +268,8 @@
     "en-GB": "Gabon",
     "fr-CA": "Gabon",
     "zh-Hans": "加蓬",
-    "zh-HK": "加蓬"
+    "zh-HK": "加蓬",
+    "ja": "ガボン"
    },
    "facts": {
     "capital": "Libreville"
@@ -260,7 +281,8 @@
     "en-GB": "Gambia",
     "fr-CA": "Gambie",
     "zh-Hans": "冈比亚",
-    "zh-HK": "岡比亞"
+    "zh-HK": "岡比亞",
+    "ja": "ガンビア"
    },
    "facts": {
     "capital": "Banjul"
@@ -272,7 +294,8 @@
     "en-GB": "Ghana",
     "fr-CA": "Ghana",
     "zh-Hans": "加纳",
-    "zh-HK": "加納"
+    "zh-HK": "加納",
+    "ja": "ガーナ"
    },
    "facts": {
     "capital": "Accra"
@@ -284,7 +307,8 @@
     "en-GB": "Guinea",
     "fr-CA": "Guinée",
     "zh-Hans": "几内亚",
-    "zh-HK": "幾內亞"
+    "zh-HK": "幾內亞",
+    "ja": "ギニア"
    },
    "facts": {
     "capital": "Conakry"
@@ -296,7 +320,8 @@
     "en-GB": "Guinea-Bissau",
     "fr-CA": "Guinée-Bissau",
     "zh-Hans": "几内亚比绍",
-    "zh-HK": "幾內亞比紹"
+    "zh-HK": "幾內亞比紹",
+    "ja": "ギニアビサウ"
    },
    "facts": {
     "capital": "Bissau"
@@ -308,7 +333,8 @@
     "en-GB": "Kenya",
     "fr-CA": "Kenya",
     "zh-Hans": "肯尼亚",
-    "zh-HK": "肯尼亞"
+    "zh-HK": "肯尼亞",
+    "ja": "ケニア"
    },
    "facts": {
     "capital": "Nairobi"
@@ -320,7 +346,8 @@
     "en-GB": "Lesotho",
     "fr-CA": "Lesotho",
     "zh-Hans": "莱索托",
-    "zh-HK": "萊索托"
+    "zh-HK": "萊索托",
+    "ja": "レソト"
    },
    "facts": {
     "capital": "Maseru"
@@ -332,7 +359,8 @@
     "en-GB": "Liberia",
     "fr-CA": "Libéria",
     "zh-Hans": "利比里亚",
-    "zh-HK": "利比里亞"
+    "zh-HK": "利比里亞",
+    "ja": "リベリア"
    },
    "facts": {
     "capital": "Monrovia"
@@ -344,7 +372,8 @@
     "en-GB": "Libya",
     "fr-CA": "Libye",
     "zh-Hans": "利比亚",
-    "zh-HK": "利比亞"
+    "zh-HK": "利比亞",
+    "ja": "リビア"
    },
    "facts": {
     "capital": "Tripoli"
@@ -356,7 +385,8 @@
     "en-GB": "Madagascar",
     "fr-CA": "Madagascar",
     "zh-Hans": "马达加斯加",
-    "zh-HK": "馬達加斯加"
+    "zh-HK": "馬達加斯加",
+    "ja": "マダガスカル"
    },
    "facts": {
     "capital": "Antananarivo"
@@ -368,7 +398,8 @@
     "en-GB": "Malawi",
     "fr-CA": "Malawi",
     "zh-Hans": "马拉维",
-    "zh-HK": "馬拉維"
+    "zh-HK": "馬拉維",
+    "ja": "マラウイ"
    },
    "facts": {
     "capital": "Lilongwe"
@@ -380,7 +411,8 @@
     "en-GB": "Mali",
     "fr-CA": "Mali",
     "zh-Hans": "马里",
-    "zh-HK": "馬里"
+    "zh-HK": "馬里",
+    "ja": "マリ"
    },
    "facts": {
     "capital": "Bamako"
@@ -392,7 +424,8 @@
     "en-GB": "Mauritania",
     "fr-CA": "Mauritanie",
     "zh-Hans": "毛里塔尼亚",
-    "zh-HK": "毛里塔尼亞"
+    "zh-HK": "毛里塔尼亞",
+    "ja": "モーリタニア"
    },
    "facts": {
     "capital": "Nouakchott"
@@ -404,7 +437,8 @@
     "en-GB": "Morocco",
     "fr-CA": "Maroc",
     "zh-Hans": "摩洛哥",
-    "zh-HK": "摩洛哥"
+    "zh-HK": "摩洛哥",
+    "ja": "モロッコ"
    },
    "facts": {
     "capital": "Rabat"
@@ -416,7 +450,8 @@
     "en-GB": "Mozambique",
     "fr-CA": "Mozambique",
     "zh-Hans": "莫桑比克",
-    "zh-HK": "莫桑比克"
+    "zh-HK": "莫桑比克",
+    "ja": "モザンビーク"
    },
    "facts": {
     "capital": "Maputo"
@@ -428,7 +463,8 @@
     "en-GB": "Namibia",
     "fr-CA": "Namibie",
     "zh-Hans": "纳米比亚",
-    "zh-HK": "納米比亞"
+    "zh-HK": "納米比亞",
+    "ja": "ナミビア"
    },
    "facts": {
     "capital": "Windhoek"
@@ -440,7 +476,8 @@
     "en-GB": "Niger",
     "fr-CA": "Niger",
     "zh-Hans": "尼日尔",
-    "zh-HK": "尼日爾"
+    "zh-HK": "尼日爾",
+    "ja": "ニジェール"
    },
    "facts": {
     "capital": "Niamey"
@@ -452,7 +489,8 @@
     "en-GB": "Nigeria",
     "fr-CA": "Nigéria",
     "zh-Hans": "尼日利亚",
-    "zh-HK": "尼日利亞"
+    "zh-HK": "尼日利亞",
+    "ja": "ナイジェリア"
    },
    "facts": {
     "capital": "Abuja"
@@ -464,7 +502,8 @@
     "en-GB": "Rwanda",
     "fr-CA": "Rwanda",
     "zh-Hans": "卢旺达",
-    "zh-HK": "盧旺達"
+    "zh-HK": "盧旺達",
+    "ja": "ルワンダ"
    },
    "facts": {
     "capital": "Kigali"
@@ -476,7 +515,8 @@
     "en-GB": "Senegal",
     "fr-CA": "Sénégal",
     "zh-Hans": "塞内加尔",
-    "zh-HK": "塞內加爾"
+    "zh-HK": "塞內加爾",
+    "ja": "セネガル"
    },
    "facts": {
     "capital": "Dakar"
@@ -488,7 +528,8 @@
     "en-GB": "Sierra Leone",
     "fr-CA": "Sierra Leone",
     "zh-Hans": "塞拉利昂",
-    "zh-HK": "塞拉利昂"
+    "zh-HK": "塞拉利昂",
+    "ja": "シエラレオネ"
    },
    "facts": {
     "capital": "Freetown"
@@ -500,7 +541,8 @@
     "en-GB": "Somalia",
     "fr-CA": "Somalie",
     "zh-Hans": "索马里",
-    "zh-HK": "索馬里"
+    "zh-HK": "索馬里",
+    "ja": "ソマリア"
    },
    "facts": {
     "capital": "Mogadishu"
@@ -512,7 +554,8 @@
     "en-GB": "South Africa",
     "fr-CA": "Afrique du Sud",
     "zh-Hans": "南非",
-    "zh-HK": "南非"
+    "zh-HK": "南非",
+    "ja": "南アフリカ"
    },
    "facts": {
     "capital": "Pretoria"
@@ -524,7 +567,8 @@
     "en-GB": "South Sudan",
     "fr-CA": "Soudan du Sud",
     "zh-Hans": "南苏丹",
-    "zh-HK": "南蘇丹"
+    "zh-HK": "南蘇丹",
+    "ja": "南スーダン"
    },
    "facts": {
     "capital": "Juba"
@@ -536,7 +580,8 @@
     "en-GB": "St. Helena",
     "fr-CA": "Sainte-Hélène",
     "zh-Hans": "圣赫勒拿",
-    "zh-HK": "聖赫勒拿島"
+    "zh-HK": "聖赫勒拿島",
+    "ja": "セントヘレナ"
    },
    "facts": {
     "capital": "Jamestown"
@@ -548,7 +593,8 @@
     "en-GB": "Sudan",
     "fr-CA": "Soudan",
     "zh-Hans": "苏丹",
-    "zh-HK": "蘇丹"
+    "zh-HK": "蘇丹",
+    "ja": "スーダン"
    },
    "facts": {
     "capital": "Khartoum"
@@ -560,7 +606,8 @@
     "en-GB": "São Tomé & Príncipe",
     "fr-CA": "Sao Tomé-et-Principe",
     "zh-Hans": "圣多美和普林西比",
-    "zh-HK": "聖多美和普林西比"
+    "zh-HK": "聖多美和普林西比",
+    "ja": "サントメ・プリンシペ"
    },
    "facts": {
     "capital": "São Tomé"
@@ -572,7 +619,8 @@
     "en-GB": "Tanzania",
     "fr-CA": "Tanzanie",
     "zh-Hans": "坦桑尼亚",
-    "zh-HK": "坦桑尼亞"
+    "zh-HK": "坦桑尼亞",
+    "ja": "タンザニア"
    },
    "facts": {
     "capital": "Dodoma"
@@ -584,7 +632,8 @@
     "en-GB": "Togo",
     "fr-CA": "Togo",
     "zh-Hans": "多哥",
-    "zh-HK": "多哥"
+    "zh-HK": "多哥",
+    "ja": "トーゴ"
    },
    "facts": {
     "capital": "Lomé"
@@ -596,7 +645,8 @@
     "en-GB": "Tunisia",
     "fr-CA": "Tunisie",
     "zh-Hans": "突尼斯",
-    "zh-HK": "突尼西亞"
+    "zh-HK": "突尼西亞",
+    "ja": "チュニジア"
    },
    "facts": {
     "capital": "Tunis"
@@ -608,7 +658,8 @@
     "en-GB": "Uganda",
     "fr-CA": "Ouganda",
     "zh-Hans": "乌干达",
-    "zh-HK": "烏干達"
+    "zh-HK": "烏干達",
+    "ja": "ウガンダ"
    },
    "facts": {
     "capital": "Kampala"
@@ -620,7 +671,8 @@
     "en-GB": "Western Sahara",
     "fr-CA": "Sahara occidental",
     "zh-Hans": "西撒哈拉",
-    "zh-HK": "西撒哈拉"
+    "zh-HK": "西撒哈拉",
+    "ja": "西サハラ"
    },
    "facts": {
     "capital": "El Aaiún"
@@ -632,7 +684,8 @@
     "en-GB": "Zambia",
     "fr-CA": "Zambie",
     "zh-Hans": "赞比亚",
-    "zh-HK": "贊比亞"
+    "zh-HK": "贊比亞",
+    "ja": "ザンビア"
    },
    "facts": {
     "capital": "Lusaka"
@@ -644,7 +697,8 @@
     "en-GB": "Zimbabwe",
     "fr-CA": "Zimbabwe",
     "zh-Hans": "津巴布韦",
-    "zh-HK": "津巴布韋"
+    "zh-HK": "津巴布韋",
+    "ja": "ジンバブエ"
    },
    "facts": {
     "capital": "Harare"

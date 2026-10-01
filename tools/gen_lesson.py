@@ -26,6 +26,7 @@ LOCALES = {
     "fr-CA": "tools/cldr-fr-CA.json",
     "zh-Hans": "tools/cldr-zh-Hans.json",
     "zh-HK": "tools/cldr-zh-Hant-HK.json",
+    "ja": "tools/cldr-ja.json",
 }
 
 # CLDR territory keys are alpha-2 or numeric ("056"); we key by alpha-2.
@@ -50,22 +51,28 @@ VIEWS = {
 TITLES = {
     "europe": {"en-GB": "Countries of Europe",
                "fr-CA": "Les pays d'Europe",
-               "zh-Hans": "欧洲国家", "zh-HK": "歐洲國家"},
+               "zh-Hans": "欧洲国家", "zh-HK": "歐洲國家",
+               "ja": "ヨーロッパの国々"},
     "asia": {"en-GB": "Countries of Asia",
              "fr-CA": "Les pays d'Asie",
-             "zh-Hans": "亚洲国家", "zh-HK": "亞洲國家"},
+             "zh-Hans": "亚洲国家", "zh-HK": "亞洲國家",
+             "ja": "アジアの国々"},
     "africa": {"en-GB": "Countries of Africa",
                "fr-CA": "Les pays d'Afrique",
-               "zh-Hans": "非洲国家", "zh-HK": "非洲國家"},
+               "zh-Hans": "非洲国家", "zh-HK": "非洲國家",
+               "ja": "アフリカの国々"},
     "north-america": {"en-GB": "Countries of North America",
                       "fr-CA": "Les pays d'Amérique du Nord",
-                      "zh-Hans": "北美洲国家", "zh-HK": "北美洲國家"},
+                      "zh-Hans": "北美洲国家", "zh-HK": "北美洲國家",
+                      "ja": "北アメリカの国々"},
     "south-america": {"en-GB": "Countries of South America",
                       "fr-CA": "Les pays d'Amérique du Sud",
-                      "zh-Hans": "南美洲国家", "zh-HK": "南美洲國家"},
+                      "zh-Hans": "南美洲国家", "zh-HK": "南美洲國家",
+                      "ja": "南アメリカの国々"},
     "oceania": {"en-GB": "Countries of Oceania",
                 "fr-CA": "Les pays d'Océanie",
-                "zh-Hans": "大洋洲国家", "zh-HK": "大洋洲國家"},
+                "zh-Hans": "大洋洲国家", "zh-HK": "大洋洲國家",
+                "ja": "オセアニアの国々"},
 }
 
 # mledoze region -> lesson; Americas split by subregion

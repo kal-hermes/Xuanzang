@@ -4,7 +4,8 @@
   "en-GB": "Countries of Europe",
   "fr-CA": "Les pays d'Europe",
   "zh-Hans": "欧洲国家",
-  "zh-HK": "歐洲國家"
+  "zh-HK": "歐洲國家",
+  "ja": "ヨーロッパの国々"
  },
  "type": "countries",
  "view": {
@@ -20,7 +21,8 @@
     "en-GB": "Albania",
     "fr-CA": "Albanie",
     "zh-Hans": "阿尔巴尼亚",
-    "zh-HK": "阿爾巴尼亞"
+    "zh-HK": "阿爾巴尼亞",
+    "ja": "アルバニア"
    },
    "facts": {
     "capital": "Tirana"
@@ -32,7 +34,8 @@
     "en-GB": "Andorra",
     "fr-CA": "Andorre",
     "zh-Hans": "安道尔",
-    "zh-HK": "安道爾"
+    "zh-HK": "安道爾",
+    "ja": "アンドラ"
    },
    "facts": {
     "capital": "Andorra la Vella"
@@ -44,7 +47,8 @@
     "en-GB": "Austria",
     "fr-CA": "Autriche",
     "zh-Hans": "奥地利",
-    "zh-HK": "奧地利"
+    "zh-HK": "奧地利",
+    "ja": "オーストリア"
    },
    "facts": {
     "capital": "Vienna"
@@ -56,7 +60,8 @@
     "en-GB": "Belarus",
     "fr-CA": "Bélarus",
     "zh-Hans": "白俄罗斯",
-    "zh-HK": "白俄羅斯"
+    "zh-HK": "白俄羅斯",
+    "ja": "ベラルーシ"
    },
    "facts": {
     "capital": "Minsk"
@@ -68,7 +73,8 @@
     "en-GB": "Belgium",
     "fr-CA": "Belgique",
     "zh-Hans": "比利时",
-    "zh-HK": "比利時"
+    "zh-HK": "比利時",
+    "ja": "ベルギー"
    },
    "facts": {
     "capital": "Brussels"
@@ -80,7 +86,8 @@
     "en-GB": "Bosnia & Herzegovina",
     "fr-CA": "Bosnie-Herzégovine",
     "zh-Hans": "波斯尼亚和黑塞哥维那",
-    "zh-HK": "波斯尼亞和黑塞哥維那"
+    "zh-HK": "波斯尼亞和黑塞哥維那",
+    "ja": "ボスニア・ヘルツェゴビナ"
    },
    "facts": {
     "capital": "Sarajevo"
@@ -92,7 +99,8 @@
     "en-GB": "Bulgaria",
     "fr-CA": "Bulgarie",
     "zh-Hans": "保加利亚",
-    "zh-HK": "保加利亞"
+    "zh-HK": "保加利亞",
+    "ja": "ブルガリア"
    },
    "facts": {
     "capital": "Sofia"
@@ -104,7 +112,8 @@
     "en-GB": "Croatia",
     "fr-CA": "Croatie",
     "zh-Hans": "克罗地亚",
-    "zh-HK": "克羅地亞"
+    "zh-HK": "克羅地亞",
+    "ja": "クロアチア"
    },
    "facts": {
     "capital": "Zagreb"
@@ -116,7 +125,8 @@
     "en-GB": "Cyprus",
     "fr-CA": "Chypre",
     "zh-Hans": "塞浦路斯",
-    "zh-HK": "塞浦路斯"
+    "zh-HK": "塞浦路斯",
+    "ja": "キプロス"
    },
    "facts": {
     "capital": "Nicosia"
@@ -128,7 +138,8 @@
     "en-GB": "Czechia",
     "fr-CA": "Tchéquie",
     "zh-Hans": "捷克",
-    "zh-HK": "捷克"
+    "zh-HK": "捷克",
+    "ja": "チェコ"
    },
    "facts": {
     "capital": "Prague"
@@ -140,7 +151,8 @@
     "en-GB": "Denmark",
     "fr-CA": "Danemark",
     "zh-Hans": "丹麦",
-    "zh-HK": "丹麥"
+    "zh-HK": "丹麥",
+    "ja": "デンマーク"
    },
    "facts": {
     "capital": "Copenhagen"
@@ -152,7 +164,8 @@
     "en-GB": "Estonia",
     "fr-CA": "Estonie",
     "zh-Hans": "爱沙尼亚",
-    "zh-HK": "愛沙尼亞"
+    "zh-HK": "愛沙尼亞",
+    "ja": "エストニア"
    },
    "facts": {
     "capital": "Tallinn"
@@ -164,7 +177,8 @@
     "en-GB": "Faroe Islands",
     "fr-CA": "îles Féroé",
     "zh-Hans": "法罗群岛",
-    "zh-HK": "法羅群島"
+    "zh-HK": "法羅群島",
+    "ja": "フェロー諸島"
    },
    "facts": {
     "capital": "Tórshavn"
@@ -176,7 +190,8 @@
     "en-GB": "Finland",
     "fr-CA": "Finlande",
     "zh-Hans": "芬兰",
-    "zh-HK": "芬蘭"
+    "zh-HK": "芬蘭",
+    "ja": "フィンランド"
    },
    "facts": {
     "capital": "Helsinki"
@@ -188,7 +203,8 @@
     "en-GB": "France",
     "fr-CA": "France",
     "zh-Hans": "法国",
-    "zh-HK": "法國"
+    "zh-HK": "法國",
+    "ja": "フランス"
    },
    "facts": {
     "capital": "Paris"
@@ -200,7 +216,8 @@
     "en-GB": "Germany",
     "fr-CA": "Allemagne",
     "zh-Hans": "德国",
-    "zh-HK": "德國"
+    "zh-HK": "德國",
+    "ja": "ドイツ"
    },
    "facts": {
     "capital": "Berlin"
@@ -212,7 +229,8 @@
     "en-GB": "Gibraltar",
     "fr-CA": "Gibraltar",
     "zh-Hans": "直布罗陀",
-    "zh-HK": "直布羅陀"
+    "zh-HK": "直布羅陀",
+    "ja": "ジブラルタル"
    },
    "facts": {
     "capital": "Gibraltar"
@@ -224,7 +242,8 @@
     "en-GB": "Greece",
     "fr-CA": "Grèce",
     "zh-Hans": "希腊",
-    "zh-HK": "希臘"
+    "zh-HK": "希臘",
+    "ja": "ギリシャ"
    },
    "facts": {
     "capital": "Athens"
@@ -236,7 +255,8 @@
     "en-GB": "Guernsey",
     "fr-CA": "Guernesey",
     "zh-Hans": "根西岛",
-    "zh-HK": "根息"
+    "zh-HK": "根息",
+    "ja": "ガーンジー"
    },
    "facts": {
     "capital": "St. Peter Port"
@@ -248,7 +268,8 @@
     "en-GB": "Hungary",
     "fr-CA": "Hongrie",
     "zh-Hans": "匈牙利",
-    "zh-HK": "匈牙利"
+    "zh-HK": "匈牙利",
+    "ja": "ハンガリー"
    },
    "facts": {
     "capital": "Budapest"
@@ -260,7 +281,8 @@
     "en-GB": "Iceland",
     "fr-CA": "Islande",
     "zh-Hans": "冰岛",
-    "zh-HK": "冰島"
+    "zh-HK": "冰島",
+    "ja": "アイスランド"
    },
    "facts": {
     "capital": "Reykjavik"
@@ -272,7 +294,8 @@
     "en-GB": "Ireland",
     "fr-CA": "Irlande",
     "zh-Hans": "爱尔兰",
-    "zh-HK": "愛爾蘭"
+    "zh-HK": "愛爾蘭",
+    "ja": "アイルランド"
    },
    "facts": {
     "capital": "Dublin"
@@ -284,7 +307,8 @@
     "en-GB": "Isle of Man",
     "fr-CA": "île de Man",
     "zh-Hans": "马恩岛",
-    "zh-HK": "馬恩島"
+    "zh-HK": "馬恩島",
+    "ja": "マン島"
    },
    "facts": {
     "capital": "Douglas"
@@ -296,7 +320,8 @@
     "en-GB": "Italy",
     "fr-CA": "Italie",
     "zh-Hans": "意大利",
-    "zh-HK": "意大利"
+    "zh-HK": "意大利",
+    "ja": "イタリア"
    },
    "facts": {
     "capital": "Rome"
@@ -308,7 +333,8 @@
     "en-GB": "Jersey",
     "fr-CA": "Jersey",
     "zh-Hans": "泽西岛",
-    "zh-HK": "澤西島"
+    "zh-HK": "澤西島",
+    "ja": "ジャージー"
    },
    "facts": {
     "capital": "Saint Helier"
@@ -320,7 +346,8 @@
     "en-GB": "Kosovo",
     "fr-CA": "Kosovo",
     "zh-Hans": "科索沃",
-    "zh-HK": "科索沃"
+    "zh-HK": "科索沃",
+    "ja": "コソボ"
    },
    "facts": {
     "capital": "Pristina"
@@ -332,7 +359,8 @@
     "en-GB": "Latvia",
     "fr-CA": "Lettonie",
     "zh-Hans": "拉脱维亚",
-    "zh-HK": "拉脫維亞"
+    "zh-HK": "拉脫維亞",
+    "ja": "ラトビア"
    },
    "facts": {
     "capital": "Riga"
@@ -344,7 +372,8 @@
     "en-GB": "Liechtenstein",
     "fr-CA": "Liechtenstein",
     "zh-Hans": "列支敦士登",
-    "zh-HK": "列支敦士登"
+    "zh-HK": "列支敦士登",
+    "ja": "リヒテンシュタイン"
    },
    "facts": {
     "capital": "Vaduz"
@@ -356,7 +385,8 @@
     "en-GB": "Lithuania",
     "fr-CA": "Lituanie",
     "zh-Hans": "立陶宛",
-    "zh-HK": "立陶宛"
+    "zh-HK": "立陶宛",
+    "ja": "リトアニア"
    },
    "facts": {
     "capital": "Vilnius"
@@ -368,7 +398,8 @@
     "en-GB": "Luxembourg",
     "fr-CA": "Luxembourg",
     "zh-Hans": "卢森堡",
-    "zh-HK": "盧森堡"
+    "zh-HK": "盧森堡",
+    "ja": "ルクセンブルク"
    },
    "facts": {
     "capital": "Luxembourg"
@@ -380,7 +411,8 @@
     "en-GB": "Malta",
     "fr-CA": "Malte",
     "zh-Hans": "马耳他",
-    "zh-HK": "馬耳他"
+    "zh-HK": "馬耳他",
+    "ja": "マルタ"
    },
    "facts": {
     "capital": "Valletta"
@@ -392,7 +424,8 @@
     "en-GB": "Moldova",
     "fr-CA": "Moldavie",
     "zh-Hans": "摩尔多瓦",
-    "zh-HK": "摩爾多瓦"
+    "zh-HK": "摩爾多瓦",
+    "ja": "モルドバ"
    },
    "facts": {
     "capital": "Chișinău"
@@ -404,7 +437,8 @@
     "en-GB": "Monaco",
     "fr-CA": "Monaco",
     "zh-Hans": "摩纳哥",
-    "zh-HK": "摩納哥"
+    "zh-HK": "摩納哥",
+    "ja": "モナコ"
    },
    "facts": {
     "capital": "Monaco"
@@ -416,7 +450,8 @@
     "en-GB": "Montenegro",
     "fr-CA": "Monténégro",
     "zh-Hans": "黑山",
-    "zh-HK": "黑山"
+    "zh-HK": "黑山",
+    "ja": "モンテネグロ"
    },
    "facts": {
     "capital": "Podgorica"
@@ -428,7 +463,8 @@
     "en-GB": "Netherlands",
     "fr-CA": "Pays-Bas",
     "zh-Hans": "荷兰",
-    "zh-HK": "荷蘭"
+    "zh-HK": "荷蘭",
+    "ja": "オランダ"
    },
    "facts": {
     "capital": "Amsterdam"
@@ -440,7 +476,8 @@
     "en-GB": "North Macedonia",
     "fr-CA": "Macédoine du Nord",
     "zh-Hans": "北马其顿",
-    "zh-HK": "北馬其頓"
+    "zh-HK": "北馬其頓",
+    "ja": "北マケドニア"
    },
    "facts": {
     "capital": "Skopje"
@@ -452,7 +489,8 @@
     "en-GB": "Norway",
     "fr-CA": "Norvège",
     "zh-Hans": "挪威",
-    "zh-HK": "挪威"
+    "zh-HK": "挪威",
+    "ja": "ノルウェー"
    },
    "facts": {
     "capital": "Oslo"
@@ -464,7 +502,8 @@
     "en-GB": "Poland",
     "fr-CA": "Pologne",
     "zh-Hans": "波兰",
-    "zh-HK": "波蘭"
+    "zh-HK": "波蘭",
+    "ja": "ポーランド"
    },
    "facts": {
     "capital": "Warsaw"
@@ -476,7 +515,8 @@
     "en-GB": "Portugal",
     "fr-CA": "Portugal",
     "zh-Hans": "葡萄牙",
-    "zh-HK": "葡萄牙"
+    "zh-HK": "葡萄牙",
+    "ja": "ポルトガル"
    },
    "facts": {
     "capital": "Lisbon"
@@ -488,7 +528,8 @@
     "en-GB": "Romania",
     "fr-CA": "Roumanie",
     "zh-Hans": "罗马尼亚",
-    "zh-HK": "羅馬尼亞"
+    "zh-HK": "羅馬尼亞",
+    "ja": "ルーマニア"
    },
    "facts": {
     "capital": "Bucharest"
@@ -500,7 +541,8 @@
     "en-GB": "Russia",
     "fr-CA": "Russie",
     "zh-Hans": "俄罗斯",
-    "zh-HK": "俄羅斯"
+    "zh-HK": "俄羅斯",
+    "ja": "ロシア"
    },
    "facts": {
     "capital": "Moscow"
@@ -512,7 +554,8 @@
     "en-GB": "San Marino",
     "fr-CA": "Saint-Marin",
     "zh-Hans": "圣马力诺",
-    "zh-HK": "聖馬力諾"
+    "zh-HK": "聖馬力諾",
+    "ja": "サンマリノ"
    },
    "facts": {
     "capital": "City of San Marino"
@@ -524,7 +567,8 @@
     "en-GB": "Serbia",
     "fr-CA": "Serbie",
     "zh-Hans": "塞尔维亚",
-    "zh-HK": "塞爾維亞"
+    "zh-HK": "塞爾維亞",
+    "ja": "セルビア"
    },
    "facts": {
     "capital": "Belgrade"
@@ -536,7 +580,8 @@
     "en-GB": "Slovakia",
     "fr-CA": "Slovaquie",
     "zh-Hans": "斯洛伐克",
-    "zh-HK": "斯洛伐克"
+    "zh-HK": "斯洛伐克",
+    "ja": "スロバキア"
    },
    "facts": {
     "capital": "Bratislava"
@@ -548,7 +593,8 @@
     "en-GB": "Slovenia",
     "fr-CA": "Slovénie",
     "zh-Hans": "斯洛文尼亚",
-    "zh-HK": "斯洛文尼亞"
+    "zh-HK": "斯洛文尼亞",
+    "ja": "スロベニア"
    },
    "facts": {
     "capital": "Ljubljana"
@@ -560,7 +606,8 @@
     "en-GB": "Spain",
     "fr-CA": "Espagne",
     "zh-Hans": "西班牙",
-    "zh-HK": "西班牙"
+    "zh-HK": "西班牙",
+    "ja": "スペイン"
    },
    "facts": {
     "capital": "Madrid"
@@ -572,7 +619,8 @@
     "en-GB": "Sweden",
     "fr-CA": "Suède",
     "zh-Hans": "瑞典",
-    "zh-HK": "瑞典"
+    "zh-HK": "瑞典",
+    "ja": "スウェーデン"
    },
    "facts": {
     "capital": "Stockholm"
@@ -584,7 +632,8 @@
     "en-GB": "Switzerland",
     "fr-CA": "Suisse",
     "zh-Hans": "瑞士",
-    "zh-HK": "瑞士"
+    "zh-HK": "瑞士",
+    "ja": "スイス"
    },
    "facts": {
     "capital": "Bern"
@@ -596,7 +645,8 @@
     "en-GB": "Ukraine",
     "fr-CA": "Ukraine",
     "zh-Hans": "乌克兰",
-    "zh-HK": "烏克蘭"
+    "zh-HK": "烏克蘭",
+    "ja": "ウクライナ"
    },
    "facts": {
     "capital": "Kyiv"
@@ -608,7 +658,8 @@
     "en-GB": "United Kingdom",
     "fr-CA": "Royaume-Uni",
     "zh-Hans": "英国",
-    "zh-HK": "英國"
+    "zh-HK": "英國",
+    "ja": "イギリス"
    },
    "facts": {
     "capital": "London"
@@ -620,7 +671,8 @@
     "en-GB": "Vatican City",
     "fr-CA": "Cité du Vatican",
     "zh-Hans": "梵蒂冈",
-    "zh-HK": "梵蒂岡"
+    "zh-HK": "梵蒂岡",
+    "ja": "バチカン市国"
    },
    "facts": {
     "capital": "Vatican City"
@@ -632,7 +684,8 @@
     "en-GB": "Åland Islands",
     "fr-CA": "îles d’Åland",
     "zh-Hans": "奥兰群岛",
-    "zh-HK": "奧蘭群島"
+    "zh-HK": "奧蘭群島",
+    "ja": "オーランド諸島"
    },
    "facts": {
     "capital": "Mariehamn"
