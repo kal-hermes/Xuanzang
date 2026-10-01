@@ -54,6 +54,31 @@
     return entity;
   }
 
+  // label language fallback chain for a UI locale
+  function labelLangs() {
+    const loc = (window.I18n && I18n.locale) || "en-GB";
+    const chains = {
+      "en-GB": ["en"],
+      "fr-CA": ["fr", "en"],
+      "zh-Hans": ["zh", "zh-hans", "en"],
+      "zh-HK": ["zh-hant", "zh-hk", "zh", "en"],
+    };
+    return chains[loc] || ["en"];
+  }
+
+  function pickLabel(labels) {
+    if (!labels) return null;
+    for (const lang of labelLangs()) {
+      const l = labels[lang];
+      if (l && l.value) return l.value;
+    }
+    // en occasionally absent outright; en-* -> any
+    const enVar = Object.keys(labels).find((k) => k.startsWith("en-"));
+    if (enVar) return labels[enVar].value;
+    const any = Object.values(labels)[0];
+    return any && any.value;
+  }
+
   // batched label lookup: ids -> {id: label}, chunked (API cap: 50 ids)
   async function fetchLabels(ids) {
     const out = {};
@@ -61,26 +86,16 @@
     for (let i = 0; i < ids.length; i += 50) {
       const chunk = ids.slice(i, i + 50);
       try {
+        const langs = labelLangs().join("|");
         const res = await fetch(
           "https://www.wikidata.org/w/api.php?action=wbgetentities" +
-          `&ids=${chunk.join("|")}&props=labels&format=json&origin=*`,
+          `&ids=${chunk.join("|")}&props=labels&languages=${encodeURIComponent(langs)}&format=json&origin=*`,
           { headers: UA });
         if (!res.ok) continue;
         const data = await res.json();
         for (const [id, e] of Object.entries(data.entities || {})) {
           if (e.missing !== undefined) continue;
-          const ls = e.labels || {};
-          // en is occasionally ABSENT outright (data gaps/incidents);
-          // fall back en -> en-* -> any label rather than showing a Q-id
-          let l = ls.en && ls.en.value;
-          if (!l) {
-            const enVar = Object.keys(ls).find((k) => k.startsWith("en-"));
-            l = enVar && ls[enVar].value;
-          }
-          if (!l) {
-            const any = Object.values(ls)[0];
-            l = any && any.value;
-          }
+          const l = pickLabel(e.labels);
           if (l) out[id] = l;
         }
       } catch { /* chunk failed; ids stay unresolved */ }
@@ -233,6 +248,19 @@
     const tzs = statements(entity, "P421");
     if (tzs.length) {
       f.timezones = [...new Set(tzs.map((st) => L(qidOf(st))))].join(", ");
+    }
+
+    // demonym (P1549 monolingual text) in the UI locale's chain
+    const demo = statements(entity, "P1549");
+    if (demo.length) {
+      const langs = labelLangs();
+      for (const lang of langs) {
+        const hit = demo.find((st) => {
+          const v = st.mainsnak.datavalue && st.mainsnak.datavalue.value;
+          return v && v.language === lang && v.text;
+        });
+        if (hit) { f.demonym = hit.mainsnak.datavalue.value.text; break; }
+      }
     }
 
     return f;

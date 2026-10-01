@@ -173,6 +173,7 @@
   async function showInfo(c, iso3) {
     $("#info-panel").hidden = false;
     $("#info-name").textContent = loc(c.names) || iso3;
+    $("#info-name").dataset.iso3 = iso3;
     const dl = $("#info-facts");
     dl.innerHTML = "";
     const factDefs = [
@@ -202,22 +203,34 @@
     if (!f) return;
     // bail if another country was clicked while fetching
     if ($("#info-name").textContent !== (loc(c.names) || iso3)) return;
-    const fmtInt = (n) => new Intl.NumberFormat().format(n);
+    const locale = I18n.locale;
+    const nf = new Intl.NumberFormat(locale);
+    const fmtInt = (n) => nf.format(n);
+    const t = (k, p) => i18n.t(k, p);
     const values = {
       capital: f.capital,
       languages: f.languages,
+      demonym: f.demonym || (c.facts && c.facts.demonym),
       government: f.government,
       established: f.established,
       area: f.areaKm2 ? fmtInt(f.areaKm2) + " km²" : null,
       population: f.population ? fmtInt(f.population) : null,
       gdp_nominal: f.gdpNominalTotalUsd
-        ? "US$" + fmtInt(f.gdpNominalTotalUsd)
-          + (f.gdpNominalPerCapitaUsd ? " · " + fmtInt(f.gdpNominalPerCapitaUsd) + " / capita" : "")
-          + (f.gdpYear ? " (" + f.gdpYear + ")" : "")
+        ? f.gdpNominalPerCapitaUsd
+          ? t("gdp_total_pc", {
+              total: "US$" + fmtInt(f.gdpNominalTotalUsd),
+              pc: "US$" + fmtInt(f.gdpNominalPerCapitaUsd),
+              year: f.gdpYear || "",
+            })
+          : t("gdp_total_only", { total: "US$" + fmtInt(f.gdpNominalTotalUsd) })
         : null,
       gdp_ppp: f.gdpPppTotalUsd
-        ? "US$" + fmtInt(f.gdpPppTotalUsd)
-          + (f.gdpPppPerCapitaUsd ? " · " + fmtInt(f.gdpPppPerCapitaUsd) + " / capita" : "")
+        ? f.gdpPppPerCapitaUsd
+          ? t("gdp_pc_noyear", {
+              total: "US$" + fmtInt(f.gdpPppTotalUsd),
+              pc: "US$" + fmtInt(f.gdpPppPerCapitaUsd),
+            })
+          : t("gdp_total_only", { total: "US$" + fmtInt(f.gdpPppTotalUsd) })
         : null,
       currency: f.currencies,
       timezone: f.timezones,
@@ -225,8 +238,10 @@
     // capital coordinates: small vendored dataset, no live fetch needed
     if (window.AtlasFacts && AtlasFacts.CAPITAL_COORDS && AtlasFacts.CAPITAL_COORDS[iso3]) {
       const [lon, lat] = AtlasFacts.CAPITAL_COORDS[iso3];
-      values.capital_coord = Math.abs(lat).toFixed(2) + "°" + (lat >= 0 ? "N" : "S") +
-        " " + Math.abs(lon).toFixed(2) + "°" + (lon >= 0 ? "E" : "W");
+      const dirNS = (v) => i18n.t(v >= 0 ? "dir_n" : "dir_s");
+      const dirEW = (v) => i18n.t(v >= 0 ? "dir_e" : "dir_w");
+      values.capital_coord = Math.abs(lat).toFixed(2) + "°" + dirNS(lat) +
+        " " + Math.abs(lon).toFixed(2) + "°" + dirEW(lon);
     }
     renderFacts(dl, factDefs, values, f);
   }
@@ -262,8 +277,12 @@
       const dd = document.createElement("dd");
       for (const row of leaderRows) {
         const line = document.createElement("div");
-        line.textContent = (row.title ? row.title + ": " : "") + row.name +
-          (row.since ? " (" + row.since + ")" : "");
+        const key = row.title && row.since ? "leader_full"
+          : row.title ? "leader_title"
+          : row.since ? "leader_since" : null;
+        line.textContent = key
+          ? i18n.t(key, { title: row.title || "", name: row.name, since: row.since || "" })
+          : row.name;
         dd.appendChild(line);
       }
       dl.appendChild(dt);
@@ -512,6 +531,13 @@
       i18n.setLocale(ev.target.value);
       refreshLessonTitles();
       if (state.lesson) startMode();
+      // re-render an open info panel in the new locale (facts are
+      // cached; labels re-fetch per language chain)
+      const iso3 = $("#info-name").dataset.iso3;
+      if (iso3 && state.lesson) {
+        const c = country(iso3);
+        if (c) showInfo(c, iso3);
+      }
     });
     $("#projection-select").addEventListener("change", (ev) => {
       state.projection = ev.target.value;
