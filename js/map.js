@@ -301,15 +301,22 @@
       }, { passive: false });
 
       let dragging = false, lastX = 0, lastY = 0;
-      let dragVersor = null;      // versor under cursor at drag start (globe)
+      let dragVersor = null;      // cartesian point under cursor at drag start (globe)
       let dragRotate = null;      // projection rotate() at drag start (globe)
+      // d3's orthographic invert clamps off-disc points to the horizon
+      // (finite garbage), so gate on distance from globe centre instead
+      const onGlobe = (pt) => {
+        const t = projection.translate();
+        return Math.hypot(pt[0] - t[0], pt[1] - t[1]) <= projection.scale();
+      };
       svg.addEventListener("mousedown", (ev) => {
         dragging = true; lastX = ev.clientX; lastY = ev.clientY;
         if (isGlobe()) {
           dragRotate = projection.rotate();
-          dragVersor = versor.cartesian(
-            projection.invert(this._svgPoint(ev))
-          );
+          const pt = this._svgPoint(ev);
+          dragVersor = onGlobe(pt)
+            ? versor.cartesian(projection.invert(pt))
+            : null;
         }
       });
       window.addEventListener("mouseup", () => { dragging = false; });
@@ -318,14 +325,16 @@
         const rect = svg.getBoundingClientRect();
         const vb = svg.viewBox.baseVal;
         if (isGlobe()) {
-          // trackball: the sphere point you grabbed follows the cursor
-          // 1:1 at any zoom — speed is always correct, no coefficient
-          const p = projection.invert(this._svgPoint(ev));
-          if (!p || isNaN(p[0])) return;
-          const v2 = versor.cartesian(p);
-          const q = versor.delta(v2, dragVersor);
-          const r = versor.rotation(versor.multiply(q, versor(dragRotate)));
-          projection.rotate(r);
+          if (!dragVersor) { lastX = ev.clientX; lastY = ev.clientY; return; }
+          // canonical versor drag (Bostock): invert in the drag-START
+          // rotation frame, multiply delta on the RIGHT of q0
+          const pt = this._svgPoint(ev);
+          if (!onGlobe(pt)) return; // cursor left the disc mid-drag
+          const p = projection.rotate(dragRotate).invert(pt);
+          if (!p || !isFinite(p[0]) || !isFinite(p[1])) return;
+          const v1 = versor.cartesian(p);
+          const q1 = versor.multiply(versor(dragRotate), versor.delta(dragVersor, v1));
+          projection.rotate(versor.rotation(q1));
           this._reproject();
         } else {
           const scale = vb.width / rect.width;
