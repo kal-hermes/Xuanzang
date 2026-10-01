@@ -51,6 +51,18 @@
    }
   },
   {
+   "iso3": "BHR",
+   "names": {
+    "en-GB": "Bahrain",
+    "fr-CA": "Bahreïn",
+    "zh-Hans": "巴林",
+    "zh-HK": "巴林"
+   },
+   "facts": {
+    "capital": "Manama"
+   }
+  },
+  {
    "iso3": "BGD",
    "names": {
     "en-GB": "Bangladesh",
@@ -120,6 +132,18 @@
    },
    "facts": {
     "capital": "Tbilisi"
+   }
+  },
+  {
+   "iso3": "HKG",
+   "names": {
+    "en-GB": "Hong Kong SAR China",
+    "fr-CA": "R.A.S. chinoise de Hong Kong",
+    "zh-Hans": "中国香港特别行政区",
+    "zh-HK": "中國香港特別行政區"
+   },
+   "facts": {
+    "capital": "City of Victoria"
    }
   },
   {
@@ -267,6 +291,16 @@
    }
   },
   {
+   "iso3": "MAC",
+   "names": {
+    "en-GB": "Macao SAR China",
+    "fr-CA": "R.A.S. chinoise de Macao",
+    "zh-Hans": "中国澳门特别行政区",
+    "zh-HK": "中國澳門特別行政區"
+   },
+   "facts": {}
+  },
+  {
    "iso3": "MYS",
    "names": {
     "en-GB": "Malaysia",
@@ -276,6 +310,18 @@
    },
    "facts": {
     "capital": "Kuala Lumpur"
+   }
+  },
+  {
+   "iso3": "MDV",
+   "names": {
+    "en-GB": "Maldives",
+    "fr-CA": "Maldives",
+    "zh-Hans": "马尔代夫",
+    "zh-HK": "馬爾代夫"
+   },
+   "facts": {
+    "capital": "Malé"
    }
   },
   {
@@ -396,6 +442,18 @@
    },
    "facts": {
     "capital": "Riyadh"
+   }
+  },
+  {
+   "iso3": "SGP",
+   "names": {
+    "en-GB": "Singapore",
+    "fr-CA": "Singapour",
+    "zh-Hans": "新加坡",
+    "zh-HK": "新加坡"
+   },
+   "facts": {
+    "capital": "Singapore"
    }
   },
   {

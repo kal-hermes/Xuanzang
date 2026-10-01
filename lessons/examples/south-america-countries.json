@@ -1,0 +1,174 @@
+{
+ "id": "south-america-countries",
+ "title": {
+  "en-GB": "Countries of South America",
+  "fr-CA": "Les pays d'Amérique du Sud",
+  "zh-Hans": "南美洲国家",
+  "zh-HK": "南美洲國家"
+ },
+ "type": "countries",
+ "view": {
+  "lon0": -84,
+  "lat0": -57,
+  "lon1": -33,
+  "lat1": 14
+ },
+ "countries": [
+  {
+   "iso3": "ARG",
+   "names": {
+    "en-GB": "Argentina",
+    "fr-CA": "Argentine",
+    "zh-Hans": "阿根廷",
+    "zh-HK": "阿根廷"
+   },
+   "facts": {
+    "capital": "Buenos Aires"
+   }
+  },
+  {
+   "iso3": "BOL",
+   "names": {
+    "en-GB": "Bolivia",
+    "fr-CA": "Bolivie",
+    "zh-Hans": "玻利维亚",
+    "zh-HK": "玻利維亞"
+   },
+   "facts": {
+    "capital": "Sucre"
+   }
+  },
+  {
+   "iso3": "BRA",
+   "names": {
+    "en-GB": "Brazil",
+    "fr-CA": "Brésil",
+    "zh-Hans": "巴西",
+    "zh-HK": "巴西"
+   },
+   "facts": {
+    "capital": "Brasília"
+   }
+  },
+  {
+   "iso3": "CHL",
+   "names": {
+    "en-GB": "Chile",
+    "fr-CA": "Chili",
+    "zh-Hans": "智利",
+    "zh-HK": "智利"
+   },
+   "facts": {
+    "capital": "Santiago"
+   }
+  },
+  {
+   "iso3": "COL",
+   "names": {
+    "en-GB": "Colombia",
+    "fr-CA": "Colombie",
+    "zh-Hans": "哥伦比亚",
+    "zh-HK": "哥倫比亞"
+   },
+   "facts": {
+    "capital": "Bogotá"
+   }
+  },
+  {
+   "iso3": "ECU",
+   "names": {
+    "en-GB": "Ecuador",
+    "fr-CA": "Équateur",
+    "zh-Hans": "厄瓜多尔",
+    "zh-HK": "厄瓜多爾"
+   },
+   "facts": {
+    "capital": "Quito"
+   }
+  },
+  {
+   "iso3": "FLK",
+   "names": {
+    "en-GB": "Falkland Islands",
+    "fr-CA": "îles Malouines",
+    "zh-Hans": "福克兰群岛",
+    "zh-HK": "福克蘭群島"
+   },
+   "facts": {
+    "capital": "Stanley"
+   }
+  },
+  {
+   "iso3": "GUY",
+   "names": {
+    "en-GB": "Guyana",
+    "fr-CA": "Guyana",
+    "zh-Hans": "圭亚那",
+    "zh-HK": "圭亞那"
+   },
+   "facts": {
+    "capital": "Georgetown"
+   }
+  },
+  {
+   "iso3": "PRY",
+   "names": {
+    "en-GB": "Paraguay",
+    "fr-CA": "Paraguay",
+    "zh-Hans": "巴拉圭",
+    "zh-HK": "巴拉圭"
+   },
+   "facts": {
+    "capital": "Asunción"
+   }
+  },
+  {
+   "iso3": "PER",
+   "names": {
+    "en-GB": "Peru",
+    "fr-CA": "Pérou",
+    "zh-Hans": "秘鲁",
+    "zh-HK": "秘魯"
+   },
+   "facts": {
+    "capital": "Lima"
+   }
+  },
+  {
+   "iso3": "SUR",
+   "names": {
+    "en-GB": "Suriname",
+    "fr-CA": "Suriname",
+    "zh-Hans": "苏里南",
+    "zh-HK": "蘇里南"
+   },
+   "facts": {
+    "capital": "Paramaribo"
+   }
+  },
+  {
+   "iso3": "URY",
+   "names": {
+    "en-GB": "Uruguay",
+    "fr-CA": "Uruguay",
+    "zh-Hans": "乌拉圭",
+    "zh-HK": "烏拉圭"
+   },
+   "facts": {
+    "capital": "Montevideo"
+   }
+  },
+  {
+   "iso3": "VEN",
+   "names": {
+    "en-GB": "Venezuela",
+    "fr-CA": "Vénézuéla",
+    "zh-Hans": "委内瑞拉",
+    "zh-HK": "委內瑞拉"
+   },
+   "facts": {
+    "capital": "Caracas"
+   }
+  }
+ ]
+}

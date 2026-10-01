@@ -27,6 +27,18 @@
    }
   },
   {
+   "iso3": "AND",
+   "names": {
+    "en-GB": "Andorra",
+    "fr-CA": "Andorre",
+    "zh-Hans": "安道尔",
+    "zh-HK": "安道爾"
+   },
+   "facts": {
+    "capital": "Andorra la Vella"
+   }
+  },
+  {
    "iso3": "AUT",
    "names": {
     "en-GB": "Austria",
@@ -147,6 +159,18 @@
    }
   },
   {
+   "iso3": "FRO",
+   "names": {
+    "en-GB": "Faroe Islands",
+    "fr-CA": "îles Féroé",
+    "zh-Hans": "法罗群岛",
+    "zh-HK": "法羅群島"
+   },
+   "facts": {
+    "capital": "Tórshavn"
+   }
+  },
+  {
    "iso3": "FIN",
    "names": {
     "en-GB": "Finland",
@@ -183,6 +207,18 @@
    }
   },
   {
+   "iso3": "GIB",
+   "names": {
+    "en-GB": "Gibraltar",
+    "fr-CA": "Gibraltar",
+    "zh-Hans": "直布罗陀",
+    "zh-HK": "直布羅陀"
+   },
+   "facts": {
+    "capital": "Gibraltar"
+   }
+  },
+  {
    "iso3": "GRC",
    "names": {
     "en-GB": "Greece",
@@ -192,6 +228,18 @@
    },
    "facts": {
     "capital": "Athens"
+   }
+  },
+  {
+   "iso3": "GGY",
+   "names": {
+    "en-GB": "Guernsey",
+    "fr-CA": "Guernesey",
+    "zh-Hans": "根西岛",
+    "zh-HK": "根息"
+   },
+   "facts": {
+    "capital": "St. Peter Port"
    }
   },
   {
@@ -231,6 +279,18 @@
    }
   },
   {
+   "iso3": "IMN",
+   "names": {
+    "en-GB": "Isle of Man",
+    "fr-CA": "île de Man",
+    "zh-Hans": "马恩岛",
+    "zh-HK": "馬恩島"
+   },
+   "facts": {
+    "capital": "Douglas"
+   }
+  },
+  {
    "iso3": "ITA",
    "names": {
     "en-GB": "Italy",
@@ -243,6 +303,30 @@
    }
   },
   {
+   "iso3": "JEY",
+   "names": {
+    "en-GB": "Jersey",
+    "fr-CA": "Jersey",
+    "zh-Hans": "泽西岛",
+    "zh-HK": "澤西島"
+   },
+   "facts": {
+    "capital": "Saint Helier"
+   }
+  },
+  {
+   "iso3": "XKX",
+   "names": {
+    "en-GB": "Kosovo",
+    "fr-CA": "Kosovo",
+    "zh-Hans": "科索沃",
+    "zh-HK": "科索沃"
+   },
+   "facts": {
+    "capital": "Pristina"
+   }
+  },
+  {
    "iso3": "LVA",
    "names": {
     "en-GB": "Latvia",
@@ -252,6 +336,18 @@
    },
    "facts": {
     "capital": "Riga"
+   }
+  },
+  {
+   "iso3": "LIE",
+   "names": {
+    "en-GB": "Liechtenstein",
+    "fr-CA": "Liechtenstein",
+    "zh-Hans": "列支敦士登",
+    "zh-HK": "列支敦士登"
+   },
+   "facts": {
+    "capital": "Vaduz"
    }
   },
   {
@@ -279,6 +375,18 @@
    }
   },
   {
+   "iso3": "MLT",
+   "names": {
+    "en-GB": "Malta",
+    "fr-CA": "Malte",
+    "zh-Hans": "马耳他",
+    "zh-HK": "馬耳他"
+   },
+   "facts": {
+    "capital": "Valletta"
+   }
+  },
+  {
    "iso3": "MDA",
    "names": {
     "en-GB": "Moldova",
@@ -288,6 +396,18 @@
    },
    "facts": {
     "capital": "Chișinău"
+   }
+  },
+  {
+   "iso3": "MCO",
+   "names": {
+    "en-GB": "Monaco",
+    "fr-CA": "Monaco",
+    "zh-Hans": "摩纳哥",
+    "zh-HK": "摩納哥"
+   },
+   "facts": {
+    "capital": "Monaco"
    }
   },
   {
@@ -387,6 +507,18 @@
    }
   },
   {
+   "iso3": "SMR",
+   "names": {
+    "en-GB": "San Marino",
+    "fr-CA": "Saint-Marin",
+    "zh-Hans": "圣马力诺",
+    "zh-HK": "聖馬力諾"
+   },
+   "facts": {
+    "capital": "City of San Marino"
+   }
+  },
+  {
    "iso3": "SRB",
    "names": {
     "en-GB": "Serbia",
@@ -480,6 +612,30 @@
    },
    "facts": {
     "capital": "London"
+   }
+  },
+  {
+   "iso3": "VAT",
+   "names": {
+    "en-GB": "Vatican City",
+    "fr-CA": "Cité du Vatican",
+    "zh-Hans": "梵蒂冈",
+    "zh-HK": "梵蒂岡"
+   },
+   "facts": {
+    "capital": "Vatican City"
+   }
+  },
+  {
+   "iso3": "ALA",
+   "names": {
+    "en-GB": "Åland Islands",
+    "fr-CA": "îles d’Åland",
+    "zh-Hans": "奥兰群岛",
+    "zh-HK": "奧蘭群島"
+   },
+   "facts": {
+    "capital": "Mariehamn"
    }
   }
  ]

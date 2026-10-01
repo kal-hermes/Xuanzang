@@ -29,6 +29,10 @@
   const LESSONS = [
     { file: "lessons/examples/europe-countries.json" },
     { file: "lessons/examples/asia-countries.json" },
+    { file: "lessons/examples/africa-countries.json" },
+    { file: "lessons/examples/north-america-countries.json" },
+    { file: "lessons/examples/south-america-countries.json" },
+    { file: "lessons/examples/oceania-countries.json" },
   ];
 
   async function loadLesson(file) {
