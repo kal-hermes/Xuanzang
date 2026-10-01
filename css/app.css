@@ -93,6 +93,19 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 #map .country.dimmed { opacity: 0.35; }
 #map .country.highlighted { fill: var(--accent); }
 
+#reset-view-button {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 5;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1;
+  border-radius: 6px;
+}
+
 #map .sphere {
   fill: #0d1420;
   stroke: #43596f;

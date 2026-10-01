@@ -413,6 +413,7 @@
       localStorage.setItem("atlas.projection", state.projection);
       if (state.lesson) startMode();
     });
+    $("#reset-view-button").addEventListener("click", () => map.resetView());
     $("#restart-button").addEventListener("click", () => {
       if (state.lesson) startMode();
     });

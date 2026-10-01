@@ -40,6 +40,7 @@
   let projectionName = "equirectangular";
   let geoPath = null;
   let baseView = null;       // {x, y, w, h}
+  let baseRotation = null;   // globe: initial rotate() for the lesson
   let drawnFeatures = [];    // [{el, feature}] for globe re-projection
   let overlayPaths = [];     // [{el, points}] re-projected on rotate
   let graticuleEl = null;
@@ -155,6 +156,7 @@
           .scale(GLOBE_RADIUS)
           .translate([0, 0])
           .rotate([-cx, -cy]);
+        baseRotation = [-cx, -cy, 0];
         const m = 16;
         baseView = { x: -GLOBE_RADIUS - m, y: -GLOBE_RADIUS - m, w: 2 * (GLOBE_RADIUS + m), h: 2 * (GLOBE_RADIUS + m) };
         svg.setAttribute("viewBox", `${baseView.x} ${baseView.y} ${baseView.w} ${baseView.h}`);
@@ -327,6 +329,11 @@
 
     resetView() {
       if (baseView) svg.setAttribute("viewBox", `${baseView.x} ${baseView.y} ${baseView.w} ${baseView.h}`);
+      // globe: also restore the lesson's initial rotation
+      if (baseRotation && projectionName === "globe") {
+        projection.rotate(baseRotation);
+        this._reproject();
+      }
     },
 
     zoomBy(factor) {

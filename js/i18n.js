@@ -43,7 +43,9 @@
       "proj_naturalEarth": "Natural Earth",
       "proj_robinson": "Robinson",
       "proj_globe": "3D Globe",
-      "hint_globe": "Drag to rotate the globe; scroll to zoom."
+      "hint_globe": "Drag to rotate the globe; scroll to zoom.",
+      "reset_view": "⟲",
+      "reset_view_title": "Reset map view"
     },
     "fr-CA": {
       lesson: "Leçon",
@@ -80,7 +82,9 @@
       "proj_naturalEarth": "Natural Earth",
       "proj_robinson": "Robinson",
       "proj_globe": "Globe 3D",
-      "hint_globe": "Faites glisser pour faire pivoter le globe; molette pour zoomer."
+      "hint_globe": "Faites glisser pour faire pivoter le globe; molette pour zoomer.",
+      "reset_view": "⟲",
+      "reset_view_title": "Réinitialiser la vue"
     },
     "zh-Hans": {
       lesson: "课程",
@@ -117,7 +121,9 @@
       "proj_naturalEarth": "自然地球",
       "proj_robinson": "罗宾森",
       "proj_globe": "3D 地球仪",
-      "hint_globe": "拖动旋转地球仪；滚轮缩放。"
+      "hint_globe": "拖动旋转地球仪；滚轮缩放。",
+      "reset_view": "⟲",
+      "reset_view_title": "重置地图视图"
     },
     "zh-HK": {
       lesson: "課程",
@@ -154,7 +160,9 @@
       "proj_naturalEarth": "自然地球",
       "proj_robinson": "羅賓森",
       "proj_globe": "3D 地球儀",
-      "hint_globe": "拖動旋轉地球儀；滾輪縮放。"
+      "hint_globe": "拖動旋轉地球儀；滾輪縮放。",
+      "reset_view": "⟲",
+      "reset_view_title": "重置地圖視圖"
     },
   };
 
