@@ -230,6 +230,26 @@
       "KNA", "LCA", "TTO", "VCT"],
     // Central Asian -stans
     ["AFG", "KAZ", "KGZ", "TJK", "TKM", "UZB"],
+    // Nordic countries
+    ["DNK", "FIN", "ISL", "NOR", "SWE"],
+    // Central Europe (Slovakia/Slovenia cluster)
+    ["AUT", "CZE", "HRV", "HUN", "SVK", "SVN"],
+    // West Africa / Guinea belt
+    ["GMB", "GNB", "GIN", "GNQ", "LBR", "SEN", "SLE"],
+    // Guianas (French Guiana is a French department, not a country)
+    ["GUY", "SUR"],
+    // Congo pair + neighbours
+    ["AGO", "CAF", "COG", "COD"],
+    // Niger / Nigeria + neighbours (Chad->Niger confusion in tap data)
+    ["CMR", "NER", "NGA", "TCD"],
+    // Baltic states + neighbours
+    ["BLR", "EST", "LTU", "LVA", "POL"],
+    // Balkans
+    ["ALB", "BIH", "BGR", "GRC", "MKD", "MNE", "SRB"],
+    // Central America
+    ["BLZ", "CRI", "GTM", "HND", "NIC", "PAN", "SLV"],
+    // Southern Africa (Zambia confused with 5 different neighbours)
+    ["AGO", "BWA", "COD", "MOZ", "NAM", "TZA", "ZMB", "ZWE"],
   ];
 
   function confusionGroup(iso3) {
