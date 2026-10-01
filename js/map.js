@@ -48,6 +48,28 @@
 
   function isGlobe() { return projectionName === "globe"; }
 
+  // centroid + max angular radius (radians) of a feature — used to cull
+  // backside features cheaply during globe drag re-projection
+  function featureOrbit(feature) {
+    const c = d3.geoCentroid(feature);
+    const cx = c[0] * Math.PI / 180, cy = c[1] * Math.PI / 180;
+    let maxAngle = 0;
+    const visit = (ring) => {
+      for (const [lon, lat] of ring) {
+        const lx = lon * Math.PI / 180, ly = lat * Math.PI / 180;
+        // central angle between ring point and centroid
+        const cosA = Math.sin(cy) * Math.sin(ly) +
+          Math.cos(cy) * Math.cos(ly) * Math.cos(lx - cx);
+        const a = Math.acos(Math.min(1, Math.max(-1, cosA)));
+        if (a > maxAngle) maxAngle = a;
+      }
+    };
+    const g = feature.geometry;
+    if (g.type === "Polygon") g.coordinates.forEach(visit);
+    else if (g.type === "MultiPolygon") g.coordinates.forEach((p) => p.forEach(visit));
+    return { centroid: c, maxAngle };
+  }
+
   // --- public API ---------------------------------------------------
 
   const AtlasMap = {
@@ -64,7 +86,7 @@
 
     async loadWorld() {
       if (world) return world;
-      const res = await fetch("geo/countries-10m.json");
+      const res = await fetch("geo/countries-10m-simple.json");
       const topo = await res.json();
       const feats = topojson.feature(topo, topo.objects.countries).features;
       // The enriched TopoJSON maps split entities to the same iso3
@@ -146,6 +168,14 @@
         graticuleEl.setAttribute("class", "graticule");
         svg.appendChild(graticuleEl);
         this._updateGraticule();
+
+        // precompute centroid + max angular radius per feature once,
+        // so drag re-projection can cull backside features cheaply
+        // (after the render loop below has filled drawnFeatures, so
+        // schedule on next tick)
+        Promise.resolve().then(() => {
+          for (const df of drawnFeatures) df.orbit = featureOrbit(df.feature);
+        });
       } else {
         sphereEl = null;
         graticuleEl = null;
@@ -202,8 +232,25 @@
     },
 
     _reproject() {
-      // re-project every drawn path after a globe rotation
-      for (const { el, feature } of drawnFeatures) {
+      // re-project every drawn path after a globe rotation.
+      // Backside culling: a feature is visible only if the angle between
+      // the view centre and its centroid is < 90° + its angular radius.
+      // (graticule still covers the full sphere; d3 clips it correctly)
+      const rot = projection.rotate();
+      const centre = [-rot[0], -rot[1]];
+      const deg = Math.PI / 180;
+      for (const { el, feature, orbit } of drawnFeatures) {
+        if (orbit) {
+          const c = orbit.centroid;
+          const cosA = Math.sin(centre[1] * deg) * Math.sin(c[1] * deg) +
+            Math.cos(centre[1] * deg) * Math.cos(c[1] * deg) *
+            Math.cos((c[0] - centre[0]) * deg);
+          const angle = Math.acos(Math.min(1, Math.max(-1, cosA)));
+          if (angle > Math.PI / 2 + orbit.maxAngle) {
+            el.setAttribute("d", "");
+            continue;
+          }
+        }
         el.setAttribute("d", geoPath(feature) || "");
       }
       for (const { el, points } of overlayPaths) {
@@ -335,7 +382,15 @@
           const v1 = versor.cartesian(p);
           const q1 = versor.multiply(versor(dragRotate), versor.delta(dragVersor, v1));
           projection.rotate(versor.rotation(q1));
-          this._reproject();
+          // rAF throttle: mousemove fires far more often than the
+          // display refresh; re-project at most once per frame
+          if (!this._rafPending) {
+            this._rafPending = true;
+            requestAnimationFrame(() => {
+              this._rafPending = false;
+              this._reproject();
+            });
+          }
         } else {
           const scale = vb.width / rect.width;
           this.panBy((lastX - ev.clientX) * scale, (lastY - ev.clientY) * scale);
