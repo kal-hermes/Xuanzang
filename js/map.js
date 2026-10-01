@@ -67,13 +67,33 @@
       const res = await fetch("geo/countries-110m.json");
       const topo = await res.json();
       const feats = topojson.feature(topo, topo.objects.countries).features;
-      world = feats
-        .filter((f) => f.properties && f.properties.iso3)
-        .map((f) => ({
-          type: "Feature",               // d3.geoPath requires proper GeoJSON
-          properties: { iso3: f.properties.iso3, name: f.properties.name },
-          geometry: f.geometry,
-        }));
+      // The enriched TopoJSON maps split entities to the same iso3
+      // (N. Cyprus -> CYP, Somaliland -> SOM). Merge duplicates into a
+      // single MultiPolygon feature so each country is exactly one
+      // <path> that highlights/hovers as a unit.
+      const byIso3 = new Map();
+      for (const f of feats) {
+        if (!f.properties || !f.properties.iso3) continue;
+        const iso3 = f.properties.iso3;
+        if (!byIso3.has(iso3)) {
+          byIso3.set(iso3, {
+            type: "Feature",
+            properties: { iso3, name: f.properties.name },
+            geometry: f.geometry,
+          });
+        } else {
+          const merged = byIso3.get(iso3);
+          const polys = [];
+          const push = (g) => {
+            if (g.type === "Polygon") polys.push(g.coordinates);
+            else if (g.type === "MultiPolygon") polys.push(...g.coordinates);
+          };
+          push(merged.geometry);
+          push(f.geometry);
+          merged.geometry = { type: "MultiPolygon", coordinates: polys };
+        }
+      }
+      world = [...byIso3.values()];
       return world;
     },
 
