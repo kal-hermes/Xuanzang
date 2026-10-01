@@ -37,6 +37,13 @@
       demonym: "Demonym",
       founded: "Founded",
       collapsed: "Collapsed",
+      "projection": "Projection",
+      "proj_equirectangular": "Equirectangular",
+      "proj_mercator": "Mercator",
+      "proj_naturalEarth": "Natural Earth",
+      "proj_robinson": "Robinson",
+      "proj_globe": "3D Globe",
+      "hint_globe": "Drag to rotate the globe; scroll to zoom."
     },
     "fr-CA": {
       lesson: "Leçon",
@@ -67,6 +74,13 @@
       demonym: "Gentilé",
       founded: "Fondation",
       collapsed: "Disparition",
+      "projection": "Projection",
+      "proj_equirectangular": "Équirectangulaire",
+      "proj_mercator": "Mercator",
+      "proj_naturalEarth": "Natural Earth",
+      "proj_robinson": "Robinson",
+      "proj_globe": "Globe 3D",
+      "hint_globe": "Faites glisser pour faire pivoter le globe; molette pour zoomer."
     },
     "zh-Hans": {
       lesson: "课程",
@@ -97,6 +111,13 @@
       demonym: "国民称呼",
       founded: "建立",
       collapsed: "灭亡",
+      "projection": "投影",
+      "proj_equirectangular": "等距圆柱",
+      "proj_mercator": "墨卡托",
+      "proj_naturalEarth": "自然地球",
+      "proj_robinson": "罗宾森",
+      "proj_globe": "3D 地球仪",
+      "hint_globe": "拖动旋转地球仪；滚轮缩放。"
     },
     "zh-HK": {
       lesson: "課程",
@@ -127,6 +148,13 @@
       demonym: "國民稱呼",
       founded: "建立",
       collapsed: "滅亡",
+      "projection": "投影",
+      "proj_equirectangular": "等距圓柱",
+      "proj_mercator": "麥卡托",
+      "proj_naturalEarth": "自然地球",
+      "proj_robinson": "羅賓森",
+      "proj_globe": "3D 地球儀",
+      "hint_globe": "拖動旋轉地球儀；滾輪縮放。"
     },
   };
 

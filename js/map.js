@@ -1,34 +1,52 @@
 /* map.js — SVG map rendering on top of world-atlas TopoJSON + d3-geo.
  *
- * d3-geo's equirectangular projection handles antimeridian cutting
- * (Russia/Fiji wrap) and proper path generation.
+ * Supports selectable projections:
+ *   equirectangular | mercator | naturalEarth | robinson | globe
+ * "globe" is d3's orthographic projection with drag-to-rotate; paths
+ * are re-projected on drag (backside is clipped by the projection).
  *
  * Exposes window.AtlasMap:
  *   init(svgEl)                      -> prepare defs/markers
- *   loadWorld() -> Promise<features> -> [{iso3, name, geometry}]
- *   render(lesson)                   -> draw countries for the lesson view
- *   feature(iso3)                    -> geo feature
- *   setClickHandler(fn)              -> fn(iso3)
+ *   loadWorld() -> Promise<features> -> GeoJSON Features (properties.iso3)
+ *   render(lesson, opts)             -> draw; opts.projection = name
+ *   feature(iso3) / setClickHandler(fn)
  *   highlight(iso3, cls) / clearHighlights(cls)
  *   reveal(iso3) / clearRevealed()
- *   centroid(iso3) -> [x, y] (projected)
- *   project([lon, lat]) -> [x, y]
- *   addArrow(points, color)          -> animated dashed path with arrowhead
- *   zoomBy(factor) / resetView()
+ *   centroid(iso3) / project([lon, lat])
+ *   addArrow(points, color) / clearOverlay()
+ *   zoomBy / resetView / attachNavigation (drag = rotate on globe, pan otherwise)
  */
 (function () {
   "use strict";
 
   const d3 = window.d3;
 
+  const PROJECTIONS = {
+    equirectangular: () => d3.geoEquirectangular(),
+    mercator: () => d3.geoMercator(),
+    naturalEarth: () => d3.geoNaturalEarth1(),
+    robinson: () => d3.geoRobinson(),
+    globe: () => d3.geoOrthographic(),
+  };
+
+  const GLOBE_RADIUS = 240; // svg units, fixed so stroke widths stay sane
+
   let svg = null;
-  let world = null;          // feature list with iso3 + name + geometry
+  let world = null;
   let group = null;          // <g id="countries">
-  let overlay = null;        // <g id="overlay"> for arrows etc.
+  let overlay = null;        // <g id="overlay"> arrows etc.
   let clickHandler = null;
   let projection = null;
+  let projectionName = "equirectangular";
   let geoPath = null;
   let baseView = null;       // {x, y, w, h}
+  let drawnFeatures = [];    // [{el, feature}] for globe re-projection
+  let overlayPaths = [];     // [{el, points}] re-projected on rotate
+  let graticuleEl = null;
+  let sphereEl = null;
+  let currentLesson = null;
+
+  function isGlobe() { return projectionName === "globe"; }
 
   // --- public API ---------------------------------------------------
 
@@ -63,28 +81,67 @@
       return world ? world.find((f) => f.properties.iso3 === iso3) : null;
     },
 
-    render(lesson) {
+    render(lesson, opts = {}) {
       if (!world) throw new Error("call loadWorld() first");
+      currentLesson = lesson;
+      projectionName = PROJECTIONS[opts.projection] ? opts.projection : "equirectangular";
       svg.innerHTML = "";
       this.init(svg);
+      drawnFeatures = [];
+      overlayPaths = [];
 
-      // Fit projection to the lesson's requested geographic view.
       const view = lesson.view || { lon0: -170, lat0: -60, lon1: 190, lat1: 84 };
-      const cx = (view.lon0 + view.lon1) / 2;
-      const cy = (view.lat0 + view.lat1) / 2;
+      // NOTE: ring wound clockwise — d3-geo treats CCW rings as holes
+      // (the complement), which would fit the whole world instead.
+      const viewPoly = {
+        type: "Polygon",
+        coordinates: [[
+          [view.lon0, view.lat0], [view.lon0, view.lat1],
+          [view.lon1, view.lat1], [view.lon1, view.lat0],
+          [view.lon0, view.lat0],
+        ]],
+      };
 
-      // Equirectangular, fixed scale (2 svg units per degree at equator)
-      // so stroke widths stay consistent across lessons.
-      projection = d3.geoEquirectangular()
-        .scale((180 / Math.PI) * 2)
-        .center([cx, cy])
-        .translate([0, 0]);
+      projection = PROJECTIONS[projectionName]();
       geoPath = d3.geoPath(projection);
 
-      const [[x0, y0], [x1, y1]] = this._viewBounds(view);
-      const w = Math.max(x1 - x0, 1), h = Math.max(y1 - y0, 1);
-      baseView = { x: x0, y: y0, w, h };
-      svg.setAttribute("viewBox", `${x0} ${y0} ${w} ${h}`);
+      if (isGlobe()) {
+        // fixed-size globe centered on the lesson's view centre
+        const cx = (view.lon0 + view.lon1) / 2;
+        const cy = (view.lat0 + view.lat1) / 2;
+        projection
+          .scale(GLOBE_RADIUS)
+          .translate([0, 0])
+          .rotate([-cx, -cy]);
+        const m = 16;
+        baseView = { x: -GLOBE_RADIUS - m, y: -GLOBE_RADIUS - m, w: 2 * (GLOBE_RADIUS + m), h: 2 * (GLOBE_RADIUS + m) };
+        svg.setAttribute("viewBox", `${baseView.x} ${baseView.y} ${baseView.w} ${baseView.h}`);
+
+        sphereEl = document.createElementNS(svg.namespaceURI, "path");
+        sphereEl.setAttribute("d", geoPath({ type: "Sphere" }) || "");
+        sphereEl.setAttribute("class", "sphere");
+        svg.appendChild(sphereEl);
+
+        graticuleEl = document.createElementNS(svg.namespaceURI, "path");
+        graticuleEl.setAttribute("class", "graticule");
+        svg.appendChild(graticuleEl);
+        this._updateGraticule();
+      } else {
+        sphereEl = null;
+        graticuleEl = null;
+        // fit the projection to the lesson's view polygon (Mercator
+        // cannot represent the poles — clamp before fitting)
+        let fitPoly = viewPoly;
+        if (projectionName === "mercator") {
+          const clamp = (v) => Math.max(-82, Math.min(82, v));
+          const coords = viewPoly.coordinates[0].map(([lon, lat]) => [lon, clamp(lat)]);
+          fitPoly = { type: "Polygon", coordinates: [coords] };
+        }
+        projection.fitExtent([[10, 10], [990, 990]], fitPoly);
+        const [[bx0, by0], [bx1, by1]] = geoPath.bounds(fitPoly);
+        baseView = { x: bx0, y: by0, w: bx1 - bx0, h: by1 - by0 };
+        svg.setAttribute("viewBox", `${bx0} ${by0} ${bx1 - bx0} ${by1 - by0}`);
+      }
       svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
 
       group = document.createElementNS(svg.namespaceURI, "g");
@@ -95,11 +152,14 @@
       svg.appendChild(overlay);
 
       const inView = new Set((lesson.countries || []).map((c) => c.iso3));
-      const margin = 5; // svg-unit slack for the bounds test
+      const margin = 5;
+      const [[x0, y0], [x1, y1]] = [[baseView.x, baseView.y],
+        [baseView.x + baseView.w, baseView.y + baseView.h]];
       for (const f of world) {
-        const [[fx0, fy0], [fx1, fy1]] = geoPath.bounds(f);
-        // skip features entirely outside the view box
-        if (fx1 < x0 - margin || fx0 > x1 + margin || fy1 < y0 - margin || fy0 > y1 + margin) continue;
+        if (!isGlobe()) {
+          const [[fx0, fy0], [fx1, fy1]] = geoPath.bounds(f);
+          if (fx1 < x0 - margin || fx0 > x1 + margin || fy1 < y0 - margin || fy0 > y1 + margin) continue;
+        }
         const inLesson = inView.has(f.properties.iso3);
         const el = document.createElementNS(svg.namespaceURI, "path");
         el.setAttribute("d", geoPath(f) || "");
@@ -109,18 +169,31 @@
           ev.stopPropagation();
           if (clickHandler) clickHandler(f.properties.iso3);
         });
+        drawnFeatures.push({ el, feature: f });
         group.appendChild(el);
       }
     },
 
-    _viewBounds(view) {
-      // project the four corners and take the enclosing box
-      const pts = [
-        [view.lon0, view.lat0], [view.lon1, view.lat0],
-        [view.lon1, view.lat1], [view.lon0, view.lat1],
-      ].map((c) => projection(c));
-      const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
-      return [[Math.min(...xs), Math.min(...ys)], [Math.max(...xs), Math.max(...ys)]];
+    _updateGraticule() {
+      if (!graticuleEl) return;
+      const grat = d3.geoGraticule ? d3.geoGraticule() : null;
+      if (!grat) { graticuleEl.setAttribute("d", ""); return; }
+      graticuleEl.setAttribute("d", geoPath(grat()) || "");
+    },
+
+    _reproject() {
+      // re-project every drawn path after a globe rotation
+      for (const { el, feature } of drawnFeatures) {
+        el.setAttribute("d", geoPath(feature) || "");
+      }
+      for (const { el, points } of overlayPaths) {
+        el.setAttribute("d", points.map((c, i) => {
+          const [x, y] = projection(c);
+          if (x == null || isNaN(x)) return "";
+          return (i === 0 ? "M" : "L") + x.toFixed(2) + " " + y.toFixed(2);
+        }).join(" "));
+      }
+      this._updateGraticule();
     },
 
     setClickHandler(fn) { clickHandler = fn; },
@@ -159,15 +232,18 @@
 
     addArrow(points, color = "#ffd24a") {
       // points: [[lon, lat], ...] — projected then drawn with dash animation
-      const d = points.map((c, i) => {
+      const segs = [];
+      for (const c of points) {
         const [x, y] = projection(c);
-        return (i === 0 ? "M" : "L") + x.toFixed(2) + " " + y.toFixed(2);
-      }).join(" ");
+        if (x == null || isNaN(x)) continue; // clipped (e.g. globe backside)
+        segs.push((segs.length === 0 ? "M" : "L") + x.toFixed(2) + " " + y.toFixed(2));
+      }
       const p = document.createElementNS(svg.namespaceURI, "path");
-      p.setAttribute("d", d);
+      p.setAttribute("d", segs.join(" "));
       p.setAttribute("class", "arrow");
       p.setAttribute("stroke", color);
       overlay.appendChild(p);
+      overlayPaths.push({ el: p, points });
       const len = p.getTotalLength();
       p.style.strokeDasharray = len;
       p.style.strokeDashoffset = len;
@@ -178,6 +254,7 @@
     },
 
     clearOverlay() {
+      overlayPaths = [];
       if (overlay) overlay.innerHTML = "";
     },
 
@@ -208,10 +285,20 @@
       window.addEventListener("mouseup", () => { dragging = false; });
       svg.addEventListener("mousemove", (ev) => {
         if (!dragging) return;
-        const vb = svg.viewBox.baseVal;
         const rect = svg.getBoundingClientRect();
-        const scale = vb.width / rect.width;
-        this.panBy((lastX - ev.clientX) * scale, (lastY - ev.clientY) * scale);
+        const vb = svg.viewBox.baseVal;
+        if (isGlobe()) {
+          // rotate: degrees per px, scaled to current zoom
+          const k = 0.25 * (vb.width / rect.width);
+          const r = projection.rotate();
+          const lambda = r[0] + (ev.clientX - lastX) * k;
+          const phi = Math.max(-90, Math.min(90, r[1] - (ev.clientY - lastY) * k));
+          projection.rotate([lambda, phi, r[2]]);
+          this._reproject();
+        } else {
+          const scale = vb.width / rect.width;
+          this.panBy((lastX - ev.clientX) * scale, (lastY - ev.clientY) * scale);
+        }
         lastX = ev.clientX; lastY = ev.clientY;
         svg.style.cursor = "grabbing";
       });

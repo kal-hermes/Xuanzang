@@ -93,6 +93,18 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 #map .country.dimmed { opacity: 0.35; }
 #map .country.highlighted { fill: var(--accent); }
 
+#map .sphere {
+  fill: #0d1420;
+  stroke: #43596f;
+  stroke-width: 1;
+}
+
+#map .graticule {
+  fill: none;
+  stroke: #22303f;
+  stroke-width: 0.5;
+}
+
 #map path.arrow {
   fill: none;
   stroke-width: 2;

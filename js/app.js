@@ -17,6 +17,7 @@
     lesson: null,
     mode: "learn",
     answerStyle: "choice",
+    projection: localStorage.getItem("atlas.projection") || "equirectangular",
     order: [],          // shuffled iso3 list for tests
     index: 0,
     correct: 0,
@@ -121,23 +122,23 @@
     $("#answer-box").hidden = true;
     $("#answer-style-row").hidden = state.mode !== "name";
 
+    map.render(state.lesson, { projection: state.projection });
+
     if (state.mode === "learn") {
-      setHint(i18n.t("hint_learn"));
+      setHint(state.projection === "globe" ? i18n.t("hint_globe") : i18n.t("hint_learn"));
       map.setClickHandler((iso3) => learnClick(iso3));
-      map.render(state.lesson);
     } else {
       state.order = shuffle(state.lesson.countries.map((c) => c.iso3));
       state.index = 0;
       state.correct = 0;
       state.locked = false;
-      map.render(state.lesson);
       if (state.mode === "locate") {
-        setHint(i18n.t("hint_locate"));
+        setHint(state.projection === "globe" ? i18n.t("hint_globe") : i18n.t("hint_locate"));
         map.setClickHandler((iso3) => locateClick(iso3));
         nextLocate();
       } else {
         state.answerStyle = $("#answer-style-select").value;
-        setHint(i18n.t("hint_name"));
+        setHint(state.projection === "globe" ? i18n.t("hint_globe") : i18n.t("hint_name"));
         map.setClickHandler(() => {});
         nextName();
       }
@@ -318,6 +319,7 @@
 
   function init() {
     i18n.setLocale(i18n.locale);
+    $("#projection-select").value = state.projection;
     map.init($("#map"));
     map.attachNavigation();
     fillLessonSelect();
@@ -335,6 +337,11 @@
     $("#locale-select").addEventListener("change", (ev) => {
       i18n.setLocale(ev.target.value);
       refreshLessonTitles();
+      if (state.lesson) startMode();
+    });
+    $("#projection-select").addEventListener("change", (ev) => {
+      state.projection = ev.target.value;
+      localStorage.setItem("atlas.projection", state.projection);
       if (state.lesson) startMode();
     });
     $("#restart-button").addEventListener("click", () => {
