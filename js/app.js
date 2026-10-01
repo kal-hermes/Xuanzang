@@ -33,6 +33,7 @@
     { file: "lessons/examples/north-america-countries.json" },
     { file: "lessons/examples/south-america-countries.json" },
     { file: "lessons/examples/oceania-countries.json" },
+    { file: "lessons/xuanzang/journey.json" },
   ];
 
   async function loadLesson(file) {
@@ -153,6 +154,7 @@
       map.setClickHandler((iso3) => learnClick(iso3, false));
       if (!state.visited) state.visited = new Set();
       renderCountryList();
+      if (state.lesson.type === "journey") renderJourney();
     } else {
       $("#country-list-panel").hidden = true;
       state.order = shuffle(state.lesson.countries.map((c) => c.iso3));
@@ -189,7 +191,8 @@
       map.rotateToFace(iso3);
       map.pointCountry(iso3);
     } else {
-      map.clearOverlay();
+      map.clearOverlay(); // wipes journey route arrows too — redraw them
+      if (state.lesson.type === "journey") renderJourneyRoutes();
     }
     showInfo(c, iso3);
   }
@@ -214,6 +217,80 @@
       li.addEventListener("click", () => learnClick(c.iso3, true));
       ul.appendChild(li);
     }
+  }
+
+  // ---------- journey lessons ----------
+  // Learn mode for type:"journey": draw both route legs and list the
+  // stops in TRAVEL ORDER (not alphabetically). Clicking a stop points
+  // at its coordinates and shows year + narrative.
+  function renderJourney() {
+    const L = state.lesson;
+    renderJourneyRoutes();
+    // stops sidebar replaces the alphabetical country list
+    const ul = $("#country-list");
+    ul.innerHTML = "";
+    ul.classList.add("journey-order");
+    for (const s of L.stops) {
+      const li = document.createElement("li");
+      li.dataset.stop = s.id;
+      if (state.visitedStops && state.visitedStops.has(s.id)) li.classList.add("visited");
+      const yr = document.createElement("span");
+      yr.className = "stop-year";
+      yr.textContent = s.year;
+      const nm = document.createElement("span");
+      nm.textContent = loc(s.names) || s.id;
+      li.append(yr, document.createTextNode(" "), nm);
+      li.addEventListener("click", () => journeyStopClick(s));
+      ul.appendChild(li);
+    }
+    $("#country-list-panel h2").textContent = i18n.t("stops");
+  }
+
+  function renderJourneyRoutes() {
+    const L = state.lesson;
+    map.addArrow(L.route_out, "#ffd24a");
+    map.addArrow(L.route_back, "#e05674");
+  }
+
+  function journeyStopClick(s) {
+    if (!state.visitedStops) state.visitedStops = new Set();
+    state.visitedStops.add(s.id);
+    const li = document.querySelector(`#country-list li[data-stop="${s.id}"]`);
+    if (li) li.classList.add("visited");
+    map.rotateToCoord(s.coords);
+    map.pointAt(s.coords);
+    showStopInfo(s);
+    if (s.iso3) {
+      map.reveal(s.iso3);
+      map.setCurrent(s.iso3);
+    }
+  }
+
+  function showStopInfo(s) {
+    $("#info-panel").hidden = false;
+    $("#info-name").textContent = loc(s.names) || s.id;
+    $("#info-name").dataset.iso3 = "";
+    const dl = $("#info-facts");
+    dl.innerHTML = "";
+    const year = document.createElement("dt");
+    year.textContent = i18n.t("year");
+    const yearDd = document.createElement("dd");
+    yearDd.textContent = s.year;
+    dl.append(year, yearDd);
+    const country = state.lesson.countries.find((c) => c.iso3 === s.iso3);
+    if (country) {
+      const cdt = document.createElement("dt");
+      cdt.textContent = i18n.t("today_in");
+      const cdd = document.createElement("dd");
+      cdd.textContent = loc(country.names) || s.iso3;
+      dl.append(cdt, cdd);
+    }
+    const ndt = document.createElement("dt");
+    ndt.textContent = i18n.t("what_he_saw");
+    const ndd = document.createElement("dd");
+    ndd.className = "narrative";
+    ndd.textContent = loc(s.narrative) || "";
+    dl.append(ndt, ndd);
   }
 
   async function showInfo(c, iso3) {

@@ -44,6 +44,7 @@
   let drawnFeatures = [];    // [{el, feature}] for globe re-projection
   let overlayPaths = [];     // [{el, points}] re-projected on rotate
   let pointedIso3 = null;    // country currently pointed at by an arrow
+  let pointedCoords = null;  // or: arbitrary lon/lat being pointed at
   let graticuleEl = null;
   let sphereEl = null;
   let currentLesson = null;
@@ -365,7 +366,7 @@
       }
       const p = document.createElementNS(svg.namespaceURI, "path");
       p.setAttribute("d", segs.join(" "));
-      p.setAttribute("class", "arrow");
+      p.setAttribute("class", "arrow route");
       p.setAttribute("stroke", color);
       overlay.appendChild(p);
       overlayPaths.push({ el: p, points });
@@ -381,6 +382,7 @@
     clearOverlay() {
       overlayPaths = [];
       pointedIso3 = null;
+      pointedCoords = null;
       if (overlay) overlay.innerHTML = "";
     },
 
@@ -410,7 +412,29 @@
     // overlay is redrawn after globe drags (see _reproject).
     pointCountry(iso3) {
       pointedIso3 = iso3;
+      pointedCoords = null;
       this._redrawPointOverlay(true);
+    },
+
+    // point at an arbitrary lon/lat (journey stops) instead of a country
+    pointAt(coords) {
+      pointedCoords = coords;
+      pointedIso3 = null;
+      this._redrawPointOverlay(true);
+    },
+
+    rotateToCoord(coords) {
+      if (!isGlobe()) return;
+      const centre = projection.invert(
+        [projection.translate()[0], projection.translate()[1]]);
+      const deg = Math.PI / 180;
+      const cosA = Math.sin(coords[1] * deg) * Math.sin(centre[1] * deg) +
+        Math.cos(coords[1] * deg) * Math.cos(centre[1] * deg) *
+        Math.cos((coords[0] - centre[0]) * deg);
+      if (Math.acos(Math.min(1, Math.max(-1, cosA))) > Math.PI / 3) {
+        projection.rotate([-coords[0], -coords[1]]);
+        this._reproject();
+      }
     },
 
     _redrawPointOverlay(animate) {
@@ -419,20 +443,26 @@
         el.remove();
       }
       overlayPaths = overlayPaths.filter((o) => !o.fixed);
-      if (!pointedIso3) return;
+      let target = null, bbox = null;
+      if (pointedCoords) {
+        // journey stop: arbitrary coordinates, no feature/bbox
+        const t = projection(pointedCoords);
+        if (t && t[0] != null && !isNaN(t[0])) target = t;
+      } else if (pointedIso3) {
       const f = this.feature(pointedIso3);
       if (!f) return;
       // use the largest polygon's centroid: whole-feature centroids of
       // countries with far-flung territories (France: 21 polygons incl.
       // overseas departments) land in the ocean
       const main = mainPolygon(f);
-      const target = projection(d3.geoCentroid(main));
+      target = projection(d3.geoCentroid(main));
       if (!target || target[0] == null || isNaN(target[0])) return;
 
       // arrow start: a point outside the main polygon's projected bbox
       // so tiny countries aren't covered by the arrowhead itself
-      let bbox;
       try { bbox = geoPath.bounds(main); } catch (e) { bbox = null; }
+      }
+      if (!target) return;
       let start = [target[0], target[1] - 90];
       if (bbox) {
         const [[x0, y0], [x1, y1]] = bbox;

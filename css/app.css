@@ -147,6 +147,14 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
   marker-end: url(#arrowhead);
 }
 
+/* journey route legs */
+#map path.arrow.route {
+  stroke-width: 3;
+  stroke-opacity: 0.85;
+  marker-end: none;
+  stroke-dasharray: none;
+}
+
 /* pointing arrow (reveal / sidebar) — thicker than route arrows */
 #map path.point-arrow {
   stroke-width: 9;
@@ -198,6 +206,19 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 #country-list li.visited {
   text-decoration: line-through;
   opacity: 0.55;
+}
+#country-list li .stop-year {
+  display: inline-block;
+  min-width: 2.4em;
+  margin-right: 0.4em;
+  font-size: 0.8em;
+  opacity: 0.6;
+  font-variant-numeric: tabular-nums;
+}
+#info-facts dd.narrative {
+  max-width: 260px;
+  white-space: normal;
+  line-height: 1.45;
 }
 
 #prompt-bar {

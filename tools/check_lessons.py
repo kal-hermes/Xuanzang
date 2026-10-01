@@ -11,7 +11,9 @@ topo_iso3 = {g["properties"]["iso3"] for g in topo["objects"]["countries"]["geom
 LOCALES = ["en-GB", "fr-CA", "zh-Hans", "zh-HK", "ja"]
 
 fail = 0
-for f in sorted((ROOT / "lessons/examples").glob("*-countries.json")):
+lessons = sorted((ROOT / "lessons/examples").glob("*-countries.json"))
+lessons += sorted((ROOT / "lessons").glob("*/journey.json"))
+for f in lessons:
     lesson = json.loads(f.read_text())
     n = len(lesson["countries"])
     problems = []
@@ -21,6 +23,17 @@ for f in sorted((ROOT / "lessons/examples").glob("*-countries.json")):
         for loc in LOCALES:
             if loc not in c["names"]:
                 problems.append(f"{c['iso3']} missing {loc}")
+    if lesson.get("type") == "journey":
+        for s in lesson.get("stops", []):
+            if not s.get("coords") or len(s["coords"]) != 2:
+                problems.append(f"stop {s.get('id')} bad coords")
+            for locname in LOCALES:
+                if locname not in (s.get("names") or {}) or locname not in (s.get("narrative") or {}):
+                    problems.append(f"stop {s.get('id')} missing {locname}")
+            if s.get("iso3") not in topo_iso3:
+                problems.append(f"stop {s.get('id')} iso3 {s.get('iso3')} NOT IN TOPO")
+        if not lesson.get("route_out") or not lesson.get("route_back"):
+            problems.append("missing route legs")
     status = "OK" if not problems else "FAIL " + "; ".join(problems[:5])
     if problems:
         fail += 1
