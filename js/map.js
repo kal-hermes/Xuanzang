@@ -43,6 +43,7 @@
   let baseRotation = null;   // globe: initial rotate() for the lesson
   let drawnFeatures = [];    // [{el, feature}] for globe re-projection
   let overlayPaths = [];     // [{el, points}] re-projected on rotate
+  let pointedIso3 = null;    // country currently pointed at by an arrow
   let graticuleEl = null;
   let sphereEl = null;
   let currentLesson = null;
@@ -261,13 +262,15 @@
         }
         el.setAttribute("d", geoPath(feature) || "");
       }
-      for (const { el, points } of overlayPaths) {
+      for (const { el, points, fixed } of overlayPaths) {
+        if (fixed) continue; // pixel-space overlay: redrawn separately
         el.setAttribute("d", points.map((c, i) => {
           const [x, y] = projection(c);
           if (x == null || isNaN(x)) return "";
           return (i === 0 ? "M" : "L") + x.toFixed(2) + " " + y.toFixed(2);
         }).join(" "));
       }
+      this._redrawPointOverlay(false);
       this._updateGraticule();
     },
 
@@ -330,8 +333,95 @@
 
     clearOverlay() {
       overlayPaths = [];
+      pointedIso3 = null;
       if (overlay) overlay.innerHTML = "";
     },
+
+    // globe: if the pointed country is now on the backside, rotate it
+    // to face the viewer
+    rotateToFace(iso3) {
+      if (!isGlobe()) return;
+      const f = this.feature(iso3);
+      if (!f) return;
+      const c = d3.geoCentroid(f);
+      const centre = projection.invert(
+        [projection.translate()[0], projection.translate()[1]]);
+      const deg = Math.PI / 180;
+      const cosA = Math.sin(c[1] * deg) * Math.sin(centre[1] * deg) +
+        Math.cos(c[1] * deg) * Math.cos(centre[1] * deg) *
+        Math.cos((c[0] - centre[0]) * deg);
+      if (Math.acos(Math.min(1, Math.max(-1, cosA))) > Math.PI / 3) {
+        projection.rotate([-c[0], -c[1]]);
+        this._reproject();
+      }
+    },
+
+
+    // Point at a country: big animated arrow + pulsing target dot at
+    // its centroid. If the globe is showing and the country is on the
+    // backside, rotate it to face the viewer first. The pointing
+    // overlay is redrawn after globe drags (see _reproject).
+    pointCountry(iso3) {
+      pointedIso3 = iso3;
+      this._redrawPointOverlay(true);
+    },
+
+    _redrawPointOverlay(animate) {
+      if (!overlay) return;
+      for (const el of [...overlay.querySelectorAll(".point-arrow, .target-dot")]) {
+        el.remove();
+      }
+      overlayPaths = overlayPaths.filter((o) => !o.fixed);
+      if (!pointedIso3) return;
+      const f = this.feature(pointedIso3);
+      if (!f) return;
+      const target = projection(d3.geoCentroid(f));
+      if (!target || target[0] == null || isNaN(target[0])) return;
+
+      // arrow start: a point outside the country's projected bbox so
+      // tiny countries aren't covered by the arrowhead itself
+      let bbox;
+      try { bbox = geoPath.bounds(f); } catch (e) { bbox = null; }
+      let start = [target[0], target[1] - 90];
+      if (bbox) {
+        const [[x0, y0], [x1, y1]] = bbox;
+        const cx = (x0 + x1) / 2;
+        if (y0 > 130) start = [cx, y0 - 70];          // room above
+        else if (y1 < 870) start = [cx, y1 + 70];     // room below
+        else start = [x1 + 70, (y0 + y1) / 2];        // room to the right
+        // ensure a minimum arrow length for visibility
+        const dx = target[0] - start[0], dy = target[1] - start[1];
+        const d = Math.hypot(dx, dy) || 1;
+        const minLen = 70;
+        if (d < minLen) {
+          start = [target[0] - dx * minLen / d, target[1] - dy * minLen / d];
+        }
+      }
+      const p = document.createElementNS(svg.namespaceURI, "path");
+      p.setAttribute("d", `M ${start[0].toFixed(1)} ${start[1].toFixed(1)} L ${target[0].toFixed(1)} ${target[1].toFixed(1)}`);
+      p.setAttribute("class", "arrow point-arrow");
+      p.setAttribute("marker-end", "url(#arrowhead)");
+      overlay.appendChild(p);
+      if (animate) {
+        const len = p.getTotalLength();
+        p.style.strokeDasharray = len;
+        p.style.strokeDashoffset = len;
+        p.getBoundingClientRect(); // force layout
+        p.style.transition = "stroke-dashoffset 0.8s ease-out";
+        p.style.strokeDashoffset = "0";
+      }
+      // fixed: pixel-space element — _reproject redraws it instead of
+      // re-projecting lon/lat points
+      overlayPaths.push({ el: p, fixed: true });
+
+      const dot = document.createElementNS(svg.namespaceURI, "circle");
+      dot.setAttribute("cx", target[0]);
+      dot.setAttribute("cy", target[1]);
+      dot.setAttribute("r", 6);
+      dot.setAttribute("class", "target-dot");
+      overlay.appendChild(dot);
+    },
+
 
     resetView() {
       if (baseView) svg.setAttribute("viewBox", `${baseView.x} ${baseView.y} ${baseView.w} ${baseView.h}`);

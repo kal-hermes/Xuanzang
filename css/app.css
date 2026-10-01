@@ -146,6 +146,56 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
   marker-end: url(#arrowhead);
 }
 
+/* pointing arrow (reveal / sidebar) — thicker than route arrows */
+#map path.point-arrow {
+  stroke-width: 9;
+  stroke: #ffd24a;
+}
+
+#map .target-dot {
+  fill: #ffd24a;
+  stroke: #222;
+  stroke-width: 1.5;
+  animation: target-pulse 1.2s ease-out infinite;
+}
+
+@keyframes target-pulse {
+  0%   { r: 4; opacity: 1; }
+  100% { r: 14; opacity: 0; }
+}
+
+/* Learn-mode country sidebar */
+#country-list-panel {
+  width: 220px;
+  overflow-y: auto;
+  border-right: 1px solid var(--border, #43596f);
+  padding: 0.5rem 0.75rem;
+  flex-shrink: 0;
+}
+#country-list-panel h2 {
+  font-size: 1em;
+  margin: 0 0 0.5rem;
+  opacity: 0.8;
+}
+#country-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#country-list li {
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95em;
+}
+#country-list li:hover {
+  background: rgba(255, 210, 74, 0.15);
+}
+#country-list li.visited {
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
 #prompt-bar {
   position: absolute;
   top: 0.75rem;

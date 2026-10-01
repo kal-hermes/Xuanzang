@@ -44,6 +44,7 @@
       data = await res.json();
     }
     state.lesson = data;
+    state.visited = null; // fresh learn-session per lesson
     state.mode = $("#mode-select").value;
     startMode();
   }
@@ -149,8 +150,11 @@
 
     if (state.mode === "learn") {
       setHint(state.projection === "globe" ? i18n.t("hint_globe") : i18n.t("hint_learn"));
-      map.setClickHandler((iso3) => learnClick(iso3));
+      map.setClickHandler((iso3) => learnClick(iso3, false));
+      if (!state.visited) state.visited = new Set();
+      renderCountryList();
     } else {
+      $("#country-list-panel").hidden = true;
       state.order = shuffle(state.lesson.countries.map((c) => c.iso3));
       state.index = 0;
       state.correct = 0;
@@ -158,8 +162,10 @@
       if (state.mode === "locate") {
         setHint(state.projection === "globe" ? i18n.t("hint_globe") : i18n.t("hint_locate"));
         map.setClickHandler((iso3) => locateClick(iso3));
+        $("#reveal-button").hidden = false;
         nextLocate();
       } else {
+        $("#reveal-button").hidden = true;
         state.answerStyle = $("#answer-style-select").value;
         setHint(state.projection === "globe" ? i18n.t("hint_globe") : i18n.t("hint_name"));
         map.setClickHandler(() => {});
@@ -169,11 +175,44 @@
     }
   }
 
-  function learnClick(iso3) {
+  function learnClick(iso3, viaSidebar) {
     const c = country(iso3);
     if (!c) return; // country not part of this lesson; ignore
     map.reveal(iso3);
+    if (state.visited) state.visited.add(iso3);
+    const li = document.querySelector(`#country-list li[data-iso3="${iso3}"]`);
+    if (li) li.classList.add("visited");
+    // sidebar clicks additionally point at the country on the map
+    // (the user presumably doesn't know where it is)
+    if (viaSidebar) {
+      map.rotateToFace(iso3);
+      map.pointCountry(iso3);
+    } else {
+      map.clearOverlay();
+    }
     showInfo(c, iso3);
+  }
+
+  // Sidebar (Learn mode): every country in the lesson; visited ones
+  // are crossed out. Clicking a name behaves like clicking the country
+  // on the map, plus an arrow pointing at it on the map.
+  function renderCountryList() {
+    const panel = $("#country-list-panel");
+    if (!state.lesson) { panel.hidden = true; return; }
+    panel.hidden = false;
+    const ul = $("#country-list");
+    ul.innerHTML = "";
+    const coll = new Intl.Collator(i18n.locale);
+    const items = [...state.lesson.countries].sort((a, b) =>
+      coll.compare(loc(a.names) || a.iso3, loc(b.names) || b.iso3));
+    for (const c of items) {
+      const li = document.createElement("li");
+      li.dataset.iso3 = c.iso3;
+      if (state.visited && state.visited.has(c.iso3)) li.classList.add("visited");
+      li.textContent = loc(c.names) || c.iso3;
+      li.addEventListener("click", () => learnClick(c.iso3, true));
+      ul.appendChild(li);
+    }
   }
 
   async function showInfo(c, iso3) {
@@ -348,6 +387,7 @@
     const c = country(iso3);
     if (!c) return; // clicked a country outside the lesson
     state.locked = true;
+    map.clearOverlay();
     if (iso3 === target) {
       state.correct++;
       map.highlight(iso3, "correct");
@@ -364,6 +404,25 @@
       state.locked = false;
       nextLocate();
     }, 1200);
+  }
+
+  // "Reveal answer": show where the target country is (arrow + dot),
+  // mark the round as wrong, and move on
+  function revealAnswer() {
+    if (state.locked || state.mode !== "locate") return;
+    const target = state.order[state.index];
+    if (!target) return;
+    state.locked = true;
+    map.rotateToFace(target);
+    map.highlight(target, "correct");
+    map.pointCountry(target);
+    setTimeout(() => {
+      map.clearHighlights("correct");
+      map.clearOverlay();
+      state.index++;
+      state.locked = false;
+      nextLocate();
+    }, 2200);
   }
 
   // ---------- confusion groups ----------
@@ -578,7 +637,9 @@
       if (state.lesson) startMode();
     });
     $("#reset-view-button").addEventListener("click", () => map.resetView());
+    $("#reveal-button").addEventListener("click", revealAnswer);
     $("#restart-button").addEventListener("click", () => {
+      state.visited = null;
       if (state.lesson) startMode();
     });
     $("#info-close").addEventListener("click", () => { $("#info-panel").hidden = true; });
