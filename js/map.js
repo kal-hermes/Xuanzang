@@ -1,100 +1,34 @@
-/* map.js — SVG map rendering on top of world-atlas TopoJSON.
+/* map.js — SVG map rendering on top of world-atlas TopoJSON + d3-geo.
+ *
+ * d3-geo's equirectangular projection handles antimeridian cutting
+ * (Russia/Fiji wrap) and proper path generation.
  *
  * Exposes window.AtlasMap:
  *   init(svgEl)                      -> prepare defs/markers
  *   loadWorld() -> Promise<features> -> [{iso3, name, geometry}]
- *   render(lesson, opts)             -> draw countries for the lesson view
+ *   render(lesson)                   -> draw countries for the lesson view
+ *   feature(iso3)                    -> geo feature
  *   setClickHandler(fn)              -> fn(iso3)
  *   highlight(iso3, cls) / clearHighlights(cls)
  *   reveal(iso3) / clearRevealed()
- *   centroid(iso3) -> [x, y]
+ *   centroid(iso3) -> [x, y] (projected)
+ *   project([lon, lat]) -> [x, y]
  *   addArrow(points, color)          -> animated dashed path with arrowhead
  *   zoomBy(factor) / resetView()
- *
- * Projection: equirectangular clipped to the lesson's `view` box.
  */
 (function () {
   "use strict";
 
+  const d3 = window.d3;
+
   let svg = null;
   let world = null;          // feature list with iso3 + name + geometry
-  let byIso3 = new Map();    // iso3 -> feature
   let group = null;          // <g id="countries">
   let overlay = null;        // <g id="overlay"> for arrows etc.
   let clickHandler = null;
+  let projection = null;
+  let geoPath = null;
   let baseView = null;       // {x, y, w, h}
-
-  function equirect([lon, lat]) {
-    return [lon, -lat];
-  }
-
-  // --- geo helpers -------------------------------------------------
-
-  function pathFromGeometry(geom) {
-    const polys = geom.type === "Polygon" ? [geom.coordinates]
-      : geom.type === "MultiPolygon" ? geom.coordinates : [];
-    return polys.map((poly) =>
-      poly.map((ring) =>
-        ring.map((c, i) => {
-          const [x, y] = equirect(c);
-          return (i === 0 ? "M" : "L") + x.toFixed(2) + " " + y.toFixed(2);
-        }).join(" ") + " Z"
-      ).join(" ")
-    ).join(" ");
-  }
-
-  function boundsOfGeometry(geom) {
-    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-    const polys = geom.type === "Polygon" ? [geom.coordinates]
-      : geom.type === "MultiPolygon" ? geom.coordinates : [];
-    for (const poly of polys) {
-      for (const ring of poly) {
-        for (const [lon, lat] of ring) {
-          const [x, y] = equirect([lon, lat]);
-          if (x < minX) minX = x; if (x > maxX) maxX = x;
-          if (y < minY) minY = y; if (y > maxY) maxY = y;
-        }
-      }
-    }
-    return { minX, minY, maxX, maxY };
-  }
-
-  function biggestPolygon(geom) {
-    const polys = geom.type === "Polygon" ? [geom]
-      : geom.type === "MultiPolygon" ? geom.coordinates.map((p) => ({ type: "Polygon", coordinates: p }))
-      : [];
-    let best = null, bestArea = -1;
-    for (const poly of polys) {
-      const ring = poly.coordinates[0];
-      let area = 0;
-      for (let i = 0; i < ring.length - 1; i++) {
-        const [x1, y1] = equirect(ring[i]);
-        const [x2, y2] = equirect(ring[i + 1]);
-        area += x1 * y2 - x2 * y1;
-      }
-      area = Math.abs(area / 2);
-      if (area > bestArea) { bestArea = area; best = poly; }
-    }
-    return best;
-  }
-
-  function centroidOf(feature) {
-    const poly = biggestPolygon(feature.geometry);
-    if (!poly) return null;
-    const ring = poly.coordinates[0];
-    let cx = 0, cy = 0, a = 0;
-    for (let i = 0; i < ring.length - 1; i++) {
-      const [x1, y1] = equirect(ring[i]);
-      const [x2, y2] = equirect(ring[i + 1]);
-      const cross = x1 * y2 - x2 * y1;
-      a += cross;
-      cx += (x1 + x2) * cross;
-      cy += (y1 + y2) * cross;
-    }
-    a /= 2;
-    if (a === 0) return null;
-    return [cx / (6 * a), cy / (6 * a)];
-  }
 
   // --- public API ---------------------------------------------------
 
@@ -118,24 +52,39 @@
       world = feats
         .filter((f) => f.properties && f.properties.iso3)
         .map((f) => ({
-          iso3: f.properties.iso3,
-          name: f.properties.name,
+          type: "Feature",               // d3.geoPath requires proper GeoJSON
+          properties: { iso3: f.properties.iso3, name: f.properties.name },
           geometry: f.geometry,
         }));
-      byIso3 = new Map(world.map((f) => [f.iso3, f]));
       return world;
     },
 
-    render(lesson, opts = {}) {
+    feature(iso3) {
+      return world ? world.find((f) => f.properties.iso3 === iso3) : null;
+    },
+
+    render(lesson) {
       if (!world) throw new Error("call loadWorld() first");
       svg.innerHTML = "";
       this.init(svg);
 
+      // Fit projection to the lesson's requested geographic view.
       const view = lesson.view || { lon0: -170, lat0: -60, lon1: 190, lat1: 84 };
-      const [x0, y0] = equirect([view.lon0, view.lat1]);
-      const [x1, y1] = equirect([view.lon1, view.lat0]);
-      baseView = { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
-      svg.setAttribute("viewBox", `${x0} ${y0} ${x1 - x0} ${y1 - y0}`);
+      const cx = (view.lon0 + view.lon1) / 2;
+      const cy = (view.lat0 + view.lat1) / 2;
+
+      // Equirectangular, fixed scale (2 svg units per degree at equator)
+      // so stroke widths stay consistent across lessons.
+      projection = d3.geoEquirectangular()
+        .scale((180 / Math.PI) * 2)
+        .center([cx, cy])
+        .translate([0, 0]);
+      geoPath = d3.geoPath(projection);
+
+      const [[x0, y0], [x1, y1]] = this._viewBounds(view);
+      const w = Math.max(x1 - x0, 1), h = Math.max(y1 - y0, 1);
+      baseView = { x: x0, y: y0, w, h };
+      svg.setAttribute("viewBox", `${x0} ${y0} ${w} ${h}`);
       svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
 
       group = document.createElementNS(svg.namespaceURI, "g");
@@ -146,21 +95,32 @@
       svg.appendChild(overlay);
 
       const inView = new Set((lesson.countries || []).map((c) => c.iso3));
+      const margin = 5; // svg-unit slack for the bounds test
       for (const f of world) {
-        if (inView.size && !inView.has(f.iso3)) continue;
-        const b = boundsOfGeometry(f.geometry);
+        if (inView.size && !inView.has(f.properties.iso3)) continue;
+        const [[fx0, fy0], [fx1, fy1]] = geoPath.bounds(f);
         // skip features entirely outside the view box
-        if (b.maxX < x0 || b.minX > x1 || b.maxY < y0 || b.minY > y1) continue;
+        if (fx1 < x0 - margin || fx0 > x1 + margin || fy1 < y0 - margin || fy0 > y1 + margin) continue;
         const el = document.createElementNS(svg.namespaceURI, "path");
-        el.setAttribute("d", pathFromGeometry(f.geometry));
+        el.setAttribute("d", geoPath(f) || "");
         el.setAttribute("class", "country");
-        el.dataset.iso3 = f.iso3;
+        el.dataset.iso3 = f.properties.iso3;
         el.addEventListener("click", (ev) => {
           ev.stopPropagation();
-          if (clickHandler) clickHandler(f.iso3);
+          if (clickHandler) clickHandler(f.properties.iso3);
         });
         group.appendChild(el);
       }
+    },
+
+    _viewBounds(view) {
+      // project the four corners and take the enclosing box
+      const pts = [
+        [view.lon0, view.lat0], [view.lon1, view.lat0],
+        [view.lon1, view.lat1], [view.lon0, view.lat1],
+      ].map((c) => projection(c));
+      const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
+      return [[Math.min(...xs), Math.min(...ys)], [Math.max(...xs), Math.max(...ys)]];
     },
 
     setClickHandler(fn) { clickHandler = fn; },
@@ -189,14 +149,18 @@
     },
 
     centroid(iso3) {
-      const f = byIso3.get(iso3);
-      return f ? centroidOf(f) : null;
+      const f = this.feature(iso3);
+      return f ? projection(d3.geoCentroid(f)) : null;
+    },
+
+    project([lon, lat]) {
+      return projection([lon, lat]);
     },
 
     addArrow(points, color = "#ffd24a") {
-      // points: [[lon, lat], ...] — drawn on the overlay with a dash animation
+      // points: [[lon, lat], ...] — projected then drawn with dash animation
       const d = points.map((c, i) => {
-        const [x, y] = equirect(c);
+        const [x, y] = projection(c);
         return (i === 0 ? "M" : "L") + x.toFixed(2) + " " + y.toFixed(2);
       }).join(" ");
       const p = document.createElementNS(svg.namespaceURI, "path");
