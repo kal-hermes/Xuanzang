@@ -212,6 +212,44 @@
     }, 1200);
   }
 
+  // ---------- confusion groups ----------
+  // Countries that are easily mixed up (geographic neighbours or
+  // similar names). When quizzing a member of a group, all answer
+  // options are drawn from the same group.
+  const CONFUSION_GROUPS = [
+    // Middle East
+    ["ARE", "BHR", "EGY", "IRN", "IRQ", "ISR", "JOR", "KWT", "LBN",
+      "OMN", "PSE", "QAT", "SAU", "SYR", "TUR", "YEM"],
+    // North Africa
+    ["DZA", "EGY", "LBY", "MAR", "TUN", "ESH"],
+    // Southeast Asia
+    ["BRN", "IDN", "KHM", "LAO", "MMR", "MYS", "PHL", "SGP", "THA",
+      "TLS", "VNM"],
+    // Caribbean
+    ["ATG", "BHS", "BRB", "CUB", "DMA", "DOM", "GRD", "HTI", "JAM",
+      "KNA", "LCA", "TTO", "VCT"],
+    // Central Asian -stans
+    ["AFG", "KAZ", "KGZ", "TJK", "TKM", "UZB"],
+  ];
+
+  function confusionGroup(iso3) {
+    return CONFUSION_GROUPS.find((g) => g.includes(iso3)) || null;
+  }
+
+  function pickDistractors(iso3, pool) {
+    // prefer same-group countries (harder); fall back to random
+    const group = confusionGroup(iso3);
+    const others = pool.filter((c) => c.iso3 !== iso3);
+    if (group) {
+      const inGroup = shuffle(others.filter((c) => group.includes(c.iso3)));
+      if (inGroup.length >= 3) return inGroup.slice(0, 3);
+      // not enough group members in this lesson: top up with randoms
+      const rest = shuffle(others.filter((c) => !group.includes(c.iso3)));
+      return [...inGroup, ...rest].slice(0, 3);
+    }
+    return shuffle(others).slice(0, 3);
+  }
+
   function nextName() {
     if (state.index >= state.order.length) return finishTest();
     const iso3 = state.order[state.index];
@@ -226,9 +264,7 @@
     if (state.answerStyle === "choice") {
       $("#choices").innerHTML = "";
       $("#text-form").hidden = true;
-      const distractors = shuffle(
-        state.lesson.countries.filter((c) => c.iso3 !== iso3)
-      ).slice(0, 3);
+      const distractors = pickDistractors(iso3, state.lesson.countries);
       const options = shuffle([country(iso3), ...distractors]);
       for (const opt of options) {
         const btn = document.createElement("button");
