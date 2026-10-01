@@ -468,13 +468,21 @@
       p.setAttribute("class", "arrow point-arrow");
       p.setAttribute("marker-end", "url(#arrowhead-point)");
       overlay.appendChild(p);
+      // The head's TIP is anchored at the line end (refX=10) and the
+      // triangle tapers backward from it; a shaft drawn the full
+      // length pokes out the head's sides near the point (visible at
+      // animation end). Stop the dash ~5px short of the tip, where the
+      // head is already wider than the 9px shaft.
+      const len = p.getTotalLength();
+      const GAP = 5;
+      p.style.strokeDasharray = len;
       if (animate) {
-        const len = p.getTotalLength();
-        p.style.strokeDasharray = len;
         p.style.strokeDashoffset = len;
         p.getBoundingClientRect(); // force layout
         p.style.transition = "stroke-dashoffset 0.8s ease-out";
-        p.style.strokeDashoffset = "0";
+        p.style.strokeDashoffset = GAP;
+      } else {
+        p.style.strokeDashoffset = GAP;
       }
       // fixed: pixel-space element — _reproject redraws it instead of
       // re-projecting lon/lat points
