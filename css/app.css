@@ -151,6 +151,9 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 #map path.point-arrow {
   stroke-width: 9;
   stroke: #ffd24a;
+  /* butt cap: a round cap would extend past the line end and poke
+     through the arrowhead's tip */
+  stroke-linecap: butt;
 }
 
 #map .target-dot {

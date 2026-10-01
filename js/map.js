@@ -480,12 +480,18 @@
       // re-projecting lon/lat points
       overlayPaths.push({ el: p, fixed: true });
 
-      const dot = document.createElementNS(svg.namespaceURI, "circle");
-      dot.setAttribute("cx", target[0]);
-      dot.setAttribute("cy", target[1]);
-      dot.setAttribute("r", 6);
-      dot.setAttribute("class", "target-dot");
-      overlay.appendChild(dot);
+      // pulsing dot at the centroid — skip it when the arrowhead
+      // already ends at/near the target (micro-countries): a dot
+      // 2px past the tip just merges into the head as a blob
+      const distEnd = end === target ? 0 : Math.hypot(target[0] - end[0], target[1] - end[1]);
+      if (distEnd > 20) {
+        const dot = document.createElementNS(svg.namespaceURI, "circle");
+        dot.setAttribute("cx", target[0]);
+        dot.setAttribute("cy", target[1]);
+        dot.setAttribute("r", 6);
+        dot.setAttribute("class", "target-dot");
+        overlay.appendChild(dot);
+      }
     },
 
 
