@@ -64,7 +64,7 @@
 
     async loadWorld() {
       if (world) return world;
-      const res = await fetch("geo/countries-110m.json");
+      const res = await fetch("geo/countries-10m.json");
       const topo = await res.json();
       const feats = topojson.feature(topo, topo.objects.countries).features;
       // The enriched TopoJSON maps split entities to the same iso3

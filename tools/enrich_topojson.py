@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""One-time: add properties.iso3 to geo/countries-110m.json using
+"""One-time: add properties.iso3 to a world-atlas TopoJSON file using
 tools/iso3166.csv (UN M49 numeric code -> alpha-3).
 
+Usage: enrich_topojson.py [filename]   (default: countries-110m.json)
 Idempotent: rewrites the file with iso3 added; safe to re-run.
 """
 import csv
@@ -10,10 +11,12 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TOPO = ROOT / "geo" / "countries-110m.json"
 CSV = ROOT / "tools" / "iso3166.csv"
 
 def main():
+    fname = sys.argv[1] if len(sys.argv) > 1 else "countries-110m.json"
+    topo_path = ROOT / "geo" / fname
+
     code_to_iso3 = {}
     with open(CSV, newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
@@ -21,7 +24,7 @@ def main():
             if num:
                 code_to_iso3[num] = row["alpha-3"].strip()
 
-    topo = json.loads(TOPO.read_text(encoding="utf-8"))
+    topo = json.loads(topo_path.read_text(encoding="utf-8"))
     geoms = topo["objects"]["countries"]["geometries"]
 
     mapped, unmapped = 0, []
@@ -43,6 +46,9 @@ def main():
         "Taiwan": "TWN",
         "Palestine": "PSE",
         "eSwatini": "SWZ",
+        "Vatican": "VAT",
+        "Tuvalu": "TUV",
+        "Gibraltar": "GIB",
     }
     for g in geoms:
         name = g["properties"].get("name", "")
@@ -51,8 +57,22 @@ def main():
             mapped += 1
             unmapped = [(n, m) for n, m in unmapped if m != name]
 
-    TOPO.write_text(json.dumps(topo, separators=(",", ":")), encoding="utf-8")
-    print(f"mapped {mapped}/{len(geoms)} geometries to iso3")
+    # Special territories with no ISO country code / no lesson value:
+    # drop them so they never render (even as context).
+    drop_names = {
+        "Akrotiri", "Dhekelia", "Cyprus U.N. Buffer Zone",
+        "Baikonur", "USNB Guantanamo Bay", "U.S. Minor Outlying Is.",
+        "Bajo Nuevo Bank", "Serranilla Bank", "Scarborough Reef",
+        "Spratly Is.", "Coral Sea Is.", "Clipperton I.",
+        "Siachen Glacier", "Indian Ocean Ter.",
+        "Ashmore and Cartier Is.",   # Australian external territory, not a separate feature
+    }
+    before = len(geoms)
+    geoms[:] = [g for g in geoms if g["properties"].get("name") not in drop_names]
+    dropped = before - len(geoms)
+
+    topo_path.write_text(json.dumps(topo, separators=(",", ":")), encoding="utf-8")
+    print(f"{fname}: mapped {mapped}/{len(geoms)} to iso3, dropped {dropped} special territories")
     if unmapped:
         print("still unmapped:", unmapped)
     return 0
