@@ -151,7 +151,12 @@
 
     if (state.mode === "learn") {
       setHint(state.projection === "globe" ? i18n.t("hint_globe") : i18n.t("hint_learn"));
-      map.setClickHandler((iso3) => learnClick(iso3, false));
+      if (state.lesson.type === "journey") {
+        // journey learn mode: only the stop dots are interactive
+        map.setClickHandler(() => {});
+      } else {
+        map.setClickHandler((iso3) => learnClick(iso3, false));
+      }
       if (!state.visited) state.visited = new Set();
       renderCountryList();
       if (state.lesson.type === "journey") renderJourney();

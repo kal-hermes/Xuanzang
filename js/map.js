@@ -437,7 +437,7 @@
         const dot = document.createElementNS(svg.namespaceURI, "circle");
         dot.setAttribute("cx", c[0]);
         dot.setAttribute("cy", c[1]);
-        dot.setAttribute("r", 6);
+        dot.setAttribute("r", 4);
         dot.setAttribute("class", "stop-dot" + (s.id === focusedId ? " focused" : ""));
         dot.dataset.stop = s.id;
         dot.addEventListener("click", (ev) => {

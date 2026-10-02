@@ -176,12 +176,13 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
   fill: #ffd24a;
   fill-opacity: 0.9;
   stroke: #1b2733;
-  stroke-width: 1.5;
+  stroke-width: 1;
   cursor: pointer;
   pointer-events: all;
 }
 #map .stop-dot:hover {
   fill: #ffe27a;
+  r: 5.5;
 }
 #map .stop-dot.focused {
   fill: #ff9d3c;
@@ -189,8 +190,8 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 }
 
 @keyframes stop-pulse {
-  0%   { r: 6; stroke-opacity: 1; }
-  100% { r: 18; stroke-opacity: 0; }
+  0%   { r: 4; stroke-opacity: 1; }
+  100% { r: 12; stroke-opacity: 0; }
 }
 
 @keyframes target-pulse {
