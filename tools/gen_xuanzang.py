@@ -363,6 +363,13 @@ def main():
         "id": "xuanzang-journey",
         "type": "journey",
         "title": TITLES,
+        "traveler": {
+            "en-GB": "Xuanzang",
+            "fr-CA": "Xuanzang",
+            "zh-Hans": "玄奘",
+            "zh-HK": "玄奘",
+            "ja": "玄奘",
+        },
         "view": {"lon0": 55, "lat0": 5, "lon1": 125, "lat1": 55},
         "stops": [],
         "route_out": [],

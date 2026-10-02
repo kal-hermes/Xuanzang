@@ -227,9 +227,14 @@
         sphereEl = null;
         graticuleEl = null;
         // fit the projection to the lesson's view polygon (Mercator
-        // cannot represent the poles — clamp before fitting)
+        // cannot represent the poles — clamp before fitting). A
+        // near-whole-globe view (>=355 deg wide) breaks fitExtent
+        // (scale collapses to ~0), so fit to the full sphere instead.
+        const viewSpan = ((view.lon1 - view.lon0 + 360) % 360) || 360;
         let fitPoly = viewPoly;
-        if (projectionName === "mercator") {
+        if (viewSpan >= 355) {
+          fitPoly = { type: "Sphere" };
+        } else if (projectionName === "mercator") {
           const clamp = (v) => Math.max(-82, Math.min(82, v));
           const coords = viewPoly.coordinates[0].map(([lon, lat]) => [lon, clamp(lat)]);
           fitPoly = { type: "Polygon", coordinates: [coords] };
@@ -372,6 +377,63 @@
 
     project([lon, lat]) {
       return projection([lon, lat]);
+    },
+
+    // sea voyage route: waypoints joined by quadratic Bezier segments
+    // (bows seaward) so the line curves around coastlines instead of
+    // cutting straight across land. Waypoints sit offshore; control
+    // points extend the tangent directions, giving a smooth S/C-shaped
+    // fair curve through the ports of call.
+    addSeaRoute(points, color = "#ffd24a") {
+      const pts = [];
+      for (const c of points) {
+        const [x, y] = projection(c);
+        if (x == null || isNaN(x)) continue;
+        pts.push([x, y]);
+      }
+      if (pts.length < 2) return null;
+      const d = [`M${pts[0][0].toFixed(2)} ${pts[0][1].toFixed(2)}`];
+      for (let i = 1; i < pts.length; i++) {
+        const p0 = pts[i - 1], p1 = pts[i];
+        // antimeridian split: a jump wider than half the map means the
+        // segment crosses ±180°; drawing it straight would slash across
+        // the whole map. Break the path there (separate visual segment).
+        if (Math.abs(p1[0] - p0[0]) > 490) {
+          d.push(`M${p1[0].toFixed(2)} ${p1[1].toFixed(2)}`);
+          continue;
+        }
+        // control point: midpoint pushed along the average of the
+        // incoming and outgoing directions (Catmull-Rom-like), which
+        // rounds every corner without overshooting into land much
+        const pPrev = pts[i - 2] || p0, pNext = pts[i + 1] || p1;
+        let t1 = [p0[0] - pPrev[0], p0[1] - pPrev[1]];
+        let t2 = [pNext[0] - p1[0], pNext[1] - p1[1]];
+        const norm = (v) => {
+          const l = Math.hypot(v[0], v[1]) || 1;
+          return [v[0] / l, v[1] / l];
+        };
+        t1 = norm(t1); t2 = norm(t2);
+        const chord = Math.hypot(p1[0] - p0[0], p1[1] - p0[1]);
+        // gentle bow: rounds corners without straying far from the
+        // waypoint track (large bows can drag the curve over land)
+        const k = Math.min(chord * 0.18, 90);
+        const c1 = [p0[0] + t1[0] * k, p0[1] + t1[1] * k];
+        const c2 = [p1[0] - t2[0] * k, p1[1] - t2[1] * k];
+        d.push(`C${c1[0].toFixed(2)} ${c1[1].toFixed(2)} ${c2[0].toFixed(2)} ${c2[1].toFixed(2)} ${p1[0].toFixed(2)} ${p1[1].toFixed(2)}`);
+      }
+      const p = document.createElementNS(svg.namespaceURI, "path");
+      p.setAttribute("d", d.join(" "));
+      p.setAttribute("class", "arrow route searoute");
+      p.setAttribute("stroke", color);
+      overlay.appendChild(p);
+      overlayPaths.push({ el: p, points });
+      const len = p.getTotalLength();
+      p.style.strokeDasharray = len;
+      p.style.strokeDashoffset = len;
+      p.getBoundingClientRect();
+      p.style.transition = "stroke-dashoffset 1.6s linear";
+      p.style.strokeDashoffset = "0";
+      return p;
     },
 
     addArrow(points, color = "#ffd24a") {

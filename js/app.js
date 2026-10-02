@@ -63,6 +63,7 @@
     { file: "lessons/examples/south-america-countries.json" },
     { file: "lessons/examples/oceania-countries.json" },
     { file: "lessons/xuanzang/journey.json" },
+    { file: "lessons/magellan/voyage.json" },
   ];
 
   async function loadLesson(file) {
@@ -248,7 +249,7 @@
         updateScore();
         return;
       }
-      state.order = shuffle(state.lesson.countries.map((c) => c.iso3));
+      state.order = shuffle((state.lesson.countries || []).map((c) => c.iso3));
       state.index = 0;
       state.correct = 0;
       state.locked = false;
@@ -294,6 +295,8 @@
   function renderCountryList() {
     const panel = $("#country-list-panel");
     if (!state.lesson) { panel.hidden = true; return; }
+    // journey lessons render their stop list instead (renderJourneySidebar)
+    if (state.lesson.type === "journey") { panel.hidden = false; return; }
     panel.hidden = false;
     const ul = $("#country-list");
     ul.innerHTML = "";
@@ -360,8 +363,13 @@
 
   function renderJourneyRoutes() {
     const L = state.lesson;
-    map.addArrow(L.route_out, "#ffd24a");
-    map.addArrow(L.route_back, "#e05674");
+    if (L.voyage) {
+      map.addSeaRoute(L.route_out, "#ffd24a");
+      if (L.route_back) map.addSeaRoute(L.route_back, "#e05674");
+    } else {
+      map.addArrow(L.route_out, "#ffd24a");
+      map.addArrow(L.route_back, "#e05674");
+    }
   }
 
   // explore mode: click on a dot / sidebar entry
@@ -812,12 +820,19 @@
 
   function routeYearVariants(year) {
     const y = Number(String(year).replace(/[^0-9]/g, "").slice(0, 4)) || 630;
+    // keep variants within +-3 of the real year (never before the
+    // departure year, which we take from the lesson's first stop)
+    const firstYear = Number(String(state.lesson.stops[0].year)
+      .replace(/[^0-9]/g, "").slice(0, 4)) || y - 5;
+    const lastYear = Number(String(
+      state.lesson.stops[state.lesson.stops.length - 1].year)
+      .replace(/[^0-9]/g, "").slice(0, 4)) || y + 5;
     const out = new Set();
     let guard = 0;
     while (out.size < 3 && guard++ < 30) {
       const d = (Math.floor(Math.random() * 3) + 1) * (Math.random() < 0.5 ? -1 : 1);
       const v = y + d;
-      if (v >= 628 && v <= 646 && v !== y) out.add(v);
+      if (v >= firstYear && v <= lastYear && v !== y) out.add(v);
     }
     return [...out];
   }
@@ -842,7 +857,8 @@
     map.rotateToCoord(cur.coords);
     setHint("");
     $("#prompt-text").textContent = i18n.t("prompt_route",
-      { name: loc(cur.names), year: cur.year });
+      { name: loc(cur.names), year: cur.year,
+        traveler: loc(L.traveler) || "he" });
 
     // answer options: always [correct, place-right-year-wrong,
     // place-wrong-year-right, maybe place-wrong-year-wrong]
@@ -871,22 +887,26 @@
   function routeDistractorPlaces(nxt, L) {
     const idx = L.stops.indexOf(nxt);
     const near = L.stops.filter((s, i) =>
-      Math.abs(i - idx) >= 2 && Math.abs(i - idx) <= 6);
+      Math.abs(i - idx) >= 2 && Math.abs(i - idx) <= 8);
     const pool = [...shuffle(near).slice(0, 3)];
     const extras = (L.quizPlaces || []).map((p) => ({
       names: p.names, year: p.year, pseudo: p,
     }));
-    while (pool.length < 2 + Math.floor(Math.random() * 2)) {
+    let guard = 0;
+    while (pool.length < 3 && guard++ < 40) {
       const e = extras[Math.floor(Math.random() * extras.length)];
       if (e && !pool.includes(e)) pool.push(e);
-      else break;
+      else if (!extras.length) break;
     }
-    return shuffle(pool).slice(0, 2);
+    return shuffle(pool).slice(0, 3);
   }
 
+  // lesson-specific return-color split: Xuanzang turns at Nalanda,
+  // Magellan's fleet turns at Tidore
   function routeColor(i, stops) {
-    const nIdx = stops.findIndex((s) => s.id === "nalanda");
-    return i >= nIdx ? "#e05674" : "#ffd24a";
+    const pivot = stops.findIndex((s) =>
+      s.id === "nalanda" || s.id === "tidore");
+    return i >= pivot ? "#e05674" : "#ffd24a";
   }
 
   function routeAnswer(opt, btn, nxt) {
@@ -938,7 +958,8 @@
     map.rotateToCoord(s.coords);
     setHint("");
     $("#prompt-text").textContent = i18n.t("prompt_sights",
-      { name: loc(s.names), year: s.year });
+      { name: loc(s.names), year: s.year,
+        traveler: loc(state.lesson.traveler) || "he" });
 
     const sights = L.quizSights || {};
     const fact = sights[s.id];

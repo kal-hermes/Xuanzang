@@ -8,6 +8,13 @@
     "zh-HK": "玄奘西行（629–645）",
     "ja": "玄奘の西への旅（629–645）"
   },
+  "traveler": {
+    "en-GB": "Xuanzang",
+    "fr-CA": "Xuanzang",
+    "zh-Hans": "玄奘",
+    "zh-HK": "玄奘",
+    "ja": "玄奘"
+  },
   "view": {
     "lon0": 55,
     "lat0": 5,
