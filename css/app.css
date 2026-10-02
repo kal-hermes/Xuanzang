@@ -72,6 +72,7 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
   fill: #2c3d4f;
   stroke: #6f8ca8;
   stroke-width: 0.4;
+  vector-effect: non-scaling-stroke;
   cursor: pointer;
 }
 
@@ -133,17 +134,20 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
   fill: #0d1420;
   stroke: #43596f;
   stroke-width: 1;
+  vector-effect: non-scaling-stroke;
 }
 
 #map .graticule {
   fill: none;
   stroke: #22303f;
   stroke-width: 0.5;
+  vector-effect: non-scaling-stroke;
 }
 
 #map path.arrow {
   fill: none;
   stroke-width: 2;
+  vector-effect: non-scaling-stroke;
   marker-end: url(#arrowhead);
 }
 
@@ -158,6 +162,7 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 /* pointing arrow (reveal / sidebar) — thicker than route arrows */
 #map path.point-arrow {
   stroke-width: 9;
+  vector-effect: non-scaling-stroke;
   stroke: #ffd24a;
   /* butt cap: a round cap would extend past the line end and poke
      through the arrowhead's tip */
@@ -165,39 +170,47 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 }
 
 #map .target-dot {
-  fill: #ffd24a;
-  stroke: #222;
-  stroke-width: 1.5;
+  fill: none;
+  stroke: #ffd24a;
+  stroke-width: 12px;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
   animation: target-pulse 1.2s ease-out infinite;
 }
 
-/* journey stop dots: static, clickable; focused one pulses */
+/* journey stop dots: static, clickable; focused one pulses.
+ * A dot is TWO zero-length paths with round linecaps — the cap IS
+ * the dot, so vector-effect: non-scaling-stroke keeps it a constant
+ * SCREEN size at any zoom, with no JS rescaling. */
 #map .stop-dot {
-  fill: #ffd24a;
-  fill-opacity: 0.9;
-  stroke: #1b2733;
-  stroke-width: 1;
   cursor: pointer;
-  pointer-events: all;
+  pointer-events: stroke;
 }
-#map .stop-dot:hover {
-  fill: #ffe27a;
-  r: 4.5;
+#map .stop-dot .dot-halo {
+  fill: none;
+  stroke: #1b2733;
+  stroke-width: 8px;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
 }
-#map .stop-dot.focused {
-  fill: #ff9d3c;
+#map .stop-dot .dot-core {
+  fill: none;
+  stroke: #ffd24a;
+  stroke-opacity: 0.9;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+#map .stop-dot:hover .dot-core { stroke: #ffe27a; }
+#map .stop-dot.focused .dot-core { stroke: #ff9d3c; }
+/* pulse animates the core itself (a g can't render a stroke; children
+ * with their own stroke-width declarations would ignore an inherited
+ * animated value) */
+#map .stop-dot.focused .dot-core {
   animation: stop-pulse 1.2s ease-out infinite;
 }
-#map .stop-badge {
-  fill: #ffd24a;
-  font-size: 9px;
-  text-anchor: middle;
-  paint-order: stroke;
-  stroke: #1b2733;
-  stroke-width: 2px;
-  pointer-events: none;
-}
-#map .stop-dot.multi { r: 3.5; }
+#map .stop-dot.multi .dot-core { stroke-width: 7px; }
+#map .stop-dot.multi .dot-halo { stroke-width: 9px; }
 #stop-popover {
   position: absolute;
   z-index: 40;
@@ -219,13 +232,13 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 }
 
 @keyframes stop-pulse {
-  0%   { r: 3; stroke-opacity: 1; }
-  100% { r: 10; stroke-opacity: 0; }
+  0%   { stroke-width: 6px; stroke-opacity: 0.9; }
+  100% { stroke-width: 16px; stroke-opacity: 0; }
 }
 
 @keyframes target-pulse {
-  0%   { r: 4; opacity: 1; }
-  100% { r: 14; opacity: 0; }
+  0%   { stroke-width: 8px; stroke-opacity: 1; }
+  100% { stroke-width: 24px; stroke-opacity: 0; }
 }
 
 /* Learn-mode country sidebar */

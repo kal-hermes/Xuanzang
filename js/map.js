@@ -541,15 +541,25 @@
         const s = stops[i];
         const c = this.project(s.coords);
         if (!c || c[0] == null || isNaN(c[0])) continue;
-        const dot = document.createElementNS(svg.namespaceURI, "circle");
-        dot.setAttribute("cx", c[0]);
-        dot.setAttribute("cy", c[1]);
-        dot.setAttribute("r", 3);
         const isFocused = group.includes(focusedIdx);
+        const dot = document.createElementNS(svg.namespaceURI, "g");
         dot.setAttribute("class", "stop-dot" + (isFocused ? " focused" : ""));
         dot.dataset.idx = i;
         dot.dataset.stop = s.id;
         dot.dataset.visits = group.join(",");
+        // a stop dot is TWO zero-length paths with round linecaps:
+        // the rendered cap IS the dot, so vector-effect:
+        // non-scaling-stroke keeps it a constant screen size while
+        // zooming — no JS rescaling needed
+        const dAttr = `M${c[0].toFixed(2)} ${c[1].toFixed(2)}h.0001`;
+        const halo = document.createElementNS(svg.namespaceURI, "path");
+        halo.setAttribute("class", "dot-halo");
+        halo.setAttribute("d", dAttr);
+        const core = document.createElementNS(svg.namespaceURI, "path");
+        core.setAttribute("class", "dot-core");
+        core.setAttribute("d", dAttr);
+        dot.appendChild(halo);
+        dot.appendChild(core);
         if (group.length > 1) {
           dot.classList.add("multi");
           dot.addEventListener("mouseenter", () => {
@@ -641,26 +651,15 @@
         const s = stopDots.find((d) => d.idx === Number(el.dataset.idx));
         if (!s) continue;
         const c = projection(s.coords);
-        if (!c || c[0] == null || isNaN(c[0])) {
-          el.setAttribute("cx", -100); // off-canvas (backside)
-          el.setAttribute("cy", -100);
-          continue;
-        }
         // keep the fan offset applied for duplicates
         const dx = Number(el.dataset.dx || 0), dy = Number(el.dataset.dy || 0);
-        el.setAttribute("cx", c[0] + dx);
-        el.setAttribute("cy", c[1] + dy);
-      }
-      for (const el of [...overlay.querySelectorAll(".stop-badge")]) {
-        const s = stopDots.find((d) => d.idx === Number(el.dataset.idx));
-        if (!s) continue;
-        const c = projection(s.coords);
-        if (!c || c[0] == null || isNaN(c[0])) {
-          el.setAttribute("x", -100);
-          continue;
-        }
-        el.setAttribute("x", c[0]);
-        el.setAttribute("y", c[1] - 14);
+        const off = (!c || c[0] == null || isNaN(c[0])) ? null : [c[0] + dx, c[1] + dy];
+        // dots are zero-length paths: rewrite d (off-canvas when the
+        // stop is on the globe's backside)
+        const d = off
+          ? `M${off[0].toFixed(2)} ${off[1].toFixed(2)}h.0001`
+          : "M-100 -100h.0001";
+        for (const p of el.querySelectorAll("path")) p.setAttribute("d", d);
       }
     },
 
@@ -782,10 +781,10 @@
       // 2px past the tip just merges into the head as a blob
       const distEnd = end === target ? 0 : Math.hypot(target[0] - end[0], target[1] - end[1]);
       if (distEnd > 20) {
-        const dot = document.createElementNS(svg.namespaceURI, "circle");
-        dot.setAttribute("cx", target[0]);
-        dot.setAttribute("cy", target[1]);
-        dot.setAttribute("r", 6);
+        // zero-length path + round cap (constant screen size under
+        // non-scaling-stroke, like the stop dots)
+        const dot = document.createElementNS(svg.namespaceURI, "path");
+        dot.setAttribute("d", `M${target[0].toFixed(2)} ${target[1].toFixed(2)}h.0001`);
         dot.setAttribute("class", "target-dot");
         overlay.appendChild(dot);
       }
@@ -794,6 +793,7 @@
 
     resetView() {
       if (baseView) svg.setAttribute("viewBox", `${baseView.x} ${baseView.y} ${baseView.w} ${baseView.h}`);
+      this._updateMarkers();
       // globe: also restore the lesson's initial rotation
       if (baseRotation && projectionName === "globe") {
         projection.rotate(baseRotation);
@@ -805,7 +805,22 @@
       const vb = svg.viewBox.baseVal;
       const cx = vb.x + vb.width / 2, cy = vb.y + vb.height / 2;
       const w = vb.width / factor, h = vb.height / factor;
-      svg.setAttribute("viewBox", `${cx - w / 2} ${cy - h / 2} ${w} ${h}`);
+      svg.setAttribute("viewBox", `${cx - w / 2} ${cy - w / 2} ${w} ${h}`);
+      this._updateMarkers();
+    },
+
+    // markers (arrowheads) cannot use vector-effect, so their nominal
+    // user-space size is rescaled by the zoom factor k (= vb.width /
+    // baseView.w, <1 when zoomed in) on every viewBox change to keep
+    // a constant SCREEN size
+    _updateMarkers() {
+      if (!baseView || !baseView.w) return;
+      const k = svg.viewBox.baseVal.width / baseView.w;
+      const mp = document.getElementById("arrowhead-point");
+      if (mp) {
+        mp.setAttribute("markerWidth", String(26 * k));
+        mp.setAttribute("markerHeight", String(26 * k));
+      }
     },
 
     panBy(dx, dy) {
