@@ -459,68 +459,116 @@
 
     // Static clickable dots for journey stops, at their exact lon/lat.
     // Dots re-project on globe rotation (lon/lat -> screen each time).
-    // `focusedId` (stop index) gets the pulsing style; click fires cb(idx).
-    // Duplicate coordinates (same place visited twice) are fanned out
-    // slightly and get a small "1·2" badge so each visit is clickable.
+    // `focusedIdx` (stop index) gets the pulsing style; click fires cb(idx).
+    // Locations visited more than once get ONE dot; hovering it shows a
+    // popover listing each visit (year + place) so the user can pick.
     renderStopDots(stops, focusedIdx, onClick) {
       stopDots = stops.map((s, i) => ({ idx: i, coords: s.coords, id: s.id }));
       if (!overlay) return;
+      this._removeStopPopover();
       for (const el of [...overlay.querySelectorAll(".stop-dot, .stop-badge")]) el.remove();
-      // group stops by identical coordinates to fan duplicates apart
+      // group visits by identical location
       const byCoords = new Map();
       stops.forEach((s, i) => {
         const k = s.coords[0].toFixed(3) + "," + s.coords[1].toFixed(3);
         if (!byCoords.has(k)) byCoords.set(k, []);
         byCoords.get(k).push(i);
       });
-      const offset = new Map(); // idx -> [dx, dy] pixel offset
       for (const group of byCoords.values()) {
-        if (group.length === 1) continue;
-        group.forEach((idx, j) => {
-          const ang = (j / group.length) * 2 * Math.PI - Math.PI / 2;
-          offset.set(idx, [Math.cos(ang) * 9, Math.sin(ang) * 9]);
-        });
-      }
-      for (let i = 0; i < stops.length; i++) {
+        const i = group[0];
         const s = stops[i];
         const c = this.project(s.coords);
         if (!c || c[0] == null || isNaN(c[0])) continue;
-        const [dx, dy] = offset.get(i) || [0, 0];
         const dot = document.createElementNS(svg.namespaceURI, "circle");
-        dot.setAttribute("cx", c[0] + dx);
-        dot.setAttribute("cy", c[1] + dy);
+        dot.setAttribute("cx", c[0]);
+        dot.setAttribute("cy", c[1]);
         dot.setAttribute("r", 3);
-        dot.setAttribute("class", "stop-dot" + (i === focusedIdx ? " focused" : ""));
+        const isFocused = group.includes(focusedIdx);
+        dot.setAttribute("class", "stop-dot" + (isFocused ? " focused" : ""));
         dot.dataset.idx = i;
         dot.dataset.stop = s.id;
-        dot.dataset.dx = dx;
-        dot.dataset.dy = dy;
+        dot.dataset.visits = group.join(",");
+        if (group.length > 1) {
+          dot.classList.add("multi");
+          dot.addEventListener("mouseenter", () => {
+            this._showStopPopover(dot, group.map((g) => stops[g]), group, onClick);
+          });
+          dot.addEventListener("mouseleave", (ev) => {
+            // hide unless the pointer moved into the popover itself
+            const pop = document.getElementById("stop-popover");
+            if (pop && !pop.contains(ev.relatedTarget)) this._hideStopPopoverSoon();
+          });
+        }
         dot.addEventListener("click", (ev) => {
           ev.stopPropagation();
-          if (onClick) onClick(i);
+          if (group.length === 1) {
+            if (onClick) onClick(i);
+          }
         });
         overlay.appendChild(dot);
       }
-      // badge above duplicate groups: shows all visit numbers ("1·2")
-      for (const group of byCoords.values()) {
-        if (group.length === 1) continue;
-        const s = stops[group[0]];
-        const c = this.project(s.coords);
-        if (!c || c[0] == null || isNaN(c[0])) continue;
-        const badge = document.createElementNS(svg.namespaceURI, "text");
-        badge.setAttribute("x", c[0]);
-        badge.setAttribute("y", c[1] - 14);
-        badge.setAttribute("class", "stop-badge");
-        badge.dataset.idx = group[0];
-        badge.textContent = group.map((i) => i + 1).join("·");
-        overlay.appendChild(badge);
+    },
+
+    // popover listing the visits of a multi-visit location; clicking an
+    // entry fires onClick with that visit's stop index
+    _showStopPopover(dot, groupStops, group, onClick) {
+      this._removeStopPopover();
+      const pop = document.createElement("div");
+      pop.id = "stop-popover";
+      pop.style.position = "fixed"; // positioned in viewport coords below
+      pop.style.left = (Number(dot.getAttribute("cx")) + 10) + "px";
+      pop.style.top = (Number(dot.getAttribute("cy")) - 8) + "px";
+      groupStops.forEach((s, j) => {
+        const item = document.createElement("div");
+        item.className = "stop-pop-item";
+        const nm = (s.names && (s.names[window.I18n && window.I18n.locale] || s.names["en-GB"] || Object.values(s.names)[0])) || s.id;
+        item.textContent = (group[j] + 1) + ". " + s.year + " · " + nm;
+        item.addEventListener("click", (ev) => {
+          ev.stopPropagation();
+          this._removeStopPopover();
+          if (onClick) onClick(group[j]);
+        });
+        pop.appendChild(item);
+      });
+      const mapDiv = document.getElementById("map");
+      // the popover is HTML and cannot live inside the <svg>; anchor it
+      // in the svg's parent (#stage) using the dot's viewport position
+      // (getBoundingClientRect accounts for viewBox scaling)
+      const host = mapDiv ? mapDiv.parentElement : overlay.parentNode;
+      const r = dot.getBoundingClientRect();
+      pop.style.left = (r.right + 8) + "px";
+      pop.style.top = Math.max(4, r.top - 8) + "px";
+      host.appendChild(pop);
+      // keep open while hovered; hide after the pointer leaves
+      pop.addEventListener("mouseleave", () => this._removeStopPopover());
+      // dismiss on outside click
+      setTimeout(() => {
+        document.addEventListener("click", this._popoverCloser = () => this._removeStopPopover(), { once: true });
+      }, 0);
+    },
+
+    _hideStopPopoverSoon() {
+      clearTimeout(this._popoverTimer);
+      this._popoverTimer = setTimeout(() => {
+        const pop = document.getElementById("stop-popover");
+        if (pop && !pop.matches(":hover")) this._removeStopPopover();
+      }, 250);
+    },
+
+    _removeStopPopover() {
+      const old = document.getElementById("stop-popover");
+      if (old) old.remove();
+      if (this._popoverCloser) {
+        document.removeEventListener("click", this._popoverCloser);
+        this._popoverCloser = null;
       }
     },
 
     focusStopDot(idx) {
       if (!overlay) return;
       for (const el of [...overlay.querySelectorAll(".stop-dot")]) {
-        el.classList.toggle("focused", Number(el.dataset.idx) === Number(idx));
+        const visits = (el.dataset.visits || el.dataset.idx).split(",").map(Number);
+        el.classList.toggle("focused", visits.includes(Number(idx)));
       }
     },
 

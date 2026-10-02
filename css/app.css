@@ -197,6 +197,26 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
   stroke-width: 2px;
   pointer-events: none;
 }
+#map .stop-dot.multi { r: 3.5; }
+#stop-popover {
+  position: absolute;
+  z-index: 40;
+  background: #1b2733;
+  border: 1px solid rgba(255, 210, 74, 0.4);
+  border-radius: 6px;
+  padding: 0.3rem 0;
+  min-width: 11rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  font-size: 0.82rem;
+}
+#stop-popover .stop-pop-item {
+  padding: 0.28rem 0.7rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+#stop-popover .stop-pop-item:hover {
+  background: rgba(255, 210, 74, 0.15);
+}
 
 @keyframes stop-pulse {
   0%   { r: 3; stroke-opacity: 1; }
