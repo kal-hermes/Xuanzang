@@ -384,6 +384,32 @@
     // cutting straight across land. Waypoints sit offshore; control
     // points extend the tangent directions, giving a smooth S/C-shaped
     // fair curve through the ports of call.
+    // non-scaling-stroke makes dash patterns measure in SCREEN pixels
+    // (SVG2), so a draw-on animation's dash length must be the path's
+    // user length times the current screen scale — and once the
+    // animation finishes the dash is removed entirely so later zooms
+    // (which change the scale) can't reopen a gap at the path's end.
+    _dashLen(el) {
+      const rect = svg.getBoundingClientRect();
+      const vb = svg.viewBox.baseVal;
+      const s = Math.min(rect.width / vb.width, rect.height / vb.height);
+      return el.getTotalLength() * s;
+    },
+    _animateDraw(el, duration, fromHidden) {
+      const len = this._dashLen(el);
+      el.style.transition = "none";
+      el.style.strokeDasharray = String(len);
+      el.style.strokeDashoffset = String(fromHidden ? len : 0);
+      el.getBoundingClientRect(); // commit start
+      el.style.transition = `stroke-dashoffset ${duration}s linear`;
+      el.style.strokeDashoffset = fromHidden ? "0" : String(len);
+      el.addEventListener("transitionend", function clear() {
+        el.style.strokeDasharray = "none";
+        el.style.strokeDashoffset = "0";
+        el.removeEventListener("transitionend", clear);
+      });
+    },
+
     addSeaRoute(points, color = "#ffd24a") {
       const pts = [];
       for (const c of points) {
@@ -427,12 +453,7 @@
       p.setAttribute("stroke", color);
       overlay.appendChild(p);
       overlayPaths.push({ el: p, points });
-      const len = p.getTotalLength();
-      p.style.strokeDasharray = len;
-      p.style.strokeDashoffset = len;
-      p.getBoundingClientRect();
-      p.style.transition = "stroke-dashoffset 1.6s linear";
-      p.style.strokeDashoffset = "0";
+      this._animateDraw(p, 1.6, true);
       return p;
     },
 
@@ -450,12 +471,7 @@
       p.setAttribute("stroke", color);
       overlay.appendChild(p);
       overlayPaths.push({ el: p, points });
-      const len = p.getTotalLength();
-      p.style.strokeDasharray = len;
-      p.style.strokeDashoffset = len;
-      p.getBoundingClientRect(); // force layout
-      p.style.transition = "stroke-dashoffset 1.6s linear";
-      p.style.strokeDashoffset = "0";
+      this._animateDraw(p, 1.6, true);
       return p;
     },
 
@@ -473,21 +489,21 @@
       overlay.appendChild(p);
       overlayPaths.push({ el: p, points: [from, to] });
       if (mode === "static") return p;
-      const len = p.getTotalLength();
-      p.style.strokeDasharray = len;
-      if (mode === "erase") {
-        // start fully drawn; commit; then animate to hidden (shortens
-        // back toward `from`)
-        p.style.strokeDashoffset = 0;
-        p.getBoundingClientRect(); // commit starting state
-        p.style.transition = "stroke-dashoffset 0.8s linear";
-        p.style.strokeDashoffset = String(len);
-      } else {
-        // start hidden; commit; then animate the draw from->to
-        p.style.strokeDashoffset = len;
-        p.getBoundingClientRect(); // commit starting state
-        p.style.transition = "stroke-dashoffset 0.8s linear";
-        p.style.strokeDashoffset = "0";
+      // draw/erase share the screen-pixel dash length logic; erase ends
+      // fully hidden and keeps the dash (it IS the hidden state)
+      const len = this._dashLen(p);
+      p.style.transition = "none";
+      p.style.strokeDasharray = String(len);
+      p.style.strokeDashoffset = mode === "erase" ? 0 : len;
+      p.getBoundingClientRect(); // commit starting state
+      p.style.transition = "stroke-dashoffset 0.8s linear";
+      p.style.strokeDashoffset = mode === "erase" ? String(len) : "0";
+      if (mode !== "erase") {
+        p.addEventListener("transitionend", function clear() {
+          p.style.strokeDasharray = "none";
+          p.style.strokeDashoffset = "0";
+          p.removeEventListener("transitionend", clear);
+        });
       }
       return p;
     },
@@ -760,17 +776,19 @@
       // half-width 13px => half-width at s px behind the tip is s/2;
       // the shaft (9px wide, half 4.5) is only covered where s >= 9.
       // So the drawn dash must end >= 9px before the tip; use 12px
-      // for anti-aliasing margin.
-      const len = p.getTotalLength();
+      // for anti-aliasing margin. Dash lengths are in SCREEN pixels
+      // under non-scaling-stroke, so scale by the screen factor.
+      const len = this._dashLen(p);
       const GAP = 12;
-      p.style.strokeDasharray = len;
+      p.style.transition = "none";
+      p.style.strokeDasharray = String(len);
       if (animate) {
-        p.style.strokeDashoffset = len;
+        p.style.strokeDashoffset = String(len);
         p.getBoundingClientRect(); // force layout
         p.style.transition = "stroke-dashoffset 0.8s ease-out";
-        p.style.strokeDashoffset = GAP;
+        p.style.strokeDashoffset = String(GAP);
       } else {
-        p.style.strokeDashoffset = GAP;
+        p.style.strokeDashoffset = String(GAP);
       }
       // fixed: pixel-space element — _reproject redraws it instead of
       // re-projecting lon/lat points
@@ -801,11 +819,16 @@
       }
     },
 
-    zoomBy(factor) {
+    zoomBy(factor, anchorUserPt = null) {
       const vb = svg.viewBox.baseVal;
-      const cx = vb.x + vb.width / 2, cy = vb.y + vb.height / 2;
+      // anchor: keep the geographic point under the cursor fixed on
+      // screen (defaults to the current viewBox centre)
+      const ax = anchorUserPt ? anchorUserPt[0] : vb.x + vb.width / 2;
+      const ay = anchorUserPt ? anchorUserPt[1] : vb.y + vb.height / 2;
       const w = vb.width / factor, h = vb.height / factor;
-      svg.setAttribute("viewBox", `${cx - w / 2} ${cy - w / 2} ${w} ${h}`);
+      const x = ax - (ax - vb.x) / factor;
+      const y = ay - (ay - vb.y) / factor;
+      svg.setAttribute("viewBox", `${x} ${y} ${w} ${h}`);
       this._updateMarkers();
     },
 
@@ -831,7 +854,9 @@
     attachNavigation() {
       svg.addEventListener("wheel", (ev) => {
         ev.preventDefault();
-        this.zoomBy(ev.deltaY < 0 ? 1.2 : 1 / 1.2);
+        // zoom anchored at the cursor: the point under the mouse
+        // stays put on screen
+        this.zoomBy(ev.deltaY < 0 ? 1.2 : 1 / 1.2, this._svgPoint(ev));
       }, { passive: false });
 
       let dragging = false, lastX = 0, lastY = 0;
@@ -889,12 +914,16 @@
     },
 
     _svgPoint(ev) {
-      // client coords -> svg user-space coords (accounts for viewBox + zoom)
+      // client coords -> svg user-space coords (accounts for viewBox
+      // zoom AND the xMidYMid-meet letterboxing offset)
       const rect = svg.getBoundingClientRect();
       const vb = svg.viewBox.baseVal;
+      const s = Math.min(rect.width / vb.width, rect.height / vb.height);
+      const ox = (rect.width - vb.width * s) / 2;
+      const oy = (rect.height - vb.height * s) / 2;
       return [
-        vb.x + (ev.clientX - rect.left) / rect.width * vb.width,
-        vb.y + (ev.clientY - rect.top) / rect.height * vb.height,
+        vb.x + (ev.clientX - rect.left - ox) / s,
+        vb.y + (ev.clientY - rect.top - oy) / s,
       ];
     },
   };
