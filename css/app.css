@@ -182,16 +182,25 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 }
 #map .stop-dot:hover {
   fill: #ffe27a;
-  r: 5.5;
+  r: 4.5;
 }
 #map .stop-dot.focused {
   fill: #ff9d3c;
   animation: stop-pulse 1.2s ease-out infinite;
 }
+#map .stop-badge {
+  fill: #ffd24a;
+  font-size: 9px;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: #1b2733;
+  stroke-width: 2px;
+  pointer-events: none;
+}
 
 @keyframes stop-pulse {
-  0%   { r: 4; stroke-opacity: 1; }
-  100% { r: 12; stroke-opacity: 0; }
+  0%   { r: 3; stroke-opacity: 1; }
+  100% { r: 10; stroke-opacity: 0; }
 }
 
 @keyframes target-pulse {
@@ -237,6 +246,25 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
   font-size: 0.8em;
   opacity: 0.6;
   font-variant-numeric: tabular-nums;
+}
+#country-list li .stop-no {
+  opacity: 0.45;
+  font-size: 0.78em;
+  font-variant-numeric: tabular-nums;
+}
+#country-list li.active {
+  background: rgba(255, 210, 74, 0.12);
+  outline: 1px solid rgba(255, 210, 74, 0.35);
+}
+#journey-controls {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-right: 1rem;
+}
+#journey-counter {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.8;
 }
 #info-facts dd.narrative {
   max-width: 260px;
@@ -311,6 +339,20 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 #info-facts { display: grid; grid-template-columns: auto 1fr; gap: 0.35rem 0.75rem; font-size: 0.88rem; }
 #info-facts dt { color: var(--muted); }
 #info-facts dd { margin: 0; }
+/* journey stops: stack label above value so long narratives and place
+   names get the full panel width instead of being squeezed beside dt */
+#info-panel.journey #info-facts {
+  grid-template-columns: 1fr;
+  gap: 0.15rem 0;
+}
+#info-panel.journey #info-facts dt {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+#info-panel.journey #info-facts dt:first-child { margin-top: 0; }
+#info-panel.journey #info-facts dd.narrative { max-width: none; }
 
 #hint-bar {
   padding: 0.3rem 1rem;

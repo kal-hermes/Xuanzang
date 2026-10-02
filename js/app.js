@@ -22,6 +22,8 @@
     index: 0,
     correct: 0,
     locked: false,
+    journeyView: "explore", // "explore" | "step"
+    stepIdx: null,
   };
 
   // ---------- lesson loading ----------
@@ -46,6 +48,12 @@
     }
     state.lesson = data;
     state.visited = null; // fresh learn-session per lesson
+    state.visitedStops = null;
+    state.focusedStop = null;
+    state.stepIdx = null;
+    state.journeyView = "explore";
+    $("#journey-view-select").value = "explore";
+    $("#journey-view-row").hidden = data.type !== "journey";
     state.mode = $("#mode-select").value;
     startMode();
   }
@@ -143,7 +151,17 @@
     map.clearHighlights("highlighted");
     map.resetView();
     $("#info-panel").hidden = true;
-    $("#prompt-bar").hidden = state.mode === "learn";
+    $("#info-panel").classList.toggle("journey",
+      state.mode === "learn" && state.lesson.type === "journey");
+    const journeyLearn = state.mode === "learn" && state.lesson.type === "journey";
+    $("#prompt-bar").hidden = !journeyLearn || state.journeyView !== "step";
+    $("#journey-controls").hidden = !journeyLearn;
+    if (journeyLearn) {
+      $("#journey-prev").hidden = false;
+      $("#journey-next").hidden = false;
+      $("#prompt-text").textContent = "";
+      $("#score-display").textContent = "";
+    }
     $("#answer-box").hidden = true;
     $("#answer-style-row").hidden = state.mode !== "name";
 
@@ -230,28 +248,45 @@
   // at its coordinates and shows year + narrative.
   function renderJourney() {
     const L = state.lesson;
+    if (state.journeyView === "step") {
+      renderJourneyStepMode();
+      renderJourneySidebar(true);
+      return;
+    }
     renderJourneyRoutes();
-    map.renderStopDots(L.stops, state.focusedStop || null, (id) => {
-      const s = L.stops.find((x) => x.id === id);
+    map.renderStopDots(L.stops, state.stepIdx ?? null, (idx) => {
+      const s = L.stops[idx];
       if (s) journeyStopClick(s);
     });
+    renderJourneySidebar(false);
+  }
+
+  function renderJourneySidebar(numbered) {
+    const L = state.lesson;
     // stops sidebar replaces the alphabetical country list
     const ul = $("#country-list");
     ul.innerHTML = "";
     ul.classList.add("journey-order");
-    for (const s of L.stops) {
+    L.stops.forEach((s, i) => {
       const li = document.createElement("li");
       li.dataset.stop = s.id;
+      li.dataset.idx = i;
       if (state.visitedStops && state.visitedStops.has(s.id)) li.classList.add("visited");
+      if (numbered) {
+        const no = document.createElement("span");
+        no.className = "stop-no";
+        no.textContent = String(i + 1).padStart(2, "0");
+        li.append(no, document.createTextNode(" "));
+      }
       const yr = document.createElement("span");
       yr.className = "stop-year";
       yr.textContent = s.year;
       const nm = document.createElement("span");
       nm.textContent = loc(s.names) || s.id;
       li.append(yr, document.createTextNode(" "), nm);
-      li.addEventListener("click", () => journeyStopClick(s));
+      li.addEventListener("click", () => journeyStopClick(s, i));
       ul.appendChild(li);
-    }
+    });
     $("#country-list-panel h2").textContent = i18n.t("stops");
   }
 
@@ -261,13 +296,16 @@
     map.addArrow(L.route_back, "#e05674");
   }
 
-  function journeyStopClick(s) {
+  // explore mode: click on a dot / sidebar entry
+  function journeyStopClick(s, idx) {
     if (!state.visitedStops) state.visitedStops = new Set();
     state.visitedStops.add(s.id);
     state.focusedStop = s.id;
-    const li = document.querySelector(`#country-list li[data-stop="${s.id}"]`);
+    const li = (idx != null)
+      ? document.querySelector(`#country-list li[data-idx="${idx}"]`)
+      : document.querySelector(`#country-list li[data-stop="${s.id}"]`);
     if (li) li.classList.add("visited");
-    map.focusStopDot(s.id);
+    map.focusStopDot(idx != null ? idx : L_indexOf(s));
     map.rotateToCoord(s.coords);
     map.pointAt(s.coords);
     showStopInfo(s);
@@ -275,6 +313,120 @@
       map.reveal(s.iso3);
       map.setCurrent(s.iso3);
     }
+  }
+
+  function L_indexOf(s) {
+    return state.lesson.stops.indexOf(s);
+  }
+
+  // ----- step-through mode -----
+  // journeyView: "explore" (default, everything visible) or "step"
+  // (only stops visited so far; segments drawn/undrawn one hop at a
+  // time with the buttons / arrow keys)
+  function renderJourneyStepMode() {
+    const L = state.lesson;
+    if (state.stepIdx == null) state.stepIdx = 0;
+    map.renderStopDots(
+      L.stops.slice(0, state.stepIdx + 1).map((s) => ({ ...s })),
+      state.stepIdx,
+      (idx) => {
+        // clicking an earlier dot in step mode jumps to that step
+        journeyStep(idx, true);
+      }
+    );
+    // segments between consecutive visited stops
+    for (let i = 0; i < state.stepIdx; i++) {
+      const seg = map.addSegment(L.stops[i].coords, L.stops[i + 1].coords, colorOf(i, L), "static");
+      if (seg) seg.dataset.hop = i;
+    }
+    updateStepUI();
+  }
+
+  function colorOf(i, L) {
+    // stops after nalanda (last outbound) use the return color
+    const nIdx = L.stops.findIndex((s) => s.id === "nalanda");
+    return i >= nIdx ? "#e05674" : "#ffd24a";
+  }
+
+  function journeyStep(deltaOrIdx, absolute = false) {
+    const L = state.lesson;
+    const max = L.stops.length - 1;
+    let next = absolute ? deltaOrIdx : (state.stepIdx ?? 0) + deltaOrIdx;
+    next = Math.max(0, Math.min(max, next));
+    const prev = state.stepIdx ?? 0;
+    if (next === prev) { updateStepUI(); return; }
+    if (next > prev) {
+      // advance: draw segment prev->next (could be multiple hops via
+      // dot click; draw each hop)
+      for (let i = prev; i < next; i++) {
+        const seg = map.addSegment(L.stops[i].coords, L.stops[i + 1].coords, colorOf(i, L));
+        if (seg) seg.dataset.hop = i;
+      }
+      fadeDotIn(next);
+    } else {
+      // step back: erase segments down to next and drop dots beyond it
+      for (let i = next; i < prev; i++) {
+        removeSegment(i);
+      }
+      // re-render dots limited to next (drops later dots)
+      map.renderStopDots(
+        L.stops.slice(0, next + 1).map((s) => ({ ...s })),
+        next,
+        (i) => journeyStep(i, true)
+      );
+    }
+    state.stepIdx = next;
+    const s = L.stops[next];
+    if (!state.visitedStops) state.visitedStops = new Set();
+    state.visitedStops.add(s.id);
+    const li = document.querySelector(`#country-list li[data-idx="${next}"]`);
+    if (li) li.classList.add("visited");
+    map.rotateToCoord(s.coords);
+    map.focusStopDot(next);
+    showStopInfo(s);
+    syncSidebarActive(next);
+    updateStepUI();
+  }
+
+  function fadeDotIn(idx) {
+    // dot for stop idx appears (created if needed) and takes focus
+    const L = state.lesson;
+    // ensure dot exists: easiest is re-rendering dots up to idx
+    map.renderStopDots(
+      L.stops.slice(0, idx + 1).map((s) => ({ ...s })),
+      idx,
+      (i) => journeyStep(i, true)
+    );
+  }
+
+  function removeSegment(i) {
+    // erase the segment hop i -> i+1 with the shorten-back animation
+    const seg = document.querySelector(`#map path.segment[data-hop="${i}"]`);
+    if (!seg) return;
+    seg.dataset.hop = i; // already set at creation
+    const len = seg.getTotalLength();
+    seg.style.strokeDasharray = len;
+    seg.style.strokeDashoffset = 0;
+    seg.getBoundingClientRect();
+    seg.style.transition = "stroke-dashoffset 0.6s linear";
+    seg.style.strokeDashoffset = String(len);
+    setTimeout(() => seg.remove(), 650);
+  }
+
+  function syncSidebarActive(idx) {
+    for (const li of document.querySelectorAll("#country-list li")) {
+      li.classList.toggle("active", Number(li.dataset.idx) === idx);
+    }
+  }
+
+  function updateStepUI() {
+    const L = state.lesson;
+    const idx = state.stepIdx ?? 0;
+    const prevB = $("#journey-prev"), nextB = $("#journey-next");
+    if (prevB) prevB.disabled = idx === 0;
+    if (nextB) nextB.disabled = idx >= L.stops.length - 1;
+    const counter = $("#journey-counter");
+    if (counter) counter.textContent = `${idx + 1} / ${L.stops.length}`;
   }
 
   function showStopInfo(s) {
@@ -734,6 +886,32 @@
     });
     $("#reset-view-button").addEventListener("click", () => map.resetView());
     $("#reveal-button").addEventListener("click", revealAnswer);
+    // journey view toggle: explore (all visible) vs step (one at a time)
+    $("#journey-view-select").addEventListener("change", (ev) => {
+      state.journeyView = ev.target.value;
+      state.stepIdx = state.journeyView === "step" ? 0 : null;
+      map.clearOverlay();
+      if (state.journeyView === "step") {
+        const s = state.lesson.stops[0];
+        if (!state.visitedStops) state.visitedStops = new Set();
+        state.visitedStops.add(s.id);
+        renderJourney();
+        showStopInfo(s);
+        map.focusStopDot(0);
+      } else {
+        renderJourney();
+      }
+      $("#prompt-bar").hidden = state.journeyView !== "step";
+    });
+    $("#journey-prev").addEventListener("click", () => journeyStep(-1));
+    $("#journey-next").addEventListener("click", () => journeyStep(1));
+    document.addEventListener("keydown", (ev) => {
+      if (state.mode !== "learn" || !state.lesson ||
+          state.lesson.type !== "journey" || state.journeyView !== "step") return;
+      if (ev.target.tagName === "SELECT" || ev.target.tagName === "INPUT") return;
+      if (ev.key === "ArrowRight") { ev.preventDefault(); journeyStep(1); }
+      else if (ev.key === "ArrowLeft") { ev.preventDefault(); journeyStep(-1); }
+    });
     $("#restart-button").addEventListener("click", () => {
       state.visited = null;
       if (state.lesson) startMode();

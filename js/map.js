@@ -397,6 +397,37 @@
       return p;
     },
 
+    // one line segment from->to (journey step mode). mode:
+    //   "draw"    animate drawing from prev to next (default)
+    //   "erase"   animate shortening back toward prev, then stay hidden
+    //   "static"  drawn immediately, no animation (initial render)
+    addSegment(from, to, color = "#ffd24a", mode = "draw") {
+      const a = projection(from), b = projection(to);
+      if (!a || !b || a[0] == null || b[0] == null || isNaN(a[0]) || isNaN(b[0])) return null;
+      const p = document.createElementNS(svg.namespaceURI, "path");
+      p.setAttribute("d", `M${a[0].toFixed(2)} ${a[1].toFixed(2)} L${b[0].toFixed(2)} ${b[1].toFixed(2)}`);
+      p.setAttribute("class", "arrow route segment");
+      p.setAttribute("stroke", color);
+      overlay.appendChild(p);
+      overlayPaths.push({ el: p, points: [from, to] });
+      if (mode === "static") return p;
+      const len = p.getTotalLength();
+      p.style.strokeDasharray = len;
+      p.getBoundingClientRect(); // force layout
+      p.style.transition = "stroke-dashoffset 0.8s linear";
+      if (mode === "erase") {
+        p.style.strokeDashoffset = 0;
+        p.getBoundingClientRect();
+        p.style.strokeDashoffset = String(len);
+        p.style.opacity = "0";
+        p.style.transition = "stroke-dashoffset 0.8s linear";
+      } else {
+        p.style.strokeDashoffset = len;
+        p.style.strokeDashoffset = "0";
+      }
+      return p;
+    },
+
     clearOverlay() {
       overlayPaths = [];
       pointedIso3 = null;
@@ -426,32 +457,98 @@
 
     // Static clickable dots for journey stops, at their exact lon/lat.
     // Dots re-project on globe rotation (lon/lat -> screen each time).
-    // `focused` id gets the pulsing style; click fires cb(stopId).
-    renderStopDots(stops, focusedId, onClick) {
-      stopDots = stops.map((s) => ({ id: s.id, coords: s.coords }));
+    // `focusedId` (stop index) gets the pulsing style; click fires cb(idx).
+    // Duplicate coordinates (same place visited twice) are fanned out
+    // slightly and get a small "1·2" badge so each visit is clickable.
+    renderStopDots(stops, focusedIdx, onClick) {
+      stopDots = stops.map((s, i) => ({ idx: i, coords: s.coords, id: s.id }));
       if (!overlay) return;
-      for (const el of [...overlay.querySelectorAll(".stop-dot")]) el.remove();
-      for (const s of stops) {
+      for (const el of [...overlay.querySelectorAll(".stop-dot, .stop-badge")]) el.remove();
+      // group stops by identical coordinates to fan duplicates apart
+      const byCoords = new Map();
+      stops.forEach((s, i) => {
+        const k = s.coords[0].toFixed(3) + "," + s.coords[1].toFixed(3);
+        if (!byCoords.has(k)) byCoords.set(k, []);
+        byCoords.get(k).push(i);
+      });
+      const offset = new Map(); // idx -> [dx, dy] pixel offset
+      for (const group of byCoords.values()) {
+        if (group.length === 1) continue;
+        group.forEach((idx, j) => {
+          const ang = (j / group.length) * 2 * Math.PI - Math.PI / 2;
+          offset.set(idx, [Math.cos(ang) * 9, Math.sin(ang) * 9]);
+        });
+      }
+      for (let i = 0; i < stops.length; i++) {
+        const s = stops[i];
         const c = this.project(s.coords);
         if (!c || c[0] == null || isNaN(c[0])) continue;
+        const [dx, dy] = offset.get(i) || [0, 0];
         const dot = document.createElementNS(svg.namespaceURI, "circle");
-        dot.setAttribute("cx", c[0]);
-        dot.setAttribute("cy", c[1]);
-        dot.setAttribute("r", 4);
-        dot.setAttribute("class", "stop-dot" + (s.id === focusedId ? " focused" : ""));
+        dot.setAttribute("cx", c[0] + dx);
+        dot.setAttribute("cy", c[1] + dy);
+        dot.setAttribute("r", 3);
+        dot.setAttribute("class", "stop-dot" + (i === focusedIdx ? " focused" : ""));
+        dot.dataset.idx = i;
         dot.dataset.stop = s.id;
+        dot.dataset.dx = dx;
+        dot.dataset.dy = dy;
         dot.addEventListener("click", (ev) => {
           ev.stopPropagation();
-          if (onClick) onClick(s.id);
+          if (onClick) onClick(i);
         });
         overlay.appendChild(dot);
       }
+      // badge above duplicate groups: shows all visit numbers ("1·2")
+      for (const group of byCoords.values()) {
+        if (group.length === 1) continue;
+        const s = stops[group[0]];
+        const c = this.project(s.coords);
+        if (!c || c[0] == null || isNaN(c[0])) continue;
+        const badge = document.createElementNS(svg.namespaceURI, "text");
+        badge.setAttribute("x", c[0]);
+        badge.setAttribute("y", c[1] - 14);
+        badge.setAttribute("class", "stop-badge");
+        badge.dataset.idx = group[0];
+        badge.textContent = group.map((i) => i + 1).join("·");
+        overlay.appendChild(badge);
+      }
     },
 
-    focusStopDot(id) {
+    focusStopDot(idx) {
       if (!overlay) return;
-      for (const el of overlay.querySelectorAll(".stop-dot")) {
-        el.classList.toggle("focused", el.dataset.stop === id);
+      for (const el of [...overlay.querySelectorAll(".stop-dot")]) {
+        el.classList.toggle("focused", Number(el.dataset.idx) === Number(idx));
+      }
+    },
+
+    // ensure a stop dot is visible after globe rotation
+    _reprojectStopDots() {
+      if (!overlay) return;
+      for (const el of [...overlay.querySelectorAll(".stop-dot")]) {
+        const s = stopDots.find((d) => d.idx === Number(el.dataset.idx));
+        if (!s) continue;
+        const c = projection(s.coords);
+        if (!c || c[0] == null || isNaN(c[0])) {
+          el.setAttribute("cx", -100); // off-canvas (backside)
+          el.setAttribute("cy", -100);
+          continue;
+        }
+        // keep the fan offset applied for duplicates
+        const dx = Number(el.dataset.dx || 0), dy = Number(el.dataset.dy || 0);
+        el.setAttribute("cx", c[0] + dx);
+        el.setAttribute("cy", c[1] + dy);
+      }
+      for (const el of [...overlay.querySelectorAll(".stop-badge")]) {
+        const s = stopDots.find((d) => d.idx === Number(el.dataset.idx));
+        if (!s) continue;
+        const c = projection(s.coords);
+        if (!c || c[0] == null || isNaN(c[0])) {
+          el.setAttribute("x", -100);
+          continue;
+        }
+        el.setAttribute("x", c[0]);
+        el.setAttribute("y", c[1] - 14);
       }
     },
 
