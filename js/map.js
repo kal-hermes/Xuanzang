@@ -307,11 +307,28 @@
       }
       for (const { el, points, fixed } of overlayPaths) {
         if (fixed) continue; // pixel-space overlay: redrawn separately
-        el.setAttribute("d", points.map((c, i) => {
+        // Backside culling: on the globe, raw projection() returns
+        // mirrored finite coords for backside points, which would draw
+        // the route across the hidden hemisphere. Gate each point on
+        // visibility (dot product with the view centre) and split the
+        // path into subpaths at hidden stretches.
+        const deg2 = Math.PI / 180;
+        const visible = (lon, lat) => {
+          const cosA = Math.sin(centre[1] * deg2) * Math.sin(lat * deg2) +
+            Math.cos(centre[1] * deg2) * Math.cos(lat * deg2) *
+            Math.cos((lon - centre[0]) * deg2);
+          return cosA > 0.08; // margin keeps horizon chords off the limb
+        };
+        let started = false;
+        const parts = [];
+        for (const c of points) {
+          if (!visible(c[0], c[1])) { started = false; continue; }
           const [x, y] = projection(c);
-          if (x == null || isNaN(x)) return "";
-          return (i === 0 ? "M" : "L") + x.toFixed(2) + " " + y.toFixed(2);
-        }).join(" "));
+          if (x == null || isNaN(x)) { started = false; continue; }
+          parts.push((started ? "L" : "M") + x.toFixed(2) + " " + y.toFixed(2));
+          started = true;
+        }
+        el.setAttribute("d", parts.join(" "));
       }
       this._redrawPointOverlay(false);
       this._reprojectStopDots();
@@ -411,6 +428,8 @@
     },
 
     addSeaRoute(points, color = "#ffd24a") {
+      // land polygons for the bow land-guard (queried once per call)
+      const landPaths = [...svg.querySelectorAll("#countries path")];
       const pts = [];
       for (const c of points) {
         const [x, y] = projection(c);
@@ -442,7 +461,28 @@
         const chord = Math.hypot(p1[0] - p0[0], p1[1] - p0[1]);
         // gentle bow: rounds corners without straying far from the
         // waypoint track (large bows can drag the curve over land)
-        const k = Math.min(chord * 0.18, 90);
+        let k = Math.min(chord * 0.18, 90);
+        // land guard: if the arc's midpoint lands inside a country
+        // polygon, halve the bow until it doesn't (k -> 0 = straight
+        // chord, which was already verified water-tight at the
+        // waypoints); deterministic, converges in a few steps
+        const svgPt = svg.createSVGPoint();
+        const midOnLand = (kk) => {
+          const c1 = [p0[0] + t1[0] * kk, p0[1] + t1[1] * kk];
+          const c2 = [p1[0] - t2[0] * kk, p1[1] - t2[1] * kk];
+          const t = 0.5, mt = 1 - t;
+          const mx = mt ** 3 * p0[0] + 3 * mt * mt * t * c1[0] + 3 * mt * t * t * c2[0] + t ** 3 * p1[0];
+          const my = mt ** 3 * p0[1] + 3 * mt * mt * t * c1[1] + 3 * mt * t * t * c2[1] + t ** 3 * p1[1];
+          svgPt.x = mx; svgPt.y = my;
+          for (const c of landPaths) {
+            if (c.isPointInFill(svgPt)) return true;
+          }
+          return false;
+        };
+        for (let guard = 0; guard < 6 && k > 1; guard++) {
+          if (!midOnLand(k)) break;
+          k /= 2;
+        }
         const c1 = [p0[0] + t1[0] * k, p0[1] + t1[1] * k];
         const c2 = [p1[0] - t2[0] * k, p1[1] - t2[1] * k];
         d.push(`C${c1[0].toFixed(2)} ${c1[1].toFixed(2)} ${c2[0].toFixed(2)} ${c2[1].toFixed(2)} ${p1[0].toFixed(2)} ${p1[1].toFixed(2)}`);

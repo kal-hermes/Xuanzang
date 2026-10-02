@@ -13,7 +13,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 
-from magellan_data import STOPS, ROUTE_OUT, ROUTE_BACK  # noqa: E402
+from magellan_data import STOPS  # noqa: E402
+# Route from Albo's derrotero + whalesite KML; 12 waypoints that fell
+# inside 10m land polygons were nudged offshore in-browser
+# (tools/nudge_waypoints.py) -> tools/albo_route_fixed.json overrides.
+from magellan_route_albo import ROUTE_OUT as _RO, ROUTE_BACK as _RB  # noqa: E402
+import json as _json  # noqa: E402
+
+_fx = ROOT / "tools" / "albo_route_fixed.json"
+if _fx.exists():
+    _d = _json.loads(_fx.read_text(encoding="utf-8"))
+    ROUTE_OUT = _d["out"]
+    ROUTE_BACK = _d["back"]
+else:
+    ROUTE_OUT, ROUTE_BACK = _RO, _RB
 
 
 def _load(name):
@@ -91,7 +104,7 @@ def main():
     for sid, (qid, tokens, iso3) in STOPS.items():
         c = coords.get(qid) if qid else None
         if sid == "pacific_crossing":
-            c = [-135.0, -8.0]  # mid-Pacific representative point
+            c = [-108.0, -21.0]  # on Albo's track: early Jan 1521 (22S)
         stop = {
             "id": sid,
             "coords": c,
