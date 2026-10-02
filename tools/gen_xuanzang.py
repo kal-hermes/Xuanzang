@@ -22,8 +22,7 @@ UA = {"User-Agent": "Xuanzang-app-lesson-builder/1.0 (educational)"}
 # rich content + metadata from sibling modules (loaded lazily in main()
 # so a missing translation file doesn't break --help imports)
 NARRATIVE_RICH = {"en-GB": {}, "fr-CA": {}, "zh-Hans": {}, "zh-HK": {}, "ja": {}}
-WHEN = {}
-PRESENT = {}
+META_I18N = {}  # locale -> {"when": {stop: str}, "present": {stop: str}}
 
 def _load_content():
     import importlib.util
@@ -42,6 +41,14 @@ def _load_content():
     load("zh-Hans", "xuanzang_text_zh-Hans.py")
     load("zh-HK", "xuanzang_text_zh-HK.py")
     load("ja", "xuanzang_text_ja.py")
+    # localized when/present strings (GLM-generated, reviewed keys)
+    i18n_path = base / "xuanzang_meta_i18n.json"
+    global META_I18N
+    META_I18N = {}
+    if i18n_path.exists():
+        META_I18N = json.loads(i18n_path.read_text(encoding="utf-8"))
+    else:
+        print("  (no xuanzang_meta_i18n.json; when/present stay English)", file=sys.stderr)
     global WHEN, PRESENT
     spec = importlib.util.spec_from_file_location("meta", base / "xuanzang_meta.py")
     m = importlib.util.module_from_spec(spec)
@@ -396,12 +403,20 @@ def main():
         return 1
 
     for s in stops_meta:
+        when_loc = {"en-GB": WHEN.get(s["key"], s["year"])}
+        present_loc = dict(PRESENT.get(s["key"]) or {})
+        for loc in ("fr-CA", "zh-Hans", "zh-HK", "ja"):
+            m = META_I18N.get(loc, {})
+            if s["key"] in m.get("when", {}):
+                when_loc[loc] = m["when"][s["key"]]
+            if s["key"] in m.get("present", {}):
+                present_loc[loc] = m["present"][s["key"]]
         stop = {
             "id": s["key"],
             "coords": s["coords"],
             "year": s["year"],
-            "when": WHEN.get(s["key"], s["year"]),
-            "present": PRESENT.get(s["key"]),
+            "when": when_loc,
+            "present": present_loc,
             "iso3": s["iso3"],
             "names": STOP_NAMES.get(s["key"], {}),
             "narrative": {

@@ -286,8 +286,8 @@
       dd.textContent = value;
       dl.append(dt, dd);
     };
-    addRow(i18n.t("year"), s.when || s.year);
-    if (s.present) addRow(i18n.t("today_at"), loc(s.present) || s.present.en || "");
+    addRow(i18n.t("year"), loc(s.when) || s.year);
+    if (s.present) addRow(i18n.t("today_at"), loc(s.present) || s.present["en"] || "");
     const country = state.lesson.countries.find((c) => c.iso3 === s.iso3);
     if (country) addRow(i18n.t("today_in"), loc(country.names) || s.iso3);
     // narrative: {locale: [paragraphs]} (rich) or {locale: string} (legacy)

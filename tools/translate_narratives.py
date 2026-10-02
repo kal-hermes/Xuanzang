@@ -36,7 +36,8 @@ Translate each numbered paragraph into {lang_desc}
 Rules:
 - Faithful, fluent, readable prose for a general audience; keep historical terms accurate (e.g. keep proper nouns like Nalanda, Sarvastivada, Yogacara appropriately rendered as customary in the target language).
 - Keep the paragraph count and order exactly: 3 paragraphs in, 3 paragraphs out.
-- Do not add commentary, headers, or numbering. Output ONLY a JSON array of 3 strings.
+- Return a JSON array of EXACTLY 3 strings — one per paragraph. Do NOT merge them into a single string.
+- Do not add commentary, headers, or numbering. Output ONLY the JSON array.
 
 Paragraphs:
 {payload}
@@ -64,19 +65,89 @@ def extract_json(text):
     m = re.search(r"\[.*\]", t, re.S)
     if m:
         try:
-            return json.loads(m.group(0))
+            arr = json.loads(m.group(0))
+            if isinstance(arr, list):
+                return arr
         except json.JSONDecodeError:
             pass  # truncated array — try repairing below
     # repair truncated JSON array: keep complete string items, drop the tail
     m2 = re.search(r"\[[\s\S]*", t)
-    if not m2:
-        raise ValueError("no JSON array found in: " + t[:200])
-    frag = m2.group(0)
-    items = re.findall(r'"((?:[^"\\]|\\.)*)"', frag)
-    items = [json.loads('"' + it + '"') for it in items]
-    if len(items) >= 3:
-        return items[:3]
-    raise ValueError(f"unrecoverable truncation ({len(items)} items)")
+    if m2:
+        frag = m2.group(0)
+        try:
+            items = re.findall(r'"((?:[^"\\]|\\.)*)"', frag)
+            items = [json.loads('"' + it + '"') for it in items]
+            if len(items) >= 3:
+                return items[:3]
+            if len(items) >= 1:
+                return items  # maybe a merged single string — caller may split
+        except Exception:
+            pass
+    # model merged all paragraphs into one string: split on blank lines
+    if t and "[" not in t[:2]:
+        parts = [p.strip() for p in re.split(r"\n\s*\n", t) if len(p.strip()) > 40]
+        if len(parts) >= 3:
+            return parts[:3]
+    raise ValueError(f"unrecoverable response: {t[:150]}")
+
+def split_merged(text, en_paras):
+    """Split a single merged translation back into len(en_paras) chunks,
+    cutting at sentence boundaries proportionally to the EN paragraph
+    lengths (by character count)."""
+    sentences = [s for s in re.split(r"(?<=[。！？；.!?;])\s*", text) if s.strip()]
+    n = len(en_paras)
+    if len(sentences) < n:
+        return [text]
+    total_en = sum(len(p) for p in en_paras)
+    total = sum(len(s) for s in sentences)
+    cuts = []
+    acc = 0
+    for p in en_paras[:-1]:
+        acc += len(p)
+        cuts.append(acc / total_en * total)
+    out = []
+    i = 0
+    for ci, cut in enumerate(cuts):
+        need = n - ci - 1  # chunks after this one, each needing >= 1 sentence
+        chunk = []
+        while i < len(sentences):
+            chunk.append(sentences[i])
+            i += 1
+            rem = len(sentences) - i
+            pos = sum(len(s) for s in chunk)
+            if pos >= cut and rem >= need:
+                break
+            if rem == need:  # must close now to leave enough sentences
+                break
+        out.append("".join(chunk))
+    out.append("".join(sentences[i:]))
+    return out
+
+def translate_singles(paras, lang_desc):
+    out = []
+    for i, p in enumerate(paras):
+        got = None
+        # the model sometimes returns the wrong paragraph (e.g. the LAST
+        # one); retry, collecting until we get a plausible translation of p
+        for attempt in range(4):
+            prompt = (f"Translate paragraph {i+1} of {len(paras)} into "
+                      f"{lang_desc}. Faithful, fluent prose; proper nouns in "
+                      f"customary target-language form. Output ONLY the "
+                      f"translated paragraph text, nothing else.\n\n{p}")
+            raw = call_glm(prompt, max_tokens=6000)
+            t = raw.strip().lstrip("\ufeff")
+            t = re.sub(r"^\[\d+\]\s*", "", t)  # strip [1]-style markers
+            if (t.startswith("[") or t.startswith("{") or len(t) < 40):
+                continue
+            got = t
+            # sanity: length within 0.25x-3x of source (CJK vs latin)
+            if 0.15 * len(p) <= len(t) <= 3 * len(p):
+                break
+        if got is None:
+            raise ValueError(f"no usable translation for paragraph {i+1}")
+        out.append(got)
+        time.sleep(0.5)
+    return out
 
 def translate_locale(loc, lang_desc):
     out_path = f"tools/xuanzang_text_{loc}.py"
@@ -96,7 +167,13 @@ def translate_locale(loc, lang_desc):
             try:
                 raw = call_glm(prompt)
                 arr = extract_json(raw)
-                if not (isinstance(arr, list) and len(arr) == 3 and all(isinstance(x, str) and len(x) > 40 for x in arr)):
+                # model sometimes merges all paragraphs into one string
+                # (or truncates): split a lone survivor proportionally
+                if (isinstance(arr, list) and len(arr) == 1
+                        and isinstance(arr[0], str)):
+                    arr = split_merged(arr[0], paras)
+                min_len = max(15, int(0.15 * min(len(p) for p in paras)))
+                if not (isinstance(arr, list) and len(arr) == 3 and all(isinstance(x, str) and len(x) >= min_len for x in arr)):
                     raise ValueError(f"bad shape: {str(arr)[:100]}")
                 done[stop] = arr
                 break
@@ -104,8 +181,15 @@ def translate_locale(loc, lang_desc):
                 print(f"    {stop} attempt {attempt+1} failed: {e}")
                 time.sleep(3 * (attempt + 1))
         else:
-            print(f"  GIVING UP on {loc}/{stop}")
-            return False
+            # last resort: translate paragraph-by-paragraph (tiny
+            # responses, cannot truncate)
+            try:
+                done[stop] = translate_singles(paras, lang_desc)
+                print(f"    {stop}: recovered via per-paragraph mode")
+            except Exception as e:
+                print(f"    {stop} per-paragraph also failed: {str(e)[:100]}")
+                print(f"  GIVING UP on {loc}/{stop}")
+                return False
         # persist after each stop
         with open(out_path, "w", encoding="utf-8") as f:
             f.write("# Auto-translated by GLM; source tools/xuanzang_text_en.py\n")
