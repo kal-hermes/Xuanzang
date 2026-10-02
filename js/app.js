@@ -226,6 +226,10 @@
   function renderJourney() {
     const L = state.lesson;
     renderJourneyRoutes();
+    map.renderStopDots(L.stops, state.focusedStop || null, (id) => {
+      const s = L.stops.find((x) => x.id === id);
+      if (s) journeyStopClick(s);
+    });
     // stops sidebar replaces the alphabetical country list
     const ul = $("#country-list");
     ul.innerHTML = "";
@@ -255,8 +259,10 @@
   function journeyStopClick(s) {
     if (!state.visitedStops) state.visitedStops = new Set();
     state.visitedStops.add(s.id);
+    state.focusedStop = s.id;
     const li = document.querySelector(`#country-list li[data-stop="${s.id}"]`);
     if (li) li.classList.add("visited");
+    map.focusStopDot(s.id);
     map.rotateToCoord(s.coords);
     map.pointAt(s.coords);
     showStopInfo(s);
@@ -272,25 +278,32 @@
     $("#info-name").dataset.iso3 = "";
     const dl = $("#info-facts");
     dl.innerHTML = "";
-    const year = document.createElement("dt");
-    year.textContent = i18n.t("year");
-    const yearDd = document.createElement("dd");
-    yearDd.textContent = s.year;
-    dl.append(year, yearDd);
+    const addRow = (label, value, cls) => {
+      const dt = document.createElement("dt");
+      dt.textContent = label;
+      const dd = document.createElement("dd");
+      if (cls) dd.className = cls;
+      dd.textContent = value;
+      dl.append(dt, dd);
+    };
+    addRow(i18n.t("year"), s.when || s.year);
+    if (s.present) addRow(i18n.t("today_at"), loc(s.present) || s.present.en || "");
     const country = state.lesson.countries.find((c) => c.iso3 === s.iso3);
-    if (country) {
-      const cdt = document.createElement("dt");
-      cdt.textContent = i18n.t("today_in");
-      const cdd = document.createElement("dd");
-      cdd.textContent = loc(country.names) || s.iso3;
-      dl.append(cdt, cdd);
+    if (country) addRow(i18n.t("today_in"), loc(country.names) || s.iso3);
+    // narrative: {locale: [paragraphs]} (rich) or {locale: string} (legacy)
+    const narr = s.narrative || {};
+    let paras = narr[i18n.locale];
+    if (paras == null) paras = Object.values(narr)[0];
+    if (typeof paras === "string") paras = [paras];
+    const first = document.createElement("dt");
+    first.textContent = i18n.t("what_he_saw");
+    dl.appendChild(first);
+    for (const p of paras || []) {
+      const dd = document.createElement("dd");
+      dd.className = "narrative";
+      dd.textContent = p;
+      dl.appendChild(dd);
     }
-    const ndt = document.createElement("dt");
-    ndt.textContent = i18n.t("what_he_saw");
-    const ndd = document.createElement("dd");
-    ndd.className = "narrative";
-    ndd.textContent = loc(s.narrative) || "";
-    dl.append(ndt, ndd);
   }
 
   async function showInfo(c, iso3) {

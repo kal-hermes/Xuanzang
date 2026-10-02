@@ -171,6 +171,28 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
   animation: target-pulse 1.2s ease-out infinite;
 }
 
+/* journey stop dots: static, clickable; focused one pulses */
+#map .stop-dot {
+  fill: #ffd24a;
+  fill-opacity: 0.9;
+  stroke: #1b2733;
+  stroke-width: 1.5;
+  cursor: pointer;
+  pointer-events: all;
+}
+#map .stop-dot:hover {
+  fill: #ffe27a;
+}
+#map .stop-dot.focused {
+  fill: #ff9d3c;
+  animation: stop-pulse 1.2s ease-out infinite;
+}
+
+@keyframes stop-pulse {
+  0%   { r: 6; stroke-opacity: 1; }
+  100% { r: 18; stroke-opacity: 0; }
+}
+
 @keyframes target-pulse {
   0%   { r: 4; opacity: 1; }
   100% { r: 14; opacity: 0; }

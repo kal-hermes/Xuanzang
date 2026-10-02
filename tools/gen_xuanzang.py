@@ -19,6 +19,36 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 UA = {"User-Agent": "Xuanzang-app-lesson-builder/1.0 (educational)"}
 
+# rich content + metadata from sibling modules (loaded lazily in main()
+# so a missing translation file doesn't break --help imports)
+NARRATIVE_RICH = {"en-GB": {}, "fr-CA": {}, "zh-Hans": {}, "zh-HK": {}, "ja": {}}
+WHEN = {}
+PRESENT = {}
+
+def _load_content():
+    import importlib.util
+    base = Path(__file__).parent
+    def load(name, fname, attr="NARRATIVE_RICH"):
+        p = base / fname
+        if not p.exists():
+            print(f"  (no {fname}; falling back to short narratives)", file=sys.stderr)
+            return
+        spec = importlib.util.spec_from_file_location(name, p)
+        m = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(m)
+        NARRATIVE_RICH[name] = getattr(m, attr)
+    load("en-GB", "xuanzang_text_en.py")
+    load("fr-CA", "xuanzang_text_fr-CA.py")
+    load("zh-Hans", "xuanzang_text_zh-Hans.py")
+    load("zh-HK", "xuanzang_text_zh-HK.py")
+    load("ja", "xuanzang_text_ja.py")
+    global WHEN, PRESENT
+    spec = importlib.util.spec_from_file_location("meta", base / "xuanzang_meta.py")
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    WHEN, PRESENT = m.WHEN, m.PRESENT
+
+
 # QIDs resolved via wbsearchentities + verified by label/description
 # and coordinates (see resolve log in tools/gen_xuanzang.py history).
 STOPS = [
@@ -289,6 +319,7 @@ def fetch_all_coords(stops):
 
 
 def main():
+    _load_content()
     # country names for the test modes, from the vendored CLDR files
     # (raw cldr-json structure: main.<locale>...territories, keyed alpha-2)
     ISO3_TO_A2 = {"CHN": "CN", "KGZ": "KG", "KAZ": "KZ", "UZB": "UZ",
@@ -369,14 +400,16 @@ def main():
             "id": s["key"],
             "coords": s["coords"],
             "year": s["year"],
+            "when": WHEN.get(s["key"], s["year"]),
+            "present": PRESENT.get(s["key"]),
             "iso3": s["iso3"],
             "names": STOP_NAMES.get(s["key"], {}),
             "narrative": {
-                "en-GB": NARRATIVE[s["key"]],
-                "fr-CA": NARRATIVE_FR[s["key"]],
-                "zh-Hans": NARRATIVE_ZH_HANS[s["key"]],
-                "zh-HK": NARRATIVE_ZH_HANT[s["key"]],
-                "ja": NARRATIVE_JA[s["key"]],
+                "en-GB": NARRATIVE_RICH["en-GB"].get(s["key"], [NARRATIVE[s["key"]]]),
+                "fr-CA": NARRATIVE_RICH["fr-CA"].get(s["key"], [NARRATIVE_FR[s["key"]]]),
+                "zh-Hans": NARRATIVE_RICH["zh-Hans"].get(s["key"], [NARRATIVE_ZH_HANS[s["key"]]]),
+                "zh-HK": NARRATIVE_RICH["zh-HK"].get(s["key"], [NARRATIVE_ZH_HANT[s["key"]]]),
+                "ja": NARRATIVE_RICH["ja"].get(s["key"], [NARRATIVE_JA[s["key"]]]),
             },
         }
         lesson["stops"].append(stop)

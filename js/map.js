@@ -45,6 +45,7 @@
   let overlayPaths = [];     // [{el, points}] re-projected on rotate
   let pointedIso3 = null;    // country currently pointed at by an arrow
   let pointedCoords = null;  // or: arbitrary lon/lat being pointed at
+  let stopDots = [];         // [{id, coords}] journey stop dots
   let graticuleEl = null;
   let sphereEl = null;
   let currentLesson = null;
@@ -308,7 +309,24 @@
         }).join(" "));
       }
       this._redrawPointOverlay(false);
+      this._reprojectStopDots();
       this._updateGraticule();
+    },
+
+    _reprojectStopDots() {
+      if (!overlay || !stopDots.length) return;
+      for (const el of [...overlay.querySelectorAll(".stop-dot")]) {
+        const s = stopDots.find((d) => d.id === el.dataset.stop);
+        if (!s) continue;
+        const c = projection(s.coords);
+        if (!c || c[0] == null || isNaN(c[0])) {
+          el.setAttribute("cx", -100); // off-canvas (backside)
+          el.setAttribute("cy", -100);
+          continue;
+        }
+        el.setAttribute("cx", c[0]);
+        el.setAttribute("cy", c[1]);
+      }
     },
 
     setClickHandler(fn) { clickHandler = fn; },
@@ -406,7 +424,38 @@
     },
 
 
-    // Point at a country: big animated arrow + pulsing target dot at
+    // Static clickable dots for journey stops, at their exact lon/lat.
+    // Dots re-project on globe rotation (lon/lat -> screen each time).
+    // `focused` id gets the pulsing style; click fires cb(stopId).
+    renderStopDots(stops, focusedId, onClick) {
+      stopDots = stops.map((s) => ({ id: s.id, coords: s.coords }));
+      if (!overlay) return;
+      for (const el of [...overlay.querySelectorAll(".stop-dot")]) el.remove();
+      for (const s of stops) {
+        const c = this.project(s.coords);
+        if (!c || c[0] == null || isNaN(c[0])) continue;
+        const dot = document.createElementNS(svg.namespaceURI, "circle");
+        dot.setAttribute("cx", c[0]);
+        dot.setAttribute("cy", c[1]);
+        dot.setAttribute("r", 6);
+        dot.setAttribute("class", "stop-dot" + (s.id === focusedId ? " focused" : ""));
+        dot.dataset.stop = s.id;
+        dot.addEventListener("click", (ev) => {
+          ev.stopPropagation();
+          if (onClick) onClick(s.id);
+        });
+        overlay.appendChild(dot);
+      }
+    },
+
+    focusStopDot(id) {
+      if (!overlay) return;
+      for (const el of overlay.querySelectorAll(".stop-dot")) {
+        el.classList.toggle("focused", el.dataset.stop === id);
+      }
+    },
+
+    // Point at a country: big animated arrow + pulsing dot at
     // its centroid. If the globe is showing and the country is on the
     // backside, rotate it to face the viewer first. The pointing
     // overlay is redrawn after globe drags (see _reproject).
