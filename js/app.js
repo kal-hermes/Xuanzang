@@ -155,9 +155,15 @@
 
   function setHint(text) { $("#hint-text").textContent = text; }
 
+  function quizTotal() {
+    if (state.mode === "route") return state.lesson.stops.length - 1;
+    if (state.mode === "sights") return state.lesson.stops.length;
+    return state.order.length;
+  }
+
   function updateScore() {
     $("#score-display").textContent =
-      i18n.t("score", { correct: state.correct, total: state.order.length });
+      i18n.t("score", { correct: state.correct, total: quizTotal() });
   }
 
   function normalizeAnswer(s) {
@@ -175,6 +181,22 @@
   // ---------- modes ----------
 
   function startMode() {
+    // cancel any pending quiz advance from a previous mode
+    if (state.quizTimer) { clearTimeout(state.quizTimer); state.quizTimer = null; }
+    // journey lessons have their own test modes; the country locate /
+    // name tests don't apply to them
+    const isJourney = state.lesson.type === "journey";
+    for (const opt of $("#mode-select").options) {
+        const journeyOnly = opt.value === "route" || opt.value === "sights";
+        const countryOnly = ["locate", "name"].includes(opt.value);
+        opt.hidden = isJourney ? countryOnly : journeyOnly;
+    }
+    // if the saved mode is now hidden, fall back to learn
+    if ($("#mode-select").selectedOptions[0] && $("#mode-select").selectedOptions[0].hidden) {
+      $("#mode-select").value = "learn";
+      state.mode = "learn";
+    }
+
     map.clearOverlay();
     map.clearRevealed();
     map.clearHighlights("correct");
@@ -185,7 +207,8 @@
     $("#info-panel").classList.toggle("journey",
       state.mode === "learn" && state.lesson.type === "journey");
     const journeyLearn = state.mode === "learn" && state.lesson.type === "journey";
-    $("#prompt-bar").hidden = !journeyLearn || state.journeyView !== "step";
+    const isQuiz = ["locate", "name", "route", "sights"].includes(state.mode);
+    $("#prompt-bar").hidden = isQuiz ? false : (!journeyLearn || state.journeyView !== "step");
     $("#journey-controls").hidden = !journeyLearn;
     if (journeyLearn) {
       $("#journey-prev").hidden = false;
@@ -211,6 +234,20 @@
       if (state.lesson.type === "journey") renderJourney();
     } else {
       $("#country-list-panel").hidden = true;
+      state.locked = false;
+      if (state.mode === "route" || state.mode === "sights") {
+        // journey quiz modes: no country list, no reveal button
+        $("#reveal-button").hidden = true;
+        map.setClickHandler(() => {});
+        setHint(state.projection === "globe" ? i18n.t("hint_globe") : "");
+        state.index = 0;
+        state.correct = 0;
+        state.quizOrder = shuffle(state.lesson.stops.map((_, i) => i));
+        if (state.mode === "route") startRouteQuiz();
+        else startSightsQuiz();
+        updateScore();
+        return;
+      }
       state.order = shuffle(state.lesson.countries.map((c) => c.iso3));
       state.index = 0;
       state.correct = 0;
@@ -762,6 +799,208 @@
     return shuffle(others).slice(0, 3);
   }
 
+  // ---------- journey quiz: guess the route ----------
+  // From the current stop, guess the next stop's year AND place from
+  // 3-4 options. Wrong answers vary: right place + wrong year, wrong
+  // place + right year, or both wrong. Wrong places come from real
+  // 7th-century polities near the route (lesson.quizPlaces) or real
+  // stops that are not the answer; wrong years are the correct year
+  // nudged by 1-3 years.
+  function stopLabel(s) {
+    return loc(s.names) + " (" + s.year + ")";
+  }
+
+  function routeYearVariants(year) {
+    const y = Number(String(year).replace(/[^0-9]/g, "").slice(0, 4)) || 630;
+    const out = new Set();
+    let guard = 0;
+    while (out.size < 3 && guard++ < 30) {
+      const d = (Math.floor(Math.random() * 3) + 1) * (Math.random() < 0.5 ? -1 : 1);
+      const v = y + d;
+      if (v >= 628 && v <= 646 && v !== y) out.add(v);
+    }
+    return [...out];
+  }
+
+  function startRouteQuiz() {
+    state.routeIdx = 0;
+    nextRouteQuestion();
+  }
+
+  function nextRouteQuestion() {
+    const L = state.lesson;
+    const stops = L.stops;
+    if (state.routeIdx >= stops.length - 1) return finishTest();
+    const cur = stops[state.routeIdx];
+    const nxt = stops[state.routeIdx + 1];
+    map.clearOverlay();
+    // show progress so far: dots up to current stop + static segments
+    map.renderStopDots(stops.slice(0, state.routeIdx + 1), state.routeIdx, () => {});
+    for (let i = 0; i < state.routeIdx; i++) {
+      map.addSegment(stops[i].coords, stops[i + 1].coords, routeColor(i, stops), "static");
+    }
+    map.rotateToCoord(cur.coords);
+    setHint("");
+    $("#prompt-text").textContent = i18n.t("prompt_route",
+      { name: loc(cur.names), year: cur.year });
+
+    // answer options: always [correct, place-right-year-wrong,
+    // place-wrong-year-right, maybe place-wrong-year-wrong]
+    const mkOpt = (stop, year, correct) => ({
+      correct,
+      labelHtml: `<span class="quiz-place"></span><span class="quiz-year"></span>`,
+      stop, year,
+    });
+    const opts = [mkOpt(nxt, nxt.year, true)];
+    const wrongYears = routeYearVariants(nxt.year);
+    if (wrongYears.length) {
+      opts.push(mkOpt(nxt, String(wrongYears[0]), false)); // year-only wrong
+    }
+    const wrongPlaces = routeDistractorPlaces(nxt, L);
+    const yRight = wrongPlaces[0];
+    if (yRight) opts.push(mkOpt(yRight, nxt.year, false)); // place-only wrong
+    const both = wrongPlaces[1];
+    if (both && wrongYears[1]) {
+      opts.push(mkOpt(both, String(wrongYears[1]), false)); // both wrong
+    }
+    renderQuizChoices(shuffle(opts), (opt, btn) => routeAnswer(opt, btn, nxt), true);
+  }
+
+  // plausible wrong places: other real stops ±3 away (not adjacent),
+  // plus the historical distractor polities from the lesson data
+  function routeDistractorPlaces(nxt, L) {
+    const idx = L.stops.indexOf(nxt);
+    const near = L.stops.filter((s, i) =>
+      Math.abs(i - idx) >= 2 && Math.abs(i - idx) <= 6);
+    const pool = [...shuffle(near).slice(0, 3)];
+    const extras = (L.quizPlaces || []).map((p) => ({
+      names: p.names, year: p.year, pseudo: p,
+    }));
+    while (pool.length < 2 + Math.floor(Math.random() * 2)) {
+      const e = extras[Math.floor(Math.random() * extras.length)];
+      if (e && !pool.includes(e)) pool.push(e);
+      else break;
+    }
+    return shuffle(pool).slice(0, 2);
+  }
+
+  function routeColor(i, stops) {
+    const nIdx = stops.findIndex((s) => s.id === "nalanda");
+    return i >= nIdx ? "#e05674" : "#ffd24a";
+  }
+
+  function routeAnswer(opt, btn, nxt) {
+    if (state.locked) return;
+    state.locked = true;
+    const L = state.lesson;
+    if (opt.correct) {
+      state.correct++;
+      btn.classList.add("correct");
+      // animate the line to the next stop, then fade in its dot
+      const seg = map.addSegment(L.stops[state.routeIdx].coords, nxt.coords,
+        routeColor(state.routeIdx, L.stops));
+      if (seg) seg.dataset.hop = state.routeIdx;
+      const stops = L.stops.slice(0, state.routeIdx + 2);
+      state.quizTimer = setTimeout(() => {
+        map.renderStopDots(stops, state.routeIdx + 1, () => {});
+      }, 800);
+    } else {
+      btn.classList.add("wrong");
+      [...$("#choices").querySelectorAll("button")].forEach((b) => {
+        if (b.dataset.correct === "1") b.classList.add("correct");
+      });
+      setHint(i18n.t("wrong_route"));
+    }
+    updateScore();
+    state.quizTimer = setTimeout(() => {
+      state.routeIdx++;
+      state.locked = false;
+      nextRouteQuestion();
+    }, 1400);
+  }
+
+  // ---------- journey quiz: guess the sights ----------
+  // A stop is highlighted (rotated + pulsing dot); pick what Xuanzang
+  // saw / did / what was happening there. Distractors are sights from
+  // other stops (weighted to ±5 stops so they're not obvious).
+  function startSightsQuiz() {
+    state.index = 0;
+    nextSightsQuestion();
+  }
+
+  function nextSightsQuestion() {
+    const L = state.lesson;
+    if (state.index >= state.quizOrder.length) return finishTest();
+    const idx = state.quizOrder[state.index];
+    const s = L.stops[idx];
+    map.clearOverlay();
+    map.renderStopDots([s], 0, () => {});
+    map.rotateToCoord(s.coords);
+    setHint("");
+    $("#prompt-text").textContent = i18n.t("prompt_sights",
+      { name: loc(s.names), year: s.year });
+
+    const sights = L.quizSights || {};
+    const fact = sights[s.id];
+    if (!fact) { state.index++; return nextSightsQuestion(); }
+    const correct = { text: loc(fact), correct: true };
+    // distractors: sights of other stops, nearest stops preferred
+    const others = L.stops
+      .map((o, i) => ({ o, i, d: Math.abs(i - idx) }))
+      .filter((x) => x.i !== idx && sights[x.o.id])
+      .sort((a, b) => a.d - b.d);
+    const near = others.slice(0, 10);
+    const picked = shuffle(near).slice(0, 3).map((x) =>
+      ({ text: loc(sights[x.o.id]), correct: false }));
+    renderQuizChoices(shuffle([correct, ...picked]), (opt, btn) => {
+      if (state.locked) return;
+      state.locked = true;
+      if (opt.correct) {
+        state.correct++;
+        btn.classList.add("correct");
+      } else {
+        btn.classList.add("wrong");
+        [...$("#choices").querySelectorAll("button")].forEach((b) => {
+          if (b.dataset.correct === "1") b.classList.add("correct");
+        });
+        // show the real story in the hint
+        setHint(i18n.t("sights_answer", { fact: loc(fact) }));
+      }
+      updateScore();
+      state.quizTimer = setTimeout(() => {
+        state.index++;
+        state.locked = false;
+        nextSightsQuestion();
+      }, opt.correct ? 900 : 3200);
+    });
+  }
+
+  // shared choice-button rendering for the journey quizzes; route mode
+  // renders a two-line label (place + year), sights mode plain text
+  function renderQuizChoices(options, onPick, routeStyle) {
+    const box = $("#answer-box");
+    box.hidden = false;
+    $("#choices").innerHTML = "";
+    $("#text-form").hidden = true;
+    for (const opt of options) {
+      const btn = document.createElement("button");
+      btn.dataset.correct = opt.correct ? "1" : "0";
+      if (routeStyle) {
+        const place = document.createElement("div");
+        place.className = "quiz-place";
+        place.textContent = loc(opt.stop.names);
+        const year = document.createElement("div");
+        year.className = "quiz-year";
+        year.textContent = opt.year;
+        btn.append(place, year);
+      } else {
+        btn.textContent = opt.text;
+      }
+      btn.addEventListener("click", () => onPick(opt, btn));
+      $("#choices").appendChild(btn);
+    }
+  }
+
   function nextName() {
     if (state.index >= state.order.length) return finishTest();
     const iso3 = state.order[state.index];
@@ -856,7 +1095,7 @@
     $("#answer-box").hidden = true;
     $("#prompt-text").textContent = i18n.t("finished", {
       correct: state.correct,
-      total: state.order.length,
+      total: quizTotal(),
     });
     $("#score-display").textContent = "";
     setHint("");

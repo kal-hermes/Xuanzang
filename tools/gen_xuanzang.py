@@ -325,6 +325,14 @@ def fetch_all_coords(stops):
     return coords, labels
 
 
+def _load_sights_i18n():
+    """Load translated quiz content; returns None if not yet translated."""
+    f = ROOT / "tools/xuanzang_sights_i18n.json"
+    if not f.exists():
+        return None
+    return json.loads(f.read_text(encoding="utf-8"))
+
+
 def main():
     _load_content()
     # country names for the test modes, from the vendored CLDR files
@@ -447,6 +455,35 @@ def main():
         {"iso3": iso3, "names": country_names.get(iso3, {})}
         for iso3 in seen
     ]
+
+    # quiz data: sights facts (per-stop, localized) + distractor places
+    ns = {}
+    exec((ROOT / "tools/xuanzang_sights.py").read_text(encoding="utf-8"), ns)
+    SIGHTS_SRC, PLACES_SRC = ns["SIGHTS"], ns["PLACES"]
+    sights_i18n = _load_sights_i18n()
+    if sights_i18n:
+        lesson["quizSights"] = {
+            sid: {"en-GB": text, **{
+                loc_: sights_i18n["sights"][sid][loc_] for loc_ in
+                ["fr-CA", "zh-Hans", "zh-HK", "ja"]}}
+            for sid, text in SIGHTS_SRC.items()
+        }
+        lesson["quizPlaces"] = [
+            {
+                "id": pid,
+                "names": {
+                    "en-GB": info["names"]["en-GB"],
+                    "zh-Hans": info["names"].get("zh-Hans") or info["names"]["en-GB"],
+                    "fr-CA": sights_i18n["place_names"][pid].get("fr-CA", info["names"]["en-GB"]),
+                    "zh-HK": info["names"].get("zh-Hans") or info["names"]["en-GB"],
+                    "ja": sights_i18n["place_names"][pid].get("ja", info["names"]["en-GB"]),
+                },
+                "present": info["present"],
+                "coords": info["coords"],
+                "year": info["year"],
+            }
+            for pid, info in PLACES_SRC.items()
+        ]
 
     out = ROOT / "lessons/xuanzang/journey.json"
     out.parent.mkdir(parents=True, exist_ok=True)

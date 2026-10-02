@@ -286,6 +286,14 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
   font-variant-numeric: tabular-nums;
   opacity: 0.8;
 }
+#choices button .quiz-place {
+  font-weight: 600;
+}
+#choices button .quiz-year {
+  font-size: 0.85em;
+  opacity: 0.7;
+  font-variant-numeric: tabular-nums;
+}
 #info-facts dd.narrative {
   max-width: 260px;
   white-space: normal;

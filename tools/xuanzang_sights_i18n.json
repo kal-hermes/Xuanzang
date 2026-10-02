@@ -1,0 +1,264 @@
+{
+ "sights": {
+  "chang_an": {
+   "fr-CA": "Il quitta furtivement la capitale des Tang à l'automne 629, en pleine famine, bravant l'interdit impérial prohibant toute sortie de l'empire — seul et sans autorisation.",
+   "zh-Hans": "公元629年秋，趁饥荒之际偷渡出唐都，违抗朝廷禁止出境的禁令——孤身一人，未经许可。",
+   "zh-HK": "貞觀三年（629年）秋天，長安鬧饑荒，他乘著朝廷嚴禁國民出境之際，獨自一人、未經批准，偷偷溜出唐都。",
+   "ja": "629年の秋、飢饉に見舞われた唐の都を、国外への通行を禁じる朝廷の令に背いて密かに後にした——独りきり、誰の勅許も得ぬままに。"
+  },
+  "liangzhou": {
+   "fr-CA": "Il enseigna pendant des semaines jusqu'à ce que le gouverneur ordonne son renvoi ; un fonctionnaire compatissant le fit passer clandestinement de nuit, avec deux disciples.",
+   "zh-Hans": "教了几个星期，直到总督下令将他遣返；一位同情他的官员趁夜带着他和两名弟子悄悄继续前行。",
+   "zh-HK": "教了幾個星期，直到總督下令將他遣返；一位同情他的官員趁夜帶着他與兩名弟子偷偷繼續上路。",
+   "ja": "数週間にわたり教えを説いたが、長官の命により本国へ送り返されることとなった。同情を寄せた役人が、二人の弟子とともに彼を夜陰に乗じて先へと密かに送り出したのである。"
+  },
+  "guazhou": {
+   "fr-CA": "Il traversa seul la « rivière de sable » après la fuite de son guide dès la première tour de guet — quatre nuits et cinq jours sans eau, sauvé lorsque son vieux cheval roux flaira une source.",
+   "zh-Hans": "向导在第一座烽火台就逃跑了，他独自穿越了“流沙之河”——四天五夜滴水未进，全靠他那匹老红马嗅出一处泉水才得以活命。",
+   "zh-HK": "單人獨自橫渡「沙河」——嚮導喺第一座烽火台就嚇走咗，佢四日五夜冇水飲，最後靠佢匹老紅馬嗅到水源先救返一命。",
+   "ja": "最初の烽火台で案内人が逃亡した後、単独で「流砂の河」を越えた——四昼夜にわたり水なしで彷徨ったが、馴染みの赤毛の馬が泉のありかを嗅ぎ当てたことで一命を取り留めた。"
+  },
+  "hami": {
+   "fr-CA": "Rétabli pendant une dizaine de jours sous la protection du roi pieux de Yiwu, il fut ensuite pour ainsi dire sommé de se rendre à Gaochang par un émissaire aux menaces croissantes.",
+   "zh-Hans": "在虔诚的伊吾国王手下休养了约十天后，便几乎是被一名使者以步步紧逼的威胁“请”去了高昌。",
+   "zh-HK": "在虔誠的伊吾王家中休養了約十日之後，便幾乎是被使者以步步進逼的威脅召往高昌。",
+   "ja": "敬虔な伊吾の王のもとで十日ほど療養し、その後、度重なる脅しを伴う使者によって、事実上、高昌へ召し出されることとなった。"
+  },
+  "gaochang": {
+   "fr-CA": "Affamé pendant trois jours jusqu'à ce que le roi Qu Wentai du Gaochang cède, prête serment de fraternité avec lui et finance vingt-quatre années de voyage en lui donnant or, chevaux et lettres de recommandation.",
+   "zh-Hans": "饥饿缠身三天，直到高昌王麴文泰让步，与他结为兄弟，并资助他黄金、马匹和书信，供他游历二十四年。",
+   "zh-HK": "餓了三日，直到高昌王麴文泰讓步，與他結拜為兄弟，並以黃金、馬匹和書信資助他往後二十四年的西行之旅。",
+   "ja": "三日間にわたり飢えに苦しみ、ついに麴文泰王は折れて、彼と義兄弟の契りを結び、金や馬、手紙をもってその後二十四年に及ぶ旅を支援したのである。"
+  },
+  "karashahr": {
+   "fr-CA": "Il fut reçu par un roi apparenté à la famille royale de Kucha — dans une cour que le Récit décrit comme déstabilisée, où les ministres se livraient à la violence et où les lois étaient appliquées de manière inégale.",
+   "zh-Hans": "受到一位与龟兹王室有亲缘关系的国王的接待——据《记》所述，当时的朝廷动荡不安，大臣残暴，法律执行不一。",
+   "zh-HK": "受到一位與龜茲王室有親屬關係的國王接見——據《記》所述，該國朝廷動盪不安，大臣兇暴，法律執行參差不一。",
+   "ja": "クチャの王族と縁のある王に迎えられた——その宮廷は『伝』の記すところによれば不安定で、臣下は乱暴であり、法も不均一に施行されていたという。"
+  },
+  "kucha": {
+   "fr-CA": "Il vainquit en débat le moine Mokshagupta, formé aux Indes, puis attendit deux mois avant que la caravane ne franchisse le col de Bedel, perdant hommes et bêtes dans les éboulis glacés.",
+   "zh-Hans": "在辩论中击败了印度trained（受训于印度的）僧人莫克沙笈多，随后等待两个月才让商队穿越别迭里山口，途中在冰冻的碎石坡上损失了人员和牲畜。",
+   "zh-HK": "在辯論中擊敗了印度 trained 僧人 Mokshagupta，之後等了兩個月才讓商隊越過 Bedel 山口，期間在結冰的碎石坡上損失了人手和牲畜。",
+   "ja": "インドで学んだ僧モークシャグプタを論戦で破ったのち、隊商がベデル峠を越えるまで二か月待ち、凍てつく岩礫の中で人と家畜を失った。"
+  },
+  "aksu": {
+   "fr-CA": "Nous fîmes une brève halte à Baluka ; au-delà, la route quittait les terres cultivées, et l'ascension à travers les glaciers du Tian Shan dura sept jours, coûtant la vie à plusieurs hommes.",
+   "zh-Hans": "在巴卢卡作了短暂停留；过了那里，道路就离开了耕地，翻越天山冰川的爬升花了七天时间，死了几个人。",
+   "zh-HK": "在巴盧卡短暫停留之後，道路便離開了耕地，越過天山冰川的行程耗時七日，期間死了幾個人。",
+   "ja": "バルカで短い休息をとった。その先では道は耕作地を抜け、天山の氷河を越える登りには七日を要し、数名の者が命を落とした。"
+  },
+  "suyab": {
+   "fr-CA": "Placez Tong Yabghu Khagan dans une tente de feutre ornée de soie devant deux cents chefs — buvant du jus de raisin au lieu du vin — et repartez avec la lettre scellée du khagan garantissant sa protection.",
+   "zh-Hans": "在悬挂丝幔的毡帐中，于两百名首领面前谒见了统叶护可汗——以葡萄汁代酒——并带着可汗盖印的通行文书离开了。",
+   "zh-HK": "在氈帳內、絲綢裝飾的帳篷中，於兩百名部族首領面前會見統葉護可汗——以葡萄汁代酒——並帶着可汗蓋印的通關文書離開。",
+   "ja": "絹を張り巡らせた毛氈の天幕のなか、二百人の長老たちを前にしてトン・ヤブグ・カガンと謁見し、酒の代わりに葡萄の汁を口にした——そしてカガンより封印された通行保護の手紙を授かって帰った。"
+  },
+  "talas": {
+   "fr-CA": "Traversée du pays des vignobles aux locuteurs iranophores aux yeux verts, vêtus de feutre — une marche du khaganat entre la puissance turque et le monde persan.",
+   "zh-Hans": "穿过了绿眼睛、穿毡衣的说伊朗语族群的葡萄园之乡——那是可汗国在突厥势力与波斯世界之间的一片边地。",
+   "zh-HK": "穿過綠眼睛、身穿氈衣的伊朗語族人的葡萄園之鄉——這裏是可汗王朝在突厥勢力與波斯世界之間的邊疆地帶。",
+   "ja": "緑の瞳をもち、毛氈の衣をまとうイラン系言語話者たちの葡萄畑の国を抜けて進んだ——そこは、テュルク勢力とペルシア世界との間に位置する、カガン国の辺境の地であった。"
+  },
+  "samarkand": {
+   "fr-CA": "On a découvert la métropole sogdienne où l'on vouait un culte au feu : les deux monastères bouddhiques gisaient à l'abandon, et les prêtres du feu chassaient ses jeunes disciples à coups de tisons ardents.",
+   "zh-Hans": "发现了崇拜火的粟特都城：两座佛寺均已荒废，拜火祭司用燃烧的火把把他的年轻信徒们赶了出来。",
+   "zh-HK": "發現崇拜火的粟特都城：兩座佛寺均已荒廢，拜火祭司手持燃燒的火把，驅趕他年輕的信徒離開。",
+   "ja": "火を祀るソグドの都を発見した。二つの仏教僧院はともに放棄されており、火の祭司たちは燃える松明で若い信者たちを追い払っていた。"
+  },
+  "iron_gate": {
+   "fr-CA": "Passé la Porte de Fer — un défilé entre des falaises noir et rouge à peine assez large pour un seul cheval, fermé par des portes de fer plaquées sur le rocher et gardées par une garnison.",
+   "zh-Hans": "穿过了铁门——那是黑红色峭壁之间的一道隘口，窄得仅容一马通过，入口用铁门封住，铁板覆盖在岩壁上，并有守军驻防。",
+   "zh-HK": "通過了鐵門——一處位於黑紅色懸崖之間的隘口，窄得僅容一馬通過，入口以鑲嵌在岩壁上的鐵門封鎖，並派有守軍駐守。",
+   "ja": "鉄の門を越えた。それは黒赤色の絶壁に挟まれた隘路で、馬一頭がやっと通れるほどの幅しかなく、岩に打ち付けられた鉄板の扉によって閉ざされ、兵が守備していた。"
+  },
+  "balkh": {
+   "fr-CA": "Étudia pendant environ un mois au Nava Vihara sous la direction du maître âgé Prajñākāra, dans cette « mère des villes » ceinturée de cent monastères abritant trois mille moines.",
+   "zh-Hans": "在那座“众城之母”的城市里，四周环绕着上百座寺院和三千名僧侣，他在年迈的般若羯罗大师门下的那婆毗诃罗学习了大约一个月。",
+   "zh-HK": "在「萬城之母」那裏修行約一個月，城中有一百間寺院、三千名僧人，他跟隨年邁的般若迦羅大師在Nava Vihara研習佛法。",
+   "ja": "「百の僧院と三千の僧を擁する『諸都市の母』と称される地において、約一か月にわたり、老師プラジュニャーカラのもとナヴァ・ヴィハーラで学んだ。」"
+  },
+  "bamyan": {
+   "fr-CA": "J'ai vu les deux Buddhas colossaux debout — de 55 et 38 mètres, dorés et éblouissants — ainsi qu'un Buddha colossal couché en parinirvāna d'environ 300 mètres de long.",
+   "zh-Hans": "看到了两尊巨大的立佛——55米和38米，鎏金璀璨夺目——还有一尊约300米长的巨大卧佛，呈涅槃之姿。",
+   "zh-HK": "親眼目睹兩尊宏偉的站立佛像——分別高55米和38米，鍍上金箔、金光耀眼——仲有一尊長約300米、呈涅槃狀態嘅巨型臥佛。",
+   "ja": "二体の巨大多仏立像——高さ55メートルと38メートル、金箔が施され輝きを放っていた——および、全長約300メートルに及ぶ涅槃に入った巨大な涅槃仏を目にした。"
+  },
+  "kapisa": {
+   "fr-CA": "Passa approximativement deux hivers auprès du roi bouddhiste des Shahi de Kaboul et lui fut montrée la relique de l'os du crâne du Bouddha, exposée seulement en de rares occasions et sous la garde royale.",
+   "zh-Hans": "与信奉佛教的迦布罗沙希国王共度了大约两年的冬天，并被展示了佛陀的颅骨舍利，该舍利极少展出，且展出时总有王室卫队护卫。",
+   "zh-HK": "與信奉佛教的喀布爾沙希國王一起度過了約莫兩年寒冬，並獲准參拜佛陀頭骨舍利——該聖物甚少展示，展示時亦須由王室衛兵守護。",
+   "ja": "仏教徒のカーブル・シャーヒー朝の王のもとにおよそ二年間越冬し、王の護衛のもと、めったに披露されることのない仏陀の頭蓋骨舎利を見せられた。"
+  },
+  "nagarahara": {
+   "fr-CA": "Je parcourus seul une route infestée de bandits, accompagné d'un jeune guide, pour me rendre en pèlerinage dans la grotte obscure où l'on disait que le Bouddha avait laissé son ombre.",
+   "zh-Hans": "独自带着一位年轻的向导，走过强盗出没的道路，前往那座幽暗的石窟礼拜，据说佛陀曾在那里留下身影。",
+   "zh-HK": "獨自帶着一位年輕嚮導，走過強盜出沒的山路，前往傳說中佛陀留下身影的幽暗石窟禮拜。",
+   "ja": "若い案内人とともに盗賊の徘徊する道を独り歩き、仏が影を残したと伝えられる暗い洞窟に礼拝のため赴いた。"
+  },
+  "gandhara": {
+   "fr-CA": "Parcours d'un vaste paysage de ruines autour du stûpa de Kanishka — des mille monastères de la région, la plupart se dressaient vides, le sangha en déclin.",
+   "zh-Hans": "参观了一片围绕迦腻色迦佛塔的壮丽废墟景观——该地区上千座寺院大多已空无一人，僧团日渐衰落。",
+   "zh-HK": "遊歷了迦膩色伽佛塔周圍一片壯麗的頹垣敗景——該地區上千間寺院，大部分已人去樓空，僧團日漸衰敗。",
+   "ja": "ガンダーラの仏舎利塔（ストゥーパ）周辺の広大な廃墟の風景を巡った——この地方にかつて千を数えた僧院の多くはすでに無人となり、僧伽（サンガ）は衰退の道を辿っていた。"
+  },
+  "swat": {
+   "fr-CA": "Description d'une terre sacrée abandonnée : d'anciens stupas couronnant chaque colline, des monastères pour la plupart en ruines, et des défilés de montagne tristement célèbres pour être infestés de bandits.",
+   "zh-Hans": "描述了一片荒废的圣地：每座山丘顶上都矗立着古老的佛塔，寺院大多已成废墟，山间隘口则以盗匪出没而臭名昭著。",
+   "zh-HK": "描述一片被廢棄的聖地：每座山頭都矗立着古老佛塔，寺院大多已殘破不堪，而山間隘口更以盜匪出沒聞名。",
+   "ja": "打ち捨てられた聖なる土地を描写した。古代の仏塔があらゆる丘の上にそびえ、僧院はその大部分が荒廃し、山あいの道は盗賊の跳梁で悪名高い場所であった。"
+  },
+  "kashmir": {
+   "fr-CA": "Étudia la logique bouddhique et l'Abhidharma pendant environ deux ans dans un royaume comptant une centaine de monastères et cinq mille moines portés à la controverse.",
+   "zh-Hans": "在一个约有一百座寺院、五千名僧人且以辩论著称的王国里，学习了大约两年的佛教因明学和阿毗达磨。",
+   "zh-HK": "在一個約有百間寺院、五千名僧人、以辯論見稱的王國裏，研習了約兩年的佛教因明及阿毘達磨。",
+   "ja": "百年余りの僧院と五千人の僧を擁する、論争を好む一つの王国において、仏教論理学と阿毘達磨（アビダルマ）を約二年間学んだ。"
+  },
+  "punjab": {
+   "fr-CA": "Ont consigné, monastère après monastère en déclin, et ont imputé cette ruine au roi hun Mihirakula, dont les guerres, un siècle et demi plus tôt, avaient dévasté le réseau monastique.",
+   "zh-Hans": "逐一记载了座座衰败的寺院，并将其归咎于嚈哒王密希拉古拉，他在一个半世纪前发动的战争摧毁了整个寺院网络。",
+   "zh-HK": "逐一記錄了一座又一座荒廢的寺院，並將責任歸咎於匈奴王密希拉古拉，指他在一個半世紀前發動的戰爭摧毀了整個寺院網絡。",
+   "ja": "荒廃した僧院を次々と記録し、その責めをフーナ王ミヒラクラに帰した。彼の戦争は一世紀半前に僧院のネットワークを打ち砕いていたのである。"
+  },
+  "nalanda": {
+   "fr-CA": "Il étudia pendant environ cinq ans auprès du doyen centenaire Shilabhadra, maîtrisant le corpus Yogacara au plus grand centre de savoir du monde.",
+   "zh-Hans": "在那座当时世界上最大的学问中心，在那位年逾百岁的住持戒贤法师门下学习了约五年，精通了瑜伽行派的所有典籍。",
+   "zh-HK": "喺嗰座當時世界上最大嘅學術中心，跟隨百歲高僧戒賢法師學習咗大約五年，精通晒瑜伽行派嘅典籍。",
+   "ja": "百歳を超える老僧・戒賢（シーラバドラ）のもとで約五年間学び、当時世界最大の学問の中心地において、瑜伽行派（ゆがぎょうは）の典籍を究めた。"
+  },
+  "kanauj": {
+   "fr-CA": "Défendit le Mahāyāna devant l'assemblée de l'empereur Harsha en 643, sa tête mise en gage sur ses thèses — pendant des jours, personne n'osa lui répondre, jusqu'à ce que des émeutes soient provoquées puis réprimées.",
+   "zh-Hans": "公元643年，在戒日王的无遮大会上力弘大乘，以头颅悬赏其论题——一连数日无人敢应战，直至有人煽动骚乱才被平息。",
+   "zh-HK": "公元643年，喺戒日王嘅大會上力倡大乘，仲以自己條命作為論點嘅賭注——連續多日冇人夠膽應戰，直到有人煽動暴亂，之後先被平息。",
+   "ja": "643年、ハルシャ王の法会において首を懸けて大乗を擁護し、数日のあいだ応戦する者なく、ついには暴動が起こり鎮圧されるに至った。"
+  },
+  "prayaga": {
+   "fr-CA": "J'ai vu l'empereur Harsha distribuer l'intégralité de son trésor pendant soixante-quinze jours au confluent du Gange et de la Yamuna, rachetant même ses propres vêtements à ses nobles.",
+   "zh-Hans": "看到戒日王在恒河与亚穆纳河交汇处，用七十五天时间将国库财产尽数布施一空，甚至连身上的衣服也要向贵族们赎回。",
+   "zh-HK": "親眼目睹戒日王喺恆河同亞穆納河匯合處，用七十五日時間將成個國庫嘅財富施捨出去，連佢身上嘅龍袍都要向班貴族贖返。",
+   "ja": "ハルシャ王がガンガーとヤムナーの合流地点で、七十五日間にわたり王庫の財宝の一切を施し尽くす様を目の当たりにした。最後には身にまとう衣までも諸侯から買い戻す有様であった。"
+  },
+  "kashgar": {
+   "fr-CA": "Descendit du Pamir après que son éléphant eut glissé dans les gorges d'un torrent et s'y fut noyé avec ses manuscrits, et fit l'éloge des sculpteurs de bouddhas en santal du royaume.",
+   "zh-Hans": "他的大象失足坠入湍急的峡谷，连同经卷手稿一起淹死后，他从帕米尔高原下山而来，并盛赞这个王国的檀香木佛像雕刻师。",
+   "zh-HK": "他乘坐的大象失足跌落激流峽谷淹死，經書也一併沉沒，之後他從帕米爾高原下山，並讚賞這王國雕刻檀香木佛像的匠人。",
+   "ja": "彼は象が渓谷の急流に落ちて manuscripts とともに水没した後、パミールから下山し、この王国の白檀の仏像彫刻師を賞賛した。"
+  },
+  "khotan": {
+   "fr-CA": "Il attendit près de six mois aux confins du désert la réponse de l'empereur Taizong à son modeste mémoire, avant de partir en 644 sous la protection impériale.",
+   "zh-Hans": "在沙漠边缘苦苦等候了近半年，才等到唐太宗对他谦卑奏章的回复，于644年在朝廷护送下启程离开。",
+   "zh-HK": "在沙漠邊緣苦候近半年，才等到唐太宗對其奏章的回覆，最終於六四四年在朝廷護送下啟程離開。",
+   "ja": "太宗への謙抑上奏文に対する返事を砂漠の縁でほぼ半年待ち、644年に官の保護のもと旅立った。"
+  },
+  "loulan": {
+   "fr-CA": "Traversa le Lac Lop mourant en suivant les tas de pierres dressés entre les dunes, se repérant aux squelettes des voyageurs qui l'avaient précédé.",
+   "zh-Hans": "沿着沙丘间的烽燧土堆穿越垂死的罗布泊，以前行旅人的骸骨辨认方向。",
+   "zh-HK": "沿着沙丘之間的烽燧越過垂死的羅布泊，靠先前旅人的骸骨辨認方向。",
+   "ja": "乾きゆくロプノールを渡る際、隊商は砂丘の間に立つ烽火台の列を頼りに進み、道標としたのは先人の旅人たちの白骨であった。"
+  },
+  "dunhuang": {
+   "fr-CA": "Réintégra l'empire des Tang, en apparence, à la ville-garnison de Shazhou, accueilli avec escorte et ravitaillement en vertu de l'ordre permanent de l'empereur.",
+   "zh-Hans": "以正式形式在沙州戍镇重新进入唐帝国，依据皇帝的常设敕令，在护卫与补给随行下受到接待。",
+   "zh-HK": "以沙州鎮戍重新踏入大唐疆土，奉皇帝常例諭令，獲護衛迎護及糧餉供應。",
+   "ja": "沙州の鎮城において形式上唐帝国に再入国し、皇帝の恒例の命により、護衛と糧食の支給を受けて迎え入れられた。"
+  },
+  "chang_an_end": {
+   "fr-CA": "Il parvint à Chang'an en février 645, dans une capitale qui s'était mobilisée tout entière pour l'accueillir ; il déclina les charges qu'on lui offrait, obtint la création d'un bureau de traduction et traduisit 75 ouvrages avant de s'éteindre en 664.",
+   "zh-Hans": "于645年二月抵达长安，全城倾城相迎；他谢绝官职，争取到一处译场，此后共译出75部著作，直至664年去世。",
+   "zh-HK": "公元645年2月抵達長安，全城傾巢而出迎接；他婉拒官職，獲設譯場，翻譯了75部作品，直至664年去世。",
+   "ja": "645年2月に長安に到着すると、都は総出でこれを迎えた。玄奘は官職を辞退して翻訳場の設立を勝ち取り、664年に没するまでに75部の経典を翻訳した。"
+  }
+ },
+ "place_names": {
+  "qianquan": {
+   "fr-CA": "Qianquan (Mille Sources)",
+   "ja": "千泉（チエンチュエン、千の泉の意）"
+  },
+  "chach": {
+   "fr-CA": "Chach",
+   "ja": "チャチ"
+  },
+  "bukhara": {
+   "fr-CA": "Boukhara",
+   "ja": "ブハラ"
+  },
+  "kesh": {
+   "fr-CA": "Kesh",
+   "ja": "ケーシュ（シク教において刈らない髪を指す語）"
+  },
+  "termez": {
+   "fr-CA": "Termez",
+   "ja": "テルメズ"
+  },
+  "kunduz": {
+   "fr-CA": "Huo Guo (vallée de Kunduz)",
+   "ja": "フオ・グオ（クンドゥズの谷）"
+  },
+  "taxila": {
+   "fr-CA": "Taxila",
+   "ja": "タクシャシーラ（タキシラ）"
+  },
+  "varanasi": {
+   "fr-CA": "Varanasi",
+   "ja": "ヴァーラーナシー（ベナレス）"
+  },
+  "tashkurgan": {
+   "fr-CA": "Kiepantuo (la tour de pierre)",
+   "ja": "キエパントゥオ（石塔）"
+  },
+  "yarkant": {
+   "fr-CA": "Wusha",
+   "ja": "烏沙（うしゃ）"
+  },
+  "chitral": {
+   "fr-CA": "Shangmi",
+   "ja": "商密（Shāngmì）"
+  }
+ },
+ "place_presents": {
+  "qianquan": {
+   "fr-CA": "Région de Merke, province de Jambyl, Kazakhstan",
+   "ja": "カザフスタン、ジャンブール州、メルケ地域"
+  },
+  "chach": {
+   "fr-CA": "Tachkent, Ouzbékistan",
+   "ja": "ウズベキスタン、タシュケント"
+  },
+  "bukhara": {
+   "fr-CA": "Boukhara, Ouzbékistan",
+   "ja": "ウズベキスタン、ブハラ"
+  },
+  "kesh": {
+   "fr-CA": "Shahrisabz, Ouzbékistan",
+   "ja": "ウズベキスタン、シャフリサブス"
+  },
+  "termez": {
+   "fr-CA": "Termez, sur l'Oxus (Amou-Daria), Ouzbékistan",
+   "ja": "オクサス川（アムダリヤ川）沿いの都市、ウズベキスタンのテルメズ"
+  },
+  "kunduz": {
+   "fr-CA": "Koumdouz, Afghanistan",
+   "ja": "アフガニスタン、クンドゥーズ"
+  },
+  "taxila": {
+   "fr-CA": "Taxila, Pendjab, Pakistan",
+   "ja": "パキスタン、パンジャーブ州タキシラ"
+  },
+  "varanasi": {
+   "fr-CA": "Varanasi (Sarnath), Uttar Pradesh, Inde",
+   "ja": "インド、ウッタル・プラデーシュ州、ヴァーラーナシー（サーナト）"
+  },
+  "tashkurgan": {
+   "fr-CA": "Tachkourgan, Xinjiang, Chine",
+   "ja": "中国新疆ウイグル自治区、タシュクルガン"
+  },
+  "yarkant": {
+   "fr-CA": "Yarkand (Shache), Xinjiang, Chine",
+   "ja": "中国・新疆ウイグル自治区のヤルカンド（莎車）"
+  },
+  "chitral": {
+   "fr-CA": "Chitral, Khyber Pakhtunkhwa, Pakistan",
+   "ja": "パキスタン、ハイバル・パクトゥンクワ州、チトラル"
+  }
+ }
+}
