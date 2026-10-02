@@ -413,16 +413,18 @@
       if (mode === "static") return p;
       const len = p.getTotalLength();
       p.style.strokeDasharray = len;
-      p.getBoundingClientRect(); // force layout
-      p.style.transition = "stroke-dashoffset 0.8s linear";
       if (mode === "erase") {
+        // start fully drawn; commit; then animate to hidden (shortens
+        // back toward `from`)
         p.style.strokeDashoffset = 0;
-        p.getBoundingClientRect();
-        p.style.strokeDashoffset = String(len);
-        p.style.opacity = "0";
+        p.getBoundingClientRect(); // commit starting state
         p.style.transition = "stroke-dashoffset 0.8s linear";
+        p.style.strokeDashoffset = String(len);
       } else {
+        // start hidden; commit; then animate the draw from->to
         p.style.strokeDashoffset = len;
+        p.getBoundingClientRect(); // commit starting state
+        p.style.transition = "stroke-dashoffset 0.8s linear";
         p.style.strokeDashoffset = "0";
       }
       return p;
