@@ -13,11 +13,38 @@
   const map = window.AtlasMap;
   const i18n = window.I18n;
 
+  // ---------- preferences cookie ----------
+  // One JSON cookie remembers locale/lesson/mode/view/projection so a
+  // revisit restores the session. localStorage values (locale,
+  // projection) remain as fallback: some browsers do not persist
+  // cookies for file:// pages.
+  const PREFS_COOKIE = "atlas.prefs";
+  function readPrefs() {
+    // Chromium (and others) block document.cookie on file:// pages, so
+    // prefs are mirrored into localStorage; on http(s) the cookie wins
+    const raw = (document.cookie.match(/(?:^|;\s*)atlas\.prefs=([^;]*)/) || [])[1];
+    if (raw) {
+      try { return JSON.parse(decodeURIComponent(raw)) || {}; } catch (e) { /* bad cookie */ }
+    }
+    const ls = localStorage.getItem("atlas.prefs");
+    if (ls) {
+      try { return JSON.parse(ls) || {}; } catch (e) { /* bad value */ }
+    }
+    return {};
+  }
+  function writePrefs(patch) {
+    const next = Object.assign(readPrefs(), patch);
+    const val = encodeURIComponent(JSON.stringify(next));
+    document.cookie = PREFS_COOKIE + "=" + val +
+      "; max-age=31536000; path=/; SameSite=Lax";
+    try { localStorage.setItem("atlas.prefs", decodeURIComponent(val)); } catch (e) { /* quota */ }
+  }
+
   const state = {
     lesson: null,
     mode: "learn",
     answerStyle: "choice",
-    projection: localStorage.getItem("atlas.projection") || "equirectangular",
+    projection: readPrefs().projection || localStorage.getItem("atlas.projection") || "equirectangular",
     order: [],          // shuffled iso3 list for tests
     index: 0,
     correct: 0,
@@ -48,12 +75,16 @@
     }
     state.lesson = data;
     state.visited = null; // fresh learn-session per lesson
+    // keep the dropdown in sync (init may load a saved lesson directly)
+    const selEl = $("#lesson-select");
+    if (selEl.value !== file) selEl.value = file;
     state.visitedStops = null;
     state.focusedStop = null;
     state.stepIdx = null;
-    state.journeyView = "explore";
-    $("#journey-view-select").value = "explore";
+    state.journeyView = (data.type === "journey" && readPrefs().journeyView === "step") ? "step" : "explore";
+    $("#journey-view-select").value = state.journeyView;
     $("#journey-view-row").hidden = data.type !== "journey";
+    writePrefs({ lesson: file });
     state.mode = $("#mode-select").value;
     startMode();
   }
@@ -859,6 +890,7 @@
 
     $("#mode-select").addEventListener("change", (ev) => {
       state.mode = ev.target.value;
+      writePrefs({ mode: state.mode });
       if (state.lesson) startMode();
     });
     $("#answer-style-select").addEventListener("change", () => {
@@ -869,6 +901,7 @@
     });
     $("#locale-select").addEventListener("change", (ev) => {
       i18n.setLocale(ev.target.value);
+      writePrefs({ locale: ev.target.value });
       refreshLessonTitles();
       if (state.lesson) startMode();
       // re-render an open info panel in the new locale (facts are
@@ -882,6 +915,7 @@
     $("#projection-select").addEventListener("change", (ev) => {
       state.projection = ev.target.value;
       localStorage.setItem("atlas.projection", state.projection);
+      writePrefs({ projection: state.projection });
       if (state.lesson) startMode();
     });
     $("#reset-view-button").addEventListener("click", () => map.resetView());
@@ -889,6 +923,7 @@
     // journey view toggle: explore (all visible) vs step (one at a time)
     $("#journey-view-select").addEventListener("change", (ev) => {
       state.journeyView = ev.target.value;
+      writePrefs({ journeyView: state.journeyView });
       state.stepIdx = state.journeyView === "step" ? 0 : null;
       map.clearOverlay();
       if (state.journeyView === "step") {
@@ -918,8 +953,28 @@
     });
     $("#info-close").addEventListener("click", () => { $("#info-panel").hidden = true; });
 
+    // restore saved session (cookie) + ?lang= override.
+    // ?lang must be one of the locale-select option values (en-GB,
+    // fr-CA, zh-Hans, zh-HK, ja); it wins over the saved preference
+    // and persists as the new preference.
+    const urlLang = new URLSearchParams(location.search).get("lang");
+    const prefs = readPrefs();
+    const savedLocale = urlLang && i18n.locales.includes(urlLang)
+      ? urlLang
+      : (prefs.locale || localStorage.getItem("atlas.locale") || "en-GB");
+    i18n.setLocale(savedLocale);
+    $("#locale-select").value = i18n.locale;
+    if (prefs.mode && ["learn", "locate", "name"].includes(prefs.mode)) {
+      state.mode = prefs.mode;
+      $("#mode-select").value = prefs.mode;
+    }
+    if (prefs.projection) $("#projection-select").value = prefs.projection;
+
     map.loadWorld()
-      .then(() => loadLesson(LESSONS[0].file))
+      .then(() => loadLesson(
+        (prefs.lesson && LESSONS.some((l) => l.file === prefs.lesson))
+          ? prefs.lesson
+          : LESSONS[0].file))
       .then(refreshLessonTitles)
       .catch((err) => {
         setHint("Error: " + err.message +
