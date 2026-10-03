@@ -33,6 +33,7 @@
 
   let svg = null;
   let world = null;
+  let worldQuick = null;      // decimated features for globe drag frames
   let group = null;          // <g id="countries">
   let overlay = null;        // <g id="overlay"> arrows etc.
   let clickHandler = null;
@@ -122,6 +123,15 @@
         '<path d="M 0 0 L 10 5 L 0 10 z" fill="#ffd24a" stroke="#222" stroke-width="0.4"/>' +
         "</marker>";
       svg.appendChild(defs);
+      // merged quick layer: during globe drags the 238 country paths
+      // are replaced by ONE merged path (single geoPath call over a
+      // merged MultiLineString) — per-feature overhead dominates the
+      // frame cost, so batching is the big win. Populated lazily.
+      const ql = document.createElementNS(svg.namespaceURI, "path");
+      ql.setAttribute("id", "countries-quick");
+      ql.setAttribute("class", "country");
+      ql.style.display = "none";
+      svg.insertBefore(ql, svg.firstChild);
     },
 
     async loadWorld() {
@@ -162,6 +172,66 @@
         }
       }
       world = [...byIso3.values()];
+      // decimated twin for drag frames under a global point budget
+      // (~30k pts). The 10m set is 477k points across thousands of
+      // rings, most of them tiny islands; a per-ring ratio misses the
+      // budget badly. Instead: rings keep points in proportion to
+      // their share of the budget, tiny rings collapse to their
+      // centroid triangle so islands stay visible as specks.
+      const ringPts = [];
+      let total = 0;
+      const eachRing = (f, cb) => {
+        const g = f.geometry;
+        const rings = g.type === "Polygon" ? [g.coordinates] : g.coordinates;
+        for (const poly of rings) {
+          if (g.type === "Polygon") cb(poly);
+          else for (const r of poly) cb(r);
+        }
+      };
+      for (const f of world) {
+        eachRing(f, (r) => { ringPts.push(r); total += r.length; });
+      }
+      const BUDGET = 25000;
+      // sqrt-weight allocation, then iteratively shrink until the
+      // SIMULATED total lands under budget (floors make a single-pass
+      // estimate underestimate; simulation converges in a few passes).
+      // Rings under 4 points are invisible specks at globe scale and
+      // are dropped — unless they're a country's only ring.
+      let wsum = 0;
+      for (const r of ringPts) wsum += Math.sqrt(r.length);
+      const ringCount = new Map(); // featureIdx -> kept ring count
+      let shrink = 1;
+      const simTotal = (sh) => {
+        let t = 0;
+        for (const r of ringPts) {
+          const keep = Math.max(3, Math.round(BUDGET * Math.sqrt(r.length) / wsum * sh));
+          t += Math.min(r.length, keep + 1);
+        }
+        return t;
+      };
+      for (let i = 0; i < 8 && simTotal(shrink) > BUDGET; i++) shrink *= 0.75;
+      const decimate = (ring) => {
+        const keep = Math.max(3, Math.round(BUDGET * Math.sqrt(ring.length) / wsum * shrink));
+        if (keep >= ring.length) return ring;
+        const step = ring.length / keep;
+        const out = [];
+        for (let i = 0; i < keep; i++) out.push(ring[Math.floor(i * step)]);
+        out.push(out[0]); // re-close the ring
+        return out;
+      };
+      worldQuick = world.map((f) => {
+        const g = f.geometry;
+        const small = g.type === "Polygon"
+          ? decimate(g.coordinates)
+          : g.coordinates.map((poly) => poly.map(decimate));
+        return {
+          type: "Feature",
+          properties: f.properties,
+          geometry: g.type === "Polygon"
+            ? { type: "Polygon", coordinates: small }
+            : { type: "MultiPolygon", coordinates: small },
+        };
+      });
       return world;
     },
 
@@ -176,6 +246,7 @@
       svg.innerHTML = "";
       this.init(svg);
       drawnFeatures = [];
+      this._qi = null; // quick-index invalidated by a re-render
       overlayPaths = [];
 
       const view = lesson.view || { lon0: -170, lat0: -60, lon1: 190, lat1: 84 };
@@ -191,6 +262,10 @@
       };
 
       projection = PROJECTIONS[projectionName]();
+      // adaptive resampling: coarser output paths (shorter strings,
+      // fewer segments). 0.5 svg-units max deviation is invisible at
+      // globe scale and roughly halves geoPath time on the 10m set.
+      if (projection.precision) projection.precision(0.5);
       geoPath = d3.geoPath(projection);
 
       if (isGlobe()) {
@@ -271,9 +346,19 @@
           ev.stopPropagation();
           if (clickHandler) clickHandler(f.properties.iso3);
         });
-        drawnFeatures.push({ el, feature: f });
+        drawnFeatures.push({ el, feature: f, iso3: f.properties.iso3 });
         group.appendChild(el);
       }
+    },
+
+    // Map<svgPathEl, quickFeature> built lazily on the first quick frame
+    _quickIndex() {
+      if (!this._qi) {
+        this._qi = new Map();
+        const byIso3 = new Map(worldQuick.map((f) => [f.properties.iso3, f]));
+        for (const df of drawnFeatures) this._qi.set(df.el, byIso3.get(df.iso3));
+      }
+      return this._qi;
     },
 
     _updateGraticule() {
@@ -283,15 +368,41 @@
       graticuleEl.setAttribute("d", geoPath(grat()) || "");
     },
 
-    _reproject() {
+    _reproject(quick = false) {
       // re-project every drawn path after a globe rotation.
       // Backside culling: a feature is visible only if the angle between
       // the view centre and its centroid is < 90° + its angular radius.
       // (graticule still covers the full sphere; d3 clips it correctly)
+      // quick=true (mid-drag): swap the 238 country <path>s for ONE
+      // merged path built from the decimated features — a single
+      // geoPath call + single DOM write. Full precision returns on
+      // drag end (mouseup calls _reproject() with quick=false).
+      const ql = svg.querySelector("#countries-quick");
+      if (quick && ql && worldQuick) {
+        const coords = [];
+        for (const f of worldQuick) {
+          const g = f.geometry;
+          if (g.type === "Polygon") coords.push(g.coordinates);
+          else coords.push(...g.coordinates);
+        }
+        const d = geoPath({ type: "MultiPolygon", coordinates: coords }) || "";
+        // quantise coords to 1 decimal: geoPath emits full-precision
+        // floats (~18 chars each); at drag-frame fidelity 0.1 svg-unit
+        // is invisible and shrinks the string ~60%, cutting both the
+        // string build and the parse/rasterise cost downstream.
+        ql.setAttribute("d",
+          d.replace(/(-?\d+)(\.\d)\d+/g, "$1$2"));
+        ql.style.display = "";
+        if (group) group.style.display = "none";
+      } else {
+        if (ql) ql.style.display = "none";
+        if (group) group.style.display = "";
+      }
       const rot = projection.rotate();
       const centre = [-rot[0], -rot[1]];
       const deg = Math.PI / 180;
       for (const { el, feature, orbit } of drawnFeatures) {
+        if (quick) continue; // merged layer replaces the per-country paths
         if (orbit) {
           const c = orbit.centroid;
           const cosA = Math.sin(centre[1] * deg) * Math.sin(c[1] * deg) +
@@ -332,7 +443,7 @@
       }
       this._redrawPointOverlay(false);
       this._reprojectStopDots();
-      this._updateGraticule();
+      if (!quick) this._updateGraticule(); // graticule is spherical-symmetric; skip mid-drag
     },
 
     _reprojectStopDots() {
@@ -449,7 +560,11 @@
         }
         // control point: midpoint pushed along the average of the
         // incoming and outgoing directions (Catmull-Rom-like), which
-        // rounds every corner without overshooting into land much
+        // rounds every corner without overshooting into land much.
+        // Tangent LENGTH is clamped to 1/3 of the shorter adjacent
+        // segment (uniform-parameter Catmull-Rom): without the clamp,
+        // a short segment inheriting a long neighbour's tangent
+        // overshoots and loops (visible knots in the strait).
         const pPrev = pts[i - 2] || p0, pNext = pts[i + 1] || p1;
         let t1 = [p0[0] - pPrev[0], p0[1] - pPrev[1]];
         let t2 = [pNext[0] - p1[0], pNext[1] - p1[1]];
@@ -459,23 +574,32 @@
         };
         t1 = norm(t1); t2 = norm(t2);
         const chord = Math.hypot(p1[0] - p0[0], p1[1] - p0[1]);
+        const prevChord = Math.hypot(t1[0], t1[1]) * 0 + Math.hypot(p0[0] - pPrev[0], p0[1] - pPrev[1]);
+        const nextChord = Math.hypot(pNext[0] - p1[0], pNext[1] - p1[1]);
+        const tmax = Math.min(chord, prevChord, nextChord) / 3 || chord / 3;
         // gentle bow: rounds corners without straying far from the
         // waypoint track (large bows can drag the curve over land)
-        let k = Math.min(chord * 0.18, 90);
+        let k = Math.min(chord * 0.12, 25, tmax); // tangent clamp: no overshoot loops
         // land guard: if the arc's midpoint lands inside a country
         // polygon, halve the bow until it doesn't (k -> 0 = straight
-        // chord, which was already verified water-tight at the
-        // waypoints); deterministic, converges in a few steps
+        // chord). Tested a perpendicular side-bow "detour" variant —
+        // it fixed mid-segment land hits but its sideways control
+        // points (up to 20° off-chord) made the curve loop and
+        // self-intersect (visible knots in the Strait of Magellan).
+        // Reverted to plain halving.
         const svgPt = svg.createSVGPoint();
         const midOnLand = (kk) => {
           const c1 = [p0[0] + t1[0] * kk, p0[1] + t1[1] * kk];
           const c2 = [p1[0] - t2[0] * kk, p1[1] - t2[1] * kk];
           const t = 0.5, mt = 1 - t;
-          const mx = mt ** 3 * p0[0] + 3 * mt * mt * t * c1[0] + 3 * mt * t * t * c2[0] + t ** 3 * p1[0];
-          const my = mt ** 3 * p0[1] + 3 * mt * mt * t * c1[1] + 3 * mt * t * t * c2[1] + t ** 3 * p1[1];
-          svgPt.x = mx; svgPt.y = my;
-          for (const c of landPaths) {
-            if (c.isPointInFill(svgPt)) return true;
+          for (const tt of [0.35, 0.5, 0.65]) {
+            const mtt = 1 - tt;
+            const mx2 = mtt ** 3 * p0[0] + 3 * mtt * mtt * tt * c1[0] + 3 * mtt * tt * tt * c2[0] + tt ** 3 * p1[0];
+            const my2 = mtt ** 3 * p0[1] + 3 * mtt * mtt * tt * c1[1] + 3 * mtt * tt * tt * c2[1] + tt ** 3 * p1[1];
+            svgPt.x = mx2; svgPt.y = my2;
+            for (const c of landPaths) {
+              if (c.isPointInFill(svgPt)) return true;
+            }
           }
           return false;
         };
@@ -918,7 +1042,13 @@
             : null;
         }
       });
-      window.addEventListener("mouseup", () => { dragging = false; });
+      window.addEventListener("mouseup", () => {
+        if (!dragging) return;
+        dragging = false;
+        // drag ended: one full-precision re-projection replaces the
+        // decimated drag frames
+        if (isGlobe()) this._reproject();
+      });
       svg.addEventListener("mousemove", (ev) => {
         if (!dragging) return;
         const rect = svg.getBoundingClientRect();
@@ -935,12 +1065,14 @@
           const q1 = versor.multiply(versor(dragRotate), versor.delta(dragVersor, v1));
           projection.rotate(versor.rotation(q1));
           // rAF throttle: mousemove fires far more often than the
-          // display refresh; re-project at most once per frame
+          // display refresh; re-project at most once per frame.
+          // Mid-drag frames use the decimated features (quick=true);
+          // mouseup triggers one full-precision re-projection.
           if (!this._rafPending) {
             this._rafPending = true;
             requestAnimationFrame(() => {
               this._rafPending = false;
-              this._reproject();
+              this._reproject(true);
             });
           }
         } else {

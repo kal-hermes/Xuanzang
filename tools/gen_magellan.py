@@ -20,7 +20,9 @@ from magellan_data import STOPS  # noqa: E402
 from magellan_route_albo import ROUTE_OUT as _RO, ROUTE_BACK as _RB  # noqa: E402
 import json as _json  # noqa: E402
 
-_fx = ROOT / "tools" / "albo_route_fixed.json"
+_fx = ROOT / "tools" / "albo_route_pinned.json"
+if not _fx.exists():
+    _fx = ROOT / "tools" / "albo_route_fixed.json"
 if _fx.exists():
     _d = _json.loads(_fx.read_text(encoding="utf-8"))
     ROUTE_OUT = _d["out"]
