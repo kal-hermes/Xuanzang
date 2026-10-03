@@ -7,7 +7,7 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
-URL = Path("/workspace/projects/history-geography-learning-app/index.html").resolve().as_uri() + "?v=208"
+URL = Path("/workspace/projects/history-geography-learning-app/index.html").resolve().as_uri() + "?v=218"
 
 with sync_playwright() as p:
     b = p.chromium.launch(headless=True)
