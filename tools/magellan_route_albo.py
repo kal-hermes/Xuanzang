@@ -25,6 +25,17 @@
 # uses Albo's implied SW track. We skip vic3's start (too far E) and
 # join at the coast.
 ROUTE_OUT = [
+    # Sanlucar -> Tenerife (fleet departed 20 Sep 1519, arrived 26 Sep;
+    # Albo: SSW down the Spanish and Moroccan coast)
+    [-6.6, 36.4],      # off Sanlucar S 20 Sep 1519
+    [-7.2, 35.8],
+    [-8.0, 35.0],
+    [-9.2, 34.0],      # Cape St Vincent S by W
+    [-10.5, 33.0],
+    [-12.0, 31.5],
+    [-13.5, 30.0],
+    [-15.0, 29.2],
+    [-16.2, 28.5],     # W of Fuerteventura 24 Sep
     # Tenerife -> Brazil crossing (Albo: no sights until 29 Nov off
     # Cape St Augustine, course S.S.W. throughout => a gentle SW line)
     [-16.8, 28.0],    # off Tenerife W 26 Sep - 3 Oct 1519
@@ -99,8 +110,13 @@ ROUTE_OUT = [
     [-170.0, 6.5],    # 20-22 Feb
     [-175.0, 9.5],    # 23-25 Feb
     [-179.5, 12.0],   # 26-28 Feb 12 1/3 (doldrums drift)
-    [-177.0, 12.6],   # 1-5 Mar 13N steady (trade belt)
-    [-175.0, 13.0],   # 4-5 Mar approaching
+    [179.0, 12.2],    # crosses the antimeridian ~1 Mar
+    [177.0, 12.3],
+    [174.0, 12.4],
+    [170.0, 12.8],
+    [165.0, 13.1],
+    [155.0, 13.4],    # 5 Mar 13N steady (trade belt)
+    [150.0, 13.4],    # 6 Mar Guam landfall next day
     [146.5, 13.4],    # 6 Mar Guam landfall (144.8E actual; offshore)
     [143.0, 12.5],    # 9-10 Mar W 1/4 SW 12-12 1/3
     [139.5, 11.5],    # 11 Mar 11 1/2
@@ -126,12 +142,12 @@ ROUTE_OUT = [
     [119.0, 5.8],     # return E along Borneo N coast
     [122.0, 6.5],
     [124.5, 6.9],     # Tagima pearls is. 6 5/6 (Albo)
-    [-125.5, 6.0],    # Sarangani 4 2/3 (pilot taken aboard)
-    [-126.5, 4.0],    # Sanguir 3 2/3
-    [-127.2, 3.0],    # Sian 3
-    [-127.8, 1.5],    # Paginsara 1 1/6
-    [-128.0, 0.5],    # Suar/Atean ~1-1.5
-    [-127.5, 0.0],    # Tidore 8 Nov 1521 (Albo: 0 30')
+    [125.5, 6.0],     # Sarangani 4 2/3 (pilot taken aboard)
+    [126.5, 4.0],     # Sanguir 3 2/3
+    [127.2, 3.0],     # Sian 3
+    [127.8, 1.5],     # Paginsara 1 1/6
+    [128.0, 0.5],     # Suar/Atean ~1-1.5
+    [127.5, 0.0],     # Tidore 8 Nov 1521 (Albo: 0 30')
 ]
 
 ROUTE_BACK = [

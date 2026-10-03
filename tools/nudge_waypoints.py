@@ -9,7 +9,7 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
-URL = Path("/workspace/projects/history-geography-learning-app/index.html").resolve().as_uri() + "?v=161"
+URL = Path("/workspace/projects/history-geography-learning-app/index.html").resolve().as_uri() + "?v=186"
 
 with sync_playwright() as p:
     b = p.chromium.launch(headless=True)
@@ -148,7 +148,20 @@ with sync_playwright() as p:
           if (best) [px, py] = [best[1], best[2]];
         }
         if (pts.some((p) => Math.abs(p[0] - px) < 0.05 && Math.abs(p[1] - py) < 0.05)) continue;
-        // nearest waypoint, insert between it and its closer neighbour
+        // nearest waypoint, insert between it and its closer neighbour.
+        // GATE: only insert if the stop is within 8 deg of some route
+        // waypoint — otherwise it belongs to the OTHER leg (e.g. the
+        // return-leg Cape of Good Hope stop must never be pinned into
+        // the outbound Atlantic track) and pinning it would splice a
+        // stray line across the map.
+        {
+          let nearest = 1e18;
+          for (const p of pts) {
+            const dd = (p[0] - px) ** 2 + (p[1] - py) ** 2;
+            if (dd < nearest) nearest = dd;
+          }
+          if (nearest > 64) continue; // > 8 deg away: wrong leg
+        }
         let bi = 0, bd = 1e18;
         for (let i = 0; i < pts.length; i++) {
           const d = (pts[i][0] - px) ** 2 + (pts[i][1] - py) ** 2;
