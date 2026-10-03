@@ -9,7 +9,7 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
-URL = Path("/workspace/projects/history-geography-learning-app/index.html").resolve().as_uri() + "?v=186"
+URL = Path("/workspace/projects/history-geography-learning-app/index.html").resolve().as_uri() + "?v=195"
 
 with sync_playwright() as p:
     b = p.chromium.launch(headless=True)
@@ -117,6 +117,22 @@ with sync_playwright() as p:
       return window.ATLAS_LESSONS['lessons/magellan/voyage.json'].stops
         .map((s) => s.coords.slice());
     })()""")
+    # route_out ENDS at Tidore — every stop after the one nearest the
+    # route's final waypoint belongs to the return leg and must NOT be
+    # pinned into route_out (ambon/timor caused a visible fold-back).
+    last_wp = routes["out"][-1]
+    stops_json = pg.evaluate("""(() => {
+      return window.ATLAS_LESSONS['lessons/magellan/voyage.json'].stops.map((s) => s.id);
+    })()""")
+    coords = pg.evaluate("""(() => {
+      return window.ATLAS_LESSONS['lessons/magellan/voyage.json'].stops.map((s) => s.coords);
+    })()""")
+    cut = min(
+        range(len(coords)),
+        key=lambda i: (coords[i][0] - last_wp[0]) ** 2 + (coords[i][1] - last_wp[1]) ** 2,
+    )
+    pins = pins[: cut + 1]
+    print(f"pinning stops 0..{cut} ({stops_json[cut]}); skipping return-leg stops {[s for s in stops_json[cut + 1:]]}")
     pinned = pg.evaluate("""((payload) => {
       const routes = JSON.parse(payload.routesJson);
       const pins = JSON.parse(payload.pinsJson);

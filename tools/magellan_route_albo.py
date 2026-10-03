@@ -151,14 +151,17 @@ ROUTE_OUT = [
 ]
 
 ROUTE_BACK = [
-    [127.5, 0.0],     # Tidore
+    [127.5, 0.0],     # Tidore (departed 21 Dec 1521)
     [127.8, -0.5],    # Mare, Motil, Maquian passes (Albo 21 Dec)
     [127.9, -1.3],    # S 1/4 W past Latalata
     [128.2, -2.2],    # Lumutola 1 3/4 (Albo)
-    [128.3, -3.5],    # Buro 3 1/2; Ambon to the E 29 Dec
-    [127.9, -5.5],    # 2-6 Jan 5 1/2 (Albo)
+    [128.3, -3.5],    # Buro 3 1/2; Ambon to the E — called at Ambon
+    [128.2, -3.62],   # Ambon anchorage (Christmas–new year; more cloves)
+    [128.0, -4.5],    # leaving the Banda Sea SW
+    [127.6, -6.85],
     [127.3, -8.2],    # 8 Jan Lamaluco channel 8 7'
     [126.4, -9.4],    # Timor N coast 9-10 Feb (Albo: 9 24')
+    [124.9, -9.08],   # Kupang, Timor — final East Indies port (departed 8 Feb 1522 by Pigafetta's count from Timor)
     [124.0, -9.9],    # W along Timor (Albo: W cape 9 35' 9 Feb)
     [121.0, -10.5],   # 13 Feb 10 32' WSW
     [115.0, -14.0],   # WSW run, March
@@ -181,17 +184,20 @@ ROUTE_BACK = [
     [-18.0, 6.0],
     [-22.5, 12.0],    # late June, approaching Cape Verde from SW
     [-23.5, 14.8],    # Santiago 9-15 Jul (Albo: 15 10')
-    # final leg: NW-then-E arc. Pigafetta: provisions low, they made
-    # for the Azores area then C. St Vincent; Albo sighted C. St
-    # Vincent NE of them on 4 Sep. A smooth arc, NOT a V.
-    [-27.0, 18.0],
-    [-32.0, 22.5],
-    [-37.5, 27.0],
-    [-42.5, 31.5],
-    [-47.0, 35.5],    # ~36N 47W northernmost point of the arc
-    [-45.0, 37.0],    # turn E with the westerlies
-    [-38.0, 38.0],
-    [-30.0, 38.0],
+    # final leg: from Cape Verde they worked N/NW with the trade winds
+    # toward the Azores, then E with the westerlies to C. St Vincent
+    # (Albo sighted it 4 Sep). Pigafetta: 32 men and low provisions.
+    # NOTE ~36N 47W northernmost point: that IS the historical track —
+    # the route from the Azores latitude back to Iberia runs through
+    # the open mid-Atlantic before turning east; the apparent "detour
+    # into mid-Atlantic before Sanlucar" is the real 1522 course.
+    [-25.5, 18.0],
+    [-29.0, 22.0],
+    [-33.0, 26.0],
+    [-36.5, 30.0],
+    [-38.0, 33.0],    # ~36N 40W: riding the westerlies
+    [-35.0, 36.0],
+    [-30.0, 37.5],    # turn E, approaching Iberia
     [-22.0, 37.5],
     [-14.0, 37.0],
     [-9.0, 36.9],     # off Cape St Vincent 4 Sep (Albo)
