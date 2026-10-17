@@ -446,12 +446,56 @@ def main():
 
     # Build routes cleanly: nalanda is the last outbound stop; everything
     # after it is the return leg (which starts back at nalanda itself)
-    nalanda_idx = next(i for i, s in enumerate(STOPS) if s[0] == "nalanda")
-    out_keys = [s[0] for s in STOPS[:nalanda_idx + 1]]
-    back_keys = ["nalanda"] + [s[0] for s in STOPS[nalanda_idx + 1:]]
-    by_key = {s["key"]: s for s in stops_meta}
-    lesson["route_out"] = [by_key[k]["coords"] for k in out_keys]
-    lesson["route_back"] = [by_key[k]["coords"] for k in back_keys]
+    # Route geometry: curved polylines following the historical road
+    # network (Hexi corridor oasis chain, Tian Shan piedmont, Bedel
+    # pass, Oxus corridor, Wakhan corridor...). Stops keep exact
+    # Wikidata coords; shaping points from tools/xuanzang_route_pts.py
+    # (curated from the historical route literature).
+    from xuanzang_route_pts import ROUTE_OUT_CURVED, ROUTE_BACK_CURVED
+
+    # Cartographic offset: where the return retraces the outbound road,
+    # shift the return line to the opposite side of the road so both
+    # lines stay visible side by side. Offset windows by region:
+    #   Ganges plain (Nalanda->Kanauj->Prayaga) + NW India return:
+    #     lat offset -0.35 for lon 79.5..85.5, and -0.30 for 68.5..79.5
+    #   Hexi corridor (Dunhuang->Chang'an): +0.3 N
+    #   Gaochang->Karashahr->Kucha->Aksu piedmont is NOT retraced
+    #   (return uses the southern Tarim), so no offset needed there.
+    def _offset_run(pts, dlat, lo, hi):
+        return [[p[0], p[1] + (dlat if lo <= p[0] <= hi else 0.0)] for p in pts]
+
+    back = _offset_run(ROUTE_BACK_CURVED, -0.35, 79.5, 85.6)   # Ganges plain
+    back = _offset_run(back, -0.30, 68.5, 79.5)                # NW India
+    back = _offset_run(back, +0.30, 95.5, 108.9)               # Hexi corridor
+    # Kapisa/Kabul area: outbound zigzags E-W (Kapisa->Kabul->E->back W);
+    # offset the return further S so it clears the outbound knot.
+    back = _offset_run(back, -0.45, 68.8, 70.6)
+    # Chang'an approach: the final long leg 106.85->108.86 nearly coincides
+    # with the outbound line; split it with a mid waypoint pushed N.
+    for i, p in enumerate(back):
+        if abs(p[0] - 106.85) < 0.01 and abs(p[1] - 35.0) < 0.01:
+            back.insert(i + 1, [108.0, 35.15])
+            break
+
+    # Re-pin the stops that fall inside the offset windows (stop dots
+    # must sit exactly on the line; only shaping pts stay offset).
+    def _repin(pts, target, radius=0.6):
+        best = min(range(len(pts)), key=lambda i: (pts[i][0]-target[0])**2 + (pts[i][1]-target[1])**2)
+        if (pts[best][0]-target[0])**2 + (pts[best][1]-target[1])**2 <= radius**2:
+            pts[best] = [target[0], target[1]]
+        return pts
+    for lon, lat in [
+        (85.443827777778, 25.136797222222),      # nalanda (offset head)
+        (79.92201944444444, 27.031336111111113),  # kanauj
+        (81.85, 25.45),                            # prayaga
+        (75.983333, 39.45),                        # kashgar
+        (80.0167, 37.1),                           # khotan
+        (108.85833333333333, 34.30833333333333),   # chang_an_end
+    ]:
+        back = _repin(back, [lon, lat])
+
+    lesson["route_out"] = ROUTE_OUT_CURVED
+    lesson["route_back"] = back
 
     # countries along the route for the test modes
     seen = []
