@@ -312,7 +312,14 @@
       group.setAttribute("id", "countries");
       overlay = document.createElementNS(svg.namespaceURI, "g");
       overlay.setAttribute("id", "overlay");
+      // Re-position the quick layer to sit directly under the countries
+      // group — ABOVE the globe's sphere/graticule. It was firstChild
+      // (under the opaque .sphere fill #0d1420), so during globe drags
+      // the decimated map was painted over by the ocean: the whole
+      // basemap vanished mid-drag, routes only.
       svg.appendChild(group);
+      const ql0 = svg.querySelector("#countries-quick");
+      if (ql0) svg.insertBefore(ql0, group);
       svg.appendChild(overlay);
 
       const inView = new Set((lesson.countries || []).map((c) => c.iso3));
