@@ -99,8 +99,15 @@ ROUTE_OUT_CURVED = [
   [85.13, 25.99],                             # Vaishali (manual)
   [85.75, 25.72],
   [86.465, 25.381],                           # Hiranyaparvata (Munger)
-  [86.2, 24.3], [85.6, 22.6], [84.3, 20.4],
-  [82.5, 17.3], [81.0, 15.0], [79.9, 13.3],
+  # south along the Ganges and the east-coast plains (all OVERLAND —
+  # Xuanzang never sailed; Campa/Bhagalpur -> Odra (Odisha) -> Andhra
+  # coastal-hinterland road -> Dravida)
+  [86.98, 25.25],                             # Campa (Bhagalpur)
+  [86.8, 23.9], [86.3, 21.9],
+  [85.8, 20.3],                               # Odra hinterland (Bhubaneswar)
+  [84.6, 19.3],                               # Ganjam hinterland
+  [83.4, 18.1], [82.0, 17.1],                 # Andhra hinterland
+  [80.15, 15.8], [79.85, 14.4],               # Ongole/Nellore hinterland
   [79.707777777778, 12.830833333333],        # Kanchipuram
   [78.7, 15.5], [77.4, 18.5], [76.5, 21.0],
   [75.777222222222, 23.182777777778],        # Ujjain
