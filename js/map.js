@@ -247,19 +247,10 @@
       this.init(svg);
       drawnFeatures = [];
       this._qi = null; // quick-index invalidated by a re-render
+      this._fqd = null; // flat-pan quick path ditto
       overlayPaths = [];
 
       const view = lesson.view || { lon0: -170, lat0: -60, lon1: 190, lat1: 84 };
-      // NOTE: ring wound clockwise — d3-geo treats CCW rings as holes
-      // (the complement), which would fit the whole world instead.
-      const viewPoly = {
-        type: "Polygon",
-        coordinates: [[
-          [view.lon0, view.lat0], [view.lon0, view.lat1],
-          [view.lon1, view.lat1], [view.lon1, view.lat0],
-          [view.lon0, view.lat0],
-        ]],
-      };
 
       projection = PROJECTIONS[projectionName]();
       // adaptive resampling: coarser output paths (shorter strings,
@@ -301,18 +292,14 @@
       } else {
         sphereEl = null;
         graticuleEl = null;
-        // fit the projection to the lesson's view polygon (Mercator
-        // cannot represent the poles — clamp before fitting). A
-        // near-whole-globe view (>=355 deg wide) breaks fitExtent
-        // (scale collapses to ~0), so fit to the full sphere instead.
-        const viewSpan = ((view.lon1 - view.lon0 + 360) % 360) || 360;
-        let fitPoly = viewPoly;
-        if (viewSpan >= 355) {
-          fitPoly = { type: "Sphere" };
-        } else if (projectionName === "mercator") {
-          const clamp = (v) => Math.max(-82, Math.min(82, v));
-          const coords = viewPoly.coordinates[0].map(([lon, lat]) => [lon, clamp(lat)]);
-          fitPoly = { type: "Polygon", coordinates: [coords] };
+        // Atlas-style projection views: fit to the WHOLE world so every
+        // country is shown (no lesson-region crop). Mercator cannot
+        // represent the poles — clamp the fit rectangle to ±82°.
+        let fitPoly = { type: "Sphere" };
+        if (projectionName === "mercator") {
+          fitPoly = { type: "Polygon", coordinates: [[
+            [-180, -82], [-180, 82], [180, 82], [180, -82], [-180, -82],
+          ]] };
         }
         projection.fitExtent([[10, 10], [990, 990]], fitPoly);
         const [[bx0, by0], [bx1, by1]] = geoPath.bounds(fitPoly);
@@ -325,7 +312,14 @@
       group.setAttribute("id", "countries");
       overlay = document.createElementNS(svg.namespaceURI, "g");
       overlay.setAttribute("id", "overlay");
+      // Re-position the quick layer to sit directly under the countries
+      // group — ABOVE the globe's sphere/graticule. It was firstChild
+      // (under the opaque .sphere fill #0d1420), so during globe drags
+      // the decimated map was painted over by the ocean: the whole
+      // basemap vanished mid-drag, routes only.
       svg.appendChild(group);
+      const ql0 = svg.querySelector("#countries-quick");
+      if (ql0) svg.insertBefore(ql0, group);
       svg.appendChild(overlay);
 
       const inView = new Set((lesson.countries || []).map((c) => c.iso3));
@@ -366,6 +360,25 @@
       const grat = d3.geoGraticule ? d3.geoGraticule() : null;
       if (!grat) { graticuleEl.setAttribute("d", ""); return; }
       graticuleEl.setAttribute("d", geoPath(grat()) || "");
+    },
+
+    // decimated merged path for the current FLAT projection — the pan
+    // twin of the globe's drag frames: swapping 238 full-detail paths
+    // (477k points) for one ~25k-point path while panning keeps the
+    // rasteriser's per-frame cost low. Built lazily on first pan;
+    // invalidated by a re-render (projections change the geometry).
+    _flatQuickD() {
+      if (this._fqd == null) {
+        const coords = [];
+        for (const f of worldQuick) {
+          const g = f.geometry;
+          if (g.type === "Polygon") coords.push(g.coordinates);
+          else coords.push(...g.coordinates);
+        }
+        const d = geoPath({ type: "MultiPolygon", coordinates: coords }) || "";
+        this._fqd = d.replace(/(-?\d+)(\.\d)\d+/g, "$1$2"); // 1-dec quantise
+      }
+      return this._fqd;
     },
 
     _reproject(quick = false) {
@@ -1040,14 +1053,31 @@
           dragVersor = onGlobe(pt)
             ? versor.cartesian(projection.invert(pt))
             : null;
+        } else {
+          // flat projection: swap in the decimated merged path for the
+          // duration of the pan (same trick as globe drag frames) —
+          // panning re-rasterises every frame, and the 25k-point twin
+          // costs a fraction of the 477k-point originals.
+          const ql = svg.querySelector("#countries-quick");
+          if (ql && worldQuick) {
+            ql.setAttribute("d", this._flatQuickD());
+            ql.style.display = "";
+            if (group) group.style.display = "none";
+          }
         }
       });
       window.addEventListener("mouseup", () => {
         if (!dragging) return;
         dragging = false;
         // drag ended: one full-precision re-projection replaces the
-        // decimated drag frames
+        // decimated drag frames (globe), or the full-detail country
+        // paths return (flat pan)
         if (isGlobe()) this._reproject();
+        else {
+          const ql = svg.querySelector("#countries-quick");
+          if (ql) ql.style.display = "none";
+          if (group) group.style.display = "";
+        }
       });
       svg.addEventListener("mousemove", (ev) => {
         if (!dragging) return;
