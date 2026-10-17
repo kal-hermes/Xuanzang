@@ -732,6 +732,65 @@
       }
     },
     {
+      "id": "huoguo",
+      "coords": [
+        68.856944444444,
+        36.728888888889
+      ],
+      "year": "630",
+      "when": {
+        "en-GB": "630",
+        "fr-CA": "630",
+        "zh-Hans": "630",
+        "zh-HK": "630",
+        "ja": "630"
+      },
+      "present": {
+        "en": "Kunduz, Afghanistan",
+        "zh": "阿富汗昆都士",
+        "ja": "アフガニスタン、クンドゥズ",
+        "iso3": "AFG",
+        "fr-CA": "Kunduz, Afghanistan",
+        "zh-Hans": "阿富汗昆都士",
+        "zh-HK": "阿富汗昆都士"
+      },
+      "iso3": "AFG",
+      "names": {
+        "en-GB": "Huoguo (Kunduz)",
+        "fr-CA": "Huoguo (Kunduz)",
+        "zh-Hans": "活国（昆都士）",
+        "zh-HK": "活國（昆都士）",
+        "ja": "活国（クンドゥーズ）"
+      },
+      "narrative": {
+        "en-GB": [
+          "Below the Iron Gate the road entered the old Hephthalite lands of Tokharistan. At Huoguo (Kunduz), the seat of the Tokhara yabghu, Xuanzang carried letters from King Qu Wentai of Gaochang: the reigning king had married the Gaochang king's sister, and the two courts were bound by kinship. He arrived to find the king newly dead — poisoned, his Biography says, in a succession plot — and the court in turmoil.",
+          "The dead king's son had seized power and taken his stepmother, the Gaochang princess, as wife. The princess, a devout Buddhist, protected the pilgrim and urged him to leave before the turmoil swallowed him; his own account records the unease of those weeks in a court where the throne had changed hands by poison.",
+          "After about a month Xuanzang moved on southwest with a caravan of merchants to Balkh, the great monastery city of the Oxus plain — delaying only long enough for the political weather of the northern Afghan plains to clear."
+        ],
+        "fr-CA": [
+          "En aval de la Porte de Fer, la route pénétrait dans les anciennes terres héphthalites du Tokharistan. À Huoguo (Kunduz), siège du yabghu tokharien, Xuanzang portait des lettres du roi Qu Wentai de Gaochang : le roi régnant avait épousé la sœur du roi de Gaochang, et les deux cours étaient liées par des liens de parenté. Il arriva pour découvrir que le roi venait de mourir — empoisonné, précise sa Biographie, dans un complot de succession — et que la cour était en pleine tourmente.",
+          "Le fils du roi défunt s'était emparé du pouvoir et avait pris pour épouse sa belle-mère, la princesse de Gaochang. La princesse, bouddhiste dévote, protégea le pèlerin et le pressa de partir avant que la tourmente ne l'engloutisse ; son propre récit rapporte le malaise de ces semaines passées dans une cour où le trône avait changé de mains par le poison.",
+          "Après environ un mois, Xuanzang poursuivit sa route vers le sud-ouest avec une caravane de marchands jusqu'à Balkh, la grande cité monastique de la plaine de l'Oxus — ne s'attardant que le temps que la conjoncture politique des plaines du nord de l'Afghanistan se rassérène."
+        ],
+        "zh-Hans": [
+          "铁门之下，道路进入旧的嚈哒之地——吐火罗斯坦。在活国（昆都士），吐火罗叶护的驻地，玄奘持有高昌王麴文泰的书信：在位国王娶了高昌王之妹，两国以姻亲相结。他到达时却发现国王新丧——据其《传记》所载，死于继承阴谋中的毒杀——宫廷一片纷乱。",
+          "先王之子夺取了权位，并娶其继母、高昌公主为妻。公主笃信佛教，庇护了这位行者，并劝他在纷乱吞没自己之前离去；据玄奘本人的记述，在那个王位因毒药易手的宫廷中，他度过了数周不安的时日。",
+          "约一月之后，玄奘随一队商旅向西南行进，前往缚喝国——乌浒水平原上的伟大寺城——只是稍作耽搁，等待阿富汗北部平原的政治风云消散。"
+        ],
+        "zh-HK": [
+          "鐵門關以南，道路進入昔日嚈噠人的吐火羅斯坦故地。在活國（昆都士），吐火羅葉護的駐地，玄奘持有高昌王麴文泰的書信：在位國王娶了高昌王之妹，兩國以姻親相繫。他抵達時，才發現國王新近駕崩——據《傳》所載，他是死於一場繼承陰謀的毒殺——整個宮廷陷入動盪。",
+          "先王之子奪取政權，並娶了繼母、高昌公主為妻。這位公主虔信佛教，保護這位行腳僧，並敦促他在動亂吞噬他之前離開；他本人的記述，記下了那些星期裏，在這個王位以毒藥易手的宮廷中令人不安的氣氛。",
+          "大約一個月後，玄奘隨一支商隊向西南前往縛喝國——阿姆河平原上的大寺院之城——只停留到阿富汗北部平原的政治風雲消散為止。"
+        ],
+        "ja": [
+          "鉄門の下を過ぎると、道はトハーリスターンの旧エフタルの地に入った。活国(クンドゥズ)、すなわちトハーラの葉護の本拠地で、玄奘は高昌王・曲文泰からの書状を携えていた。在位中の王は高昌王の妹を娶っており、両宮廷は姻戚関係で結ばれていたのである。彼が到着すると、王は死んだばかりだった――『伝』によれば、継承争いの陰謀により毒殺されたのであり、宮廷は大混乱のただ中にあった。",
+          "死去した王の息子は権力を奪い、継母である高昌の王女を妻として娶った。信心深い仏教徒であった王女は巡礼者をかばい、混乱に呑み込まれる前に立ち去るよう促した。玄奘自身の記録には、毒によって玉座が移った宮廷で過ごした数週間の不安が記されている。",
+          "およそ一か月後、玄奘は商人の隊商とともに南西へと進み、オクサス平原の大伽藍の都・縛喝国(バルフ)へ向かった。アフガン北部平原の政情が晴れるのを待つ間のわずかな逗留のみを残して。"
+        ]
+      }
+    },
+    {
       "id": "balkh",
       "coords": [
         66.898888888889,
@@ -1086,6 +1145,65 @@
       }
     },
     {
+      "id": "taxila",
+      "coords": [
+        72.7875,
+        33.745833333333
+      ],
+      "year": "631",
+      "when": {
+        "en-GB": "631",
+        "fr-CA": "631",
+        "zh-Hans": "631",
+        "zh-HK": "631",
+        "ja": "631"
+      },
+      "present": {
+        "en": "Taxila ruins, Rawalpindi District, Punjab, Pakistan",
+        "zh": "巴基斯坦旁遮普省拉瓦尔品第县塔克西拉遗址",
+        "ja": "タキシラ遺跡、パキスタン・パンジャーブ州ラーワルピンディー県",
+        "iso3": "PAK",
+        "fr-CA": "Ruines de Taxila, district de Rawalpindi, Pendjab, Pakistan",
+        "zh-Hans": "塔克西拉遗址，巴基斯坦旁遮普省拉瓦尔品第县",
+        "zh-HK": "巴基斯坦旁遮普省拉瓦爾品第縣呾叉始羅遺址"
+      },
+      "iso3": "PAK",
+      "names": {
+        "en-GB": "Takshashila (Taxila)",
+        "fr-CA": "Takshashila (Taxila)",
+        "zh-Hans": "呾叉始罗（塔克西拉）",
+        "zh-HK": "呾叉始羅（塔克西拉）",
+        "ja": "呾叉始羅（タキシラ）"
+      },
+      "narrative": {
+        "en-GB": [
+          "Between Swat and Kashmir lay Takshashila — Taxila, the ancient capital where the Gandharan tradition of learning had flourished a millennium before. In Indian memory it was a university city: the place where, legend said, the Bodhisattva in a former life had given his body to feed a tigress, and where the grammarian Panini had worked.",
+          "By Xuanzang's time the city had already shifted and decayed. He found the land rich but its Buddhism faded: monasteries largely in ruins, few monks. His Record preserves the local legend of prince Kunala — Ashoka's son, blinded here by a jealous stepmother's plot — and the shrine of the Healing Buddha where the eyeless prince's sight was restored.",
+          "From Taxila he turned northeast, crossed the Indus, and climbed through the hills toward the great monastery schools of Kashmir."
+        ],
+        "fr-CA": [
+          "Entre le Swat et le Cachemire se trouvait Takshashila — Taxila, l'ancienne capitale où la tradition savante du Gandhara avait prospéré un millénaire plus tôt. Dans la mémoire indienne, c'était une cité universitaire : l'endroit où, selon la légende, le Bodhisattva, dans une vie antérieure, avait donné son corps pour nourrir une tigresse, et où le grammairien Panini avait œuvré.",
+          "À l'époque de Xuanzang, la ville s'était déjà déplacée et délabrée. Il trouva une terre riche mais un bouddhisme déclinant : des monastères largement en ruine, quelques moines. Son Récit conserve la légende locale du prince Kunala — fils d'Ashoka, aveuglé ici par les intrigues d'une marâtre jalouse — et le sanctuaire du Bouddha guérisseur où la vue du prince privé d'yeux fut restaurée.",
+          "De Taxila, il prit la direction du nord-est, traversa l'Indus et gravit les collines vers les grandes écoles monastiques du Cachemire."
+        ],
+        "zh-Hans": [
+          "从乌仗那与迦湿弥罗之间，坐落着呾叉始罗——塔克西拉，千年之前犍陀罗学问传统即已繁盛的古都。在印度人的记忆中，它是一座大学之城：传说称，菩萨前世曾在此舍身饲虎，语法学家波腻尼也曾在此治学。",
+          "至玄奘之时，城址已迁徙衰落。他见土地丰饶而佛法凋零：伽蓝大半倾圮，僧徒寥寥。其《大唐西域记》保存了拘浪拿太子的传说——阿育王之子，因妒忌的继母设计而于此地失明——以及药叉神祠，无目的太子在此重见光明。",
+          "离开呾叉始罗，他转向东北，渡过信度河，翻山越岭，前往迦湿弥罗的大伽蓝学府。"
+        ],
+        "zh-HK": [
+          "在斯瓦特與迦濕彌羅之間，坐落着呾叉始羅——即怛叉始羅（Taxila），千年之前犍陀羅學術傳統興盛的古城。在印度人的記憶中，它是一座大學城：相傳菩薩前世曾在此捨身飼虎，語法學家波膩尼也曾在此著述。",
+          "到了玄奘的時代，城址已經遷移衰敗。他見到土地豐饒，但佛教已經衰落：寺院大多殘破，僧侶稀少。他的《西域記》保存了拘那羅太子的當地傳說——阿育王之子，在此被嫉妒的繼母陰謀弄盲——以及藥師佛的聖地，盲眼太子在那裏重獲光明。",
+          "從呾叉始羅出發，他轉向東北，渡過印度河，翻山越嶺，前往迦濕彌羅的各大寺院學府。"
+        ],
+        "ja": [
+          "スワートとカシミールの間にタクシャシーラー――タキシラ――があった。ガンダーラの学問の伝統が千年前に栄えた古代の都である。インド人の記憶の中でそれは大学都市であり、伝説によれば菩薩が前世で虎に身を施して養った場所であり、文法学者パーニニが研究を重ねた土地でもあった。",
+          "玄奘の時代までに、この都市はすでに移転し荒廃していた。彼は土地は豊かだが仏教は衰えているのを見た。僧院はほとんど廃墟となり、僧もわずかであった。その『西域記』は、阿育王の王子クナーラが嫉妬に狂った継母の陰謀によってここで眼を潰されたという地元の伝説、そして眼の見えない王子の視力が回復した薬師仏の祠を伝えている。",
+          "タキシラから彼は北東へ向かい、インダス川を渡り、丘を越えてカシミールの偉大な僧院学派へと進んだ。"
+        ]
+      }
+    },
+    {
       "id": "kashmir",
       "coords": [
         76,
@@ -1265,6 +1383,714 @@
       }
     },
     {
+      "id": "bodhgaya",
+      "coords": [
+        84.9925,
+        24.695
+      ],
+      "year": "636",
+      "when": {
+        "en-GB": "c. 636",
+        "fr-CA": "vers 636",
+        "zh-Hans": "约636年",
+        "zh-HK": "約636年",
+        "ja": "636年頃"
+      },
+      "present": {
+        "en": "Bodh Gaya, Gaya District, Bihar, India",
+        "zh": "印度比哈尔邦伽耶县菩提伽耶",
+        "ja": "インド、ビハール州ガヤー県、ブッダガヤ",
+        "iso3": "IND",
+        "fr-CA": "Bodh Gaya, district de Gaya, Bihar, Inde",
+        "zh-Hans": "印度比哈尔邦伽耶县佛陀伽耶",
+        "zh-HK": "印度比哈爾邦加耶縣菩提伽耶"
+      },
+      "iso3": "IND",
+      "names": {
+        "en-GB": "Bodh Gaya",
+        "fr-CA": "Bodh Gaya",
+        "zh-Hans": "菩提伽耶",
+        "zh-HK": "菩提伽耶",
+        "ja": "菩提伽耶（ブッダガヤ）"
+      },
+      "narrative": {
+        "en-GB": [
+          "Soon after settling at Nalanda, Xuanzang made the pilgrimage every Buddhist of the age dreamed of: to the Bodhi tree at Bodh Gaya, where the prince Siddhartha had sat in meditation and attained enlightenment. His Record describes the tree — a pippala replanted across the centuries whenever it died — and the Diamond Seat beneath it, which the faithful believed had stood at the centre of the universe since the beginning of the age.",
+          "Beside the tree stood the great Mahabodhi temple, some 50 metres tall, built of brick and faced with plaster, its walls hung with jewelled niches — the building essentially as pilgrims still see it today. Xuanzang's description is the oldest detailed one that survives and was used by modern restorers to reconstruct the temple in the 19th century.",
+          "He saw devotees from many lands circling the shrine, and silk banners hung by pilgrims from China and elsewhere. The scenes he recorded — the offerings at the tree, the bathing pond, the week-long meditation stations of the Buddha — made his chapter on Bodh Gaya the anchor of Buddhist pilgrimage literature for centuries."
+        ],
+        "fr-CA": [
+          "Peu après s'être installé à Nalanda, Xuanzang entreprit le pèlerinage dont rêvait tout bouddhiste de son époque : se rendre à l'arbre Bodhi de Bodh Gaya, où le prince Siddhartha s'était assis en méditation et avait atteint l'Éveil. Son Récit décrit l'arbre — un pippala replanté au fil des siècles chaque fois qu'il mourait — et le Siège de diamant qui se trouve en dessous, que les fidèles croyaient dresser au centre de l'univers depuis le commencement de l'ère.",
+          "À côté de l'arbre se dressait le grand temple du Mahabodhi, haut d'une cinquantaine de mètres, construit en brique et recouvert de plâtre, ses murs ornés de niches joyautées — un édifice essentiellement tel que les pèlerins le voient encore aujourd'hui. La description de Xuanzang est la plus ancienne description détaillée qui nous soit parvenue, et les restaurateurs modernes l'ont utilisée pour reconstruire le temple au XIXe siècle.",
+          "Il vit des dévots de nombreux pays faire le tour du sanctuaire, ainsi que des bannières de soie suspendues par des pèlerins venus de Chine et d'ailleurs. Les scènes qu'il consigna — les offrandes à l'arbre, l'étang des bains, les stations de méditation d'une semaine du Bouddha — firent de son chapitre sur Bodh Gaya le pilier de la littérature de pèlerinage bouddhique pendant des siècles."
+        ],
+        "zh-Hans": [
+          "玄奘在那烂陀安顿下来不久,便踏上了当时每位佛教徒都梦寐以求的朝圣之旅:前往佛陀伽耶的菩提树——悉达多太子曾在此树下坐禅,证得菩提。他在《大唐西域记》中记述了这棵树——一株毕钵罗树,历代每当枯死便重新栽植——以及树下的金刚座,信众相信自劫初以来,金刚座便屹立于世界中央。",
+          "树旁矗立着宏伟的大菩提寺,高约五十米,砖砌而外涂灰泥,壁上饰有宝龛——其形制与今日巡礼者所见基本无异。玄奘的描述是现存最早的详细记载,十九世纪的修葺者正是依据此说复原了寺院。",
+          "他目睹来自各国的信众绕塔巡礼,以及中国等地的巡礼者悬挂的丝绸幡幢。他所记录的种种场景——树下的供养、浴池、佛陀七日一处的禅坐圣迹——使玄奘关于佛陀伽耶的篇章数百年来一直成为佛教巡礼文献的基石。"
+        ],
+        "zh-HK": [
+          "玄奘在那爛陀安頓不久後,便展開了當時每一位佛教徒夢寐以求的朝聖之旅:前往菩提伽耶的菩提樹,悉達多太子曾在該處禪坐,證得正覺。他的《大唐西域記》描述了這棵樹——每當枯萎便會重新栽植的畢缽羅樹——以及樹下的金剛座,信眾相信自本劫之初以來,它一直矗立於宇宙的中心。",
+          "樹旁聳立著宏偉的摩訶菩提寺,高約五十米,以磚建成,外敷灰泥,牆上懸掛著鑲寶石佛龕——其建築與今日朝聖者所見的基本相同。玄奘的描述是現存最早而詳盡的紀錄,十九世紀修復者正是根據他的記載重建此寺。",
+          "他親眼目睹來自各地的信眾繞塔巡禮,並有中國及其他地方的朝聖者懸掛的絲綢幡旗。他所記載的景象——樹下的供養、浴池、佛陀七日一處的禪修聖蹟——使他關於菩提伽耶的篇章,數百年來成為佛教朝聖文學的基石。"
+        ],
+        "ja": [
+          "那爛陀に落ち着いてまもなく、玄奘は当時の仏教徒なら誰もが夢見た巡礼の地、すなわちブッダガヤの菩提樹のもとへ赴いた。そこは王子シッダールタが瞑想に座して悟りを開いた場所である。その著『大唐西域記』は、枯れるたびに数世紀にわたり植え替えられてきたピパラ(彼岸樹)である菩提樹と、その下にある金剛座について記している。金剛座は、この劫のはじまりから宇宙の中心にあったと信者たちに信じられていた。",
+          "菩提樹のそばには、高さ約50メートルの大菩提寺が立っていた。煉瓦造りで漆喰で仕上げられ、壁には宝石をあしらえた龕が掛けられていた――その建物は、今日巡礼者たちが目にするものと本質的に同じである。玄奘の記述は現存する最古の詳細な記録であり、19世紀に近代の修復家たちが寺を復元する際に用いられた。",
+          "玄奘は多くの国々からの信徒たちが聖地を巡拝する様子や、中国その他の国々の巡礼者が掛けた絹の幡を目にした。彼が記録した光景――菩提樹への供物、沐浴の池、仏陀の七日間にわたる瞑想の場所――により、ブッダガヤについての彼の章は、その後何世紀にもわたり仏教巡礼文学の柱となった。"
+        ]
+      }
+    },
+    {
+      "id": "vulture_peak",
+      "coords": [
+        85.42,
+        25.03
+      ],
+      "year": "636",
+      "when": {
+        "en-GB": "c. 636",
+        "fr-CA": "v. 636",
+        "zh-Hans": "约636年",
+        "zh-HK": "約 636 年",
+        "ja": "636年頃"
+      },
+      "present": {
+        "en": "Griddhakuta (Vulture Peak), Rajgir, Nalanda District, Bihar, India",
+        "zh": "印度比哈尔邦那烂陀县王舍城鹫峰",
+        "ja": "グリッドラクータ(霊鷲山)、ラージギル、ナーランダー県、ビハール州、インド",
+        "iso3": "IND",
+        "fr-CA": "Griddhakuta (Pic du Vautour), Rajgir, district de Nalanda, Bihar, Inde",
+        "zh-Hans": "印度比哈尔邦那烂陀县王舍城姞栗陀罗矩吒山（灵鹫峰）",
+        "zh-HK": "印度比哈爾邦那爛陀縣王舍城耆闍崛山（靈鷲峰）"
+      },
+      "iso3": "IND",
+      "names": {
+        "en-GB": "Vulture Peak (Rajgir)",
+        "fr-CA": "Pic du Vautour (Rajgir)",
+        "zh-Hans": "鹫峰（王舍城）",
+        "zh-HK": "鷲峰（王舍城）",
+        "ja": "霊鷲山（王舎城）"
+      },
+      "narrative": {
+        "en-GB": [
+          "North of Bodh Gaya the ground rises toward Rajagriha, the old capital of Magadha, ringed by five hills. On the eastern height stands Griddhakuta — the Vulture Peak, named for the rock shaped like a bird of prey — where the Buddha had preached the Lotus Sutra and so much of the Mahayana canon.",
+          "The Biography preserves one of the most famous scenes of the whole journey here. Climbing the peak in the company of an old monk, Xuanzang came upon the terrace where the Buddha had sat in the days when king Bimbisara himself had climbed with offerings. The old monk told him the stories of those days, and Xuanzang — realising he had been born a thousand years too late to hear the voice himself — leaned against a wall and wept, unable to speak.",
+          "In the valley below lay the Bamboo Grove monastery, the first gift to the order, and the jail where king Ajatashatru had imprisoned his father. Xuanzang recorded them all: a landscape where, as he wrote, every cliff and spring kept a memory of the Buddha."
+        ],
+        "fr-CA": [
+          "Au nord de Bodh Gaya, le terrain s'élève vers Rajagriha, l'ancienne capitale du Magadha, ceinturée de cinq collines. Sur la hauteur orientale se dresse Griddhakuta — le Pic du Vautour, ainsi nommé pour son rocher en forme d'oiseau de proie — où le Bouddha avait prêché le Sutra du Lotus et une grande partie du canon mahayana.",
+          "La Biographie conserve ici l'une des scènes les plus célèbres de tout le voyage. Gravissant le pic en compagnie d'un vieux moine, Xuanzang parvint à la terrasse où le Bouddha s'était assis au temps où le roi Bimbisara lui-même y montait avec des offrandes. Le vieux moine lui raconta les histoires de cette époque, et Xuanzang — réalisant qu'il était né mille ans trop tard pour entendre lui-même la voix du Bouddha — s'appuya contre un mur et pleura, incapable de parler.",
+          "Dans la vallée en contrebas se trouvaient le monastère du Bosquet de Bambou, le premier don fait à l'ordre, et la prison où le roi Ajatashatru avait enfermé son père. Xuanzang consigna le tout : un paysage où, écrivait-il, chaque falaise et chaque source gardait la mémoire du Bouddha."
+        ],
+        "zh-Hans": [
+          "菩提伽耶以北，地势渐高，通往王舍城——摩揭陀的故都，五山环抱。东面山巅矗立着姞栗陀罗矩吒山，即灵鹫峰，因山石形似鸷鸟而得名。佛陀曾在此宣说《法华经》及大乘教典的诸多经文。",
+          "《大慈恩寺三藏法师传》在此保留了整段旅程中最著名的场景之一。玄奘与一位老僧同登峰顶，来到佛陀曾坐于其上的石台——当年频毗娑罗王亲自捧诸供养、拾级而上之处。老僧为他讲述那些往昔的故事，玄奘——自觉生逢其晚千年，无缘亲聆佛音——倚壁而泣，哽咽不能言。",
+          "山下谷中坐落着竹林精舍——僧团所受的第一份布施，还有阿阇世王囚禁其父的牢狱。玄奘将这一切一一记述：正如他所写，这里的每一处崖壁与泉水，都存留着佛陀的记忆。"
+        ],
+        "zh-HK": [
+          "菩提伽耶以北，地勢漸漸昇向王舍城——摩揭陀國的舊都，四面環繞着五座山。東面的山崖上矗立着耆闍崛山——即靈鷲峰，因山石形似猛禽而得名。佛陀曾在此宣講《法華經》以及眾多大乘經典。",
+          "《傳記》在此保存了整個旅程中最著名的場景之一。玄奘隨一位老僧登臨峰頂，來到佛陀當年坐於其上的平台——昔日頻婆娑羅王亦曾親自帶着供品登臨此地。老僧為他講述當年的故事，玄奘——意識到自己生晚了一千年，未能親耳聽聞佛陀的聲音——倚牆而泣，說不出話來。",
+          "山下谷地中有竹林精舍，這是僧團接受的第一份布施，還有阿闍世王囚禁父親的牢獄。玄奘一一記錄下來：正如他所寫，這片土地上，每一處懸崖與泉水源都保存着佛陀的記憶。"
+        ],
+        "ja": [
+          "ブッダガヤの北へ進むと、大地は五つの山に囲まれたマガダの古都、王舎城へと向かって高まる。東の峰には霊鷲山が立っている――猛禽の形をした岩にちなんで名づけられた鷲峰であり、ブッダはここで法華経をはじめとする大乗経典の多くを説いたのである。",
+          "『大慈恩寺三蔵法師伝』は、旅全体で最も有名な場面の一つをここに伝えている。年老いた僧とともに峰を登った玄奘は、頻婆娑羅王自ら供物を携えて登ったという時代にブッダが座した露壇に行き当たった。老僧はその時代の物語を語って聞かせ、玄奘は――その声を自ら聞くには千年も遅く生まれたことを悟って――壁にもたれて泣き、言葉も出なかった。",
+          "眼下の谷には、僧団への最初の施しである竹林精舎があり、また阿闍世王が父を幽閉した獄舎があった。玄奘はそのすべてを書き留めた。彼が記したように、そこは一つひとつの崖も泉もブッダの記憶を保つ風景であった。"
+        ]
+      }
+    },
+    {
+      "id": "sarnath",
+      "coords": [
+        83.021388888889,
+        25.381111111111
+      ],
+      "year": "637",
+      "when": {
+        "en-GB": "c. 637",
+        "fr-CA": "vers 637",
+        "zh-Hans": "约637年",
+        "zh-HK": "約637年",
+        "ja": "637年頃"
+      },
+      "present": {
+        "en": "Sarnath, near Varanasi, Uttar Pradesh, India",
+        "zh": "印度北方邦瓦拉纳西近郊鹿野苑",
+        "ja": "インド、ウッタル・プラデーシュ州、ベナレス近郊のサールナート",
+        "iso3": "IND",
+        "fr-CA": "Sarnath, près de Varanasi, Uttar Pradesh, Inde",
+        "zh-Hans": "印度北方邦瓦拉纳西附近的鹿野苑",
+        "zh-HK": "印度北方邦貝拿勒斯附近薩爾納特"
+      },
+      "iso3": "IND",
+      "names": {
+        "en-GB": "Sarnath (Deer Park)",
+        "fr-CA": "Sarnath (parc aux cerfs)",
+        "zh-Hans": "鹿野苑（萨拉纳特）",
+        "zh-HK": "鹿野苑（薩拉納特）",
+        "ja": "鹿野苑（サールナート）"
+      },
+      "narrative": {
+        "en-GB": [
+          "West of Rajgir, in the deer park of Sarnath outside Varanasi, the Buddha had set the wheel of the law in motion with his first sermon. Xuanzang found the place still flourishing: a monastery of some 1,500 monks of the Sammatiya school, handsome pools and gardens, and stupas marking each station of the first sermon — where the sick monk was nursed, where the first disciple was converted.",
+          "He saw the great Ashoka pillar, its lion capital entire and 'lustrous as jade', and a sandalwood image of the wheel of the law. Centuries later, when the pillar lay broken and the site forgotten, his Record guided the archaeologists who dug Sarnath out of the earth in the 1830s — the lion capital he had admired is now the emblem of the Indian state.",
+          "His description of the surrounding country — Varanasi with its tens of temples and the Ganges ghats thronged with worshippers — remains one of the chief sources for the city in the early Middle Ages."
+        ],
+        "fr-CA": [
+          "À l'ouest de Rajgir, dans le parc aux cerfs de Sarnath aux abords de Varanasi, le Bouddha avait mis en mouvement la roue de la loi avec son premier sermon. Xuanzang trouva l'endroit toujours florissant : un monastère d'environ 1 500 moines de l'école Sammatiya, de magnifiques bassins et jardins, et des stupas marquant chaque étape du premier sermon — là où le moine malade avait été soigné, là où le premier disciple avait été converti.",
+          "Il vit le grand pilier d'Ashoka, dont le chapiteau aux lions était entier et « luisant comme du jade », ainsi qu'une image en bois de santal de la roue de la loi. Des siècles plus tard, alors que le pilier gisait brisé et que le site était oublié, son Récit guida les archéologues qui exhumèrent Sarnath de la terre dans les années 1830 — le chapiteau aux lions qu'il avait admiré est aujourd'hui l'emblème de l'État indien.",
+          "Sa description de la région — Varanasi avec ses dizaines de temples et les ghats du Gange où se pressent les fidèles — demeure l'une des principales sources sur la ville au début du Moyen Âge."
+        ],
+        "zh-Hans": [
+          "王舍城以西，在婆罗痆斯城外的鹿野苑，佛陀曾以初转法轮宣说圣法。玄奘到时，此地依然兴盛：有一正量部寺院，僧众约一千五百人，池苑清幽，殿堂壮丽，并有多处窣堵波，标示初转法轮的各处圣迹——如照看病比丘之处、度化第一位弟子之处。",
+          "他见到阿育王大石柱，柱头狮像完好无损，“莹润如玉”，还见到一座旃檀木雕的法轮像。数百年后，石柱倾折、圣迹湮没之时，正是他的《大唐西域记》指引考古学者于十九世纪三十年代将鹿野苑从尘土中发掘出来——他当年赞叹不已的狮子柱头，如今已成为印度国徽。",
+          "他对周围风土的记述——婆罗痆斯城数十所寺庙、恒河岸边朝圣者云集的河坛——至今仍是研究此城中世纪早期历史的主要史料之一。"
+        ],
+        "zh-HK": [
+          "在王舍城以西、貝拿勒斯城外薩爾納特的鹿野苑，佛陀曾以初次說法轉動法輪。玄奘發現此地依然興盛：有一座正量部寺院，僧眾約一千五百人，另有優美的池沼園林，以及標誌初轉法輪各個聖蹟的佛塔——如照顧病僧之處、度化首位弟子之處。",
+          "他目睹了宏偉的阿育王石柱，其獅子柱頭完整無缺，「光潔如玉」，又見到一座檀香木製的法輪造像。數百年後，當石柱倒斷、遺址湮沒之時，他的《大唐西域記》指引考古學家於1830年代將薩爾納特從泥土中發掘出來——他所讚嘆的獅子柱頭，如今已是印度國家的象徵。",
+          "他對周邊地區的描述——擁有數十座寺廟的貝拿勒斯，以及擠滿朝拜者的恆河河壇——至今仍是研究中世紀早期該城的主要史料之一。"
+        ],
+        "ja": [
+          "王舎城の西、ベナレス(バーラーナシー)郊外のサールナートの鹿野苑で、釈尊は最初の説法によって法輪を転じた。玄奘が訪れた折にも、その地はなお隆盛を極めていた。正量部に属する僧千五百人ほどを擁する僧院、美しい池と庭園、そして最初の説法の各場面——病の僧が看護された場所、最初の弟子が帰依した場所——を示す仏塔が立ち並んでいたのである。",
+          "彼は、獅子の柱頭が完全な姿で残り「玉のごとく光沢を放つ」偉大なるアショーカ王の石柱と、法輪を表す栴檀の仏像を目にした。数世紀後、石柱が倒れその地が忘れ去られたとき、彼の『大唐西域記』は、1830年代にサールナートを土の中から掘り起こした考古学者たちの道しるべとなった。かつて彼が賞賛した獅子の柱頭は、今やインド連邦政府の国章となっている。",
+          "周辺の国々についての彼の記述——数多くの寺院が立ち並ぶベナレスと、礼拝する人々で賑わうガンジス川の沐浴場——は、中世初期におけるこの町を知る主要な史料の一つであり続けている。"
+        ]
+      }
+    },
+    {
+      "id": "sravasti",
+      "coords": [
+        82.050619,
+        27.517073
+      ],
+      "year": "637",
+      "when": {
+        "en-GB": "c. 637",
+        "fr-CA": "vers 637",
+        "zh-Hans": "约637年",
+        "zh-HK": "約637年",
+        "ja": "637年頃"
+      },
+      "present": {
+        "en": "Sahet-Mahet ruins, Shravasti District, Uttar Pradesh, India",
+        "zh": "印度北方邦什拉瓦斯蒂县舍卫城遗址",
+        "ja": "インド、ウッタル・プラデーシュ州、シュラーヴァスティー県、サヘト・マヘト遺跡",
+        "iso3": "IND",
+        "fr-CA": "Ruines de Sahet-Mahet, district de Shravasti, Uttar Pradesh, Inde",
+        "zh-Hans": "印度北方邦舍卫城县萨赫特-马赫特遗址",
+        "zh-HK": "印度北方邦舍衛城縣薩赫特-馬赫特遺址"
+      },
+      "iso3": "IND",
+      "names": {
+        "en-GB": "Sravasti",
+        "fr-CA": "Sravasti",
+        "zh-Hans": "室罗伐悉底（舍卫城）",
+        "zh-HK": "室羅伐悉底（舍衛城）",
+        "ja": "舎衛城（シュラーヴァスティ）"
+      },
+      "narrative": {
+        "en-GB": [
+          "Northwest of Sarnath lay Sravasti, the capital where the rich merchant Anathapindika had bought the prince's grove covered with gold coins and given it to the Buddha — the Jetavana monastery where, tradition says, the Buddha spent twenty-five rainy seasons and preached many of the best-known sutras.",
+          "Xuanzang wandered the ruins in the company of a monk who showed him each site: the hall where the Buddha had slept, the terrace where he had taught, the well and the walk, the shrine of the guardian spirit Angulimala, the murderer-turned-monk. The city itself had shrunk to a fraction of its old size; 'of the old foundations', he wrote, only a portion was inhabited.",
+          "His careful record of Jetavana's buildings became the itinerary for every later pilgrim — and, thirteen centuries on, for the excavators who identified the Sahet-Mahet mounds as Sravasti largely by matching their spades against his text."
+        ],
+        "fr-CA": [
+          "Au nord-ouest de Sarnath se trouvait Sravasti, la capitale où le riche marchand Anathapindika avait acheté, le couvrant de pièces d'or, le bosquet du prince pour l'offrir au Bouddha — le monastère du Jetavana où, selon la tradition, le Bouddha passa vingt-cinq saisons des pluies et prêcha nombre des sutras les plus connus.",
+          "Xuanzang arpenta les ruines en compagnie d'un moine qui lui montra chaque site : la salle où le Bouddha avait dormi, la terrasse où il avait enseigné, le puits et la promenade, le sanctuaire de l'esprit gardien Angulimala, le meurtrier devenu moine. La ville elle-même s'était réduite à une fraction de sa taille d'antan ; « des anciens fondations », écrivit-il, seule une partie était habitée.",
+          "Son relevé minutieux des bâtiments du Jetavana devint l'itinéraire de tout pèlerin ultérieur — et, treize siècles plus tard, celui des fouilleurs qui identifièrent les tertres de Sahet-Mahet comme étant Sravasti en grande partie en confrontant leurs pelles à son texte."
+        ],
+        "zh-Hans": [
+          "鹿野苑西北是室罗伐悉底城（舍卫城），富商阿那陀宾荼驮（给孤独长者）曾以金钱布满地面，买下太子的林园献给佛陀——这就是祇树给孤独园。相传佛陀在此度过二十五个雨安居，宣说了许多最著名的经典。",
+          "玄奘在一位僧人的陪同下巡游废墟，僧人向他一一指认各处圣迹：佛陀曾经寝息的殿堂，说法的高台，水井与经行之处，以及由杀人者改宗为僧的护法之神鸯掘摩罗的祠堂。都城本身已缩减为昔日规模的一小部分；他写道，旧日基址之中，只有一部分还有人居住。",
+          "他对祇园建筑的详尽记载，成为后世每一位朝圣者的行程指南——而十三世纪之后，也正因将铁锹与他的文字相互印证，发掘者们才得以确认萨赫特-马赫特土丘即是室罗伐悉底城故址。"
+        ],
+        "zh-HK": [
+          "鹿野苑西北是舍衛城,富商須達多(給孤獨長者)曾以金磚鋪地買下太子的林園,獻給佛陀——即祇園精舍。相傳佛陀在此度過二十五個結夏安居,宣說多部最著名的經典。",
+          "玄奘在一位僧人陪同下漫步廢墟,僧人逐一為他介紹各處遺址:佛陀曾經安眠的殿堂、講經的台地、水井與經行處、守護神鴦掘摩羅(由殺人犯改邪歸正的僧人)的祠堂。城巿本身已縮減至昔日規模的一小部分;他寫道,「舊基」之中僅有一部分仍有人居住。",
+          "他對祇園精舍建築的詳盡記錄,成為日後每位朝聖者的指南——十三個世紀之後,更成為考古學者的依據:他們主要靠對照他的記載,才確認薩赫特-馬赫特土丘就是舍衛城。"
+        ],
+        "ja": [
+          "サールナートの北西に舎衛城があった。裕福な商人スダッタ(給孤独長者)が王子の林を金貨で敷き詰めて買い取り、仏陀に寄進した地——すなわち祇園精舎であり、伝承によれば仏陀はここで二十五年間の雨期を過ごし、最もよく知られる経典の多くを説いたという。",
+          "玄奘は一人の僧に案内され、遺跡を巡り歩いた。仏陀が眠った堂、教えを説いた露地、井戸と経行の道、殺人者から僧に転じた守護神の一角(アングリマーラ)の祠。都そのものはかつての大きさの一部に縮んでおり、「古き堂塔の跡」のうち、人が住むのは一部のみだと彼は記している。",
+          "祇園精舎の伽藍に関する彼の綿密な記録は、後世のすべての巡礼者の道案内となった——そして十三世紀後、サヘト・マヘトの塚を舎衛城と同定した発掘調査者たちにとっても、自らのスコップを彼の記述と突き合わせることで、大きな拠り所となったのである。"
+        ]
+      }
+    },
+    {
+      "id": "lumbini",
+      "coords": [
+        83.275829,
+        27.4814
+      ],
+      "year": "637",
+      "when": {
+        "en-GB": "c. 637",
+        "fr-CA": "v. 637",
+        "zh-Hans": "约637年",
+        "zh-HK": "約637年",
+        "ja": "六三七年頃"
+      },
+      "present": {
+        "en": "Lumbini, Rupandehi District, Nepal",
+        "zh": "尼泊尔蓝毗尼",
+        "ja": "ネパール ルパンデヒ県 ルンビニー",
+        "iso3": "NPL",
+        "fr-CA": "Lumbini, district de Rupandehi, Népal",
+        "zh-Hans": "尼泊尔蓝毗尼,鲁潘德希县",
+        "zh-HK": "尼泊爾藍毘尼（魯潘德希縣）"
+      },
+      "iso3": "NPL",
+      "names": {
+        "en-GB": "Lumbini",
+        "fr-CA": "Lumbini",
+        "zh-Hans": "蓝毗尼",
+        "zh-HK": "藍毗尼",
+        "ja": "ルンビニー"
+      },
+      "narrative": {
+        "en-GB": [
+          "From Kapilavastu's ruins Xuanzang rode to Lumbini, the garden where Queen Maya had given birth to the Buddha holding the branch of a sala tree. He describes the pool in which the newborn was bathed — 'the water clear as a mirror' — and the tree then standing beside it, worshipped by pilgrims.",
+          "Beside the pool he saw the stone pillar Ashoka had erected on his pilgrimage three centuries after the Buddha's death, carved with a horse at its capital: Xuanzang recorded that lightning had split it and that it stood broken in a dragon's shrine. That broken pillar, rediscovered in 1896, carries an inscription naming Lumbini as the Buddha's birthplace — and its identification rested squarely on Xuanzang's directions.",
+          "He noted the extravagance of the pilgrims' offerings and the decay of the surrounding country: the Sakya homeland had been destroyed centuries before, and only monks and devotees kept the garden."
+        ],
+        "fr-CA": [
+          "Depuis les ruines de Kapilavastu, Xuanzang chevaucha jusqu'à Lumbini, le jardin où la reine Maya avait donné naissance au Bouddha en tenant la branche d'un arbre sala. Il décrit le bassin dans lequel le nouveau-né fut baigné — « l'eau claire comme un miroir » — ainsi que l'arbre qui se dressait alors à côté, vénéré par les pèlerins.",
+          "Près du bassin, il vit le pilier de pierre qu'Ashoka avait érigé lors de son pèlerinage, trois siècles après la mort du Bouddha, sculpté d'un cheval à son chapiteau : Xuanzang a consigné que la foudre l'avait fendu et qu'il se dressait brisé dans un sanctuaire de dragon. Ce pilier brisé, redécouvert en 1896, porte une inscription désignant Lumbini comme le lieu de naissance du Bouddha — et son identification reposa entièrement sur les indications de Xuanzang.",
+          "Il nota le faste des offrandes des pèlerins et le déclin de la région environnante : la patrie des Sakya avait été détruite des siècles plus tôt, et seuls des moines et des dévots entretenaient le jardin."
+        ],
+        "zh-Hans": [
+          "玄奘从劫比罗伐窣堵(迦毗罗卫)故城骑马前往蓝毗尼,即摩耶夫人手执娑罗树枝诞下佛陀的园苑。他记述了为新生儿沐浴的池水——“其水澄清如镜”——以及当时矗立池畔、为巡礼者所礼拜的娑罗树。",
+          "在池旁,他见到了佛陀灭度三百年后阿育王巡礼时所立石柱,柱头雕有马像:玄奘记载此柱为雷电所劈,断折矗立于龙祠之中。这根断柱于1896年重新发现,其铭文确认蓝毗尼为佛陀诞生地——而这一认定,恰恰完全依赖于玄奘的记载指引。",
+          "他还注意到巡礼者供养之奢靡,以及周遭国土的衰败:释迦故国早已在数百年前被毁,唯有僧徒与信众守护着这片园苑。"
+        ],
+        "zh-HK": [
+          "玄奘從劫比羅伐窣堵（迦毘羅衛）的廢墟騎行至藍毘尼，即摩耶夫人手執娑羅樹枝誕下佛陀的花園。他描述了初生佛陀沐浴的池水——「水清如鏡」——以及當時矗立在池畔、受朝聖者膜拜的娑羅樹。",
+          "在池畔，他看見阿育王於佛陀圓寂三個世紀後朝聖時所立、柱頭刻有馬匹的石柱：玄奘記載該柱曾被雷電劈裂，斷倒在一座龍神祠中。這根斷柱於一八九六年被重新發現，柱上銘文確認藍毘尼為佛陀出生地——而其辨認工作完全依賴玄奘的記述。",
+          "他注意到朝聖者供奉之奢華，以及周邊地區的衰敗：釋迦族的故鄉早已在數百年前被毀，只有僧侶和信眾守護著這座花園。"
+        ],
+        "ja": [
+          "カピラヴァストゥの廃墟から玄奘はルンビニーへと馬を進めた。そこは摩耶夫人が沙羅の木の枝を持って釈尊を産んだ庭園である。彼は生まれたばかりの釈尊が沐浴させられた池について——「水は鏡のように澄み渡り」——また、そのほとりに立つ木が巡礼者たちの崇拝を受けていたことを記している。",
+          "池のほとりで、彼は釈尊の滅後三世紀に巡礼の途上でアショーカ王が建てた石柱を目にした。柱頭には馬が彫られていた。玄奘は、落雷によって柱は裂け、龍の祠の中に折れたまま立っていたと記録している。一八九六年に再発見されたこの折れた石柱には、ルンビニーを釈尊の生誕地とする銘文が刻まれており——その同定はまさに玄奘の記録による指示に負っている。",
+          "彼は巡礼者たちの供物の豪華さと、周囲の国の荒廃ぶりに注目した。釈迦族の故郷はすでに数世紀前に破壊されており、僧侶と信者たちだけが庭園を守っていた。"
+        ]
+      }
+    },
+    {
+      "id": "kushinagar",
+      "coords": [
+        83.888888888889,
+        26.740277777778
+      ],
+      "year": "638",
+      "when": {
+        "en-GB": "c. 638",
+        "fr-CA": "vers 638",
+        "zh-Hans": "约638年",
+        "zh-HK": "約公元638年",
+        "ja": "c. 638"
+      },
+      "present": {
+        "en": "Kushinagar, Uttar Pradesh, India",
+        "zh": "印度北方邦拘尸那揭罗",
+        "ja": "インド、ウッタル・プラデーシュ州、クシナガル",
+        "iso3": "IND",
+        "fr-CA": "Kushinagar, Uttar Pradesh, Inde",
+        "zh-Hans": "印度北方邦拘尸那揭罗",
+        "zh-HK": "印度北方邦拘屍那揭羅"
+      },
+      "iso3": "IND",
+      "names": {
+        "en-GB": "Kushinagar",
+        "fr-CA": "Kushinagar",
+        "zh-Hans": "拘尸那揭罗",
+        "zh-HK": "拘尸那揭羅",
+        "ja": "拘尸那揭羅（クシナガラ）"
+      },
+      "narrative": {
+        "en-GB": [
+          "East of Lumbini, in a thin tract of forest, lay Kushinagar — the obscure little town where the Buddha had lain down between two sala trees and passed into final nirvana. Xuanzang found it as the scriptures had left it: walls in ruins, brick foundations overgrown, a sparse population — and a few monks keeping the shrines.",
+          "He identified the brick chamber of the parinirvana, the image of the Buddha lying on his right side, and the great stupa raised over the relics, as well as the site where, seven days after the death, the coffin was cremated. The Biography again records his emotion: standing where the Teacher had died, with no master left in the world, he 'grieved that he had been born too late' and his eyes filled with tears.",
+          "In the 19th century the sites he described were dug out of the mounds at Kasia; his Record, as so often elsewhere, had held the key."
+        ],
+        "fr-CA": [
+          "À l'est de Lumbini, dans un mince bras de forêt, se trouvait Kushinagar — la petite ville obscure où le Bouddha s'était allongé entre deux arbres sala avant de passer dans le nirvana final. Xuanzang la trouva telle que les écritures l'avaient laissée : des murs en ruine, des fondations de briques envahies par la végétation, une population clairsemée — et quelques moines qui veillaient sur les sanctuaires.",
+          "Il identifia la chambre de briques du parinirvana, l'image du Bouddha couché sur le flanc droit, et le grand stupa élevé au-dessus des reliques, ainsi que le site où, sept jours après la mort, le cercueil fut incinéré. La Biographie rapporte encore son émotion : se tenant là où le Maître était mort, sans plus de maître au monde, il « se désola d'être né trop tard » et ses yeux se remplirent de larmes.",
+          "Au 19e siècle, les sites qu'il avait décrits furent dégagés des buttes de Kasia ; son Récit, comme si souvent ailleurs, en avait détenu la clé."
+        ],
+        "zh-Hans": [
+          "蓝毗尼以东，一片稀疏的林野之中，坐落着拘尸那揭罗——佛陀于两娑罗树间卧而入究竟涅槃的僻远小城。玄奘所见，一如经籍所载：城壁倾颓，砖基没于荒草，人烟稀少——唯有寥寥僧众守护着诸圣迹。",
+          "他辨认出了涅槃的砖室、佛陀右胁而卧的造像、覆于舍利之上的大窣堵波，以及佛陀逝世七日后金棺焚化之处。《传记》再次记载了他的悲情：立于导师辞世之地，世间已无大师，他“恨生不逢时”，双目盈泪。",
+          "十九世纪，他所记述的这些圣迹从迦西亚的土丘中被发掘出来；他的《记》，一如在别处那样，是解开谜团的钥匙。"
+        ],
+        "zh-HK": [
+          "藍毗尼以東，在一片稀疏的林地之中，坐落著拘屍那揭羅——這個不起眼的小鎮，正是佛陀於兩棵娑羅樹之間躺下、入究竟涅槃的地方。玄奘所見，一如佛經所載：城牆頹圮，磚基荒蕪，人煙稀少——只有寥寥僧侶守護著聖跡。",
+          "他辨認出涅槃的磚室、佛陀右脅而臥的造像、供奉舍利的搭建於其上的大窣堵波，以及佛滅七日後金棺火化之處。《傳記》再次記載了他的感慨：站在導師滅度之地，世間再無大師，他「恨生不逢時」，雙目充滿淚水。",
+          "十九世紀，他所描述的這些遺跡從卡西亞的土丘中被發掘出來；他的《記》一如在別處屢屢證明的那樣，再次成為開啟謎團的鑰匙。"
+        ],
+        "ja": [
+          "ルンビニーの東、疎らな森林の中に拘尸那揭羅(くしながる)はあった――仏陀が二本の沙羅樹の間に横たわり、最終涅槃に入られた、名も知れぬ小さな町である。玄奘がそこで見たのは、経典が伝える通りの姿だった。崩れ落ちた城壁、草に覆われた煉瓦の基壇、まばらな住民――そして、あの聖跡を守る数人の僧たち。",
+          "彼は般涅槃の煉瓦の堂宇、右脇を下に横たわる仏陀の像、遺骨を納めて建てられた大塔、そして入滅の七日後、棺が荼毘に付された地を見出した。『大唐西域記』の伝記は再び彼の感動を記している。師が亡くなったその地に立ち、もはやこの世に導きの師はないかと、「生まれ遅れたことを悲しみ」、目に涙を満たしたのである。",
+          "19世紀、彼の記した聖跡はカシアの塚の中から掘り出された。彼の『西域記』が、これまで何度もそうであったように、その鍵を握っていたのである。"
+        ]
+      }
+    },
+    {
+      "id": "vaishali",
+      "coords": [
+        85.13,
+        25.99
+      ],
+      "year": "638",
+      "when": {
+        "en-GB": "c. 638",
+        "fr-CA": "vers 638",
+        "zh-Hans": "约638年",
+        "zh-HK": "約公元638年",
+        "ja": "638年頃"
+      },
+      "present": {
+        "en": "Vaishali archaeological site, Bihar, India",
+        "zh": "印度比哈尔邦吠舍厘遗址",
+        "ja": "インド、ビハール州、ヴァイシャーリー遺跡",
+        "iso3": "IND",
+        "fr-CA": "Site archéologique de Vaishali, Bihar, Inde",
+        "zh-Hans": "印度比哈尔邦毗舍离遗址",
+        "zh-HK": "印度比哈爾邦毗舍離考古遺址"
+      },
+      "iso3": "IND",
+      "names": {
+        "en-GB": "Vaishali",
+        "fr-CA": "Vaishali",
+        "zh-Hans": "吠舍厘（毗舍离）",
+        "zh-HK": "吠舍釐（毘舍離）",
+        "ja": "吠舎釐（ヴァイシャーリー）"
+      },
+      "narrative": {
+        "en-GB": [
+          "South of the Ganges lay Vaishali, the old capital of the Licchavis — in the Buddha's day a great republic of oligarchs, in Xuanzang's a scatter of ruins with a thousand families and a few dozen monks of the Sammatiya school living among them.",
+          "He was shown the hundred-year-old sites of the Vajra council, the monkey's pool where a monkey had offered the Buddha honey, and the stupa over the share of the Buddha's relics that the Licchavis had received — a great mound that archaeologists later opened to find a soapstone casket exactly as he described.",
+          "It was also at Vaishali, in the tradition he recorded, that the Buddha had announced his approaching death and made his last long retreat; and here, too, stood the shrine of Amrapali, the courtesan who had given her mango grove to the order. The pilgrim's chapter on the city stitches together the memories of a political world — elected assemblies, debate halls — that had no counterpart anywhere else on his route."
+        ],
+        "fr-CA": [
+          "Au sud du Gange se trouvait Vaishali, l'ancienne capitale des Licchavi — du temps du Bouddha, une grande république d'oligarques ; à l'époque de Xuanzang, un ensemble de ruines où vivaient un millier de familles et quelques dizaines de moines de l'école Sammatiya.",
+          "On lui montra les sites centenaires du conseil du Vajra, l'étang du singe où un singe avait offert du miel au Bouddha, et le stupa érigé sur la part des reliques du Bouddha reçue par les Licchavi — un grand tumulus que les archéologues ouvrirent plus tard pour y trouver un coffret en stéatite exactement comme il l'avait décrit.",
+          "C'est également à Vaishali, selon la tradition qu'il a consignée, que le Bouddha avait annoncé sa mort prochaine et fait sa dernière longue retraite ; et c'est là aussi que se dressait le sanctuaire d'Amrapali, la courtisane qui avait donné son verger de manguier à l'ordre. Le chapitre du pèlerin sur la ville tisse ensemble les souvenirs d'un monde politique — assemblées élues, salles de débat — qui n'avait aucun équivalent ailleurs sur son itinéraire."
+        ],
+        "zh-Hans": [
+          "恒河南岸便是毗舍离，离车毗人的故都——在佛陀时代是一个由贵族寡头执政的大共和国，到玄奘时已沦为一片残垣，城中聚居千户人家，其间仅有数十名正量部僧人。",
+          "有人为他指点了金刚议会的百年遗迹、猴子为佛陀献蜜的猴池，以及离车毗人所分得的那份佛舍利塔——一座巨大的土丘，考古学家后来发掘时，果然如玄奘所记，在其中发现了一个滑石舍利函。",
+          "据他所记载的传说，佛陀也是在毗舍离宣布即将涅槃，并作了最后一次长期结夏安居；这里还耸立着庵摩罗女的家祠——她曾把自己的芒果园施予僧团。这位行者在关于此城的章节中，将一个政治世界的记忆串联起来——选举产生的议会、辩论的厅堂——这些在他整条行程所经之地中绝无仅有。"
+        ],
+        "zh-HK": [
+          "恒河以南是毗舍離，離車人的舊都——佛陀時代是由寡頭統治的大共和國，到玄奘時已淪為一片廢墟，只有千餘戶人家，以及當中居住的正量部僧人數十名。",
+          "有人帶他參觀金剛議會百年的舊址、猴子向佛陀獻蜜的猴池，以及離車人所得佛陀舍利的建塔——這座大土塚後來被考古學家發掘，發現內有滑石舍利棺，與玄奘所描述的完全一致。",
+          "根據他所記載的傳統，佛陀亦是在毗舍離宣佈自己將近入滅，並作最後一次長期安居；這裏也曾矗立著庵摩羅女的聖跡，這位妓女曾把她經營的芒果園捐給僧團。這位朝聖者關於此城的篇章，交織著對一個政治世界的記憶——民選議會、辯論殿堂——這些在他的路線上別無他處可比。"
+        ],
+        "ja": [
+          "ガンジス川の南にヴァイシャーリー、すなわちリッチャヴィ族の古都があった。仏陀の時代には豪族たちによる大共和国であり、玄奘の時代には一千の家々が点在し、その間に数十大衆部（サンマティーヤ派）の比丘が暮らす廃墟の集まりとなっていた。",
+          "彼は、百年前の金剛会議の跡地、猿が仏陀に蜜を捧げた猿の池、そしてリッチャヴィ族が受け取った仏陀舎利の分を納めた塔を見せられた。この大きな塚は、後に考古学者が発掘したところ、玄奘の記述どおりの蝋石の舎利容器が見つかった。",
+          "彼が記録した伝承によれば、仏陀が自らの死の近いことを告げ、最後の長い安居に入ったのもまたヴァイシャーリーであった。またここには、芒果林を教団に寄進した遊女アームラパーリーの精舎も立っていた。この巡礼者の都に関する章は、選挙で選ばれる評議会や議論の堂など、彼の巡礼路上の他のどこにも類を見ない政治的世界の記憶を縫い合わせている。"
+        ]
+      }
+    },
+    {
+      "id": "hiranyaparvata",
+      "coords": [
+        86.465,
+        25.381
+      ],
+      "year": "639",
+      "when": {
+        "en-GB": "639",
+        "fr-CA": "639",
+        "zh-Hans": "639",
+        "zh-HK": "639",
+        "ja": "639"
+      },
+      "present": {
+        "en": "Munger, Bihar, India",
+        "zh": "印度比哈尔邦蒙格尔",
+        "ja": "インド・ビハール州ムンゲル",
+        "iso3": "IND",
+        "fr-CA": "Munger, Bihar, Inde",
+        "zh-Hans": "印度比哈尔邦蒙格爱尔",
+        "zh-HK": "印度比哈爾邦穆格爾"
+      },
+      "iso3": "IND",
+      "names": {
+        "en-GB": "Hiranyaparvata (Munger)",
+        "fr-CA": "Hiranyaparvata (Munger)",
+        "zh-Hans": "伊烂拏钵伐多（蒙格尔）",
+        "zh-HK": "伊爛拏缽伐多（蒙格爾）",
+        "ja": "伊爛拏鉢伐多（ムンガー）"
+      },
+      "narrative": {
+        "en-GB": [
+          "Following the Ganges east from Vaishali into the country of Hiranyaparvata ('the golden mount'), Xuanzang paused the longest study-stop of his Indian circuit. The kingdom's river capital stood near modern Munger; its monasteries, he recorded, numbered some ten, with perhaps four hundred monks.",
+          "Here he attached himself to two elders of the old schools and spent close to a year reading the Abhidharma commentaries — the Vibhasha and the doctrine of the Sammatiya school — filling gaps that the great curriculum of Nalanda, centred on the Yogacara texts, had left open. His habit everywhere was the same: sit at the feet of whoever held the authoritative tradition of a text, whatever the school.",
+          "From the Ganges at Hiranyaparvata he then turned his face south for the longest detour of the journey — three months down the peninsula to the far south, to the lands of which even the traders of the Ganges knew little."
+        ],
+        "fr-CA": [
+          "En descendant le Gange vers l'est depuis Vaishali jusqu'au pays de Hiranyaparvata (« la montagne d'or »), Xuanzang fit la plus longue pause d'étude de son périple indien. La capitale fluviale du royaume se dressait près de l'actuelle Munger ; ses monastères, nota-t-il, étaient au nombre d'une dizaine, comptant peut-être quatre cents moines.",
+          "C'est là qu'il se joignit à deux anciens des anciennes écoles et passa près d'un an à lire les commentaires de l'Abhidharma — le Vibhasha et la doctrine de l'école Sammatiya — comblant les lacunes laissées ouvertes par le grand programme d'études de Nalanda, centré sur les textes Yogacara. Son habitude, partout, était la même : s'asseoir aux pieds de quiconque détenait la tradition faisant autorité sur un texte, quelle que soit l'école.",
+          "Depuis le Gange à Hiranyaparvata, il tourna ensuite le visage vers le sud pour le plus long détour du voyage — trois mois vers le bas de la péninsule jusqu'à l'extrême sud, vers des contrées dont même les marchands du Gange savaient peu de choses."
+        ],
+        "zh-Hans": [
+          "玄奘从毗舍离沿恒河东行,进入伊烂拏钵伐多国(意为“金山”),在此进行了他印度巡礼途中历时最长的一次求学驻留。该国的河畔都城位于今蒙格爱尔附近;据他记载,国有伽蓝约十所,僧众约四百人。",
+          "在这里,他依止两位上座部(旧部)长老,用了近一年的时间研读阿毗达磨注释——《大毗婆沙论》以及正量部的学说,填补了以瑜伽行派经典为核心的那烂陀博大课程所留下的空缺。他无论身在何处,习惯都是一样:凡掌握某部经论权威传承者,无论其宗派如何,皆虚心从学。",
+          "在伊烂拏钵伐多国的恒河畔,他转身向南,踏上旅程中最长的一段迂回之路——沿半岛南行三个月,直抵极南之地,那是连恒河的商贾也所知甚少的国度。"
+        ],
+        "zh-HK": [
+          "玄奘從毘舍離沿恆河東行，進入伊爛拏缽伐多國（意為「金山」），在印度行程中作了最長的一次停留研習。這個王國的河畔都城位於現今的穆格爾附近；據他記載，境內伽藍約有十所，僧侶大概四百人。",
+          "在這裏，他跟隨兩位舊部派長老，花了接近一年時間研讀阿毘達磨論書——《大毘婆沙論》以及正量部的教義，填補了那爛陀以瑜伽行派典籍為中心的浩大課程所留下的空白。他每到一處的習慣都一樣：不論宗派，只要誰掌握某部經典的權威傳承，就到誰門下受學。",
+          "在伊爛拏缽伐多的恆河邊，他隨即轉向南行，展開整個旅程中最長的一次繞道——沿半島南下三個月，直抵極南之地，那裏的土地，連恆河一帶的商人也所知甚少。"
+        ],
+        "ja": [
+          "ヴァイシャーリーからガンジス川に沿って東へ進み、伊爛拏鉢伐多国(「黄金の山」の意)に入ると、玄奘はインド巡歴の中で最も長い学問滞在のために足を止めた。この王国の都は川沿いの、現在のムンゲルの近くにあり、彼の記録によれば僧院はおよそ十か寺、僧は四百人ほどであったという。",
+          "ここで彼は旧学派の二長老に師事し、ほぼ一年をかけて阿毘達磨の注釈——大毘婆沙論および正量部の教義——を研鑽し、瑜伽行派のテクストを中心とする那爛陀の大カリキュラムでは埋められなかった空白を補った。彼がどこでも貫いた姿勢は同じであった。すなわち、学派の如何を問わず、テクストの権威ある伝統を保持する者の足元に学んだのである。",
+          "伊爛拏鉢伐多のガンジス川から、彼は旅の中で最も長い迂回路——半島を下ってはるか南方の、ガンジスの商人たちすらほとんど知らぬ地への三か月の旅路——に向けて南へと顔を向けた。"
+        ]
+      }
+    },
+    {
+      "id": "kanchipuram",
+      "coords": [
+        79.707777777778,
+        12.830833333333
+      ],
+      "year": "640",
+      "when": {
+        "en-GB": "640",
+        "fr-CA": "640",
+        "zh-Hans": "640",
+        "zh-HK": "640",
+        "ja": "640"
+      },
+      "present": {
+        "en": "Kanchipuram, Tamil Nadu, India",
+        "zh": "印度泰米尔纳德邦甘吉布勒姆",
+        "ja": "インド・タミルナードゥ州カーンチープラム",
+        "iso3": "IND",
+        "fr-CA": "Kanchipuram, Tamil Nadu, Inde",
+        "zh-Hans": "Kanchipuram, Tamil Nadu, India",
+        "zh-HK": "印度泰米爾納德邦建志補羅(甘吉布勒姆)"
+      },
+      "iso3": "IND",
+      "names": {
+        "en-GB": "Kanchipuram",
+        "fr-CA": "Kanchipuram",
+        "zh-Hans": "建志补罗（甘吉布勒姆）",
+        "zh-HK": "建志補羅（甘吉布勒姆）",
+        "ja": "建志補羅（カーンチプラム）"
+      },
+      "narrative": {
+        "en-GB": [
+          "Three months south of the Ganges valley the road ended at Kanchipuram, the capital of the Dravida kingdom — the Pallava court at the height of its power, a city of temples whose Brahmanism the Record describes with unusual care. This was the farthest point from home on the whole journey: over the peninsula, through the forests and the passes of the Deccan, to the edge of the sea.",
+          "His purpose was Sri Lanka — the island of the Theravada schools with their unrivalled commentaries. At Kanchi the plan died: Sri Lankan monks fleeing the island told him the king had died, the throne was in dispute, and the land was wasted by famine and war. Sailing into that was pointless; whatever Sri Lanka could teach, its exiled monks on the shore could teach instead.",
+          "So he turned back north, by the western road — through Maharashtra and Malwa, the first leg of the long loop home. He would never see the ocean that lay two hours' walk from where he stood."
+        ],
+        "fr-CA": [
+          "Trois mois au sud de la vallée du Gange, la route s'achevait à Kanchipuram, capitale du royaume Dravida — la cour des Pallava à l'apogée de sa puissance, une cité de temples dont le Rapport décrit le brahmanisme avec un soin inhabituel. C'était le point le plus éloigné du foyer sur tout le trajet : par-delà la péninsule, à travers les forêts et les cols du Deccan, jusqu'au bord de la mer.",
+          "Son but était le Sri Lanka — l'île des écoles theravada et de leurs commentaires inégalés. À Kanchi, le projet s'effondra : des moines sri-lankais fuyant l'île lui apprirent que le roi était mort, que le trône était disputé et que le pays était ravagé par la famine et la guerre. S'embarquer là-bas ne servait à rien ; tout ce que le Sri Lanka pouvait enseigner, ses moines exilés sur le rivage pouvaient l'enseigner à sa place.",
+          "Il rebroussa donc chemin vers le nord, par la route de l'ouest — à travers le Maharashtra et le Malwa, la première étape de la longue boucle du retour. Il ne verrait jamais l'océan qui se trouvait à deux heures de marche de l'endroit où il se tenait."
+        ],
+        "zh-Hans": [
+          "自恒河流域南行三月,道路止于建志补罗,即达罗毗荼国之都城——帕拉瓦王朝鼎盛时期的王庭。此城寺庙林立,其婆罗门教之盛,《大唐西域记》记载尤为详审。这是玄奘全程行程中离家最远之处:越过半岛,穿越南印度的森林与关隘,直抵海陬。",
+          "他此行目的本是师子国——上座部诸派所居之岛,其注释之学无与伦比。然而计划在建志破灭:避难来此的师子国僧人告诉他,国王已逝,王位纷争,国中饥馑兵祸,满目荒残。此时渡海前往已无意义;师子国所有的学问,其流亡海外的僧人在此尽可传授。",
+          "于是他取西路北返——经摩诃剌侘、摩醯罗等国,踏上归途长路的第一程。距他站立之处步行两小时的大海,他终究未能一见。"
+        ],
+        "zh-HK": [
+          "從恆河流域向南行三個月,道路的盡頭便是建志補羅,即達羅毗荼王國的都城——帕拉瓦王朝正值全盛時期的宮廷。這是一座寺廟林立之城,《大唐西域記》以異常仔細的筆觸記述了此地的婆羅門教。這是整個旅程中離家最遠的一點:越過半島,穿越德干高原的森林與隘口,直抵海邊。",
+          "他的目的地是錫蘭——上座部諸派之島,擁有無與倫比的註釋書。計劃卻在建志補羅告吹:逃離該島的錫蘭僧人告訴他,國王已駕崩,王位之爭未定,國土飽受饑荒與戰火蹂躪。此時揚帆前往毫無意義;錫蘭所能傳授的一切,流亡岸上的錫蘭僧人同樣可以傳授。",
+          "於是他轉而北返,取道西面之路——經過摩訶剌侘與摩臘婆,踏上漫長歸途迴環的第一程。距他站立之處兩小時步程之外的大海,他此生再也無緣一見。"
+        ],
+        "ja": [
+          "ガンジス渓谷から南へ三か月、道はドラヴィダ国の都カーンチープラムに至って終わる。全盛期のパッラヴァ朝の宮廷が置かれた都であり、『大唐西域記』はこの地のブラフマニズムをひときわ丁寧に記述する寺院の町である。ここは全旅程の中で、故郷から最も遠い地点だった。半島を越え、デカンの密林と峠を経て、海のほとりまで――。",
+          "彼の目指す先はスリランカ、比類なき註釈書を擁する上座部諸派の島であった。だがカーンチーでこの計画は潰えた。島から逃れてきたスリランカ人僧が、国王の死去と王位をめぐる争い、飢饉と戦乱に荒れ果てた国土を伝えたのだ。そのような土地へ船出しても無意味である。スリランカで学べるものはすべて、岸辺に亡命した僧たちから学べば足りた。",
+          "かくして彼は西回りの道で北へと折り返した。マハーラーシュトラを経てマールワーへ、帰路の長い環の第一歩である。立ち止まった場所から歩いて二時間のところに広がる海を、彼はついに見ることはなかった。"
+        ]
+      }
+    },
+    {
+      "id": "ujjain",
+      "coords": [
+        75.777222222222,
+        23.182777777778
+      ],
+      "year": "640",
+      "when": {
+        "en-GB": "c. 640",
+        "fr-CA": "v. 640",
+        "zh-Hans": "约640年",
+        "zh-HK": "約640年",
+        "ja": "640年頃"
+      },
+      "present": {
+        "en": "Ujjain, Madhya Pradesh, India",
+        "zh": "印度中央邦乌贾因",
+        "ja": "インド マディヤ・プラデーシュ州 ウッジャイン",
+        "iso3": "IND",
+        "fr-CA": "Ujjain, Madhya Pradesh, Inde",
+        "zh-Hans": "印度中央邦邬阇衍那（乌贾因）",
+        "zh-HK": "印度中央邦鄔闍衍那（Ujjain）"
+      },
+      "iso3": "IND",
+      "names": {
+        "en-GB": "Ujjain (Avanti)",
+        "fr-CA": "Ujjain (Avanti)",
+        "zh-Hans": "邬阇衍那（乌贾因）",
+        "zh-HK": "鄔闍衍那（烏賈因）",
+        "ja": "鄔闍衍那（ウッジャイン）"
+      },
+      "narrative": {
+        "en-GB": [
+          "On the road north from the Deccan Xuanzang passed through Malwa, one of India's classical heartlands, whose capital region centred on Ujjain — the ancient Avanti of king Ashoka's youth, and in Indian tradition the city where the meridian of the astronomers runs, one of the seven sacred cities.",
+          "His Record noted dozens of monasteries in the country but found Buddhism diminished: the king patronised Brahman learning, and the monasteries of Ujjain itself were few. Yet the country impressed him — prosperous, well-ruled, its people learned in astronomy and mathematics, the fields 'like a chessboard' of irrigation tanks.",
+          "From Malwa he swung northwest, into the lower Indus country, on the last arc of the Indian circuit before the return to Nalanda — threading regions where Buddhism survived mainly in scattered riverain communities."
+        ],
+        "fr-CA": [
+          "Sur la route menant vers le nord depuis le Deccan, Xuanzang traversa le Malwa, l'une des terres classiques de l'Inde, dont la région capitale était centrée sur Ujjain — l'ancienne Avanti de la jeunesse du roi Ashoka, et, selon la tradition indienne, la ville où passe le méridien des astronomes, l'une des sept villes sacrées.",
+          "Son Récit mentionnait des dizaines de monastères dans le pays, mais constatait le déclin du bouddhisme : le roi patronnait le savoir brahmanique, et les monastères d'Ujjain elle-même étaient peu nombreux. Pourtant, le pays l'impressionna — prospère, bien gouverné, son peuple versé en astronomie et en mathématiques, ses champs « comme un échiquier » de réservoirs d'irrigation.",
+          "Depuis le Malwa, il tourna vers le nord-ouest, dans le pays du bas Indus, sur le dernier arc de son circuit indien avant le retour à Nalanda — traversant des régions où le bouddhisme survivait surtout dans des communautés riveraines éparses."
+        ],
+        "zh-Hans": [
+          "玄奘从南印度北行，途经摩腊婆国——印度经典腹地之一，其都城区域以邬阇衍那为中心。此地即阿育王青年时代阿槃提国之故都，而在印度传统中，此城为天文学者所定子午线所经之地，亦是七大圣城之一。",
+          "《西域记》载此国伽蓝数十所，然佛教已见衰替：国王崇奉婆罗门之学，邬阇衍那城中伽蓝寥寥。然而此国仍令玄奘印象深刻——国富民殷，政教严明，其民精于天文历算，田野间贮水池灌溉之制'棋布星罗'。",
+          "离开摩腊婆后，玄奘折向西北，进入下印度河一带，在归返那烂陀之前走完印度巡礼的最后一段弧线——所经之地，佛教仅存于零星散处的河滨聚落之中。"
+        ],
+        "zh-HK": [
+          "玄奘由德干北上，途經馬爾瓦（Malwa）——印度古典核心地區之一，其首都一帶以鄔闍衍那（Ujjain）為中心——即阿育王年輕時的阿輸陀古國，而在印度傳統中，此城是天文学家子午線所在，為七大聖城之一。",
+          "他在《大唐西域記》中記載該國有數十座寺院，但發現佛教已見衰微：國王扶植婆羅門學問，而鄔闍衍那本地的寺院亦寥寥無幾。然而這個國家令他印象深刻——繁榮富庶，治理良好，人民精於天文與數學，灌溉水池遍佈田野，「猶如棋盤」。",
+          "離開馬爾瓦後，他轉向西北，進入印度河下游地區，這是返回那爛陀之前印度行程的最後一段弧線——穿越一些佛教主要僅存於零散河畔社群的地區。"
+        ],
+        "ja": [
+          "デカンから北へ向かう街道で、玄奘はマールワーを通過した。インドの古典的な中心地の一つであるこの地方は、首都地域をウッジャインに置いていた——アショーカ王の若き日の古国アヴァンティーであり、インドの伝統では天文学者たちの子午線が通る都市として、七聖地の一つに数えられる都である。",
+          "彼の『大唐西域記』はこの国に数十の僧院があったと記しつつ、仏教の衰えを伝えている。国王はバラモンの教学を保護し、ウッジャイン自体の僧院はわずかであった。それでもこの国は彼に深い印象を残した——繁栄し、統治は良く、人々は天文学と数学に通じ、灌漑のための貯水池が「碁盤の目のように」広がる田園だった。",
+          "マールワーから彼は北西へと進路を転じ、インダス川下流域の国々へ入った。那爛陀への帰還前におけるインド巡礼の最後の弧であり、仏教がおもに河畔に散在する共同体のなかで生き残っていた諸地域を縫うように進んだ。"
+        ]
+      }
+    },
+    {
+      "id": "parvata",
+      "coords": [
+        68.4,
+        25.4
+      ],
+      "year": "641",
+      "when": {
+        "en-GB": "c. 641",
+        "fr-CA": "vers 641",
+        "zh-Hans": "约 641 年",
+        "zh-HK": "約641年",
+        "ja": "641年頃"
+      },
+      "present": {
+        "en": "Lower Indus valley, Sindh, Pakistan (identification debated)",
+        "zh": "巴基斯坦信德省印度河下游（地望有争议）",
+        "ja": "インダス川下流域、シンド州、パキスタン（同定には議論がある）",
+        "iso3": "PAK",
+        "fr-CA": "Vallée du bas Indus, Sind, Pakistan (identification débattue)",
+        "zh-Hans": "今巴基斯坦信德省信度河下游流域（比定尚有争议）",
+        "zh-HK": "巴基斯坦信德省印度河谷下游（所在考證仍有爭議）"
+      },
+      "iso3": "PAK",
+      "names": {
+        "en-GB": "Parvata",
+        "fr-CA": "Parvata",
+        "zh-Hans": "钵伐多国",
+        "zh-HK": "缽伐多國",
+        "ja": "缽伐多国"
+      },
+      "narrative": {
+        "en-GB": [
+          "In the lower Indus plain — the country the Record calls Sindhu, hot, fever-ridden, its people hardy traders of salt and grain — lay Parvata, 'the hill country' by name, its exact location still argued over by scholars: the sources allow anything from the neighbourhood of Multan down to the delta.",
+          "Here, on the last arc of the circuit, Xuanzang again did what he always did: he found the local masters of a school Nalanda did not teach and sat down to study. At Parvata he read the Sammatiya school's root Abhidharma and its commentaries with three elders, and met a nun who taught him the school's reading of the discipline.",
+          "The choice mattered. The Sammatiya was one of the largest of the old schools, and the scholastic map he built of its doctrines at Parvata reappears throughout his later writing — the pilgrim comparing, always comparing, one tradition's books against another's."
+        ],
+        "fr-CA": [
+          "Dans la plaine du bas Indus — le pays que le Xiyu ji appelle Sindhu, chaud, rongé de fièvres, peuplé de marchands robustes qui trafiquent sel et grain — s'étendait Parvata, « le pays des collines », dont l'emplacement exact est encore disputé par les chercheurs : les sources permettent tout, des environs de Multan jusqu'au delta.",
+          "Ici, sur le dernier arc de son périple, Xuanzang fit de nouveau ce qu'il avait toujours fait : il trouva les maîtres locaux d'une école que Nalanda n'enseignait pas et s'installa pour étudier. À Parvata, il lut l'Abhidharma racine de l'école Sammatiya et ses commentaires avec trois anciens, et rencontra une nonne qui lui enseigna l'interprétation que l'école faisait de la discipline.",
+          "Ce choix comptait. Les Sammatiya étaient l'une des plus importantes des anciennes écoles, et la carte scolastique qu'il dressa de leurs doctrines à Parvata réapparaît dans tout son œuvre ultérieur — le pèlerin comparant, toujours comparant, les livres d'une tradition à ceux d'une autre."
+        ],
+        "zh-Hans": [
+          "在信度河下游平原——即《西域记》所称的信度国，气候炎热，瘴疠流行，其民坚忍，多以盐与谷物为业经商——有一国名波吒厘（Parvata），意为'山地之国'，其确切位置至今仍为学者所争论：诸种文献所示，北起木尔坦附近，南至三角洲一带，皆有可能。",
+          "在此，于环行的最后一段路程，玄奘再次做了他一贯之事：寻访那烂陀未曾传授的宗派的当地论师，坐下修学。在波吒厘，他与三位耆宿研读正量部的根本阿毗达磨及其注释，又遇见一位比丘尼，为他讲解该部派对戒律的解读。",
+          "这一选择意义重大。正量部是旧部派中最庞大者之一，他在波吒厘对该部教义所作的学理梳理，在其后的著作中反复出现——这位求法僧总是在比较，将一派之经论与另一派之经论相互对照。"
+        ],
+        "zh-HK": [
+          "在印度河下游平原——《記》中稱為信度之地，炎熱多瘴，人民堅毅，以販鹽賣糧為業——有一處名為波羅伐多，意即「山國」的地方，其確切位置至今仍為學者所爭論：各種文獻容許的範圍，由木爾坦一帶直至三角洲不等。",
+          "在這裏，於巡禮的最後一段弧線上，玄奘再次做了他一貫做的事：他尋訪那爛陀所不傳的一個宗派的當地大師，坐下研習。在波羅伐多，他隨三位長老研讀正量部的根本阿毘達磨及其註釋，又遇見一位比丘尼，向他講授該派對戒律的詮釋。",
+          "這個選擇舉足輕重。正量部是古老部派中最龐大的之一，他在波羅伐多建構的該派教義學術綱要，在其後的著作中反覆出現——這位行腳僧不斷比較，總在比較，把一個傳統的典籍與另一個傳統的相互對照。"
+        ],
+        "ja": [
+          "インダス川下流域の平野——《大唐西域記》がシンドゥと呼ぶこの国は、暑く熱病がはびこり、塩と穀物を扱う屈強な商人たちの土地であった——そこにパルヴァタ、すなわち「丘の国」という名の国があった。その正確な位置は今なお学者たちのあいだで議論されている。史料はムルターン周辺からデルタ地帯に至るまで、いずれの可能性も許している。",
+          "ここで、巡礼の最後の弧にあたる地で、玄奘はつねにそうしてきたように再びふるまった。すなわち、那爛陀では教えられていない学派の地元の師匠たちを見つけ、座して学んだのである。パルヴァタで彼は、三人の長老に従って正量部の根本阿毘達磨とその注釈書を読み、また戒律についてこの学派の解釈を授けてくれる比丘尼にも出会った。",
+          "この選択は重要であった。正量部は古代の学派のなかでも最大級のものであり、パルヴァタで構築したその教義の体系的把握は、彼の後の著作の随所に再登場する。巡礼者は比較しつづけるのである——つねに、一方の伝統の書物を他方の伝統と照らし合わせて。"
+        ]
+      }
+    },
+    {
+      "id": "nalanda_return",
+      "coords": [
+        85.443827777778,
+        25.136797222222
+      ],
+      "year": "641",
+      "when": {
+        "en-GB": "641",
+        "fr-CA": "641",
+        "zh-Hans": "641",
+        "zh-HK": "641",
+        "ja": "641年"
+      },
+      "present": {
+        "en": "Nalanda Mahavihara ruins, near Rajgir, Nalanda District, Bihar, India",
+        "zh": "印度比哈尔邦那烂陀县那烂陀寺遗址",
+        "ja": "インド・ビハール州ナーランダー県ラージギル近郊、那爛陀マハーヴィハーラー遺跡",
+        "iso3": "IND",
+        "fr-CA": "Ruines du Nalanda Mahavihara, près de Rajgir, district de Nalanda, Bihar, Inde",
+        "zh-Hans": "印度比哈尔邦那烂陀县王舍城附近的那烂陀大寺遗址",
+        "zh-HK": "印度比哈爾邦那爛陀縣王舍城附近的那爛陀大寺遺址"
+      },
+      "iso3": "IND",
+      "names": {
+        "en-GB": "Nalanda (return)",
+        "fr-CA": "Nâlandâ (retour)",
+        "zh-Hans": "那烂陀（重返）",
+        "zh-HK": "那爛陀（重返）",
+        "ja": "那爛陀（再訪）"
+      },
+      "narrative": {
+        "en-GB": [
+          "After roughly five years of circling the subcontinent — the Buddhist holy places, the Ganges schools, the far south and the western lands — Xuanzang returned to Nalanda in about 641, no longer the unknown arrival of 636 but a scholar with the curriculum of half of India behind him. Silabhadra, his hundred-year-old teacher, now asked him to teach in his place: the Tibetan and Chinese traditions say he lectured on the Yogacara texts to assemblies of thousands.",
+          "The monastery's internal politics drew him in almost at once. A senior colleague, Simhaprabha (师子光), was teaching the Madhyamaka classics in a way that set them against the Yogacara doctrine of the school's founders, and the two readings had split the students. Xuanzang, uniquely, commanded both literatures; he wrote the Xiezonglun — the 'Treatise on the Harmony of Doctrines', some 1,600 verses — arguing that the two systems criticised different levels of truth and did not contradict each other. Simhaprabha's lecture hall emptied.",
+          "It was the making of his reputation in India. Within the year, king Harsha of Kanauj was writing to Nalanda asking after 'the monk of the Great Tang' — and the invitation that would lead to the great debate assembly at the capital was already on its way."
+        ],
+        "fr-CA": [
+          "Après environ cinq ans à parcourir le sous-continent — les lieux saints du bouddhisme, les écoles du Gange, l'extrême sud et les terres de l'ouest — Xuanzang revint à Nalanda vers 641, n'étant plus l'arrivant inconnu de 636, mais un érudit fort du programme de la moitié de l'Inde. Silabhadra, son maître centenaire, lui demanda alors d'enseigner à sa place : selon les traditions tibétaine et chinoise, il donna des conférences sur les textes du Yogacara devant des assemblées de milliers de personnes.",
+          "La politique interne du monastère l'attira presque aussitôt. Un collègue ancien, Simhaprabha (师子光), enseignait les classiques du Madhyamaka d'une manière qui les opposait à la doctrine Yogacara des fondateurs de l'école, et ces deux lectures avaient divisé les étudiants. Xuanzang, unique en son genre, maîtrisait les deux corpus ; il rédigea le Xiezonglun — le « Traité sur l'harmonie des doctrines », quelque 1 600 versets — soutenant que les deux systèmes critiquaient des niveaux de vérité différents et ne se contredisaient pas. La salle de conférence de Simhaprabha se vida.",
+          "Ce fut le fondement de sa renommée en Inde. Avant la fin de l'année, le roi Harsha de Kanauj écrivait à Nalanda pour s'enquérir du « moine des Grands Tang » — et l'invitation qui mènerait à la grande assemblée de débat dans la capitale était déjà en route."
+        ],
+        "zh-Hans": [
+          "玄奘遍历五印度约五年——佛教圣地、恒河流域诸学派、极南之地与西方诸国——约于641年重返那烂陀。他已不再是636年那个无名初来的学僧，而是半部印度学程加身的学者。年逾百岁的戒贤法师此时命他代己讲学：据藏、汉两系传承所载，他为数千听众讲授瑜伽行诸论。",
+          "寺内内部纷争几乎立刻将他卷入。一位资深同门师子光讲授中观经典时，将其置于与寺门开创者的瑜伽行教义对立之地，两种解读使学僧分裂为两派。玄奘独能兼通两宗典籍，遂撰《会宗论》——约一千六百颂——力陈两宗所破乃是不同层次的真理，彼此并不相违。师子光的讲堂从此门庭冷落。",
+          "此举奠定了他在印度的声誉。不出一年，羯若鞠阇国戒日王便致函那烂陀，垂询'大唐法师'——而通往曲女城无遮大会的那份邀请，也已在路上。"
+        ],
+        "zh-HK": [
+          "玄奘用了大約五年時間走遍印度次大陸——佛教聖地、恒河沿岸的學派、遙遠的南方和西方諸國——約於641年返回那爛陀。他不再是636年初到時的無名之輩，而是一位已修畢半個印度課程的學者。他年過百歲的老師戒賢此時請他代講：據西藏及漢地傳統記載，他向數千人的集會講授瑜伽行派經典。",
+          "寺院的內部鬥爭幾乎立即將他捲入。一位資深同門師子光講授中觀派經典時，把這些經典與該派創立者的瑜伽行派學說對立起來，兩種解讀令學生分成兩派。玄奘獨特地兼通兩派文獻；他撰寫了《會宗論》——即「調和教義之論」，約一千六百頌——論證兩個體系所批判的是不同層次的真理，彼此並不矛盾。師子光的講堂從此門可羅雀。",
+          "這一戰令他在印度聲名鵲起。不出一年，羯若鞠闍國戒日王便致函那爛陀，詢問「大唐高僧」的情況——而引向他赴首都參加那場大型辯經大會的邀請，亦已在路上。"
+        ],
+        "ja": [
+          "仏教の聖地、ガンジス流域の諸学派、遠く南インドや西方の地をほぼ五年かけて巡った玄奘は、641年頃に那爛陀へ戻った。636年の名もなき新来者ではなく、インドの半分にあたる諸学の課程を修めた学者となっての帰還であった。百歳に達した師・戒賢は、今や彼に自らの代わりに講義するよう命じた。チベットと中国の伝承によれば、彼は数千人の聴衆を前に唯識の文献を講じたという。",
+          "僧院の内部抗争は、たちまち彼を巻き込んだ。古参の学者・師子光は、中観派の根本典籍を、僧院の開祖たちの唯識教学と対立するように講じており、両者の解釈の間で学生たちは分裂していた。両方の文献体系に通じていたのは唯一、玄奘であった。彼は『会宗論』——約1600頌からなる「教義の調和」を論じる論書——を著し、二つの体系は異なる真理の次元を批判しているのであって、互いに矛盾するものではないと論じた。師子光の講義室は、やがて空となった。",
+          "これが、インドにおける彼の名声の決定的な出発点となった。その年以内に、カナウジの戒日王ハルシャは那爛陀に宛てて「大唐の僧」を尋ねる書簡を送り、都での大論戦の集会へと導く招請がすでにその途につこうとしていた。"
+        ]
+      }
+    },
+    {
       "id": "kanauj",
       "coords": [
         79.92201944444444,
@@ -1379,6 +2205,242 @@
           "ハルシャは玄奨を発たせるに先立ち、五年ごとに開かれる大無遮大会への参列を強く求めた。その舞台となるプラヤーガはガンガス川とヤムナー川の合流点であり、皇帝はここで五年に一度、僧侶やバラモン、貧しい人々へ国庫の財貨の一切を施すのだった。",
           "それは比類なき壮観であった。伝承によれば参加者は五十万人に及び、テントを連ねた移動都市が広がり、象には黄金の飾りが掛けられた。さらに皇帝は、衣服に至るまで自らの所持品を積み上げて施し、その後、貴族たちから身代金を払って買い戻すという有名な儀式をも催した。七十五日間、この祭典は帝国の富を注ぎ出し続けたのである。",
           "結末は醜いものであった。バラモンによる放火が陣営の一部を焼き、ハルシャの官吏数名が命を落としたのである。それでも大会は幕を閉じ、玄奨は皇帝から授けられた贈物と護衛を伴って、ついに北へと向かった。ヒマラヤを越えて、帰国の途についたのである。"
+        ]
+      }
+    },
+    {
+      "id": "kapisa_return",
+      "coords": [
+        69.7,
+        35
+      ],
+      "year": "643",
+      "when": {
+        "en-GB": "643",
+        "fr-CA": "643",
+        "zh-Hans": "643",
+        "zh-HK": "643",
+        "ja": "643"
+      },
+      "present": {
+        "en": "Bagram, Kapisa Province, Afghanistan",
+        "zh": "阿富汗卡皮萨省巴格拉姆",
+        "ja": "アフガニスタン・カーピシー州バグラーム",
+        "iso3": "AFG",
+        "fr-CA": "Bagram, province de Kapisa, Afghanistan",
+        "zh-Hans": "阿富汗卡皮萨省贝格拉姆",
+        "zh-HK": "阿富汗卡皮薩省，巴格拉姆"
+      },
+      "iso3": "AFG",
+      "names": {
+        "en-GB": "Kapisa (return)",
+        "fr-CA": "Kapisa (retour)",
+        "zh-Hans": "迦毕试（归途）",
+        "zh-HK": "迦畢試（歸途）",
+        "ja": "迦畢試（帰路）"
+      },
+      "narrative": {
+        "en-GB": [
+          "Crossing the northwest in the emperor's care, Xuanzang came again to Kapisa — the summer capital where, a dozen years before, he had wintered as an unknown pilgrim. Now he travelled with Harsha's escort and a fortune in manuscripts: 657 books, loaded on the horses, with images of the Buddha in gold, silver and sandalwood.",
+          "The crossing of the Indus had cost him part of that cargo: the elephant carrying a portion of the scriptures lost its footing in the rapids and the books went down into the river. At Kapisa he halted more than a month and sent ahead to Udyana, the old Buddhist valley of Swat, to have the lost volumes copied and made good — his account shows a librarian's care for the cargo that justified the whole journey.",
+          "The kingdom received him with the feasts and debates he remembered; then, instead of the southern road by which he had come, he turned northeast — up the Panjshir and over the high passes of the Hindu Kush toward the Oxus headwaters and the roof of the world."
+        ],
+        "fr-CA": [
+          "Traversant le nord-ouest sous la protection de l'empereur, Xuanzang arriva de nouveau à Kapisa — la capitale d'été où, une douzaine d'années plus tôt, il avait passé l'hiver en pèlerin inconnu. Désormais, il voyageait avec l'escorte de Harsha et une fortune en manuscrits : 657 livres, chargés sur les chevaux, avec des images du Bouddha en or, en argent et en bois de santal.",
+          "La traversée de l'Indus lui avait coûté une partie de ce chargement : l'éléphant qui portait une portion des écritures perdit pied dans les rapides et les livres disparurent dans le fleuve. À Kapisa, il s'arrêta plus d'un mois et envoya en avant à Udyana, l'ancienne vallée bouddhique du Swat, pour faire copier les volumes perdus et combler les lacunes — son récit témoigne du soin de bibliothécaire qu'il portait à ce chargement qui justifiait tout le voyage.",
+          "Le royaume l'accueillit avec les festins et les débats dont il se souvenait ; puis, au lieu de la route du sud par laquelle il était venu, il partit vers le nord-est — remontant le Panjshir et franchissant les hauts cols de l'Hindu Kush vers les sources de l'Oxus et le toit du monde."
+        ],
+        "zh-Hans": [
+          "玄奘在皇帝的护送下穿越西北,再度来到迦毕试——十多年前,他曾以无名行脚僧的身份在此越冬的夏都。如今他随戒日王的仪仗而行,携带着价值连城的经卷:六百五十七部佛经装在马背上,还有金、银、檀木所造的佛像。",
+          "渡信度河时他损失了部分经卷:驮运经书的施渡大象在急流中失足,经书坠入河中。在迦毕试,他停留月余,派人先行前往乌仗那——即古老的佛教之地斯瓦特山谷——将失落的经本补抄齐全。从他似图书馆管理员般对经卷的珍视,可见此行重任所在。",
+          "该国以他记忆中的盛宴和论辩相迎;随后,他未走来时的南方道路,而是转向东北——溯潘杰希尔而上,翻越兴都库什的高山隘口,前往阿姆河源头与世界屋脊。"
+        ],
+        "zh-HK": [
+          "玄奘在皇帝的護送下穿越西北，再度抵達迦畢試——十多年前，他曾以無名僧侶的身份在此過冬的夏都。如今他帶着戒日的儀仗和一批珍貴的手稿前行：六百五十七部經書，裝載於馬背之上，還有金、銀、檀木製成的佛像。",
+          "渡印度河時，他損失了部分行李：馱載一批經書的大象在急流中失足，經卷墮入河中。他在迦畢試停留了一個多月，並派人先往烏萇——斯瓦特這個古老的佛教山谷——補抄散失的經卷。從他的記述可見，他對這批經典的愛護，如同一位圖書館管理員，而這正是整趟西行之旅的意義所在。",
+          "該國以他記憶中的盛宴和辯經迎接他；然後，他沒有走來時的南方路線，而是轉向東北——溯潘傑希爾河谷而上，翻越興都庫什山的高峻山口，朝阿姆河上游和世界屋脊進發。"
+        ],
+        "ja": [
+          "皇帝の庇護のもと西北インドを進んだ玄奘は、再びカーピシー——十数年前、無名の求法僧として冬を過ごした夏都——に至った。今や彼はハルシャの護衛とともに、大量の写本を携えて旅をしていた。馬に積まれた六百五十七部の経典、金・銀・白檀の仏像である。",
+          "インダス渡河の際、その一部を失っていた。経典の一部を運んでいた象が急流で足を滑らせ、書物は川底に沈んでしまったのだ。カーピシーで一か月余り滞在した玄奘は、古くからの仏教の谷であるスワート地方ウダヤーナに先使を送り、失われた典籍の書き写しを依頼した。その記録には、旅全体を正当化するに足る、司書さながらの蔵書への細やかな心遣いが示されている。",
+          "王国は彼を、記憶にある通りの饗宴と論義でもてなした。やがて彼は、来たときの南回りの道を避けて北東へと向かった——パンジシール川をさかのぼり、ヒンドゥークシュ山脈の高嶺を越えて、オクサス川の源流、世界の屋根へと。"
+        ]
+      }
+    },
+    {
+      "id": "pamir",
+      "coords": [
+        73.5,
+        38.0
+      ],
+      "year": "643",
+      "when": {
+        "en-GB": "643",
+        "fr-CA": "643",
+        "zh-Hans": "643",
+        "zh-HK": "643",
+        "ja": "643年"
+      },
+      "present": {
+        "en": "Great Pamir valley, Gorno-Badakhshan, Tajikistan",
+        "zh": "塔吉克斯坦戈尔诺-巴达赫尚大帕米尔谷地",
+        "ja": "大パミール渓谷、ゴルノ・バダフシャン自治州、タジキスタン",
+        "iso3": "TJK",
+        "fr-CA": "Vallée du Grand Pamir, Gorno-Badakhshan, Tadjikistan",
+        "zh-Hans": "帕米尔大谷地，戈尔诺-巴达赫尚，塔吉克斯坦",
+        "zh-HK": "塔吉克斯坦戈爾諾-巴達赫尚大帕米爾山谷"
+      },
+      "iso3": "TJK",
+      "names": {
+        "en-GB": "Pomilo Valley (Great Pamir)",
+        "fr-CA": "Vallée du Pomilo (Grand Pamir)",
+        "zh-Hans": "波谜罗川（大帕米尔）",
+        "zh-HK": "波謎羅川（大帕米爾）",
+        "ja": "波謎羅川（パミール高原）"
+      },
+      "narrative": {
+        "en-GB": [
+          "From the Oxus headwaters Xuanzang entered the country his Record calls the Pomilo valley — the Great Pamir — the tongue of high ground between the Hindu Kush and the Trans-Alai where the roads of the Silk Road cross at heights above 4,000 metres. East and west, he wrote, the valley runs 'a thousand li and more', flanked by snow mountains that never thaw; the cold is fierce, the wind drives snow even in high summer, and the land grows only knotgrass, no grain of any kind.",
+          "In the middle of the valley he described the Dragon Lake — a sheet of deep water some 200 li around, home in the local belief to dragons and monster fish, and the source from which, his informants told him, both the Oxus flowing west and the great rivers of the Tarim flowing east were fed. The hydrology is roughly true: from the Pamirs the Amu Darya and the Tarim rivers do in fact run.",
+          "Crossing the Pamirs in the emperor's shadow, with the baggage train of 657 manuscripts breathing thin air on the highest passes of the entire journey, the pilgrim rode between the snowfields — by his own count, the most desolate stretch of the road home."
+        ],
+        "fr-CA": [
+          "Depuis les sources de l'Oxus, Xuanzang entra dans le pays que sa Relation nomme la vallée de Pomilo — le Grand Pamir — la langue de haute terre entre l'Hindu Kouch et le Trans-Alaï où les routes de la Route de la soie se croisent à des altitudes dépassant 4 000 mètres. D'est en ouest, écrivit-il, la vallée s'étend sur « mille li et davantage », bordée de montagnes enneigées qui ne fondent jamais ; le froid est terrible, le vent pousse la neige même au plein été, et la terre ne produit que du chiendent, aucun grain d'aucune sorte.",
+          "Au milieu de la vallée, il décrivit le Lac du Dragon — une étendue d'eau profonde d'environ 200 li de tour, qui abritait, selon la croyance locale, des dragons et des poissons monstrueux, et d'où, lui dirent ses informateurs, étaient alimentés tant l'Oxus coulant vers l'ouest que les grands fleuves du Tarim coulant vers l'est. L'hydrologie est à peu près exacte : c'est bien des Pamirs que coulent l'Amou-Daria et les rivières du Tarim.",
+          "Traversant les Pamirs à l'ombre de l'empereur, avec la caravane de 657 manuscrits respirant l'air raréfié des cols les plus élevés de tout le voyage, le pèlerin chevaucha entre les champs de neige — le tronçon le plus désolé de la route du retour, selon son propre compte."
+        ],
+        "zh-Hans": [
+          "玄奘从阿姆河源头进入其《大唐西域记》中称为波谜罗川的国度——即大帕米尔——这是介于兴都库什山与外阿赖山之间的高地走廊，丝绸之路的诸道在此于海拔四千米以上交汇。他写道，此川东西千余里，两侧雪山终年不化；其地苦寒，即使在盛夏也风飘飞雪，土地上只生细草，五谷皆不生长。",
+          "在谷地中央，他记述了大龙池——一泓周约二百里的深水，当地传说中是龙及巨鱼栖居之所；据当地人所言，西流之阿姆河与东流之塔里木诸大河皆源于此。这一水文记述大体属实：阿姆河与塔里木河确实发源于帕米尔。",
+          "在皇帝荫庇之下翻越帕米尔时，这位求法僧驮着六百五十七部经卷，在全程最高的山口上呼吸着稀薄的空气，行于雪原之间——据他自己的记述，这是归途中最荒凉的一段路。"
+        ],
+        "zh-HK": [
+          "玄奘從阿姆河源頭進入了其《大唐西域記》所稱的波謎羅川——即大帕米爾——這片高地位於興都庫什山與外阿賴山之間,絲綢之路的各條道路在此海拔四千米以上的高度交匯。他寫道,山谷東西走向「千餘里」,兩旁是終年不化的雪山;嚴寒刺骨,即使在盛夏也風雪交加,地上只長犛草,不生任何穀物。",
+          "在山谷中央,他描述了大龍池——一片周長約二百里的深水湖泊,當地人相信湖中住有龍和巨魚;據他的報導人告知,西流的阿姆河與東流注入塔里木盆地的各大河流,皆源出於此。這個水文說法大致屬實:阿姆河與塔里木河的確發源於帕米爾。",
+          "在皇帝的庇蔭下翻越帕米爾之際,這位行腳僧帶着六百五十七部佛典的行李隊,在整個旅程中最高、空氣最稀薄的山口上行,穿行於雪原之間——據他自己估量,這是歸途中最荒涼的一段路。"
+        ],
+        "ja": [
+          "オクサス川の源流から玄奘は、その『大唐西域記』が波謎羅川の国と呼ぶ土地――大パミール――に入った。ヒンドゥークシュ山脈と外アライ山脈の間に突き出た高地の舌で、シルクロードの諸街道が標高4,000メートルを超える地点で交差する場所である。渓谷は東西に「千里余り」続き、両側には決して解けることのない雪山が連なり、寒さは厳しく、真夏でさえ風が雪を吹きつけ、土地に育つのはスゲの類のみで、穀物は一切実らない、と彼は書いている。",
+          "渓谷の中央に彼は龍池を描写した――周囲約200里の深い水をたたえた湖で、現地の信仰では龍と巨大な魚の棲みかであり、西流するオクサス川も東流するタリムの大河たちも、この湖から水源を得ていると情報提供者は彼に語った。水文学としてはおおよそ正しい。パミールからアムダリヤ川とタリム川の諸河は、実際に流れ出しているのだ。",
+          "皇帝の威光を背にパミールを越えるとき、657部の経典を載せた輸送隊とともに、巡礼者は旅全体で最も高い峠の薄い空気の中を進み、雪原の間を馬で進んだ――彼みずからが数えたところによれば、帰路で最も荒涼とした一帯であった。"
+        ]
+      }
+    },
+    {
+      "id": "tashkurgan",
+      "coords": [
+        75.228611111111,
+        37.770555555556
+      ],
+      "year": "643",
+      "when": {
+        "en-GB": "643",
+        "fr-CA": "643",
+        "zh-Hans": "643",
+        "zh-HK": "643",
+        "ja": "643"
+      },
+      "present": {
+        "en": "Tashkurgan, Taxkorgan Tajik Autonomous County, Xinjiang, China",
+        "zh": "中国新疆塔什库尔干塔吉克自治县",
+        "ja": "中国・新疆ウイグル自治区タシュクルガン・タジク自治県",
+        "iso3": "CHN",
+        "fr-CA": "Tashkurgan, comté autonome tajik de Taxkorgan, Xinjiang, Chine",
+        "zh-Hans": "中国新疆塔什库尔干塔吉克自治县塔什库尔干",
+        "zh-HK": "中國新疆塔什庫爾干塔吉克自治縣"
+      },
+      "iso3": "CHN",
+      "names": {
+        "en-GB": "Tashkurgan (Kiepantuo)",
+        "fr-CA": "Tashkurgan (Kiepantuo)",
+        "zh-Hans": "朅盘陀（塔什库尔干）",
+        "zh-HK": "朅盤陀（塔什庫爾干）",
+        "ja": "朅盤陀（タシュクルガン）"
+      },
+      "narrative": {
+        "en-GB": [
+          "Down from the Pamirs the road reached Kiepantuo — Tashkurgan, the stone town whose ruined walls still stand on their rock above the modern road. In the 640s it was a modest kingdom of passes and pastures, and the first Chinese-administered country on the pilgrim's way home.",
+          "Its ruling house claimed the strangest ancestry on the whole Silk Road, and Xuanzang recorded the legend: a Chinese princess, travelling to be married in the west, was set down on an inaccessible rock in these mountains when war closed the road; in time she bore a child, fathered — her maidens insisted — by the sun god himself, who descended daily between the peaks. The child became the first king of Kiepantuo; because his mother was Chinese and his father divine, the line called itself 'of Han and the Sun'. The palace rock, 'with a palace hall on its summit', was shown to him.",
+          "He was now back under the notice of Chinese frontier officials — and on the last high stretch of road before the Tarim basin: east and down through Wusha toward Kashgar."
+        ],
+        "fr-CA": [
+          "Redescendant des Pamirs, la route atteignait Kiepantuo — Tashkurgan, la ville de pierre dont les murailles en ruine se dressent encore sur leur rocher au-dessus de la route moderne. Dans les années 640, c'était un modeste royaume de cols et de pâturages, et le premier pays administré par la Chine sur le chemin du retour du pèlerin.",
+          "Sa maison régnante revendiquait la plus étrange ascendance de toute la Route de la soie, et Xuanzang a consigné la légende : une princesse chinoise, en route pour être mariée en Occident, fut déposée sur un rocher inaccessible dans ces montagnes lorsque la guerre ferma la route ; avec le temps, elle mit au monde un enfant, conçu — insistaient ses demoiselles d'honneur — par le dieu du soleil lui-même, qui descendait chaque jour entre les sommets. L'enfant devint le premier roi de Kiepantuo ; comme sa mère était chinoise et son père divin, la lignée se nomma « des Han et du Soleil ». Le rocher du palais, « avec une salle de palais à son sommet », lui fut montré.",
+          "Il était maintenant de nouveau sous la surveillance des fonctionnaires des frontières chinoises — et sur le dernier tronçon de haute route avant le bassin du Tarim : vers l'est et vers le bas, à travers Wusha, en direction de Kashgar."
+        ],
+        "zh-Hans": [
+          "顺帕米尔而下，道路抵达朅盘陀——即塔什库尔干，这座石城的残垣至今仍矗立在今公路上方的山岩之上。七世纪四十年代，它只是一个由山口与牧场构成的小国，却是这位取经者归途上第一个由中原管辖的地方。",
+          "其王室的世系在整个丝绸之路上最为奇特，玄奘记载了这个传说：一位远嫁西方的汉家公主，因战乱阻路而被安置在此群山之中一块无法攀越的巨岩上；日久之后，她诞下一子——侍女们坚称——乃日神之子，日神每日降落于两峰之间。此子遂为朅盘陀的开国之君；因其母为汉人、其父为天神，这一王族遂自称'汉日天种'。人们向他指点了王宫所在的那块巨岩，'其上筑有宫室'。",
+          "他此时已重新处于中原边吏的管辖之下——这是进入塔里木盆地之前最后一段高山道路：由此向东下行，经乌铩前往疏勒（喀什）。"
+        ],
+        "zh-HK": [
+          "道路從帕米爾高原而下,抵達羯盤陀——即塔什庫爾幹,一座石頭城,其傾頹的城牆至今仍矗立於現代公路上方的山岩之上。公元640年代,它只是一個由山口與牧場構成的小王國,也是這位求法僧歸途上第一個由中原管轄的國家。",
+          "其王族自稱擁有整條絲綢之路上最奇特的血統,玄奘記載了這個傳說:一位中國公主遠嫁西方,途中因戰亂斷路,被安置於此地群山中一座無法攀越的巨岩之上;日久之後,她誕下一子——侍女們堅稱,孩子的父親是太陽神本人,他每日降臨於群峰之間。這孩子成為羯盤陀的開國之王;因其母為漢人、其父為神明,這一王朝自稱為「漢日天種」。當地人向他展示了那座王宮巨岩,「岩頂上建有宮殿」。",
+          "他此時已重新受到中國邊境官員的關注,並正行經塔里木盆地之前最後一段高山道路:向東而下,經烏煞前往喀什。"
+        ],
+        "ja": [
+          "パミールを下ると、道は去曷盤陀——タシュクルガン、石の城に至る。その廃墟の城壁は、今も現代の道路を見下ろす岩の上に立っている。640年代当時、これは嶮岨と牧草地の国なる小さな王国であり、巡礼者の帰路における最初の中国官庁管轄国であった。",
+          "その王家は、シルクロード全体でも最も奇妙な祖先を称しており、玄奘はその伝説を記録している。西方へ嫁ぐため旅していた中国の公主が、戦争で道が閉ざされたため、この山間の到達不能な岩峰に置き去りにされた。やがて彼女は一人の子を宿した。その父は——侍女たちは言い張った——毎日峰々の間から降りてくる太陽神そのものであった。この子が去曷盤陀の初代国王となった。母は漢人、父は神であったため、この王統は自らを「漢日天種」と称した。頂上に宮殿の堂を備えたその宮殿の岩は、彼に示された。",
+          "彼はここで再び中国の辺境官吏の監視下に入り、タリム盆地へ至る最後の高地の道にさしかかった。東へ、ウシュへと下り、カシュガルを目指す。"
+        ]
+      }
+    },
+    {
+      "id": "wusha",
+      "coords": [
+        75.5,
+        39.3
+      ],
+      "year": "643",
+      "when": {
+        "en-GB": "643",
+        "fr-CA": "643",
+        "zh-Hans": "643",
+        "zh-HK": "643",
+        "ja": "643"
+      },
+      "present": {
+        "en": "Wusha: probably the Opal (Wupaer) area west of Kashgar, Xinjiang, China (identification debated)",
+        "zh": "中国新疆喀什以西乌帕尔一带（乌铩国地望有争议）",
+        "ja": "ウシャ:おそらく中国・新疆ウイグル自治区、カシュガル西方のオパール(烏帕爾)周辺(比定には議論がある)",
+        "iso3": "CHN",
+        "fr-CA": "Wusha : probablement la région d'Opal (Wupaer), à l'ouest de Kashgar, Xinjiang, Chine (identification débattue)",
+        "zh-Hans": "乌铩：大约在今中国新疆喀什以西的乌帕尔一带（具体对应尚有争议）",
+        "zh-HK": "烏鎩：大概位於中國新疆喀什以西的奧依（烏帕爾）一帶（考證仍有爭議）"
+      },
+      "iso3": "CHN",
+      "names": {
+        "en-GB": "Wusha",
+        "fr-CA": "Wusha",
+        "zh-Hans": "乌铩国",
+        "zh-HK": "烏鎩國",
+        "ja": "烏鎩国"
+      },
+      "narrative": {
+        "en-GB": [
+          "Between Tashkurgan and Kashgar the Record lists a small kingdom, Wusha, a land of narrow valleys and terraced fields whose position scholars still debate — most place it near modern Opal, where the mountain road debouches onto the Kashgar plain, though some identify it with Yarkand instead.",
+          "The entry is short — the country supported some ten monasteries and a modest community of monks of the old schools — but it fixes the sequence of the homeward road: from the stone town the caravan descended northeast through Wusha and reached Kashgar, the great junction of the western Tarim.",
+          "For the pilgrim it was the last unfamiliar kingdom of the journey. Beyond Kashgar the road home ran through countries he had passed on the way out — and, at its end, through the China he had left as a fugitive sixteen years before."
+        ],
+        "fr-CA": [
+          "Entre Tashkurgan et Kashgar, la Chronique mentionne un petit royaume, Wusha, une terre de vallées étroites et de champs en terrasses dont la position fait toujours l'objet de débats chez les chercheurs — la plupart la situent près de l'actuelle Opal, où la route de montagne débouche sur la plaine de Kashgar, tandis que d'autres l'identifient plutôt à Yarkand.",
+          "L'entrée est brève — le pays comptait une dizaine de monastères et une modeste communauté de moines des anciennes écoles — mais elle fixe la séquence de la route du retour : depuis la ville de pierre, la caravane descendit vers le nord-est à travers Wusha et atteignit Kashgar, le grand carrefour de l'ouest du Tarim.",
+          "Pour le pèlerin, c'était le dernier royaume inconnu du voyage. Au-delà de Kashgar, la route du retour passait par des pays qu'il avait traversés à l'aller — et, à son terme, par la Chine qu'il avait quittée comme fugitif seize ans plus tôt."
+        ],
+        "zh-Hans": [
+          "《大唐西域记》在揭盘陀与疏勒之间记载了一个小王国——乌铩，此地峡谷狭仄，田亩层层叠叠，其确切位置至今仍为学者所争论——多数人认为在今阿图什以西的乌帕尔一带，即山路下临喀什平原之处，但也有人认为应等同于莎车。",
+          "这段记载很简短——该国约有伽蓝十所，僧徒不多，属旧部派——但它确定了归途路线的顺序：商队自石头城东北行，经乌铩而至疏勒，即塔里木西部的大都会。",
+          "对这位求法僧而言，这是旅途中最后一个陌生的国度。过了疏勒，归途所经皆是他来时走过的国度——而终点，则是他十六年前仓皇出走的故乡中国。"
+        ],
+        "zh-HK": [
+          "在塔什庫爾幹與喀什之間，《記》中列有一個小國烏鎩，一個狹谷與梯田之地，其位置至今仍有學者爭論——多數認為位於今奧依附近，即山路出口直抵喀什平原之處，但也有人認為它即莎車。",
+          "條目簡短——該國有寺十餘所，舊部僧眾不多——但確定了歸途路線的次序：商旅自石頭城東北下行，經烏鎩而抵喀什，即塔里木西部的大樞紐。",
+          "對這位取經僧而言，這是旅程中最後一個陌生的國度。過了喀什，歸途所經都是他來時走過的國家——而在路的盡頭，便是他十六年前逃亡離開的中土。"
+        ],
+        "ja": [
+          "タシュクルガンとカシュガルの間に、『記録』はウシャ(懦薩)という小さな王国を列挙している。狭い谷と段々畑の土地であり、その位置は今なお学者の間で議論されている — 多くは、山道がカシュガルの平原に開ける、現在のオパール(吾瓦)付近に比定するが、一部はヤルカンドと同一視する。",
+          "記載は短い — この国には十余の僧院と、旧諸派の質素な僧団があった — だが、帰路の道筋を確定するものとなっている。石の町から隊商は北東へ下りウシャを経て、西タリムの大十字路であるカシュガルに達した。",
+          "求法の旅人にとって、これは旅路で最後の未踏の王国であった。カシュガルを過ぎれば、帰りの道は往路に通った国々を抜けて — その果てには、十六年前に逃れるようにして発った中国へと続いていた。"
         ]
       }
     },
@@ -1884,8 +2946,16 @@
       37.23
     ],
     [
-      67.1,
-      36.9
+      68.0,
+      36.85
+    ],
+    [
+      68.856944444444,
+      36.728888888889
+    ],
+    [
+      67.95,
+      36.65
     ],
     [
       66.898888888889,
@@ -1960,16 +3030,24 @@
       34.782777777778
     ],
     [
-      73.3,
-      34.7
+      72.72,
+      34.25
     ],
     [
-      74.3,
-      34.6
+      72.7875,
+      33.745833333333
+    ],
+    [
+      73.5,
+      33.95
+    ],
+    [
+      74.35,
+      34.2
     ],
     [
       75.2,
-      34.55
+      34.4
     ],
     [
       76.0,
@@ -2022,6 +3100,166 @@
     [
       84.2,
       25.3
+    ],
+    [
+      85.443827777778,
+      25.136797222222
+    ],
+    [
+      85.2,
+      24.95
+    ],
+    [
+      84.9925,
+      24.695
+    ],
+    [
+      85.15,
+      24.8
+    ],
+    [
+      85.42,
+      25.03
+    ],
+    [
+      84.7,
+      25.15
+    ],
+    [
+      83.9,
+      25.35
+    ],
+    [
+      83.021388888889,
+      25.381111111111
+    ],
+    [
+      82.5,
+      26.3
+    ],
+    [
+      82.050619,
+      27.517073
+    ],
+    [
+      82.65,
+      27.55
+    ],
+    [
+      83.275829,
+      27.4814
+    ],
+    [
+      83.5,
+      27.1
+    ],
+    [
+      83.888888888889,
+      26.740277777778
+    ],
+    [
+      84.5,
+      26.4
+    ],
+    [
+      85.13,
+      25.99
+    ],
+    [
+      85.75,
+      25.72
+    ],
+    [
+      86.465,
+      25.381
+    ],
+    [
+      86.2,
+      24.3
+    ],
+    [
+      85.6,
+      22.6
+    ],
+    [
+      84.3,
+      20.4
+    ],
+    [
+      82.5,
+      17.3
+    ],
+    [
+      81.0,
+      15.0
+    ],
+    [
+      79.9,
+      13.3
+    ],
+    [
+      79.707777777778,
+      12.830833333333
+    ],
+    [
+      78.7,
+      15.5
+    ],
+    [
+      77.4,
+      18.5
+    ],
+    [
+      76.5,
+      21.0
+    ],
+    [
+      75.777222222222,
+      23.182777777778
+    ],
+    [
+      74.0,
+      23.4
+    ],
+    [
+      71.8,
+      24.2
+    ],
+    [
+      70.0,
+      24.9
+    ],
+    [
+      68.4,
+      25.4
+    ],
+    [
+      69.8,
+      26.4
+    ],
+    [
+      72.5,
+      27.6
+    ],
+    [
+      75.5,
+      27.9
+    ],
+    [
+      78.3,
+      27.2
+    ],
+    [
+      80.5,
+      26.6
+    ],
+    [
+      82.3,
+      26.2
+    ],
+    [
+      84.0,
+      25.5
     ],
     [
       85.443827777778,
@@ -2090,60 +3328,68 @@
       34.25
     ],
     [
-      69.5,
-      34.45
+      69.7,
+      34.25
     ],
     [
-      68.86,
-      35.98
+      68.856944444444,
+      36.278888888889
     ],
     [
       69.9,
-      35.95
+      36.25
     ],
     [
       70.5,
-      36.15
+      36.449999999999996
     ],
     [
       70.8,
-      36.550000000000004
+      36.85
     ],
     [
       71.3,
-      36.6
+      36.9
     ],
     [
       71.7,
-      36.7
-    ],
-    [
-      72.3,
-      36.7
-    ],
-    [
-      73.0,
-      36.900000000000006
-    ],
-    [
-      73.5,
       37.0
     ],
     [
-      74.0,
+      72.3,
       37.1
     ],
     [
-      74.5,
-      37.2
+      72.9,
+      37.6
     ],
     [
-      75.23,
-      37.470000000000006
+      73.5,
+      38.0
     ],
     [
-      75.6,
-      37.7
+      74.0,
+      37.9
+    ],
+    [
+      74.7,
+      37.85
+    ],
+    [
+      75.228611111111,
+      37.770555555556
+    ],
+    [
+      75.45,
+      38.35
+    ],
+    [
+      75.5,
+      38.85
+    ],
+    [
+      75.5,
+      39.3
     ],
     [
       75.983333,
@@ -2151,15 +3397,15 @@
     ],
     [
       77.24,
-      38.120000000000005
+      38.42
     ],
     [
       78.7,
-      37.5
+      37.8
     ],
     [
       79.5,
-      36.75
+      37.05
     ],
     [
       80.0167,
@@ -2331,6 +3577,26 @@
         "zh-Hans": "印度",
         "zh-HK": "印度",
         "ja": "インド"
+      }
+    },
+    {
+      "iso3": "NPL",
+      "names": {
+        "en-GB": "Nepal",
+        "fr-CA": "Népal",
+        "zh-Hans": "尼泊尔",
+        "zh-HK": "尼泊爾",
+        "ja": "ネパール"
+      }
+    },
+    {
+      "iso3": "TJK",
+      "names": {
+        "en-GB": "Tajikistan",
+        "fr-CA": "Tadjikistan",
+        "zh-Hans": "塔吉克斯坦",
+        "zh-HK": "塔吉克",
+        "ja": "タジキスタン"
       }
     }
   ],

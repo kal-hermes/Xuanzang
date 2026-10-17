@@ -59,7 +59,7 @@ def _load_content():
 # QIDs resolved via wbsearchentities + verified by label/description
 # and coordinates (see resolve log in tools/gen_xuanzang.py history).
 STOPS = [
-    # key, Wikidata QID, year label, modern country (iso3)
+    # key, Wikidata QID (None => MANUAL_COORDS), year label, modern country (iso3)
     ("chang_an",     "Q6501000", "629", "CHN"),  # ancient capital, Tang
     ("liangzhou",    "Q249007",  "629", "CHN"),  # modern Wuwei
     ("guazhou",      "Q1201947", "629", "CHN"),  # Guazhou county, Gansu
@@ -72,24 +72,80 @@ STOPS = [
     ("talas",        "Q486545",  "630", "KAZ"),  # Taraz, Kazakhstan
     ("samarkand",    "Q5753",    "630", "UZB"),
     ("iron_gate",    "Q3399252", "630", "UZB"),  # defile in Central Asia
+    ("huoguo",       "Q108155",  "630", "AFG"),  # Kunduz, Tokhara yabghu seat
     ("balkh",        "Q182159",  "630", "AFG"),  # city, not the province
     ("bamyan",       "Q214495",  "630", "AFG"),  # city Bamyan
     ("kapisa",       "Q173816",  "630", "AFG"),  # province (region anchor)
     ("nagarahara",   "Q183303",  "630", "AFG"),  # Jalalabad
     ("gandhara",     "Q1113311", "630", "PAK"),  # Peshawar
     ("swat",         "Q389161",  "630", "PAK"),  # Swat District
+    ("taxila",       "Q156093",  "631", "PAK"),  # archaeological site
     ("kashmir",      "Q43100",   "631", "IND"),  # Kashmir region
     ("punjab",       "Q169132",  "633", "IND"),  # Punjab region (Takka)
     ("nalanda",      "Q216243",  "636", "IND"),  # Nalanda Mahavihara
+    # --- Indian circuit (c. 636-641, per Record + reference route maps) ---
+    ("bodhgaya",     "Q176767",  "636", "IND"),  # Bodh Gaya town
+    ("vulture_peak", "Q863683",  "636", "IND"),  # Rajgir (Griddhakuta)
+    ("sarnath",      "Q324394",  "637", "IND"),  # Deer Park town
+    ("sravasti",     "Q2594448", "637", "IND"),  # archaeological site
+    ("lumbini",      "Q9213",    "637", "NPL"),  # pilgrimage site
+    ("kushinagar",   "Q825673",  "638", "IND"),  # town
+    ("vaishali",     None,       "638", "IND"),  # manual: ancient site coords
+    ("hiranyaparvata", "Q36796", "639", "IND"),  # Munger city
+    ("kanchipuram",  "Q212332",  "640", "IND"),  # city
+    ("ujjain",       "Q200119",  "640", "IND"),  # ancient city
+    ("parvata",      None,       "641", "PAK"),  # manual: lower Indus (debated)
+    ("nalanda_return", "Q216243", "641", "IND"), # second stay
     ("kanauj",       "Q614890",  "641", "IND"),  # Kannauj town
     ("prayaga",      "Q162442",  "643", "IND"),  # Prayagraj
-    # --- return leg ---
+    # --- return leg (643-645) ---
+    ("kapisa_return", "Q173816", "643", "AFG"),  # revisit
+    ("pamir",        None,       "643", "TJK"),  # manual: Great Pamir valley
+    ("tashkurgan",   "Q979927",  "643", "CHN"),  # town
+    ("wusha",        None,       "643", "CHN"),  # manual: near Opal (debated)
     ("kashgar",      "Q170521",  "643", "CHN"),  # Kashgar city
     ("khotan",       "Q914898",  "644", "CHN"),  # Kingdom of Khotan (oasis)
     ("loulan",       "Q1057551", "644", "CHN"),  # Loulan Kingdom (Miran)
     ("dunhuang",     "Q319114",  "644", "CHN"),  # county-level city
     ("chang_an_end", "Q6501000", "645", "CHN"),
 ]
+
+# Stops without a clean Wikidata entity: coords from the historical
+# identification literature (see xuanzang_new_stops.json notes).
+MANUAL_COORDS = {
+    "vaishali": {"coords": [85.13, 25.99], "label": "Vaishali archaeological site"},
+    "parvata":  {"coords": [68.4, 25.4],   "label": "Parvata, lower Indus (identification debated)"},
+    "pamir":    {"coords": [73.5, 38.0],   "label": "Pomilo valley, Great Pamir"},
+    "wusha":    {"coords": [75.5, 39.3],   "label": "Wusha, near Opal west of Kashgar (identification debated)"},
+}
+
+
+def merge_new_stops():
+    """Merge tools/xuanzang_new_stops.json (+ _i18n) into the content
+    tables. Called from main() after _load_content() has populated the
+    runtime tables (WHEN/PRESENT/NARRATIVE_RICH/META_I18N)."""
+    global WHEN, PRESENT, META_I18N
+    new = json.loads((ROOT / "tools/xuanzang_new_stops.json").read_text(encoding="utf-8"))
+    try:
+        i18n = json.loads((ROOT / "tools/xuanzang_new_i18n.json").read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        i18n = {}
+    for k, v in new.items():
+        STOP_NAMES[k] = v["names"]
+        WHEN[k] = v["when"]
+        PRESENT[k] = dict(v["present"])
+        NARRATIVE[k] = v["short"]
+        NARRATIVE_FR[k] = i18n.get(k, {}).get("fr-CA", {}).get("short", v["short"])
+        NARRATIVE_ZH_HANS[k] = i18n.get(k, {}).get("zh-Hans", {}).get("short", v["short"])
+        NARRATIVE_ZH_HANT[k] = i18n.get(k, {}).get("zh-HK", {}).get("short", v["short"])
+        NARRATIVE_JA[k] = i18n.get(k, {}).get("ja", {}).get("short", v["short"])
+        NARRATIVE_RICH.setdefault("en-GB", {})[k] = v["rich"]
+        for loc in ("fr-CA", "zh-Hans", "zh-HK", "ja"):
+            t = i18n.get(k, {}).get(loc)
+            if t:
+                NARRATIVE_RICH.setdefault(loc, {})[k] = t["rich"]
+                META_I18N.setdefault(loc, {}).setdefault("when", {})[k] = t["when"]
+                META_I18N.setdefault(loc, {}).setdefault("present", {})[k] = t["present"]
 
 NARRATIVE = {
     # en-GB blurb — what he saw / what was happening, per stop
@@ -296,7 +352,7 @@ STOP_NAMES = {
 
 def fetch_all_coords(stops):
     """One batched wbgetentities call for all QIDs: {key: coords}."""
-    qids = [qid for _, qid, _, _ in stops]
+    qids = [qid for _, qid, _, _ in stops if qid is not None]
     coords, labels = {}, {}
     for i in range(0, len(qids), 50):
         chunk = qids[i:i + 50]
@@ -335,10 +391,12 @@ def _load_sights_i18n():
 
 def main():
     _load_content()
+    merge_new_stops()
     # country names for the test modes, from the vendored CLDR files
     # (raw cldr-json structure: main.<locale>...territories, keyed alpha-2)
     ISO3_TO_A2 = {"CHN": "CN", "KGZ": "KG", "KAZ": "KZ", "UZB": "UZ",
-                  "AFG": "AF", "PAK": "PK", "IND": "IN"}
+                  "AFG": "AF", "PAK": "PK", "IND": "IN",
+                  "NPL": "NP", "TJK": "TJ"}
     cldr_files = {
         "en-GB": ROOT / "tools/cldr-en.json",
         "fr-CA": ROOT / "tools/cldr-fr-CA.json",
@@ -380,12 +438,16 @@ def main():
     print("Geocoding stops from Wikidata…")
     coords_by_qid, labels_by_qid = fetch_all_coords(STOPS)
     for key, qid, year, iso3 in STOPS:
-        coords = coords_by_qid.get(qid)
-        label = labels_by_qid.get(qid, "")
+        if qid is None:
+            m = MANUAL_COORDS[key]
+            coords, label = m["coords"], m["label"]
+        else:
+            coords = coords_by_qid.get(qid)
+            label = labels_by_qid.get(qid, "")
         if coords is None:
             print(f"  FAIL {key}: no P625 on {qid} ({label})", file=sys.stderr)
             return 1
-        print(f"  {key:14s} {qid} {coords}  «{label}»")
+        print(f"  {key:16s} {qid or 'manual':9s} {coords}  «{label}»")
         stops_meta.append({"key": key, "qid": qid, "coords": coords,
                            "year": year, "iso3": iso3, "label": label})
     # verify identity by eyeball list above; bail if anything is null-island
@@ -407,10 +469,21 @@ def main():
         "prayaga": ["prayaga", "prayagraj", "allahabad"], "kashgar": ["kashgar", "kashi"],
         "khotan": ["khotan", "hotan", "hetian"], "loulan": ["loulan", "miran"],
         "dunhuang": ["dunhuang"], "chang_an_end": ["xi'an", "xian", "chang'an"],
+        # --- new stops (2026-10 completion) ---
+        "huoguo": ["kunduz"], "taxila": ["taxila"], "bodhgaya": ["bodh gaya"],
+        "vulture_peak": ["rajgir"], "sarnath": ["sarnath"],
+        "sravasti": ["shravasti", "sravasti", "sahet"], "lumbini": ["lumbini"],
+        "kushinagar": ["kushinagar"], "vaishali": ["vaishali"],
+        "hiranyaparvata": ["munger"], "kanchipuram": ["kanchipuram"],
+        "ujjain": ["ujjain"], "parvata": ["parvata"], "nalanda_return": ["nalanda"],
+        "kapisa_return": ["kapisa", "begram"], "pamir": ["pamir"],
+        "tashkurgan": ["tashkurgan", "tashkorgan", "taxkorgan"], "wusha": ["wusha"],
     }
     bad = []
     for s in stops_meta:
         toks = EXPECT[s["key"]]
+        if not toks:
+            continue  # manual-coordinate stops carry their own provenance
         if not any(t in s["label"].lower() for t in toks):
             bad.append((s["key"], s["label"]))
     if bad:
@@ -461,11 +534,15 @@ def main():
     #   Hexi corridor (Dunhuang->Chang'an): +0.3 N
     #   Gaochang->Karashahr->Kucha->Aksu piedmont is NOT retraced
     #   (return uses the southern Tarim), so no offset needed there.
-    def _offset_run(pts, dlat, lo, hi):
-        return [[p[0], p[1] + (dlat if lo <= p[0] <= hi else 0.0)] for p in pts]
+    def _offset_run(pts, dlat, lo, hi, maxlat=None):
+        # maxlat bounds the window in latitude (e.g. the NW-India offset
+        # must not reach the Wakhan/Pamir return chain further north)
+        return [[p[0], p[1] + (dlat if lo <= p[0] <= hi
+                               and (maxlat is None or p[1] < maxlat) else 0.0)]
+                for p in pts]
 
     back = _offset_run(ROUTE_BACK_CURVED, -0.35, 79.5, 85.6)   # Ganges plain
-    back = _offset_run(back, -0.30, 68.5, 79.5)                # NW India
+    back = _offset_run(back, -0.30, 68.5, 79.5, maxlat=36.0)   # NW India corridor
     back = _offset_run(back, +0.30, 95.5, 108.9)               # Hexi corridor
     # Kapisa/Kabul area: outbound zigzags E-W (Kapisa->Kabul->E->back W);
     # offset the return further S so it clears the outbound knot.
@@ -485,9 +562,10 @@ def main():
             pts[best] = [target[0], target[1]]
         return pts
     for lon, lat in [
-        (85.443827777778, 25.136797222222),      # nalanda (offset head)
+        (85.443827777778, 25.136797222222),      # nalanda/nalanda_return (offset head)
         (79.92201944444444, 27.031336111111113),  # kanauj
         (81.85, 25.45),                            # prayaga
+        (69.7, 35),                                # kapisa_return (offset windows)
         (75.983333, 39.45),                        # kashgar
         (80.0167, 37.1),                           # khotan
         (108.85833333333333, 34.30833333333333),   # chang_an_end
