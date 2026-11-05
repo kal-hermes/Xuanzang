@@ -1045,7 +1045,11 @@
         const t = projection.translate();
         return Math.hypot(pt[0] - t[0], pt[1] - t[1]) <= projection.scale();
       };
-      svg.addEventListener("mousedown", (ev) => {
+      svg.addEventListener("pointerdown", (ev) => {
+        if (!ev.isPrimary || (ev.pointerType === "mouse" && ev.button !== 0)) return;
+        try {
+          svg.setPointerCapture(ev.pointerId); // keep drag alive outside the svg
+        } catch (e) { /* synthetic/inactive pointer (tests) */ }
         dragging = true; lastX = ev.clientX; lastY = ev.clientY;
         if (isGlobe()) {
           dragRotate = projection.rotate();
@@ -1066,7 +1070,7 @@
           }
         }
       });
-      window.addEventListener("mouseup", () => {
+      const endDrag = () => {
         if (!dragging) return;
         dragging = false;
         // drag ended: one full-precision re-projection replaces the
@@ -1078,9 +1082,12 @@
           if (ql) ql.style.display = "none";
           if (group) group.style.display = "";
         }
-      });
-      svg.addEventListener("mousemove", (ev) => {
-        if (!dragging) return;
+        svg.style.cursor = "";
+      };
+      window.addEventListener("pointerup", endDrag);
+      window.addEventListener("pointercancel", endDrag);
+      svg.addEventListener("pointermove", (ev) => {
+        if (!dragging || !ev.isPrimary) return;
         const rect = svg.getBoundingClientRect();
         const vb = svg.viewBox.baseVal;
         if (isGlobe()) {
@@ -1094,10 +1101,10 @@
           const v1 = versor.cartesian(p);
           const q1 = versor.multiply(versor(dragRotate), versor.delta(dragVersor, v1));
           projection.rotate(versor.rotation(q1));
-          // rAF throttle: mousemove fires far more often than the
+          // rAF throttle: pointermove fires far more often than the
           // display refresh; re-project at most once per frame.
           // Mid-drag frames use the decimated features (quick=true);
-          // mouseup triggers one full-precision re-projection.
+          // drag end triggers one full-precision re-projection.
           if (!this._rafPending) {
             this._rafPending = true;
             requestAnimationFrame(() => {
