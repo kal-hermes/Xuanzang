@@ -1,0 +1,236 @@
+{
+  "huoguo": {
+    "qid": "Q108155", "year": "630", "iso3": "AFG", "manual": null,
+    "names": {"en-GB": "Huoguo (Kunduz)", "fr-CA": "Huoguo (Kunduz)", "zh-Hans": "活国（昆都士）", "zh-HK": "活國（昆都士）", "ja": "活国（クンドゥーズ）"},
+    "when": "630",
+    "expect": ["kunduz"],
+    "present": {"en": "Kunduz, Afghanistan", "zh": "阿富汗昆都士", "ja": "アフガニスタン・クンドゥーズ", "iso3": "AFG"},
+    "short": "Seat of the Tokhara yabghu, where Xuanzang walked into a palace succession crisis: the king who had married Gaochang's princess was dead, and the pilgrim's letters from Qu Wentai were opened amid the intrigue.",
+    "rich": [
+      "Below the Iron Gate the road entered the old Hephthalite lands of Tokharistan. At Huoguo (Kunduz), the seat of the Tokhara yabghu, Xuanzang carried letters from King Qu Wentai of Gaochang: the reigning king had married the Gaochang king's sister, and the two courts were bound by kinship. He arrived to find the king newly dead — poisoned, his Biography says, in a succession plot — and the court in turmoil.",
+      "The dead king's son had seized power and taken his stepmother, the Gaochang princess, as wife. The princess, a devout Buddhist, protected the pilgrim and urged him to leave before the turmoil swallowed him; his own account records the unease of those weeks in a court where the throne had changed hands by poison.",
+      "After about a month Xuanzang moved on southwest with a caravan of merchants to Balkh, the great monastery city of the Oxus plain — delaying only long enough for the political weather of the northern Afghan plains to clear."
+    ]
+  },
+  "taxila": {
+    "qid": "Q156093", "year": "631", "iso3": "PAK", "manual": null,
+    "names": {"en-GB": "Takshashila (Taxila)", "fr-CA": "Takshashila (Taxila)", "zh-Hans": "呾叉始罗（塔克西拉）", "zh-HK": "呾叉始羅（塔克西拉）", "ja": "呾叉始羅（タキシラ）"},
+    "when": "631",
+    "expect": ["taxila"],
+    "present": {"en": "Taxila ruins, Rawalpindi District, Punjab, Pakistan", "zh": "巴基斯坦旁遮普省拉瓦尔品第县塔克西拉遗址", "ja": "パキスタン・パンジャーブ州タキシラ遺跡", "iso3": "PAK"},
+    "short": "Ancient university city of Gandhara, already an old ruin in Xuanzang's day — he found its monasteries deserted and recorded the legends of Ashoka's blinded prince Kunala.",
+    "rich": [
+      "Between Swat and Kashmir lay Takshashila — Taxila, the ancient capital where the Gandharan tradition of learning had flourished a millennium before. In Indian memory it was a university city: the place where, legend said, the Bodhisattva in a former life had given his body to feed a tigress, and where the grammarian Panini had worked.",
+      "By Xuanzang's time the city had already shifted and decayed. He found the land rich but its Buddhism faded: monasteries largely in ruins, few monks. His Record preserves the local legend of prince Kunala — Ashoka's son, blinded here by a jealous stepmother's plot — and the shrine of the Healing Buddha where the eyeless prince's sight was restored.",
+      "From Taxila he turned northeast, crossed the Indus, and climbed through the hills toward the great monastery schools of Kashmir."
+    ]
+  },
+  "bodhgaya": {
+    "qid": "Q176767", "year": "636", "iso3": "IND", "manual": null,
+    "names": {"en-GB": "Bodh Gaya", "fr-CA": "Bodh Gaya", "zh-Hans": "菩提伽耶", "zh-HK": "菩提伽耶", "ja": "菩提伽耶（ブッダガヤ）"},
+    "when": "c. 636",
+    "expect": ["bodh gaya"],
+    "present": {"en": "Bodh Gaya, Gaya District, Bihar, India", "zh": "印度比哈尔邦伽耶县菩提伽耶", "ja": "インド・ビハール州ブッダガヤ", "iso3": "IND"},
+    "short": "The Bodhi tree and the Diamond Seat — where the Buddha attained enlightenment. Xuanzang describes the tree, the great temple and the pilgrims of many nations circling the shrine.",
+    "rich": [
+      "Soon after settling at Nalanda, Xuanzang made the pilgrimage every Buddhist of the age dreamed of: to the Bodhi tree at Bodh Gaya, where the prince Siddhartha had sat in meditation and attained enlightenment. His Record describes the tree — a pippala replanted across the centuries whenever it died — and the Diamond Seat beneath it, which the faithful believed had stood at the centre of the universe since the beginning of the age.",
+      "Beside the tree stood the great Mahabodhi temple, some 50 metres tall, built of brick and faced with plaster, its walls hung with jewelled niches — the building essentially as pilgrims still see it today. Xuanzang's description is the oldest detailed one that survives and was used by modern restorers to reconstruct the temple in the 19th century.",
+      "He saw devotees from many lands circling the shrine, and silk banners hung by pilgrims from China and elsewhere. The scenes he recorded — the offerings at the tree, the bathing pond, the week-long meditation stations of the Buddha — made his chapter on Bodh Gaya the anchor of Buddhist pilgrimage literature for centuries."
+    ]
+  },
+  "vulture_peak": {
+    "qid": "Q863683", "year": "636", "iso3": "IND", "manual": null,
+    "names": {"en-GB": "Vulture Peak (Rajgir)", "fr-CA": "Pic du Vautour (Rajgir)", "zh-Hans": "鹫峰（王舍城）", "zh-HK": "鷲峰（王舍城）", "ja": "霊鷲山（王舎城）"},
+    "when": "c. 636",
+    "expect": ["rajgir"],
+    "present": {"en": "Griddhakuta (Vulture Peak), Rajgir, Nalanda District, Bihar, India", "zh": "印度比哈尔邦那烂陀县王舍城鹫峰", "ja": "インド・ビハール州ラージギル霊鷲山", "iso3": "IND"},
+    "short": "The hill above Rajagriha where the Buddha preached the Lotus Sutra. Here the Biographer places one of the journey's most famous scenes: the pilgrim weeping that he had been born too late.",
+    "rich": [
+      "North of Bodh Gaya the ground rises toward Rajagriha, the old capital of Magadha, ringed by five hills. On the eastern height stands Griddhakuta — the Vulture Peak, named for the rock shaped like a bird of prey — where the Buddha had preached the Lotus Sutra and so much of the Mahayana canon.",
+      "The Biography preserves one of the most famous scenes of the whole journey here. Climbing the peak in the company of an old monk, Xuanzang came upon the terrace where the Buddha had sat in the days when king Bimbisara himself had climbed with offerings. The old monk told him the stories of those days, and Xuanzang — realising he had been born a thousand years too late to hear the voice himself — leaned against a wall and wept, unable to speak.",
+      "In the valley below lay the Bamboo Grove monastery, the first gift to the order, and the jail where king Ajatashatru had imprisoned his father. Xuanzang recorded them all: a landscape where, as he wrote, every cliff and spring kept a memory of the Buddha."
+    ]
+  },
+  "sarnath": {
+    "qid": "Q324394", "year": "637", "iso3": "IND", "manual": null,
+    "names": {"en-GB": "Sarnath (Deer Park)", "fr-CA": "Sarnath (parc aux cerfs)", "zh-Hans": "鹿野苑（萨拉纳特）", "zh-HK": "鹿野苑（薩拉納特）", "ja": "鹿野苑（サールナート）"},
+    "when": "c. 637",
+    "expect": ["sarnath"],
+    "present": {"en": "Sarnath, near Varanasi, Uttar Pradesh, India", "zh": "印度北方邦瓦拉纳西近郊鹿野苑", "ja": "インド・ウッタル・プラデーシュ州サールナート", "iso3": "IND"},
+    "short": "The Deer Park where the Buddha preached his first sermon. Xuanzang found a flourishing monastery community of some 1,500 monks and the great Ashokan pillar, unbroken in his day.",
+    "rich": [
+      "West of Rajgir, in the deer park of Sarnath outside Varanasi, the Buddha had set the wheel of the law in motion with his first sermon. Xuanzang found the place still flourishing: a monastery of some 1,500 monks of the Sammatiya school, handsome pools and gardens, and stupas marking each station of the first sermon — where the sick monk was nursed, where the first disciple was converted.",
+      "He saw the great Ashoka pillar, its lion capital entire and 'lustrous as jade', and a sandalwood image of the wheel of the law. Centuries later, when the pillar lay broken and the site forgotten, his Record guided the archaeologists who dug Sarnath out of the earth in the 1830s — the lion capital he had admired is now the emblem of the Indian state.",
+      "His description of the surrounding country — Varanasi with its tens of temples and the Ganges ghats thronged with worshippers — remains one of the chief sources for the city in the early Middle Ages."
+    ]
+  },
+  "sravasti": {
+    "qid": "Q2594448", "year": "637", "iso3": "IND", "manual": null,
+    "names": {"en-GB": "Sravasti", "fr-CA": "Sravasti", "zh-Hans": "室罗伐悉底（舍卫城）", "zh-HK": "室羅伐悉底（舍衛城）", "ja": "舎衛城（シュラーヴァスティ）"},
+    "when": "c. 637",
+    "expect": ["shravasti", "sravasti", "sahet"],
+    "present": {"en": "Sahet-Mahet ruins, Shravasti District, Uttar Pradesh, India", "zh": "印度北方邦什拉瓦斯蒂县舍卫城遗址", "ja": "インド・ウッタル・プラデーシュ州シュラーヴァスティ遺跡", "iso3": "IND"},
+    "short": "The city of the Jetavana monastery, where the Buddha passed twenty-five rainy seasons. In Xuanzang's day its great monasteries stood half-ruined among the ruins of a faded capital.",
+    "rich": [
+      "Northwest of Sarnath lay Sravasti, the capital where the rich merchant Anathapindika had bought the prince's grove covered with gold coins and given it to the Buddha — the Jetavana monastery where, tradition says, the Buddha spent twenty-five rainy seasons and preached many of the best-known sutras.",
+      "Xuanzang wandered the ruins in the company of a monk who showed him each site: the hall where the Buddha had slept, the terrace where he had taught, the well and the walk, the shrine of the guardian spirit Angulimala, the murderer-turned-monk. The city itself had shrunk to a fraction of its old size; 'of the old foundations', he wrote, only a portion was inhabited.",
+      "His careful record of Jetavana's buildings became the itinerary for every later pilgrim — and, thirteen centuries on, for the excavators who identified the Sahet-Mahet mounds as Sravasti largely by matching their spades against his text."
+    ]
+  },
+  "lumbini": {
+    "qid": "Q9213", "year": "637", "iso3": "NPL", "manual": null,
+    "names": {"en-GB": "Lumbini", "fr-CA": "Lumbini", "zh-Hans": "蓝毗尼", "zh-HK": "藍毗尼", "ja": "ルンビニー"},
+    "when": "c. 637",
+    "expect": ["lumbini"],
+    "present": {"en": "Lumbini, Rupandehi District, Nepal", "zh": "尼泊尔蓝毗尼", "ja": "ネパール・ルンビニー", "iso3": "NPL"},
+    "short": "The Buddha's birthplace in Nepal: the sacred pool, the sala tree, and the Ashokan pillar — broken, as Xuanzang saw it — marking where the Buddha was born.",
+    "rich": [
+      "From Kapilavastu's ruins Xuanzang rode to Lumbini, the garden where Queen Maya had given birth to the Buddha holding the branch of a sala tree. He describes the pool in which the newborn was bathed — 'the water clear as a mirror' — and the tree then standing beside it, worshipped by pilgrims.",
+      "Beside the pool he saw the stone pillar Ashoka had erected on his pilgrimage three centuries after the Buddha's death, carved with a horse at its capital: Xuanzang recorded that lightning had split it and that it stood broken in a dragon's shrine. That broken pillar, rediscovered in 1896, carries an inscription naming Lumbini as the Buddha's birthplace — and its identification rested squarely on Xuanzang's directions.",
+      "He noted the extravagance of the pilgrims' offerings and the decay of the surrounding country: the Sakya homeland had been destroyed centuries before, and only monks and devotees kept the garden."
+    ]
+  },
+  "kushinagar": {
+    "qid": "Q825673", "year": "638", "iso3": "IND", "manual": null,
+    "names": {"en-GB": "Kushinagar", "fr-CA": "Kushinagar", "zh-Hans": "拘尸那揭罗", "zh-HK": "拘尸那揭羅", "ja": "拘尸那揭羅（クシナガラ）"},
+    "when": "c. 638",
+    "expect": ["kushinagar"],
+    "present": {"en": "Kushinagar, Uttar Pradesh, India", "zh": "印度北方邦拘尸那揭罗", "ja": "インド・ウッタル・プラデーシュ州クシナガラ", "iso3": "IND"},
+    "short": "Where the Buddha entered final nirvana between two sala trees. Here again the Biographer describes the pilgrim overcome — 'my eyes filled with tears' at the spot.",
+    "rich": [
+      "East of Lumbini, in a thin tract of forest, lay Kushinagar — the obscure little town where the Buddha had lain down between two sala trees and passed into final nirvana. Xuanzang found it as the scriptures had left it: walls in ruins, brick foundations overgrown, a sparse population — and a few monks keeping the shrines.",
+      "He identified the brick chamber of the parinirvana, the image of the Buddha lying on his right side, and the great stupa raised over the relics, as well as the site where, seven days after the death, the coffin was cremated. The Biography again records his emotion: standing where the Teacher had died, with no master left in the world, he 'grieved that he had been born too late' and his eyes filled with tears.",
+      "In the 19th century the sites he described were dug out of the mounds at Kasia; his Record, as so often elsewhere, had held the key."
+    ]
+  },
+  "vaishali": {
+    "qid": null, "year": "638", "iso3": "IND", "manual": {"coords": [85.13, 25.99], "label": "Vaishali archaeological site (manual)"},
+    "names": {"en-GB": "Vaishali", "fr-CA": "Vaishali", "zh-Hans": "吠舍厘（毗舍离）", "zh-HK": "吠舍釐（毘舍離）", "ja": "吠舎釐（ヴァイシャーリー）"},
+    "when": "c. 638",
+    "expect": [],
+    "present": {"en": "Vaishali archaeological site, Bihar, India", "zh": "印度比哈尔邦吠舍厘遗址", "ja": "インド・ビハール州ヴァイシャーリー遺跡", "iso3": "IND"},
+    "short": "Capital of the Licchavi republic, where the monkey offered the Buddha honey and where his final departure was announced. Xuanzang describes the relic stupa and the quarter still occupied by monks.",
+    "rich": [
+      "South of the Ganges lay Vaishali, the old capital of the Licchavis — in the Buddha's day a great republic of oligarchs, in Xuanzang's a scatter of ruins with a thousand families and a few dozen monks of the Sammatiya school living among them.",
+      "He was shown the hundred-year-old sites of the Vajra council, the monkey's pool where a monkey had offered the Buddha honey, and the stupa over the share of the Buddha's relics that the Licchavis had received — a great mound that archaeologists later opened to find a soapstone casket exactly as he described.",
+      "It was also at Vaishali, in the tradition he recorded, that the Buddha had announced his approaching death and made his last long retreat; and here, too, stood the shrine of Amrapali, the courtesan who had given her mango grove to the order. The pilgrim's chapter on the city stitches together the memories of a political world — elected assemblies, debate halls — that had no counterpart anywhere else on his route."
+    ]
+  },
+  "hiranyaparvata": {
+    "qid": "Q36796", "year": "639", "iso3": "IND", "manual": null,
+    "names": {"en-GB": "Hiranyaparvata (Munger)", "fr-CA": "Hiranyaparvata (Munger)", "zh-Hans": "伊烂拏钵伐多（蒙格尔）", "zh-HK": "伊爛拏缽伐多（蒙格爾）", "ja": "伊爛拏鉢伐多（ムンガー）"},
+    "when": "639",
+    "expect": ["munger"],
+    "present": {"en": "Munger, Bihar, India", "zh": "印度比哈尔邦蒙格尔", "ja": "インド・ビハール州ムンガー", "iso3": "IND"},
+    "short": "A Ganges riverine kingdom east of Magadha, where Xuanzang stayed the better part of a year studying Abhidharma with two elders of the old schools.",
+    "rich": [
+      "Following the Ganges east from Vaishali into the country of Hiranyaparvata ('the golden mount'), Xuanzang paused the longest study-stop of his Indian circuit. The kingdom's river capital stood near modern Munger; its monasteries, he recorded, numbered some ten, with perhaps four hundred monks.",
+      "Here he attached himself to two elders of the old schools and spent close to a year reading the Abhidharma commentaries — the Vibhasha and the doctrine of the Sammatiya school — filling gaps that the great curriculum of Nalanda, centred on the Yogacara texts, had left open. His habit everywhere was the same: sit at the feet of whoever held the authoritative tradition of a text, whatever the school.",
+      "From the Ganges at Hiranyaparvata he then turned his face south for the longest detour of the journey — three months down the peninsula to the far south, to the lands of which even the traders of the Ganges knew little."
+    ]
+  },
+  "kanchipuram": {
+    "qid": "Q212332", "year": "640", "iso3": "IND", "manual": null,
+    "names": {"en-GB": "Kanchipuram", "fr-CA": "Kanchipuram", "zh-Hans": "建志补罗（甘吉布勒姆）", "zh-HK": "建志補羅（甘吉布勒姆）", "ja": "建志補羅（カーンチプラム）"},
+    "when": "640",
+    "expect": ["kanchipuram"],
+    "present": {"en": "Kanchipuram, Tamil Nadu, India", "zh": "印度泰米尔纳德邦甘吉布勒姆", "ja": "インド・タミル・ナードゥ州カーンチプラム", "iso3": "IND"},
+    "short": "Capital of the Dravida country at the far south — and Xuanzang's intended port for Sri Lanka. Civil war on the island stranded those plans; Sri Lankan monks he met there told him of it.",
+    "rich": [
+      "Three months south of the Ganges valley the road ended at Kanchipuram, the capital of the Dravida kingdom — the Pallava court at the height of its power, a city of temples whose Brahmanism the Record describes with unusual care. This was the farthest point from home on the whole journey: over the peninsula, through the forests and the passes of the Deccan, to the edge of the sea.",
+      "His purpose was Sri Lanka — the island of the Theravada schools with their unrivalled commentaries. At Kanchi the plan died: Sri Lankan monks fleeing the island told him the king had died, the throne was in dispute, and the land was wasted by famine and war. Sailing into that was pointless; whatever Sri Lanka could teach, its exiled monks on the shore could teach instead.",
+      "So he turned back north, by the western road — through Maharashtra and Malwa, the first leg of the long loop home. He would never see the ocean that lay two hours' walk from where he stood."
+    ]
+  },
+  "ujjain": {
+    "qid": "Q200119", "year": "640", "iso3": "IND", "manual": null,
+    "names": {"en-GB": "Ujjain (Avanti)", "fr-CA": "Ujjain (Avanti)", "zh-Hans": "邬阇衍那（乌贾因）", "zh-HK": "鄔闍衍那（烏賈因）", "ja": "鄔闍衍那（ウッジャイン）"},
+    "when": "c. 640",
+    "expect": ["ujjain"],
+    "present": {"en": "Ujjain, Madhya Pradesh, India", "zh": "印度中央邦乌贾因", "ja": "インド・マディヤ・プラデーシュ州ウッジャイン", "iso3": "IND"},
+    "short": "The ancient capital of Avanti on the northbound road from the south — a centre of Hindu learning whose astronomy Xuanzang noted, in a country where Buddhism had grown thin.",
+    "rich": [
+      "On the road north from the Deccan Xuanzang passed through Malwa, one of India's classical heartlands, whose capital region centred on Ujjain — the ancient Avanti of king Ashoka's youth, and in Indian tradition the city where the meridian of the astronomers runs, one of the seven sacred cities.",
+      "His Record noted dozens of monasteries in the country but found Buddhism diminished: the king patronised Brahman learning, and the monasteries of Ujjain itself were few. Yet the country impressed him — prosperous, well-ruled, its people learned in astronomy and mathematics, the fields 'like a chessboard' of irrigation tanks.",
+      "From Malwa he swung northwest, into the lower Indus country, on the last arc of the Indian circuit before the return to Nalanda — threading regions where Buddhism survived mainly in scattered riverain communities."
+    ]
+  },
+  "parvata": {
+    "qid": null, "year": "641", "iso3": "PAK", "manual": {"coords": [68.4, 25.4], "label": "Parvata, lower Indus (manual; identification debated)"},
+    "names": {"en-GB": "Parvata", "fr-CA": "Parvata", "zh-Hans": "钵伐多国", "zh-HK": "缽伐多國", "ja": "缽伐多国"},
+    "when": "c. 641",
+    "expect": [],
+    "present": {"en": "Lower Indus valley, Sindh, Pakistan (identification debated)", "zh": "巴基斯坦信德省印度河下游（地望有争议）", "ja": "パキスタン・シンド州インダス下流（比定地は諸説あり）", "iso3": "PAK"},
+    "short": "A riverain kingdom of the lower Indus where Xuanzang studied the Sammatiya Abhidharma for some months on the final loop back to Nalanda. Its exact location is still debated.",
+    "rich": [
+      "In the lower Indus plain — the country the Record calls Sindhu, hot, fever-ridden, its people hardy traders of salt and grain — lay Parvata, 'the hill country' by name, its exact location still argued over by scholars: the sources allow anything from the neighbourhood of Multan down to the delta.",
+      "Here, on the last arc of the circuit, Xuanzang again did what he always did: he found the local masters of a school Nalanda did not teach and sat down to study. At Parvata he read the Sammatiya school's root Abhidharma and its commentaries with three elders, and met a nun who taught him the school's reading of the discipline.",
+      "The choice mattered. The Sammatiya was one of the largest of the old schools, and the scholastic map he built of its doctrines at Parvata reappears throughout his later writing — the pilgrim comparing, always comparing, one tradition's books against another's."
+    ]
+  },
+  "nalanda_return": {
+    "qid": "Q216243", "year": "641", "iso3": "IND", "manual": null,
+    "names": {"en-GB": "Nalanda (return)", "fr-CA": "Nâlandâ (retour)", "zh-Hans": "那烂陀（重返）", "zh-HK": "那爛陀（重返）", "ja": "那爛陀（再訪）"},
+    "when": "641",
+    "expect": ["nalanda"],
+    "present": {"en": "Nalanda Mahavihara ruins, near Rajgir, Nalanda District, Bihar, India", "zh": "印度比哈尔邦那烂陀县那烂陀寺遗址", "ja": "インド・ビハール州ナーランダ寺遺跡", "iso3": "IND"},
+    "short": "Back at Nalanda after five years on the road: he was now a senior scholar, and was drawn into the monastery's doctrinal battles — writing the treatise that reconciled its two great schools.",
+    "rich": [
+      "After roughly five years of circling the subcontinent — the Buddhist holy places, the Ganges schools, the far south and the western lands — Xuanzang returned to Nalanda in about 641, no longer the unknown arrival of 636 but a scholar with the curriculum of half of India behind him. Silabhadra, his hundred-year-old teacher, now asked him to teach in his place: the Tibetan and Chinese traditions say he lectured on the Yogacara texts to assemblies of thousands.",
+      "The monastery's internal politics drew him in almost at once. A senior colleague, Simhaprabha (师子光), was teaching the Madhyamaka classics in a way that set them against the Yogacara doctrine of the school's founders, and the two readings had split the students. Xuanzang, uniquely, commanded both literatures; he wrote the Xiezonglun — the 'Treatise on the Harmony of Doctrines', some 1,600 verses — arguing that the two systems criticised different levels of truth and did not contradict each other. Simhaprabha's lecture hall emptied.",
+      "It was the making of his reputation in India. Within the year, king Harsha of Kanauj was writing to Nalanda asking after 'the monk of the Great Tang' — and the invitation that would lead to the great debate assembly at the capital was already on its way."
+    ]
+  },
+  "kapisa_return": {
+    "qid": "Q173816", "year": "643", "iso3": "AFG", "manual": null,
+    "names": {"en-GB": "Kapisa (return)", "fr-CA": "Kapisa (retour)", "zh-Hans": "迦毕试（归途）", "zh-HK": "迦畢試（歸途）", "ja": "迦畢試（帰路）"},
+    "when": "643",
+    "expect": ["kapisa", "begram"],
+    "present": {"en": "Bagram, Kapisa Province, Afghanistan", "zh": "阿富汗卡皮萨省巴格拉姆", "ja": "アフガニスタン・カピサ州バグラーム", "iso3": "AFG"},
+    "short": "Homeward through the old summer capital. Here he halted a month and sent to Udyana for copies of the scriptures lost in the Indus crossing.",
+    "rich": [
+      "Crossing the northwest in the emperor's care, Xuanzang came again to Kapisa — the summer capital where, a dozen years before, he had wintered as an unknown pilgrim. Now he travelled with Harsha's escort and a fortune in manuscripts: 657 books, loaded on the horses, with images of the Buddha in gold, silver and sandalwood.",
+      "The crossing of the Indus had cost him part of that cargo: the elephant carrying a portion of the scriptures lost its footing in the rapids and the books went down into the river. At Kapisa he halted more than a month and sent ahead to Udyana, the old Buddhist valley of Swat, to have the lost volumes copied and made good — his account shows a librarian's care for the cargo that justified the whole journey.",
+      "The kingdom received him with the feasts and debates he remembered; then, instead of the southern road by which he had come, he turned northeast — up the Panjshir and over the high passes of the Hindu Kush toward the Oxus headwaters and the roof of the world."
+    ]
+  },
+  "pamir": {
+    "qid": null, "year": "643", "iso3": "TJK", "manual": {"coords": [73.5, 38.0], "label": "Pomilo valley, Great Pamir (manual)"},
+    "names": {"en-GB": "Pomilo Valley (Great Pamir)", "fr-CA": "Vallée du Pomilo (Grand Pamir)", "zh-Hans": "波谜罗川（大帕米尔）", "zh-HK": "波謎羅川（大帕米爾）", "ja": "波謎羅川（パミール高原）"},
+    "when": "643",
+    "expect": [],
+    "present": {"en": "Great Pamir valley, Gorno-Badakhshan, Tajikistan", "zh": "塔吉克斯坦戈尔诺-巴达赫尚大帕米尔谷地", "ja": "タジキスタン・ゴルノ・バダフシャン大パミール谷地", "iso3": "TJK"},
+    "short": "The high Pamir valley between the snow ranges — Xuanzang's 'Pomilo', where he recorded the sources of the Oxus and the great dragon lake, and crossed the roof of the world at some 4,000 metres.",
+    "rich": [
+      "From the Oxus headwaters Xuanzang entered the country his Record calls the Pomilo valley — the Great Pamir — the tongue of high ground between the Hindu Kush and the Trans-Alai where the roads of the Silk Road cross at heights above 4,000 metres. East and west, he wrote, the valley runs 'a thousand li and more', flanked by snow mountains that never thaw; the cold is fierce, the wind drives snow even in high summer, and the land grows only knotgrass, no grain of any kind.",
+      "In the middle of the valley he described the Dragon Lake — a sheet of deep water some 200 li around, home in the local belief to dragons and monster fish, and the source from which, his informants told him, both the Oxus flowing west and the great rivers of the Tarim flowing east were fed. The hydrology is roughly true: from the Pamirs the Amu Darya and the Tarim rivers do in fact run.",
+      "Crossing the Pamirs in the emperor's shadow, with the baggage train of 657 manuscripts breathing thin air on the highest passes of the entire journey, the pilgrim rode between the snowfields — by his own count, the most desolate stretch of the road home."
+    ]
+  },
+  "tashkurgan": {
+    "qid": "Q979927", "year": "643", "iso3": "CHN", "manual": null,
+    "names": {"en-GB": "Tashkurgan (Kiepantuo)", "fr-CA": "Tashkurgan (Kiepantuo)", "zh-Hans": "朅盘陀（塔什库尔干）", "zh-HK": "朅盤陀（塔什庫爾干）", "ja": "朅盤陀（タシュクルガン）"},
+    "when": "643",
+    "expect": ["tashkurgan", "tashkorgan", "taxkorgan"],
+    "present": {"en": "Tashkurgan, Taxkorgan Tajik Autonomous County, Xinjiang, China", "zh": "中国新疆塔什库尔干塔吉克自治县", "ja": "中国新疆タシュクルガン・タジク自治県", "iso3": "CHN"},
+    "short": "The stone-walled kingdom at the exit of the Pamirs, where Xuanzang recorded the legend of the princess who bore the child of the sun — ancestor of its kings.",
+    "rich": [
+      "Down from the Pamirs the road reached Kiepantuo — Tashkurgan, the stone town whose ruined walls still stand on their rock above the modern road. In the 640s it was a modest kingdom of passes and pastures, and the first Chinese-administered country on the pilgrim's way home.",
+      "Its ruling house claimed the strangest ancestry on the whole Silk Road, and Xuanzang recorded the legend: a Chinese princess, travelling to be married in the west, was set down on an inaccessible rock in these mountains when war closed the road; in time she bore a child, fathered — her maidens insisted — by the sun god himself, who descended daily between the peaks. The child became the first king of Kiepantuo; because his mother was Chinese and his father divine, the line called itself 'of Han and the Sun'. The palace rock, 'with a palace hall on its summit', was shown to him.",
+      "He was now back under the notice of Chinese frontier officials — and on the last high stretch of road before the Tarim basin: east and down through Wusha toward Kashgar."
+    ]
+  },
+  "wusha": {
+    "qid": null, "year": "643", "iso3": "CHN", "manual": {"coords": [75.5, 39.3], "label": "Wusha, near Opal west of Kashgar (manual; identification debated)"},
+    "names": {"en-GB": "Wusha", "fr-CA": "Wusha", "zh-Hans": "乌铩国", "zh-HK": "烏鎩國", "ja": "烏鎩国"},
+    "when": "643",
+    "expect": [],
+    "present": {"en": "Wusha: probably the Opal (Wupaer) area west of Kashgar, Xinjiang, China (identification debated)", "zh": "中国新疆喀什以西乌帕尔一带（乌铩国地望有争议）", "ja": "中国新疆カシュガル西のウパル一帯（烏鎩国の比定地は諸説あり）", "iso3": "CHN"},
+    "short": "A small oasis kingdom on the descent from Tashkurgan toward Kashgar — a brief stop recorded between the stone town and the trading capital of the western Tarim.",
+    "rich": [
+      "Between Tashkurgan and Kashgar the Record lists a small kingdom, Wusha, a land of narrow valleys and terraced fields whose position scholars still debate — most place it near modern Opal, where the mountain road debouches onto the Kashgar plain, though some identify it with Yarkand instead.",
+      "The entry is short — the country supported some ten monasteries and a modest community of monks of the old schools — but it fixes the sequence of the homeward road: from the stone town the caravan descended northeast through Wusha and reached Kashgar, the great junction of the western Tarim.",
+      "For the pilgrim it was the last unfamiliar kingdom of the journey. Beyond Kashgar the road home ran through countries he had passed on the way out — and, at its end, through the China he had left as a fugitive sixteen years before."
+    ]
+  }
+}
