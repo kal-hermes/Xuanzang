@@ -538,6 +538,13 @@
     },
     _animateDraw(el, duration, fromHidden) {
       const len = this._dashLen(el);
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        // reduced motion: skip the spatial draw, land on the end state
+        el.style.transition = "none";
+        el.style.strokeDasharray = "none";
+        el.style.strokeDashoffset = fromHidden ? "0" : String(len);
+        return;
+      }
       el.style.transition = "none";
       el.style.strokeDasharray = String(len);
       el.style.strokeDashoffset = String(fromHidden ? len : 0);
@@ -670,6 +677,17 @@
       // fully hidden and keeps the dash (it IS the hidden state)
       const len = this._dashLen(p);
       p.style.transition = "none";
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        // reduced motion: jump straight to the end state (drawn or hidden)
+        if (mode === "erase") {
+          p.style.strokeDasharray = String(len);
+          p.style.strokeDashoffset = String(len);
+        } else {
+          p.style.strokeDasharray = "none";
+          p.style.strokeDashoffset = "0";
+        }
+        return p;
+      }
       p.style.strokeDasharray = String(len);
       p.style.strokeDashoffset = mode === "erase" ? 0 : len;
       p.getBoundingClientRect(); // commit starting state
@@ -987,9 +1005,10 @@
       // under non-scaling-stroke, so scale by the screen factor.
       const len = this._dashLen(p);
       const GAP = 12;
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       p.style.transition = "none";
       p.style.strokeDasharray = String(len);
-      if (animate) {
+      if (animate && !reduced) {
         p.style.strokeDashoffset = String(len);
         p.getBoundingClientRect(); // force layout
         p.style.transition = "stroke-dashoffset 0.8s ease-out";

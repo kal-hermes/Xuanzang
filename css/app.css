@@ -230,6 +230,16 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
 #map .stop-dot.focused .dot-core {
   animation: stop-pulse 1.2s ease-out infinite;
 }
+
+/* prefers-reduced-motion: stop the infinite attention pulses; the
+ * state they mark stays visible (focused = orange stroke, located =
+ * arrow + target dot) — fewer and gentler, not blind */
+@media (prefers-reduced-motion: reduce) {
+  #map .stop-dot.focused .dot-core,
+  #map .target-dot {
+    animation: none;
+  }
+}
 #map .stop-dot.multi .dot-core { stroke-width: 7px; }
 #map .stop-dot.multi .dot-halo { stroke-width: 9px; }
 #stop-popover {
