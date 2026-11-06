@@ -770,6 +770,25 @@
             if (onClick) onClick(i);
           }
         });
+        // keyboard access: focus + Enter/Space mirrors the click; a
+        // multi-visit dot opens the popover and moves focus into it
+        dot.setAttribute("tabindex", "0");
+        dot.setAttribute("role", "button");
+        const dotName = (s.names && (s.names[window.I18n && window.I18n.locale]
+          || s.names["en-GB"] || Object.values(s.names)[0])) || s.id;
+        dot.setAttribute("aria-label", (i + 1) + ". " + s.year + " · " + dotName);
+        dot.addEventListener("keydown", (ev) => {
+          if (ev.key !== "Enter" && ev.key !== " ") return;
+          ev.preventDefault();
+          ev.stopPropagation();
+          if (group.length === 1) {
+            if (onClick) onClick(i);
+          } else {
+            this._showStopPopover(dot, group.map((g) => stops[g]), group, onClick);
+            const first = document.querySelector("#stop-popover .stop-pop-item");
+            if (first) first.focus();
+          }
+        });
         overlay.appendChild(dot);
       }
     },
@@ -788,6 +807,17 @@
         item.className = "stop-pop-item";
         const nm = (s.names && (s.names[window.I18n && window.I18n.locale] || s.names["en-GB"] || Object.values(s.names)[0])) || s.id;
         item.textContent = (group[j] + 1) + ". " + s.year + " · " + nm;
+        item.tabIndex = 0;
+        item.setAttribute("role", "button");
+        item.addEventListener("keydown", (ev) => {
+          if (ev.key === "Enter" || ev.key === " ") {
+            ev.preventDefault();
+            item.click();
+          } else if (ev.key === "Escape") {
+            this._removeStopPopover();
+            dot.focus();
+          }
+        });
         item.addEventListener("click", (ev) => {
           ev.stopPropagation();
           this._removeStopPopover();

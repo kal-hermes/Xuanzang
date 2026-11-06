@@ -38,6 +38,7 @@
       "wrong_route": "Not quite — watch the map to see the right answer.",
       "sights_answer": "In fact: {fact}",
       "stops": "Stops",
+      "map_aria": "Interactive world map",
       "view": "View",
       "view_explore": "Explore",
       "view_step": "Step through",
@@ -115,6 +116,7 @@
       "reveal_answer": "Révéler la réponse",
       "mode_route": "Devinez l'itinéraire",
       "stops": "Étapes",
+      "map_aria": "Carte du monde interactive",
       "mode_sights": "Devinez les observations",
       "prompt_route": "De {name} ({year}) — quel est le prochain arrêt de {traveler}, et quand ?",
       "prompt_sights": "À {name} ({year}) — qu'a vu ou fait {traveler} là-bas ?",
@@ -197,6 +199,7 @@
       "reveal_answer": "显示答案",
       "mode_route": "猜路线",
       "stops": "途经",
+      "map_aria": "互动世界地图",
       "mode_sights": "猜见闻",
       "prompt_route": "从{name}（{year}年）出发——下一站是哪里，何时到达？",
       "prompt_sights": "在{name}（{year}年）——{traveler}在这里的见闻或活动是什么？",
@@ -279,6 +282,7 @@
       "reveal_answer": "顯示答案",
       "mode_route": "猜路線",
       "stops": "途經",
+      "map_aria": "互動世界地圖",
       "mode_sights": "猜見聞",
       "prompt_route": "從{name}（{year}年）出發——下一站是哪裡，何時到達？",
       "prompt_sights": "在{name}（{year}年）——{traveler}在這裡的見聞或活動是什麼？",
@@ -362,6 +366,7 @@
       "reveal_answer": "答えを表示",
       "mode_route": "順路を当てる",
       "stops": "行程",
+      "map_aria": "インタラクティブな世界地図",
       "mode_sights": "見聞を当てる",
       "prompt_route": "{name}（{year}年）から——次はどこへ、いつ向かった？",
       "prompt_sights": "{name}（{year}年）で——{traveler}はそこで何を見し、何をした？",
@@ -451,6 +456,9 @@
     applyStaticTexts() {
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         el.textContent = this.t(el.getAttribute("data-i18n"));
+      });
+      document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+        el.setAttribute("aria-label", this.t(el.getAttribute("data-i18n-aria")));
       });
     },
   };
