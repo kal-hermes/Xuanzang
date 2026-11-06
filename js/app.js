@@ -496,6 +496,10 @@
     const seg = document.querySelector(`#map path.segment[data-hop="${i}"]`);
     if (!seg) return;
     seg.dataset.hop = i; // already set at creation
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      seg.remove();
+      return;
+    }
     const len = seg.getTotalLength();
     seg.style.strokeDasharray = len;
     seg.style.strokeDashoffset = 0;
