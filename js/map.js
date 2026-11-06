@@ -1088,6 +1088,8 @@
       let dragging = false, lastX = 0, lastY = 0;
       let dragVersor = null;      // cartesian point under cursor at drag start (globe)
       let dragRotate = null;      // projection rotate() at drag start (globe)
+      let dragStart = null;       // screen point at drag start
+      let pendingQuickSwap = false; // flat: swap to quick layer on first move
       // d3's orthographic invert clamps off-disc points to the horizon
       // (finite garbage), so gate on distance from globe centre instead
       const onGlobe = (pt) => {
@@ -1096,10 +1098,14 @@
       };
       svg.addEventListener("pointerdown", (ev) => {
         if (!ev.isPrimary || (ev.pointerType === "mouse" && ev.button !== 0)) return;
-        try {
-          svg.setPointerCapture(ev.pointerId); // keep drag alive outside the svg
-        } catch (e) { /* synthetic/inactive pointer (tests) */ }
+        // NB: no setPointerCapture here. Explicit capture retargets the
+        // following pointerup AND click to the svg, which silently eats
+        // stop-dot clicks. Touch doesn't need it (implicit capture keeps
+        // pointermove flowing, without retargeting click); a mouse drag
+        // that leaves the svg pauses until re-entry, as before.
         dragging = true; lastX = ev.clientX; lastY = ev.clientY;
+        dragStart = [ev.clientX, ev.clientY];
+        pendingQuickSwap = false;
         if (isGlobe()) {
           dragRotate = projection.rotate();
           const pt = this._svgPoint(ev);
@@ -1107,21 +1113,19 @@
             ? versor.cartesian(projection.invert(pt))
             : null;
         } else {
-          // flat projection: swap in the decimated merged path for the
-          // duration of the pan (same trick as globe drag frames) —
-          // panning re-rasterises every frame, and the 25k-point twin
-          // costs a fraction of the 477k-point originals.
-          const ql = svg.querySelector("#countries-quick");
-          if (ql && worldQuick) {
-            ql.setAttribute("d", this._flatQuickD());
-            ql.style.display = "";
-            if (group) group.style.display = "none";
-          }
+          // flat projection: the decimated merged path swaps in on the
+          // FIRST MOVE (not here). Swapping on pointerdown breaks
+          // clicks: the browser targets click at the nearest common
+          // ancestor of the pointerdown and pointerup targets, and
+          // with the real country paths hidden by the swap that
+          // ancestor is always the svg — country clicks never fire.
+          pendingQuickSwap = true;
         }
       });
       const endDrag = () => {
         if (!dragging) return;
         dragging = false;
+        pendingQuickSwap = false;
         // drag ended: one full-precision re-projection replaces the
         // decimated drag frames (globe), or the full-detail country
         // paths return (flat pan)
@@ -1162,6 +1166,22 @@
             });
           }
         } else {
+          // flat pan: first real movement swaps in the decimated merged
+          // path (25k points vs the 477k originals); a click — no
+          // movement — never triggers the swap, so its click event
+          // still targets the real country path
+          if (pendingQuickSwap) {
+            pendingQuickSwap = false;
+            const moved = Math.hypot(ev.clientX - dragStart[0], ev.clientY - dragStart[1]);
+            if (moved > 3) {
+              const ql = svg.querySelector("#countries-quick");
+              if (ql && worldQuick) {
+                ql.setAttribute("d", this._flatQuickD());
+                ql.style.display = "";
+                if (group) group.style.display = "none";
+              }
+            }
+          }
           const scale = vb.width / rect.width;
           this.panBy((lastX - ev.clientX) * scale, (lastY - ev.clientY) * scale);
         }
