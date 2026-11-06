@@ -8,6 +8,19 @@
   --good: #3fbf6f;
   --bad: #e05555;
   --border: #2e3f52;
+  color-scheme: dark;
+}
+
+/* browser surfaces carry the design too: dark native controls and
+ * scrollbars, gold-tinted selection, themed keyboard focus rings */
+::selection { background: rgba(255, 210, 74, 0.35); }
+* { scrollbar-color: #3a5270 transparent; scrollbar-width: thin; }
+
+select:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #ffd24a;
+  outline-offset: 1px;
 }
 
 * { box-sizing: border-box; }
@@ -298,10 +311,11 @@ main { flex: 1; display: flex; min-height: 0; position: relative; }
   padding: 0;
 }
 #country-list li {
-  padding: 3px 6px;
+  padding: 4px 6px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.95em;
+  line-height: 1.35;
 }
 #country-list li:hover {
   background: rgba(255, 210, 74, 0.15);
