@@ -64,6 +64,22 @@ select { max-width: 100%; }
 
 .controls label { min-width: 0; }
 
+/* keyboard focus: gold ring on sidebar entries; white ring drawn on
+ * the stop dot itself (an outline on an SVG <g> renders unreliably) */
+#country-list li:focus-visible {
+  outline: 2px solid #ffd24a;
+  outline-offset: -2px;
+}
+#map .stop-dot:focus-visible .dot-core {
+  stroke: #ffffff;
+  stroke-width: 3.5px;
+}
+#map .stop-dot:focus { outline: none; }
+#stop-popover .stop-pop-item:focus-visible {
+  outline: 2px solid #ffd24a;
+  outline-offset: -2px;
+}
+
 button { cursor: pointer; }
 button:hover { border-color: var(--accent); }
 

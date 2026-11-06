@@ -308,7 +308,15 @@
       li.dataset.iso3 = c.iso3;
       if (state.visited && state.visited.has(c.iso3)) li.classList.add("visited");
       li.textContent = loc(c.names) || c.iso3;
+      li.tabIndex = 0;
+      li.setAttribute("role", "button");
       li.addEventListener("click", () => learnClick(c.iso3, true));
+      li.addEventListener("keydown", (ev) => {
+        if (ev.key === "Enter" || ev.key === " ") {
+          ev.preventDefault();
+          learnClick(c.iso3, true);
+        }
+      });
       ul.appendChild(li);
     }
   }
@@ -355,7 +363,15 @@
       const nm = document.createElement("span");
       nm.textContent = loc(s.names) || s.id;
       li.append(yr, document.createTextNode(" "), nm);
+      li.tabIndex = 0;
+      li.setAttribute("role", "button");
       li.addEventListener("click", () => journeyStopClick(s, i));
+      li.addEventListener("keydown", (ev) => {
+        if (ev.key === "Enter" || ev.key === " ") {
+          ev.preventDefault();
+          journeyStopClick(s, i);
+        }
+      });
       ul.appendChild(li);
     });
     $("#country-list-panel h2").textContent = i18n.t("stops");
