@@ -15,6 +15,7 @@ published memorial route maps, not surveyed tracks.
 import json
 import math
 import os
+import re
 
 S = []  # (id, lon, lat, year, date_str, present_zh, names_zh, [3 paras zh])
 
@@ -727,6 +728,12 @@ REF_LINES = {
     ],
 }
 
+REF_LINES.update({
+    "red1": [[114.19, 26.57], [116.02, 25.9], [115.43, 25.95], [115.5, 25.6], [114.6, 25.3], [113.5, 25.3], [110.8, 25.7], [109.628, 26.3188], [109.14, 26.23], [107.5744, 27.1721], [106.92, 27.7], [105.9995, 28.2757], [105.9309, 28.3681], [105.82, 28.04], [105.4676, 28.0796], [105.0364, 27.853], [106.0361, 28.1417], [106.8985, 27.9649], [106.9, 27.72], [106.5697, 27.6368], [106.6678, 27.5857], [106.3144, 27.7101], [106.3747, 27.8601], [106.0411, 28.1201], [106.5737, 27.2459], [106.9088, 26.5258], [102.3838, 26.2947], [102.25, 26.65], [102.27, 27.9], [102.2583, 28.7423], [102.2825, 29.2728], [102.2294, 29.9041], [102.3, 30.8], [102.38, 31], [102.4922, 31.4841], [102.2944, 31.8677], [102.9772, 32.0937], [103.0529, 32.5172], [103.1021, 32.6363], [103.2288, 33.5851], [103.3192, 33.8726], [103.8967, 34.108], [104.2267, 34.2288], [104.9413, 35.0326], [105.2501, 35.2075], [105.0559, 35.6922], [106.18, 35.67], [107.8536, 36.9903], [108.1946, 36.907], [109.0881, 36.4341], [109.6718, 37.1351], [109.5, 36.6]],
+    "red25": [[114.31309, 31.81505], [114.1, 32.1], [113, 33.25], [113.25, 33.55], [110.1, 33.6], [107.8, 34], [105.72, 34.58], [107.35, 35.33], [109.97, 36.75]],
+    "xianqiandui": [[116.02, 25.9], [116.35, 25.8], [116.75, 25.72], [117.4, 26], [119.3, 26.07], [118.9, 26.2], [119.1, 27.6], [119.1, 28.1], [118.8, 29], [118.5, 29.8], [119.45, 29.8], [117.7, 28.55], [118.2, 30.1], [117.8, 28.9]],
+})
+
 def _leg_points(army):
     """Per-army leg chain. For red2/red4: walk the reference corridor and
     splice our dated stops in chronologically (each stop replaces the
@@ -734,14 +741,6 @@ def _leg_points(army):
     and inherits the reference's sane shaping. Other armies: stop chain
     densified (red1 keeps the v1 as-built corridor)."""
     stops = [s for s in S if s["army"] == army]
-    if army == "red1":
-        points = []
-        for i, s in enumerate(stops):
-            points.append(s["coords"])
-            if i + 1 < len(stops):
-                t = stops[i + 1]
-                points.append(t["coords"])
-        return densify(points)
     ref = REF_LINES.get(army)
     if ref is None:
         return densify([s["coords"] for s in stops])
@@ -772,6 +771,67 @@ def _leg_points(army):
             points.append(p)
     return densify(points)
 
+def load_czm_stops():
+    """changzhengmap-imported stops + their generated i18n content."""
+    import os
+    path = "tools/changzhengmap_stops.json"
+    if not os.path.exists(path):
+        return []
+    raw = json.load(open(path, encoding="utf-8"))
+    ck_path = "tools/scratch/czm_i18n.json"
+    ck = {}
+    if os.path.exists(ck_path):
+        ck = json.load(open(ck_path, encoding="utf-8"))
+    try:
+        from opencc import OpenCC
+        cc = OpenCC("s2hk")
+    except Exception:
+        cc = None
+    out = []
+    for s in raw:
+        c = ck.get(s["id"])
+        if not c:
+            continue  # content not generated yet; gen skips until LLM pass done
+        zh_hk_name = cc.convert(s["name_zh"]) if cc else s["name_zh"]
+        zh_hk_present = cc.convert(s["present_zh"]) if cc else s["present_zh"]
+        out.append({
+            "id": s["id"],
+            "coords": s["coords"],
+            "year": int(re.match(r"(\d{4})", c.get("date_zh_norm") or s["date_zh"] or "1934").group(1)),
+            "when": {
+                "en-GB": c.get("date_en") or s["date_zh"],
+                "fr-CA": (c.get("date_zh_norm") or s["date_zh"]).replace("年", " ").replace("月", "/").replace("日", ""),
+                "zh-Hans": c.get("date_zh_norm") or s["date_zh"],
+                "zh-HK": (cc.convert(c.get("date_zh_norm") or s["date_zh"]) if cc else s["date_zh"]).replace("—", "–"),
+                "ja": (c.get("date_zh_norm") or s["date_zh"]).replace("—", "–"),
+            },
+            "present": {
+                "en-GB": c["present_en"], "fr-CA": c["present_en"],
+                "zh-Hans": s["present_zh"], "zh-HK": zh_hk_present, "ja": c["present_ja"],
+            },
+            "iso3": "CHN",
+            "army": s["army"],
+            "names": {
+                "en-GB": c["name_en"], "fr-CA": c["name_en"],
+                "zh-Hans": s["name_zh"], "zh-HK": zh_hk_name, "ja": c["name_ja"],
+            },
+            "narrative": c["paras"],
+            "sight": c["sight"],
+            "_sort": (int(re.match(r"(\d{4})", c.get("date_zh_norm") or s["date_zh"] or "1934").group(1)),
+                      (lambda m: int(m.group(1)) if m else 12)(re.search(r"年(\d{1,2})月", c.get("date_zh_norm") or s["date_zh"] or "")),
+                      15),
+        })
+    return out
+
+def parse_zh_date(s):
+    m = re.match(r"(\d{4})年", s or "")
+    y = int(m.group(1)) if m else 9999
+    mm = re.search(r"年(\d{1,2})月", s or "")
+    mo = int(mm.group(1)) if mm else 12
+    dd = re.search(r"月(\d{1,2})日", s or "")
+    d = int(dd.group(1)) if dd else 15
+    return (y, mo, d)
+
 def build():
     stops = []
     for s in S:
@@ -791,6 +851,7 @@ def build():
                 "zh-HK": date_hk,
                 "ja": s["date"].replace("—", "–"),
             },
+            "_sort": parse_zh_date(s["date"]),
             "present": {
                 "en-GB": ARMY_EN[sid]["present"] if sid in ARMY_EN else PRESENT_EN[sid],
                 "fr-CA": ARMY_EN[sid]["present"] if sid in ARMY_EN else PRESENT_EN[sid],
@@ -809,6 +870,15 @@ def build():
             },
             "narrative": {"zh-Hans": s["paras"]},
         })
+
+    # merge changzhengmap-imported stops into their armies by date
+    army_order = {a["id"]: i for i, a in enumerate(ARMIES)}
+    imported = load_czm_stops()
+    all_stops = stops + imported
+    all_stops.sort(key=lambda s: (army_order.get(s.get("army"), 9), s["_sort"]))
+    for st in all_stops:
+        st.pop("_sort", None)
+    stops = all_stops
 
     # indicative corridor: densify chains between consecutive stops
     route = _leg_points("red1")
@@ -840,7 +910,9 @@ def build():
                 "en-GB": en, "fr-CA": en, "zh-Hans": zh, "zh-HK": hk, "ja": ja}}
             for (qid, zh, hk, en, ja, yr) in QP
         ],
-        "quizSights": {k: {"zh-Hans": v} for k, v in SIGHTS.items()},
+        "quizSights": {**{k: {"zh-Hans": v} for k, v in SIGHTS.items()},
+                       **{s["id"]: s["sight"] for s in imported if "sight" in s}},
+        "importSource": "Route corridors for all five armies and 73 annotated stops are adapted from the open-source changzhengmap project (github.com/yizhimomo/changzhengmap); stop narratives were expanded and translated with attribution to that project's descriptions and the party-history sources it cites.",
         "corridorNote": {
             "en-GB": "Dots mark documented events with precise coordinates; the connecting lines are indicative corridors reconstructed from published route maps, not surveyed tracks.",
             "fr-CA": "Les points marquent des événements documentés aux coordonnées précises ; les lignes sont des couloirs indicatifs reconstitués à partir de cartes publiées.",
