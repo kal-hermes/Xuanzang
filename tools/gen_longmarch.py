@@ -15,12 +15,107 @@ published memorial route maps, not surveyed tracks.
 import json
 import math
 import os
+import re
 
 S = []  # (id, lon, lat, year, date_str, present_zh, names_zh, [3 paras zh])
 
-def stop(sid, lon, lat, year, date, present, name, paras):
+def stop(sid, lon, lat, year, date, present, name, paras, army="red1"):
     S.append(dict(id=sid, coords=[lon, lat], year=year, date=date,
-                  present=present, name=name, paras=paras))
+                  present=present, name=name, paras=paras, army=army))
+
+# ----- multi-army edition (v2): 4 more Red Army routes -----
+ARMIES = [
+    {"id": "red1", "color": "#ffd24a",
+     "label": {"en-GB": "Central Red Army (1st Front Army)",
+               "fr-CA": "Armée rouge du Centre (1re armée de front)",
+               "zh-Hans": "中央红军（红一方面军）",
+               "zh-HK": "中央紅軍（紅一方面軍）",
+               "ja": "中央紅軍（紅一方面軍）"}},
+    {"id": "red25", "color": "#e05674",
+     "label": {"en-GB": "25th Red Army",
+               "fr-CA": "25e armée rouge",
+               "zh-Hans": "红二十五军",
+               "zh-HK": "紅二十五軍",
+               "ja": "紅二十五軍"}},
+    {"id": "xianqiandui", "color": "#5bc8e8",
+     "label": {"en-GB": "Northbound Anti-Japanese Vanguard",
+               "fr-CA": "Détachement précurseur antijaponais",
+               "zh-Hans": "北上抗日先遣队",
+               "zh-HK": "北上抗日先遣隊",
+               "ja": "北上抗日先遣隊"}},
+    {"id": "red2", "color": "#7ce07c",
+     "label": {"en-GB": "2nd Front Army",
+               "fr-CA": "2e armée de front",
+               "zh-Hans": "红二方面军（红二、六军团）",
+               "zh-HK": "紅二方面軍（紅二、六軍團）",
+               "ja": "紅二方面軍（紅二・六軍団）"}},
+    {"id": "red4", "color": "#c78fe8",
+     "label": {"en-GB": "4th Front Army",
+               "fr-CA": "4e armée de front",
+               "zh-Hans": "红四方面军",
+               "zh-HK": "紅四方面軍",
+               "ja": "紅四方面軍"}},
+]
+
+ARMY_EN = {}   # sid -> {"name": ..., "present": ...}
+ARMY_JA = {}
+
+def astop(sid, lon, lat, year, date, present, name, paras, army,
+          en_name, en_present, ja_name, ja_present):
+    S.append(dict(id=sid, coords=[lon, lat], year=year, date=date,
+                  present=present, name=name, paras=paras, army=army))
+    ARMY_EN[sid] = {"name": en_name, "present": en_present}
+    ARMY_JA[sid] = {"name": ja_name, "present": ja_present}
+
+# ============ 红二十五军 (1934-11 → 1935-09) ============
+astop("hejiachong", 114.35, 31.98, 1934, "1934年11月16日",
+     "河南省罗山县铁铺乡何家冲村", "何家冲",
+     ["红二十五军的前身是大别山的鄂豫皖红军主力。1932年红四方面军西征后，留守部队重建红二十五军，坚持了两年游击战争。",
+      "1934年11月16日，约2980名战士从罗山县何家冲村的大银杏树下出发，高举“中国工农红军北上抗日第二先遣队”的旗帜开始长征。",
+      "军长程子华、政委吴焕先、副军长徐海东。这支平均年龄不到18岁的“童子军”，是四支长征队伍中最先到达陕北的一支。"],
+     "red25", "Hejiachong", "Luoshan County, Henan", "何家沖", "河南省羅山県")
+astop("dushuzhen", 113.03, 33.25, 1934, "1934年11月26日",
+     "河南省方城县独树镇", "独树镇战斗",
+     ["红二十五军穿越桐柏山、跳出国军包围后，在方城县独树镇的七里岗遭到敌军伏击。",
+      "时值雨雪交加，战士们的手冻得拉不开枪栓。政委吴焕先抽出大刀高喊“共产党员跟我来”，率先冲入敌阵，展开白刃战。",
+      "全军血战突围，伤亡300余人。这一仗是红二十五军战略转移中最险恶的生死之战之一。"],
+     "red25", "Battle of Dushuzhen", "Dushu Town, Fangcheng County, Henan", "独樹鎮戦闘", "河南省方城県独樹鎮")
+astop("yujiahe", 110.36, 33.75, 1934, "1934年12月",
+     "陕西省丹凤县庾家河镇", "庾家河战斗",
+     ["1934年12月，红二十五军翻越秦岭进入陕西，在丹凤县庾家河镇与追敌激战。",
+      "战斗中军长程子华双手被重机枪子弹贯穿，副军长徐海东头部中弹，团长以上干部几乎全部负伤。",
+      "虽然胜利打退了追兵，但两位主官从此长期躺在担架上指挥。红二十五军随后在陕南扎下根来，创建鄂豫陕根据地。"],
+     "red25", "Battle of Yujiahe", "Yujiahe Town, Danfeng County, Shaanxi", "庾家河戦闘", "陕西省丹鳳県")
+astop("gepaizhen", 109.44, 33.80, 1935, "1935年2月",
+     "陕西省蓝田县葛牌镇", "葛牌镇",
+     ["1935年2月，红二十五军在蓝田县葛牌镇建立鄂豫陕革命根据地的区苏维埃政权。",
+      "这支队伍在此地打破国民党军三十多个团的第二次“围剿”，缴获大批武器装备，队伍壮大到4000余人。",
+      "今天葛牌镇保留着鄂豫陕苏维埃政府纪念馆，是红二十五军长征史上唯一建立过稳定根据地的见证。"],
+     "red25", "Gepai Town", "Lantian County, Shaanxi", "葛牌鎮", "陝西省藍田県")
+astop("fengyukou", 108.82, 34.02, 1935, "1935年7月15日",
+     "陕西省长安区沣峪口", "沣峪口会议",
+     ["1935年7月，交通员石健民从上海辗转带来中央文件和红一、红四方面军已经会师的消息。",
+      "鄂豫陕省委当晚在沣峪口召开紧急会议，决定全军西进陕甘，“到陕甘苏区会合红二十六军”，配合主力红军北上。",
+      "会议还决定留下部分武装坚持陕南斗争（后来发展为红74师）。红二十五军随即离开经营了半年的根据地，踏上西征之路。"],
+     "red25", "Fengyukou Conference", "Chang'an District, Xi'an, Shaanxi", "灃峪口会議", "陝西省西安市長安区")
+astop("sipocun", 107.30, 35.30, 1935, "1935年8月21日",
+     "甘肃省泾川县王村镇四坡村", "四坡村战斗",
+     ["1935年8月21日，红二十五军在泾川县四坡村冒雨南渡汭河，山洪暴涨把部队分割在两岸。",
+      "敌军第208团千余人趁红军半渡之际突袭。政委吴焕先亲率百余人从侧翼冲上塬顶直插敌后，激战中胸部中弹牺牲，年仅28岁。",
+      "吴焕先是红二十五军的精神领袖。徐海东后来回忆，这位军政委的牺牲是全军上下最悲痛的一天。"],
+     "red25", "Battle of Sipo Village", "Jingchuan County, Gansu", "四坡村戦闘", "甘粛省涇川県")
+astop("baozichuan", 108.10, 36.10, 1935, "1935年9月7日",
+     "甘肃省合水县豹子川", "豹子川",
+     ["1935年9月7日，红二十五军到达合水县豹子川。鄂豫陕省委在此开会：程子华接任政委，徐海东任军长。",
+      "此时全军约3400人，是四支长征队伍中人数减员最少的一支——出发2980人，到达时反而略有增加。",
+      "豹子川会议后，部队沿陕甘边界兼程东进，直奔陕北苏区。"],
+     "red25", "Baozi Valley", "Heshui County, Gansu", "豹子川", "甘粛省合水県")
+astop("yongpingzhen", 110.14, 36.80, 1935, "1935年9月15日",
+     "陕西省延川县永坪镇", "永坪会师",
+     ["1935年9月15日，红二十五军到达延川县永坪镇——四支长征队伍中最先到达陕北的一支，人称“小长征”。",
+      "9月18日，红二十五军与陕北的红二十六军、红二十七军合编为红十五军团，徐海东任军团长。",
+      "两个月后，毛泽东率中央红军到达陕北。毛泽东称赞红二十五军“为革命立了大功”：他们的到来为党中央落户陕北打下了基础。"],
+     "red25", "Yongping Junction", "Yanchuan County, Shaanxi", "永坪会師", "陝西省延川県永坪鎮")
 
 stop("ruijin", 116.033, 25.883, 1934, "1934年10月上旬",
      "江西省瑞金市", "瑞金",
@@ -294,6 +389,182 @@ def en_date(zd):
         return f"{suffix.strip() or 'mid'} {MM[int(mo)]} {y}" if suffix else f"{MM[int(mo)]} {y}"
     return zd
 
+# ============ 北上抗日先遣队 (1934-07 → 1935-01) ============
+astop("ruijin_xqd", 116.033, 25.883, 1934, "1934年7月6日",
+     "江西省瑞金市", "先遣队瑞金出征",
+     ["1934年7月，第五次反“围剿”已近失败。中共中央决定以红七军团约6000人组成“中国工农红军北上抗日先遣队”，向闽浙皖赣边挺进。",
+      "先遣队的任务是宣传抗日主张、牵制国民党军，为中央苏区减轻压力——实际上是为主力转移投出的第一步棋。",
+      "军团长寻淮洲年仅22岁，是红军最年轻的军团长；参谋长粟裕后来成为一代名将。7月6日晚，部队从瑞金出发东征。"],
+     "xianqiandui", "Vanguard sets out from Ruijin", "Ruijin, Jiangxi", "先遣隊、瑞金を出発", "江西省瑞金市")
+astop("yongan_xqd", 117.25, 25.87, 1934, "1934年7月15日",
+     "福建省永安市小陶镇", "永安小陶",
+     ["1934年7月15日，先遣队先头部队与护送的红军第九军团在永安小陶集结会师。",
+      "同日，中华苏维埃共和国中央政府发布《中国工农红军北上抗日宣言》——永安小陶因此成为北上抗日宣言的发布地。",
+      "此后部队经大田、尤溪北上，直逼闽江。红九军团护送先遣队渡过闽江后返回中央苏区，先遣队从此孤军远征。"],
+     "xianqiandui", "Xiaotao, Yong'an", "Yong'an City, Fujian", "永安小陶", "福建省永安市")
+astop("fuzhou_xqd", 119.30, 26.08, 1934, "1934年8月7日",
+     "福建省福州市近郊", "进攻福州",
+     ["1934年8月7日晚，先遣队按中革军委命令对福州发起进攻，猛攻一昼夜未能得手。",
+      "这次攻城不仅没有达成目标，反而暴露了红军的实力，招来敌军重兵追击。",
+      "先遣队被迫转向闽东山区，攻克罗源县城，进入闽东、闽北游击区，沿着闽浙边界的崇山峻岭继续北上。"],
+     "xianqiandui", "Attack on Fuzhou", "Fuzhou, Fujian", "福州攻撃", "福建省福州市")
+astop("zhukou_xqd", 118.95, 27.68, 1934, "1934年9月",
+     "浙江省庆元县竹口镇", "竹口战斗",
+     ["1934年9月，先遣队转战闽浙边界，在庆元县竹口镇设伏，全歼尾追的浙保一个大队。",
+      "竹口战斗是先遣队入浙后的首场胜仗，当地至今留有红军桥、红军纪念亭。",
+      "此后部队进入浙西南、转战皖南。中革军委此时来电要求放慢速度、每天只走二三十里——为了给中央红军的战略转移多争取时间，先遣队刻意放慢了脚步。"],
+     "xianqiandui", "Battle of Zhukou", "Zhukou Town, Qingyuan County, Zhejiang", "竹口戦闘", "浙江省慶元県竹口鎮")
+astop("chongxi_xqd", 117.58, 28.94, 1934, "1934年11月",
+     "江西省德兴市重溪", "重溪会合",
+     ["1934年11月初，历经四个多月转战的先遣队穿过敌人封锁线，进入赣东北，在德兴重溪与方志敏领导的红十军会合。",
+      "奉中革军委指示，红七军团与红十军合编为红十军团，约一万人，刘畴西任军团长，方志敏任军政委员会主席。",
+      "原红七军团改编为第19师，寻淮洲任师长。合编后的红十军团继续担负北上抗日先遣队的任务。"],
+     "xianqiandui", "Zhongxi Junction", "Dexing City, Jiangxi", "重溪会合", "江西省徳興市")
+astop("tanjiaqiao", 118.15, 30.10, 1934, "1934年12月14日",
+     "安徽省黄山市黄山区谭家桥镇", "谭家桥战斗",
+     ["1934年12月14日，红十军团在谭家桥公路两侧设伏，伏击王耀武的补充第一旅。",
+      "因兵力部署失误，伏击战打成了阵地战。敌军集中兵力冲破红20、21师阵地，夺取乌泥关制高点。",
+      "19师师长寻淮洲亲自带队冲锋夺回制高点，身负重伤，两天后在转移途中牺牲，年仅22岁。谭家桥之败是这支部队命运的转折点。"],
+     "xianqiandui", "Battle of Tanjiaqiao", "Tanjiaqiao Town, Huangshan, Anhui", "譚家橋戦闘", "安徽省黄山區譚家橋鎮")
+astop("maolin_xqd", 118.05, 30.40, 1934, "1934年12月16日",
+     "安徽省泾县茂林镇", "茂林",
+     ["谭家桥战败后，红十军团撤往泾县茂林地区。寻淮洲在此因伤重不治，葬于当地，遗体后来不幸被敌军掘墓毁坏。",
+      "此后部队在皖南的旌德、泾县、绩溪、歙县等地接连遭遇强敌，回师闽浙赣根据地的行动又因军团长刘畴西迟疑拖延而贻误战机。",
+      "1935年1月，红十军团在怀玉山区陷入重围。三年后的1938年，陈毅率新四军途经茂林，为寻淮洲重建坟墓并亲撰墓志铭。"],
+     "xianqiandui", "Maolin", "Maolin Town, Jing County, Anhui", "茂林", "安徽省涇県茂林鎮")
+astop("huaiyushan", 118.10, 28.90, 1935, "1935年1月",
+     "江西省玉山县与德兴市交界（怀玉山区）", "怀玉山",
+     ["1935年1月，红十军团被十余倍于己的敌军合围在怀玉山区，弹尽粮绝，全军覆没。",
+      "军政委员会主席方志敏在冰天雪地中坚持突围，1月29日不幸被俘。他在狱中写下《可爱的中国》《清贫》等文稿，同年8月6日在南昌英勇就义，年仅36岁。",
+      "参谋长粟裕、政治部主任刘英率千余人提前突围，后整编为红军挺进师，转战浙南。这支部队到1937年改编为新四军第二支队——“血战东南半壁红”的先遣队虽败犹荣。"],
+     "xianqiandui", "Mt Huaiyu", "Yushan County, Jiangxi", "懐玉山", "江西省玉山県")
+
+# ============ 红二方面军（红二、六军团） (1935-11 → 1936-10) ============
+astop("sangzhi", 110.20, 29.35, 1935, "1935年11月19日",
+     "湖南省桑植县刘家坪", "桑植突围",
+     ["1935年11月19日，贺龙、任弼时、关向应率红二、六军团约1.7万人从桑植刘家坪等地出发，开始长征。",
+      "红二、六军团是湘鄂川黔苏区的主力。中央红军北上后，他们已坚持了一年多的反“围剿”斗争，此时面对国民党军30万重兵的合围，决定主动转移。",
+      "红二方面军后来被称为长征中“没有蚀本的部队”——出发时1.7万人，到达陕北时仍有1万余人。"],
+     "red2", "Breakout from Sangzhi", "Sangzhi County, Hunan", "桑植突破", "湖南省桑植県")
+astop("xupu", 110.60, 27.91, 1935, "1935年12月",
+     "湖南省溆浦县（湘中）", "湘中攻势",
+     ["出发后红二、六军团不作直线的转移，而是一路向南急进，渡资水、下湘中，攻占新化、蓝田等城镇，摆出东渡湘江的姿态。",
+      "蒋介石的追剿军被这记“虚晃一枪”拖得团团转。待敌军重兵压向湘中，红二、六军团忽然西折，经辰溪、怀化转入贵州。",
+      "贺龙后来说，长征中二、六军团走的“从来不是直线”——这一路的声东击西，为部队赢得了整补的时间。"],
+     "red2", "Xiangzhong Offensive", "Xupu County, Hunan", "湘中攻勢", "湖南省溆浦県")
+astop("bijie", 105.28, 27.30, 1936, "1936年2月",
+     "贵州省毕节市", "毕节",
+     ["1936年2月，红二、六军团攻占黔西、大定、毕节三县，建立新的根据地，部队扩充了5000余人。",
+      "在毕节，红军团结了开明士绅周素园——这位清末秀才出身的老人担任贵州抗日救国军司令，后来随红军一直走到陕北。",
+      "部队在毕节地区活动近一个月，这是红二、六军团长征中唯一一次建立根据地。敌军再度合围后，部队转入乌蒙山区回旋。"],
+     "red2", "Bijie", "Bijie City, Guizhou", "畢節", "貴州省畢節市")
+astop("wumengshan", 104.72, 27.35, 1936, "1936年2月—3月",
+     "云南省镇雄县一带（乌蒙山区）", "乌蒙山回旋战",
+     ["1936年2月至3月，红二、六军团在乌蒙山区与十余倍于己的敌军兜了大一个月的圈子。",
+      "部队在镇雄、彝良、赫章之间忽东忽西，得了著名的“乌蒙山回旋战”。在得章坝，红二军团歼灭敌军一部，顺势跳出包围圈。",
+      "毛泽东后来评价：“红二、六军团在乌蒙山打转转，别说敌人，连我们也被你们转昏了头，硬是转出来了嘛！”"],
+     "red2", "Wumeng Mountain maneuvers", "Zhenxiong County, Yunnan", "烏蒙山回旋戦", "雲南省鎮雄県一帯")
+astop("panzhou", 104.47, 25.72, 1936, "1936年3月30日",
+     "贵州省盘州市（盘县）", "盘县会议",
+     ["1936年3月30日，红二、六军团在盘县召开军委会议，讨论行动方针。",
+      "会议决定放弃在南北盘江建立根据地的计划，奉朱德、张国焘来电之命，北渡金沙江与红四方面军会合。",
+      "盘县会议是红二、六军团长征的转折点——从此这支部队从独立作战转入与主力红军会师的轨道。"],
+     "red2", "Panxian Conference", "Panzhou City, Guizhou", "盤県会議", "貴州省盤州市")
+astop("shigu", 99.95, 26.98, 1936, "1936年4月25日—28日",
+     "云南省丽江市玉龙县石鼓镇", "石鼓渡金沙江",
+     ["1936年4月25日至28日，红二、六军团1.8万人在丽江石鼓至巨甸的五个渡口，靠7只木船和几十只木筏，四天三夜抢渡金沙江。",
+      "部队虚晃一枪逼近昆明，把滇军主力拉回昆明防守，然后忽然掉头向北，敌军追到江边时，红军已经全部过江。",
+      "过江后部队翻越玉龙雪山，进入滇西北高原——红二、六军团成为三支长征队伍中唯一渡过金沙江两次的部队。"],
+     "red2", "Crossing the Jinsha at Shigu", "Shigu Town, Lijiang, Yunnan", "石鼓の金沙江渡河", "雲南省麗江市石鼓鎮")
+astop("zhongdian", 99.70, 27.82, 1936, "1936年5月",
+     "云南省迪庆州香格里拉市（中甸）", "中甸休整",
+     ["1936年5月，红二、六军团翻越玉龙雪山等雪山，抵达滇西北重镇中甸（今香格里拉）。",
+      "这是红军第一次进入藏区城镇。贺龙在中甸归化寺向松谋活佛赠送“兴盛番族”锦幛，红军在中甸筹粮休整、宣传民族政策。",
+      "中甸休整为翻越大雪山、穿越康藏高原做了准备。5月中旬部队分两路向四川甘孜方向前进。"],
+     "red2", "Zhongdian (Shangri-La)", "Shangri-La City, Yunnan", "中甸（シャングリラ）", "雲南省迪慶州")
+astop("ganzi_r2", 100.00, 31.62, 1936, "1936年6月30日",
+     "四川省甘孜县", "甘孜会师",
+     ["1936年6月30日，红二、六军团历经半年转战，抵达甘孜与红四方面军会师。",
+      "7月5日，奉中央军委命令，红二、六军团与红三十二军（原红九军团）合编为红二方面军，贺龙任总指挥，任弼时任政委。",
+      "甘孜会师时红二、六军团仍有1.43万人。张国焘试图拉拢红二方面军支持其“中央”，遭到贺龙、任弼时坚决抵制——两军随即共同北上。"],
+     "red2", "Ganzi Junction", "Ganzi County, Sichuan", "甘孜会師", "四川省甘孜県")
+astop("hadapu_r2", 104.15, 34.04, 1936, "1936年8月",
+     "甘肃省宕昌县哈达铺", "哈达铺",
+     ["1936年8月，红二方面军随红四方面军走出草地、突破天险腊子口，到达哈达铺。",
+      "一年前中央红军在这里的报纸上找到陕北的消息；如今红二方面军沿着同一条路北上，甘肃南部国民党守军已无力阻拦。",
+      "9月，红二方面军发起成徽两康战役，在陇南的成县、徽县、两当一带展开，筹粮扩红，准备迎接新的局面。"],
+     "red2", "Hadapu", "Dangchang County, Gansu", "哈達鋪", "甘粛省宕昌県哈達鋪")
+astop("jiangtaibao", 105.73, 35.72, 1936, "1936年10月22日",
+     "宁夏固原市西吉县将台堡", "将台堡会师",
+     ["1936年10月22日，红二方面军总部在将台堡与红一方面军一军团会师——这标志着红军三大主力全部会合，长征宣告胜利结束。",
+      "从1935年11月19日桑植出发算起，红二方面军历时近一年，转战湘、黔、滇、康、川、甘、宁七省，行程约两万里。",
+      "贺龙后来总结：红二方面军是长征中损失最小的部队，靠的就是打得赢就打、打不赢就走，从来不跟敌人硬碰硬地摆开架势消耗。"],
+     "red2", "Jiangtaibu Junction", "Xiji County, Ningxia", "将台堡会師", "寧夏西吉県将台堡")
+
+# ============ 红四方面军 (1935-03 → 1936-10) ============
+astop("cangxi", 105.94, 31.98, 1935, "1935年3月28日—4月21日",
+     "四川省苍溪县（嘉陵江塔子山渡口）", "强渡嘉陵江",
+     ["1935年3月28日晚，红四方面军近十万人从苍溪塔子山等渡口强渡嘉陵江，拉开长征序幕。",
+      "这是四支长征队伍中人数最多的一支——渡江时连同地方武装约10万人。部队连克剑门关等要隘，击溃川军万余人。",
+      "但张国焘此时决定放弃经营了两年的川陕根据地。红四方面军的长征从此开始，根据地的留守部队和群众为此付出了沉重代价。"],
+     "red4", "Crossing the Jialing River", "Cangxi County, Sichuan", "嘉陵江強行渡河", "四川省蒼渓県")
+astop("jianmenguan", 105.53, 32.25, 1935, "1935年4月",
+     "四川省剑阁县剑门关", "剑门关",
+     ["1935年4月，红四方面军攻坚川军自诩“一夫当关”的剑门关。红军绕道从背后仰攻关楼，激战半日全歼守军。",
+      "号称天险的剑门关失守，嘉陵江西岸门户大开。这是红军战史上一次著名的山地攻坚战。",
+      "随后部队向西发展，为接应正在川西长征的中央红军创造条件。"],
+     "red4", "Jianmen Pass", "Jiange County, Sichuan", "剣門関", "四川省剣閣県")
+astop("maoxian", 103.85, 31.68, 1935, "1935年5月15日",
+     "四川省茂县", "茂县",
+     ["1935年5月，红四方面军西进岷江流域，5月15日占领茂县，随后攻下理番（理县）、汶川。",
+      "部队进入羌族、藏族聚居区，红军在这里执行民族政策、筹粮扩红，同时派出先头部队沿小金川西进，迎接中央红军。",
+      "李先念率红30军一部攻下懋功，为两军会师扫清了道路。"],
+     "red4", "Maoxian", "Maoxian County, Sichuan", "茂県", "四川省茂県")
+astop("dawei_r4", 102.65, 30.90, 1935, "1935年6月13日",
+     "四川省小金县达维镇", "达维会师（红四方面军）",
+     ["1935年6月13日，红四方面军先头部队与红一方面军在达维会师——中央红军与红四方面军两大主力就此汇合。",
+      "对中央红军来说，这是翻越夹金山后的意外之喜；对红四方面军来说，这是“迎接中央”半年努力的实现。",
+      "但会师的喜悦没有持续太久：两军八万与两万的力量对比，很快在“北上还是南下”的战略分歧上引爆。"],
+     "red4", "Dawei Junction (4th Front Army)", "Dawei Town, Xiaojin County, Sichuan", "達維会師（紅四方面軍）", "四川省小金県達維鎮")
+astop("baozo_r4", 103.60, 33.60, 1935, "1935年8月29日—31日",
+     "四川省若尔盖县包座", "包座之战（红四方面军）",
+     ["1935年8月底，右路军（含红四方面军第4、30军与中央红军）走出草地，在包座与堵截的国民党军激战三天。",
+      "徐向前指挥红30军诱敌深入、分割围歼，全歼胡宗南部一个师又一个团，打开了北上甘南的大门。",
+      "但张国焘拒绝率左路军北上。9月，中央红军单独北上后，红四方面军掉头南下，再过草地，重新翻回夹金山一线。"],
+     "red4", "Battle of Baozuo (4th Front Army)", "Zoige County, Sichuan", "包座戦闘（紅四方面軍）", "四川省若爾蓋県")
+astop("baoxing", 102.82, 30.37, 1935, "1935年10月",
+     "四川省宝兴县", "南下宝兴",
+     ["1935年10月7日，张国焘下达南下命令。红四方面军重新翻越夹金山，攻占崇化、抚边、懋功，随后攻下宝兴、天全、芦山。",
+      "南下初期连战皆捷，部队兵锋直指成都平原。10月5日，张国焘已在卓木碉另立“中央”，自任主席。",
+      "南下路线与北上路线在地图上画出一个巨大的回环——红四方面军因此成为长征中走过的路最长、翻越雪山次数最多的一支队伍。"],
+     "red4", "South to Baoxing", "Baoxing County, Sichuan", "南下宝興", "四川省宝興県")
+astop("baizhang", 103.16, 30.06, 1935, "1935年11月中下旬",
+     "四川省雅安市名山区百丈镇", "百丈关决战",
+     ["1935年11月中下旬，红四方面军15个团在名山百丈关一带与川军主力决战七昼夜。",
+      "这是一场消耗战：红军伤亡近万人，虽歼敌1.5万余，但南下攻势就此顿挫，部队被迫转入防御。",
+      "百丈关之战是张国焘南下路线的军事破产。部队退守天全、芦山、宝兴一带过冬，粮弹两缺，减员严重。"],
+     "red4", "Battle of Baizhang Pass", "Mingshan District, Ya'an, Sichuan", "百丈関決戦", "四川省雅安市名山区")
+astop("ganzi_r4", 100.00, 31.62, 1936, "1936年3月—7月",
+     "四川省甘孜县", "甘孜休整（红四方面军）",
+     ["1936年2月至3月，红四方面军西转道孚、炉霍、甘孜一带休整补充，部队减员到4万余人。",
+      "6月6日，张国焘被迫宣布取消自立的“中央”。7月初，红二、六军团到达甘孜，两军会师后共同北上。",
+      "红四方面军第三次穿越草地北上——这也是他们第三次翻越夹金山以南的雪山群。朱德后来形容：四方面军的长征，一年里三过草地，苦不堪言。"],
+     "red4", "Ganzi rest (4th Front Army)", "Ganzi County, Sichuan", "甘孜休整（紅四方面軍）", "四川省甘孜県")
+astop("taozhou", 103.55, 34.66, 1936, "1936年9月27日",
+     "甘肃省临潭县洮州（新城镇）", "洮州会议",
+     ["1936年9月，北上途中的张国焘突然又提出西渡黄河、进军青海的方案。中央连电制止。",
+      "9月27日，朱德、张国焘在洮州召开西北局会议，一致决定放弃西进，按中央指示北上会师。",
+      "洮州会议是红四方面军长征路线的最后一次转折。此后的行军再无波折——三大主力的会师已是大势所趋。"],
+     "red4", "Taozhou Conference", "Lintan County, Gansu", "洮州会議", "甘粛省臨潭県")
+astop("huining", 105.06, 35.70, 1936, "1936年10月9日",
+     "甘肃省会宁县城", "会宁会师",
+     ["1936年10月9日，徐向前率红四方面军指挥部抵达会宁县城，与红一方面军会合。",
+      "10月22日，红二方面军也到达将台堡。三大主力会师，宣告历时两年的红军长征全部胜利结束。",
+      "会宁会师时，红军总兵力约5万人——不足长征出发时四路大军合计约18.6万人的三分之一。但正是这支部队，后来发展为抗日战争的八路军主力和人民解放军的骨干。"],
+     "red4", "Huining Junction", "Huining County, Gansu", "会寧会師", "甘粛省会寧県")
+
+
+
 ZH_TRAD = str.maketrans("于长征会红亿泽东关岭胶礼续变让", "于長征會紅億澤東關嶺膠禮續變讓")
 
 QP = [  # id, zh-Hans, zh-HK, en, ja, year  — nearby real places for quiz distractors
@@ -361,7 +632,205 @@ SIGHTS = {  # stopId -> zh-Hans one-line fact for 猜见闻
     "bangluo": "榜罗镇会议正式确定陕甘根据地作为长征的落脚点。",
     "liupanshan": "六盘山是长征翻越的最后一座大山，毛泽东在此写下《清平乐·六盘山》。",
     "wuqi": "1935年10月19日到达吴起镇，中央红军368天、转战11省的长征到此结束。",
+    # --- 红二十五军 ---
+    "hejiachong": "出发集结地有一株800年树龄的大银杏树，红二十五军就是在树下誓师出发的。",
+    "dushuzhen": "独树镇战斗时正值雨雪，战士们手指冻僵拉不开枪栓，政委吴焕先抡大刀带头冲锋。",
+    "yujiahe": "庾家河一战，军长程子华双手被打穿，徐海东头部中弹，两人此后长期躺在担架上指挥作战。",
+    "gepaizhen": "葛牌镇是红二十五军长征途中唯一建立过稳定政权的地方，现为鄂豫陕苏维埃政府纪念馆。",
+    "fengyukou": "沣峪口会议上，交通员石健民送来了红一、红四方面军会师的消息和秘密呼号密码。",
+    "sipocun": "红二十五军政委吴焕先在四坡村战斗中牺牲，年仅28岁，是长征中牺牲的最高级别将领之一。",
+    "baozichuan": "红二十五军出发2980人，到陕北时约3400人——是唯一一路长征中人数不减反增的红军。",
+    "yongpingzhen": "永坪镇会师后红二十五军与陕北红军合编为红十五军团，毛泽东称赞他们“为革命立了大功”。",
+    # --- 北上抗日先遣队 ---
+    "ruijin_xqd": "先遣队的军团长寻淮洲21岁任军团长，是红军历史上最年轻的军团长。",
+    "yongan_xqd": "《中国工农红军北上抗日宣言》1934年7月15日在永安小陶发布，当地被称为“亮剑之地”。",
+    "fuzhou_xqd": "先遣队猛攻福州一昼夜未克，反而暴露了实力，被迫转向山区游击。",
+    "zhukou_xqd": "中革军委曾电令先遣队每天只走二三十里——为中央红军的转移争取时间，行动成了一场“慢行军”。",
+    "chongxi_xqd": "红七军团与方志敏的红十军合编为红十军团约一万人，继续执行北上抗日先遣队任务。",
+    "tanjiaqiao": "谭家桥之败是粟裕戎马生涯唯一败仗，他晚年遗嘱就是要把骨灰撒在谭家桥。",
+    "maolin_xqd": "寻淮洲牺牲后葬于茂林，1938年陈毅率新四军路过时为他重建坟墓并亲撰墓志铭。",
+    "huaiyushan": "方志敏在怀玉山被俘，狱中写下《可爱的中国》《清贫》，1935年8月在南昌就义，年仅36岁。",
+    # --- 红二方面军 ---
+    "sangzhi": "红二、六军团长征出发时1.7万人，到陕北仍有1万余人，被称为“没有蚀本的部队”。",
+    "xupu": "长征开始后红二、六军团先大举攻占湘中城镇，虚晃一枪再突然西折，把追兵甩在身后。",
+    "bijie": "清末秀才周素园在毕节担任贵州抗日救国军司令，57岁随红军走完长征到达陕北。",
+    "wumengshan": "毛泽东评价乌蒙山回旋战：“连我们也被你们转昏了头，硬是转出来了嘛！”",
+    "panzhou": "盘县会议决定放弃建立滇黔边根据地的计划，北渡金沙江——是红二、六军团的战略转折点。",
+    "shigu": "红二、六军团1.8万人靠7只木船在石鼓至巨甸五个渡口四天三夜渡过金沙江，敌军追到江边已无影无踪。",
+    "zhongdian": "贺龙在中甸归化寺向活佛赠送“兴盛番族”锦幛，是红军早期民族政策的著名例证。",
+    "ganzi_r2": "甘孜会师时张国焘试图拉拢红二、六军团，贺龙、任弼时坚决抵制，两军随即共同北上。",
+    "hadapu_r2": "一年前中央红军在哈达铺从报纸上发现陕北根据地；一年后红二方面军沿着同一条路北上。",
+    "jiangtaibao": "1936年10月22日将台堡会师标志着三大主力会合、长征胜利结束——会宁是10月9日红四方面军先到。",
+    # --- 红四方面军 ---
+    "cangxi": "强渡嘉陵江是红四方面军长征的起点，近十万人渡江，是四支队伍中人数最多的一支。",
+    "jianmenguan": "“一夫当关，万夫莫开”的剑门关被红军从背后仰攻关楼拿下，全歼守军。",
+    "maoxian": "红四方面军在茂县、理县进入羌族藏族聚居区，一边执行民族政策一边迎接中央红军。",
+    "dawei_r4": "达维会师时中央红军约2万人、红四方面军约8万人——力量对比后来成为战略分歧的导火索。",
+    "baozo_r4": "包座之战徐向前指挥红30军全歼胡宗南部一个师又一个团，打开了北上甘南的大门。",
+    "baoxing": "张国焘南下后红四方面军重新翻越夹金山——这支部队后来三过草地、多次翻雪山。",
+    "baizhang": "百丈关决战七昼夜，红军伤亡近万，南下路线就此破产——这是张国焘分裂行为的军事代价。",
+    "ganzi_r4": "朱德后来形容红四方面军的长征：“一年里三过草地”，其艰苦为各路红军之最。",
+    "taozhou": "洮州会议放弃了张国焘西渡黄河进青海的方案——红四方面军长征路线的最后一次转折。",
+    "huining": "会宁会师时红军总兵力约5万人，不足长征出发时四路大军合计18.6万人的三分之一。",
 }
+
+def densify(points):
+    """Indicative corridor: densify a [lon,lat] chain every ~0.12°."""
+    route = []
+    for i, p in enumerate(points):
+        route.append([p[0], p[1]])
+        if i + 1 < len(points):
+            q = points[i + 1]
+            d = math.hypot(q[0] - p[0], q[1] - p[1])
+            n = max(2, int(d / 0.12))
+            for k in range(1, n):
+                f = k / n
+                route.append([round(p[0] + (q[0] - p[0]) * f, 4),
+                              round(p[1] + (q[1] - p[1]) * f, 4)])
+    return route
+
+# Reference corridors for the 2nd/4th Front Army from the open-source
+# changzhengmap project (github.com/yizhimomo/changzhengmap, [lat,lng]
+# converted to [lng,lat]). Used as shaping lines; our dated stops are
+# merged in chronologically so the line passes through every stop.
+REF_LINES = {
+    "red2": [
+        [109.2810, 29.6742], [110.20, 29.40], [110.85, 28.60], [110.60, 27.91],
+        [110.20, 28.00], [109.6861, 27.4433], [109.3608, 27.4209],
+        [109.1664, 27.3697], [109.1127, 27.4381], [108.85, 27.70], [108.23, 27.52],
+        [107.47, 27.07], [107.2978, 26.7570], [107.0779, 26.7102], [106.90, 26.78],
+        [106.1823, 26.8670], [106.03, 27.03], [105.60, 27.14], [105.30, 27.30],
+        [104.72, 27.12], [104.75, 27.08], [104.52, 27.10], [104.05, 27.63],
+        [104.05, 27.55], [104.28, 26.87], [104.10, 26.22], [104.63, 25.72],
+        [104.25, 25.67], [103.82, 25.60], [103.80, 25.50], [103.58, 25.43],
+        [103.25, 25.55], [102.88, 25.63], [102.6473, 25.6475], [102.9797, 25.4752],
+        [102.50, 25.22], [101.55, 25.03], [100.55, 25.48], [100.18, 26.57],
+        [99.97, 26.85], [99.70, 27.82], [99.80, 28.93], [100.30, 29.03],
+        [100.28, 29.95], [100.27, 30.00], [100.00, 31.60], [100.33, 32.27],
+        [100.98, 32.27], [101.65, 32.88], [102.50, 33.50], [103.3448, 33.8650],
+        [103.8796, 34.1067], [104.2138, 34.2326], [105.0559, 35.6922],
+        [105.85, 35.50], [105.72, 35.52], [105.8694, 35.8138],
+    ],
+    "red4": [
+        [106.70, 31.90], [105.8718, 31.7966], [105.5670, 32.2160], [104.75, 31.78],
+        [104.0741, 31.7666], [103.58, 31.48], [102.6385, 30.9656], [102.38, 31.00],
+        [102.4922, 31.4841], [102.2944, 31.8677], [102.9772, 32.0937], [103.0529, 32.5172],
+        [103.1021, 32.6363], [103.40, 33.00], [103.60, 33.60],
+        [102.90, 32.60], [102.00, 32.60], [101.70, 32.90],
+        [102.06, 31.48], [102.02, 31.40],
+        [101.88, 30.88], [102.3379, 30.9212], [102.75, 30.07], [102.92, 30.15],
+        [103.10, 30.08], [103.47, 30.42], [103.30, 30.10], [102.9234, 30.2521],
+        [102.8209, 30.2527], [102.30, 30.45], [101.8782, 30.8449], [101.12, 30.98],
+        [100.68, 31.38], [100.00, 31.60], [100.33, 32.27], [100.98, 32.27],
+        [101.65, 32.88], [102.50, 33.50], [103.3448, 33.8650], [103.8796, 34.1067],
+        [104.2138, 34.2326], [104.03, 34.44], [103.5883, 34.6737], [104.47, 34.85],
+        [105.24, 35.21], [105.0559, 35.6922], [105.85, 35.50], [105.72, 35.52],
+    ],
+}
+
+REF_LINES.update({
+    "red1": [[114.19, 26.57], [116.02, 25.9], [115.43, 25.95], [115.5, 25.6], [114.6, 25.3], [113.5, 25.3], [110.8, 25.7], [109.628, 26.3188], [109.14, 26.23], [107.5744, 27.1721], [106.92, 27.7], [105.9995, 28.2757], [105.9309, 28.3681], [105.82, 28.04], [105.4676, 28.0796], [105.0364, 27.853], [106.0361, 28.1417], [106.8985, 27.9649], [106.9, 27.72], [106.5697, 27.6368], [106.6678, 27.5857], [106.3144, 27.7101], [106.3747, 27.8601], [106.0411, 28.1201], [106.5737, 27.2459], [106.9088, 26.5258], [102.3838, 26.2947], [102.25, 26.65], [102.27, 27.9], [102.2583, 28.7423], [102.2825, 29.2728], [102.2294, 29.9041], [102.3, 30.8], [102.38, 31], [102.4922, 31.4841], [102.2944, 31.8677], [102.9772, 32.0937], [103.0529, 32.5172], [103.1021, 32.6363], [103.2288, 33.5851], [103.3192, 33.8726], [103.8967, 34.108], [104.2267, 34.2288], [104.9413, 35.0326], [105.2501, 35.2075], [105.0559, 35.6922], [106.18, 35.67], [107.8536, 36.9903], [108.1946, 36.907], [109.0881, 36.4341], [109.6718, 37.1351], [109.5, 36.6]],
+    "red25": [[114.31309, 31.81505], [114.1, 32.1], [113, 33.25], [113.25, 33.55], [110.1, 33.6], [107.8, 34], [105.72, 34.58], [107.35, 35.33], [109.97, 36.75]],
+    "xianqiandui": [[116.02, 25.9], [116.35, 25.8], [116.75, 25.72], [117.4, 26], [119.3, 26.07], [118.9, 26.2], [119.1, 27.6], [119.1, 28.1], [118.8, 29], [118.5, 29.8], [119.45, 29.8], [117.7, 28.55], [118.2, 30.1], [117.8, 28.9]],
+})
+
+def _leg_points(army):
+    """Per-army leg chain. For red2/red4: walk the reference corridor and
+    splice our dated stops in chronologically (each stop replaces the
+    reference point nearest to it), so the line passes through every stop
+    and inherits the reference's sane shaping. Other armies: stop chain
+    densified (red1 keeps the v1 as-built corridor)."""
+    stops = [s for s in S if s["army"] == army]
+    ref = REF_LINES.get(army)
+    if ref is None:
+        return densify([s["coords"] for s in stops])
+    def nearest_idx(c):
+        best, bi = None, 0
+        for i, p in enumerate(ref):
+            d = (p[0] - c[0]) ** 2 + (p[1] - c[1]) ** 2
+            if best is None or d < best:
+                best, bi = d, i
+        return bi
+    idxs = [nearest_idx(s["coords"]) for s in stops]
+    # enforce monotonic order (a stop must not map backwards on the line)
+    for i in range(1, len(idxs)):
+        if idxs[i] <= idxs[i - 1]:
+            idxs[i] = idxs[i - 1] + 1
+    points = []
+    prev = 0
+    for i, s in enumerate(stops):
+        # reference points strictly between previous stop and this stop
+        j = min(idxs[i], len(ref))
+        for p in ref[prev:j]:
+            if p not in points:
+                points.append(p)
+        points.append(s["coords"])
+        prev = j + 1
+    for p in ref[prev:]:
+        if p not in points:
+            points.append(p)
+    return densify(points)
+
+def load_czm_stops():
+    """changzhengmap-imported stops + their generated i18n content."""
+    import os
+    path = "tools/changzhengmap_stops.json"
+    if not os.path.exists(path):
+        return []
+    raw = json.load(open(path, encoding="utf-8"))
+    ck_path = "tools/scratch/czm_i18n.json"
+    ck = {}
+    if os.path.exists(ck_path):
+        ck = json.load(open(ck_path, encoding="utf-8"))
+    try:
+        from opencc import OpenCC
+        cc = OpenCC("s2hk")
+    except Exception:
+        cc = None
+    out = []
+    for s in raw:
+        c = ck.get(s["id"])
+        if not c:
+            continue  # content not generated yet; gen skips until LLM pass done
+        zh_hk_name = cc.convert(s["name_zh"]) if cc else s["name_zh"]
+        zh_hk_present = cc.convert(s["present_zh"]) if cc else s["present_zh"]
+        out.append({
+            "id": s["id"],
+            "coords": s["coords"],
+            "year": int(re.match(r"(\d{4})", c.get("date_zh_norm") or s["date_zh"] or "1934").group(1)),
+            "when": {
+                "en-GB": c.get("date_en") or s["date_zh"],
+                "fr-CA": (c.get("date_zh_norm") or s["date_zh"]).replace("年", " ").replace("月", "/").replace("日", ""),
+                "zh-Hans": c.get("date_zh_norm") or s["date_zh"],
+                "zh-HK": (cc.convert(c.get("date_zh_norm") or s["date_zh"]) if cc else s["date_zh"]).replace("—", "–"),
+                "ja": (c.get("date_zh_norm") or s["date_zh"]).replace("—", "–"),
+            },
+            "present": {
+                "en-GB": c["present_en"], "fr-CA": c["present_en"],
+                "zh-Hans": s["present_zh"], "zh-HK": zh_hk_present, "ja": c["present_ja"],
+            },
+            "iso3": "CHN",
+            "army": s["army"],
+            "names": {
+                "en-GB": c["name_en"], "fr-CA": c["name_en"],
+                "zh-Hans": s["name_zh"], "zh-HK": zh_hk_name, "ja": c["name_ja"],
+            },
+            "narrative": c["paras"],
+            "sight": c["sight"],
+            "_sort": (int(re.match(r"(\d{4})", c.get("date_zh_norm") or s["date_zh"] or "1934").group(1)),
+                      (lambda m: int(m.group(1)) if m else 12)(re.search(r"年(\d{1,2})月", c.get("date_zh_norm") or s["date_zh"] or "")),
+                      15),
+        })
+    return out
+
+def parse_zh_date(s):
+    m = re.match(r"(\d{4})年", s or "")
+    y = int(m.group(1)) if m else 9999
+    mm = re.search(r"年(\d{1,2})月", s or "")
+    mo = int(mm.group(1)) if mm else 12
+    dd = re.search(r"月(\d{1,2})日", s or "")
+    d = int(dd.group(1)) if dd else 15
+    return (y, mo, d)
 
 def build():
     stops = []
@@ -382,47 +851,50 @@ def build():
                 "zh-HK": date_hk,
                 "ja": s["date"].replace("—", "–"),
             },
+            "_sort": parse_zh_date(s["date"]),
             "present": {
-                "en-GB": PRESENT_EN[sid],
-                "fr-CA": PRESENT_EN[sid],
+                "en-GB": ARMY_EN[sid]["present"] if sid in ARMY_EN else PRESENT_EN[sid],
+                "fr-CA": ARMY_EN[sid]["present"] if sid in ARMY_EN else PRESENT_EN[sid],
                 "zh-Hans": s["present"],
                 "zh-HK": pres_zh_t,
-                "ja": PRESENT_JA[sid],
+                "ja": ARMY_JA[sid]["present"] if sid in ARMY_JA else PRESENT_JA[sid],
             },
             "iso3": "CHN",
+            "army": s["army"],
             "names": {
-                "en-GB": EN_NAMES[sid],
+                "en-GB": ARMY_EN[sid]["name"] if sid in ARMY_EN else EN_NAMES[sid],
                 "zh-Hans": s["name"],
                 "zh-HK": zh_trad,
-                "fr-CA": EN_NAMES[sid],
-                "ja": JA_NAMES[sid],
+                "fr-CA": ARMY_EN[sid]["name"] if sid in ARMY_EN else EN_NAMES[sid],
+                "ja": ARMY_JA[sid]["name"] if sid in ARMY_JA else JA_NAMES[sid],
             },
             "narrative": {"zh-Hans": s["paras"]},
         })
 
-    # indicative corridor: densify straight chains between consecutive stops
-    route = []
-    for i, s in enumerate(S):
-        route.append([s["coords"][0], s["coords"][1]])
-        if i + 1 < len(S):
-            t = S[i + 1]
-            d = math.hypot(t["coords"][0] - s["coords"][0], t["coords"][1] - s["coords"][1])
-            n = max(2, int(d / 0.12))
-            for k in range(1, n):
-                f = k / n
-                route.append([round(s["coords"][0] + (t["coords"][0] - s["coords"][0]) * f, 4),
-                              round(s["coords"][1] + (t["coords"][1] - s["coords"][1]) * f, 4)])
+    # merge changzhengmap-imported stops into their armies by date
+    army_order = {a["id"]: i for i, a in enumerate(ARMIES)}
+    imported = load_czm_stops()
+    all_stops = stops + imported
+    all_stops.sort(key=lambda s: (army_order.get(s.get("army"), 9), s["_sort"]))
+    for st in all_stops:
+        st.pop("_sort", None)
+    stops = all_stops
 
+    # indicative corridor: densify chains between consecutive stops
+    route = _leg_points("red1")
     lesson = {
         "id": "longmarch",
         "type": "journey",
         "title": {
-            "en-GB": "The Long March of the Central Red Army (1934–1935)",
-            "fr-CA": "La Longue Marche de l'Armée rouge centrale (1934–1935)",
-            "zh-Hans": "二万五千里长征（1934–1935）",
-            "zh-HK": "二萬五千里長征（1934–1935）",
-            "ja": "二万五千里長征（1934–1935）",
+            "en-GB": "The Long March (1934–1936)",
+            "fr-CA": "La Longue Marche (1934–1936)",
+            "zh-Hans": "红军长征（1934–1936）",
+            "zh-HK": "紅軍長征（1934–1936）",
+            "ja": "紅軍の長征（1934–1936）",
         },
+        "armies": ARMIES,
+        "route_legs": [{"army": a["id"], "points": _leg_points(a["id"])}
+                       for a in ARMIES],
         "traveler": {
             "en-GB": "the Central Red Army",
             "fr-CA": "l'Armée rouge centrale",
@@ -438,7 +910,9 @@ def build():
                 "en-GB": en, "fr-CA": en, "zh-Hans": zh, "zh-HK": hk, "ja": ja}}
             for (qid, zh, hk, en, ja, yr) in QP
         ],
-        "quizSights": {k: {"zh-Hans": v} for k, v in SIGHTS.items()},
+        "quizSights": {**{k: {"zh-Hans": v} for k, v in SIGHTS.items()},
+                       **{s["id"]: s["sight"] for s in imported if "sight" in s}},
+        "importSource": "Route corridors for all five armies and 73 annotated stops are adapted from the open-source changzhengmap project (github.com/yizhimomo/changzhengmap); stop narratives were expanded and translated with attribution to that project's descriptions and the party-history sources it cites.",
         "corridorNote": {
             "en-GB": "Dots mark documented events with precise coordinates; the connecting lines are indicative corridors reconstructed from published route maps, not surveyed tracks.",
             "fr-CA": "Les points marquent des événements documentés aux coordonnées précises ; les lignes sont des couloirs indicatifs reconstitués à partir de cartes publiées.",

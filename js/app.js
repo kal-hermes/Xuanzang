@@ -188,6 +188,7 @@
     // journey lessons have their own test modes; the country locate /
     // name tests don't apply to them
     const isJourney = state.lesson.type === "journey";
+    if (isJourney) fillArmySelect(); else $("#army-row").hidden = true;
     for (const opt of $("#mode-select").options) {
         const journeyOnly = opt.value === "route" || opt.value === "sights";
         const countryOnly = ["locate", "name"].includes(opt.value);
@@ -244,7 +245,7 @@
         setHint(state.projection === "globe" ? i18n.t("hint_globe") : "");
         state.index = 0;
         state.correct = 0;
-        state.quizOrder = shuffle(state.lesson.stops.map((_, i) => i));
+        state.quizOrder = shuffle(viewStops().map((_, i) => i));
         if (state.mode === "route") startRouteQuiz();
         else startSightsQuiz();
         updateScore();
@@ -334,11 +335,58 @@
       return;
     }
     renderJourneyRoutes();
-    map.renderStopDots(L.stops, state.stepIdx ?? null, (idx) => {
-      const s = L.stops[idx];
+    const S = viewStops();
+    map.renderStopDots(S, state.stepIdx ?? null, (idx) => {
+      const s = S[idx];
       if (s) journeyStopClick(s);
     });
     renderJourneySidebar(false);
+  }
+
+  // ----- multi-army support (Long March: 5 Red Army routes) -----
+  // A lesson with `armies` tags every stop with `army` and carries
+  // `route_legs: [{army, points}]`; everything (sidebar, step-through,
+  // quizzes) operates on the currently selected army.
+  function lessonArmies(L) {
+    return L.armies || null;
+  }
+
+  function armyDef(L) {
+    const armies = lessonArmies(L) || [{ id: "out", color: "#ffd24a" }];
+    return armies.find((a) => a.id === state.army) || armies[0];
+  }
+
+  function viewStops() {
+    const L = state.lesson;
+    if (!lessonArmies(L)) return L.stops;
+    return L.stops.filter((s) => s.army === state.army);
+  }
+
+  function fillArmySelect() {
+    const L = state.lesson;
+    const armies = lessonArmies(L);
+    const row = $("#army-row");
+    if (!armies || armies.length < 2) { row.hidden = true; return; }
+    if (!state.army || !armies.some((a) => a.id === state.army)) {
+      state.army = armies[0].id;
+    }
+    const sel = $("#army-select");
+    sel.innerHTML = "";
+    for (const a of armies) {
+      const opt = document.createElement("option");
+      opt.value = a.id;
+      opt.textContent = loc(a.label) || a.id;
+      opt.style.color = a.color;
+      sel.appendChild(opt);
+    }
+    sel.value = state.army;
+    row.hidden = false;
+    sel.onchange = () => {
+      state.army = sel.value;
+      state.stepIdx = null;
+      state.visitedStops = new Set();
+      renderJourney();
+    };
   }
 
   function renderJourneySidebar(numbered) {
@@ -347,7 +395,8 @@
     const ul = $("#country-list");
     ul.innerHTML = "";
     ul.classList.add("journey-order");
-    L.stops.forEach((s, i) => {
+    const S = viewStops();
+    S.forEach((s, i) => {
       const li = document.createElement("li");
       li.dataset.stop = s.id;
       li.dataset.idx = i;
@@ -380,6 +429,13 @@
 
   function renderJourneyRoutes() {
     const L = state.lesson;
+    map.clearOverlay();
+    if (L.route_legs) {
+      // multi-army lesson: draw the selected army's leg in its colour
+      const leg = L.route_legs.find((l) => l.army === state.army);
+      if (leg) map.addArrow(leg.points, armyDef(L).color);
+      return;
+    }
     if (L.voyage) {
       map.addSeaRoute(L.route_out, "#ffd24a");
       if (L.route_back) map.addSeaRoute(L.route_back, "#e05674");
@@ -409,7 +465,7 @@
   }
 
   function L_indexOf(s) {
-    return state.lesson.stops.indexOf(s);
+    return viewStops().indexOf(s);
   }
 
   // ----- step-through mode -----
@@ -419,8 +475,9 @@
   function renderJourneyStepMode() {
     const L = state.lesson;
     if (state.stepIdx == null) state.stepIdx = 0;
+    const S = viewStops();
     map.renderStopDots(
-      L.stops.slice(0, state.stepIdx + 1).map((s) => ({ ...s })),
+      S.slice(0, state.stepIdx + 1).map((s) => ({ ...s })),
       state.stepIdx,
       (idx) => {
         // clicking an earlier dot in step mode jumps to that step
@@ -429,10 +486,16 @@
     );
     // segments between consecutive visited stops
     for (let i = 0; i < state.stepIdx; i++) {
-      const seg = map.addSegment(L.stops[i].coords, L.stops[i + 1].coords, colorOf(i, L), "static");
+      const seg = map.addSegment(S[i].coords, S[i + 1].coords, journeySegColor(L), "static");
       if (seg) seg.dataset.hop = i;
     }
     updateStepUI();
+  }
+
+  function journeySegColor(L) {
+    // multi-army lessons: one colour per selected army; legacy lessons
+    // keep the nalanda/tidore return-leg colour switch
+    return lessonArmies(L) ? armyDef(L).color : colorOf(state.stepIdx ?? 0, L);
   }
 
   function colorOf(i, L) {
@@ -443,7 +506,8 @@
 
   function journeyStep(deltaOrIdx, absolute = false) {
     const L = state.lesson;
-    const max = L.stops.length - 1;
+    const S = viewStops();
+    const max = S.length - 1;
     let next = absolute ? deltaOrIdx : (state.stepIdx ?? 0) + deltaOrIdx;
     next = Math.max(0, Math.min(max, next));
     const prev = state.stepIdx ?? 0;
@@ -452,7 +516,7 @@
       // advance: draw segment prev->next (could be multiple hops via
       // dot click; draw each hop)
       for (let i = prev; i < next; i++) {
-        const seg = map.addSegment(L.stops[i].coords, L.stops[i + 1].coords, colorOf(i, L));
+        const seg = map.addSegment(S[i].coords, S[i + 1].coords, journeySegColor(L));
         if (seg) seg.dataset.hop = i;
       }
       fadeDotIn(next);
@@ -463,7 +527,7 @@
       }
       // re-render dots limited to next (drops later dots)
       map.renderStopDots(
-        L.stops.slice(0, next + 1).map((s) => ({ ...s })),
+        S.slice(0, next + 1).map((s) => ({ ...s })),
         next,
         (i) => journeyStep(i, true)
       );
@@ -868,7 +932,7 @@
 
   function nextRouteQuestion() {
     const L = state.lesson;
-    const stops = L.stops;
+    const stops = viewStops();
     if (state.routeIdx >= stops.length - 1) return finishTest();
     const cur = stops[state.routeIdx];
     const nxt = stops[state.routeIdx + 1];
@@ -928,6 +992,7 @@
   // lesson-specific return-color split: Xuanzang turns at Nalanda,
   // Magellan's fleet turns at Tidore
   function routeColor(i, stops) {
+    if (lessonArmies(state.lesson)) return armyDef(state.lesson).color;
     const pivot = stops.findIndex((s) =>
       s.id === "nalanda" || s.id === "tidore");
     return i >= pivot ? "#e05674" : "#ffd24a";
@@ -942,7 +1007,7 @@
       btn.classList.add("correct");
       // animate the line to the next stop, then fade in its dot
       const seg = map.addSegment(L.stops[state.routeIdx].coords, nxt.coords,
-        routeColor(state.routeIdx, L.stops));
+        routeColor(state.routeIdx, viewStops()));
       if (seg) seg.dataset.hop = state.routeIdx;
       const stops = L.stops.slice(0, state.routeIdx + 2);
       state.quizTimer = setTimeout(() => {
@@ -976,7 +1041,7 @@
     const L = state.lesson;
     if (state.index >= state.quizOrder.length) return finishTest();
     const idx = state.quizOrder[state.index];
-    const s = L.stops[idx];
+    const S = viewStops(); const s = S[idx];
     map.clearOverlay();
     map.renderStopDots([s], 0, () => {});
     map.rotateToCoord(s.coords);
@@ -990,7 +1055,7 @@
     if (!fact) { state.index++; return nextSightsQuestion(); }
     const correct = { text: loc(fact), correct: true };
     // distractors: sights of other stops, nearest stops preferred
-    const others = L.stops
+    const others = S
       .map((o, i) => ({ o, i, d: Math.abs(i - idx) }))
       .filter((x) => x.i !== idx && sights[x.o.id])
       .sort((a, b) => a.d - b.d);
