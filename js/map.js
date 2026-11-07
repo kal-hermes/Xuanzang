@@ -34,6 +34,12 @@
   let svg = null;
   let world = null;
   let worldQuick = null;      // decimated features for globe drag frames
+  let webglActive = false;    // experimental ?renderer=webgl texture globe
+  let webglCanvas = null;
+  const WEBGL_URL_WANTED = new URLSearchParams(location.search).get("renderer") === "webgl";
+  const WEBGL_SUPPORTED = !!window.AtlasWebGLGlobe && AtlasWebGLGlobe.available();
+  let webglSelected = false;  // UI: "3D Globe (WebGL)" projection option
+  let webglFallbackLogged = false;
   let group = null;          // <g id="countries">
   let overlay = null;        // <g id="overlay"> arrows etc.
   let clickHandler = null;
@@ -242,8 +248,17 @@
     render(lesson, opts = {}) {
       if (!world) throw new Error("call loadWorld() first");
       currentLesson = lesson;
-      projectionName = PROJECTIONS[opts.projection] ? opts.projection : "equirectangular";
+      // "globe-webgl" renders the globe projection through the experimental
+      // WebGL texture path; falls back to the SVG globe when unsupported
+      webglSelected = opts.projection === "globe-webgl";
+      const projKey = webglSelected ? "globe" : opts.projection;
+      projectionName = PROJECTIONS[projKey] ? projKey : "equirectangular";
+      if (webglSelected && !WEBGL_SUPPORTED && !webglFallbackLogged) {
+        webglFallbackLogged = true;
+        console.info("webgl renderer unavailable — using the SVG globe instead");
+      }
       svg.innerHTML = "";
+      this._teardownWebgl();
       this.init(svg);
       drawnFeatures = [];
       this._qi = null; // quick-index invalidated by a re-render
@@ -272,23 +287,30 @@
         baseView = { x: -GLOBE_RADIUS - m, y: -GLOBE_RADIUS - m, w: 2 * (GLOBE_RADIUS + m), h: 2 * (GLOBE_RADIUS + m) };
         svg.setAttribute("viewBox", `${baseView.x} ${baseView.y} ${baseView.w} ${baseView.h}`);
 
-        sphereEl = document.createElementNS(svg.namespaceURI, "path");
-        sphereEl.setAttribute("d", geoPath({ type: "Sphere" }) || "");
-        sphereEl.setAttribute("class", "sphere");
-        svg.appendChild(sphereEl);
+        if ((WEBGL_URL_WANTED || webglSelected) && WEBGL_SUPPORTED && this._setupWebgl()) {
+          // WebGL texture globe active: countries/sphere/graticule live on
+          // the canvas UNDER the svg; the svg keeps only the interactive
+          // overlay (dots, routes, arrows) with a transparent background.
+          webglActive = true;
+        } else {
+          sphereEl = document.createElementNS(svg.namespaceURI, "path");
+          sphereEl.setAttribute("d", geoPath({ type: "Sphere" }) || "");
+          sphereEl.setAttribute("class", "sphere");
+          svg.appendChild(sphereEl);
 
-        graticuleEl = document.createElementNS(svg.namespaceURI, "path");
-        graticuleEl.setAttribute("class", "graticule");
-        svg.appendChild(graticuleEl);
-        this._updateGraticule();
+          graticuleEl = document.createElementNS(svg.namespaceURI, "path");
+          graticuleEl.setAttribute("class", "graticule");
+          svg.appendChild(graticuleEl);
+          this._updateGraticule();
 
-        // precompute centroid + max angular radius per feature once,
-        // so drag re-projection can cull backside features cheaply
-        // (after the render loop below has filled drawnFeatures, so
-        // schedule on next tick)
-        Promise.resolve().then(() => {
-          for (const df of drawnFeatures) df.orbit = featureOrbit(df.feature);
-        });
+          // precompute centroid + max angular radius per feature once,
+          // so drag re-projection can cull backside features cheaply
+          // (after the render loop below has filled drawnFeatures, so
+          // schedule on next tick)
+          Promise.resolve().then(() => {
+            for (const df of drawnFeatures) df.orbit = featureOrbit(df.feature);
+          });
+        }
       } else {
         sphereEl = null;
         graticuleEl = null;
@@ -335,6 +357,13 @@
         const el = document.createElementNS(svg.namespaceURI, "path");
         el.setAttribute("d", geoPath(f) || "");
         el.setAttribute("class", inLesson ? "country" : "country context");
+        if (webglActive) {
+          // texture globe paints the countries; keep the path as an
+          // invisible click/hit target only (inline style beats the
+          // :hover CSS, which would otherwise paint over the canvas)
+          el.style.fill = "transparent";
+          el.style.stroke = "transparent";
+        }
         el.dataset.iso3 = f.properties.iso3;
         el.addEventListener("click", (ev) => {
           ev.stopPropagation();
@@ -381,8 +410,94 @@
       return this._fqd;
     },
 
+    /* ---- experimental WebGL texture globe (?renderer=webgl) ---- */
+
+    _setupWebgl() {
+      try {
+        webglCanvas = document.createElement("canvas");
+        webglCanvas.id = "webgl-globe";
+        webglCanvas.style.cssText =
+          "position:absolute;inset:0;width:100%;height:100%;pointer-events:none;";
+        svg.parentNode.insertBefore(webglCanvas, svg);
+        // the canvas is position:absolute, which paints ABOVE static-flow
+        // siblings regardless of DOM order — promote the svg so the
+        // interactive overlay (routes, dots) stays on top of the globe
+        svg.style.position = "relative";
+        svg.style.zIndex = "1";
+        const lessonSet = new Set((currentLesson.countries || []).map((c) => c.iso3));
+        if (!AtlasWebGLGlobe.init(webglCanvas, world, lessonSet)) {
+          this._teardownWebgl();
+          return false;
+        }
+        this._webglResize = () => this._webglFit();
+        window.addEventListener("resize", this._webglResize);
+        // ResizeObserver catches NON-window layout changes too (sidebar
+        // toggling, devtools) that stretch the canvas CSS box while the
+        // drawing-buffer aspect stays stale — the "elliptical globe" bug
+        this._webglRO = new ResizeObserver(this._webglResize);
+        this._webglRO.observe(svg);
+        this._webglFit();
+        AtlasWebGLGlobe.setRotation(projection.rotate());
+        return true;
+      } catch (e) {
+        console.error("webgl globe init failed, falling back to SVG:", e);
+        this._teardownWebgl();
+        return false;
+      }
+    },
+
+    _teardownWebgl() {
+      webglActive = false;
+      if (this._webglResize) {
+        window.removeEventListener("resize", this._webglResize);
+        this._webglResize = null;
+      }
+      if (this._webglRO) {
+        this._webglRO.disconnect();
+        this._webglRO = null;
+      }
+      if (webglCanvas) {
+        webglCanvas.remove();
+        webglCanvas = null;
+      }
+      svg.style.position = "";
+      svg.style.zIndex = "";
+      if (window.AtlasWebGLGlobe) AtlasWebGLGlobe.dispose();
+    },
+
+    _webglFit() {
+      if (!webglCanvas || !baseView) return;
+      const r = svg.getBoundingClientRect();
+      const vb = svg.viewBox.baseVal;
+      // derive the disc from the LIVE viewBox: wheel zoom shrinks it
+      // (cursor-anchored), so the canvas globe scales AND shifts exactly
+      // like the SVG layers do
+      const s = Math.min(r.width, r.height) / vb.width; // css px per svg unit
+      const radiusPx = GLOBE_RADIUS * s;
+      const centreX = (r.width - vb.width * s) / 2 + (0 - vb.x) * s;
+      const centreY = (r.height - vb.width * s) / 2 + (0 - vb.y) * s;
+      if (!this._webglFitLogged) {
+        this._webglFitLogged = true;
+        console.info("Atlas map.js v75 webgl fit:", { radiusPx: Math.round(radiusPx), centre: [Math.round(centreX), Math.round(centreY)] });
+      }
+      AtlasWebGLGlobe.fit(radiusPx, r.width, r.height, centreX, centreY);
+    },
+
+    _webglRebake() {
+      if (webglActive && window.AtlasWebGLGlobe) AtlasWebGLGlobe.rebake();
+    },
+
     _reproject(quick = false) {
       // re-project every drawn path after a globe rotation.
+      // WebGL texture-globe fast path: rotation is one uniform update;
+      // only the light SVG overlay (routes, dots) is reprojected. The
+      // 238 country paths stay untouched (invisible hit targets).
+      const rot = projection.rotate();
+      const centre = [-rot[0], -rot[1]];
+      const deg = Math.PI / 180;
+      if (webglActive) {
+        AtlasWebGLGlobe.setRotation(rot);
+      } else {
       // Backside culling: a feature is visible only if the angle between
       // the view centre and its centroid is < 90° + its angular radius.
       // (graticule still covers the full sphere; d3 clips it correctly)
@@ -411,9 +526,6 @@
         if (ql) ql.style.display = "none";
         if (group) group.style.display = "";
       }
-      const rot = projection.rotate();
-      const centre = [-rot[0], -rot[1]];
-      const deg = Math.PI / 180;
       for (const { el, feature, orbit } of drawnFeatures) {
         if (quick) continue; // merged layer replaces the per-country paths
         if (orbit) {
@@ -429,6 +541,7 @@
         }
         el.setAttribute("d", geoPath(feature) || "");
       }
+      } // end !webglActive
       for (const { el, points, fixed } of overlayPaths) {
         if (fixed) continue; // pixel-space overlay: redrawn separately
         // Backside culling: on the globe, raw projection() returns
@@ -484,16 +597,19 @@
     highlight(iso3, cls = "highlighted") {
       const el = this.element(iso3);
       if (el) el.classList.add(cls);
+      this._webglRebake();
     },
 
     clearHighlights(cls = "highlighted") {
       if (!group) return;
       group.querySelectorAll("." + cls).forEach((el) => el.classList.remove(cls));
+      this._webglRebake();
     },
 
     reveal(iso3) {
       const el = this.element(iso3);
       if (el) el.classList.add("revealed");
+      this._webglRebake();
     },
 
     setCurrent(iso3) {
@@ -501,14 +617,17 @@
       group.querySelectorAll(".current").forEach((el) => el.classList.remove("current"));
       const el = this.element(iso3);
       if (el) el.classList.add("current");
+      this._webglRebake();
     },
 
     clearCurrent() {
       if (group) group.querySelectorAll(".current").forEach((el) => el.classList.remove("current"));
+      this._webglRebake();
     },
 
     clearRevealed() {
       if (group) group.querySelectorAll(".revealed").forEach((el) => el.classList.remove("revealed"));
+      this._webglRebake();
     },
 
     centroid(iso3) {
@@ -1037,6 +1156,7 @@
 
     resetView() {
       if (baseView) svg.setAttribute("viewBox", `${baseView.x} ${baseView.y} ${baseView.w} ${baseView.h}`);
+      if (webglActive) this._webglFit();
       this._updateMarkers();
       // globe: also restore the lesson's initial rotation
       if (baseRotation && projectionName === "globe") {
@@ -1055,6 +1175,7 @@
       const x = ax - (ax - vb.x) / factor;
       const y = ay - (ay - vb.y) / factor;
       svg.setAttribute("viewBox", `${x} ${y} ${w} ${h}`);
+      if (webglActive) this._webglFit(); // zoom scales the globe too, not just the overlay
       this._updateMarkers();
     },
 
