@@ -39,8 +39,8 @@ for f in lessons:
                 problems.append(f"stop {s.get('id')} iso3 {s.get('iso3')} NOT IN TOPO")
         if not lesson.get("route_out"):
             problems.append("missing route_out")
-        if not lesson.get("voyage") and not lesson.get("route_back"):
-            problems.append("missing route_back")
+        # route_back is optional: one-way journeys (e.g. the Long March) have
+        # no return leg, and app.js guards `if (L.route_back)`
     status = "OK" if not problems else "FAIL " + "; ".join(problems[:5])
     if problems:
         fail += 1
