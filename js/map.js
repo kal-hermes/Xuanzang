@@ -526,6 +526,12 @@
         if (ql) ql.style.display = "none";
         if (group) group.style.display = "";
       }
+      } // end !webglActive
+      // country paths: visible fills in SVG mode, transparent hit targets
+      // in webgl mode. Skipped on drag frames everywhere (quick); on drag
+      // end they are reprojected ONCE — in webgl mode that re-aligns the
+      // invisible hit targets with the rotated texture, so country
+      // clicks stay truthful after rotating/zooming.
       for (const { el, feature, orbit } of drawnFeatures) {
         if (quick) continue; // merged layer replaces the per-country paths
         if (orbit) {
@@ -541,7 +547,6 @@
         }
         el.setAttribute("d", geoPath(feature) || "");
       }
-      } // end !webglActive
       for (const { el, points, fixed } of overlayPaths) {
         if (fixed) continue; // pixel-space overlay: redrawn separately
         // Backside culling: on the globe, raw projection() returns
