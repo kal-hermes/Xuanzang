@@ -57,6 +57,7 @@
 
   const LESSONS = [
     { file: "lessons/examples/europe-countries.json" },
+    { file: "lessons/longmarch/journey.json" },
     { file: "lessons/examples/asia-countries.json" },
     { file: "lessons/examples/africa-countries.json" },
     { file: "lessons/examples/north-america-countries.json" },
@@ -384,7 +385,7 @@
       if (L.route_back) map.addSeaRoute(L.route_back, "#e05674");
     } else {
       map.addArrow(L.route_out, "#ffd24a");
-      map.addArrow(L.route_back, "#e05674");
+      if (L.route_back) map.addArrow(L.route_back, "#e05674");
     }
   }
 

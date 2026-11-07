@@ -1,0 +1,3721 @@
+{
+ "id": "longmarch",
+ "type": "journey",
+ "title": {
+  "en-GB": "The Long March of the Central Red Army (1934–1935)",
+  "fr-CA": "La Longue Marche de l'Armée rouge centrale (1934–1935)",
+  "zh-Hans": "二万五千里长征（1934–1935）",
+  "zh-HK": "二萬五千里長征（1934–1935）",
+  "ja": "二万五千里長征（1934–1935）"
+ },
+ "traveler": {
+  "en-GB": "the Central Red Army",
+  "fr-CA": "l'Armée rouge centrale",
+  "zh-Hans": "中央红军",
+  "zh-HK": "中央紅軍",
+  "ja": "中央紅軍"
+ },
+ "stops": [
+  {
+   "id": "ruijin",
+   "coords": [
+    116.033,
+    25.883
+   ],
+   "year": 1934,
+   "when": {
+    "en-GB": "October 1934",
+    "fr-CA": "1934 10/上旬",
+    "zh-Hans": "1934年10月上旬",
+    "zh-HK": "1934年10月上旬",
+    "ja": "1934年10月上旬"
+   },
+   "present": {
+    "en-GB": "Ruijin, Jiangxi, China",
+    "fr-CA": "Ruijin, Jiangxi, China",
+    "zh-Hans": "江西省瑞金市",
+    "zh-HK": "江西省瑞金市",
+    "ja": "中国江西省瑞金市"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Ruijin",
+    "zh-Hans": "瑞金",
+    "zh-HK": "瑞金",
+    "fr-CA": "Ruijin",
+    "ja": "瑞金"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "瑞金是中华苏维埃共和国的首都，中央革命根据地的政治中心。",
+     "1934年9月，国民党军队以百万兵力推进第五次“围剿”的堡垒封锁战略，中央苏区只剩瑞金、于都、兴国等几个县的狭小地带。",
+     "10月初，博古、李德等中共中央领导人决定放弃中央苏区，主力红军向西转移，与湘西的红二、六军团会合。"
+    ],
+    "en-GB": [
+     "Ruijin was the capital of the Chinese Soviet Republic and the political centre of the Central Revolutionary Base Area.",
+     "In September 1934, the Kuomintang army, deploying a force of one million troops, pressed ahead with the blockhouse blockade strategy of its fifth 'encirclement and suppression' campaign, leaving the Central Soviet Area with only a narrow strip of territory comprising a handful of counties such as Ruijin, Yudu and Xingguo.",
+     "In early October, leading figures of the Chinese Communist Party's Central Committee, including Bo Gu and Li De, decided to abandon the Central Soviet Area and transfer the main forces of the Red Army westward to link up with the Second and Sixth Red Army Groups in western Hunan."
+    ],
+    "fr-CA": [
+     "Ruijin est la capitale de la République soviétique chinoise et le centre politique de la base révolutionnaire centrale.",
+     "En septembre 1934, les troupes du Kuomintang, fortes d’un million d’hommes, poussent plus loin leur stratégie de blocus par bastions fortifiés dans le cadre de la cinquième « campagne d’encerclement et d’anéantissement », si bien qu’il ne reste à la région soviétique centrale qu’une étroite bande de territoire comptant quelques comtés, dont Ruijin, Yudu et Xingguo.",
+     "Au début du mois d’octobre, Bo Gu, Li De et les autres dirigeants du Comité central du Parti communiste chinois décident d’abandonner la région soviétique centrale : les forces principales de l’Armée rouge doivent se porter vers l’ouest afin de faire leur jonction avec les 2ᵉ et 6ᵉ corps d’armée de l’Armée rouge du Hunan occidental."
+    ],
+    "zh-HK": [
+     "瑞金是中華蘇維埃共和國的首都，中央革命根據地的政治中心。",
+     "1934年9月，國民黨軍隊以百萬兵力推進第五次「圍剿」的堡壘封鎖戰略，中央蘇區只剩瑞金、于都、興國等幾個縣的狹小地帶。",
+     "10月初，博古、李德等中共中央領導人決定放棄中央蘇區，主力紅軍向西轉移，與湘西的紅二、六軍團會合。"
+    ],
+    "ja": [
+     "瑞金は中華ソヴィエト共和国の首都であり、中央革命根拠地の政治的中心地であった。",
+     "1934年9月、国民党軍は百万の兵力をもって第五次「囲剿」（包囲討伐）の堡塁封鎖戦略を推し進め、中央ソヴィエト区は瑞金・于都・興国など数県にすぎない狭小な地帯を残すのみとなった。",
+     "10月初め、博古や李徳ら中国共産党中央の指導者たちは中央ソヴィエト区を放棄して紅軍主力を西へ移動させ、湘西の紅第二・第六軍団と合流することを決定した。"
+    ]
+   }
+  },
+  {
+   "id": "yudu",
+   "coords": [
+    115.487,
+    25.958
+   ],
+   "year": 1934,
+   "when": {
+    "en-GB": "17 Oct 1934",
+    "fr-CA": "1934 10/17",
+    "zh-Hans": "1934年10月17日",
+    "zh-HK": "1934年10月17日",
+    "ja": "1934年10月17日"
+   },
+   "present": {
+    "en-GB": "Yudu, Jiangxi, China",
+    "fr-CA": "Yudu, Jiangxi, China",
+    "zh-Hans": "江西省于都县",
+    "zh-HK": "江西省于都县",
+    "ja": "中国江西省于都県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Yudu",
+    "zh-Hans": "于都",
+    "zh-HK": "于都",
+    "fr-CA": "Yudu",
+    "ja": "于都"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "中央红军主力一、三、五、八、九军团及机关共8.6万余人，从长汀、瑞金、兴国等地向于都集结。",
+     "10月17日傍晚，红军从于都县的八个渡口渡过贡水，迈出了长征的第一步。",
+     "1.6万余人的红二十四师和地方部队留在苏区，在项英、陈毅领导下开始南方三年游击战争。"
+    ],
+    "en-GB": [
+     "The main force of the Central Red Army — the 1st, 3rd, 5th, 8th and 9th Army Corps, together with the headquarters units, totalling more than 86,000 men — converged on Yudu from Changting, Ruijin, Xingguo and other places.",
+     "On the evening of 17 October, the Red Army crossed the Gong River at eight crossing points in Yudu County, taking the first step of the Long March.",
+     "More than 16,000 men of the Red 24th Division and the local forces remained behind in the soviet area, where, under the leadership of Xiang Ying and Chen Yi, they began the three-year guerrilla war in the south."
+    ],
+    "fr-CA": [
+     "Les forces principales de l'Armée rouge centrale, soit les 1er, 3e, 5e, 8e et 9e corps d'armée ainsi que les organes du commandement, au nombre de plus de 86 000 hommes, se rassemblèrent à Yudu, en arrivant de Changting, de Ruijin, de Xingguo et d'autres localités.",
+     "Le soir du 17 octobre, l'Armée rouge traversa la rivière Gong par huit points de passage du comté de Yudu, faisant ainsi le premier pas de la Longue Marche.",
+     "La 24e division de l'Armée rouge et les troupes locales, soit plus de 16 000 hommes, demeurèrent dans la zone soviétique et, sous la direction de Xiang Ying et de Chen Yi, entamèrent la guerre de guérilla de trois ans dans le Sud."
+    ],
+    "zh-HK": [
+     "中央紅軍主力一、三、五、八、九軍團及機關共8.6萬餘人，從長汀、瑞金、興國等地向于都集結。",
+     "10月17日傍晚，紅軍從于都縣的八個渡口渡過貢水，邁出了長征的第一步。",
+     "1.6萬餘人的紅二十四師和地方部隊留在蘇區，在項英、陳毅領導下開始南方三年游擊戰爭。"
+    ],
+    "ja": [
+     "中央紅軍の主力である第1・第3・第5・第8・第9軍団および機関部隊、あわせて8万6千余人が、長汀・瑞金・興国などの各地から于都へと集結した。",
+     "10月17日の夕暮れ、紅軍は于都県内の8つの渡し場から貢水を渡り、長征の第一歩を踏み出した。",
+     "1万6千余人からなる紅軍第24師と地方部隊は蘇区（ソヴィエト区）に残留し、項英・陳毅の指揮のもとで南方三年遊撃戦争を開始した。"
+    ]
+   }
+  },
+  {
+   "id": "xiangjiang",
+   "coords": [
+    110.67,
+    25.61
+   ],
+   "year": 1934,
+   "when": {
+    "en-GB": "27 Nov – 1 Dec 1934",
+    "fr-CA": "1934 11/27—12/1",
+    "zh-Hans": "1934年11月27日—12月1日",
+    "zh-HK": "1934年11月27日—12月1日",
+    "ja": "1934年11月27日–12月1日"
+   },
+   "present": {
+    "en-GB": "Xing'an–Quanzhou, Guangxi, China",
+    "fr-CA": "Xing'an–Quanzhou, Guangxi, China",
+    "zh-Hans": "广西兴安县、全州县之间",
+    "zh-HK": "广西兴安县、全州县之间",
+    "ja": "中国広西チワン族自治区興安県・全州県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Xiang River battle",
+    "zh-Hans": "湘江战役",
+    "zh-HK": "湘江战役",
+    "fr-CA": "Xiang River battle",
+    "ja": "湘江戦役"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "红军突破前三道封锁线后西进，11月下旬从广西兴安、全州之间抢渡湘江。",
+     "11月27日至12月1日，红军苦战五昼夜突破第四道封锁线。携带大量辎重的队伍行动迟缓，付出了惨重代价。",
+     "湘江战役后，出发时的8万余中央红军锐减到3万余人。红三十四师在湘江东岸全军覆没。"
+    ],
+    "en-GB": [
+     "Having broken through the first three blockade lines, the Red Army pushed westwards, and in late November forced a crossing of the Xiang River between Xing'an and Quanzhou in Guangxi.",
+     "From 27 November to 1 December, the Red Army fought bitterly for five days and nights to break through the fourth blockade line. The columns, weighed down with vast quantities of heavy baggage, moved at a crawl and paid a grievous price.",
+     "After the Battle of the Xiang River, the Central Red Army, more than 80,000 strong when it set out, had dwindled to just over 30,000. The 34th Division was annihilated in its entirety on the east bank of the Xiang River."
+    ],
+    "fr-CA": [
+     "Après avoir percé les trois premières lignes de blocus, l'Armée rouge s'avança vers l'ouest et, à la fin du mois de novembre, traversa de force la rivière Xiang entre Xing'an et Quanzhou, dans le Guangxi.",
+     "Du 27 novembre au 1er décembre, après cinq jours et cinq nuits de combats acharnés, l'Armée rouge perça la quatrième ligne de blocus. Les colonnes, encombrées d'un attirail considérable, avançaient lentement et payèrent un lourd tribut.",
+     "Après la bataille de la rivière Xiang, l'Armée rouge centrale, forte de plus de 80 000 hommes au départ, fondit à un peu plus de 30 000. La 34e division de l'Armée rouge fut anéantie sur la rive est de la rivière Xiang."
+    ],
+    "zh-HK": [
+     "紅軍突破前三道封鎖線後西進，11月下旬從廣西興安、全州之間搶渡湘江。",
+     "11月27日至12月1日，紅軍苦戰五晝夜突破第四道封鎖線。攜帶大量輜重的隊伍行動遲緩，付出了慘重代價。",
+     "湘江戰役後，出發時的8萬餘中央紅軍銳減到3萬餘人。紅三十四師在湘江東岸全軍覆沒。"
+    ],
+    "ja": [
+     "紅軍は最初の三つの封鎖線を突破した後、西へ進軍を続け、11月下旬、広西の興安と全州の間から湘江を強行渡河した。",
+     "11月27日から12月1日までの五昼夜、紅軍は苦戦を重ねながら第四の封鎖線を突破した。しかし、大量の輜重を携えた部隊は行動が緩慢で、甚大な代償を払うこととなった。",
+     "湘江戦役の後、出発時には8万余人を数えた中央紅軍は3万余人にまで激減した。紅三十四師団は湘江の東岸で全滅した。"
+    ]
+   }
+  },
+  {
+   "id": "laoshanjie",
+   "coords": [
+    110.48,
+    25.92
+   ],
+   "year": 1934,
+   "when": {
+    "en-GB": "December 1934",
+    "fr-CA": "1934 12/上旬",
+    "zh-Hans": "1934年12月上旬",
+    "zh-HK": "1934年12月上旬",
+    "ja": "1934年12月上旬"
+   },
+   "present": {
+    "en-GB": "Longsheng, Guangxi, China",
+    "fr-CA": "Longsheng, Guangxi, China",
+    "zh-Hans": "广西龙胜各族自治县（越城岭）",
+    "zh-HK": "广西龙胜各族自治县（越城嶺）",
+    "ja": "中国広西チワン族自治区竜勝県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Laoshanjie (Yuecheng Ling)",
+    "zh-Hans": "老山界",
+    "zh-HK": "老山界",
+    "fr-CA": "Laoshanjie (Yuecheng Ling)",
+    "ja": "老山界"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "湘江之后，红军从龙胜翻越老山界——越城岭的主峰地带，这是长征路上第一座真正的高山。",
+     "博古、李德此时仍坚持去湘西与红二、六军团会合，而国民党军已在那里布下口袋。",
+     "红军进入少数民族聚居区，开始执行民族政策，为后来通过彝族、藏族地区积累经验。"
+    ],
+    "en-GB": [
+     "After the Xiang River, the Red Army crossed Laoshanjie from Longsheng — the area of the highest peaks of the Yuecheng Range — the first truly high mountain on the Long March.",
+     "At this stage, Bo Gu and Li De still insisted on heading for western Hunan to link up with the Second and Sixth Red Army Groups, but the Kuomintang forces had already laid a trap there.",
+     "The Red Army entered areas inhabited by ethnic minorities and began to put its nationality policy into practice, gaining experience for the later passage through Yi and Tibetan regions."
+    ],
+    "fr-CA": [
+     "Après la rivière Xiang, l'Armée rouge gravit, depuis Longsheng, le Laoshanjie — le secteur du pic principal de la chaîne Yuecheng —, première véritable haute montagne de la Longue Marche.",
+     "Bo Gu et Li De s'obstinaient, à ce moment-là, à vouloir rejoindre l'ouest du Hunan pour opérer leur jonction avec les 2e et 6e corps de l'Armée rouge, mais les troupes du Guomindang y avaient déjà tendu un piège.",
+     "L'Armée rouge entra dans des régions à forte population de minorités ethniques et commença à appliquer sa politique des nationalités, accumulant ainsi l'expérience qui lui servirait plus tard à traverser les territoires des Yi et des Tibétains."
+    ],
+    "zh-HK": [
+     "湘江之後，紅軍從龍勝翻越老山界——越城嶺的主峰地帶，這是長征路上第一座真正的高山。",
+     "博古、李德此時仍堅持前往湘西與紅二、六軍團會合，而國民黨軍已在那裏佈下口袋。",
+     "紅軍進入少數民族聚居區，開始執行民族政策，為後來通過彝族、藏族地區累積經驗。"
+    ],
+    "ja": [
+     "湘江の戦いの後、紅軍は龍勝から老山界――越城嶺の主峰地帯――を越えていった。これは長征の道のりで初めて迎える本格的な高山であった。",
+     "このときもなお博古と李徳は、湘西へ進んで紅二・六軍団と合流することに固執していたが、国民党軍はすでにそこに袋陣を敷いて待ち構えていた。",
+     "紅軍は少数民族の集住地域に入り、民族政策の実施に着手した。これは、のちにイ族やチベット族の地域を通過する際の経験の蓄積となった。"
+    ]
+   }
+  },
+  {
+   "id": "tongdao",
+   "coords": [
+    109.778,
+    26.158
+   ],
+   "year": 1934,
+   "when": {
+    "en-GB": "12 Dec 1934",
+    "fr-CA": "1934 12/12",
+    "zh-Hans": "1934年12月12日",
+    "zh-HK": "1934年12月12日",
+    "ja": "1934年12月12日"
+   },
+   "present": {
+    "en-GB": "Tongdao, Hunan, China",
+    "fr-CA": "Tongdao, Hunan, China",
+    "zh-Hans": "湖南省通道侗族自治县",
+    "zh-HK": "湖南省通道侗族自治县",
+    "ja": "中国湖南省通道県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Tongdao Conference",
+    "zh-Hans": "通道会议",
+    "zh-HK": "通道會议",
+    "fr-CA": "Tongdao Conference",
+    "ja": "通道会議"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "12月12日，中共中央在湖南通道召开紧急会议。",
+     "毛泽东第一次在会上提出：放弃去湘西的计划，转兵向西进入敌人力量薄弱的贵州。",
+     "这个主张得到多数领导人认可，红军由此改变方向，史称“通道转兵”。"
+    ],
+    "en-GB": [
+     "On 12 December, the Central Committee of the Communist Party of China held an emergency meeting at Tongdao in Hunan Province.",
+     "At the meeting, Mao Zedong proposed for the first time that the plan to advance into western Hunan be abandoned, and that the Red Army instead turn west into Guizhou, where enemy forces were weak.",
+     "This proposal won the approval of the majority of the leaders, and the Red Army accordingly changed direction — an episode known to history as the 'Tongdao Turn'."
+    ],
+    "fr-CA": [
+     "Le 12 décembre, le Comité central du Parti communiste chinois a tenu une réunion d'urgence à Tongdao, dans la province du Hunan.",
+     "Lors de cette réunion, Mao Zedong a proposé pour la première fois d'abandonner le plan qui consistait à se rendre dans l'ouest du Hunan et de faire plutôt pivoter les troupes vers l'ouest, en direction du Guizhou, où les forces ennemies étaient faibles.",
+     "Cette proposition a obtenu l'aval de la majorité des dirigeants, et l'Armée rouge a ainsi changé de cap, un épisode entré dans l'histoire sous le nom de « virage de Tongdao »."
+    ],
+    "zh-HK": [
+     "12月12日，中共中央在湖南通道召開緊急會議。",
+     "毛澤東第一次在會上提出：放棄去湘西的計劃，轉兵向西進入敵人力量薄弱的貴州。",
+     "這個主張得到多數領導人認可，紅軍由此改變方向，史稱「通道轉兵」。"
+    ],
+    "ja": [
+     "12月12日、中国共産党中央委員会は湖南省通道で緊急会議を開催した。",
+     "毛沢東はこの会議で初めて、湘西に向かう計画を断念し、西方へ転進して敵の支配力が弱い貴州に入ることを提案した。",
+     "この主張は多くの指導者の賛同を得て、紅軍はここにおいて進路を変更した。これが歴史上いわゆる「通道転兵」である。"
+    ]
+   }
+  },
+  {
+   "id": "liping",
+   "coords": [
+    109.133,
+    26.236
+   ],
+   "year": 1934,
+   "when": {
+    "en-GB": "18 Dec 1934",
+    "fr-CA": "1934 12/18",
+    "zh-Hans": "1934年12月18日",
+    "zh-HK": "1934年12月18日",
+    "ja": "1934年12月18日"
+   },
+   "present": {
+    "en-GB": "Liping, Guizhou, China",
+    "fr-CA": "Liping, Guizhou, China",
+    "zh-Hans": "贵州省黎平县",
+    "zh-HK": "贵州省黎平县",
+    "ja": "中国貴州省黎平県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Liping Conference",
+    "zh-Hans": "黎平会议",
+    "zh-HK": "黎平會议",
+    "fr-CA": "Liping Conference",
+    "ja": "黎平会議"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "12月13日红军占领黎平，18日中央政治局在此召开黎平会议。",
+     "会议正式肯定毛泽东转兵贵州的主张，决定向川黔边发展，放弃了原定的湘西会合计划。",
+     "黎平会议是通道转兵的延续，红军的战略方向第一次摆脱了博古、李德的既定方案。"
+    ],
+    "en-GB": [
+     "On 13 December the Red Army captured Liping, and on 18 December the Politburo of the Party Central Committee convened the Liping Conference there.",
+     "The conference formally endorsed Mao Zedong's proposal to redirect the troops towards Guizhou, decided to advance into the border region between Sichuan and Guizhou, and abandoned the original plan to join forces in western Hunan.",
+     "The Liping Conference carried forward the change of course made at Tongdao, and for the first time the Red Army's strategic direction broke free from the preconceived plans of Bo Gu and Li De."
+    ],
+    "fr-CA": [
+     "Le 13 décembre, l'Armée rouge occupa Liping, et le 18, le Bureau politique du Comité central y tint la conférence de Liping.",
+     "La conférence approuva officiellement la proposition de Mao Zedong de rediriger les troupes vers le Guizhou; elle décida de se développer vers la région limitrophe du Sichuan et du Guizhou et abandonna le plan initial de jonction dans l'ouest du Hunan.",
+     "La conférence de Liping constituait le prolongement du tournant de Tongdao : pour la première fois, l'orientation stratégique de l'Armée rouge échappait aux plans préétablis de Bo Gu et de Li De."
+    ],
+    "zh-HK": [
+     "12月13日紅軍佔領黎平，18日中央政治局在此召開黎平會議。",
+     "會議正式肯定毛澤東轉兵貴州的主張，決定向川黔邊發展，放棄了原定的湘西會合計劃。",
+     "黎平會議是通道轉兵的延續，紅軍的戰略方向第一次擺脫了博古、李德的既定方案。"
+    ],
+    "ja": [
+     "12月13日、紅軍は黎平を占領し、18日には中央政治局が当地で黎平会議を開催した。",
+     "会議は毛沢東の貴州への転進という主張を正式に承認し、四川・貴州の省境方面への発展を決定するとともに、当初の湘西での合流計画を放棄した。",
+     "黎平会議は「通道転兵」の延長線上に位置づけられるものであり、紅軍の戦略的方向は初めて博古・李徳の既定方針から脱却することとなった。"
+    ]
+   }
+  },
+  {
+   "id": "wujiang",
+   "coords": [
+    107.62,
+    27.17
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "January 1935",
+    "fr-CA": "1935 1/初",
+    "zh-Hans": "1935年1月初",
+    "zh-HK": "1935年1月初",
+    "ja": "1935年1月初"
+   },
+   "present": {
+    "en-GB": "Weng'an, Guizhou, China",
+    "fr-CA": "Weng'an, Guizhou, China",
+    "zh-Hans": "贵州省瓮安县江界河渡口",
+    "zh-HK": "贵州省瓮安县江界河渡口",
+    "ja": "中国貴州省甕安県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Wu River crossing",
+    "zh-Hans": "强渡乌江",
+    "zh-HK": "强渡乌江",
+    "fr-CA": "Wu River crossing",
+    "ja": "烏江強行渡河"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "1935年1月初，红军强渡乌江天险，突破黔军防线。",
+     "乌江是贵州的第一大江，江面宽、水流急，黔军在对岸设防。红军以竹筏强渡，攻占渡口。",
+     "渡过乌江，通向遵义的大门打开了。"
+    ],
+    "en-GB": [
+     "In early January 1935, the Red Army forced a crossing of the formidable Wu River, smashing through the defensive lines of the Guizhou army.",
+     "The Wu River is the largest river in Guizhou, wide and swift-flowing, and the Guizhou troops had fortified the far bank. Crossing by force on bamboo rafts, the Red Army seized the ferry crossing points.",
+     "With the Wu River crossed, the gateway to Zunyi stood open."
+    ],
+    "fr-CA": [
+     "Début janvier 1935, l'Armée rouge força le passage de la redoutable barrière naturelle qu'est la rivière Wujiang et perça les lignes de défense des troupes du Guizhou.",
+     "Plus grande rivière du Guizhou, la Wujiang offre un lit large et un courant rapide, et les troupes du Guizhou avaient fortifié la rive opposée. L'Armée rouge la traversa de force sur des radeaux de bambou et s'empara des points de traversée.",
+     "Une fois la Wujiang franchie, la porte menant à Zunyi s'ouvrit."
+    ],
+    "zh-HK": [
+     "1935年1月初，紅軍強渡烏江天險，突破黔軍防線。",
+     "烏江是貴州的第一大江，江面寬、水流急，黔軍在對岸設防。紅軍以竹筏強渡，攻佔渡口。",
+     "渡過烏江，通向遵義的大門打開了。"
+    ],
+    "ja": [
+     "1935年1月初頭、紅軍は烏江という天険を強行渡河し、黔軍（貴州軍）の防衛線を突破した。",
+     "烏江は貴州最大の河であり、川幅は広く流れも急で、黔軍は対岸に守りを固めていた。紅軍は竹の筏で強行渡河を敢行し、渡し場を攻め取った。",
+     "烏江を渡ることで、遵義へと通じる扉が開かれた。"
+    ]
+   }
+  },
+  {
+   "id": "zunyi",
+   "coords": [
+    106.925,
+    27.725
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "15 Jan 1935",
+    "fr-CA": "1935 1/15—17",
+    "zh-Hans": "1935年1月15日—17日",
+    "zh-HK": "1935年1月15日—17日",
+    "ja": "1935年1月15日–17日"
+   },
+   "present": {
+    "en-GB": "Zunyi, Guizhou, China",
+    "fr-CA": "Zunyi, Guizhou, China",
+    "zh-Hans": "贵州省遵义市",
+    "zh-HK": "贵州省遵义市",
+    "ja": "中国貴州省遵義市"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Zunyi Conference",
+    "zh-Hans": "遵义会议",
+    "zh-HK": "遵义會议",
+    "fr-CA": "Zunyi Conference",
+    "ja": "遵義会議"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "1月7日红军占领遵义城。15日至17日，中共中央政治局在此召开扩大会议，史称遵义会议。",
+     "会议检讨第五次反围剿以来的军事路线，取消博古、李德的最高军事指挥权，增补毛泽东为政治局常委，恢复对红军的指挥。",
+     "遵义会议是中国革命史上最关键的转折点之一：红军此后的行军路线，由这次会议确定的领导格局来主导。"
+    ],
+    "en-GB": [
+     "On 7 January the Red Army captured the city of Zunyi. From 15 to 17 January, the Political Bureau (Politburo) of the Central Committee of the Communist Party of China convened an enlarged meeting there, known to history as the Zunyi Conference.",
+     "The conference reviewed the military line pursued since the Fifth Counter-Encirclement Campaign, stripped Bo Gu and Li De (Otto Braun) of their supreme authority over military command, co-opted Mao Zedong onto the Politburo Standing Committee, and restored command over the Red Army.",
+     "The Zunyi Conference was one of the most critical turning points in the history of the Chinese revolution: from then on, the route of the Red Army's march was directed by the leadership structure established at this meeting."
+    ],
+    "fr-CA": [
+     "Le 7 janvier, l'Armée rouge s'est emparée de la ville de Zunyi. Du 15 au 17 janvier, le Bureau politique du Comité central du Parti communiste chinois y a tenu une réunion élargie, restée dans l'histoire sous le nom de conférence de Zunyi.",
+     "La conférence a passé en revue de façon critique la ligne militaire suivie depuis la cinquième campagne de contre-encerclement, a retiré à Bo Gu et à Li De le commandement militaire suprême, a fait entrer Mao Zedong au Comité permanent du Bureau politique et a rétabli le commandement de l'Armée rouge.",
+     "La conférence de Zunyi constitue l'un des tournants les plus décisifs de l'histoire de la révolution chinoise : à partir de ce moment, l'itinéraire suivi par l'Armée rouge a été dicté par la configuration de la direction définie lors de cette réunion."
+    ],
+    "zh-HK": [
+     "1月7日紅軍佔領遵義城。15日至17日，中共中央政治局在此召開擴大會議，史稱遵義會議。",
+     "會議檢討第五次反圍剿以來的軍事路線，取消博古、李德的最高軍事指揮權，增補毛澤東為政治局常委，恢復對紅軍的指揮。",
+     "遵義會議是中國革命史上最關鍵的轉捩點之一：紅軍此後的行軍路線，由這次會議確定的領導格局來主導。"
+    ],
+    "ja": [
+     "1月7日、紅軍は遵義の城を占領した。15日から17日にかけて、中国共産党中央政治局はこの地で拡大会議を開催した。この会議は、後に「遵義会議」と呼ばれるようになった。",
+     "会議では第五次反囲剿（第五次包囲討伐への抵抗）以来の軍事路線が検討され、博古と李徳の最高軍事指揮権が取り消された。さらに毛沢東が政治局常務委員に補選され、紅軍に対する指揮権が回復された。",
+     "遵義会議は、中国革命史上最も重要な転換点の一つである。紅軍がその後たどる行軍路線は、この会議で確定された指導体制によって主導されることとなった。"
+    ]
+   }
+  },
+  {
+   "id": "tucheng",
+   "coords": [
+    106.06,
+    28.27
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "28 Jan 1935",
+    "fr-CA": "1935 1/28—29",
+    "zh-Hans": "1935年1月28日—29日",
+    "zh-HK": "1935年1月28日—29日",
+    "ja": "1935年1月28日–29日"
+   },
+   "present": {
+    "en-GB": "Xishui, Guizhou, China",
+    "fr-CA": "Xishui, Guizhou, China",
+    "zh-Hans": "贵州省习水县土城镇",
+    "zh-HK": "贵州省习水县土城镇",
+    "ja": "中国貴州省習水県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Tucheng & first Chishui crossing",
+    "zh-Hans": "土城之战与一渡赤水",
+    "zh-HK": "土城之战与一渡赤水",
+    "fr-CA": "Tucheng & first Chishui crossing",
+    "ja": "土城の戦いと一渡赤水"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "遵义会议后，红军计划北渡长江与红四方面军会合。1月24日攻占土城。",
+     "1月28日，红军在土城以北的青杠坡进攻川军郭勋祺部，激战一日打成僵局，损失上千人，北渡计划受挫。",
+     "1月29日，红军从猿猴场、土城等渡口一渡赤水河，进入川南。"
+    ],
+    "en-GB": [
+     "After the Zunyi Conference, the Red Army planned to cross the Yangtze River northwards to link up with the Fourth Front Red Army. On 24 January it captured Tucheng.",
+     "On 28 January, at Qinggangpo north of Tucheng, the Red Army attacked the Sichuan forces under Guo Xunqi. After a day of fierce fighting the battle reached a stalemate, with the Red Army suffering more than a thousand casualties, and the plan to cross northwards was thwarted.",
+     "On 29 January, the Red Army made its first crossing of the Chishui River at ferry points including Yuanhouchang and Tucheng, entering southern Sichuan."
+    ],
+    "fr-CA": [
+     "Après la Conférence de Zunyi, l'Armée rouge projeta de franchir le fleuve Yangtsé vers le nord afin de faire sa jonction avec la Quatrième Armée rouge. Le 24 janvier, elle s'empara de Tucheng.",
+     "Le 28 janvier, l'Armée rouge attaqua les unités de Guo Xunqi, de l'armée du Sichuan, à Qinggangpo, au nord de Tucheng. Après une journée de combats acharnés qui se solda par une impasse, elle perdit plus d'un millier d'hommes et son projet de traversée vers le nord fut compromis.",
+     "Le 29 janvier, l'Armée rouge effectua sa première traversée de la rivière Chishui par les gués de Yuanhouchang et de Tucheng, entre autres, puis entra dans le sud du Sichuan."
+    ],
+    "zh-HK": [
+     "遵義會議後，紅軍計劃北渡長江與紅四方面軍會合。1月24日攻佔土城。",
+     "1月28日，紅軍在土城以北的青槓坡進攻川軍郭勳祺部，激戰一日打成僵局，損失上千人，北渡計劃受挫。",
+     "1月29日，紅軍從猿猴場、土城等渡口一渡赤水河，進入川南。"
+    ],
+    "ja": [
+     "遵義会議の後、紅軍は長江を北へ渡り、紅四方面軍と合流することを計画した。1月24日、土城を攻略した。",
+     "1月28日、紅軍は土城の北にある青杠坡で川軍の郭勲祺部を攻撃したが、丸一日の激戦の末に膠着状態に陥り、一千人以上の損害を出して、北渡の計画は挫折した。",
+     "1月29日、紅軍は猿猴場・土城などの渡河点から赤水河を初めて渡り、川南に入った。"
+    ]
+   }
+  },
+  {
+   "id": "zhaxi",
+   "coords": [
+    105.04,
+    27.85
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "5 Feb 1935",
+    "fr-CA": "1935 2/5—9",
+    "zh-Hans": "1935年2月5日—9日",
+    "zh-HK": "1935年2月5日—9日",
+    "ja": "1935年2月5日–9日"
+   },
+   "present": {
+    "en-GB": "Weixin, Yunnan, China",
+    "fr-CA": "Weixin, Yunnan, China",
+    "zh-Hans": "云南省威信县（扎西）",
+    "zh-HK": "云南省威信县（扎西）",
+    "ja": "中国雲南省威信県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Zhaxi Conference",
+    "zh-Hans": "扎西会议",
+    "zh-HK": "扎西會议",
+    "fr-CA": "Zhaxi Conference",
+    "ja": "扎西会議"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "红军进入云贵川三省交界的扎西地域（云南威信），中央政治局连续召开会议。",
+     "扎西会议决定：张闻天取代博古负总责；暂缓渡江入川，回兵黔北；部队整编为十六个团。",
+     "此时蒋介石调集吴奇伟、周浑元、孙渡等部，准备在川南围歼红军。"
+    ],
+    "en-GB": [
+     "The Red Army entered the Zaxi area, where the borders of Yunnan, Guizhou and Sichuan provinces meet (Weixin, Yunnan), and the Political Bureau of the Central Committee convened a series of successive meetings.",
+     "At the Zaxi Conference it was decided that Zhang Wentian would replace Bo Gu and assume overall responsibility; that the crossing of the river into Sichuan would be postponed and the troops would turn back to northern Guizhou; and that the army would be reorganised into sixteen regiments.",
+     "At this point, Chiang Kai-shek massed the forces of Wu Qiwei, Zhou Hunyuan and Sun Du, among others, preparing to encircle and annihilate the Red Army in southern Sichuan."
+    ],
+    "fr-CA": [
+     "L'Armée rouge pénètre dans la région de Zhaxi, au point de jonction des trois provinces du Yunnan, du Guizhou et du Sichuan (Weixin, au Yunnan), où le Bureau politique du Comité central tient une série de réunions successives.",
+     "La conférence de Zhaxi prend les décisions suivantes : Zhang Wentian remplace Bo Gu comme responsable général; le passage du fleuve en direction du Sichuan est momentanément reporté et les troupes rebroussent chemin vers le nord du Guizhou; les unités sont réorganisées en seize régiments.",
+     "À ce moment-là, Tchiang Kaï-chek rassemble les troupes de Wu Qiwei, de Zhou Hunyuan et de Sun Du, entre autres, dans le but d'encercler et d'anéantir l'Armée rouge dans le sud du Sichuan."
+    ],
+    "zh-HK": [
+     "紅軍進入雲貴川三省交界的扎西地域（雲南威信），中央政治局連續召開會議。",
+     "扎西會議決定：張聞天取代博古負總責；暫緩渡江入川，回兵黔北；部隊整編為十六個團。",
+     "此時蔣介石調集吳奇偉、周渾元、孫渡等部，準備在川南圍殲紅軍。"
+    ],
+    "ja": [
+     "紅軍が雲南・貴州・四川の三省境界にあたる扎西地域（雲南省威信）に入ると、中央政治局は相次いで会議を開催した。",
+     "扎西会議では、張聞天が博古に代わって総責任を負うこと、長江渡河による四川進入を当面見合わせて兵を貴州北部へ返すこと、さらに部隊を十六個連隊に再編することが決定された。",
+     "このとき蒋介石は呉奇偉・周渾元・孫渡らの部隊を動員し、川南において紅軍を包囲殲滅する準備を進めていた。"
+    ]
+   }
+  },
+  {
+   "id": "taipingdu",
+   "coords": [
+    105.83,
+    28.09
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "18 Feb 1935",
+    "fr-CA": "1935 2/18—21",
+    "zh-Hans": "1935年2月18日—21日",
+    "zh-HK": "1935年2月18日—21日",
+    "ja": "1935年2月18日–21日"
+   },
+   "present": {
+    "en-GB": "Gulin, Sichuan, China",
+    "fr-CA": "Gulin, Sichuan, China",
+    "zh-Hans": "四川省古蔺县太平渡",
+    "zh-HK": "四川省古蔺县太平渡",
+    "ja": "中国四川省古藺県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Second Chishui crossing (Taipingdu)",
+    "zh-Hans": "二渡赤水",
+    "zh-HK": "二渡赤水",
+    "fr-CA": "Second Chishui crossing (Taipingdu)",
+    "ja": "二渡赤水（太平渡）"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "2月10日，毛泽东决定东进。18日至21日，红军从太平渡、二郎滩东渡赤水河，杀了个回马枪。",
+     "这次回师黔北完全出乎国民党军意料，红军五天内连克桐梓、娄山关、遵义。",
+     "二渡赤水是四渡赤水中战果最大的一次：红军取得了长征以来最大的一场胜利。"
+    ],
+    "en-GB": [
+     "On 10 February, Mao Zedong decided to advance eastwards. Between 18 and 21 February, the Red Army recrossed the Chishui River to the east at Taipingdu and Erlangtan, delivering a surprise counter-strike.",
+     "This return to northern Guizhou took the Kuomintang forces completely by surprise: within five days the Red Army captured Tongzi, Loushan Pass and Zunyi in quick succession.",
+     "The second crossing of the Chishui was the most rewarding of the four: it brought the Red Army its greatest victory since the Long March began."
+    ],
+    "fr-CA": [
+     "Le 10 février, Mao Zedong décide de marcher vers l’est. Du 18 au 21, l’Armée rouge franchit la rivière Chishui vers l’est aux passages de Taipingdu et d’Erlangtan, avant de se retourner brusquement contre ses poursuivants.",
+     "Ce retour dans le nord du Guizhou surprend totalement les troupes du Kuomintang : en cinq jours à peine, l’Armée rouge enlève successivement Tongzi, le col de Loushan et Zunyi.",
+     "Ce deuxième franchissement de la Chishui est le plus fructueux des quatre : l’Armée rouge y remporte sa plus grande victoire depuis le début de la Longue Marche."
+    ],
+    "zh-HK": [
+     "2月10日，毛澤東決定東進。18日至21日，紅軍從太平渡、二郎灘東渡赤水河，殺了個回馬槍。",
+     "這次回師黔北完全出乎國民黨軍意料，紅軍五天內連克桐梓、婁山關、遵義。",
+     "二渡赤水是四渡赤水中戰果最大的一次：紅軍取得了長征以來最大的一場勝利。"
+    ],
+    "ja": [
+     "2月10日、毛沢東は東進を決断した。18日から21日にかけて、紅軍は太平渡と二郎灘から赤水河を東へ渡り、来た道を引き返して敵に不意打ちを浴びせた。",
+     "この黔北(貴州北部)への反転は国民党軍の予想を完全に裏切るものであり、紅軍はわずか五日間のうちに桐梓・婁山関・遵義を相次いで攻略した。",
+     "この二渡赤水は、四渡赤水の渡河作戦のなかで最大の戦果を挙げたものであり、紅軍は長征開始以来最大の勝利を収めたのである。"
+    ]
+   }
+  },
+  {
+   "id": "loushanguan",
+   "coords": [
+    106.83,
+    27.95
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "25 Feb 1935",
+    "fr-CA": "1935 2/25—28",
+    "zh-Hans": "1935年2月25日—28日",
+    "zh-HK": "1935年2月25日—28日",
+    "ja": "1935年2月25日–28日"
+   },
+   "present": {
+    "en-GB": "Zunyi, Guizhou, China",
+    "fr-CA": "Zunyi, Guizhou, China",
+    "zh-Hans": "贵州省遵义市娄山关",
+    "zh-HK": "贵州省遵义市娄山關",
+    "ja": "中国貴州省遵義市"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Loushanguan victory",
+    "zh-Hans": "娄山关大捷",
+    "zh-HK": "娄山關大捷",
+    "fr-CA": "Loushanguan victory",
+    "ja": "婁山関の勝利"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "2月25日，红三军团激战夺取娄山关天险，随后再占遵义城，击溃吴奇伟纵队。",
+     "娄山关之战是长征以来最大的胜利，但红三军团参谋长邓萍阵亡。",
+     "毛泽东在此役后写下《忆秦娥·娄山关》：“雄关漫道真如铁，而今迈步从头越”。"
+    ],
+    "en-GB": [
+     "On 25 February, after fierce fighting, the Third Red Army Corps stormed the impregnable natural stronghold of Loushan Pass, then retook the city of Zunyi and routed Wu Qiwei's column.",
+     "The Battle of Loushan Pass was the greatest victory since the Long March had begun, but Deng Ping, Chief of Staff of the Third Red Army Corps, was killed in action.",
+     "After this battle, Mao Zedong wrote the poem 'Loushan Pass (to the tune of Yi Qin'e)': 'Idle boast the strong pass is a wall of iron; with firm strides we are crossing its summit.'"
+    ],
+    "fr-CA": [
+     "Le 25 février, le 3e corps de l'Armée rouge s'empara, au terme de combats acharnés, du col de Loushan (Loushanguan), ce verrou naturel réputé imprenable, puis reprit la ville de Zunyi et mit en déroute la colonne de Wu Qiwei.",
+     "La victoire remportée au col de Loushan fut la plus importante obtenue depuis le début de la Longue Marche, mais le chef d'état-major du 3e corps de l'Armée rouge, Deng Ping, tomba au combat.",
+     "Au lendemain de cette bataille, Mao Zedong écrivit le poème « Yiqin'e : le col de Loushan » : « On dit le col redoutable dur comme le fer ; aujourd'hui, d'un pas résolu, nous le franchissons de nouveau. »"
+    ],
+    "zh-HK": [
+     "2月25日，紅三軍團激戰奪取婁山關天險，隨後再佔遵義城，擊潰吳奇偉縱隊。",
+     "婁山關之戰是長征以來最大的勝利，但紅三軍團參謀長鄧萍陣亡。",
+     "毛澤東在此役後寫下《憶秦娥·婁山關》：「雄關漫道真如鐵，而今邁步從頭越」。"
+    ],
+    "ja": [
+     "2月25日、紅三軍団は激戦の末、天険の婁山関を奪取し、引き続いて遵義城を再び占領して、呉奇偉の縦隊を撃破した。",
+     "婁山関の戦いは長征開始以来最大の勝利であったが、紅三軍団参謀長の鄧萍がこの戦いで戦死した。",
+     "毛沢東はこの戦役の後、詞「憶秦娥・婁山関」を詠んでいる。「雄関はまことに鉄のごとく堅し。されど今や歩を進め、あらためてこれを越えてゆく」。"
+    ]
+   }
+  },
+  {
+   "id": "maotai",
+   "coords": [
+    106.2,
+    27.79
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "16 Mar 1935",
+    "fr-CA": "1935 3/16",
+    "zh-Hans": "1935年3月16日",
+    "zh-HK": "1935年3月16日",
+    "ja": "1935年3月16日"
+   },
+   "present": {
+    "en-GB": "Renhuai, Guizhou, China",
+    "fr-CA": "Renhuai, Guizhou, China",
+    "zh-Hans": "贵州省仁怀市茅台镇",
+    "zh-HK": "贵州省仁怀市茅台镇",
+    "ja": "中国貴州省仁懷市"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Third Chishui crossing (Maotai)",
+    "zh-Hans": "三渡赤水",
+    "zh-HK": "三渡赤水",
+    "fr-CA": "Third Chishui crossing (Maotai)",
+    "ja": "三渡赤水（茅台）"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "3月15日，红军围攻鲁班场的周浑元部失利，次日由茅台渡口西渡赤水。",
+     "蒋介石判断红军要北渡长江，急调大军到川南堵截。",
+     "三渡赤水是一次“示形”行动：一个团伪装主力大张旗鼓西进，主力却在附近隐蔽待机。"
+    ],
+    "en-GB": [
+     "On 15 March, the Red Army's assault on Zhou Hunyuan's forces at Lubanchang ended in failure; the following day, it crossed the Chishui River westwards at the Maotai crossing.",
+     "Chiang Kai-shek judged that the Red Army intended to cross the Yangtze to the north, and hastily rushed large forces to southern Sichuan to block its path.",
+     "The third crossing of the Chishui was a 'demonstration' manoeuvre: one regiment, disguised as the main force, marched westwards with great fanfare, while the main force lay concealed nearby, awaiting its moment."
+    ],
+    "fr-CA": [
+     "Le 15 mars, l'Armée rouge essuya un échec dans son attaque contre les troupes de Zhou Hunyuan à Lubanchang; le lendemain, elle franchit la rivière Chishui vers l'ouest au gué de Maotai.",
+     "Jugeant que l'Armée rouge comptait franchir le fleuve Yangtsé vers le nord, Tchang Kaï-chek fit aussitôt converger de vastes forces dans le sud du Sichuan afin de l'intercepter.",
+     "Le troisième passage de la rivière Chishui fut une opération de « diversion » : un régiment, se faisant passer pour le gros des troupes, avança vers l'ouest en grande pompe, tandis que les forces principales se tenaient cachées à proximité, dans l'attente du moment propice."
+    ],
+    "zh-HK": [
+     "3月15日，紅軍圍攻魯班場的周渾元部失利，次日由茅台渡口西渡赤水。",
+     "蔣介石判斷紅軍要北渡長江，急調大軍到川南堵截。",
+     "三渡赤水是一次「示形」行動：一個團偽裝主力大張旗鼓西進，主力卻在附近隱蔽待機。"
+    ],
+    "ja": [
+     "3月15日、紅軍は魯班場で周渾元部への包囲攻撃に失敗し、翌日、茅台の渡し場から西へ赤水河を渡った。",
+     "蒋介石は、紅軍が北進して長江を渡ろうとしていると判断し、大軍を急遽四川南部に移動させてこれを阻止しようとした。",
+     "三度目の赤水河渡河は、いわば「陽動」作戦であった。一個連隊が主力部隊に扮して大々的に西進し、その一方で主力は付近に潜んで好機を待ったのである。"
+    ]
+   }
+  },
+  {
+   "id": "erlangtan",
+   "coords": [
+    105.95,
+    28.08
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "21 Mar 1935",
+    "fr-CA": "1935 3/21",
+    "zh-Hans": "1935年3月21日",
+    "zh-HK": "1935年3月21日",
+    "ja": "1935年3月21日"
+   },
+   "present": {
+    "en-GB": "Gulin, Sichuan, China",
+    "fr-CA": "Gulin, Sichuan, China",
+    "zh-Hans": "四川省古蔺县二郎滩",
+    "zh-HK": "四川省古蔺县二郎滩",
+    "ja": "中国四川省古藺県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Fourth Chishui crossing (Erlangtan)",
+    "zh-Hans": "四渡赤水",
+    "zh-HK": "四渡赤水",
+    "fr-CA": "Fourth Chishui crossing (Erlangtan)",
+    "ja": "四渡赤水（二郎灘）"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "3月21日，红军主力突然掉头，从二郎滩、九溪口、太平渡四渡赤水，秘密东返。",
+     "国军重兵集团被甩在川南扑空。3月29日至31日，红军南渡乌江，跳出包围圈。",
+     "四渡赤水被毛泽东本人视为一生的“得意之笔”。负责掩护的红九军团被迫独立行动，转战52天后才在西昌归队。"
+    ],
+    "en-GB": [
+     "On 21 March, the main force of the Red Army suddenly turned about and crossed the Chishui River for the fourth time, at Erlangtan, Jiuxikou and Taipingdu, secretly heading back eastwards.",
+     "The Nationalists' massed formations were left flailing at empty air in southern Sichuan. Between 29 and 31 March, the Red Army crossed the Wujiang River to the south and leapt clean out of the encirclement.",
+     "The Four Crossings of the Chishui River were regarded by Mao Zedong himself as the masterstroke of his lifetime. The Ninth Red Army Corps, tasked with covering the operation, was forced to act independently, and did not rejoin the main force at Xichang until after 52 days of fighting and marching."
+    ],
+    "fr-CA": [
+     "Le 21 mars, le gros des troupes de l'Armée rouge fit soudainement volte-face et franchit la rivière Chishui pour la quatrième fois aux passages d'Erlangtan, de Jiuxikou et de Taipingdu, avant de regagner secrètement l'est.",
+     "Les puissantes concentrations de troupes nationalistes, distancées dans le sud du Sichuan, frappèrent dans le vide. Du 29 au 31 mars, l'Armée rouge franchit la rivière Wujiang en direction du sud et réussit à sortir de l'étau qui l'encerclait.",
+     "Les quatre traversées de la rivière Chishui furent considérées par Mao Zedong lui-même comme le « coup de maître » de sa vie. Le 9e corps de l'Armée rouge, chargé d'assurer la couverture, fut contraint d'agir de façon indépendante et ne rejoignit le gros des troupes à Xichang qu'après 52 jours de combats itinérants."
+    ],
+    "zh-HK": [
+     "3月21日，紅軍主力突然掉頭，從二郎灘、九溪口、太平渡四渡赤水，秘密東返。",
+     "國軍重兵集團被甩在川南撲空。3月29日至31日，紅軍南渡烏江，跳出包圍圈。",
+     "四渡赤水被毛澤東本人視為一生的「得意之筆」。負責掩護的紅九軍團被迫獨立行動，轉戰52天後才在西昌歸隊。"
+    ],
+    "ja": [
+     "3月21日、紅軍の主力は突如として進路を反転させ、二郎灘・九渓口・太平渡の各地点から赤水河を四度目に渡り、秘密裏に東へと引き返した。",
+     "国民党軍の重兵集団は川南に置き去りにされ、何も掴めないまま空振りに終わった。3月29日から31日にかけて、紅軍は烏江を南へ渡り、包囲網の外へと脱出した。",
+     "四渡赤水は、毛沢東自身が生涯の「得意の筆」とみなした戦いである。掩護を担った紅九軍団は独立行動を余儀なくされ、52日間に及ぶ転戦の末、ようやく西昌で本隊に復帰した。"
+    ]
+   }
+  },
+  {
+   "id": "guiyang",
+   "coords": [
+    106.63,
+    26.65
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "2 Apr 1935",
+    "fr-CA": "1935 4/2",
+    "zh-Hans": "1935年4月2日",
+    "zh-HK": "1935年4月2日",
+    "ja": "1935年4月2日"
+   },
+   "present": {
+    "en-GB": "Guiyang, Guizhou, China",
+    "fr-CA": "Guiyang, Guizhou, China",
+    "zh-Hans": "贵州省贵阳市",
+    "zh-HK": "贵州省贵阳市",
+    "ja": "中国貴州省貴陽市"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Approach to Guiyang",
+    "zh-Hans": "兵临贵阳",
+    "zh-HK": "兵临贵阳",
+    "fr-CA": "Approach to Guiyang",
+    "ja": "貴陽への接近"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "4月2日，红军主力突然逼近贵阳，直接威胁贵阳机场，而蒋介石此时正在贵阳督战。",
+     "蒋介石急调滇军孙渡部星夜驰援——这正是毛泽东要的效果：滇军东调，云南门户洞开。",
+     "红军并不攻城，4月8日从贵阳、龙里间突然穿过防线，以每天百余里的速度向云南疾进。"
+    ],
+    "en-GB": [
+     "On 2 April, the main force of the Red Army suddenly closed in on Guiyang, directly threatening the city's airfield, while Chiang Kai-shek was at that very moment in Guiyang personally directing the campaign.",
+     "Chiang Kai-shek hastily ordered Sun Du's Yunnanese troops to race to the city's relief by forced marches, day and night — precisely the effect Mao Zedong had intended: with the Yunnan army drawn eastwards, the gates of Yunnan stood wide open.",
+     "The Red Army made no attempt to storm the city. On 8 April it burst through the defence lines between Guiyang and Longli, and sped towards Yunnan at a rate of more than a hundred li a day (roughly fifty kilometres)."
+    ],
+    "fr-CA": [
+     "Le 2 avril, le gros des troupes de l'Armée rouge s'approcha soudain de Guiyang, menaçant directement l'aéroport de la ville, tandis que Tchang Kaï-chek se trouvait justement à Guiyang pour superviser les opérations militaires.",
+     "Tchang Kaï-chek ordonna en toute hâte aux troupes de Sun Du, l'armée du Yunnan, de voler au secours de la ville, de nuit comme de jour — et c'était là précisément l'effet recherché par Mao Zedong : l'armée du Yunnan se dirigeait vers l'est, laissant les portes du Yunnan grandes ouvertes.",
+     "Mais l'Armée rouge ne songeait nullement à attaquer la ville : le 8 avril, elle perça soudain la ligne de défense entre Guiyang et Longli et fonça vers le Yunnan, parcourant chaque jour plus de cent li, soit une cinquantaine de kilomètres."
+    ],
+    "zh-HK": [
+     "4月2日，紅軍主力突然逼近貴陽，直接威脅貴陽機場，而蔣介石此時正在貴陽督戰。",
+     "蔣介石急調滇軍孫渡部星夜馳援——這正是毛澤東要的效果：滇軍東調，雲南門戶洞開。",
+     "紅軍並不攻城，4月8日從貴陽、龍里間突然穿過防線，以每天百餘里的速度向雲南疾進。"
+    ],
+    "ja": [
+     "4月2日、紅軍の主力部隊は突如として貴陽に接近し、貴陽飛行場を直接脅かした。折しも蒋介石はまさに貴陽で督戦の最中にあった。",
+     "蒋介石は急遽、雲南軍の孫渡部隊に夜を徹しての馳援を命じた――これはまさに毛沢東が狙った効果であった。雲南軍が東へ移動したことで、雲南の門戸は大きく開かれたのである。",
+     "紅軍は貴陽を攻めることなく、4月8日、貴陽と龍里の間から突如として防衛線を突破し、1日百余里という速さで雲南へと疾進した。"
+    ]
+   }
+  },
+  {
+   "id": "xundian",
+   "coords": [
+    102.91,
+    25.56
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "29 Apr 1935",
+    "fr-CA": "1935 4/29",
+    "zh-Hans": "1935年4月29日",
+    "zh-HK": "1935年4月29日",
+    "ja": "1935年4月29日"
+   },
+   "present": {
+    "en-GB": "Xundian, Yunnan, China",
+    "fr-CA": "Xundian, Yunnan, China",
+    "zh-Hans": "云南省寻甸回族彝族自治县",
+    "zh-HK": "云南省寻甸回族彝族自治县",
+    "ja": "中国雲南省尋甸県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Into Yunnan (Xundian)",
+    "zh-Hans": "进入云南",
+    "zh-HK": "进入云南",
+    "fr-CA": "Into Yunnan (Xundian)",
+    "ja": "雲南入り（尋甸）"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "4月23日红军越过黄泥河分两路进入云南。龙云把主力收缩到昆明防守。",
+     "昆明的收缩让开了一条向西的通道：红军的目标是金沙江渡口。",
+     "4月29日中革军委发布指示：迅速渡过金沙江，转入川西。"
+    ],
+    "en-GB": [
+     "On 23 April, the Red Army crossed the Huangni River and entered Yunnan in two columns. Long Yun withdrew his main forces to Kunming to defend the city.",
+     "This concentration of forces at Kunming left open a corridor to the west: the Red Army's objective was now the crossings of the Jinsha River.",
+     "On 29 April, the Central Revolutionary Military Commission issued instructions to cross the Jinsha River without delay and move into western Sichuan."
+    ],
+    "fr-CA": [
+     "Le 23 avril, l'Armée rouge franchit la rivière Huangni et pénètre au Yunnan en deux colonnes. Long Yun replie ses forces principales sur Kunming pour en assurer la défense.",
+     "Ce repli sur Kunming ouvre un passage vers l'ouest : l'objectif de l'Armée rouge est désormais le site de traversée du fleuve Jinsha.",
+     "Le 29 avril, la Commission militaire centrale révolutionnaire publie ses directives : franchir rapidement le fleuve Jinsha et se porter dans l'ouest du Sichuan."
+    ],
+    "zh-HK": [
+     "4月23日，紅軍越過黃泥河，分兩路進入雲南。龍雲把主力收縮到昆明防守。",
+     "昆明的收縮讓開了一條向西的通道：紅軍的目標是金沙江渡口。",
+     "4月29日，中革軍委發佈指示：迅速渡過金沙江，轉入川西。"
+    ],
+    "ja": [
+     "4月23日、紅軍は黄泥河を越えて二手に分かれ、雲南へと進入した。龍雲は主力を昆明に引き上げて防衛に当たらせた。",
+     "主力が昆明へ収縮したことで、西へと通じる一本の通路が開けた。紅軍の目標は金沙江の渡河点であった。",
+     "4月29日、中央革命軍事委員会は「速やかに金沙江を渡河し、川西へ転進せよ」との指示を発した。"
+    ]
+   }
+  },
+  {
+   "id": "jiaopingdu",
+   "coords": [
+    102.3,
+    26.19
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "1 May 1935",
+    "fr-CA": "1935 5/1—9",
+    "zh-Hans": "1935年5月1日—9日",
+    "zh-HK": "1935年5月1日—9日",
+    "ja": "1935年5月1日–9日"
+   },
+   "present": {
+    "en-GB": "Luquan, Yunnan, China",
+    "fr-CA": "Luquan, Yunnan, China",
+    "zh-Hans": "云南省禄劝县皎平渡",
+    "zh-HK": "云南省禄劝县皎平渡",
+    "ja": "中国雲南省禄勧県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Jinsha River crossing (Jiaopingdu)",
+    "zh-Hans": "巧渡金沙江",
+    "zh-HK": "巧渡金沙江",
+    "fr-CA": "Jinsha River crossing (Jiaopingdu)",
+    "ja": "皎平渡（金沙江渡河）"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "5月1日至9日，中央红军在禄劝皎平渡渡过金沙江——这是长征中最从容的一次渡江。",
+     "先遣队化装成国军缴获了两只渡船，随后又找到五只。37名船工轮流摇桨，七只小船九天九夜运送了两万人过江。",
+     "等国民党追军赶到江边时，红军已经烧掉渡船走远。第一方面军第一次摆脱了几十万追兵。"
+    ],
+    "en-GB": [
+     "From 1 to 9 May, the Central Red Army crossed the Jinsha River at Jiaoping Ferry in Luquan — the most unhurried river crossing of the entire Long March.",
+     "An advance party, disguised as Nationalist troops, seized two ferry boats and later found five more. Thirty-seven boatmen rowed in shifts, and over nine days and nine nights the seven small craft ferried twenty thousand men across the river.",
+     "By the time the Nationalist pursuers reached the river bank, the Red Army had burned the boats and moved far on. For the first time, the First Front Army had shaken off several hundred thousand pursuing troops."
+    ],
+    "fr-CA": [
+     "Du 1er au 9 mai, l'Armée rouge centrale a franchi la rivière Jinsha au bac de Jiaopingdu, dans le district de Luquan — la traversée de rivière la plus sereine de toute la Longue Marche.",
+     "Déguisé en troupes nationalistes, le détachement d'avant-garde s'est emparé de deux barques de passage, puis en a trouvé cinq autres. 37 bateliers ont ramé à tour de rôle : pendant neuf jours et neuf nuits, sept petites barques ont transporté 20 000 hommes sur l'autre rive.",
+     "Quand les troupes nationalistes à leurs trousses ont finalement atteint la rive, l'Armée rouge avait déjà incendié les barques et s'était éloignée depuis longtemps. Pour la première fois, la Première Armée de front réussissait à semer plusieurs centaines de milliers de soldats lancés à sa poursuite."
+    ],
+    "zh-HK": [
+     "5月1日至9日，中央紅軍在祿勸皎平渡渡過金沙江——這是長征中最從容的一次渡江。",
+     "先遣隊化裝成國軍繳獲了兩隻渡船，隨後又找到五隻。37名船工輪流搖槳，七隻小船九天九夜運送了兩萬人過江。",
+     "等國民黨追軍趕到江邊時，紅軍已經燒掉渡船走遠。第一方面軍第一次擺脫了幾十萬追兵。"
+    ],
+    "ja": [
+     "5月1日から9日にかけて、中央紅軍は禄勧の皎平渡から金沙江を渡河した——これは長征の中で最も余裕をもって行われた渡河であった。",
+     "先遣隊は国民党軍の兵士に変装して渡し船2隻を鹵獲し、その後さらに5隻を発見した。37人の船頭が交代で櫂を漕ぎ、7隻の小舟は九日九夜にわたって2万人を対岸へ運んだ。",
+     "国民党の追撃軍が江辺に駆けつけたときには、紅軍はすでに渡し舟を焼き払ってはるか遠ざかっていた。第一方面軍は初めて数十万の追撃部隊を振り切ったのである。"
+    ]
+   }
+  },
+  {
+   "id": "huili",
+   "coords": [
+    102.247,
+    26.661
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "12 May 1935",
+    "fr-CA": "1935 5/12",
+    "zh-Hans": "1935年5月12日",
+    "zh-HK": "1935年5月12日",
+    "ja": "1935年5月12日"
+   },
+   "present": {
+    "en-GB": "Huili, Sichuan, China",
+    "fr-CA": "Huili, Sichuan, China",
+    "zh-Hans": "四川省会理县",
+    "zh-HK": "四川省會理县",
+    "ja": "中国四川省会理県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Huili Conference",
+    "zh-Hans": "会理会议",
+    "zh-HK": "會理會议",
+    "fr-CA": "Huili Conference",
+    "ja": "会理会議"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "5月12日，中央政治局在会理城郊召开会议。",
+     "会上批评了林彪“尽走弓背路”的怀疑，统一了继续机动作战的决心，并确定与红四方面军会师的目标。",
+     "红军在此短暂休整后，开始向大渡河方向进军——那是一条石达开曾经全军覆没的路线。"
+    ],
+    "en-GB": [
+     "On 12 May, the Political Bureau of the Central Committee convened a meeting on the outskirts of the town of Huili.",
+     "At the meeting, Lin Biao's doubts that the army was 'always marching along the arc of the bow rather than its string' were criticised, the leadership united in its resolve to press on with mobile operations, and the objective of linking up with the Fourth Front Red Army was confirmed.",
+     "After this brief rest, the Red Army set out in the direction of the Dadu River — the route along which Shi Dakai's entire army had once been wiped out."
+    ],
+    "fr-CA": [
+     "Le 12 mai, le Bureau politique du Comité central tint une réunion à la périphérie de la ville de Huili.",
+     "On y critiqua les doutes exprimés par Lin Biao, qui reprochait à l’armée de « ne prendre que des chemins en arc de cercle » ; on y affermit la résolution de poursuivre la guerre de mouvement, et l’on y fixa l’objectif de faire sa jonction avec l’Armée rouge du Quatrième Front.",
+     "Après une courte halte sur place, l’Armée rouge se mit en marche en direction de la rivière Dadu — la route même où l’armée entière de Shi Dakai avait jadis été anéantie."
+    ],
+    "zh-HK": [
+     "5月12日，中央政治局在會理城郊召開會議。",
+     "會上批評了林彪「盡走弓背路」的懷疑，統一了繼續機動作戰的決心，並確定與紅四方面軍會師的目標。",
+     "紅軍在此短暫休整後，開始向大渡河方向進軍——那是一條石達開曾經全軍覆沒的路線。"
+    ],
+    "ja": [
+     "5月12日、中央政治局は会理城の郊外で会議を開いた。",
+     "この会議では、林彪による「ひたすら弓の背のような回り道ばかり歩く」という疑念が批判され、機動作戦を継続する決意が固められるとともに、紅四方面軍との合流という目標が定められた。",
+     "紅軍はここで短期間の休息と再編成を行った後、大渡河方面への進軍を開始した――それは、かつて石達開の全軍が壊滅した経路であった。"
+    ]
+   }
+  },
+  {
+   "id": "mianning",
+   "coords": [
+    102.169,
+    28.552
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "20 May 1935",
+    "fr-CA": "1935 5/20—22",
+    "zh-Hans": "1935年5月20日—22日",
+    "zh-HK": "1935年5月20日—22日",
+    "ja": "1935年5月20日–22日"
+   },
+   "present": {
+    "en-GB": "Mianning, Sichuan, China",
+    "fr-CA": "Mianning, Sichuan, China",
+    "zh-Hans": "四川省冕宁县",
+    "zh-HK": "四川省冕宁县",
+    "ja": "中国四川省冕寧県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Yihai alliance",
+    "zh-Hans": "彝海结盟",
+    "zh-HK": "彝海结盟",
+    "fr-CA": "Yihai alliance",
+    "ja": "彝海同盟"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "5月20日红军攻占冕宁。先遣队司令刘伯承与彝族沽基家支首领小叶丹在彝海边歃血为盟。",
+     "红军执行民族政策，宣传各民族平等，彝族同胞护送红军通过了彝区。",
+     "彝海结盟使红军赢得了宝贵的时间——此后到达的国民党追兵再也没有说服彝族放行。"
+    ],
+    "en-GB": [
+     "On 20 May the Red Army captured Mianning. Liu Bocheng, commander of the vanguard detachment, and Xiao Yedan, chieftain of the Guji clan of the Yi people, swore a blood oath of brotherhood by the shore of Yihai Lake.",
+     "The Red Army put its nationalities policy into practice, proclaiming the equality of all ethnic groups, and Yi compatriots escorted the troops safely through the Yi region.",
+     "The Yihai Alliance bought the Red Army precious time: the pursuing Kuomintang troops who arrived afterwards could never again persuade the Yi to let them pass."
+    ],
+    "fr-CA": [
+     "Le 20 mai, l'Armée rouge s'empara de Mianning. Au bord du lac Yi, Liu Bocheng, commandant de la troupe d'avant-garde, conclut un pacte de sang avec Xiaoyedan, chef du clan Guoji de l'ethnie Yi.",
+     "Fidèle à sa politique des nationalités, l'Armée rouge propageait l'idée de l'égalité de tous les peuples, et les membres de l'ethnie Yi escortèrent ensuite ses soldats à travers leur territoire.",
+     "Cette alliance conclue au bord du lac Yi valut à l'Armée rouge un temps précieux : les troupes du Kuomintang qui arrivèrent à sa poursuite ne parvinrent plus jamais à convaincre les Yi de les laisser passer."
+    ],
+    "zh-HK": [
+     "5月20日紅軍攻佔冕寧。先遣隊司令劉伯承與彝族沽基家支首領小葉丹在彝海邊歃血為盟。",
+     "紅軍執行民族政策，宣傳各民族平等，彝族同胞護送紅軍通過了彝區。",
+     "彝海結盟使紅軍贏得了寶貴的時間——此後到達的國民黨追兵再也沒有說服彝族放行。"
+    ],
+    "ja": [
+     "5月20日、紅軍は冕寧を攻略した。先遣隊司令の劉伯承は、イ族・沽基家支の首長である小葉丹と、彝海のほとりで歃血の盟を結んだ。",
+     "紅軍は民族政策を実行して諸民族の平等を宣伝し、それに応えたイ族の同胞たちは紅軍を護送して、イ族居住区の通過を可能にした。",
+     "彝海の結盟によって紅軍は貴重な時間を勝ち取った。その後から到着した国民党の追撃部隊は、二度とイ族を説き伏せて通行を許させることはできなかったのである。"
+    ]
+   }
+  },
+  {
+   "id": "anshunchang",
+   "coords": [
+    102.283,
+    29.277
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "25 May 1935",
+    "fr-CA": "1935 5/25",
+    "zh-Hans": "1935年5月25日",
+    "zh-HK": "1935年5月25日",
+    "ja": "1935年5月25日"
+   },
+   "present": {
+    "en-GB": "Shimian, Sichuan, China",
+    "fr-CA": "Shimian, Sichuan, China",
+    "zh-Hans": "四川省石棉县安顺场",
+    "zh-HK": "四川省石棉县安顺场",
+    "ja": "中国四川省石棉県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Anshunchang crossing",
+    "zh-Hans": "十七勇士强渡大渡河",
+    "zh-HK": "十七勇士强渡大渡河",
+    "fr-CA": "Anshunchang crossing",
+    "ja": "安順場強行渡河"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "5月24日夜，红军先遣队急行军袭占安顺场渡口——70年前石达开在这里全军覆没。",
+     "5月25日清晨，十七勇士乘一只小船在机枪掩护下强渡大渡河，占领对岸阵地。",
+     "但船只太少，全军无法迅速过河。红军随即兵分两路：一师在此渡河，主力沿河西岸兼程北上泸定桥。"
+    ],
+    "en-GB": [
+     "On the night of 24 May, the Red Army's advance party made a forced march and seized the Anshunchang ferry crossing — the very place where, seventy years earlier, Shi Dakai's entire army had been annihilated.",
+     "At dawn on 25 May, seventeen heroes forced a crossing of the Dadu River in a single small boat under covering machine-gun fire, capturing positions on the opposite bank.",
+     "There were, however, too few boats for the whole army to get across quickly. The Red Army therefore split into two columns: one division crossed the river here, whilst the main force pressed northwards at double pace along the river's west bank towards Luding Bridge."
+    ],
+    "fr-CA": [
+     "Dans la nuit du 24 mai, l'avant-garde de l'Armée rouge, en marche forcée, s'empara par surprise de l'embarcadère d'Anshunchang — soixante-dix ans plus tôt, Shi Dakai y avait perdu son armée entière.",
+     "Au petit matin du 25 mai, dix-sept héros, embarqués dans une petite barque et couverts par des mitrailleuses, forcèrent le passage de la rivière Dadu et occupèrent les positions de la rive opposée.",
+     "Mais les embarcations étaient trop peu nombreuses pour que l'ensemble de l'armée puisse traverser rapidement. L'Armée rouge se divisa aussitôt en deux colonnes : une division franchit la rivière à cet endroit, tandis que le gros des troupes longea la rive ouest et se précipita vers le nord, en direction du pont de Luding."
+    ],
+    "zh-HK": [
+     "5月24日夜，紅軍先遣隊急行軍襲佔安順場渡口——70年前石達開在這裏全軍覆沒。",
+     "5月25日清晨，十七勇士乘一隻小船在機槍掩護下強渡大渡河，佔領對岸陣地。",
+     "但船隻太少，全軍無法迅速過河。紅軍隨即兵分兩路：一師在此渡河，主力沿河西岸兼程北上瀘定橋。"
+    ],
+    "ja": [
+     "5月24日の夜、紅軍の先遣隊は急行軍を敢行して安順場の渡し場を急襲・占領した――ちょうど70年前、石達開はこの地で全軍の壊滅を遂げていたのである。",
+     "5月25日の早朝、十七勇士は一隻の小舟に乗り、機関銃の援護のもとで大渡河を強行渡河し、対岸の陣地を占領した。",
+     "しかし船の数が少なすぎて、全軍が速やかに渡河することはできなかった。紅軍はただちに二路に分かれた。すなわち、一個師団はこの地で渡河し、主力は河の西岸に沿って昼夜兼行で北上し、瀘定橋へと進んだのである。"
+    ]
+   }
+  },
+  {
+   "id": "ludingqiao",
+   "coords": [
+    102.23,
+    29.915
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "29 May 1935",
+    "fr-CA": "1935 5/29",
+    "zh-Hans": "1935年5月29日",
+    "zh-HK": "1935年5月29日",
+    "ja": "1935年5月29日"
+   },
+   "present": {
+    "en-GB": "Luding, Sichuan, China",
+    "fr-CA": "Luding, Sichuan, China",
+    "zh-Hans": "四川省泸定县泸定桥",
+    "zh-HK": "四川省泸定县泸定桥",
+    "ja": "中国四川省瀘定県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Luding Bridge",
+    "zh-Hans": "飞夺泸定桥",
+    "zh-HK": "飞夺泸定桥",
+    "fr-CA": "Luding Bridge",
+    "ja": "飛奪瀘定橋"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "红二师四团接到命令：三天内赶到320里外的泸定桥。他们冒雨一昼夜行军240里，创造了红军行军的纪录。",
+     "5月29日，22名突击队员攀着悬空的铁索冲向对岸，夺下泸定桥。两岸部队在桥头会合。",
+     "泸定桥保住了红军北上的通道。陈云由此离队前往莫斯科，向共产国际汇报遵义会议。"
+    ],
+    "en-GB": [
+     "The 4th Regiment of the Red Army's 2nd Division received orders to reach Luding Bridge, 320 li away, within three days. Marching through the rain for a full day and night, they covered 240 li, setting a record for Red Army forced marches.",
+     "On 29 May, twenty-two assault troops clambered along the suspended iron chains and charged towards the far bank, seizing Luding Bridge. The forces on both sides of the river met at the bridgehead.",
+     "Luding Bridge secured the Red Army's route northwards. From there, Chen Yun left the column and made his way to Moscow, where he reported on the Zunyi Conference to the Communist International (the Comintern)."
+    ],
+    "fr-CA": [
+     "Le 4e régiment de la 2e division de l'Armée rouge reçut l'ordre suivant: rejoindre en trois jours le pont de Luding, situé à 320 li. Sous la pluie, ils parcoururent 240 li en un jour et une nuit de marche, établissant ainsi un record de marche pour l'Armée rouge.",
+     "Le 29 mai, 22 membres du détachement d'assaut grimpèrent le long des chaînes de fer suspendues dans le vide, se ruèrent vers la rive opposée et s'emparèrent du pont de Luding. Les troupes des deux rives firent leur jonction à la tête du pont.",
+     "Le pont de Luding préservait à l'Armée rouge sa voie de passage vers le nord. C'est de là que Chen Yun quitta la colonne pour se rendre à Moscou, afin de faire rapport à l'Internationale communiste sur la conférence de Zunyi."
+    ],
+    "zh-HK": [
+     "紅二師四團接到命令：三天內趕到320里外的瀘定橋。他們冒雨一晝夜行軍240里，創造了紅軍行軍的紀錄。",
+     "5月29日，22名突擊隊員攀着懸空的鐵索衝向對岸，奪下瀘定橋。兩岸部隊在橋頭會合。",
+     "瀘定橋保住了紅軍北上的通道。陳雲由此離隊前往莫斯科，向共產國際匯報遵義會議。"
+    ],
+    "ja": [
+     "紅軍第二師第四団は、3日以内に320里（約160キロ）先の瀘定橋へ到達せよという命令を受けた。彼らは雨の中を一昼夜かけて240里（約120キロ）を行軍し、紅軍の行軍記録を打ち立てた。",
+     "5月29日、22人の突撃隊員が空中に懸かった鉄の鎖を伝って対岸へ突進し、瀘定橋を奪取した。両岸の部隊は橋のたもとで合流した。",
+     "瀘定橋によって、紅軍の北上ルートは確保された。陳雲はここで部隊を離れてモスクワへ向かい、コミンテルンに対して遵義会議について報告した。"
+    ]
+   }
+  },
+  {
+   "id": "tianquan",
+   "coords": [
+    102.76,
+    30.06
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "7 Jun 1935",
+    "fr-CA": "1935 6/7",
+    "zh-Hans": "1935年6月7日",
+    "zh-HK": "1935年6月7日",
+    "ja": "1935年6月7日"
+   },
+   "present": {
+    "en-GB": "Tianquan, Sichuan, China",
+    "fr-CA": "Tianquan, Sichuan, China",
+    "zh-Hans": "四川省天全县",
+    "zh-HK": "四川省天全县",
+    "ja": "中国四川省天全県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Tianquan",
+    "zh-Hans": "翻二郎山、占天全",
+    "zh-HK": "翻二郎山、占天全",
+    "fr-CA": "Tianquan",
+    "ja": "天全"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "红军渡过大渡河后东翻二郎山，突破川军杨森部六个旅的阻击。",
+     "6月7日占领天全，随后经芦山、宝兴北进。",
+     "前面等待他们的是长征路上第一座终年积雪的大雪山。"
+    ],
+    "en-GB": [
+     "After crossing the Dadu River, the Red Army climbed eastwards over Mount Erlang, breaking through the resistance of six brigades under Yang Sen of the Sichuan army.",
+     "On 7 June they captured Tianquan, and then advanced northwards via Lushan and Baoxing.",
+     "Awaiting them ahead lay the first great snow mountain of the Long March, a peak snowbound all year round."
+    ],
+    "fr-CA": [
+     "Après avoir traversé la rivière Dadu, l'Armée rouge a franchi le mont Erlang vers l'est, brisant la résistance des six brigades des troupes du Sichuan placées sous les ordres de Yang Sen.",
+     "Le 7 juin, elle a pris Tianquan, puis a poursuivi sa route vers le nord en passant par Lushan et Baoxing.",
+     "Les attendait devant eux la première grande montagne aux neiges éternelles de la Longue Marche."
+    ],
+    "zh-HK": [
+     "紅軍渡過大渡河後東翻二郎山，突破川軍楊森部六個旅的阻擊。",
+     "6月7日佔領天全，隨後經蘆山、寶興北進。",
+     "前面等待他們的是長征路上第一座終年積雪的大雪山。"
+    ],
+    "ja": [
+     "紅軍は大渡河を渡ると東へ進んで二郎山を越え、四川軍閥・楊森の部隊六個旅団による阻止を突破した。",
+     "6月7日に天全を占領し、その後、蘆山・宝興を経て北進した。",
+     "彼らの前方に待ち構えていたのは、長征の道のりで最初の、一年中雪に覆われた大雪山であった。"
+    ]
+   }
+  },
+  {
+   "id": "jiajinshan",
+   "coords": [
+    102.69,
+    30.72
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "8 Jun 1935",
+    "fr-CA": "1935 6/8—11",
+    "zh-Hans": "1935年6月8日—11日",
+    "zh-HK": "1935年6月8日—11日",
+    "ja": "1935年6月8日–11日"
+   },
+   "present": {
+    "en-GB": "Baoxing–Xiaojin border, Sichuan, China",
+    "fr-CA": "Baoxing–Xiaojin border, Sichuan, China",
+    "zh-Hans": "四川省宝兴县—懋功县界（夹金山垭口）",
+    "zh-HK": "四川省宝兴县—懋功县界（夹金山垭口）",
+    "ja": "中国四川省宝興県・小金県境"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Crossing Jiajin Mountain",
+    "zh-Hans": "翻越夹金山",
+    "zh-HK": "翻越夹金山",
+    "fr-CA": "Crossing Jiajin Mountain",
+    "ja": "夾金山越え"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "夹金山海拔约4500米，终年积雪，空气稀薄，天气变幻无常，没有道路也没有人烟。",
+     "红军战士多数来自南方，穿着单衣草鞋翻越雪山，一些人因冻、饿、力竭倒在雪地里。",
+     "翻过夹金山，前方山谷里传来了消息：红四方面军的部队就在山下。"
+    ],
+    "en-GB": [
+     "Jiajin Mountain rises to an altitude of about 4,500 metres. It is snow-covered all year round, the air is thin, the weather is unpredictable, and there are no roads and no sign of human habitation.",
+     "Most of the Red Army soldiers came from southern China. Crossing the snowy mountain in thin clothes and straw sandals, some of them collapsed in the snow, overcome by cold, hunger and exhaustion.",
+     "Once they had crossed Jiajin Mountain, news came from the valley ahead: units of the Fourth Front Army were at the foot of the mountain."
+    ],
+    "fr-CA": [
+     "Culminant à environ 4 500 mètres d'altitude, le mont Jiajin reste enneigé toute l'année. L'air y est raréfié et le temps, capricieux, change sans cesse. On n'y trouve ni route ni trace d'habitation.",
+     "La plupart des soldats de l'Armée rouge étaient originaires du Sud. En tenue légère et sandales de paille, ils franchirent ces montagnes enneigées, et certains s'effondrèrent dans la neige, terrassés par le froid, la faim et l'épuisement.",
+     "Une fois le mont Jiajin franchi, une nouvelle parvint de la vallée qui s'ouvrait devant eux : les unités de l'Armée rouge du quatrième front se trouvaient juste au pied de la montagne."
+    ],
+    "zh-HK": [
+     "夾金山海拔約4500米，終年積雪，空氣稀薄，天氣變幻無常，既沒有道路，也沒有人煙。",
+     "紅軍戰士大多數來自南方，穿着單衣草鞋翻越雪山，一些人因凍、餓、力竭而倒在雪地裏。",
+     "翻過夾金山，前方山谷裏傳來了消息：紅四方面軍的部隊就在山下。"
+    ],
+    "ja": [
+     "夹金山（きょうきんざん）は海抜約4500メートルに達し、一年じゅう雪に覆われ、空気は希薄で、天候は変わりやすい。しかも道路はなく、人けもない。",
+     "赤軍の兵士の多くは南方の出身で、薄手の服に藁草履という軽装のまま雪山を越えていった。寒さと飢えと極限の疲労のため、雪の中に倒れる者も少なくなかった。",
+     "夹金山を越えると、前方の谷から知らせが届いた。紅四方面軍の部隊が、まさに山のふもとにいるというのである。"
+    ]
+   }
+  },
+  {
+   "id": "dawei",
+   "coords": [
+    102.53,
+    30.94
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "12 Jun 1935",
+    "fr-CA": "1935 6/12",
+    "zh-Hans": "1935年6月12日",
+    "zh-HK": "1935年6月12日",
+    "ja": "1935年6月12日"
+   },
+   "present": {
+    "en-GB": "Xiaojin, Sichuan, China",
+    "fr-CA": "Xiaojin, Sichuan, China",
+    "zh-Hans": "四川省小金县达维镇",
+    "zh-HK": "四川省小金县达维镇",
+    "ja": "中国四川省小金県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Dawei junction with the 4th Front Army",
+    "zh-Hans": "达维会师",
+    "zh-HK": "达维會师",
+    "fr-CA": "Dawei junction with the 4th Front Army",
+    "ja": "達維会師"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "6月12日，中央红军先头部队在懋功达维与红四方面军先头部队会师。",
+     "两支红军部队在桥头相拥，欢呼声响彻山谷——历尽千辛万苦的中央红军终于见到了友军。",
+     "会师时中央红军已从出发时的8.6万人减员到约2万人。"
+    ],
+    "en-GB": [
+     "On 12 June, the vanguard of the Central Red Army linked up with the vanguard of the Fourth Front Red Army at Dawei, Maogong.",
+     "The two Red Army contingents embraced at the bridgehead, their cheers ringing through the valley — after enduring untold hardships, the Central Red Army had at last met up with their comrades.",
+     "By the time of the link-up, the Central Red Army had been reduced from 86,000 at the outset to some 20,000."
+    ],
+    "fr-CA": [
+     "Le 12 juin, les unités d'avant-garde de l'Armée rouge centrale ont fait leur jonction avec les unités d'avant-garde de l'Armée rouge du Quatrième Front à Dawei, dans la région de Maogong.",
+     "Sur le pont, les soldats des deux armées rouges se sont étreints, et leurs acclamations ont résonné dans toute la vallée : après avoir enduré d'innomables épreuves, l'Armée rouge centrale retrouvait enfin des troupes amies.",
+     "Au moment de la jonction, l'Armée rouge centrale ne comptait plus qu'environ 20 000 hommes, contre 86 000 au moment de son départ."
+    ],
+    "zh-HK": [
+     "6月12日，中央紅軍先頭部隊在懋功達維與紅四方面軍先頭部隊會師。",
+     "兩支紅軍部隊在橋頭相擁，歡呼聲響徹山谷——歷盡千辛萬苦的中央紅軍終於見到了友軍。",
+     "會師時中央紅軍已由出發時的8.6萬人減至約2萬人。"
+    ],
+    "ja": [
+     "6月12日、中央紅軍の先頭部隊は懋功の達維において紅四方面軍の先頭部隊と会合した。",
+     "二つの紅軍部隊は橋のたもとで抱き合い、歓呼の声が谷間に響き渡った——幾多の艱難辛苦を経た中央紅軍は、ついに友軍と出会うことができたのである。",
+     "会合の時点で、中央紅軍の兵力は出発時の8万6000人から約2万人へと減少していた。"
+    ]
+   }
+  },
+  {
+   "id": "lianghekou",
+   "coords": [
+    102.44,
+    31.32
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "26 Jun 1935",
+    "fr-CA": "1935 6/26",
+    "zh-Hans": "1935年6月26日",
+    "zh-HK": "1935年6月26日",
+    "ja": "1935年6月26日"
+   },
+   "present": {
+    "en-GB": "Xiaojin, Sichuan, China",
+    "fr-CA": "Xiaojin, Sichuan, China",
+    "zh-Hans": "四川省小金县两河口镇",
+    "zh-HK": "四川省小金县两河口镇",
+    "ja": "中国四川省小金県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Lianghekou Conference",
+    "zh-Hans": "两河口会议",
+    "zh-HK": "两河口會议",
+    "fr-CA": "Lianghekou Conference",
+    "ja": "両河口会議"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "6月26日，张国焘赶到两河口，与中共中央政治局委员们开会。",
+     "会议决定红军共同北上，建立川陕甘苏区。但张国焘与中央的分歧就此埋下。",
+     "由于战略争论，红军在此滞留过久，松潘大路被国军胡宗南部占领，红军只能转向西边的雪山草地。"
+    ],
+    "en-GB": [
+     "On 26 June, Zhang Guotao hastened to Lianghekou to confer with the members of the Political Bureau of the CCP Central Committee.",
+     "The meeting resolved that the Red Army would advance north as one and establish a soviet area spanning Sichuan, Shaanxi and Gansu. Yet it was here that the seeds of discord between Zhang Guotao and the Party Centre were sown.",
+     "Owing to this strategic dispute, the Red Army lingered in the area for too long. The main road through Songpan fell to the Nationalist forces under Hu Zongnan, leaving the Red Army with no choice but to turn westwards into the snow mountains and grasslands."
+    ],
+    "fr-CA": [
+     "Le 26 juin, Zhang Guotao se hâta de rejoindre Lianghekou, où il tint une réunion avec les membres du Bureau politique du Comité central du Parti communiste chinois.",
+     "La réunion décida que l'Armée rouge progresserait conjointement vers le nord afin d'y établir une région soviétique couvrant le Sichuan, le Shaanxi et le Gansu. Mais c'est là que fut semée la discorde entre Zhang Guotao et le Comité central.",
+     "En raison des querelles stratégiques, l'Armée rouge s'attarda trop longtemps sur place; la grande route de Songpan fut occupée par les troupes nationalistes de Hu Zongnan, si bien que l'Armée rouge n'eut d'autre choix que de se tourner vers les montagnes enneigées et les prairies de l'ouest."
+    ],
+    "zh-HK": [
+     "6月26日，張國燾趕到兩河口，與中共中央政治局委員們開會。",
+     "會議決定紅軍共同北上，建立川陝甘蘇區。但張國燾與中央的分歧就此埋下。",
+     "由於戰略爭論，紅軍在此滯留過久，松潘大路被國軍胡宗南部佔領，紅軍只能轉向西邊的雪山草地。"
+    ],
+    "ja": [
+     "6月26日、張国燾は両河口に駆けつけ、中国共産党中央政治局の委員たちと会議を開いた。",
+     "会議では、紅軍が一致して北上し、川陝甘ソビエト地区を建設することが決定された。しかし、ここに張国燾と中央との対立の種が蒔かれることとなった。",
+     "戦略をめぐる論争のため紅軍の滞留が長引き、その間に松潘の大路は国民党軍・胡宗南の部隊に占領されてしまった。紅軍はやむなく西方の雪山と草地へと進路を転じざるを得なかった。"
+    ]
+   }
+  },
+  {
+   "id": "maoergai",
+   "coords": [
+    103.42,
+    32.14
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "20 Aug 1935",
+    "fr-CA": "1935 8/20",
+    "zh-Hans": "1935年8月20日",
+    "zh-HK": "1935年8月20日",
+    "ja": "1935年8月20日"
+   },
+   "present": {
+    "en-GB": "Songpan, Sichuan, China",
+    "fr-CA": "Songpan, Sichuan, China",
+    "zh-Hans": "四川省松潘县毛儿盖",
+    "zh-HK": "四川省松潘县毛儿盖",
+    "ja": "中国四川省松潘県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Mao'ergai Conference",
+    "zh-Hans": "毛儿盖会议",
+    "zh-HK": "毛儿盖會议",
+    "fr-CA": "Mao'ergai Conference",
+    "ja": "毛児蓋会議"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "8月，红军混编为左右两路军过草地，中共中央随右路军行动。",
+     "8月20日毛儿盖会议决定：以岷州为中心的洮河流域为发展方向，向东发展。",
+     "从毛儿盖出发，红军进入了长征中最艰苦的一段路——松潘草地。"
+    ],
+    "en-GB": [
+     "In August, the Red Army was reorganised into two combined columns — the Left Route Army and the Right Route Army — for the crossing of the grasslands, with the Central Committee of the Communist Party of China travelling with the Right Route Army.",
+     "On 20 August, the Ma'ergai Conference decided that the direction of advance would be the Tao River valley centred on Minzhou, pushing eastwards.",
+     "Setting out from Ma'ergai, the Red Army entered the most arduous stretch of the entire Long March — the Songpan grasslands."
+    ],
+    "fr-CA": [
+     "En août, l'Armée rouge fut réorganisée en deux colonnes mixtes, l'Armée de gauche et l'Armée de droite, afin de traverser les prairies. Le Comité central du Parti communiste chinois avança avec l'Armée de droite.",
+     "Le 20 août, la conférence de Mao'ergai décida de faire du bassin de la rivière Tao, centré sur Minzhou, la direction de développement, et de progresser vers l'est.",
+     "Au départ de Mao'ergai, l'Armée rouge s'engagea dans le tronçon le plus éprouvant de la Longue Marche : les prairies de Songpan."
+    ],
+    "zh-HK": [
+     "8月，紅軍混編為左右兩路軍過草地，中共中央隨右路軍行動。",
+     "8月20日毛兒蓋會議決定：以岷州為中心的洮河流域為發展方向，向東發展。",
+     "從毛兒蓋出發，紅軍進入了長征中最艱苦的一段路——松潘草地。"
+    ],
+    "ja": [
+     "8月、紅軍は左路軍と右路軍の二軍に混成編成され、草地を越えて進軍した。中国共産党中央委員会は右路軍に随行して行動した。",
+     "8月20日の毛児蓋会議では、岷州を中心とする洮河流域を発展の方向と定め、東方へ進出していくことが決定された。",
+     "毛児蓋を出発した紅軍は、長征において最も過酷な行程となる松潘草地へと足を踏み入れた。"
+    ]
+   }
+  },
+  {
+   "id": "caodi",
+   "coords": [
+    103.05,
+    33.35
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "August 1935",
+    "fr-CA": "1935 8/中下旬",
+    "zh-Hans": "1935年8月中下旬",
+    "zh-HK": "1935年8月中下旬",
+    "ja": "1935年8月中下旬"
+   },
+   "present": {
+    "en-GB": "Zoige (Ruoergai), Sichuan, China",
+    "fr-CA": "Zoige (Ruoergai), Sichuan, China",
+    "zh-Hans": "四川省若尔盖县（松潘草地）",
+    "zh-HK": "四川省若尔盖县（松潘草地）",
+    "ja": "中国四川省若爾蓋県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Crossing the Songpan grasslands",
+    "zh-Hans": "穿越松潘草地",
+    "zh-HK": "穿越松潘草地",
+    "fr-CA": "Crossing the Songpan grasslands",
+    "ja": "松潘草地横断"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "松潘草地是海拔3500米以上的高原湿地，草甸下是泥沼，荒无人烟，无处补给。",
+     "红军经受了高原反应、饮水中毒、饥渴、湿冷和极端天气的极限考验，许多人陷入泥沼再也没能起来。",
+     "走出草地的部队几乎耗尽了体力——但甘南的门户打开了。"
+    ],
+    "en-GB": [
+     "The Songpan grasslands are a high-altitude wetland lying above 3,500 metres, where treacherous bogs lurk beneath the grassy meadows. Desolate and uninhabited, it offered nowhere to obtain supplies.",
+     "The Red Army endured an extreme test of endurance: altitude sickness, poisoned drinking water, hunger and thirst, damp cold and brutal weather. Many sank into the morass and were never able to rise again.",
+     "The troops who emerged from the grasslands had all but exhausted their strength — yet the gateway to southern Gansu now lay open."
+    ],
+    "fr-CA": [
+     "Les prairies de Songpan sont des zones humides de haut plateau, à plus de 3 500 mètres au-dessus du niveau de la mer : sous la prairie se cachent des bourbiers, dans une région déserte et inhabitée, sans aucune possibilité de ravitaillement.",
+     "L'Armée rouge y a subi des épreuves à la limite de l'endurance : mal d'altitude, intoxications dues à l'eau de boisson, faim et soif, froid humide et conditions météorologiques extrêmes ; beaucoup d'hommes se sont enfoncés dans les bourbiers, sans jamais se relever.",
+     "En sortant des prairies, les troupes avaient presque épuisé toutes leurs forces – mais la porte du sud du Gansu venait de s'ouvrir."
+    ],
+    "zh-HK": [
+     "松潘草地是海拔3,500米以上的高原濕地，草甸之下是泥沼，荒無人煙，無處補給。",
+     "紅軍經受了高原反應、飲水中毒、飢渴、濕冷和極端天氣的極限考驗，許多人陷入泥沼，再也沒能起來。",
+     "走出草地的部隊幾乎耗盡了體力——但甘南的門戶打開了。"
+    ],
+    "ja": [
+     "松潘草地は標高3500メートルを超える高原湿地であり、草原の下には泥沼が広がり、荒れ果てて人煙はなく、補給を得られる場所もなかった。",
+     "赤軍は高山病、飲料水による中毒、飢えと渇き、湿った寒さ、そして極端な気候という極限の試練に耐えたが、多くの者が泥沼に沈み、二度と立ち上がることはできなかった。",
+     "草地を抜け出た部隊の体力はほとんど使い果たされていた——しかし、甘南への門戸は開かれたのである。"
+    ]
+   }
+  },
+  {
+   "id": "baozo",
+   "coords": [
+    103.68,
+    33.72
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "26 Aug 1935",
+    "fr-CA": "1935 8/26—29",
+    "zh-Hans": "1935年8月26日—29日",
+    "zh-HK": "1935年8月26日—29日",
+    "ja": "1935年8月26日–29日"
+   },
+   "present": {
+    "en-GB": "Zoige (Ruoergai), Sichuan, China",
+    "fr-CA": "Zoige (Ruoergai), Sichuan, China",
+    "zh-Hans": "四川省若尔盖县包座",
+    "zh-HK": "四川省若尔盖县包座",
+    "ja": "中国四川省若爾蓋県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Baozo battle",
+    "zh-Hans": "包座战役",
+    "zh-HK": "包座战役",
+    "fr-CA": "Baozo battle",
+    "ja": "包座戦役"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "8月26日，走出草地的红军发动包座战役，击溃胡宗南部第四十九师。",
+     "包座之战打开了进军甘南的门户，还缴获了大批粮食弹药——对刚出草地的红军至关重要。",
+     "然而张国焘此时坚持南下，一场更大的分裂危机正在逼近。"
+    ],
+    "en-GB": [
+     "On 26 August, the Red Army, fresh out of the grasslands, launched the Battle of Baozuo, routing Hu Zongnan's 49th Division.",
+     "The battle opened the gateway into southern Gansu and yielded large captures of grain and ammunition – supplies of vital importance to the Red Army, which had only just emerged from the grasslands.",
+     "Zhang Guotao, however, now insisted on marching south, and an even greater crisis of division was looming."
+    ],
+    "fr-CA": [
+     "Le 26 août, l'Armée rouge, qui venait de sortir des prairies, lança la bataille de Baozuo et mit en déroute la 49e division des forces de Hu Zongnan.",
+     "La victoire remportée à Baozuo ouvrit la voie vers le sud du Gansu et permit en outre de capturer d'importantes quantités de vivres et de munitions — un avantage vital pour l'Armée rouge, qui sortait à peine des prairies.",
+     "Cependant, à ce moment-là, Zhang Guotao s'obstinait à vouloir marcher vers le sud, et une crise de scission encore plus grave se profilait."
+    ],
+    "zh-HK": [
+     "8月26日，走出草地的紅軍發動包座戰役，擊潰胡宗南部第四十九師。",
+     "包座之戰打開了進軍甘南的門戶，還繳獲了大批糧食彈藥——對剛出草地的紅軍至關重要。",
+     "然而張國燾此時堅持南下，一場更大的分裂危機正在逼近。"
+    ],
+    "ja": [
+     "8月26日、草地を抜け出た紅軍は包座戦役を発動し、胡宗南率いる第四十九師を撃破した。",
+     "包座の戦いは甘粛南部への進軍の門戸を開くとともに、大量の食糧と弾薬を鹵獲した――草地を出たばかりの紅軍にとって、これは極めて重要な戦果であった。",
+     "しかし、張国燾はこのときなお南下を堅持しており、いっそう大きな分裂の危機が迫りつつあった。"
+    ]
+   }
+  },
+  {
+   "id": "baxi",
+   "coords": [
+    103.38,
+    33.9
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "9 Sep 1935",
+    "fr-CA": "1935 9/9",
+    "zh-Hans": "1935年9月9日",
+    "zh-HK": "1935年9月9日",
+    "ja": "1935年9月9日"
+   },
+   "present": {
+    "en-GB": "Zoige (Ruoergai), Sichuan, China",
+    "fr-CA": "Zoige (Ruoergai), Sichuan, China",
+    "zh-Hans": "四川省若尔盖县巴西乡",
+    "zh-HK": "四川省若尔盖县巴西乡",
+    "ja": "中国四川省若爾蓋県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Baxi Conference",
+    "zh-Hans": "巴西会议",
+    "zh-HK": "巴西會议",
+    "fr-CA": "Baxi Conference",
+    "ja": "巴西会議"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "9月9日，张国焘电令右路军南下。毛泽东、张闻天、博古连夜赶到巴西，召开政治局紧急会议。",
+     "会议决定：中央率一、三军团单独北上——这是与张国焘分裂的决定时刻。",
+     "北上支队当时只有约八千人，面临的是尚未征服的雪山、隘口和甘肃的国民党军。"
+    ],
+    "en-GB": [
+     "On 9 September, Zhang Guotao sent a telegram ordering the Right Route Army to march south. Mao Zedong, Zhang Wentian and Bo Gu hurried to Baxi overnight, where they convened an emergency meeting of the Politburo.",
+     "The meeting resolved that the Party Centre would lead the 1st and 3rd Army Corps north on its own – this was the decisive moment of the split with Zhang Guotao.",
+     "The northbound column then numbered only about 8,000 men, and what lay ahead were still-unconquered snow mountains, narrow passes and the Kuomintang armies of Gansu."
+    ],
+    "fr-CA": [
+     "Le 9 septembre, Zhang Guotao ordonna par télégramme à l'armée de droite de marcher vers le sud. Mao Zedong, Zhang Wentian et Bo Gu se rendirent aussitôt, en pleine nuit, à Baxi, où ils convoquèrent une réunion d'urgence du Bureau politique.",
+     "La réunion décida : le Comité central poursuivrait la marche vers le nord à la tête des seuls 1er et 3e corps d'armée — c'était le moment décisif de la rupture avec Zhang Guotao.",
+     "La colonne du nord ne comptait alors qu'environ huit mille hommes, qui devaient affronter des montagnes enneigées et des cols encore invaincus, ainsi que l'armée nationaliste du Kuomintang au Gansu."
+    ],
+    "zh-HK": [
+     "9月9日，張國燾電令右路軍南下。毛澤東、張聞天、博古連夜趕到巴西，召開政治局緊急會議。",
+     "會議決定：中央率一、三軍團單獨北上——這是與張國燾分裂的決定時刻。",
+     "北上支隊當時只有約八千人，面臨的是尚未征服的雪山、隘口和甘肅的國民黨軍。"
+    ],
+    "ja": [
+     "9月9日、張国燾は電報で右路軍に南下を命じた。毛沢東、張聞天、博古はその夜のうちに巴西へ急行し、政治局緊急会議を開いた。",
+     "会議では、中央が第1軍団・第3軍団を率いて単独で北上することが決定された——これが張国燾との分裂を決定づけた瞬間であった。",
+     "北上部隊の兵力は当時わずか約8000人にすぎず、その前面には、いまだ征服されていない雪山や峠、そして甘粛に待ち構える国民党軍が立ちはだかっていた。"
+    ]
+   }
+  },
+  {
+   "id": "ejie",
+   "coords": [
+    103.36,
+    34.07
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "12 Sep 1935",
+    "fr-CA": "1935 9/12",
+    "zh-Hans": "1935年9月12日",
+    "zh-HK": "1935年9月12日",
+    "ja": "1935年9月12日"
+   },
+   "present": {
+    "en-GB": "Diebu, Gansu, China",
+    "fr-CA": "Diebu, Gansu, China",
+    "zh-Hans": "甘肃省迭部县俄界（高吉村）",
+    "zh-HK": "甘肃省迭部县俄界（高吉村）",
+    "ja": "中国甘粛省迭部県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Ejie Conference",
+    "zh-Hans": "俄界会议",
+    "zh-HK": "俄界會议",
+    "fr-CA": "Ejie Conference",
+    "ja": "俄界会議"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "9月12日，中央政治局在甘南迭部的俄界召开扩大会议。",
+     "会议将北上部队改编为中国工农红军陕甘支队：彭德怀任司令员，毛泽东任政委。",
+     "俄界会议之后，这支小部队向腊子口天险进发——那是一道只有几十米宽的隘口。"
+    ],
+    "en-GB": [
+     "On 12 September, the Political Bureau of the Central Committee convened an enlarged meeting at Ejie, in Diebu County in southern Gansu.",
+     "The meeting reorganised the northward force into the Shaanxi–Gansu Detachment of the Chinese Workers' and Peasants' Red Army, with Peng Dehuai as commander and Mao Zedong as political commissar.",
+     "After the Ejie Meeting, this small force marched towards the formidable natural barrier of Lazikou – a mountain pass only a few dozen metres wide."
+    ],
+    "fr-CA": [
+     "Le 12 septembre, le Bureau politique du Comité central tint une réunion élargie à Ejie, dans le district de Diebu, au sud du Gansu.",
+     "La réunion réorganisa les troupes faisant route vers le nord en détachement Shaan-Gan de l'Armée rouge des ouvriers et des paysans chinois : Peng Dehuai fut nommé commandant et Mao Zedong, commissaire politique.",
+     "Après la réunion d'Ejie, cette petite troupe se mit en marche vers le redoutable col de Lazikou — un défilé large de quelques dizaines de mètres à peine."
+    ],
+    "zh-HK": [
+     "9月12日，中央政治局在甘南迭部的俄界召開擴大會議。",
+     "會議將北上部隊改編為中國工農紅軍陝甘支隊：彭德懷任司令員，毛澤東任政委。",
+     "俄界會議之後，這支小部隊向臘子口天險進發——那是一道只有幾十米闊的隘口。"
+    ],
+    "ja": [
+     "9月12日、中央政治局は甘南・迭部（ディエブ）の俄界（エジエ）において拡大会議を開いた。",
+     "会議では、北上する部隊を中国労農紅軍陝甘支隊へと改編することが決定され、彭徳懐が司令員に、毛沢東が政治委員に就任した。",
+     "俄界会議の後、この小部隊は天険の臘子口（ラーズーコウ）へと進んだ――そこは幅わずか数十メートルの隘口であった。"
+    ]
+   }
+  },
+  {
+   "id": "lazikou",
+   "coords": [
+    103.894,
+    34.109
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "17 Sep 1935",
+    "fr-CA": "1935 9/17",
+    "zh-Hans": "1935年9月17日",
+    "zh-HK": "1935年9月17日",
+    "ja": "1935年9月17日"
+   },
+   "present": {
+    "en-GB": "Diebu, Gansu, China",
+    "fr-CA": "Diebu, Gansu, China",
+    "zh-Hans": "甘肃省迭部县腊子口",
+    "zh-HK": "甘肃省迭部县腊子口",
+    "ja": "中国甘粛省迭部県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Lazikou Pass",
+    "zh-Hans": "攻克腊子口",
+    "zh-HK": "攻克腊子口",
+    "fr-CA": "Lazikou Pass",
+    "ja": "臘子口攻略"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "腊子口是岷山山脉的一道隘口，两边绝壁，中间一道激流上的木桥，鲁大昌部凭险据守。",
+     "红军正面强攻受阻后，一名苗族战士攀上绝壁，带人从山顶居高临下攻击，守军崩溃。",
+     "9月17日攻克腊子口，红军进入甘南平原的门户打开了。"
+    ],
+    "en-GB": [
+     "Lazikou is a narrow pass in the Min Mountains, with sheer cliffs rising on either side and a wooden bridge spanning a rushing torrent in between. The troops of Lu Dachang held this formidable natural stronghold.",
+     "After the Red Army's frontal assaults were repulsed, a soldier of Miao ethnicity scaled the sheer cliff and, leading a group of men, attacked the defenders from the mountaintop above; the garrison collapsed.",
+     "With Lazikou captured on 17 September, the gateway into the plains of southern Gansu was opened for the Red Army."
+    ],
+    "fr-CA": [
+     "La passe de Lazikou est un défilé de la chaîne de montagnes Minshan : des falaises à pic de part et d'autre et, au milieu, un pont de bois enjambant un torrent impétueux ; les troupes de Lu Dachang y tenaient une position retranchée, à l'abri des défenses naturelles du site.",
+     "L'assaut frontal de l'Armée rouge ayant été bloqué, un soldat de l'ethnie miao escalada la falaise, puis, à la tête de quelques hommes, attaqua depuis le sommet de la montagne en plongeant sur les positions ennemies : la défense s'effondra.",
+     "Le 17 septembre, la passe de Lazikou fut enlevée : la porte d'accès de l'Armée rouge aux plaines du sud du Gansu était désormais ouverte."
+    ],
+    "zh-HK": [
+     "臘子口是岷山山脈的一道隘口，兩旁絕壁聳立，中間一道激流上架着一座木橋，魯大昌部憑險據守。",
+     "紅軍正面強攻受阻後，一名苗族戰士攀上絕壁，帶領戰友從山頂居高臨下發動攻擊，守軍隨即崩潰。",
+     "9月17日攻克臘子口，紅軍進入甘南平原的門戶就此打開。"
+    ],
+    "ja": [
+     "臘子口は岷山山脈の一部をなす隘口で、両側は切り立った絶壁、中央には急流の上に架かる一本の木橋があるだけであり、魯大昌の部隊はこの天険に依拠して守りを固めていた。",
+     "紅軍は正面からの強攻が阻まれた後、ミャオ族の兵士一名が絶壁をよじ登り、同志を率いて山頂から高みに陣取って攻撃を加えたため、守備隊は崩壊した。",
+     "9月17日に臘子口を攻略し、紅軍が甘南平原へ入る門戸が開かれた。"
+    ]
+   }
+  },
+  {
+   "id": "hadapu",
+   "coords": [
+    104.224,
+    34.232
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "18 Sep 1935",
+    "fr-CA": "1935 9/18—20",
+    "zh-Hans": "1935年9月18日—20日",
+    "zh-HK": "1935年9月18日—20日",
+    "ja": "1935年9月18日–20日"
+   },
+   "present": {
+    "en-GB": "Dangchang, Gansu, China",
+    "fr-CA": "Dangchang, Gansu, China",
+    "zh-Hans": "甘肃省宕昌县哈达铺",
+    "zh-HK": "甘肃省宕昌县哈达铺",
+    "ja": "中国甘粛省宕昌県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Hadapu",
+    "zh-Hans": "哈达铺：找到去向",
+    "zh-HK": "哈达铺：找到去向",
+    "fr-CA": "Hadapu",
+    "ja": "哈達鋪"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "红军进占哈达铺，在这里的邮政所报纸上，毛泽东读到了刘志丹陕甘根据地仍然存在的消息。",
+     "长征出发时并没有确定的目的地。在哈达铺，中共中央第一次明确了长征的最终去向：陕北。",
+     "部队在哈达铺整编休整，恢复了体力——“到陕北去”从此成为全军的目标。"
+    ],
+    "en-GB": [
+     "The Red Army occupied Hadapu, where, in the newspapers at the local post office, Mao Zedong read the news that Liu Zhidan's Shaanxi–Gansu base area still existed.",
+     "When the Long March set out, no fixed destination had been chosen. It was at Hadapu that the Central Committee of the Communist Party of China, for the first time, settled the march's ultimate destination: northern Shaanxi.",
+     "At Hadapu the troops were reorganised and given a rest, recovering their strength — from then on, 'To northern Shaanxi!' became the goal of the entire army."
+    ],
+    "fr-CA": [
+     "L'Armée rouge occupa Hadapu; dans les journaux du bureau de poste de la localité, Mao Zedong lut la nouvelle selon laquelle la base révolutionnaire de Liu Zhidan, au Shaanxi-Gansu, existait toujours.",
+     "Au moment de son départ, la Longue Marche n'avait aucune destination déterminée. À Hadapu, le Comité central du Parti communiste chinois précisa pour la première fois la destination finale de la Longue Marche : le nord du Shaanxi.",
+     "Les troupes se réorganisèrent et prirent du repos à Hadapu, retrouvant ainsi leurs forces; « Vers le nord du Shaanxi » devint dès lors l'objectif de toute l'armée."
+    ],
+    "zh-HK": [
+     "紅軍進佔哈達鋪，在這裏的郵政所報紙上，毛澤東讀到了劉志丹陝甘根據地仍然存在的消息。",
+     "長征出發時並沒有確定的目的地。在哈達鋪，中共中央第一次明確了長征的最終去向：陝北。",
+     "部隊在哈達鋪整編休整，恢復了體力——「到陝北去」從此成為全軍的目標。"
+    ],
+    "ja": [
+     "紅軍は哈達鋪を占領した。そこの郵便局の新聞で、毛沢東は劉志丹の陝甘根拠地がなお存続しているという知らせを読んだ。",
+     "長征は出発の当初、確定した目的地を持っていなかった。哈達鋪において、中国共産党中央委員会は初めて長征の最終的な行き先を明確にした。それが陝北であった。",
+     "部隊は哈達鋪で再編成と休養を行い、体力を回復した——「陝北へ行く」ことが、ここから全軍の目標となったのである。"
+    ]
+   }
+  },
+  {
+   "id": "bangluo",
+   "coords": [
+    105.06,
+    35.14
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "27 Sep 1935",
+    "fr-CA": "1935 9/27",
+    "zh-Hans": "1935年9月27日",
+    "zh-HK": "1935年9月27日",
+    "ja": "1935年9月27日"
+   },
+   "present": {
+    "en-GB": "Tongwei, Gansu, China",
+    "fr-CA": "Tongwei, Gansu, China",
+    "zh-Hans": "甘肃省通渭县榜罗镇",
+    "zh-HK": "甘肃省通渭县榜罗镇",
+    "ja": "中国甘粛省通渭県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Bangluo Conference",
+    "zh-Hans": "榜罗镇会议",
+    "zh-HK": "榜罗镇會议",
+    "fr-CA": "Bangluo Conference",
+    "ja": "榜羅鎮会議"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "9月27日，中央政治局在榜罗镇召开会议，正式确定把陕甘根据地作为长征的落脚点。",
+     "9月29日部队东进，越过国军在武山、漳县间的封锁线，渡过渭河。",
+     "长征的终点就在前方——但还要翻过最后一座大山。"
+    ],
+    "en-GB": [
+     "On 27 September, the Central Politburo convened a meeting at Bangluo Town, formally deciding to make the Shaanxi–Gansu base area the final destination of the Long March.",
+     "On 29 September, the troops marched east, breaking through the Nationalist blockade line between Wushan and Zhangxian, and crossed the Wei River.",
+     "The end of the Long March lay just ahead – but one final great mountain still had to be crossed."
+    ],
+    "fr-CA": [
+     "Le 27 septembre, le Bureau politique du Comité central tint une réunion au bourg de Bangluo et décida officiellement que la base révolutionnaire du Shaanxi-Gansu serait le point de chute de la Longue Marche.",
+     "Le 29 septembre, les troupes marchèrent vers l'est, franchirent la ligne de blocus établie par les nationalistes entre Wushan et Zhangxian, puis traversèrent la rivière Wei.",
+     "La fin de la Longue Marche était tout proche — mais il fallait encore franchir une dernière haute montagne."
+    ],
+    "zh-HK": [
+     "9月27日，中央政治局在榜羅鎮召開會議，正式確定把陝甘根據地作為長征的落腳點。",
+     "9月29日部隊東進，越過國軍在武山、漳縣間的封鎖線，渡過渭河。",
+     "長征的終點就在前方——但還要翻過最後一座大山。"
+    ],
+    "ja": [
+     "9月27日、中央政治局は榜羅鎮で会議を開き、陝甘根拠地を長征の最終目的地とすることを正式に決定した。",
+     "9月29日、部隊は東へ進み、武山と漳県の間に張られた国民党軍の封鎖線を越えて、渭水を渡った。",
+     "長征の終点はもうすぐそこにある——だが、越えるべき最後の高い山がまだ残っていた。"
+    ]
+   }
+  },
+  {
+   "id": "liupanshan",
+   "coords": [
+    106.21,
+    35.4
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "7 Oct 1935",
+    "fr-CA": "1935 10/7",
+    "zh-Hans": "1935年10月7日",
+    "zh-HK": "1935年10月7日",
+    "ja": "1935年10月7日"
+   },
+   "present": {
+    "en-GB": "Ningxia–Gansu border, China",
+    "fr-CA": "Ningxia–Gansu border, China",
+    "zh-Hans": "宁夏固原市隆德县—六盘山",
+    "zh-HK": "宁夏固原市隆德县—六盘山",
+    "ja": "中国寧夏・甘粛境界"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Crossing Liupan Mountain",
+    "zh-Hans": "翻越六盘山",
+    "zh-HK": "翻越六盘山",
+    "fr-CA": "Crossing Liupan Mountain",
+    "ja": "六盤山越え"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "10月7日，红军翻越六盘山——长征路上翻越的最后一座大山。",
+     "毛泽东在山上吟成《清平乐·六盘山》：“不到长城非好汉，屈指行程二万”。",
+     "翻过六盘山，就是陕北黄土高原的沟壑地带。"
+    ],
+    "en-GB": [
+     "On 7 October, the Red Army crossed Liupan Mountain — the last great mountain to be scaled on the Long March.",
+     "On the mountain, Mao Zedong composed the poem \"Mount Liupan\", written to the tune of \"Qingping Yue\": \"You are not a true man until you reach the Great Wall; counting on our fingers, we have travelled twenty thousand li.\"",
+     "Beyond Liupan Mountain lay the gully-cut terrain of the loess plateau of northern Shaanxi."
+    ],
+    "fr-CA": [
+     "Le 7 octobre, l'Armée rouge gravit le mont Liupan — la dernière grande montagne à franchir sur le parcours de la Longue Marche.",
+     "Sur la montagne même, Mao Zedong compose le poème « Qingpingyue : le mont Liupan » : « N'est pas un vrai héros qui n'a pas franchi la Grande Muraille ; sur nos doigts, nous comptons déjà vingt mille li de marche. »",
+     "Une fois le mont Liupan franchi, on débouche sur la zone de ravins du plateau de lœss du nord du Shaanxi."
+    ],
+    "zh-HK": [
+     "10月7日，紅軍翻越六盤山——長征路上翻越的最後一座大山。",
+     "毛澤東在山上吟成《清平樂·六盤山》：「不到長城非好漢，屈指行程二萬」。",
+     "翻過六盤山，就是陝北黃土高原的溝壑地帶。"
+    ],
+    "ja": [
+     "10月7日、紅軍は六盤山を越えた。これは、長征の道のりで越える最後の大山であった。",
+     "毛沢東は山上で詞「清平楽・六盤山」を詠み上げた。「長城に到らざれば好漢に非ず、指を折れば行程はすでに二万」。",
+     "六盤山を越えると、そこは陝北の黄土高原、無数の谷が幾重にも刻まれた溝壑地帯である。"
+    ]
+   }
+  },
+  {
+   "id": "wuqi",
+   "coords": [
+    108.172,
+    36.925
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "19 Oct 1935",
+    "fr-CA": "1935 10/19",
+    "zh-Hans": "1935年10月19日",
+    "zh-HK": "1935年10月19日",
+    "ja": "1935年10月19日"
+   },
+   "present": {
+    "en-GB": "Wuqi, Shaanxi, China",
+    "fr-CA": "Wuqi, Shaanxi, China",
+    "zh-Hans": "陕西省延安市吴起县",
+    "zh-HK": "陕西省延安市吴起县",
+    "ja": "中国陝西省呉起県"
+   },
+   "iso3": "CHN",
+   "names": {
+    "en-GB": "Wuqi — end of the march",
+    "zh-Hans": "吴起镇：长征结束",
+    "zh-HK": "吴起镇：長征结束",
+    "fr-CA": "Wuqi — end of the march",
+    "ja": "呉起鎮：長征の終わり"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "10月19日，陕甘支队抵达陕北吴起镇——中央红军的长征到此结束。",
+     "从于都渡河算起，中央红军历时368天，转战11个省，行程二万余华里，这就是“二万五千里长征”名称的由来。",
+     "到达吴起时中央红军不足八千人。11月与红十五军团会合，中国共产党进入延安时期。"
+    ],
+    "en-GB": [
+     "On 19 October, the Shaanxi-Gansu Detachment reached Wuqi Town in northern Shaanxi, and with it the Central Red Army's Long March came to an end.",
+     "Counting from the crossing of the Yudu River, the Central Red Army's march had lasted 368 days, taken it through 11 provinces and covered more than 20,000 li (Chinese miles) — hence the name 'the 25,000-li Long March'.",
+     "By the time it reached Wuqi, the Central Red Army numbered fewer than 8,000 men. In November it joined forces with the 15th Red Army Corps, and the Chinese Communist Party entered its Yan'an period."
+    ],
+    "fr-CA": [
+     "Le 19 octobre, le détachement Shaanxi-Gansu arriva au bourg de Wuqi, dans le nord du Shaanxi : la Longue Marche de l'Armée rouge centrale prenait fin à ce moment.",
+     "Si l'on compte à partir de la traversée du fleuve à Yudu, l'expédition de l'Armée rouge centrale dura 368 jours, mena campagne dans 11 provinces et couvrit plus de 20 000 li : c'est là l'origine du nom de « Longue Marche des 25 000 li ».",
+     "À son arrivée à Wuqi, l'Armée rouge centrale comptait moins de 8 000 hommes. En novembre, elle fit sa jonction avec le 15e Corps de l'Armée rouge, et le Parti communiste chinois entra dans la période de Yan'an."
+    ],
+    "zh-HK": [
+     "10月19日，陝甘支隊抵達陝北吳起鎮——中央紅軍的長征到此結束。",
+     "從於都渡河算起，中央紅軍歷時368天，轉戰11個省，行程二萬餘華里，這就是「二萬五千里長征」名稱的由來。",
+     "到達吳起時中央紅軍不足八千人。11月與紅十五軍團會合，中國共產黨進入延安時期。"
+    ],
+    "ja": [
+     "10月19日、陝甘支隊は陝北の呉起鎮に到着した――中央紅軍の長征はここに終わりを告げた。",
+     "于都での渡河から数えて、中央紅軍は368日間にわたって11の省を転戦し、その行程は2万華里余りに及んだ。これが「二万五千里長征」という名称の由来である。",
+     "呉起に到着した時点で、中央紅軍の兵力は8千人に満たなかった。11月には紅十五軍団と会合し、中国共産党は延安時代へと入っていった。"
+    ]
+   }
+  }
+ ],
+ "route_out": [
+  [
+   116.033,
+   25.883
+  ],
+  [
+   115.8965,
+   25.9017
+  ],
+  [
+   115.76,
+   25.9205
+  ],
+  [
+   115.6235,
+   25.9392
+  ],
+  [
+   115.487,
+   25.958
+  ],
+  [
+   115.3666,
+   25.9493
+  ],
+  [
+   115.2462,
+   25.9406
+  ],
+  [
+   115.1257,
+   25.9319
+  ],
+  [
+   115.0053,
+   25.9232
+  ],
+  [
+   114.8849,
+   25.9145
+  ],
+  [
+   114.7644,
+   25.9058
+  ],
+  [
+   114.644,
+   25.8971
+  ],
+  [
+   114.5236,
+   25.8884
+  ],
+  [
+   114.4032,
+   25.8797
+  ],
+  [
+   114.2827,
+   25.871
+  ],
+  [
+   114.1623,
+   25.8623
+  ],
+  [
+   114.0419,
+   25.8536
+  ],
+  [
+   113.9215,
+   25.8449
+  ],
+  [
+   113.8011,
+   25.8362
+  ],
+  [
+   113.6806,
+   25.8275
+  ],
+  [
+   113.5602,
+   25.8188
+  ],
+  [
+   113.4398,
+   25.8101
+  ],
+  [
+   113.3194,
+   25.8014
+  ],
+  [
+   113.1989,
+   25.7927
+  ],
+  [
+   113.0785,
+   25.784
+  ],
+  [
+   112.9581,
+   25.7753
+  ],
+  [
+   112.8376,
+   25.7666
+  ],
+  [
+   112.7172,
+   25.7579
+  ],
+  [
+   112.5968,
+   25.7492
+  ],
+  [
+   112.4764,
+   25.7405
+  ],
+  [
+   112.3559,
+   25.7318
+  ],
+  [
+   112.2355,
+   25.7231
+  ],
+  [
+   112.1151,
+   25.7144
+  ],
+  [
+   111.9947,
+   25.7057
+  ],
+  [
+   111.8743,
+   25.697
+  ],
+  [
+   111.7538,
+   25.6883
+  ],
+  [
+   111.6334,
+   25.6796
+  ],
+  [
+   111.513,
+   25.6709
+  ],
+  [
+   111.3925,
+   25.6622
+  ],
+  [
+   111.2721,
+   25.6535
+  ],
+  [
+   111.1517,
+   25.6448
+  ],
+  [
+   111.0313,
+   25.6361
+  ],
+  [
+   110.9108,
+   25.6274
+  ],
+  [
+   110.7904,
+   25.6187
+  ],
+  [
+   110.67,
+   25.61
+  ],
+  [
+   110.6067,
+   25.7133
+  ],
+  [
+   110.5433,
+   25.8167
+  ],
+  [
+   110.48,
+   25.92
+  ],
+  [
+   110.363,
+   25.9597
+  ],
+  [
+   110.246,
+   25.9993
+  ],
+  [
+   110.129,
+   26.039
+  ],
+  [
+   110.012,
+   26.0787
+  ],
+  [
+   109.895,
+   26.1183
+  ],
+  [
+   109.778,
+   26.158
+  ],
+  [
+   109.649,
+   26.1736
+  ],
+  [
+   109.52,
+   26.1892
+  ],
+  [
+   109.391,
+   26.2048
+  ],
+  [
+   109.262,
+   26.2204
+  ],
+  [
+   109.133,
+   26.236
+  ],
+  [
+   109.0249,
+   26.3027
+  ],
+  [
+   108.9169,
+   26.3694
+  ],
+  [
+   108.8088,
+   26.4361
+  ],
+  [
+   108.7007,
+   26.5029
+  ],
+  [
+   108.5926,
+   26.5696
+  ],
+  [
+   108.4846,
+   26.6363
+  ],
+  [
+   108.3765,
+   26.703
+  ],
+  [
+   108.2684,
+   26.7697
+  ],
+  [
+   108.1604,
+   26.8364
+  ],
+  [
+   108.0523,
+   26.9031
+  ],
+  [
+   107.9442,
+   26.9699
+  ],
+  [
+   107.8361,
+   27.0366
+  ],
+  [
+   107.7281,
+   27.1033
+  ],
+  [
+   107.62,
+   27.17
+  ],
+  [
+   107.5207,
+   27.2493
+  ],
+  [
+   107.4214,
+   27.3286
+  ],
+  [
+   107.3221,
+   27.4079
+  ],
+  [
+   107.2229,
+   27.4871
+  ],
+  [
+   107.1236,
+   27.5664
+  ],
+  [
+   107.0243,
+   27.6457
+  ],
+  [
+   106.925,
+   27.725
+  ],
+  [
+   106.8169,
+   27.7931
+  ],
+  [
+   106.7087,
+   27.8613
+  ],
+  [
+   106.6006,
+   27.9294
+  ],
+  [
+   106.4925,
+   27.9975
+  ],
+  [
+   106.3844,
+   28.0656
+  ],
+  [
+   106.2763,
+   28.1337
+  ],
+  [
+   106.1681,
+   28.2019
+  ],
+  [
+   106.06,
+   28.27
+  ],
+  [
+   105.9467,
+   28.2233
+  ],
+  [
+   105.8333,
+   28.1767
+  ],
+  [
+   105.72,
+   28.13
+  ],
+  [
+   105.6067,
+   28.0833
+  ],
+  [
+   105.4933,
+   28.0367
+  ],
+  [
+   105.38,
+   27.99
+  ],
+  [
+   105.2667,
+   27.9433
+  ],
+  [
+   105.1533,
+   27.8967
+  ],
+  [
+   105.04,
+   27.85
+  ],
+  [
+   105.1717,
+   27.89
+  ],
+  [
+   105.3033,
+   27.93
+  ],
+  [
+   105.435,
+   27.97
+  ],
+  [
+   105.5667,
+   28.01
+  ],
+  [
+   105.6983,
+   28.05
+  ],
+  [
+   105.83,
+   28.09
+  ],
+  [
+   105.955,
+   28.0725
+  ],
+  [
+   106.08,
+   28.055
+  ],
+  [
+   106.205,
+   28.0375
+  ],
+  [
+   106.33,
+   28.02
+  ],
+  [
+   106.455,
+   28.0025
+  ],
+  [
+   106.58,
+   27.985
+  ],
+  [
+   106.705,
+   27.9675
+  ],
+  [
+   106.83,
+   27.95
+  ],
+  [
+   106.704,
+   27.918
+  ],
+  [
+   106.578,
+   27.886
+  ],
+  [
+   106.452,
+   27.854
+  ],
+  [
+   106.326,
+   27.822
+  ],
+  [
+   106.2,
+   27.79
+  ],
+  [
+   106.1167,
+   27.8867
+  ],
+  [
+   106.0333,
+   27.9833
+  ],
+  [
+   105.95,
+   28.08
+  ],
+  [
+   106.0023,
+   27.97
+  ],
+  [
+   106.0546,
+   27.86
+  ],
+  [
+   106.1069,
+   27.75
+  ],
+  [
+   106.1592,
+   27.64
+  ],
+  [
+   106.2115,
+   27.53
+  ],
+  [
+   106.2638,
+   27.42
+  ],
+  [
+   106.3162,
+   27.31
+  ],
+  [
+   106.3685,
+   27.2
+  ],
+  [
+   106.4208,
+   27.09
+  ],
+  [
+   106.4731,
+   26.98
+  ],
+  [
+   106.5254,
+   26.87
+  ],
+  [
+   106.5777,
+   26.76
+  ],
+  [
+   106.63,
+   26.65
+  ],
+  [
+   106.5138,
+   26.6159
+  ],
+  [
+   106.3975,
+   26.5819
+  ],
+  [
+   106.2812,
+   26.5478
+  ],
+  [
+   106.165,
+   26.5137
+  ],
+  [
+   106.0487,
+   26.4797
+  ],
+  [
+   105.9325,
+   26.4456
+  ],
+  [
+   105.8162,
+   26.4116
+  ],
+  [
+   105.7,
+   26.3775
+  ],
+  [
+   105.5837,
+   26.3434
+  ],
+  [
+   105.4675,
+   26.3094
+  ],
+  [
+   105.3512,
+   26.2753
+  ],
+  [
+   105.235,
+   26.2412
+  ],
+  [
+   105.1187,
+   26.2072
+  ],
+  [
+   105.0025,
+   26.1731
+  ],
+  [
+   104.8862,
+   26.1391
+  ],
+  [
+   104.77,
+   26.105
+  ],
+  [
+   104.6538,
+   26.0709
+  ],
+  [
+   104.5375,
+   26.0369
+  ],
+  [
+   104.4213,
+   26.0028
+  ],
+  [
+   104.305,
+   25.9688
+  ],
+  [
+   104.1887,
+   25.9347
+  ],
+  [
+   104.0725,
+   25.9006
+  ],
+  [
+   103.9562,
+   25.8666
+  ],
+  [
+   103.84,
+   25.8325
+  ],
+  [
+   103.7237,
+   25.7984
+  ],
+  [
+   103.6075,
+   25.7644
+  ],
+  [
+   103.4912,
+   25.7303
+  ],
+  [
+   103.375,
+   25.6962
+  ],
+  [
+   103.2587,
+   25.6622
+  ],
+  [
+   103.1425,
+   25.6281
+  ],
+  [
+   103.0262,
+   25.5941
+  ],
+  [
+   102.91,
+   25.56
+  ],
+  [
+   102.8229,
+   25.65
+  ],
+  [
+   102.7357,
+   25.74
+  ],
+  [
+   102.6486,
+   25.83
+  ],
+  [
+   102.5614,
+   25.92
+  ],
+  [
+   102.4743,
+   26.01
+  ],
+  [
+   102.3871,
+   26.1
+  ],
+  [
+   102.3,
+   26.19
+  ],
+  [
+   102.2823,
+   26.347
+  ],
+  [
+   102.2647,
+   26.504
+  ],
+  [
+   102.247,
+   26.661
+  ],
+  [
+   102.2418,
+   26.7871
+  ],
+  [
+   102.2366,
+   26.9131
+  ],
+  [
+   102.2314,
+   27.0392
+  ],
+  [
+   102.2262,
+   27.1653
+  ],
+  [
+   102.221,
+   27.2913
+  ],
+  [
+   102.2158,
+   27.4174
+  ],
+  [
+   102.2106,
+   27.5435
+  ],
+  [
+   102.2054,
+   27.6695
+  ],
+  [
+   102.2002,
+   27.7956
+  ],
+  [
+   102.195,
+   27.9217
+  ],
+  [
+   102.1898,
+   28.0477
+  ],
+  [
+   102.1846,
+   28.1738
+  ],
+  [
+   102.1794,
+   28.2999
+  ],
+  [
+   102.1742,
+   28.4259
+  ],
+  [
+   102.169,
+   28.552
+  ],
+  [
+   102.188,
+   28.6728
+  ],
+  [
+   102.207,
+   28.7937
+  ],
+  [
+   102.226,
+   28.9145
+  ],
+  [
+   102.245,
+   29.0353
+  ],
+  [
+   102.264,
+   29.1562
+  ],
+  [
+   102.283,
+   29.277
+  ],
+  [
+   102.2724,
+   29.4046
+  ],
+  [
+   102.2618,
+   29.5322
+  ],
+  [
+   102.2512,
+   29.6598
+  ],
+  [
+   102.2406,
+   29.7874
+  ],
+  [
+   102.23,
+   29.915
+  ],
+  [
+   102.3625,
+   29.9512
+  ],
+  [
+   102.495,
+   29.9875
+  ],
+  [
+   102.6275,
+   30.0237
+  ],
+  [
+   102.76,
+   30.06
+  ],
+  [
+   102.746,
+   30.192
+  ],
+  [
+   102.732,
+   30.324
+  ],
+  [
+   102.718,
+   30.456
+  ],
+  [
+   102.704,
+   30.588
+  ],
+  [
+   102.69,
+   30.72
+  ],
+  [
+   102.61,
+   30.83
+  ],
+  [
+   102.53,
+   30.94
+  ],
+  [
+   102.5,
+   31.0667
+  ],
+  [
+   102.47,
+   31.1933
+  ],
+  [
+   102.44,
+   31.32
+  ],
+  [
+   102.538,
+   31.402
+  ],
+  [
+   102.636,
+   31.484
+  ],
+  [
+   102.734,
+   31.566
+  ],
+  [
+   102.832,
+   31.648
+  ],
+  [
+   102.93,
+   31.73
+  ],
+  [
+   103.028,
+   31.812
+  ],
+  [
+   103.126,
+   31.894
+  ],
+  [
+   103.224,
+   31.976
+  ],
+  [
+   103.322,
+   32.058
+  ],
+  [
+   103.42,
+   32.14
+  ],
+  [
+   103.383,
+   32.261
+  ],
+  [
+   103.346,
+   32.382
+  ],
+  [
+   103.309,
+   32.503
+  ],
+  [
+   103.272,
+   32.624
+  ],
+  [
+   103.235,
+   32.745
+  ],
+  [
+   103.198,
+   32.866
+  ],
+  [
+   103.161,
+   32.987
+  ],
+  [
+   103.124,
+   33.108
+  ],
+  [
+   103.087,
+   33.229
+  ],
+  [
+   103.05,
+   33.35
+  ],
+  [
+   103.155,
+   33.4117
+  ],
+  [
+   103.26,
+   33.4733
+  ],
+  [
+   103.365,
+   33.535
+  ],
+  [
+   103.47,
+   33.5967
+  ],
+  [
+   103.575,
+   33.6583
+  ],
+  [
+   103.68,
+   33.72
+  ],
+  [
+   103.53,
+   33.81
+  ],
+  [
+   103.38,
+   33.9
+  ],
+  [
+   103.37,
+   33.985
+  ],
+  [
+   103.36,
+   34.07
+  ],
+  [
+   103.4935,
+   34.0798
+  ],
+  [
+   103.627,
+   34.0895
+  ],
+  [
+   103.7605,
+   34.0992
+  ],
+  [
+   103.894,
+   34.109
+  ],
+  [
+   104.059,
+   34.1705
+  ],
+  [
+   104.224,
+   34.232
+  ],
+  [
+   104.3076,
+   34.3228
+  ],
+  [
+   104.3912,
+   34.4136
+  ],
+  [
+   104.4748,
+   34.5044
+  ],
+  [
+   104.5584,
+   34.5952
+  ],
+  [
+   104.642,
+   34.686
+  ],
+  [
+   104.7256,
+   34.7768
+  ],
+  [
+   104.8092,
+   34.8676
+  ],
+  [
+   104.8928,
+   34.9584
+  ],
+  [
+   104.9764,
+   35.0492
+  ],
+  [
+   105.06,
+   35.14
+  ],
+  [
+   105.1878,
+   35.1689
+  ],
+  [
+   105.3156,
+   35.1978
+  ],
+  [
+   105.4433,
+   35.2267
+  ],
+  [
+   105.5711,
+   35.2556
+  ],
+  [
+   105.6989,
+   35.2844
+  ],
+  [
+   105.8267,
+   35.3133
+  ],
+  [
+   105.9544,
+   35.3422
+  ],
+  [
+   106.0822,
+   35.3711
+  ],
+  [
+   106.21,
+   35.4
+  ],
+  [
+   106.3081,
+   35.4763
+  ],
+  [
+   106.4062,
+   35.5525
+  ],
+  [
+   106.5043,
+   35.6287
+  ],
+  [
+   106.6024,
+   35.705
+  ],
+  [
+   106.7005,
+   35.7812
+  ],
+  [
+   106.7986,
+   35.8575
+  ],
+  [
+   106.8967,
+   35.9337
+  ],
+  [
+   106.9948,
+   36.01
+  ],
+  [
+   107.0929,
+   36.0862
+  ],
+  [
+   107.191,
+   36.1625
+  ],
+  [
+   107.2891,
+   36.2387
+  ],
+  [
+   107.3872,
+   36.315
+  ],
+  [
+   107.4853,
+   36.3912
+  ],
+  [
+   107.5834,
+   36.4675
+  ],
+  [
+   107.6815,
+   36.5437
+  ],
+  [
+   107.7796,
+   36.62
+  ],
+  [
+   107.8777,
+   36.6962
+  ],
+  [
+   107.9758,
+   36.7725
+  ],
+  [
+   108.0739,
+   36.8487
+  ],
+  [
+   108.172,
+   36.925
+  ]
+ ],
+ "view": {
+  "lon0": 99,
+  "lat0": 20,
+  "lon1": 121,
+  "lat1": 43
+ },
+ "quizPlaces": [
+  {
+   "id": "huichang",
+   "year": 1934,
+   "names": {
+    "en-GB": "Huichang",
+    "fr-CA": "Huichang",
+    "zh-Hans": "会昌",
+    "zh-HK": "會昌",
+    "ja": "会昌"
+   }
+  },
+  {
+   "id": "xingguo",
+   "year": 1934,
+   "names": {
+    "en-GB": "Xingguo",
+    "fr-CA": "Xingguo",
+    "zh-Hans": "兴国",
+    "zh-HK": "興國",
+    "ja": "興國"
+   }
+  },
+  {
+   "id": "changting",
+   "year": 1934,
+   "names": {
+    "en-GB": "Changting",
+    "fr-CA": "Changting",
+    "zh-Hans": "长汀",
+    "zh-HK": "長汀",
+    "ja": "長汀"
+   }
+  },
+  {
+   "id": "ningdu",
+   "year": 1934,
+   "names": {
+    "en-GB": "Ningdu",
+    "fr-CA": "Ningdu",
+    "zh-Hans": "宁都",
+    "zh-HK": "寧都",
+    "ja": "寧都"
+   }
+  },
+  {
+   "id": "quanzhou_gx",
+   "year": 1934,
+   "names": {
+    "en-GB": "Quanzhou (Guangxi)",
+    "fr-CA": "Quanzhou (Guangxi)",
+    "zh-Hans": "全州",
+    "zh-HK": "全州",
+    "ja": "全州"
+   }
+  },
+  {
+   "id": "xingan",
+   "year": 1934,
+   "names": {
+    "en-GB": "Xing'an",
+    "fr-CA": "Xing'an",
+    "zh-Hans": "兴安",
+    "zh-HK": "興安",
+    "ja": "興安"
+   }
+  },
+  {
+   "id": "longsheng",
+   "year": 1934,
+   "names": {
+    "en-GB": "Longsheng",
+    "fr-CA": "Longsheng",
+    "zh-Hans": "龙胜",
+    "zh-HK": "龍勝",
+    "ja": "龍勝"
+   }
+  },
+  {
+   "id": "daoxian",
+   "year": 1934,
+   "names": {
+    "en-GB": "Daoxian",
+    "fr-CA": "Daoxian",
+    "zh-Hans": "道县",
+    "zh-HK": "道縣",
+    "ja": "道県"
+   }
+  },
+  {
+   "id": "tongzi",
+   "year": 1935,
+   "names": {
+    "en-GB": "Tongzi",
+    "fr-CA": "Tongzi",
+    "zh-Hans": "桐梓",
+    "zh-HK": "桐梓",
+    "ja": "桐梓"
+   }
+  },
+  {
+   "id": "renhuai",
+   "year": 1935,
+   "names": {
+    "en-GB": "Renhuai",
+    "fr-CA": "Renhuai",
+    "zh-Hans": "仁怀",
+    "zh-HK": "仁懷",
+    "ja": "仁懷"
+   }
+  },
+  {
+   "id": "xifeng",
+   "year": 1935,
+   "names": {
+    "en-GB": "Xifeng",
+    "fr-CA": "Xifeng",
+    "zh-Hans": "息烽",
+    "zh-HK": "息烽",
+    "ja": "息烽"
+   }
+  },
+  {
+   "id": "longli",
+   "year": 1935,
+   "names": {
+    "en-GB": "Longli",
+    "fr-CA": "Longli",
+    "zh-Hans": "龙里",
+    "zh-HK": "龍里",
+    "ja": "龍里"
+   }
+  },
+  {
+   "id": "wengan",
+   "year": 1935,
+   "names": {
+    "en-GB": "Weng'an",
+    "fr-CA": "Weng'an",
+    "zh-Hans": "瓮安",
+    "zh-HK": "甕安",
+    "ja": "甕安"
+   }
+  },
+  {
+   "id": "weixin",
+   "year": 1935,
+   "names": {
+    "en-GB": "Weixin",
+    "fr-CA": "Weixin",
+    "zh-Hans": "威信",
+    "zh-HK": "威信",
+    "ja": "威信"
+   }
+  },
+  {
+   "id": "fuyuan",
+   "year": 1935,
+   "names": {
+    "en-GB": "Fuyuan",
+    "fr-CA": "Fuyuan",
+    "zh-Hans": "富源",
+    "zh-HK": "富源",
+    "ja": "富源"
+   }
+  },
+  {
+   "id": "luquan",
+   "year": 1935,
+   "names": {
+    "en-GB": "Luquan",
+    "fr-CA": "Luquan",
+    "zh-Hans": "禄劝",
+    "zh-HK": "祿勸",
+    "ja": "禄勧"
+   }
+  },
+  {
+   "id": "xichang",
+   "year": 1935,
+   "names": {
+    "en-GB": "Xichang",
+    "fr-CA": "Xichang",
+    "zh-Hans": "西昌",
+    "zh-HK": "西昌",
+    "ja": "西昌"
+   }
+  },
+  {
+   "id": "shimian",
+   "year": 1935,
+   "names": {
+    "en-GB": "Shimian",
+    "fr-CA": "Shimian",
+    "zh-Hans": "石棉",
+    "zh-HK": "石棉",
+    "ja": "石綿"
+   }
+  },
+  {
+   "id": "tianquan",
+   "year": 1935,
+   "names": {
+    "en-GB": "Tianquan",
+    "fr-CA": "Tianquan",
+    "zh-Hans": "天全",
+    "zh-HK": "天全",
+    "ja": "天全"
+   }
+  },
+  {
+   "id": "lushan",
+   "year": 1935,
+   "names": {
+    "en-GB": "Lushan (Sichuan)",
+    "fr-CA": "Lushan (Sichuan)",
+    "zh-Hans": "芦山",
+    "zh-HK": "蘆山",
+    "ja": "蘆山"
+   }
+  },
+  {
+   "id": "malikang",
+   "year": 1935,
+   "names": {
+    "en-GB": "Ma'erkang",
+    "fr-CA": "Ma'erkang",
+    "zh-Hans": "马尔康",
+    "zh-HK": "馬爾康",
+    "ja": "馬爾康"
+   }
+  },
+  {
+   "id": "heishui",
+   "year": 1935,
+   "names": {
+    "en-GB": "Heishui",
+    "fr-CA": "Heishui",
+    "zh-Hans": "黑水",
+    "zh-HK": "黑水",
+    "ja": "黒水"
+   }
+  },
+  {
+   "id": "songpan",
+   "year": 1935,
+   "names": {
+    "en-GB": "Songpan",
+    "fr-CA": "Songpan",
+    "zh-Hans": "松潘",
+    "zh-HK": "松潘",
+    "ja": "松潘"
+   }
+  },
+  {
+   "id": "diebu",
+   "year": 1935,
+   "names": {
+    "en-GB": "Diebu",
+    "fr-CA": "Diebu",
+    "zh-Hans": "迭部",
+    "zh-HK": "迭部",
+    "ja": "迭部"
+   }
+  },
+  {
+   "id": "tongwei",
+   "year": 1935,
+   "names": {
+    "en-GB": "Tongwei",
+    "fr-CA": "Tongwei",
+    "zh-Hans": "通渭",
+    "zh-HK": "通渭",
+    "ja": "通渭"
+   }
+  },
+  {
+   "id": "zhidan",
+   "year": 1935,
+   "names": {
+    "en-GB": "Zhidan",
+    "fr-CA": "Zhidan",
+    "zh-Hans": "志丹",
+    "zh-HK": "志丹",
+    "ja": "志丹"
+   }
+  }
+ ],
+ "quizSights": {
+  "ruijin": {
+   "zh-Hans": "出发前这里是中华苏维埃共和国的首都，被称为“红色首都”。",
+   "en-GB": "Before the departure, this was the capital of the Chinese Soviet Republic, known as the 'Red Capital'.",
+   "fr-CA": "Avant le départ, ce lieu était la capitale de la République soviétique chinoise, d'où son surnom de « capitale rouge ».",
+   "zh-HK": "出發前這裏是中華蘇維埃共和國的首都，被稱為「紅色首都」。",
+   "ja": "出発前、ここは中華ソヴィエト共和国の首都であり、「紅色の首都」と呼ばれていました。"
+  },
+  "yudu": {
+   "zh-Hans": "1934年10月17日傍晚，8.6万中央红军从这里八个渡口渡过于都河，迈出长征第一步。",
+   "en-GB": "On the evening of 17 October 1934, 86,000 troops of the Central Red Army crossed the Yudu River here by way of eight ferry crossings, taking the first step of the Long March.",
+   "fr-CA": "Le 17 octobre 1934, à la tombée du soir, 86 000 hommes de l'Armée rouge centrale franchirent la rivière Yudu par huit points de passage, accomplissant ainsi le premier pas de la Longue Marche.",
+   "zh-HK": "1934年10月17日傍晚，8.6萬中央紅軍從這裏八個渡口渡過于都河，邁出長征第一步。",
+   "ja": "1934年10月17日の夕暮れ、8万6千人の中央紅軍はここにある8つの渡し場から于都河を渡り、長征の第一歩を踏み出しました。"
+  },
+  "xiangjiang": {
+   "zh-Hans": "湘江一战红军从8万余人锐减到3万余人，是长征中最惨烈的一仗。",
+   "en-GB": "In the Battle of the Xiangjiang River the Red Army was cut down from more than 80,000 men to just over 30,000 — the most savage battle of the entire Long March.",
+   "fr-CA": "Au cours de la bataille de la rivière Xiang, l'Armée rouge fondit de plus de 80 000 hommes à environ 30 000 : ce fut le combat le plus sanglant de la Longue Marche.",
+   "zh-HK": "湘江一戰紅軍從8萬餘人銳減到3萬餘人，是長征中最慘烈的一仗。",
+   "ja": "湘江の戦いで紅軍は8万余人から3万余人へと激減し、長征で最も凄惨な一戦となりました。"
+  },
+  "laoshanjie": {
+   "zh-Hans": "老山界是长征翻越的第一座真正的高山，陆定一《老山界》记的就是这里。",
+   "en-GB": "Laoshanjie was the first genuinely high mountain scaled during the Long March, and it is this very place that Lu Dingyi recorded in his essay 'Laoshanjie'.",
+   "fr-CA": "Le Laoshanjie fut la première véritable haute montagne gravie au cours de la Longue Marche ; c'est ce lieu que décrit Lu Dingyi dans son récit « Le Laoshanjie ».",
+   "zh-HK": "老山界是長征翻越的第一座真正的高山，陸定一《老山界》記的就是這裏。",
+   "ja": "老山界は長征で越えた最初の本格的な高山であり、陸定一の『老山界』に描かれているのはまさにこの地です。"
+  },
+  "tongdao": {
+   "zh-Hans": "通道会议上毛泽东第一次提出转兵贵州，史称“通道转兵”。",
+   "en-GB": "At the Tongdao Conference, Mao Zedong for the first time proposed turning the troops towards Guizhou — known to history as the 'Tongdao Diversion'.",
+   "fr-CA": "À la conférence de Tongdao, Mao Zedong proposa pour la première fois de détourner l'armée vers le Guizhou, épisode entré dans l'histoire sous le nom de « manœuvre de Tongdao ».",
+   "zh-HK": "通道會議上毛澤東第一次提出轉兵貴州，史稱「通道轉兵」。",
+   "ja": "通道会議で毛沢東は初めて貴州への転進を提唱し、これは史上「通道転兵」と称されています。"
+  },
+  "liping": {
+   "zh-Hans": "黎平会议正式否定了去湘西的方案，确定向川黔边发展。",
+   "en-GB": "The Liping Conference formally rejected the plan to head for western Hunan and resolved instead to advance towards the Sichuan–Guizhou border.",
+   "fr-CA": "La conférence de Liping rejeta officiellement le projet d'une marche sur l'ouest du Hunan et fixa comme objectif le développement vers la frontière du Sichuan et du Guizhou.",
+   "zh-HK": "黎平會議正式否定了去湘西的方案，確定向川黔邊發展。",
+   "ja": "黎平会議は湘西へ向かう案を正式に否定し、四川・貴州境への発展を定めました。"
+  },
+  "wujiang": {
+   "zh-Hans": "红军以竹筏强渡乌江天险，为占领遵义打开大门。",
+   "en-GB": "The Red Army forced a crossing of the formidable Wujiang River on bamboo rafts, opening the way to the capture of Zunyi.",
+   "fr-CA": "Sur des radeaux de bambous, l'Armée rouge força la traversée de la redoutable rivière Wu, ouvrant ainsi la route de Zunyi.",
+   "zh-HK": "紅軍以竹筏強渡烏江天險，為佔領遵義打開大門。",
+   "ja": "紅軍は竹筏で烏江の天険を強行渡河し、遵義占領への扉を開きました。"
+  },
+  "zunyi": {
+   "zh-Hans": "遵义会议确立了毛泽东在红军和中共中央的领导地位，是长征最关键的转折点。",
+   "en-GB": "The Zunyi Conference established Mao Zedong's leading position within the Red Army and the CCP Central Committee — the most crucial turning point of the Long March.",
+   "fr-CA": "La conférence de Zunyi affermit l'autorité dirigeante de Mao Zedong au sein de l'Armée rouge et du Comité central du Parti communiste chinois : ce fut le tournant décisif de la Longue Marche.",
+   "zh-HK": "遵義會議確立了毛澤東在紅軍和中共中央的領導地位，是長征最關鍵的轉捩點。",
+   "ja": "遵義会議は、紅軍と中国共産党中央における毛沢東の指導的地位を確立した、長征における最も重要な転換点でした。"
+  },
+  "tucheng": {
+   "zh-Hans": "青杠坡一战打成僵局，红军被迫一渡赤水西进川南。",
+   "en-GB": "The Battle of Qinggangpo ended in stalemate, forcing the Red Army into its first crossing of the Chishui River westwards into southern Sichuan.",
+   "fr-CA": "La bataille de Qinggangpo se solda par une impasse, et l'Armée rouge dut opérer sa première traversée de la rivière Chishui pour se porter à l'ouest, dans le sud du Sichuan.",
+   "zh-HK": "青杠坡一戰打成僵局，紅軍被迫一渡赤水西進川南。",
+   "ja": "青杠坡の戦いは膠着状態に陥り、紅軍は第一次赤水渡河を行って西進し四川南部へ入ることを余儀なくされました。"
+  },
+  "zhaxi": {
+   "zh-Hans": "扎西会议决定张闻天取代博古负总责，并作出回兵黔北的决定。",
+   "en-GB": "The Zhaxi Conference decided that Zhang Wentian should take over overall responsibility from Bo Gu, and resolved to send the troops back into northern Guizhou.",
+   "fr-CA": "La conférence de Zhaxi décida que Zhang Wentian remplacerait Bo Gu en assumant la responsabilité générale et ordonna le retour de l'armée dans le nord du Guizhou.",
+   "zh-HK": "扎西會議決定張聞天取代博古負總責，並作出回兵黔北的決定。",
+   "ja": "扎西会議では張聞天が博古に代わって党の全責任を担うことが決められ、あわせて兵を貴州北部へ返すことが決定されました。"
+  },
+  "taipingdu": {
+   "zh-Hans": "二渡赤水回师黔北，完全出乎国民党军的意料。",
+   "en-GB": "The second crossing of the Chishui River and the return to northern Guizhou took the Nationalist army completely by surprise.",
+   "fr-CA": "En repassant une deuxième fois la rivière Chishui pour revenir dans le nord du Guizhou, l'Armée rouge prit totalement au dépourvu les troupes du Kuomintang.",
+   "zh-HK": "二渡赤水回師黔北，完全出乎國民黨軍的意料。",
+   "ja": "二度目の赤水渡河で貴州北部へ引き返したことは、国民党軍の意表を完全に突くものでした。"
+  },
+  "loushanguan": {
+   "zh-Hans": "娄山关大捷是长征以来最大的胜利，毛泽东为此写下《忆秦娥·娄山关》。",
+   "en-GB": "The great victory at Loushan Pass was the biggest since the Long March began, and Mao Zedong marked it with his poem 'Loushan Pass — to the tune of Yi Qin E'.",
+   "fr-CA": "La grande victoire du col de Loushan fut la plus grande remportée depuis le début de la Longue Marche ; Mao Zedong la célébra dans son poème « Yi Qin E · Loushan Guan ».",
+   "zh-HK": "婁山關大捷是長征以來最大的勝利，毛澤東為此寫下《憶秦娥·婁山關》。",
+   "ja": "婁山関の大勝は長征開始以来最大の勝利であり、毛沢東はこれを詠んで『憶秦娥・婁山関』を残しました。"
+  },
+  "maotai": {
+   "zh-Hans": "三渡赤水在茅台渡口进行，红军用“示形”调动了国民党重兵。",
+   "en-GB": "The third crossing of the Chishui River took place at the Maotai ferry, where the Red Army used feints to manoeuvre the Nationalists' massed troops.",
+   "fr-CA": "La troisième traversée de la rivière Chishui s'effectua au gué de Maotai : grâce à des « démonstrations » trompeuses, l'Armée rouge fit manœuvrer à sa guise les puissantes forces du Kuomintang.",
+   "zh-HK": "三渡赤水在茅台渡口進行，紅軍用「示形」調動了國民黨重兵。",
+   "ja": "三度目の赤水渡河は茅台の渡し場で行われ、紅軍は「示形」（陽動）によって国民党の重兵を動かしました。"
+  },
+  "erlangtan": {
+   "zh-Hans": "四渡赤水秘密东返，随后南渡乌江跳出几十万大军的包围圈。",
+   "en-GB": "In the fourth crossing of the Chishui River the Red Army slipped secretly back eastwards and then crossed the Wujiang River to the south, leaping out of the encirclement of several hundred thousand troops.",
+   "fr-CA": "Lors de la quatrième traversée de la rivière Chishui, l'Armée rouge regagna secrètement l'est, puis franchit la rivière Wu vers le sud, échappant ainsi à l'étau de plusieurs centaines de milliers d'hommes.",
+   "zh-HK": "四渡赤水秘密東返，隨後南渡烏江跳出幾十萬大軍的包圍圈。",
+   "ja": "四度目の赤水渡河では秘密裏に東へ引き返し、続いて烏江を南へ渡って、数十万の大軍による包囲網を脱出しました。"
+  },
+  "guiyang": {
+   "zh-Hans": "红军兵临贵阳，正在贵阳的蒋介石急调滇军驰援，云南门户因此洞开。",
+   "en-GB": "With the Red Army at the gates of Guiyang, Chiang Kai-shek, who was then in the city, urgently summoned the Yunnan army to its relief — leaving the gateway to Yunnan wide open.",
+   "fr-CA": "L'Armée rouge arriva aux portes de Guiyang : Chiang Kai-shek, qui s'y trouvait, fit venir en hâte l'armée du Yunnan à son secours, laissant du même coup la porte du Yunnan grande ouverte.",
+   "zh-HK": "紅軍兵臨貴陽，正在貴陽的蔣介石急調滇軍馳援，雲南門戶因此洞開。",
+   "ja": "紅軍が貴陽に迫ると、貴陽に居合わせた蒋介石は急いで雲南軍（滇軍）に救援を命じ、そのため雲南の門戸は大きく開かれることとなりました。"
+  },
+  "xundian": {
+   "zh-Hans": "龙云收缩兵力保卫昆明，反而为红军让开了西去金沙江的通道。",
+   "en-GB": "Long Yun drew his forces back to defend Kunming, which in effect cleared the way westwards to the Jinsha River for the Red Army.",
+   "fr-CA": "Long Yun replia ses forces pour défendre Kunming, ouvrant malgré lui à l'Armée rouge la voie de la rivière Jinsha, à l'ouest.",
+   "zh-HK": "龍雲收縮兵力保衛昆明，反而為紅軍讓開了西去金沙江的通道。",
+   "ja": "龍雲は昆明防衛のために兵力を集中させましたが、それがかえって紅軍に金沙江へ西進する通路を開ける結果となりました。"
+  },
+  "jiaopingdu": {
+   "zh-Hans": "七只小船、37名船工，九天九夜把两万红军运过金沙江。",
+   "en-GB": "Seven small boats and 37 boatmen ferried 20,000 Red Army soldiers across the Jinsha River over nine days and nights.",
+   "fr-CA": "Sept petites barques et 37 bateliers suffirent pour faire passer 20 000 hommes de l'Armée rouge de l'autre côté de la rivière Jinsha en neuf jours et neuf nuits.",
+   "zh-HK": "七隻小船、37名船工，九天九夜把兩萬紅軍運過金沙江。",
+   "ja": "7隻の小舟と37人の船頭が、九日九夜にわたって2万人の紅軍を金沙江の対岸へと運びました。"
+  },
+  "huili": {
+   "zh-Hans": "会理会议批评了林彪的怀疑，确定了与红四方面军会师的方针。",
+   "en-GB": "The Huili Conference criticised Lin Biao's doubts and settled the policy of joining forces with the Fourth Front Army.",
+   "fr-CA": "La conférence de Huili critiqua les doutes exprimés par Lin Biao et fixa le principe de la jonction avec la IVe Armée de front.",
+   "zh-HK": "會理會議批評了林彪的懷疑，確定了與紅四方面軍會師的方針。",
+   "ja": "会理会議では林彪の疑念が批判され、紅四方面軍との会師という方針が確定されました。"
+  },
+  "mianning": {
+   "zh-Hans": "刘伯承与彝族首领小叶丹在彝海歃血结盟，红军顺利通过彝区。",
+   "en-GB": "Liu Bocheng swore a blood alliance with the Yi chieftain Xiaoyedan at Yihai Lake, and the Red Army passed through the Yi region without hindrance.",
+   "fr-CA": "Au lac Yihai, Liu Bocheng et le chef yi Xiao Yedan scellèrent une alliance par un pacte de sang, permettant à l'Armée rouge de traverser sans encombre le pays yi.",
+   "zh-HK": "劉伯承與彝族首領小葉丹在彝海歃血結盟，紅軍順利通過彝區。",
+   "ja": "劉伯承はイ族の首長・小葉丹と彝海で歃血の盟を結び、紅軍はイ族の居住区を無事に通過することができました。"
+  },
+  "anshunchang": {
+   "zh-Hans": "十七勇士在此强渡大渡河——70年前石达开在此全军覆没。",
+   "en-GB": "Here the seventeen heroes forced a crossing of the Dadu River — seventy years earlier, Shi Dakai and his whole army had perished on this very spot.",
+   "fr-CA": "C'est ici que dix-sept héros forcèrent le passage de la rivière Dadu : soixante-dix ans plus tôt, l'armée de Shi Dakai y avait été anéantie.",
+   "zh-HK": "十七勇士在此強渡大渡河——70年前石達開在此全軍覆沒。",
+   "ja": "17人の勇士がここで大渡河を強行渡河しました――その70年前、石達開はまさにこの地で全軍が壊滅していたのです。"
+  },
+  "ludingqiao": {
+   "zh-Hans": "22名突击队员攀铁索夺下泸定桥，红军一昼夜奔袭240里创造了行军纪录。",
+   "en-GB": "Twenty-two assault troops swarmed up the iron chains to seize Luding Bridge, after the Red Army had covered 240 li (about 120 kilometres) in a single day and night — a record march.",
+   "fr-CA": "22 hommes du détachement d'assaut s'emparèrent du pont de Luding en grimpant le long des chaînes de fer ; la marche forcée de 240 li (environ 120 kilomètres) accomplie par l'Armée rouge en une journée et une nuit établit un record.",
+   "zh-HK": "22名突擊隊員攀鐵索奪下瀘定橋，紅軍一晝夜奔襲240里創造了行軍紀錄。",
+   "ja": "22人の突撃隊員が鉄索を伝って瀘定橋を奪取しました。紅軍は一昼夜で240里（約120キロ）を急行し、行軍の記録を打ち立てました。"
+  },
+  "tianquan": {
+   "zh-Hans": "红军东翻二郎山突破川军六个旅的阻击后占领天全。",
+   "en-GB": "After crossing Mount Erlang eastwards and breaking through the resistance of six Sichuan army brigades, the Red Army captured Tianquan.",
+   "fr-CA": "Après avoir franchi le mont Erlang vers l'est et percé la résistance de six brigades de l'armée du Sichuan, l'Armée rouge s'empara de Tianquan.",
+   "zh-HK": "紅軍東翻二郎山突破川軍六個旅的阻擊後佔領天全。",
+   "ja": "紅軍は東へ二郎山を越えて川軍6個旅団の阻止線を突破し、天全を占領しました。"
+  },
+  "jiajinshan": {
+   "zh-Hans": "夹金山海拔约4500米终年积雪，是红军翻越的第一座大雪山。",
+   "en-GB": "Mount Jiajin, at about 4,500 metres and snow-capped all year round, was the first great snow mountain the Red Army crossed.",
+   "fr-CA": "Couvert de neiges éternelles à environ 4 500 mètres d'altitude, le mont Jiajin fut la première grande montagne enneigée franchie par l'Armée rouge.",
+   "zh-HK": "夾金山海拔約4500米終年積雪，是紅軍翻越的第一座大雪山。",
+   "ja": "夾金山は標高約4,500メートルで年間を通じて雪に覆われ、紅軍が越えた最初の大雪山でした。"
+  },
+  "dawei": {
+   "zh-Hans": "1935年6月12日，中央红军与红四方面军先头部队在达维会师。",
+   "en-GB": "On 12 June 1935, the vanguard of the Central Red Army and the Fourth Front Army's advance units joined forces at Dawei.",
+   "fr-CA": "Le 12 juin 1935, l'Armée rouge centrale fit sa jonction à Dawei avec l'avant-garde de la IVe Armée de front.",
+   "zh-HK": "1935年6月12日，中央紅軍與紅四方面軍先頭部隊在達維會師。",
+   "ja": "1935年6月12日、中央紅軍は紅四方面軍の先頭部隊と達維で会師しました。"
+  },
+  "lianghekou": {
+   "zh-Hans": "两河口会议决定北上建立川陕甘苏区，但张国焘与中央的分歧就此埋下。",
+   "en-GB": "The Lianghekou Conference decided to march north and establish a soviet area in the Sichuan–Shaanxi–Gansu border region, but the seeds of the rift between Zhang Guotao and the Central Committee were sown here.",
+   "fr-CA": "La conférence de Lianghekou décida de marcher vers le nord pour établir une région soviétique couvrant le Sichuan, le Shaanxi et le Gansu ; mais les germes du désaccord entre Zhang Guotao et le Comité central venaient d'être semés.",
+   "zh-HK": "兩河口會議決定北上建立川陝甘蘇區，但張國燾與中央的分歧就此埋下。",
+   "ja": "両河口会議は北上して川陝甘蘇区（ソヴィエト根拠地）を建設することを決定しましたが、ここに張国燾と中央との対立の種が蒔かれることとなりました。"
+  },
+  "maoergai": {
+   "zh-Hans": "毛儿盖会议后，右路军进入了长征中最艰苦的松潘草地。",
+   "en-GB": "After the Maoergai Conference, the Right Route Army entered the Songpan grasslands — the harshest stretch of the entire Long March.",
+   "fr-CA": "Après la conférence de Mao'ergai, l'armée de droite s'enfonça dans les prairies marécageuses de Songpan, la plus rude épreuve de toute la Longue Marche.",
+   "zh-HK": "毛兒蓋會議後，右路軍進入了長征中最艱苦的松潘草地。",
+   "ja": "毛児蓋会議の後、右路軍は長征で最も過酷な松潘の大草地へと入っていきました。"
+  },
+  "caodi": {
+   "zh-Hans": "过草地的部队经受了高原反应、泥沼、饥渴和湿冷的极限考验。",
+   "en-GB": "The units crossing the grasslands were pushed to the limit by altitude sickness, bogs, hunger and thirst, and the clammy cold.",
+   "fr-CA": "En traversant ces prairies, les unités subirent des épreuves extrêmes : le mal d'altitude, les tourbières, la faim, la soif et le froid humide.",
+   "zh-HK": "過草地的部隊經受了高原反應、泥沼、飢渴和濕冷的極限考驗。",
+   "ja": "草地を行く部隊は、高山病、泥沼、飢えと渇き、そして湿り気と寒さという極限の試練に耐え抜きました。"
+  },
+  "baozo": {
+   "zh-Hans": "包座之战击溃胡宗南部，打开了进军甘南的门户。",
+   "en-GB": "The Battle of Baozuo routed Hu Zongnan's forces and opened the gateway to southern Gansu.",
+   "fr-CA": "La bataille de Baozuo mit en déroute les troupes de Hu Zongnan et ouvrit la porte du sud du Gansu.",
+   "zh-HK": "包座之戰擊潰胡宗南部，打開了進軍甘南的門戶。",
+   "ja": "包座の戦いで胡宗南の部隊を撃破し、甘粛南部へ進軍する門戸を開きました。"
+  },
+  "baxi": {
+   "zh-Hans": "巴西会议决定率一、三军团单独北上——与张国焘分裂的关键时刻。",
+   "en-GB": "The Baxi Conference decided that the 1st and 3rd Army Corps would press north on their own — the critical moment of the break with Zhang Guotao.",
+   "fr-CA": "À la conférence de Baxi, il fut décidé de poursuivre la marche vers le nord avec les seuls 1er et 3e corps d'armée : ce fut le moment crucial de la rupture avec Zhang Guotao.",
+   "zh-HK": "巴西會議決定率一、三軍團單獨北上——與張國燾分裂的關鍵時刻。",
+   "ja": "巴西会議では第1・第3軍団を率いて単独で北上することが決定されました――張国燾との分裂を決する重大な瞬間でした。"
+  },
+  "ejie": {
+   "zh-Hans": "俄界会议将北上部队改编为陕甘支队，彭德怀任司令员。",
+   "en-GB": "The Ejie Conference reorganised the northern force as the Shaanxi–Gansu Detachment, with Peng Dehuai as its commander.",
+   "fr-CA": "La conférence d'Ejie réorganisa les troupes marchant vers le nord en détachement Shaan-Gan, placé sous le commandement de Peng Dehuai.",
+   "zh-HK": "俄界會議將北上部隊改編為陝甘支隊，彭德懷任司令員。",
+   "ja": "俄界会議は北上部隊を陝甘支隊に改編し、彭徳懐が司令官に就任しました。"
+  },
+  "lazikou": {
+   "zh-Hans": "一名苗族战士攀上绝壁居高临下，帮助红军攻克腊子口天险。",
+   "en-GB": "A soldier of Miao ethnicity scaled the sheer cliff and attacked from above, helping the Red Army storm the formidable Lazikou Pass.",
+   "fr-CA": "Un soldat miao escalada une falaise à pic et, dominant la position d'en haut, aida l'Armée rouge à s'emparer du redoutable col de Lazikou.",
+   "zh-HK": "一名苗族戰士攀上絕壁居高臨下，幫助紅軍攻克臘子口天險。",
+   "ja": "一人のミャオ族の兵士が絶壁によじ登って高所から攻撃を加え、紅軍は臘子口の天険を攻略することができました。"
+  },
+  "hadapu": {
+   "zh-Hans": "在哈达铺的报纸上，毛泽东得知陕北有刘志丹的根据地——长征终于有了目的地。",
+   "en-GB": "From newspapers in Hadapu, Mao Zedong learned that Liu Zhidan had a base area in northern Shaanxi — the Long March had at last acquired a destination.",
+   "fr-CA": "Dans les journaux découverts à Hadapu, Mao Zedong apprit que Liu Zhidan tenait une base révolutionnaire dans le nord du Shaanxi : la Longue Marche avait enfin une destination.",
+   "zh-HK": "在哈達鋪的報紙上，毛澤東得知陝北有劉志丹的根據地——長征終於有了目的地。",
+   "ja": "哈達鋪の新聞から、毛沢東は陝北に劉志丹の根拠地があることを知りました――長征はようやく目的地を得たのです。"
+  },
+  "bangluo": {
+   "zh-Hans": "榜罗镇会议正式确定陕甘根据地作为长征的落脚点。",
+   "en-GB": "The Bangluo Town Conference formally designated the Shaanxi–Gansu base area as the Long March's final destination.",
+   "fr-CA": "La conférence de Bangluozhen désigna officiellement la base révolutionnaire du Shaanxi-Gansu comme point d'aboutissement de la Longue Marche.",
+   "zh-HK": "榜羅鎮會議正式確定陝甘根據地作為長征的落腳點。",
+   "ja": "榜羅鎮会議は、陝甘根拠地を長征の最終到達地とすることを正式に確定しました。"
+  },
+  "liupanshan": {
+   "zh-Hans": "六盘山是长征翻越的最后一座大山，毛泽东在此写下《清平乐·六盘山》。",
+   "en-GB": "Mount Liupan was the last great mountain crossed on the Long March; here Mao Zedong wrote his poem 'Mount Liupan — to the tune of Qing Ping Yue'.",
+   "fr-CA": "Le mont Liupan fut la dernière grande montagne franchie pendant la Longue Marche ; Mao Zedong y composa son poème « Qing Ping Yue · Liupan Shan ».",
+   "zh-HK": "六盤山是長征翻越的最後一座大山，毛澤東在此寫下《清平樂·六盤山》。",
+   "ja": "六盤山は長征で越える最後の大山であり、毛沢東はこの地で『清平楽・六盤山』を詠みました。"
+  },
+  "wuqi": {
+   "zh-Hans": "1935年10月19日到达吴起镇，中央红军368天、转战11省的长征到此结束。",
+   "en-GB": "On 19 October 1935 they reached Wuqi Town, and with that the Central Red Army's Long March — 368 days of fighting across eleven provinces — came to an end.",
+   "fr-CA": "L'arrivée à Wuqi le 19 octobre 1935 marqua la fin de la Longue Marche de l'Armée rouge centrale : 368 jours de combats et de marches à travers 11 provinces.",
+   "zh-HK": "1935年10月19日到達吳起鎮，中央紅軍368天、轉戰11省的長征到此結束。",
+   "ja": "1935年10月19日に呉起鎮へ到達し、368日間・11省を転戦した中央紅軍の長征はここに幕を閉じました。"
+  }
+ },
+ "corridorNote": {
+  "en-GB": "Dots mark documented events with precise coordinates; the connecting lines are indicative corridors reconstructed from published route maps, not surveyed tracks.",
+  "fr-CA": "Les points marquent des événements documentés aux coordonnées précises ; les lignes sont des couloirs indicatifs reconstitués à partir de cartes publiées.",
+  "zh-Hans": "圆点标记有确切坐标的史料事件；站点之间的连线为依据公开路线图重建的指示性走廊，非逐日实测轨迹。",
+  "zh-HK": "圓點標記有確切座標的史料事件；站點之間的連線為依據公開路線圖重建的指示性走廊，非逐日實測軌跡。",
+  "ja": "ドットは正確な座標が確認されている史実の出来事を示し、駅間の線は公開された路線図から再現した概略走廊であり、実測の軌跡ではありません。"
+ }
+}
