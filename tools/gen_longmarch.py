@@ -734,16 +734,39 @@ REF_LINES.update({
     "xianqiandui": [[116.02, 25.9], [116.35, 25.8], [116.75, 25.72], [117.4, 26], [119.3, 26.07], [118.9, 26.2], [119.1, 27.6], [119.1, 28.1], [118.8, 29], [118.5, 29.8], [119.45, 29.8], [117.7, 28.55], [118.2, 30.1], [117.8, 28.9]],
 })
 
-def _leg_points(army):
-    """Per-army leg chain. For red2/red4: walk the reference corridor and
-    splice our dated stops in chronologically (each stop replaces the
-    reference point nearest to it), so the line passes through every stop
-    and inherits the reference's sane shaping. Other armies: stop chain
-    densified (red1 keeps the v1 as-built corridor)."""
-    stops = [s for s in S if s["army"] == army]
+def _ref_project(ref):
+    """Return cumulative params and a projection fn: t (in vertex-param
+    units, degrees of chain length) for any [lon,lat] point."""
+    cum = [0.0]
+    for i in range(1, len(ref)):
+        cum.append(cum[-1] + math.hypot(ref[i][0] - ref[i - 1][0],
+                                        ref[i][1] - ref[i - 1][1]))
+
+    def project(p):
+        best = (1e18, 0.0)
+        for i in range(len(ref) - 1):
+            ax, ay, bx, by = ref[i][0], ref[i][1], ref[i + 1][0], ref[i + 1][1]
+            dx, dy = bx - ax, by - ay
+            L2 = dx * dx + dy * dy
+            u = 0.0 if L2 == 0 else max(0.0, min(1.0, ((p[0] - ax) * dx + (p[1] - ay) * dy) / L2))
+            d = math.hypot(p[0] - (ax + u * dx), p[1] - (ay + u * dy))
+            if d < best[0]:
+                best = (d, cum[i] + u * (cum[i + 1] - cum[i]))
+        return best[1]
+    return cum, project
+
+def _leg_points(army, army_stops):
+    """Per-army leg chain: every stop (hand-authored + changzhengmap import)
+    is spliced into the reference corridor, replacing the reference vertex
+    nearest to it. A monotonic cursor (clamped, never cascading) keeps the
+    walk in march order; stops that date-sort behind the cursor become a
+    short spur at the cursor instead of being skipped (the old floating-dot
+    bug). Reference vertices before the first stop's nearest vertex are
+    dropped so drawing artifacts never form dangling leader lines."""
     ref = REF_LINES.get(army)
     if ref is None:
-        return densify([s["coords"] for s in stops])
+        return densify([s["coords"] for s in army_stops])
+
     def nearest_idx(c):
         best, bi = None, 0
         for i, p in enumerate(ref):
@@ -751,24 +774,18 @@ def _leg_points(army):
             if best is None or d < best:
                 best, bi = d, i
         return bi
-    idxs = [nearest_idx(s["coords"]) for s in stops]
-    # enforce monotonic order (a stop must not map backwards on the line)
-    for i in range(1, len(idxs)):
-        if idxs[i] <= idxs[i - 1]:
-            idxs[i] = idxs[i - 1] + 1
+
+    idxs = [nearest_idx(s["coords"]) for s in army_stops]
+    prev = idxs[0] if idxs else 0  # head trim: no leader before first stop
     points = []
-    prev = 0
-    for i, s in enumerate(stops):
-        # reference points strictly between previous stop and this stop
-        j = min(idxs[i], len(ref))
+    for i, s in enumerate(army_stops):
+        j = max(idxs[i], prev)  # clamp: never step backwards
         for p in ref[prev:j]:
-            if p not in points:
-                points.append(p)
+            points.append(p)
         points.append(s["coords"])
         prev = j + 1
     for p in ref[prev:]:
-        if p not in points:
-            points.append(p)
+        points.append(p)
     return densify(points)
 
 def load_czm_stops():
@@ -817,9 +834,7 @@ def load_czm_stops():
             },
             "narrative": c["paras"],
             "sight": c["sight"],
-            "_sort": (int(re.match(r"(\d{4})", c.get("date_zh_norm") or s["date_zh"] or "1934").group(1)),
-                      (lambda m: int(m.group(1)) if m else 12)(re.search(r"年(\d{1,2})月", c.get("date_zh_norm") or s["date_zh"] or "")),
-                      15),
+            "_sort": parse_zh_date(s["date_zh"] or (c.get("date_zh_norm") or "")),
         })
     return out
 
@@ -881,7 +896,7 @@ def build():
     stops = all_stops
 
     # indicative corridor: densify chains between consecutive stops
-    route = _leg_points("red1")
+    route = _leg_points("red1", [s for s in stops if s["army"] == "red1"])
     lesson = {
         "id": "longmarch",
         "type": "journey",
@@ -893,7 +908,8 @@ def build():
             "ja": "紅軍の長征（1934–1936）",
         },
         "armies": ARMIES,
-        "route_legs": [{"army": a["id"], "points": _leg_points(a["id"])}
+        "route_legs": [{"army": a["id"],
+                        "points": _leg_points(a["id"], [s for s in stops if s["army"] == a["id"]])}
                        for a in ARMIES],
         "traveler": {
             "en-GB": "the Central Red Army",
