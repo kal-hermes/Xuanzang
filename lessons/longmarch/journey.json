@@ -310,128 +310,136 @@
      26.236
     ],
     [
-     109.0249,
-     26.3027
+     109.0221,
+     26.2916
     ],
     [
-     108.9169,
-     26.3694
+     108.9113,
+     26.3472
     ],
     [
-     108.8088,
-     26.4361
+     108.8004,
+     26.4028
     ],
     [
-     108.7007,
-     26.5029
+     108.6895,
+     26.4584
     ],
     [
-     108.5926,
+     108.5787,
+     26.514
+    ],
+    [
+     108.4678,
      26.5696
     ],
     [
-     108.4846,
-     26.6363
+     108.3569,
+     26.6252
     ],
     [
-     108.3765,
-     26.703
+     108.2461,
+     26.6808
     ],
     [
-     108.2684,
-     26.7697
+     108.1352,
+     26.7364
     ],
     [
-     108.1604,
-     26.8364
+     108.0243,
+     26.792
     ],
     [
-     108.0523,
-     26.9031
+     107.9135,
+     26.8476
     ],
     [
-     107.9442,
-     26.9699
+     107.8026,
+     26.9032
     ],
     [
-     107.8361,
-     27.0366
+     107.6917,
+     26.9588
     ],
     [
-     107.7281,
-     27.1033
+     107.5809,
+     27.0144
+    ],
+    [
+     107.47,
+     27.07
+    ],
+    [
+     107.545,
+     27.12
     ],
     [
      107.62,
      27.17
     ],
     [
-     107.5187,
-     27.2391
+     107.5206,
+     27.2405
     ],
     [
-     107.4174,
-     27.3082
+     107.4213,
+     27.311
     ],
     [
-     107.3162,
-     27.3773
+     107.3219,
+     27.3814
     ],
     [
-     107.2149,
-     27.4464
+     107.2226,
+     27.4519
     ],
     [
-     107.1136,
-     27.5155
+     107.1232,
+     27.5224
     ],
     [
-     107.0123,
-     27.5846
+     107.0238,
+     27.5929
     ],
     [
-     106.911,
-     27.6537
+     106.9245,
+     27.6633
     ],
     [
-     106.8098,
-     27.7229
+     106.8251,
+     27.7338
     ],
     [
-     106.7085,
-     27.792
+     106.7258,
+     27.8043
     ],
     [
-     106.6072,
-     27.8611
+     106.6264,
+     27.8748
     ],
     [
-     106.5059,
-     27.9302
+     106.5271,
+     27.9452
     ],
     [
-     106.4046,
-     27.9993
+     106.4277,
+     28.0157
     ],
     [
-     106.3033,
-     28.0684
+     106.3283,
+     28.0862
     ],
     [
-     106.2021,
-     28.1375
+     106.229,
+     28.1567
     ],
     [
-     106.1008,
-     28.2066
+     106.1296,
+     28.2271
     ],
     [
-     105.9995,
-     28.2757
-    ],
-    [
-     105.9652,
-     28.3219
+     106.0303,
+     28.2976
     ],
     [
      105.9309,
@@ -5429,6 +5437,64 @@
      "12月13日、紅軍は黎平を占領し、18日には中央政治局が当地で黎平会議を開催した。",
      "会議は毛沢東の貴州への転進という主張を正式に承認し、四川・貴州の省境方面への発展を決定するとともに、当初の湘西での合流計画を放棄した。",
      "黎平会議は「通道転兵」の延長線上に位置づけられるものであり、紅軍の戦略的方向は初めて博古・李徳の既定方針から脱却することとなった。"
+    ]
+   }
+  },
+  {
+   "id": "houchang",
+   "coords": [
+    107.47,
+    27.07
+   ],
+   "year": 1934,
+   "when": {
+    "en-GB": "31 Dec 1934",
+    "fr-CA": "1934 12/31—1935 1/1",
+    "zh-Hans": "1934年12月31日—1935年1月1日",
+    "zh-HK": "1934年12月31日—1935年1月1日",
+    "ja": "1934年12月31日–1935年1月1日"
+   },
+   "present": {
+    "en-GB": "Houchang, Weng'an County, Guizhou, China",
+    "fr-CA": "Houchang, Weng'an County, Guizhou, China",
+    "zh-Hans": "贵州省瓮安县猴场镇（草塘）",
+    "zh-HK": "贵州省瓮安县猴场镇（草塘）",
+    "ja": "中国貴州省甕安県猴場鎮"
+   },
+   "iso3": "CHN",
+   "army": "red1",
+   "names": {
+    "en-GB": "Houchang Conference",
+    "zh-Hans": "猴场会议",
+    "zh-HK": "猴场會议",
+    "fr-CA": "Houchang Conference",
+    "ja": "猴場会議"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "1934年12月31日夜至1935年1月1日凌晨，中共中央在瓮安县猴场召开政治局会议，重申黎平会议决议，决定强渡乌江、建立川黔边新根据地。",
+     "会议再次否决了博古、李德回兵湘西与红二、六军团会合的方案，并规定军委作战行动须向中央政治局报告——军事指挥权开始收归集体领导。",
+     "猴场会议被党史称为“伟大转折的前夜”，为遵义会议的召开做了直接铺垫。会后红军随即进抵江界河等渡口，强渡乌江。"
+    ],
+    "en-GB": [
+     "On the night of 31 December 1934 and into the early hours of 1 January 1935, the Central Committee of the Communist Party of China convened a meeting of the Political Bureau at Houchang, in Weng'an County. It reaffirmed the resolutions of the Liping Conference and decided to force a crossing of the Wujiang River and establish a new base area on the Sichuan–Guizhou border.",
+     "The meeting once again rejected the scheme put forward by Bo Gu and Li De (Otto Braun) to turn back to western Hunan and link up with the Second and Sixth Red Army Groups, and it further stipulated that the Military Commission's combat operations had to be reported to the Central Political Bureau — the authority over military command thus began to be brought back under collective leadership.",
+     "In Party history, the Houchang Conference has been called 'the eve of the great turning point', as it laid the groundwork directly for the convening of the Zunyi Conference. When the meeting ended, the Red Army at once advanced to the ferry crossings at Jiangjiehe and other points along the river, and forced its way across the Wujiang River."
+    ],
+    "fr-CA": [
+     "Dans la nuit du 31 décembre 1934 aux premières heures du 1er janvier 1935, le Comité central du Parti communiste chinois tint à Houchang, dans le xian de Weng'an, une réunion du Bureau politique, au cours de laquelle il réaffirma les résolutions de la conférence de Liping et décida de forcer le passage de la rivière Wujiang et d'établir une nouvelle base révolutionnaire dans la région frontalière du Sichuan et du Guizhou.",
+     "La réunion rejeta une nouvelle fois le plan de Bo Gu et de Li De (Otto Braun), qui consistait à ramener les troupes dans l'ouest du Hunan pour opérer la jonction avec les 2e et 6e corps de l'Armée rouge ; elle stipula en outre que les opérations militaires de la Commission militaire devaient désormais être signalées au Bureau politique du Comité central : l'autorité du commandement militaire commençait ainsi à revenir à la direction collective.",
+     "L'histoire du Parti retient la conférence de Houchang comme la « veille du grand tournant » : elle a directement préparé la tenue de la conférence de Zunyi. À peine la réunion close, l'Armée rouge se porta aussitôt vers les points de traversée de la rivière, dont celui de Jiangjiehe, pour forcer le passage de la Wujiang."
+    ],
+    "zh-HK": [
+     "1934年12月31日夜間至1935年1月1日凌晨，中共中央在甕安縣猴場召開政治局會議，重申黎平會議決議，決定強渡烏江、建立川黔邊新根據地。",
+     "會議再次否決了博古、李德回兵湘西與紅二、六軍團會合的方案，並規定軍委作戰行動須向中央政治局報告——軍事指揮權開始收歸集體領導。",
+     "猴場會議被黨史稱為「偉大轉折的前夜」，為遵義會議的召開做了直接鋪墊。會後紅軍隨即進抵江界河等渡口，強渡烏江。"
+    ],
+    "ja": [
+     "1934年12月31日の夜から1935年1月1日未明にかけ、中国共産党中央は貴州省瓮安県の猴場で政治局会議を開催し、黎平会議の決議を再確認するとともに、烏江の強行渡河と四川・貴州境における新根拠地の建設を決定した。",
+     "この会議では、博古・李徳による湘西へ引き返して紅二・六軍団と合流するという案が再び否決され、さらに軍事委員会の作戦行動については中央政治局への報告を要すると定められた。ここに至って軍事指揮権は集団指導へと収められ始めたのである。",
+     "猴場会議は党の歴史において「偉大な転換の前夜」と称され、遵義会議の開催への直接的な準備となった。会議の後、紅軍はただちに江界河などの渡河地点に進み、烏江を強行渡河した。"
     ]
    }
   },
@@ -14190,128 +14256,136 @@
    26.236
   ],
   [
-   109.0249,
-   26.3027
+   109.0221,
+   26.2916
   ],
   [
-   108.9169,
-   26.3694
+   108.9113,
+   26.3472
   ],
   [
-   108.8088,
-   26.4361
+   108.8004,
+   26.4028
   ],
   [
-   108.7007,
-   26.5029
+   108.6895,
+   26.4584
   ],
   [
-   108.5926,
+   108.5787,
+   26.514
+  ],
+  [
+   108.4678,
    26.5696
   ],
   [
-   108.4846,
-   26.6363
+   108.3569,
+   26.6252
   ],
   [
-   108.3765,
-   26.703
+   108.2461,
+   26.6808
   ],
   [
-   108.2684,
-   26.7697
+   108.1352,
+   26.7364
   ],
   [
-   108.1604,
-   26.8364
+   108.0243,
+   26.792
   ],
   [
-   108.0523,
-   26.9031
+   107.9135,
+   26.8476
   ],
   [
-   107.9442,
-   26.9699
+   107.8026,
+   26.9032
   ],
   [
-   107.8361,
-   27.0366
+   107.6917,
+   26.9588
   ],
   [
-   107.7281,
-   27.1033
+   107.5809,
+   27.0144
+  ],
+  [
+   107.47,
+   27.07
+  ],
+  [
+   107.545,
+   27.12
   ],
   [
    107.62,
    27.17
   ],
   [
-   107.5187,
-   27.2391
+   107.5206,
+   27.2405
   ],
   [
-   107.4174,
-   27.3082
+   107.4213,
+   27.311
   ],
   [
-   107.3162,
-   27.3773
+   107.3219,
+   27.3814
   ],
   [
-   107.2149,
-   27.4464
+   107.2226,
+   27.4519
   ],
   [
-   107.1136,
-   27.5155
+   107.1232,
+   27.5224
   ],
   [
-   107.0123,
-   27.5846
+   107.0238,
+   27.5929
   ],
   [
-   106.911,
-   27.6537
+   106.9245,
+   27.6633
   ],
   [
-   106.8098,
-   27.7229
+   106.8251,
+   27.7338
   ],
   [
-   106.7085,
-   27.792
+   106.7258,
+   27.8043
   ],
   [
-   106.6072,
-   27.8611
+   106.6264,
+   27.8748
   ],
   [
-   106.5059,
-   27.9302
+   106.5271,
+   27.9452
   ],
   [
-   106.4046,
-   27.9993
+   106.4277,
+   28.0157
   ],
   [
-   106.3033,
-   28.0684
+   106.3283,
+   28.0862
   ],
   [
-   106.2021,
-   28.1375
+   106.229,
+   28.1567
   ],
   [
-   106.1008,
-   28.2066
+   106.1296,
+   28.2271
   ],
   [
-   105.9995,
-   28.2757
-  ],
-  [
-   105.9652,
-   28.3219
+   106.0303,
+   28.2976
   ],
   [
    105.9309,
@@ -15786,6 +15860,9 @@
    "fr-CA": "La conférence de Liping rejeta officiellement le projet d'une marche sur l'ouest du Hunan et fixa comme objectif le développement vers la frontière du Sichuan et du Guizhou.",
    "zh-HK": "黎平會議正式否定了去湘西的方案，確定向川黔邊發展。",
    "ja": "黎平会議は湘西へ向かう案を正式に否定し、四川・貴州境への発展を定めました。"
+  },
+  "houchang": {
+   "zh-Hans": "猴场会议规定军委作战须报中央政治局，被称“伟大转折的前夜”。"
   },
   "wujiang": {
    "zh-Hans": "红军以竹筏强渡乌江天险，为占领遵义打开大门。",
