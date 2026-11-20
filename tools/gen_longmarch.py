@@ -779,6 +779,14 @@ def _leg_points(army, army_stops):
             d = (p[0] - c[0]) ** 2 + (p[1] - c[1]) ** 2
             if best is None or d < best:
                 best, bi = d, i
+        # tie-break EARLIEST: corridor lines can visit the same place twice
+        # (e.g. Zunyi before and after the four Chishui crossings) and an
+        # exact distance tie must resolve to the first, chronological visit,
+        # or the walk swallows the whole loop into the previous segment
+        for i, p in enumerate(ref):
+            d = (p[0] - c[0]) ** 2 + (p[1] - c[1]) ** 2
+            if d <= best + 4e-4:  # within ~2 km of the best match
+                return i
         return bi
 
     idxs = [nearest_idx(s["coords"]) for s in army_stops]
