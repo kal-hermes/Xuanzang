@@ -254,100 +254,56 @@
      25.61
     ],
     [
-     110.5585,
-     25.6785
+     110.6067,
+     25.7133
     ],
     [
-     110.447,
-     25.747
-    ],
-    [
-     110.3355,
-     25.8155
-    ],
-    [
-     110.224,
-     25.884
-    ],
-    [
-     110.1125,
-     25.9525
-    ],
-    [
-     110.001,
-     26.021
-    ],
-    [
-     109.8895,
-     26.0895
-    ],
-    [
-     109.778,
-     26.158
-    ],
-    [
-     109.895,
-     26.1183
-    ],
-    [
-     110.012,
-     26.0787
-    ],
-    [
-     110.129,
-     26.039
-    ],
-    [
-     110.246,
-     25.9993
-    ],
-    [
-     110.363,
-     25.9597
+     110.5433,
+     25.8167
     ],
     [
      110.48,
      25.92
     ],
     [
-     110.3575,
-     25.9487
+     110.363,
+     25.9597
     ],
     [
-     110.2351,
-     25.9775
+     110.246,
+     25.9993
     ],
     [
-     110.1126,
-     26.0062
+     110.129,
+     26.039
     ],
     [
-     109.9902,
-     26.0349
+     110.012,
+     26.0787
     ],
     [
-     109.8677,
-     26.0636
+     109.895,
+     26.1183
     ],
     [
-     109.7453,
-     26.0924
+     109.778,
+     26.158
     ],
     [
-     109.6228,
-     26.1211
+     109.649,
+     26.1736
     ],
     [
-     109.5004,
-     26.1498
+     109.52,
+     26.1892
     ],
     [
-     109.3779,
-     26.1785
+     109.391,
+     26.2048
     ],
     [
-     109.2555,
-     26.2073
+     109.262,
+     26.2204
     ],
     [
      109.133,
@@ -4618,56 +4574,60 @@
      30.15
     ],
     [
-     103.04,
-     30.105
+     103.03,
+     30.204
     ],
     [
-     103.16,
-     30.06
+     103.14,
+     30.258
     ],
     [
-     103.2633,
-     30.18
+     103.25,
+     30.312
     ],
     [
-     103.3667,
-     30.3
+     103.36,
+     30.366
     ],
     [
      103.47,
      30.42
     ],
     [
-     103.34,
-     30.4233
+     103.3667,
+     30.3
     ],
     [
-     103.21,
-     30.4267
+     103.2633,
+     30.18
     ],
     [
-     103.08,
-     30.43
+     103.16,
+     30.06
     ],
     [
-     102.95,
-     30.4333
+     103.0371,
+     30.1157
     ],
     [
-     102.82,
-     30.4367
+     102.9143,
+     30.1714
     ],
     [
-     102.69,
-     30.44
+     102.7914,
+     30.2271
     ],
     [
-     102.56,
-     30.4433
+     102.6686,
+     30.2829
     ],
     [
-     102.43,
-     30.4467
+     102.5457,
+     30.3386
+    ],
+    [
+     102.4229,
+     30.3943
     ],
     [
      102.3,
@@ -5299,6 +5259,64 @@
    }
   },
   {
+   "id": "laoshanjie",
+   "coords": [
+    110.48,
+    25.92
+   ],
+   "year": 1934,
+   "when": {
+    "en-GB": "4 Dec 1934",
+    "fr-CA": "1934 12/4—8",
+    "zh-Hans": "1934年12月4日—8日",
+    "zh-HK": "1934年12月4日—8日",
+    "ja": "1934年12月4日–8日"
+   },
+   "present": {
+    "en-GB": "Longsheng, Guangxi, China",
+    "fr-CA": "Longsheng, Guangxi, China",
+    "zh-Hans": "广西龙胜各族自治县（越城岭）",
+    "zh-HK": "广西龙胜各族自治县（越城嶺）",
+    "ja": "中国広西チワン族自治区竜勝県"
+   },
+   "iso3": "CHN",
+   "army": "red1",
+   "names": {
+    "en-GB": "Laoshanjie (Yuecheng Ling)",
+    "zh-Hans": "老山界",
+    "zh-HK": "老山界",
+    "fr-CA": "Laoshanjie (Yuecheng Ling)",
+    "ja": "老山界"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "湘江之后，红军于12月4日至8日从龙胜翻越老山界——越城岭的主峰地带，这是长征路上第一座真正的高山。",
+     "博古、李德此时仍坚持去湘西与红二、六军团会合，而国民党军已在那里布下口袋。",
+     "红军进入少数民族聚居区，开始执行民族政策，为后来通过彝族、藏族地区积累经验。"
+    ],
+    "en-GB": [
+     "After the Xiang River, the Red Army crossed Laoshanjie from Longsheng — the area of the highest peaks of the Yuecheng Range — the first truly high mountain on the Long March.",
+     "At this stage, Bo Gu and Li De still insisted on heading for western Hunan to link up with the Second and Sixth Red Army Groups, but the Kuomintang forces had already laid a trap there.",
+     "The Red Army entered areas inhabited by ethnic minorities and began to put its nationality policy into practice, gaining experience for the later passage through Yi and Tibetan regions."
+    ],
+    "fr-CA": [
+     "Après la rivière Xiang, l'Armée rouge gravit, depuis Longsheng, le Laoshanjie — le secteur du pic principal de la chaîne Yuecheng —, première véritable haute montagne de la Longue Marche.",
+     "Bo Gu et Li De s'obstinaient, à ce moment-là, à vouloir rejoindre l'ouest du Hunan pour opérer leur jonction avec les 2e et 6e corps de l'Armée rouge, mais les troupes du Guomindang y avaient déjà tendu un piège.",
+     "L'Armée rouge entra dans des régions à forte population de minorités ethniques et commença à appliquer sa politique des nationalités, accumulant ainsi l'expérience qui lui servirait plus tard à traverser les territoires des Yi et des Tibétains."
+    ],
+    "zh-HK": [
+     "湘江之後，紅軍從龍勝翻越老山界——越城嶺的主峰地帶，這是長征路上第一座真正的高山。",
+     "博古、李德此時仍堅持前往湘西與紅二、六軍團會合，而國民黨軍已在那裏佈下口袋。",
+     "紅軍進入少數民族聚居區，開始執行民族政策，為後來通過彝族、藏族地區累積經驗。"
+    ],
+    "ja": [
+     "湘江の戦いの後、紅軍は龍勝から老山界――越城嶺の主峰地帯――を越えていった。これは長征の道のりで初めて迎える本格的な高山であった。",
+     "このときもなお博古と李徳は、湘西へ進んで紅二・六軍団と合流することに固執していたが、国民党軍はすでにそこに袋陣を敷いて待ち構えていた。",
+     "紅軍は少数民族の集住地域に入り、民族政策の実施に着手した。これは、のちにイ族やチベット族の地域を通過する際の経験の蓄積となった。"
+    ]
+   }
+  },
+  {
    "id": "tongdao",
    "coords": [
     109.778,
@@ -5353,64 +5371,6 @@
      "12月12日、中国共産党中央委員会は湖南省通道で緊急会議を開催した。",
      "毛沢東はこの会議で初めて、湘西に向かう計画を断念し、西方へ転進して敵の支配力が弱い貴州に入ることを提案した。",
      "この主張は多くの指導者の賛同を得て、紅軍はここにおいて進路を変更した。これが歴史上いわゆる「通道転兵」である。"
-    ]
-   }
-  },
-  {
-   "id": "laoshanjie",
-   "coords": [
-    110.48,
-    25.92
-   ],
-   "year": 1934,
-   "when": {
-    "en-GB": "December 1934",
-    "fr-CA": "1934 12/上旬",
-    "zh-Hans": "1934年12月上旬",
-    "zh-HK": "1934年12月上旬",
-    "ja": "1934年12月上旬"
-   },
-   "present": {
-    "en-GB": "Longsheng, Guangxi, China",
-    "fr-CA": "Longsheng, Guangxi, China",
-    "zh-Hans": "广西龙胜各族自治县（越城岭）",
-    "zh-HK": "广西龙胜各族自治县（越城嶺）",
-    "ja": "中国広西チワン族自治区竜勝県"
-   },
-   "iso3": "CHN",
-   "army": "red1",
-   "names": {
-    "en-GB": "Laoshanjie (Yuecheng Ling)",
-    "zh-Hans": "老山界",
-    "zh-HK": "老山界",
-    "fr-CA": "Laoshanjie (Yuecheng Ling)",
-    "ja": "老山界"
-   },
-   "narrative": {
-    "zh-Hans": [
-     "湘江之后，红军从龙胜翻越老山界——越城岭的主峰地带，这是长征路上第一座真正的高山。",
-     "博古、李德此时仍坚持去湘西与红二、六军团会合，而国民党军已在那里布下口袋。",
-     "红军进入少数民族聚居区，开始执行民族政策，为后来通过彝族、藏族地区积累经验。"
-    ],
-    "en-GB": [
-     "After the Xiang River, the Red Army crossed Laoshanjie from Longsheng — the area of the highest peaks of the Yuecheng Range — the first truly high mountain on the Long March.",
-     "At this stage, Bo Gu and Li De still insisted on heading for western Hunan to link up with the Second and Sixth Red Army Groups, but the Kuomintang forces had already laid a trap there.",
-     "The Red Army entered areas inhabited by ethnic minorities and began to put its nationality policy into practice, gaining experience for the later passage through Yi and Tibetan regions."
-    ],
-    "fr-CA": [
-     "Après la rivière Xiang, l'Armée rouge gravit, depuis Longsheng, le Laoshanjie — le secteur du pic principal de la chaîne Yuecheng —, première véritable haute montagne de la Longue Marche.",
-     "Bo Gu et Li De s'obstinaient, à ce moment-là, à vouloir rejoindre l'ouest du Hunan pour opérer leur jonction avec les 2e et 6e corps de l'Armée rouge, mais les troupes du Guomindang y avaient déjà tendu un piège.",
-     "L'Armée rouge entra dans des régions à forte population de minorités ethniques et commença à appliquer sa politique des nationalités, accumulant ainsi l'expérience qui lui servirait plus tard à traverser les territoires des Yi et des Tibétains."
-    ],
-    "zh-HK": [
-     "湘江之後，紅軍從龍勝翻越老山界——越城嶺的主峰地帶，這是長征路上第一座真正的高山。",
-     "博古、李德此時仍堅持前往湘西與紅二、六軍團會合，而國民黨軍已在那裏佈下口袋。",
-     "紅軍進入少數民族聚居區，開始執行民族政策，為後來通過彝族、藏族地區累積經驗。"
-    ],
-    "ja": [
-     "湘江の戦いの後、紅軍は龍勝から老山界――越城嶺の主峰地帯――を越えていった。これは長征の道のりで初めて迎える本格的な高山であった。",
-     "このときもなお博古と李徳は、湘西へ進んで紅二・六軍団と合流することに固執していたが、国民党軍はすでにそこに袋陣を敷いて待ち構えていた。",
-     "紅軍は少数民族の集住地域に入り、民族政策の実施に着手した。これは、のちにイ族やチベット族の地域を通過する際の経験の蓄積となった。"
     ]
    }
   },
@@ -5480,11 +5440,11 @@
    ],
    "year": 1935,
    "when": {
-    "en-GB": "January 1935",
-    "fr-CA": "1935 1/初",
-    "zh-Hans": "1935年1月初",
-    "zh-HK": "1935年1月初",
-    "ja": "1935年1月初"
+    "en-GB": "1 Jan 1935",
+    "fr-CA": "1935 1/1—6",
+    "zh-Hans": "1935年1月1日—6日",
+    "zh-HK": "1935年1月1日—6日",
+    "ja": "1935年1月1日–6日"
    },
    "present": {
     "en-GB": "Weng'an, Guizhou, China",
@@ -5504,7 +5464,7 @@
    },
    "narrative": {
     "zh-Hans": [
-     "1935年1月初，红军强渡乌江天险，突破黔军防线。",
+     "1935年1月1日至6日，红军强渡乌江天险，突破黔军防线。",
      "乌江是贵州的第一大江，江面宽、水流急，黔军在对岸设防。红军以竹筏强渡，攻占渡口。",
      "渡过乌江，通向遵义的大门打开了。"
     ],
@@ -9093,11 +9053,11 @@
    ],
    "year": 1934,
    "when": {
-    "en-GB": "November 1934",
-    "fr-CA": "1934 11/",
-    "zh-Hans": "1934年11月",
-    "zh-HK": "1934年11月",
-    "ja": "1934年11月"
+    "en-GB": "4 Nov 1934",
+    "fr-CA": "1934 11/4",
+    "zh-Hans": "1934年11月4日",
+    "zh-HK": "1934年11月4日",
+    "ja": "1934年11月4日"
    },
    "present": {
     "en-GB": "Dexing City, Jiangxi",
@@ -9117,7 +9077,7 @@
    },
    "narrative": {
     "zh-Hans": [
-     "1934年11月初，历经四个多月转战的先遣队穿过敌人封锁线，进入赣东北，在德兴重溪与方志敏领导的红十军会合。",
+     "1934年11月4日，历经四个多月转战的先遣队穿过敌人封锁线，进入赣东北，在德兴重溪与方志敏领导的红十军会合。",
      "奉中革军委指示，红七军团与红十军合编为红十军团，约一万人，刘畴西任军团长，方志敏任军政委员会主席。",
      "原红七军团改编为第19师，寻淮洲任师长。合编后的红十军团继续担负北上抗日先遣队的任务。"
     ],
@@ -13106,64 +13066,6 @@
    }
   },
   {
-   "id": "baizhang",
-   "coords": [
-    103.16,
-    30.06
-   ],
-   "year": 1935,
-   "when": {
-    "en-GB": "November 1935",
-    "fr-CA": "1935 11/中下旬",
-    "zh-Hans": "1935年11月中下旬",
-    "zh-HK": "1935年11月中下旬",
-    "ja": "1935年11月中下旬"
-   },
-   "present": {
-    "en-GB": "Mingshan District, Ya'an, Sichuan",
-    "fr-CA": "Mingshan District, Ya'an, Sichuan",
-    "zh-Hans": "四川省雅安市名山区百丈镇",
-    "zh-HK": "四川省雅安市名山区百丈镇",
-    "ja": "四川省雅安市名山区"
-   },
-   "iso3": "CHN",
-   "army": "red4",
-   "names": {
-    "en-GB": "Battle of Baizhang Pass",
-    "zh-Hans": "百丈关决战",
-    "zh-HK": "百丈關决战",
-    "fr-CA": "Battle of Baizhang Pass",
-    "ja": "百丈関決戦"
-   },
-   "narrative": {
-    "zh-Hans": [
-     "1935年11月中下旬，红四方面军15个团在名山百丈关一带与川军主力决战七昼夜。",
-     "这是一场消耗战：红军伤亡近万人，虽歼敌1.5万余，但南下攻势就此顿挫，部队被迫转入防御。",
-     "百丈关之战是张国焘南下路线的军事破产。部队退守天全、芦山、宝兴一带过冬，粮弹两缺，减员严重。"
-    ],
-    "en-GB": [
-     "In mid-to-late November 1935, fifteen regiments of the Fourth Front Red Army fought a decisive battle lasting seven days and nights against the main forces of the Sichuan warlord armies around Baizhang Pass in Mingshan.",
-     "It was a war of attrition: the Red Army suffered nearly 10,000 casualties, and although it wiped out more than 15,000 enemy troops, its southward offensive stalled there, and the units were forced onto the defensive.",
-     "The Battle of Baizhang Pass marked the military bankruptcy of Zhang Guotao's southward line. The troops fell back to the area around Tianquan, Lushan and Baoxing to spend the winter, short of both food and ammunition and suffering severe losses in strength."
-    ],
-    "fr-CA": [
-     "Du milieu à la fin du mois de novembre 1935, 15 régiments de la Quatrième Armée rouge livrèrent, pendant sept jours et sept nuits, une bataille décisive aux forces principales des troupes du Sichuan dans le secteur du col de Baizhang, à Mingshan.",
-     "Ce fut une guerre d'usure : l'Armée rouge subit près de 10 000 pertes et, bien qu'elle ait anéanti plus de 15 000 soldats ennemis, son offensive vers le sud fut stoppée net, forçant les troupes à passer sur la défensive.",
-     "La bataille du col de Baizhang marqua la faillite militaire de la ligne de Zhang Guotao consistant à progresser vers le sud. Les troupes se replièrent pour l'hiver dans la région de Tianquan, Lushan et Baoxing, manquant à la fois de vivres et de munitions et accusant de lourdes pertes en effectifs."
-    ],
-    "zh-HK": [
-     "1935年11月中下旬，紅四方面軍15個團在名山百丈關一帶與川軍主力決戰七晝夜。",
-     "這是一場消耗戰：紅軍傷亡近萬人，雖殲敵1.5萬餘，但南下攻勢就此頓挫，部隊被迫轉入防禦。",
-     "百丈關之戰是張國燾南下路線的軍事破產。部隊退守天全、蘆山、寶興一帶過冬，糧彈兩缺，減員嚴重。"
-    ],
-    "ja": [
-     "1935年11月中下旬、紅四方面軍の15個連隊は、名山の百丈関一帯で川軍の主力と七昼夜にわたる決戦を繰り広げた。",
-     "これは消耗戦であった。紅軍の死傷者は一万人近くに達し、敵を一万五千余り殲滅したとはいえ、南下攻勢はここに頓挫し、部隊は防御への転換を余儀なくされた。",
-     "百丈関の戦いは、張国燾の南下路線の軍事的破産を意味するものであった。部隊は天全・芦山・宝興一帯に退いて冬を越したが、食糧も弾薬も乏しく、兵員の減耗は深刻であった。"
-    ]
-   }
-  },
-  {
    "id": "czm_qionglai",
    "coords": [
     103.47,
@@ -13226,6 +13128,64 @@
     "fr-CA": "Qionglai ne se trouve qu'à environ 70 km de Chengdu, et en novembre 1935, l'avant-garde de la Quatrième Armée rouge s'est approchée du chef-lieu du district au point d'en constituer le moment le plus proche de Chengdu depuis le début de la marche vers le sud.",
     "zh-HK": "邛崃距成都僅約70公里，1935年11月紅四方面軍前鋒一度逼近縣城，是該軍南下以來最接近成都的一次。",
     "ja": "邛崃は成都からわずか約70キロの距離にあり、1935年11月には紅四方面軍の先鋒が一時県城に迫り、南下以来最も成都に近づいた瞬間となった。"
+   }
+  },
+  {
+   "id": "baizhang",
+   "coords": [
+    103.16,
+    30.06
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "19 Nov 1935",
+    "fr-CA": "1935 11/19",
+    "zh-Hans": "1935年11月19日",
+    "zh-HK": "1935年11月19日",
+    "ja": "1935年11月19日"
+   },
+   "present": {
+    "en-GB": "Mingshan District, Ya'an, Sichuan",
+    "fr-CA": "Mingshan District, Ya'an, Sichuan",
+    "zh-Hans": "四川省雅安市名山区百丈镇",
+    "zh-HK": "四川省雅安市名山区百丈镇",
+    "ja": "四川省雅安市名山区"
+   },
+   "iso3": "CHN",
+   "army": "red4",
+   "names": {
+    "en-GB": "Battle of Baizhang Pass",
+    "zh-Hans": "百丈关决战",
+    "zh-HK": "百丈關决战",
+    "fr-CA": "Battle of Baizhang Pass",
+    "ja": "百丈関決戦"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "1935年11月19日起，红四方面军15个团在名山百丈关一带与川军主力决战七昼夜。",
+     "这是一场消耗战：红军伤亡近万人，虽歼敌1.5万余，但南下攻势就此顿挫，部队被迫转入防御。",
+     "百丈关之战是张国焘南下路线的军事破产。部队退守天全、芦山、宝兴一带过冬，粮弹两缺，减员严重。"
+    ],
+    "en-GB": [
+     "In mid-to-late November 1935, fifteen regiments of the Fourth Front Red Army fought a decisive battle lasting seven days and nights against the main forces of the Sichuan warlord armies around Baizhang Pass in Mingshan.",
+     "It was a war of attrition: the Red Army suffered nearly 10,000 casualties, and although it wiped out more than 15,000 enemy troops, its southward offensive stalled there, and the units were forced onto the defensive.",
+     "The Battle of Baizhang Pass marked the military bankruptcy of Zhang Guotao's southward line. The troops fell back to the area around Tianquan, Lushan and Baoxing to spend the winter, short of both food and ammunition and suffering severe losses in strength."
+    ],
+    "fr-CA": [
+     "Du milieu à la fin du mois de novembre 1935, 15 régiments de la Quatrième Armée rouge livrèrent, pendant sept jours et sept nuits, une bataille décisive aux forces principales des troupes du Sichuan dans le secteur du col de Baizhang, à Mingshan.",
+     "Ce fut une guerre d'usure : l'Armée rouge subit près de 10 000 pertes et, bien qu'elle ait anéanti plus de 15 000 soldats ennemis, son offensive vers le sud fut stoppée net, forçant les troupes à passer sur la défensive.",
+     "La bataille du col de Baizhang marqua la faillite militaire de la ligne de Zhang Guotao consistant à progresser vers le sud. Les troupes se replièrent pour l'hiver dans la région de Tianquan, Lushan et Baoxing, manquant à la fois de vivres et de munitions et accusant de lourdes pertes en effectifs."
+    ],
+    "zh-HK": [
+     "1935年11月中下旬，紅四方面軍15個團在名山百丈關一帶與川軍主力決戰七晝夜。",
+     "這是一場消耗戰：紅軍傷亡近萬人，雖殲敵1.5萬餘，但南下攻勢就此頓挫，部隊被迫轉入防禦。",
+     "百丈關之戰是張國燾南下路線的軍事破產。部隊退守天全、蘆山、寶興一帶過冬，糧彈兩缺，減員嚴重。"
+    ],
+    "ja": [
+     "1935年11月中下旬、紅四方面軍の15個連隊は、名山の百丈関一帯で川軍の主力と七昼夜にわたる決戦を繰り広げた。",
+     "これは消耗戦であった。紅軍の死傷者は一万人近くに達し、敵を一万五千余り殲滅したとはいえ、南下攻勢はここに頓挫し、部隊は防御への転換を余儀なくされた。",
+     "百丈関の戦いは、張国燾の南下路線の軍事的破産を意味するものであった。部隊は天全・芦山・宝興一帯に退いて冬を越したが、食糧も弾薬も乏しく、兵員の減耗は深刻であった。"
+    ]
    }
   },
   {
@@ -14174,100 +14134,56 @@
    25.61
   ],
   [
-   110.5585,
-   25.6785
+   110.6067,
+   25.7133
   ],
   [
-   110.447,
-   25.747
-  ],
-  [
-   110.3355,
-   25.8155
-  ],
-  [
-   110.224,
-   25.884
-  ],
-  [
-   110.1125,
-   25.9525
-  ],
-  [
-   110.001,
-   26.021
-  ],
-  [
-   109.8895,
-   26.0895
-  ],
-  [
-   109.778,
-   26.158
-  ],
-  [
-   109.895,
-   26.1183
-  ],
-  [
-   110.012,
-   26.0787
-  ],
-  [
-   110.129,
-   26.039
-  ],
-  [
-   110.246,
-   25.9993
-  ],
-  [
-   110.363,
-   25.9597
+   110.5433,
+   25.8167
   ],
   [
    110.48,
    25.92
   ],
   [
-   110.3575,
-   25.9487
+   110.363,
+   25.9597
   ],
   [
-   110.2351,
-   25.9775
+   110.246,
+   25.9993
   ],
   [
-   110.1126,
-   26.0062
+   110.129,
+   26.039
   ],
   [
-   109.9902,
-   26.0349
+   110.012,
+   26.0787
   ],
   [
-   109.8677,
-   26.0636
+   109.895,
+   26.1183
   ],
   [
-   109.7453,
-   26.0924
+   109.778,
+   26.158
   ],
   [
-   109.6228,
-   26.1211
+   109.649,
+   26.1736
   ],
   [
-   109.5004,
-   26.1498
+   109.52,
+   26.1892
   ],
   [
-   109.3779,
-   26.1785
+   109.391,
+   26.2048
   ],
   [
-   109.2555,
-   26.2073
+   109.262,
+   26.2204
   ],
   [
    109.133,
