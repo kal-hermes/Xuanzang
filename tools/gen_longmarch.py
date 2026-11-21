@@ -799,11 +799,19 @@ def _leg_points(army, army_stops):
     prev = idxs[0] if idxs else 0  # head trim: no leader before first stop
     points = []
     for i, s in enumerate(army_stops):
-        j = max(idxs[i], prev)  # clamp: never step backwards
+        j = max(idxs[i], prev)
         for p in ref[prev:j]:
             points.append(p)
         points.append(s["coords"])
-        prev = j + 1
+        if idxs[i] >= prev:
+            # the stop matched vertex j and replaces it: the walk moves past
+            prev = j + 1
+        else:
+            # clamped spur: the stop hangs off the corridor beside vertex
+            # `prev`, which must still be drawn by the NEXT stop - advancing
+            # prev here would silently burn corridor vertices (this is how
+            # 古蔺/叙永 vanished from the 元厚→叙永 segment)
+            prev = j
     for p in ref[prev:]:
         points.append(p)
     return densify(points)
