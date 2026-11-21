@@ -438,20 +438,20 @@
      28.27
     ],
     [
-     105.9415,
-     28.2319
+     105.96,
+     28.29
     ],
     [
-     105.823,
-     28.1938
+     105.86,
+     28.31
     ],
     [
-     105.7046,
-     28.1558
+     105.7292,
+     28.2332
     ],
     [
-     105.5861,
-     28.1177
+     105.5984,
+     28.1564
     ],
     [
      105.4676,
@@ -530,16 +530,12 @@
      27.95
     ],
     [
-     106.865,
-     27.835
+     106.7432,
+     27.8456
     ],
     [
-     106.9,
-     27.72
-    ],
-    [
-     106.7348,
-     27.6784
+     106.6565,
+     27.7412
     ],
     [
      106.5697,
@@ -5495,52 +5491,110 @@
    "year": 1935,
    "when": {
     "en-GB": "28 Jan 1935",
-    "fr-CA": "1935 1/28—29",
-    "zh-Hans": "1935年1月28日—29日",
-    "zh-HK": "1935年1月28日—29日",
-    "ja": "1935年1月28日–29日"
+    "fr-CA": "1935 1/28",
+    "zh-Hans": "1935年1月28日",
+    "zh-HK": "1935年1月28日",
+    "ja": "1935年1月28日"
    },
    "present": {
-    "en-GB": "Xishui, Guizhou, China",
-    "fr-CA": "Xishui, Guizhou, China",
-    "zh-Hans": "贵州省习水县土城镇",
-    "zh-HK": "贵州省习水县土城镇",
+    "en-GB": "Tucheng, Xishui County, Guizhou, China",
+    "fr-CA": "Tucheng, Xishui County, Guizhou, China",
+    "zh-Hans": "贵州省习水县土城镇（青杠坡）",
+    "zh-HK": "贵州省习水县土城镇（青杠坡）",
     "ja": "中国貴州省習水県"
    },
    "iso3": "CHN",
    "army": "red1",
    "names": {
-    "en-GB": "Tucheng & first Chishui crossing",
-    "zh-Hans": "土城之战与一渡赤水",
-    "zh-HK": "土城之战与一渡赤水",
-    "fr-CA": "Tucheng & first Chishui crossing",
-    "ja": "土城の戦いと一渡赤水"
+    "en-GB": "Battle of Tucheng",
+    "zh-Hans": "土城之战",
+    "zh-HK": "土城之战",
+    "fr-CA": "Battle of Tucheng",
+    "ja": "土城の戦い"
    },
    "narrative": {
     "zh-Hans": [
      "遵义会议后，红军计划北渡长江与红四方面军会合。1月24日攻占土城。",
      "1月28日，红军在土城以北的青杠坡进攻川军郭勋祺部，激战一日打成僵局，损失上千人，北渡计划受挫。",
-     "1月29日，红军从猿猴场、土城等渡口一渡赤水河，进入川南。"
+     "毛泽东等当机立断撤出战斗，改为西渡赤水摆脱追敌——这是遵义会议后新指挥班子打的第一仗，也是一次及时的止损。"
     ],
     "en-GB": [
-     "After the Zunyi Conference, the Red Army planned to cross the Yangtze River northwards to link up with the Fourth Front Red Army. On 24 January it captured Tucheng.",
-     "On 28 January, at Qinggangpo north of Tucheng, the Red Army attacked the Sichuan forces under Guo Xunqi. After a day of fierce fighting the battle reached a stalemate, with the Red Army suffering more than a thousand casualties, and the plan to cross northwards was thwarted.",
-     "On 29 January, the Red Army made its first crossing of the Chishui River at ferry points including Yuanhouchang and Tucheng, entering southern Sichuan."
+     "After the Zunyi Conference, the Red Army planned to cross the Yangtze River northwards to link up with the Fourth Front Army. On 24 January it captured Tucheng.",
+     "On 28 January the Red Army attacked the Sichuan troops of Guo Xunqi at Qinggangpo, north of Tucheng; after a day of fierce fighting the battle had reached a stalemate, and with losses of more than a thousand men the plan to cross northwards was thwarted.",
+     "Mao Zedong and the others acted decisively, breaking off the battle and instead crossing the Chishui River westwards to shake off the pursuing enemy — this was the first battle fought by the new command after the Zunyi Conference, and a timely exercise in damage limitation."
     ],
     "fr-CA": [
-     "Après la Conférence de Zunyi, l'Armée rouge projeta de franchir le fleuve Yangtsé vers le nord afin de faire sa jonction avec la Quatrième Armée rouge. Le 24 janvier, elle s'empara de Tucheng.",
-     "Le 28 janvier, l'Armée rouge attaqua les unités de Guo Xunqi, de l'armée du Sichuan, à Qinggangpo, au nord de Tucheng. Après une journée de combats acharnés qui se solda par une impasse, elle perdit plus d'un millier d'hommes et son projet de traversée vers le nord fut compromis.",
-     "Le 29 janvier, l'Armée rouge effectua sa première traversée de la rivière Chishui par les gués de Yuanhouchang et de Tucheng, entre autres, puis entra dans le sud du Sichuan."
+     "À la suite de la conférence de Zunyi, l'Armée rouge planifiait de franchir le fleuve Yangtsé vers le nord afin de faire sa jonction avec la IVe Armée rouge. Le 24 janvier, elle s'empara de Tucheng.",
+     "Le 28 janvier, à Qinggangpo, au nord de Tucheng, l'Armée rouge attaqua les troupes sichuanaises commandées par Guo Xunqi. Après une journée de combats acharnés, la bataille s'enlisa dans une impasse : l'Armée rouge perdit plus d'un millier d'hommes et le plan de traversée vers le nord fut compromis.",
+     "Mao Zedong et les autres dirigeants prirent sur-le-champ la décision de rompre le combat et optèrent plutôt pour une traversée vers l'ouest de la rivière Chishui afin d'échapper aux ennemis qui les poursuivaient — c'était la première bataille livrée par la nouvelle équipe de commandement issue de la conférence de Zunyi, de même qu'une décision opportune qui permit de limiter les pertes."
     ],
     "zh-HK": [
-     "遵義會議後，紅軍計劃北渡長江與紅四方面軍會合。1月24日攻佔土城。",
+     "遵義會議後，紅軍計劃北渡長江，與紅四方面軍會合。1月24日攻佔土城。",
      "1月28日，紅軍在土城以北的青槓坡進攻川軍郭勳祺部，激戰一日打成僵局，損失上千人，北渡計劃受挫。",
-     "1月29日，紅軍從猿猴場、土城等渡口一渡赤水河，進入川南。"
+     "毛澤東等當機立斷撤出戰鬥，改為西渡赤水以擺脫追敵——這是遵義會議後新指揮班子打的第一仗，也是一次及時的止蝕。"
     ],
     "ja": [
-     "遵義会議の後、紅軍は長江を北へ渡り、紅四方面軍と合流することを計画した。1月24日、土城を攻略した。",
-     "1月28日、紅軍は土城の北にある青杠坡で川軍の郭勲祺部を攻撃したが、丸一日の激戦の末に膠着状態に陥り、一千人以上の損害を出して、北渡の計画は挫折した。",
-     "1月29日、紅軍は猿猴場・土城などの渡河点から赤水河を初めて渡り、川南に入った。"
+     "遵義会議の後、紅軍は長江を北上して渡り、紅四方面軍と合流する計画を立てた。1月24日、土城を攻略した。",
+     "1月28日、紅軍は土城北方の青杠坡において川軍の郭勲祺部隊に攻撃を仕掛けたが、一日に及ぶ激戦は膠着状態に陥り、千人余りの損失を出して、北渡の計画は挫折した。",
+     "毛沢東らは即断即決で戦闘から撤収し、西へ赤水河を渡って追撃する敵を振り切る方針に転換した。これは遵義会議後の新指導部が初めて戦った戦いであり、同時に機を見た損害の食い止めでもあった。"
+    ]
+   }
+  },
+  {
+   "id": "yuanhou",
+   "coords": [
+    105.86,
+    28.31
+   ],
+   "year": 1935,
+   "when": {
+    "en-GB": "29 Jan 1935",
+    "fr-CA": "1935 1/29",
+    "zh-Hans": "1935年1月29日",
+    "zh-HK": "1935年1月29日",
+    "ja": "1935年1月29日"
+   },
+   "present": {
+    "en-GB": "Yuanhou, Chishui, Guizhou, China",
+    "fr-CA": "Yuanhou, Chishui, Guizhou, China",
+    "zh-Hans": "贵州省赤水市元厚镇（元厚渡口）",
+    "zh-HK": "贵州省赤水市元厚镇（元厚渡口）",
+    "ja": "中国貴州省赤水市元厚鎮"
+   },
+   "iso3": "CHN",
+   "army": "red1",
+   "names": {
+    "en-GB": "First Chishui crossing",
+    "zh-Hans": "一渡赤水",
+    "zh-HK": "一渡赤水",
+    "fr-CA": "First Chishui crossing",
+    "ja": "一渡赤水"
+   },
+   "narrative": {
+    "zh-Hans": [
+     "1月29日凌晨，红军从元厚（旧称猿猴场）、土城等渡口西渡赤水河，进入川南的古蔺、叙永地区。",
+     "一渡赤水是土城战斗失利后的果断转移：红军轻装弃北上计划，避开了川军主力的夹击。",
+     "这次渡河拉开了四渡赤水机动作战的序幕——此后近三个月，红军在川黔滇边反复穿插，把几十万追兵拖得团团转。"
+    ],
+    "en-GB": [
+     "In the early hours of 29 January, the Red Army crossed the Chishui River westwards at crossing points such as Yuanhou (formerly known as Yuanhouchang) and Tucheng, entering the Gulin and Xuyong area of southern Sichuan.",
+     "The first crossing of the Chishui was a decisive redeployment after the setback in the Battle of Tucheng: travelling light, the Red Army abandoned its plan to advance northwards and slipped past the pincer movement of the main Sichuan forces.",
+     "This crossing raised the curtain on the mobile operations of the Four Crossings of the Chishui — for nearly three months thereafter, the Red Army threaded back and forth along the borders of Sichuan, Guizhou and Yunnan, leaving several hundred thousand pursuing troops running round in circles."
+    ],
+    "fr-CA": [
+     "Aux premières heures du 29 janvier, l'Armée rouge a franchi la rivière Chishui vers l'ouest, par les gués de Yuanhou (autrefois appelé Yuanhouchang), de Tucheng et d'autres points de passage, puis elle a pénétré dans la région de Gulin et de Xuyong, dans le sud du Sichuan.",
+     "Cette première traversée de la rivière Chishui a été un repli résolu après l'échec de la bataille de Tucheng : en allégeant son équipement, l'Armée rouge a renoncé à son plan de marche vers le nord, échappant ainsi au mouvement de tenaille déployé par les principales forces de l'armée du Sichuan.",
+     "Cette traversée de la rivière a ouvert la série des « Quatre traversées de la Chishui », une guerre de mouvement — pendant près de trois mois, l'Armée rouge a zigzagué sans relâche aux confins du Sichuan, du Guizhou et du Yunnan, faisant tourner en rond plusieurs centaines de milliers de soldats ennemis lancés à sa poursuite."
+    ],
+    "zh-HK": [
+     "1月29日凌晨，紅軍從元厚（舊稱猿猴場）、土城等渡口西渡赤水河，進入川南的古藺、敘永地區。",
+     "一渡赤水是土城戰鬥失利後的果斷轉移：紅軍輕裝上路，放棄北上計劃，避開了川軍主力的夾擊。",
+     "這次渡河拉開了四渡赤水機動作戰的序幕——此後近三個月，紅軍在川黔滇邊反覆穿插，把幾十萬追兵拖得團團轉。"
+    ],
+    "ja": [
+     "1月29日未明、紅軍は元厚（旧称・猿猴場）や土城などの渡し場から赤水河を西へ渡り、川南の古藺・叙永地方へと入った。",
+     "第一次の赤水渡河（一渡赤水）は、土城の戦闘で苦戦を強いられた直後の果断な転進であった。紅軍は軽装に切り替えて北上計画を放棄し、川軍主力による挟撃を巧みに回避したのである。",
+     "この渡河は、のちに「四渡赤水」と称される機動作戦の幕開けとなった。以後およそ三か月にわたり、紅軍は四川・貴州・雲南の三省境を縦横無尽に往復し、数十万の追撃兵を翻弄させ続けたのである。"
     ]
    }
   },
@@ -14256,20 +14310,20 @@
    28.27
   ],
   [
-   105.9415,
-   28.2319
+   105.96,
+   28.29
   ],
   [
-   105.823,
-   28.1938
+   105.86,
+   28.31
   ],
   [
-   105.7046,
-   28.1558
+   105.7292,
+   28.2332
   ],
   [
-   105.5861,
-   28.1177
+   105.5984,
+   28.1564
   ],
   [
    105.4676,
@@ -14348,16 +14402,12 @@
    27.95
   ],
   [
-   106.865,
-   27.835
+   106.7432,
+   27.8456
   ],
   [
-   106.9,
-   27.72
-  ],
-  [
-   106.7348,
-   27.6784
+   106.6565,
+   27.7412
   ],
   [
    106.5697,
@@ -15606,7 +15656,11 @@
    "ja": "黎平会議は湘西へ向かう案を正式に否定し、四川・貴州境への発展を定めました。"
   },
   "houchang": {
-   "zh-Hans": "猴场会议规定军委作战须报中央政治局，被称“伟大转折的前夜”。"
+   "zh-Hans": "猴场会议规定军委作战须报中央政治局，被称“伟大转折的前夜”。",
+   "en-GB": "The Houchang Conference ruled that the Military Commission must report its battle operations to the Party's Central Political Bureau, and it came to be known as 'the eve of the great turning point'.",
+   "fr-CA": "La conférence de Houchang décida que les opérations de la Commission militaire devraient désormais être soumises au Bureau politique du Comité central : on la surnomma «la veille du grand tournant».",
+   "zh-HK": "猴場會議規定軍委的作戰行動須上報中央政治局，故被稱為「偉大轉折的前夜」。",
+   "ja": "猴場会議では、軍委の作戦は中央政治局に報告することを要すると定められ、「偉大な転換の前夜」と呼ばれている。"
   },
   "wujiang": {
    "zh-Hans": "红军以竹筏强渡乌江天险，为占领遵义打开大门。",
@@ -15628,6 +15682,13 @@
    "fr-CA": "La bataille de Qinggangpo se solda par une impasse, et l'Armée rouge dut opérer sa première traversée de la rivière Chishui pour se porter à l'ouest, dans le sud du Sichuan.",
    "zh-HK": "青杠坡一戰打成僵局，紅軍被迫一渡赤水西進川南。",
    "ja": "青杠坡の戦いは膠着状態に陥り、紅軍は第一次赤水渡河を行って西進し四川南部へ入ることを余儀なくされました。"
+  },
+  "yuanhou": {
+   "zh-Hans": "一渡赤水从元厚等渡口开始，拉开了四渡赤水机动作战的序幕。",
+   "en-GB": "The first crossing of the Chishui River began at Yuanhou and other ferry crossings, opening the curtain on the mobile warfare of the Four Crossings of the Chishui.",
+   "fr-CA": "La première traversée de la rivière Chishui, engagée depuis le passage de Yuanhou et d'autres gués, ouvrit le prologue de la guerre de manœuvre des «quatre traversées du Chishui».",
+   "zh-HK": "一渡赤水由元厚等渡口開始，拉開了四渡赤水機動作戰的序幕。",
+   "ja": "一度目の赤水渡河は元厚などの渡し場から始まり、四渡赤水の機動作戦の幕を開けた。"
   },
   "zhaxi": {
    "zh-Hans": "扎西会议决定张闻天取代博古负总责，并作出回兵黔北的决定。",
@@ -15812,112 +15873,256 @@
    "ja": "1935年10月19日に呉起鎮へ到達し、368日間・11省を転戦した中央紅軍の長征はここに幕を閉じました。"
   },
   "hejiachong": {
-   "zh-Hans": "出发集结地有一株800年树龄的大银杏树，红二十五军就是在树下誓师出发的。"
+   "zh-Hans": "出发集结地有一株800年树龄的大银杏树，红二十五军就是在树下誓师出发的。",
+   "en-GB": "The assembly point for the departure is marked by an 800-year-old ginkgo tree, beneath which the Red 25th Army took its oath and set out.",
+   "fr-CA": "Au point de rassemblement du départ se dressait un grand ginkgo vieux de 800 ans : c'est sous cet arbre que la 25e Armée rouge prêta serment avant de se mettre en route.",
+   "zh-HK": "出發集結地有一株樹齡800年的大銀杏樹，紅二十五軍就是在樹下誓師出發的。",
+   "ja": "出発の集結地には樹齢800年の大銀杏の木があり、紅二十五軍はまさにその木の下で誓師を行って出発した。"
   },
   "dushuzhen": {
-   "zh-Hans": "独树镇战斗时正值雨雪，战士们手指冻僵拉不开枪栓，政委吴焕先抡大刀带头冲锋。"
+   "zh-Hans": "独树镇战斗时正值雨雪，战士们手指冻僵拉不开枪栓，政委吴焕先抡大刀带头冲锋。",
+   "en-GB": "The Battle of Dushu Town was fought amid rain and snow: the soldiers' fingers were so numbed by frost that they could not work their rifle bolts, and Political Commissar Wu Huanxian swung a broadsword as he led the charge.",
+   "fr-CA": "Au moment de la bataille de Dushuzhen, pluie et neige tombaient sans relâche : les doigts gelés, les combattants ne parvenaient pas à armer leurs fusils ; le commissaire politique Wu Huanxian, grand sabre au poing, prit la tête de l'assaut.",
+   "zh-HK": "獨樹鎮戰鬥時正值雨雪，戰士們手指凍僵拉不開槍栓，政委吳煥先掄大刀帶頭衝鋒。",
+   "ja": "独樹鎮の戦闘はちょうど雨雪の最中で、兵士たちは指がかじかんで銃の栓を引くことができなかったが、政治委員の呉煥先は大刀を振るって先頭に立って突撃した。"
   },
   "yujiahe": {
-   "zh-Hans": "庾家河一战，军长程子华双手被打穿，徐海东头部中弹，两人此后长期躺在担架上指挥作战。"
+   "zh-Hans": "庾家河一战，军长程子华双手被打穿，徐海东头部中弹，两人此后长期躺在担架上指挥作战。",
+   "en-GB": "In the battle at Yujiahe, army commander Cheng Zihua had both hands shot through and Xu Haidong was struck in the head by a bullet; thereafter both men commanded operations for long periods from stretchers.",
+   "fr-CA": "Dans la bataille de Yujiahe, le commandant d'armée Cheng Zihua eut les deux mains transpercées par les balles et Xu Haidong fut atteint d'une balle à la tête : tous deux dirigèrent ensuite longtemps les opérations depuis leur brancard.",
+   "zh-HK": "庾家河一戰，軍長程子華雙手被打穿，徐海東頭部中彈，兩人此後長期躺在擔架上指揮作戰。",
+   "ja": "庾家河の戦闘では、軍長の程子華は両手を撃ち抜かれ、徐海東は頭部に被弾し、二人はその後長いあいだ担架に臥したまま作戦指揮を執ることとなった。"
   },
   "gepaizhen": {
-   "zh-Hans": "葛牌镇是红二十五军长征途中唯一建立过稳定政权的地方，现为鄂豫陕苏维埃政府纪念馆。"
+   "zh-Hans": "葛牌镇是红二十五军长征途中唯一建立过稳定政权的地方，现为鄂豫陕苏维埃政府纪念馆。",
+   "en-GB": "Gepai Town is the only place where the Red 25th Army established a stable government during the Long March; it now houses the Hubei–Henan–Shaanxi Soviet Government Memorial Museum.",
+   "fr-CA": "Gepaizhen est le seul lieu où la 25e Armée rouge établit un pouvoir stable au cours de la Longue Marche ; il abrite aujourd'hui le Mémorial du gouvernement soviétique du Hubei, du Henan et du Shaanxi.",
+   "zh-HK": "葛牌鎮是紅二十五軍長征途中唯一建立過穩定政權的地方，現為鄂豫陝蘇維埃政府紀念館。",
+   "ja": "葛牌鎮は紅二十五軍の長征途上で唯一安定した政権を樹立した場所であり、現在は鄂豫陝ソビエト政府記念館となっている。"
   },
   "fengyukou": {
-   "zh-Hans": "沣峪口会议上，交通员石健民送来了红一、红四方面军会师的消息和秘密呼号密码。"
+   "zh-Hans": "沣峪口会议上，交通员石健民送来了红一、红四方面军会师的消息和秘密呼号密码。",
+   "en-GB": "At the Fengyukou meeting, courier Shi Jianmin brought news of the junction of the First and Fourth Front Armies, together with their secret call signs and codes.",
+   "fr-CA": "Lors de la conférence de Fengyukou, l'agent de liaison Shi Jianmin apporta la nouvelle de la jonction des Première et Quatrième Armées rouges, ainsi que les signaux d'appel secrets et les codes.",
+   "zh-HK": "沣峪口會議上，交通員石健民送來了紅一、紅四方面軍會師的消息和秘密呼號密碼。",
+   "ja": "灃峪口会議の際、連絡員の石健民が紅一方面軍と紅四方面軍の会師の知らせと、秘密の呼号および暗号を届けた。"
   },
   "sipocun": {
-   "zh-Hans": "红二十五军政委吴焕先在四坡村战斗中牺牲，年仅28岁，是长征中牺牲的最高级别将领之一。"
+   "zh-Hans": "红二十五军政委吴焕先在四坡村战斗中牺牲，年仅28岁，是长征中牺牲的最高级别将领之一。",
+   "en-GB": "Wu Huanxian, political commissar of the Red 25th Army, fell in the Battle of Sipo Village at the age of just 28, making him one of the highest-ranking commanders to give his life during the Long March.",
+   "fr-CA": "Wu Huanxian, commissaire politique de la 25e Armée rouge, tomba au combat de Sipocun à 28 ans à peine : il fut l'un des chefs de plus haut rang à mourir pendant la Longue Marche.",
+   "zh-HK": "紅二十五軍政委吳煥先在四坡村戰鬥中犧牲，年僅28歲，是長征中犧牲的最高級別將領之一。",
+   "ja": "紅二十五軍の政治委員・呉煥先は四坡村の戦闘において戦死した。28歳の若さであり、長征において犠牲となった最高位の将領の一人である。"
   },
   "baozichuan": {
-   "zh-Hans": "红二十五军出发2980人，到陕北时约3400人——是唯一一路长征中人数不减反增的红军。"
+   "zh-Hans": "红二十五军出发2980人，到陕北时约3400人——是唯一一路长征中人数不减反增的红军。",
+   "en-GB": "The Red 25th Army set out with 2,980 men and reached northern Shaanxi with about 3,400 — the only Red Army force whose numbers increased rather than diminished over the Long March.",
+   "fr-CA": "La 25e Armée rouge partit avec 2 980 hommes et en comptait environ 3 400 à son arrivée au nord du Shaanxi — la seule des colonnes rouges dont les effectifs augmentèrent au lieu de diminuer au fil de la Longue Marche.",
+   "zh-HK": "紅二十五軍出發時有2980人，抵達陝北時約3400人——是唯一一路在長征中人數不減反增的紅軍。",
+   "ja": "紅二十五軍は出発時2980人であったが、陝北に到着した時には約3400人となっていた――長征のなかで人員が減るどころか増えた唯一の紅軍部隊である。"
   },
   "yongpingzhen": {
-   "zh-Hans": "永坪镇会师后红二十五军与陕北红军合编为红十五军团，毛泽东称赞他们“为革命立了大功”。"
+   "zh-Hans": "永坪镇会师后红二十五军与陕北红军合编为红十五军团，毛泽东称赞他们“为革命立了大功”。",
+   "en-GB": "After the junction at Yongping, the Red 25th Army was merged with the northern-Shaanxi Red Army to form the 15th Army Corps; Mao Zedong praised them for having 'rendered a great service to the revolution'.",
+   "fr-CA": "Après leur jonction à Yongping, la 25e Armée rouge fusionna avec l'Armée rouge du nord du Shaanxi pour former le 15e corps d'armée ; Mao Zedong les félicita : «vous avez rendu de grands services à la révolution».",
+   "zh-HK": "永坪鎮會師後，紅二十五軍與陝北紅軍合編為紅十五軍團，毛澤東稱讚他們「為革命立了大功」。",
+   "ja": "永坪鎮での会師の後、紅二十五軍は陝北紅軍と合編されて紅十五軍団となり、毛沢東は彼らを「革命のために大功を立てた」と賞賛した。"
   },
   "ruijin_xqd": {
-   "zh-Hans": "先遣队的军团长寻淮洲21岁任军团长，是红军历史上最年轻的军团长。"
+   "zh-Hans": "先遣队的军团长寻淮洲21岁任军团长，是红军历史上最年轻的军团长。",
+   "en-GB": "Xun Huaizhou, corps commander of the vanguard force, had been appointed to that post at the age of 21 — the youngest army corps commander in the history of the Red Army.",
+   "fr-CA": "Xun Huaizhou, chef du corps d'armée du détachement d'avant-garde, avait accédé à ce commandement à 21 ans : il demeure le plus jeune chef de corps d'armée de l'histoire de l'Armée rouge.",
+   "zh-HK": "先遣隊的軍團長尋淮洲21歲便出任軍團長，是紅軍歷史上最年輕的軍團長。",
+   "ja": "先遣隊の軍団長・尋淮洲は21歳にして軍団長に任じられた。紅軍史上最年少の軍団長である。"
   },
   "yongan_xqd": {
-   "zh-Hans": "《中国工农红军北上抗日宣言》1934年7月15日在永安小陶发布，当地被称为“亮剑之地”。"
+   "zh-Hans": "《中国工农红军北上抗日宣言》1934年7月15日在永安小陶发布，当地被称为“亮剑之地”。",
+   "en-GB": "The Declaration of the Chinese Workers' and Peasants' Red Army on Marching North to Resist Japan was issued at Xiaotao, Yong'an, on 15 July 1934; the locality is known as 'the place where the sword was drawn'.",
+   "fr-CA": "La «Déclaration de l'Armée rouge des ouvriers et paysans de Chine sur la marche vers le nord pour résister au Japon» fut publiée le 15 juillet 1934 à Xiaotao, dans le district de Yong'an : l'endroit est aujourd'hui surnommé «le lieu où l'épée fut brandie».",
+   "zh-HK": "《中國工農紅軍北上抗日宣言》於1934年7月15日在永安小陶發布，當地被稱為「亮劍之地」。",
+   "ja": "『中国工農紅軍北上抗日宣言』は1934年7月15日に永安の小陶で発表され、当地は「亮剣の地」と呼ばれている。"
   },
   "fuzhou_xqd": {
-   "zh-Hans": "先遣队猛攻福州一昼夜未克，反而暴露了实力，被迫转向山区游击。"
+   "zh-Hans": "先遣队猛攻福州一昼夜未克，反而暴露了实力，被迫转向山区游击。",
+   "en-GB": "The vanguard force stormed Fuzhou for a full day and night without taking the city, and in doing so exposed its own strength, forcing it to turn to guerrilla warfare in the mountains.",
+   "fr-CA": "Le détachement d'avant-garde donna l'assaut à Fuzhou pendant un jour et une nuit entiers sans parvenir à s'en emparer : il ne fit que révéler ses forces et dut se replier dans les montagnes pour y mener la guérilla.",
+   "zh-HK": "先遣隊猛攻福州一晝夜未能攻克，反而暴露了實力，被迫轉向山區游擊。",
+   "ja": "先遣隊は福州を一昼夜猛攻したが陥落させることができず、かえって実力を露呈してしまい、やむなく山岳地帯での遊撃戦へと転じた。"
   },
   "zhukou_xqd": {
-   "zh-Hans": "中革军委曾电令先遣队每天只走二三十里——为中央红军的转移争取时间，行动成了一场“慢行军”。"
+   "zh-Hans": "中革军委曾电令先遣队每天只走二三十里——为中央红军的转移争取时间，行动成了一场“慢行军”。",
+   "en-GB": "The Central Revolutionary Military Commission once wired orders directing the vanguard force to cover no more than 10–15 kilometres a day — buying time for the Central Red Army's strategic transfer, so that the operation became a 'slow march'.",
+   "fr-CA": "La Commission militaire centrale avait même télégraphié au détachement d'avant-garde l'ordre de n'avancer que de dix à quinze kilomètres par jour, afin de gagner du temps pour le transfert de l'Armée rouge centrale : l'expédition tourna à une véritable «marche au ralenti».",
+   "zh-HK": "中革軍委曾電令先遣隊每天只走二三十里——為中央紅軍的轉移爭取時間，行動成了一場「慢行軍」。",
+   "ja": "中央革命軍事委員会は先遣隊に対し、一日の行程を二三十里にとどめるよう電令を発した――中央紅軍の転進のために時間を稼ぐためであり、その行動はいわば「慢行軍」と化した。"
   },
   "chongxi_xqd": {
-   "zh-Hans": "红七军团与方志敏的红十军合编为红十军团约一万人，继续执行北上抗日先遣队任务。"
+   "zh-Hans": "红七军团与方志敏的红十军合编为红十军团约一万人，继续执行北上抗日先遣队任务。",
+   "en-GB": "The Red 7th Corps was merged with Fang Zhimin's Red 10th Army to form the Red 10th Corps of roughly 10,000 men, which carried on the mission of the northward anti-Japanese vanguard.",
+   "fr-CA": "Le 7e corps d'armée fusionna avec la 10e armée de Fang Zhimin pour former le 10e corps d'armée, fort d'environ dix mille hommes, qui poursuivit sa mission de détachement d'avant-garde de la marche vers le nord pour résister au Japon.",
+   "zh-HK": "紅七軍團與方志敏的紅十軍合編為約一萬人的紅十軍團，繼續執行北上抗日先遣隊任務。",
+   "ja": "紅七軍団は方志敏の紅十軍と合編されて約1万人からなる紅十軍団となり、北上抗日先遣隊としての任務を継続した。"
   },
   "tanjiaqiao": {
-   "zh-Hans": "谭家桥之败是粟裕戎马生涯唯一败仗，他晚年遗嘱就是要把骨灰撒在谭家桥。"
+   "zh-Hans": "谭家桥之败是粟裕戎马生涯唯一败仗，他晚年遗嘱就是要把骨灰撒在谭家桥。",
+   "en-GB": "The defeat at Tanjiaqiao was the only loss of Su Yu's military career; late in life he directed in his will that his ashes be scattered at Tanjiaqiao.",
+   "fr-CA": "La défaite de Tanjiaqiao demeure l'unique revers de toute la carrière militaire de Su Yu : dans ses dernières volontés, il demanda que ses cendres soient dispersées à Tanjiaqiao.",
+   "zh-HK": "譚家橋之敗是粟裕戎馬生涯中唯一的敗仗，他晚年的遺囑就是要把骨灰撒在譚家橋。",
+   "ja": "譚家橋の敗北は粟裕の軍人生涯における唯一の敗戦であり、彼が晩年に遺言したのは、まさに自らの遺灰を譚家橋に撒いてほしいということであった。"
   },
   "maolin_xqd": {
-   "zh-Hans": "寻淮洲牺牲后葬于茂林，1938年陈毅率新四军路过时为他重建坟墓并亲撰墓志铭。"
+   "zh-Hans": "寻淮洲牺牲后葬于茂林，1938年陈毅率新四军路过时为他重建坟墓并亲撰墓志铭。",
+   "en-GB": "After Xun Huaizhou fell, he was buried at Maolin; in 1938, when Chen Yi passed through at the head of the New Fourth Army, he rebuilt the tomb and wrote the epitaph himself.",
+   "fr-CA": "Après sa mort, Xun Huaizhou fut inhumé à Maolin ; en 1938, lorsque Chen Yi y passa à la tête de la Nouvelle Quatrième Armée, il lui fit élever une nouvelle tombe et rédigea lui-même son épitaphe.",
+   "zh-HK": "尋淮洲犧牲後葬於茂林，1938年陳毅率新四軍路過時為他重建墳墓並親撰墓誌銘。",
+   "ja": "尋淮洲は戦死後茂林に葬られたが、1938年に陳毅が新四軍を率いてその地を通過した際、彼のために墓を建立し直し、自ら筆を執って墓誌銘を撰した。"
   },
   "huaiyushan": {
-   "zh-Hans": "方志敏在怀玉山被俘，狱中写下《可爱的中国》《清贫》，1935年8月在南昌就义，年仅36岁。"
+   "zh-Hans": "方志敏在怀玉山被俘，狱中写下《可爱的中国》《清贫》，1935年8月在南昌就义，年仅36岁。",
+   "en-GB": "Fang Zhimin was captured on Huaiyu Mountain; in prison he wrote 'Lovely China' and 'Poverty', and he was executed in Nanchang in August 1935 at only 36 years of age.",
+   "fr-CA": "Capturé dans les monts Huaiyu, Fang Zhimin écrivit en prison «La Chine que j'aime» et «La Pauvreté» ; il fut exécuté à Nanchang en août 1935, à 36 ans à peine.",
+   "zh-HK": "方志敏在懷玉山被俘，獄中寫下《可愛的中國》《清貧》，1935年8月在南昌就義，年僅36歲。",
+   "ja": "方志敏は懐玉山で捕らえられ、獄中で『愛すべき中国』『清貧』を書き、1935年8月に南昌で処刑された。わずか36歳であった。"
   },
   "sangzhi": {
-   "zh-Hans": "红二、六军团长征出发时1.7万人，到陕北仍有1万余人，被称为“没有蚀本的部队”。"
+   "zh-Hans": "红二、六军团长征出发时1.7万人，到陕北仍有1万余人，被称为“没有蚀本的部队”。",
+   "en-GB": "The Red 2nd and 6th Corps set out on the Long March 17,000 strong and still numbered over 10,000 on reaching northern Shaanxi, earning them the title of 'the army that never ran at a loss'.",
+   "fr-CA": "Les 2e et 6e corps d'armée entamèrent la Longue Marche avec 17 000 hommes et en comptaient encore plus de 10 000 à leur arrivée au nord du Shaanxi : on les surnomma «la troupe qui n'avait rien perdu au change».",
+   "zh-HK": "紅二、六軍團長征出發時有1.7萬人，到陝北仍有1萬餘人，被稱為「沒有蝕本的部隊」。",
+   "ja": "紅二・六軍団は長征出発時に1万7000人を擁し、陝北に到着した時にもなお1万人余りを保っていたため、「元を損なわなかった部隊」と呼ばれた。"
   },
   "xupu": {
-   "zh-Hans": "长征开始后红二、六军团先大举攻占湘中城镇，虚晃一枪再突然西折，把追兵甩在身后。"
+   "zh-Hans": "长征开始后红二、六军团先大举攻占湘中城镇，虚晃一枪再突然西折，把追兵甩在身后。",
+   "en-GB": "At the outset of their Long March, the Red 2nd and 6th Corps first seized towns across central Hunan in strength, then, after a feint, suddenly wheeled west, leaving their pursuers far behind.",
+   "fr-CA": "Au début de la Longue Marche, les 2e et 6e corps s'emparèrent d'abord en force des villes du centre du Hunan ; puis, après une feinte, ils virèrent brusquement vers l'ouest, laissant leurs poursuivants loin derrière eux.",
+   "zh-HK": "長征開始後，紅二、六軍團先大舉攻佔湘中城鎮，虛晃一槍，再突然西折，把追兵甩在身後。",
+   "ja": "長征開始後、紅二・六軍団はまず湘中の城鎮を大挙して攻略し、虚の一撃を加えた後、突如として西へ転進して追撃部隊を背後に振り切った。"
   },
   "bijie": {
-   "zh-Hans": "清末秀才周素园在毕节担任贵州抗日救国军司令，57岁随红军走完长征到达陕北。"
+   "zh-Hans": "清末秀才周素园在毕节担任贵州抗日救国军司令，57岁随红军走完长征到达陕北。",
+   "en-GB": "Zhou Suyuan, a xiucai of the late Qing era, served in Bijie as commander of the Guizhou Anti-Japanese National Salvation Army; at 57 he walked the entire Long March with the Red Army to reach northern Shaanxi.",
+   "fr-CA": "Zhou Suyuan, xiucai (lettré diplômé) de la fin des Qing, commandait à Bijie l'Armée antijaponaise de salut national du Guizhou ; à 57 ans, il accomplit toute la Longue Marche aux côtés de l'Armée rouge jusqu'au nord du Shaanxi.",
+   "zh-HK": "清末秀才周素園在畢節擔任貴州抗日救國軍司令，57歲隨紅軍走完長征到達陝北。",
+   "ja": "清末の秀才である周素園は畢節において貴州抗日救国軍の司令を務め、57歳にして紅軍に随行して長征を歩き抜き、陝北に到達した。"
   },
   "wumengshan": {
-   "zh-Hans": "毛泽东评价乌蒙山回旋战：“连我们也被你们转昏了头，硬是转出来了嘛！”"
+   "zh-Hans": "毛泽东评价乌蒙山回旋战：“连我们也被你们转昏了头，硬是转出来了嘛！”",
+   "en-GB": "Mao Zedong said of the wheeling campaign in the Wumeng Mountains: 'Even we were left dizzy by your manoeuvring — but you did spin your way out!'",
+   "fr-CA": "À propos de la guerre de mouvement dans les monts Wumeng, Mao Zedong déclara : «même nous, vous nous avez fait tourner la tête ; et pourtant, vous avez bel et bien réussi à vous en sortir!»",
+   "zh-HK": "毛澤東評價烏蒙山回旋戰：「連我們也被你們轉昏了頭，硬是轉出來了嘛！」",
+   "ja": "毛沢東は烏蒙山回旋戦を評して「われわれでさえ君たちに回されて頭がくらくらした。それでもよくぞ切り抜けてみせたものだ！」と言った。"
   },
   "panzhou": {
-   "zh-Hans": "盘县会议决定放弃建立滇黔边根据地的计划，北渡金沙江——是红二、六军团的战略转折点。"
+   "zh-Hans": "盘县会议决定放弃建立滇黔边根据地的计划，北渡金沙江——是红二、六军团的战略转折点。",
+   "en-GB": "The Panxian Conference decided to abandon the plan for a base area on the Yunnan–Guizhou border and instead to cross the Jinsha River northwards — a strategic turning point for the Red 2nd and 6th Corps.",
+   "fr-CA": "La conférence de Panxian décida d'abandonner le projet d'établir une base révolutionnaire à la lisière du Yunnan et du Guizhou pour franchir la rivière Jinsha vers le nord : ce fut le tournant stratégique des 2e et 6e corps d'armée.",
+   "zh-HK": "盤縣會議決定放棄建立滇黔邊根據地的計劃，改為北渡金沙江——這是紅二、六軍團的戰略轉折點。",
+   "ja": "盤県会議では、滇黔（雲南・貴州）辺境の根拠地建設計画を放棄して金沙江を北へ渡ることが決定された――これは紅二・六軍団の戦略的転換点であった。"
   },
   "shigu": {
-   "zh-Hans": "红二、六军团1.8万人靠7只木船在石鼓至巨甸五个渡口四天三夜渡过金沙江，敌军追到江边已无影无踪。"
+   "zh-Hans": "红二、六军团1.8万人靠7只木船在石鼓至巨甸五个渡口四天三夜渡过金沙江，敌军追到江边已无影无踪。",
+   "en-GB": "With just seven wooden boats, 18,000 men of the Red 2nd and 6th Corps crossed the Jinsha River at five ferry crossings between Shigu and Judian in four days and three nights; by the time the enemy reached the river bank they had vanished without trace.",
+   "fr-CA": "Avec 18 000 hommes et sept barques de bois, les 2e et 6e corps traversèrent la rivière Jinsha en quatre jours et trois nuits, aux cinq passages compris entre Shigu et Judian ; quand l'ennemi atteignit enfin la rive, ils avaient depuis longtemps disparu.",
+   "zh-HK": "紅二、六軍團1.8萬人靠7隻木船，在石鼓至巨甸的五個渡口以四天三夜渡過金沙江，敵軍追到江邊時已無影無蹤。",
+   "ja": "紅二・六軍団1万8000人は7隻の木船に乗り、石鼓から巨甸に至る五つの渡し場で四日三夜をかけて金沙江を渡り切り、敵軍が江辺まで追ってきたときには、すでに影も形もなかった。"
   },
   "zhongdian": {
-   "zh-Hans": "贺龙在中甸归化寺向活佛赠送“兴盛番族”锦幛，是红军早期民族政策的著名例证。"
+   "zh-Hans": "贺龙在中甸归化寺向活佛赠送“兴盛番族”锦幛，是红军早期民族政策的著名例证。",
+   "en-GB": "At Guihua Monastery in Zhongdian, He Long presented a living Buddha with a brocade banner reading 'Prosper the Tibetan people' — a celebrated early example of the Red Army's nationality policy.",
+   "fr-CA": "À Zhongdian, au monastère Guihua, He Long offrit au bouddha vivant une bannière de brocart portant l'inscription «prospérité au peuple tibétain» : un exemple célèbre de la première politique de l'Armée rouge envers les nationalités.",
+   "zh-HK": "賀龍在中甸歸化寺向活佛贈送「興盛番族」錦幛，是紅軍早期民族政策的著名例證。",
+   "ja": "賀龍は中甸の帰化寺で活仏に「興盛番族」の錦の幛（横幕）を贈った。これは紅軍初期の民族政策を示す著名な例である。"
   },
   "ganzi_r2": {
-   "zh-Hans": "甘孜会师时张国焘试图拉拢红二、六军团，贺龙、任弼时坚决抵制，两军随即共同北上。"
+   "zh-Hans": "甘孜会师时张国焘试图拉拢红二、六军团，贺龙、任弼时坚决抵制，两军随即共同北上。",
+   "en-GB": "At the junction at Garzê (Ganzi), Zhang Guotao tried to draw the Red 2nd and 6th Corps over to his side, but He Long and Ren Bishi firmly resisted, and the two armies at once marched north together.",
+   "fr-CA": "Lors de la jonction de Ganzi, Zhang Guotao tenta d'attirer dans son camp les 2e et 6e corps d'armée, mais He Long et Ren Bishi lui opposèrent un refus ferme ; les deux armées reprirent aussitôt ensemble la route du nord.",
+   "zh-HK": "甘孜會師時，張國燾試圖拉攏紅二、六軍團，賀龍、任弼時堅決抵制，兩軍隨即共同北上。",
+   "ja": "甘孜での会師に際し、張国燾は紅二・六軍団を懐柔しようとしたが、賀龍と任弼時はこれを断固拒否し、両軍はただちに相携えて北上した。"
   },
   "hadapu_r2": {
-   "zh-Hans": "一年前中央红军在哈达铺从报纸上发现陕北根据地；一年后红二方面军沿着同一条路北上。"
+   "zh-Hans": "一年前中央红军在哈达铺从报纸上发现陕北根据地；一年后红二方面军沿着同一条路北上。",
+   "en-GB": "A year earlier, the Central Red Army had learned of the northern-Shaanxi base area from newspapers at Hadapu; a year later, the Second Front Army marched north along the very same road.",
+   "fr-CA": "Un an plus tôt, l'Armée rouge centrale avait découvert à Hadapu, grâce aux journaux, l'existence de la base du nord du Shaanxi ; un an plus tard, la Deuxième Armée rouge s'engageait sur la même route vers le nord.",
+   "zh-HK": "一年前，中央紅軍在哈達鋪從報紙上發現陝北根據地；一年後，紅二方面軍沿著同一條路北上。",
+   "ja": "一年前、中央紅軍は哈達鋪において新聞から陝北根拠地の存在を発見した。一年後、紅二方面軍はその同じ道をたどって北上した。"
   },
   "jiangtaibao": {
-   "zh-Hans": "1936年10月22日将台堡会师标志着三大主力会合、长征胜利结束——会宁是10月9日红四方面军先到。"
+   "zh-Hans": "1936年10月22日将台堡会师标志着三大主力会合、长征胜利结束——会宁是10月9日红四方面军先到。",
+   "en-GB": "The junction at Jiangtaibao on 22 October 1936 marked the reunion of the three main forces and the victorious end of the Long March — at Huining the Fourth Front Army had arrived first, on 9 October.",
+   "fr-CA": "La jonction de Jiangtaibao, le 22 octobre 1936, marqua la réunion des trois grandes forces et la fin victorieuse de la Longue Marche ; à Huining, la Quatrième Armée rouge était arrivée la première, le 9 octobre.",
+   "zh-HK": "1936年10月22日的將台堡會師標誌著三大主力會合、長征勝利結束——至於會寧，則是紅四方面軍於10月9日率先到達。",
+   "ja": "1936年10月22日の将台堡での会師は、三大主力の会合と長征の勝利的終結を画するものであった――会寧では10月9日に紅四方面軍が先に到着していた。"
   },
   "cangxi": {
-   "zh-Hans": "强渡嘉陵江是红四方面军长征的起点，近十万人渡江，是四支队伍中人数最多的一支。"
+   "zh-Hans": "强渡嘉陵江是红四方面军长征的起点，近十万人渡江，是四支队伍中人数最多的一支。",
+   "en-GB": "The forced crossing of the Jialing River marks the start of the Fourth Front Army's Long March; nearly 100,000 men crossed, making it the largest of the four columns.",
+   "fr-CA": "La traversée en force de la rivière Jialing marqua le point de départ de la Longue Marche de la Quatrième Armée rouge : près de cent mille hommes passèrent le fleuve, ce qui en faisait la plus nombreuse des quatre colonnes.",
+   "zh-HK": "強渡嘉陵江是紅四方面軍長征的起點，近十萬人渡江，是四支隊伍中人數最多的一支。",
+   "ja": "嘉陵江の強行渡河は紅四方面軍の長征の出発点であり、10万人近くが渡河した。これは四つの部隊のうちで最も人員の多いものであった。"
   },
   "jianmenguan": {
-   "zh-Hans": "“一夫当关，万夫莫开”的剑门关被红军从背后仰攻关楼拿下，全歼守军。"
+   "zh-Hans": "“一夫当关，万夫莫开”的剑门关被红军从背后仰攻关楼拿下，全歼守军。",
+   "en-GB": "Jianmen Pass, where 'one man at the gate can hold off ten thousand', was taken by the Red Army with an uphill assault on the gate tower from behind, and the entire garrison was annihilated.",
+   "fr-CA": "Le défilé de Jianmenguan, dont on disait qu'«un seul homme le tenant en barrait l'accès à dix mille», fut enlevé par l'Armée rouge, qui gravit les pentes pour prendre à revers la tour du portail : toute la garnison fut anéantie.",
+   "zh-HK": "「一夫當關，萬夫莫開」的劍門關，被紅軍從背後仰攻關樓拿下，全殲守軍。",
+   "ja": "「一夫関に当たれば万夫も開かず」とうたわれた剣門関は、紅軍が背後から仰ぎ攻めて関楼を奪取し、守備軍を全滅させた。"
   },
   "maoxian": {
-   "zh-Hans": "红四方面军在茂县、理县进入羌族藏族聚居区，一边执行民族政策一边迎接中央红军。"
+   "zh-Hans": "红四方面军在茂县、理县进入羌族藏族聚居区，一边执行民族政策一边迎接中央红军。",
+   "en-GB": "In Maoxian and Lixian, the Fourth Front Army entered territory thickly settled by the Qiang and Tibetan peoples, carrying out its nationality policy while preparing to welcome the Central Red Army.",
+   "fr-CA": "Par Maoxian et Lixian, la Quatrième Armée rouge pénétra dans les régions de peuplement qiang et tibétain, appliquant sa politique envers les nationalités tout en se préparant à accueillir l'Armée rouge centrale.",
+   "zh-HK": "紅四方面軍在茂縣、理縣進入羌族藏族聚居區，一邊執行民族政策，一邊迎接中央紅軍。",
+   "ja": "紅四方面軍は茂県・理県において羌族・チベット族の集住地域に入り、民族政策を実行しつつ中央紅軍の到来を迎えた。"
   },
   "dawei_r4": {
-   "zh-Hans": "达维会师时中央红军约2万人、红四方面军约8万人——力量对比后来成为战略分歧的导火索。"
+   "zh-Hans": "达维会师时中央红军约2万人、红四方面军约8万人——力量对比后来成为战略分歧的导火索。",
+   "en-GB": "At the junction at Dawei, the Central Red Army mustered about 20,000 men against the Fourth Front Army's roughly 80,000 — an imbalance of strength that later became the fuse for their strategic disagreements.",
+   "fr-CA": "Au moment de la jonction de Dawei, l'Armée rouge centrale comptait environ 20 000 hommes contre environ 80 000 pour la Quatrième Armée rouge : ce rapport de forces devint plus tard la mèche des divergences stratégiques.",
+   "zh-HK": "達維會師時，中央紅軍約2萬人，紅四方面軍約8萬人——這種力量對比後來成為戰略分歧的導火線。",
+   "ja": "達維の会師の時点で、中央紅軍は約2万人、紅四方面軍は約8万人であった――この兵力の対比は、のちに戦略上の対立の導火線となった。"
   },
   "baozo_r4": {
-   "zh-Hans": "包座之战徐向前指挥红30军全歼胡宗南部一个师又一个团，打开了北上甘南的大门。"
+   "zh-Hans": "包座之战徐向前指挥红30军全歼胡宗南部一个师又一个团，打开了北上甘南的大门。",
+   "en-GB": "In the Battle of Baozuo, Xu Xiangqian commanded the Red 30th Corps in annihilating a division and a regiment of Hu Zongnan's forces, opening the gateway to northern Gansu.",
+   "fr-CA": "À la bataille de Baozuo, Xu Xiangqian dirigea la 30e armée rouge dans l'anéantissement d'une division et d'un régiment des troupes de Hu Zongan, ouvrant la porte du nord vers le sud du Gansu.",
+   "zh-HK": "包座之戰中，徐向前指揮紅30軍全殲胡宗南部一個師又一個團，打開了北上甘南的大門。",
+   "ja": "包座の戦いにおいて徐向前は紅30軍を指揮し、胡宗南部の1個師団と1個連隊を全滅させ、北上して甘南に入る門戸を切り開いた。"
   },
   "baoxing": {
-   "zh-Hans": "张国焘南下后红四方面军重新翻越夹金山——这支部队后来三过草地、多次翻雪山。"
+   "zh-Hans": "张国焘南下后红四方面军重新翻越夹金山——这支部队后来三过草地、多次翻雪山。",
+   "en-GB": "After Zhang Guotao turned south, the Fourth Front Army climbed Jiajin Mountain all over again — a force that would later cross the grasslands three times and scale the snow mountains many times over.",
+   "fr-CA": "Quand Zhang Guotao se replia vers le sud, la Quatrième Armée rouge dut franchir une seconde fois le mont Jiajin — une troupe qui traverserait par la suite trois fois les prairies et qui gravirait maintes fois les monts enneigés.",
+   "zh-HK": "張國燾南下後，紅四方面軍重新翻越夾金山——這支部隊後來三過草地、多次翻雪山。",
+   "ja": "張国燾の南下の後、紅四方面軍はふたたび夾金山を越えた――この部隊はのちに三度草地を渡り、幾度も雪山を越えることになる。"
   },
   "baizhang": {
-   "zh-Hans": "百丈关决战七昼夜，红军伤亡近万，南下路线就此破产——这是张国焘分裂行为的军事代价。"
+   "zh-Hans": "百丈关决战七昼夜，红军伤亡近万，南下路线就此破产——这是张国焘分裂行为的军事代价。",
+   "en-GB": "The decisive battle at Baizhanguan raged for seven days and nights and cost the Red Army nearly 10,000 casualties, bankrupting the southward route — the military price of Zhang Guotao's split.",
+   "fr-CA": "La bataille décisive de Baizhanguan dura sept jours et sept nuits ; l'Armée rouge y perdit près de dix mille hommes, et la route du sud s'avéra dès lors brisée — le prix militaire payé aux manœuvres divisionnistes de Zhang Guotao.",
+   "zh-HK": "百丈關決戰七晝夜，紅軍傷亡近萬，南下路線就此破產——這是張國燾分裂行為的軍事代價。",
+   "ja": "百丈関の決戦は七昼夜にわたり、紅軍の死傷者は1万人近くに達し、南下路線はここに破綻した――これが張国燾の分裂行為の軍事的代価であった。"
   },
   "ganzi_r4": {
-   "zh-Hans": "朱德后来形容红四方面军的长征：“一年里三过草地”，其艰苦为各路红军之最。"
+   "zh-Hans": "朱德后来形容红四方面军的长征：“一年里三过草地”，其艰苦为各路红军之最。",
+   "en-GB": "Zhu De later described the Fourth Front Army's Long March in the words 'three crossings of the grasslands in a single year'; its hardships were the harshest endured by any Red Army column.",
+   "fr-CA": "Zhu De décrivit plus tard la Longue Marche de la Quatrième Armée rouge par ces mots : «trois traversées des prairies en une seule année» — une épreuve plus dure que pour toutes les autres colonnes rouges.",
+   "zh-HK": "朱德後來形容紅四方面軍的長征：「一年裏三過草地」，其艱苦為各路紅軍之最。",
+   "ja": "朱德はのちに紅四方面軍の長征を「一年のうちに三たび草地を渡った」と形容した。その苦難は各路の紅軍のうちで最も甚だしいものであった。"
   },
   "taozhou": {
-   "zh-Hans": "洮州会议放弃了张国焘西渡黄河进青海的方案——红四方面军长征路线的最后一次转折。"
+   "zh-Hans": "洮州会议放弃了张国焘西渡黄河进青海的方案——红四方面军长征路线的最后一次转折。",
+   "en-GB": "The Taozhou Conference abandoned Zhang Guotao's plan to cross the Yellow River westwards into Qinghai — the final turn in the Fourth Front Army's Long March route.",
+   "fr-CA": "La conférence de Taozhou abandonna le projet de Zhang Guotao de franchir le fleuve Jaune vers l'ouest pour gagner le Qinghai — le dernier tournant de l'itinéraire de la Longue Marche de la Quatrième Armée rouge.",
+   "zh-HK": "洮州會議放棄了張國燾西渡黃河進青海的方案——這是紅四方面軍長征路線的最後一次轉折。",
+   "ja": "洮州会議では、張国燾の黄河を西に渡って青海へ進む案が放棄された――これは紅四方面軍の長征路線における最後の転換であった。"
   },
   "huining": {
-   "zh-Hans": "会宁会师时红军总兵力约5万人，不足长征出发时四路大军合计18.6万人的三分之一。"
+   "zh-Hans": "会宁会师时红军总兵力约5万人，不足长征出发时四路大军合计18.6万人的三分之一。",
+   "en-GB": "At the Huining junction the Red Army's total strength was about 50,000 — less than a third of the combined 186,000 men of the four forces at the outset of the Long March.",
+   "fr-CA": "Au moment de la jonction de Huining, l'Armée rouge ne comptait plus qu'environ 50 000 hommes : moins du tiers des 186 000 combattants que totalisaient ensemble les quatre grandes armées au départ de la Longue Marche.",
+   "zh-HK": "會寧會師時，紅軍總兵力約5萬人，不足長征出發時四路大軍合計18.6萬人的三分之一。",
+   "ja": "会寧会師の時点で紅軍の総兵力は約5万人であり、長征出発時の四路の大軍の合計18万6000人の3分の1にも満たなかった。"
   },
   "czm_xuyong": {
    "zh-Hans": "1935年2月2日至5日，红军先头部队曾在叙永城郊与川军重兵激战数日，始终未能攻克叙永城。",

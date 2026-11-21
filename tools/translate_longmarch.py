@@ -103,22 +103,25 @@ def main():
             ckpt[key] = out
             json.dump(ckpt, open(CKPT, "w", encoding="utf-8"), ensure_ascii=False)
             time.sleep(1)
-        # quizSights: batch 35 one-liners in one request
+        # quizSights: batch one-liners per request; resumable per-stop so
+        # newly added stops only translate their own missing lines
         key = f"sights:{loc}"
         qs = lesson["quizSights"]
         if all(loc in v for v in qs.values()):
             continue
-        if key in ckpt:
-            for sid, v in ckpt[key].items():
+        stored = ckpt.get(key, {})
+        for sid, v in stored.items():
+            if sid in qs and loc not in qs[sid]:
                 qs[sid][loc] = v
-        else:
-            print(f"[{loc}] quizSights batch …")
-            ids = list(qs.keys())
-            paras = [qs[sid]["zh-Hans"] for sid in ids]
+        missing_sids = [sid for sid in qs if loc not in qs[sid]]
+        if missing_sids:
+            print(f"[{loc}] quizSights batch ({len(missing_sids)} missing) …")
+            paras = [qs[sid]["zh-Hans"] for sid in missing_sids]
             out = translate_batch(paras, desc)
-            for sid, v in zip(ids, out):
+            for sid, v in zip(missing_sids, out):
                 qs[sid][loc] = v
-                ckpt.setdefault(key, {})[sid] = v
+                stored[sid] = v
+            ckpt[key] = stored
             json.dump(ckpt, open(CKPT, "w", encoding="utf-8"), ensure_ascii=False)
         time.sleep(1)
     json.dump(lesson, open(LESSON, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
