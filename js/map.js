@@ -1168,6 +1168,61 @@
         projection.rotate(baseRotation);
         this._reproject();
       }
+      this._persistViewSoon();
+    },
+
+    // ---- view memory: remember the user's last position + zoom for the
+    // current lesson+projection and restore it after a reload. The live
+    // svg viewBox IS the pan/zoom state (all interactions go through it);
+    // the globe additionally stores the projection rotation, since its
+    // "position" lives in rotation, not in panning. localStorage may be
+    // unavailable on some file:// browsers — persistence is best-effort.
+    viewStateKey: null,
+    _viewPersistTimer: null,
+
+    _persistViewSoon() {
+      const key = this.viewStateKey;
+      if (!key) return;
+      clearTimeout(this._viewPersistTimer);
+      // capture the key NOW: a projection switch inside the debounce
+      // window must not file this view under the new key
+      this._viewPersistTimer = setTimeout(() => this._persistViewNow(key), 400);
+    },
+
+    _persistViewNow(key) {
+      if (!key) return;
+      try {
+        const vb = svg.viewBox.baseVal;
+        const rec = {
+          vb: { x: vb.x, y: vb.y, w: vb.width, h: vb.height },
+          rot: projectionName === "globe" ? projection.rotate() : null,
+        };
+        localStorage.setItem("xuanzang:view:" + key, JSON.stringify(rec));
+      } catch (err) { /* storage unavailable: view memory silently off */ }
+    },
+
+    restoreView() {
+      if (!this.viewStateKey) return false;
+      let rec = null;
+      try {
+        rec = JSON.parse(localStorage.getItem("xuanzang:view:" + this.viewStateKey) || "null");
+      } catch (err) { return false; }
+      if (!rec || !rec.vb) return false;
+      const { x, y, w, h } = rec.vb;
+      if (![x, y, w, h].every(Number.isFinite) || w <= 0 || h <= 0) return false;
+      // refuse absurd aspect ratios (stale entry from an older layout)
+      if (baseView && baseView.w && baseView.h) {
+        const r = (w / h) / (baseView.w / baseView.h);
+        if (!(r > 0.25 && r < 4)) return false;
+      }
+      svg.setAttribute("viewBox", `${x} ${y} ${w} ${h}`);
+      if (Array.isArray(rec.rot) && rec.rot.every(Number.isFinite) && projectionName === "globe") {
+        projection.rotate(rec.rot);
+        this._reproject();
+      }
+      if (webglActive) this._webglFit();
+      this._updateMarkers();
+      return true;
     },
 
     zoomBy(factor, anchorUserPt = null) {
@@ -1182,6 +1237,7 @@
       svg.setAttribute("viewBox", `${x} ${y} ${w} ${h}`);
       if (webglActive) this._webglFit(); // zoom scales the globe too, not just the overlay
       this._updateMarkers();
+      this._persistViewSoon();
     },
 
     // markers (arrowheads) cannot use vector-effect, so their nominal
@@ -1262,6 +1318,7 @@
           if (group) group.style.display = "";
         }
         svg.style.cursor = "";
+        this._persistViewSoon(); // remember drag pan / globe rotation
       };
       window.addEventListener("pointerup", endDrag);
       window.addEventListener("pointercancel", endDrag);

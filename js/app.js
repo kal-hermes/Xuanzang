@@ -224,6 +224,16 @@
 
     map.render(state.lesson, { projection: state.projection });
 
+    // view memory: key by lesson+projection, and restore the user's last
+    // position + zoom when the lesson or projection CHANGES (not on mere
+    // mode switches, which should keep the current view)
+    const viewKey = (readPrefs().lesson || state.lesson.id || "lesson") + ":" + state.projection;
+    map.viewStateKey = viewKey;
+    if (viewKey !== state.lastViewKey) {
+      state.lastViewKey = viewKey;
+      map.restoreView();
+    }
+
     if (state.mode === "learn") {
       setHint(state.projection === "globe" ? i18n.t("hint_globe") : i18n.t("hint_learn"));
       if (state.lesson.type === "journey") {
