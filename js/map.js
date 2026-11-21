@@ -1186,7 +1186,33 @@
       clearTimeout(this._viewPersistTimer);
       // capture the key NOW: a projection switch inside the debounce
       // window must not file this view under the new key
-      this._viewPersistTimer = setTimeout(() => this._persistViewNow(key), 400);
+      this._viewPersistPendingKey = key;
+      this._viewPersistTimer = setTimeout(() => {
+        this._viewPersistPendingKey = null;
+        this._persistViewNow(key);
+      }, 400);
+      // a refresh or tab-hide inside the 400ms window must not lose the
+      // last change: flush the pending write on hide/unload (registered
+      // once, first time a save is ever scheduled)
+      if (!this._viewFlushHooks) {
+        this._viewFlushHooks = true;
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "hidden") this._flushPendingView();
+        });
+        window.addEventListener("pagehide", () => this._flushPendingView());
+        window.addEventListener("beforeunload", () => this._flushPendingView());
+      }
+    },
+
+    _flushPendingView() {
+      if (this._viewPersistTimer) {
+        clearTimeout(this._viewPersistTimer);
+        this._viewPersistTimer = null;
+      }
+      if (this._viewPersistPendingKey) {
+        this._persistViewNow(this._viewPersistPendingKey);
+        this._viewPersistPendingKey = null;
+      }
     },
 
     _persistViewNow(key) {
